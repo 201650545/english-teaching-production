@@ -1,0 +1,209 @@
+{
+  "reading_a": {
+    "id": "XYJ2026_L26_reading_a",
+    "source": "母体：2022 湖南中考 阅读A（人物介绍类记叙文）改编",
+    "genre": "记叙文",
+    "difficulty": "基础",
+    "word_count": 96,
+    "绑定": "自我介绍 / 日常作息 / 好习惯",
+    "paragraphs": [
+      "Lucy is my good friend. She is twelve years old and she studies in Class Three, Grade Seven. Every morning she gets up at six forty and has a healthy breakfast with milk and bread. Then she walks to school with her little brother.",
+      "At school, Lucy listens to the teacher and reads English every day. She likes music and she plays the piano after class. On weekends, she helps her mother at home and then plays basketball with her friends in the park.",
+      "Lucy has many good habits. She never eats too much sugar and she always drinks water. Her daily life is simple, but she is happy and healthy. She says good habits help her study well."
+    ],
+    "questions": [
+      {
+        "q": "How old is Lucy?",
+        "opts": [["A", "Twelve."], ["B", "Thirteen."], ["C", "Eleven."]],
+        "answer": "A"
+      },
+      {
+        "q": "What does Lucy do after class?",
+        "opts": [["A", "Plays the piano."], ["B", "Plays soccer."], ["C", "Watches TV."]],
+        "answer": "A"
+      },
+      {
+        "q": "What does Lucy never eat too much of?",
+        "opts": [["A", "Sugar."], ["B", "Bread."], ["C", "Milk."]],
+        "answer": "A"
+      }
+    ]
+  },
+  "reading_b": {
+    "id": "XYJ2026_L26_reading_b",
+    "source": "母体：2023 长沙中考 阅读B（社团说明文）改编",
+    "genre": "说明文",
+    "difficulty": "基础",
+    "word_count": 101,
+    "绑定": "学校社团 / 英语学习 / 交友",
+    "paragraphs": [
+      "Our school has an English club. It opens every Tuesday and Friday after school. Students go there to speak English, sing English songs and read fun stories. The club helps us learn new words and make new friends.",
+      "In the club, we often play word games and act in short plays. A teacher from England comes to help us with pronunciation. We also watch short English videos about animals, food and festivals.",
+      "Over fifty students join the club now. Many of us speak English well and feel happy there. If you like English, please come and be a member of our club. We wait for you!"
+    ],
+    "questions": [
+      {
+        "q": "When does the English club open?",
+        "opts": [["A", "Every Tuesday and Friday."], ["B", "Every Monday."], ["C", "Every Sunday."]],
+        "answer": "A"
+      },
+      {
+        "q": "What do students do in the club?",
+        "opts": [["A", "Speak English and sing songs."], ["B", "Play soccer."], ["C", "Cook food."]],
+        "answer": "A"
+      },
+      {
+        "q": "Who comes to help with pronunciation?",
+        "opts": [["A", "A teacher from England."], ["B", "A doctor."], ["C", "A worker."]],
+        "answer": "A"
+      },
+      {
+        "q": "What does the writer ask readers to do?",
+        "opts": [["A", "Join the club."], ["B", "Leave school."], ["C", "Eat food."]],
+        "answer": "A"
+      }
+    ]
+  },
+  "reading_c": {
+    "id": "XYJ2026_L26_reading_c",
+    "source": "母体：2021 湖南中考 阅读C（应用文·通知）改编",
+    "genre": "应用文·通知",
+    "difficulty": "基础",
+    "word_count": 98,
+    "绑定": "图书馆规则 / 借阅 / 公共秩序",
+    "paragraphs": [
+      "NOTICE\nThe school library opens a new reading corner for students. It is on the second floor, next to the computer room. You can read books, draw pictures and do your homework there from Monday to Friday, 3:00 p.m. to 5:00 p.m.",
+      "Please keep the corner clean and quiet. Do not eat or drink there. You must put the books back on the shelves after reading. If you break the rules, you cannot go in for a week.",
+      "We have many picture books and English storybooks for you. Please come and read with your classmates. A library card helps you borrow books. Ask your teacher for a card this week."
+    ],
+    "questions": [
+      {
+        "q": "Where is the new reading corner?",
+        "opts": [["A", "On the second floor, next to the computer room."], ["B", "In the classroom."], ["C", "In the dining hall."]],
+        "answer": "A"
+      },
+      {
+        "q": "When can students use the reading corner?",
+        "opts": [["A", "Monday to Friday, 3 to 5 p.m."], ["B", "Every weekend."], ["C", "Every morning."]],
+        "answer": "A"
+      },
+      {
+        "q": "What must students do after reading?",
+        "opts": [["A", "Put books back on the shelves."], ["B", "Eat there."], ["C", "Leave books on the desk."]],
+        "answer": "A"
+      },
+      {
+        "q": "What helps you borrow books?",
+        "opts": [["A", "A library card."], ["B", "A phone."], ["C", "A ticket."]],
+        "answer": "A"
+      }
+    ]
+  },
+  "w5": {
+    "id": "XYJ2026_L26_w5",
+    "source": "母体：2023 湖南中考 五选四（说明类）改编",
+    "title": "下面是有关“如何写好自我介绍”的说明，请从方框中选出可以填入空白处的最佳选项（有一项为多余选项）。",
+    "paragraphs": [
+      "A good self-introduction helps others know you. ___1___ First, say your name and your grade. ___2___ Tell people what you like, such as sports, music or reading. ___3___ You can also say your good habits, like getting up early and eating well.",
+      "___4___ Speak clearly and smile when you talk. With these steps, you can make new friends at school."
+    ],
+    "candidates": [
+      ["A", "Here are some easy steps to try."],
+      ["B", "Then talk about your hobbies."],
+      ["C", "Next, speak about your daily life."],
+      ["D", "Keep your words short and friendly."],
+      ["E", "A good friend is very important."]
+    ],
+    "answers": {
+      "1": "A",
+      "2": "B",
+      "3": "C",
+      "4": "D"
+    }
+  },
+  "cloze": {
+    "id": "XYJ2026_L26_cloze",
+    "source": "母体：2022 湖南中考 完形填空（自我介绍类）改编",
+    "title": "阅读下面短文，从每题所给的 A、B、C 三个选项中选出最佳选项",
+    "绑定": "自我介绍 / 日常作息 / 主谓一致",
+    "paragraphs": [
+      "Hello, I am Tom. I am a student in Grade Seven. I ___1___ at No. 1 Middle School. Every morning I ___2___ at six thirty and have breakfast with my family.",
+      "I like ___3___ very much. After school, I ___4___ basketball with my classmates on the playground. We ___5___ happy when we play together.",
+      "I also like reading. I ___6___ English books in the library twice a week. My mother ___7___ I should eat more vegetables and fruit. She says they ___8___ me healthy.",
+      "On Sunday, I ___9___ my room and help my father cook. I ___10___ a busy but happy life."
+    ],
+    "items": [
+      {"num": 1, "opts": [["A", "study"], ["B", "studies"], ["C", "studying"]], "answer": "A"},
+      {"num": 2, "opts": [["A", "get up"], ["B", "gets up"], ["C", "getting up"]], "answer": "A"},
+      {"num": 3, "opts": [["A", "sports"], ["B", "sport"], ["C", "sporting"]], "answer": "A"},
+      {"num": 4, "opts": [["A", "play"], ["B", "plays"], ["C", "playing"]], "answer": "A"},
+      {"num": 5, "opts": [["A", "are"], ["B", "is"], ["C", "am"]], "answer": "A"},
+      {"num": 6, "opts": [["A", "read"], ["B", "reads"], ["C", "reading"]], "answer": "A"},
+      {"num": 7, "opts": [["A", "says"], ["B", "say"], ["C", "saying"]], "answer": "A"},
+      {"num": 8, "opts": [["A", "keep"], ["B", "keeps"], ["C", "keeping"]], "answer": "A"},
+      {"num": 9, "opts": [["A", "clean"], ["B", "cleans"], ["C", "cleaning"]], "answer": "A"},
+      {"num": 10, "opts": [["A", "live"], ["B", "lives"], ["C", "living"]], "answer": "A"}
+    ]
+  },
+  "grammar_fill": {
+    "id": "XYJ2026_L26_grammar_fill",
+    "source": "母体：2023 湖南中考 语法填空（选词类）改编",
+    "title": "从方框内选择适当的词并用其正确形式填空（每空限填一词，每词限用一次）",
+    "绑定": "be / have / like / play / read / go / keep / healthy / friend / every",
+    "word_bank": ["be", "have", "like", "play", "read", "go", "keep", "healthy", "friend", "every"],
+    "paragraphs": [
+      "I ___1___ a student in Grade Seven. I ___2___ a dog at home. I ___3___ sports and I ___4___ basketball with my ___5___ after school.",
+      "We ___6___ to the library and ___7___ books there. Good food ___8___ me ___9___ and strong. I do my homework ___10___ day."
+    ],
+    "answers": ["am", "have", "like", "play", "friends", "go", "read", "keeps", "healthy", "every"]
+  },
+  "sa": {
+    "id": "XYJ2026_L26_sa",
+    "source": "母体：2022 湖南中考 阅读表达（简答+翻译）改编",
+    "title": "阅读下面短文，根据短文内容回答问题或翻译句子",
+    "绑定": "自我介绍 / 日常作息 / 翻译",
+    "paragraphs": [
+      "My name is Linda. I am thirteen and I am in Class Two, Grade Seven. I get up at seven and eat breakfast with my parents. Then I ride my bike to school. I like math and English, and I read English stories every evening.",
+      "After school, I play tennis with my sister. On Sunday, I clean my room and help my mother cook dinner. My father says a good day starts with a good breakfast. We have a happy family and I love my life."
+    ],
+    "questions": [
+      {"q": "How old is Linda?", "answer": "Thirteen. / She is thirteen.", "type": "简答"},
+      {"q": "How does Linda go to school?", "answer": "By bike. / She rides her bike.", "type": "简答"},
+      {"q": "What does Linda do after school?", "answer": "She plays tennis with her sister.", "type": "简答"},
+      {"q": "Does Linda help her mother cook dinner?", "answer": "Yes, she does.", "type": "简答"},
+      {"q": "将下列句子翻译成汉语：My father says a good day starts with a good breakfast.", "answer": "我父亲说，美好的一天从一顿好的早餐开始。", "type": "翻译"}
+    ]
+  },
+  "writing": {
+    "id": "XYJ2026_L26_writing",
+    "source": "教师命题（书面表达 SOP 专项，L26 训练目标）",
+    "title": "第二节　书面表达（满分 15 分）",
+    "prompt": "My Self-Introduction",
+    "requirements": "请根据要点写一篇英语自我介绍（约 60–80 词）。\n· 你的姓名、年级与年龄\n· 你的爱好（如运动、阅读、音乐）\n· 你的日常作息与好习惯\n· 用 first / then / next / finally 与 and / but / so 让语句连贯",
+    "绑定": "书面表达 SOP / 自我介绍 / 衔接词",
+    "sample": [
+      "Hello, I am Wang Lei. I am twelve years old and I am in Class One, Grade Seven. I like sports and reading very much.",
+      "First, I get up at six thirty and have a healthy breakfast. Then I ride my bike to school and listen to the teacher carefully. Next, I play basketball with my friends after class. Finally, I read books at home and go to bed early.",
+      "I have good habits and I am happy every day. My life is busy but interesting. I hope to make new friends at school."
+    ]
+  },
+  "grammar_diag": {
+    "id": "XYJ2026_L26_grammar",
+    "source": "教学诊断附件（不计入考试）",
+    "title": "语法复盘（教师课后诊断用 · 不计入考试）",
+    "mc": [
+      {"q": "— _____ do you go to school? — By bike.", "opts": [["A", "How"], ["B", "What"], ["C", "Where"]], "answer": "A"},
+      {"q": "Linda _____ English stories every evening.", "opts": [["A", "reads"], ["B", "read"], ["C", "reading"]], "answer": "A"},
+      {"q": "We _____ a happy family.", "opts": [["A", "have"], ["B", "has"], ["C", "having"]], "answer": "A"},
+      {"q": "You _____ eat too much sugar. It is bad for you.", "opts": [["A", "shouldn't"], ["B", "should"], ["C", "must"]], "answer": "A"},
+      {"q": "_____ is your bike? — It is under the tree.", "opts": [["A", "Where"], ["B", "What"], ["C", "Who"]], "answer": "A"}
+    ],
+    "fill": [
+      {"q": "I ___ (get) up at seven every morning.", "answer": "get"},
+      {"q": "He ___ (have) a dog at home.", "answer": "has"},
+      {"q": "They ___ (be) my good friends.", "answer": "are"},
+      {"q": "We should ___ (keep) our room clean.", "answer": "keep"},
+      {"q": "My mother ___ (say) good habits help me.", "answer": "says"}
+    ]
+  }
+}

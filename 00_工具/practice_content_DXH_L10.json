@@ -1,0 +1,449 @@
+{
+ "_doc": "邓兴华 L10 配套练习内容（中等）· 2026-08-06。主题：学科·校园生活；语法：G25 一般现在时三单 -s/-es / G26 does/doesn't 三单否定疑问（动词还原）/ G27 学科与学习动作短语。难度：中等。结构对齐 exam_spec v2026.2（阅读30/语言25/综合25 + 教学诊断附件）。全部语篇为真题母本改编（教师授权原创），source_id=DXH2026_L10_*。格式：语篇分段+首行缩进1字符；完形/语法填空答案直接填入文中空；简答含1题一般疑问句+Why、1题翻译；语法诊断5选择+5填空。",
+ "reading_a": {
+  "id": "DXH2026_L10_reading_a",
+  "genre": "应用文",
+  "difficulty": "中",
+  "word_count": 107,
+  "provenance": "真题母本改编（教师授权原创 2026-08-06）",
+  "绑定": "一般现在时三单-s(have/has/ studies/ begins)/学科名词(Chinese/math/physics)/学科搭配动词",
+  "paragraphs": [
+   "I am a student at Sunshine Middle School. My school day is busy but fun. In the morning, I have Chinese, math and physics. Chinese is my favorite subject. I study math every day. Math is not easy, but I like it. My classmate Tom likes physics. He studies physics very hard.",
+   "After lunch, we have geography and biology. Miss Li teaches us geography. She is kind and careful. Tom doesn't like biology. He thinks it is difficult. But I like biology because it is interesting. We do exercises in class and answer questions. Our teacher asks us to complete the homework every day.",
+   "In the evening, I finish my homework and read books. Every subject is important. I begin my study at eight and go to bed at ten. What a busy but happy school day!"
+  ],
+  "questions": [
+   {
+    "num": 1,
+    "q": "What is the writer's favorite subject?",
+    "opts": [
+     ["A", "math"],
+     ["B", "Chinese"],
+     ["C", "physics"]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 2,
+    "q": "Who likes physics?",
+    "opts": [
+     ["A", "The writer"],
+     ["B", "Tom"],
+     ["C", "Miss Li"]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What is the passage mainly about?",
+    "opts": [
+     ["A", "How to study physics"],
+     ["B", "A busy school day"],
+     ["C", "Tom's family"]
+    ],
+    "answer": "B"
+   }
+  ]
+ },
+ "reading_b": {
+  "id": "DXH2026_L10_reading_b",
+  "genre": "记叙文",
+  "difficulty": "中",
+  "word_count": 129,
+  "provenance": "真题母本改编（教师授权原创 2026-08-06）",
+  "绑定": "一般现在时三单(reads/ understands/ answers)/does否定疑问/学科名词(geography/ biology)/学习动作(read/ practice/ reason)",
+  "paragraphs": [
+   "Today is Friday. After school, I go to the school library with my classmate Anna. The library is quiet and clean. Anna reads a geography book. She understands it quickly. I look for a math problem book. I want to solve a difficult problem.",
+   "The librarian is Miss Green. She is careful and helpful. She answers our questions with a smile. Anna asks, \"Does this library have books about biology?\" Miss Green says, \"Yes, it does. They are on the second shelf.\"",
+   "We practice reading for an hour. Miss Green tells us, \"Careful reading makes you clever. Reason and practice are the keys to good study.\" We say thank you and leave. Every day in the library is a good day."
+  ],
+  "questions": [
+   {
+    "num": 1,
+    "q": "Where do the students go after school?",
+    "opts": [
+     ["A", "To the library"],
+     ["B", "To the playground"],
+     ["C", "To the park"]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "Who is careful and helpful?",
+    "opts": [
+     ["A", "Anna"],
+     ["B", "The writer"],
+     ["C", "Miss Green"]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 3,
+    "q": "The underlined word \"clever\" means ____ in Chinese.",
+    "opts": [
+     ["A", "聪明的"],
+     ["B", "懒惰的"],
+     ["C", "吵闹的"]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 4,
+    "q": "From the passage, we can infer that the writer ____.",
+    "opts": [
+     ["A", "doesn't like the library"],
+     ["B", "enjoys the library"],
+     ["C", "never reads books"]
+    ],
+    "answer": "B"
+   }
+  ]
+ },
+ "reading_c": {
+  "id": "DXH2026_L10_reading_c",
+  "genre": "说明文",
+  "difficulty": "中",
+  "word_count": 132,
+  "provenance": "真题母本改编（教师授权原创 2026-08-06）",
+  "绑定": "学科名词(physics/ geography/ biology)/三单(helps/ shows/ tells)/学习动作(listen/ practice/ finish)/does否定疑问",
+  "paragraphs": [
+   "Students have many subjects at school, such as Chinese, math, physics, geography and biology. Every subject is useful. Math helps us think clearly. Chinese helps us read and write well. Physics tells us how things work. Geography shows us the world and its places.",
+   "How do we study subjects well? First, we listen carefully in class. Second, we ask questions when we don't understand. Third, we practice and do exercises every day. We must finish our homework on time. A good student is careful and quick.",
+   "Some students think a subject is difficult. But if we study it with a reason and keep practicing, it becomes easy. Don't give up. Every subject opens a new door for us. Study hard, and you will be happy with your grades."
+  ],
+  "questions": [
+   {
+    "num": 1,
+    "q": "Which subject helps us think clearly?",
+    "opts": [
+     ["A", "Math"],
+     ["B", "Geography"],
+     ["C", "Biology"]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "What should students do when they don't understand?",
+    "opts": [
+     ["A", "Sleep"],
+     ["B", "Ask questions"],
+     ["C", "Play games"]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "The writer thinks a difficult subject ____.",
+    "opts": [
+     ["A", "is useless"],
+     ["B", "is only for smart students"],
+     ["C", "can become easy with practice"]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "What is the passage mainly about?",
+    "opts": [
+     ["A", "How to study subjects well"],
+     ["B", "School rules"],
+     ["C", "A day in the library"]
+    ],
+    "answer": "A"
+   }
+  ]
+ },
+ "w5": {
+  "id": "DXH2026_L10_w5",
+  "title": "根据短文内容，从方框中选出最佳句子填入文中空白处，使短文通顺连贯（有一项为多余选项）",
+  "paragraphs": [
+   "Studying well is not hard. Good students have good habits. ___1___ They listen carefully and take notes. They do their homework on time and review their lessons every day.",
+   "___2___ They ask their teachers and classmates for help. Asking questions is a good way to understand a subject. A good question brings a clear answer.",
+   "Practice makes perfect. ___3___ Read and write every day. Do exercises and check your answers. Careful students always find their mistakes and fix them.",
+   "___4___ Sleep well and eat healthy food. A happy body helps your mind work well. Keep trying, and you will study better and better."
+  ],
+  "candidates": [
+   ["A", "Being careful with your work helps a lot."],
+   ["B", "When they don't understand, they ask questions."],
+   ["C", "Good study habits make learning easy and fun."],
+   ["D", "Students also need rest and healthy food."],
+   ["E", "Watching TV all day is good for study."]
+  ],
+  "answers": {
+   "1": "C",
+   "2": "B",
+   "3": "A",
+   "4": "D"
+  }
+ },
+ "cloze": {
+  "id": "DXH2026_L10_cloze",
+  "title": "阅读短文，从每题所给的 A、B、C 三个选项中选出最佳选项",
+  "绑定": "一般现在时三单(get up→gets up/ go→goes/ have→has/ like→likes/ complete→completes)/does否定(doesn't)/非三单(they→study/ they→ask)/to+原形(understand)",
+  "paragraphs": [
+   "Tom is a middle school student. He ___1___ at seven in the morning. He ___2___ to school by bike. He ___3___ many subjects at school, such as Chinese, math and physics. Tom likes math best. He ___4___ math problems every day. He thinks math is easy and fun.",
+   "Tom ___5___ like biology because it is difficult for him. But his friend Lily ___6___ biology very much. She studies it carefully. In the afternoon, they ___7___ English with their teacher. The teacher asks them to ___8___ questions and answer them. Tom always ___9___ his homework on time.",
+   "After school, Tom practices reading in the library. He wants to ___10___ his lessons well. He works hard every day."
+  ],
+  "items": [
+   {
+    "num": 1,
+    "opts": [
+     ["A", "get up"],
+     ["B", "gets up"],
+     ["C", "getting up"]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 2,
+    "opts": [
+     ["A", "go"],
+     ["B", "goes"],
+     ["C", "going"]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "opts": [
+     ["A", "have"],
+     ["B", "has"],
+     ["C", "having"]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 4,
+    "opts": [
+     ["A", "do"],
+     ["B", "does"],
+     ["C", "doing"]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 5,
+    "opts": [
+     ["A", "don't"],
+     ["B", "doesn't"],
+     ["C", "isn't"]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 6,
+    "opts": [
+     ["A", "like"],
+     ["B", "likes"],
+     ["C", "liking"]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 7,
+    "opts": [
+     ["A", "study"],
+     ["B", "studies"],
+     ["C", "studying"]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 8,
+    "opts": [
+     ["A", "ask"],
+     ["B", "asks"],
+     ["C", "asking"]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 9,
+    "opts": [
+     ["A", "complete"],
+     ["B", "completes"],
+     ["C", "completing"]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 10,
+    "opts": [
+     ["A", "understand"],
+     ["B", "understands"],
+     ["C", "understanding"]
+    ],
+    "answer": "A"
+   }
+  ]
+ },
+ "grammar_fill": {
+  "id": "DXH2026_L10_grammar_fill",
+  "title": "从方框内选择适当的词并用其正确形式填空，使短文通顺完整（每空限填一词，每词限用一次）",
+  "绑定": "6不变形+4考语法：三单-s(like→likes, complete→completes)/does否定(do→does)/副词变形(careful→carefully)+学科名词与学习动词",
+  "word_bank": [
+   "like",
+   "easy",
+   "do",
+   "complete",
+   "careful",
+   "library",
+   "subject",
+   "do",
+   "understand",
+   "careful",
+   "begin",
+   "quick"
+  ],
+  "paragraphs": [
+   "Tom and Lily are good classmates. Tom ___1___ math very much. He thinks math is ___2___ and fun. Lily ___3___ not like physics. She thinks it is difficult. But she studies geography and biology well. She ___4___ her homework every evening.",
+   "Their teacher tells them to listen ___5___ in class. After class, they read books in the ___6___. Every ___7___ is important for their study. They work hard and ___8___ their best every day. Tom always begins his lessons at eight. He wants to ___9___ every question well. Lily is quick and ___10___ with her work."
+  ],
+  "answers": [
+   "likes",
+   "easy",
+   "does",
+   "completes",
+   "carefully",
+   "library",
+   "subject",
+   "do",
+   "understand",
+   "careful"
+  ]
+ },
+ "sa": {
+  "id": "DXH2026_L10_sa",
+  "title": "阅读下面短文，回答下列问题或按要求完成句子",
+  "绑定": "三单-s(studies, likes)/does否定(doesn't like)/why提问/翻译/学科名词",
+  "paragraphs": [
+   "I am a student at Star Middle School. My favorite subject is English, but I also like math and physics. Every morning, I go to school at seven. I study Chinese, math and physics in the morning. My classmate Anna likes geography. She says geography is fun and easy. But she doesn't like music. She thinks it is boring.",
+   "After class, I do my homework and read English books. I want to be careful with my study. I practice English every day. My teacher says, \"Practice makes perfect.\" I want to understand every lesson well."
+  ],
+  "questions": [
+   {
+    "num": 1,
+    "q": "What is the writer's favorite subject?",
+    "type": "简答",
+    "answer": "English."
+   },
+   {
+    "num": 2,
+    "q": "What subject does Anna like?",
+    "type": "简答",
+    "answer": "She likes geography."
+   },
+   {
+    "num": 3,
+    "q": "Does Anna like music?",
+    "type": "一般疑问句",
+    "answer": "No, she doesn't."
+   },
+   {
+    "num": 4,
+    "q": "Do you want to practice English every day like the writer? Why or why not?",
+    "type": "一般疑问句+Why/Why not",
+    "answer": "Yes, I do. Because practice makes perfect."
+   },
+   {
+    "num": 5,
+    "q": "将句子 \"Practice makes perfect.\" 译成中文。",
+    "type": "翻译",
+    "answer": "熟能生巧。"
+   }
+  ]
+ },
+ "writing": {
+  "id": "DXH2026_L10_writing",
+  "title": "书面表达（15 分）",
+  "prompt": "你叫 Li Hua，请用英语写一篇短文，介绍你的校园生活，包括你最喜欢的学科、你的一天安排，以及你同学 Tom 的学习习惯。",
+  "requirements": "1. 使用本课词汇（学科名、study/read/finish/have 等学习动词）与句型（一般现在时三单 -s、does 否定疑问）；2. 约 80 词；3. 条理清楚，语句通顺。",
+  "sample": "My name is Li Hua. I am a student at Sunshine Middle School. My favorite subject is math. I study math every day. My classmate Tom likes physics. He studies it very hard. Every morning, I have Chinese, math and physics. In the afternoon, we have geography and biology. Tom doesn't like biology. He thinks it is difficult. But I like it because it is interesting. After class, I finish my homework and read books in the library. Tom always completes his homework on time. We both study hard. We want to understand every subject well. School life is busy but happy."
+ },
+ "grammar_diag": {
+  "id": "DXH2026_L10_grammar",
+  "title": "语法复盘（G25 三单 -s/-es / G26 does 否定疑问 · has 特例 / G27 学科搭配动词）",
+  "mc": [
+   {
+    "num": 1,
+    "q": "Tom ___ math every day.",
+    "opts": [
+     ["A", "like"],
+     ["B", "likes"],
+     ["C", "liking"]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 2,
+    "q": "She ___ to school by bike.",
+    "opts": [
+     ["A", "go"],
+     ["B", "goes"],
+     ["C", "going"]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "He ___ like biology.",
+    "opts": [
+     ["A", "don't"],
+     ["B", "doesn't"],
+     ["C", "isn't"]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 4,
+    "q": "___ Tom study physics?",
+    "opts": [
+     ["A", "Do"],
+     ["B", "Does"],
+     ["C", "Is"]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 5,
+    "q": "Lily ___ Chinese at school.",
+    "opts": [
+     ["A", "study"],
+     ["B", "studies"],
+     ["C", "studying"]
+    ],
+    "answer": "B"
+   }
+  ],
+  "fill": [
+   {
+    "num": 6,
+    "q": "Tom ___ (have) a new book.",
+    "answer": "has"
+   },
+   {
+    "num": 7,
+    "q": "She ___ (watch) TV after school.",
+    "answer": "watches"
+   },
+   {
+    "num": 8,
+    "q": "___ (do) your sister like geography?",
+    "answer": "Does"
+   },
+   {
+    "num": 9,
+    "q": "He ___ (not like) music.",
+    "answer": "doesn't like"
+   },
+   {
+    "num": 10,
+    "q": "My classmate ___ (read) in the library.",
+    "answer": "reads"
+   }
+  ]
+ }
+}

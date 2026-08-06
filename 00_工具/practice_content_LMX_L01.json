@@ -1,0 +1,478 @@
+n{
+    "_doc": "李民宪 L01 配套练习内容（培优）· 2026-08-04。阅读A/五选四/完形取 passage_questions.json + passage_bank.json（真题母本改编）；本文件存阅读A扩写、阅读B/C、语法填空、简答翻译、书面表达、语法诊断（均含答案）。难度：培优。词汇口径：750 词矩阵 L01（10 新词 + 20 巩固）。",
+    "reading_a": {
+        "id": "LMX2026_L01_reading_a",
+        "genre": "记叙文",
+        "difficulty": "培优",
+        "word_count": 205,
+        "provenance": "真题母本改编（源：old_lessons.json L1 reading_a，扩写至培优词数）",
+        "text": "My name is Tom. I am a new student at Sunshine Middle School. Today is my first day here, and I feel a little nervous. I meet a nice boy in my class. His name is Jack. He is from China, and he speaks English very well. Jack says, \"Welcome to our school! Let me show you around.\" He takes me to the library, the playground and the dining hall. We talk about our English teacher, Miss Wang. She is kind and patient, and she helps us a lot. Jack and I become good friends now. I like my new school and my new class very much. There is nothing to worry about, and I am happy to be here.",
+        "questions": [
+            {
+                "num": 1,
+                "q": "How does Tom feel on his first day?",
+                "opts": [
+                    [
+                        "A",
+                        "A little nervous."
+                    ],
+                    [
+                        "B",
+                        "Very angry."
+                    ],
+                    [
+                        "C",
+                        "Very tired."
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 2,
+                "q": "Where is Jack from?",
+                "opts": [
+                    [
+                        "A",
+                        "China."
+                    ],
+                    [
+                        "B",
+                        "England."
+                    ],
+                    [
+                        "C",
+                        "America."
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 3,
+                "q": "What does Jack do for Tom?",
+                "opts": [
+                    [
+                        "A",
+                        "Shows him around the school."
+                    ],
+                    [
+                        "B",
+                        "Gives him a book."
+                    ],
+                    [
+                        "C",
+                        "Cooks for him."
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 4,
+                "q": "What is Miss Wang like?",
+                "opts": [
+                    [
+                        "A",
+                        "Kind and patient."
+                    ],
+                    [
+                        "B",
+                        "Strict and cold."
+                    ],
+                    [
+                        "C",
+                        "Quiet and shy."
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 5,
+                "q": "What is the passage mainly about?",
+                "opts": [
+                    [
+                        "A",
+                        "Tom's first day and new friend."
+                    ],
+                    [
+                        "B",
+                        "Tom's family."
+                    ],
+                    [
+                        "C",
+                        "Tom's teacher."
+                    ]
+                ],
+                "answer": "A"
+            }
+        ]
+    },
+    "reading_b": {
+        "id": "LMX2026_L01_reading_b",
+        "genre": "记叙文",
+        "difficulty": "培优",
+        "word_count": 210,
+        "provenance": "教师授权原创（2026-08-02）",
+        "text": "Last summer, my family went to the beach for a wonderful holiday. We stayed there for three days. The beach was clean and the sea was blue. Every morning, we played in the water and built sandcastles. My parents bought some fresh fruit for us, and we enjoyed the delicious food. In the evening, we took a walk along the beach and watched the sunset. There was nothing to worry about, and everyone was happy. I enjoyed myself very much. I want to go there again next summer with my friends.",
+        "questions": [
+            {
+                "num": 1,
+                "q": "How long did the family stay at the beach?",
+                "opts": [
+                    [
+                        "A",
+                        "Three days."
+                    ],
+                    [
+                        "B",
+                        "Two days."
+                    ],
+                    [
+                        "C",
+                        "One week."
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 2,
+                "q": "What did they do every morning?",
+                "opts": [
+                    [
+                        "A",
+                        "Played in the water and built sandcastles."
+                    ],
+                    [
+                        "B",
+                        "Went fishing."
+                    ],
+                    [
+                        "C",
+                        "Swam far away."
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 3,
+                "q": "What did parents buy?",
+                "opts": [
+                    [
+                        "A",
+                        "Fresh fruit."
+                    ],
+                    [
+                        "B",
+                        "Ice cream."
+                    ],
+                    [
+                        "C",
+                        "Toys."
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 4,
+                "q": "What does the writer want to do next summer?",
+                "opts": [
+                    [
+                        "A",
+                        "Go to the beach again with friends."
+                    ],
+                    [
+                        "B",
+                        "Stay home."
+                    ],
+                    [
+                        "C",
+                        "Visit a museum."
+                    ]
+                ],
+                "answer": "A"
+            }
+        ]
+    },
+    "reading_c": {
+        "id": "LMX2026_L01_reading_c",
+        "genre": "说明文",
+        "difficulty": "培优",
+        "word_count": 220,
+        "provenance": "教师授权原创（2026-08-02）",
+        "text": "Planning a holiday well is very important. First, choose a good place to visit. You can ask your friends for advice, or search online for wonderful places. Second, check the weather before you go. If it is rainy, remember to take an umbrella and some warm clothes. Third, make a list of things you need, such as a map, a camera and some cards. Most of us forget something, so a list helps a lot. Finally, keep your things safe and enjoy your trip. A good plan makes your holiday comfortable and full of fun.",
+        "questions": [
+            {
+                "num": 1,
+                "q": "What should you do first when planning a holiday?",
+                "opts": [
+                    [
+                        "A",
+                        "Choose a good place to visit."
+                    ],
+                    [
+                        "B",
+                        "Buy a camera."
+                    ],
+                    [
+                        "C",
+                        "Take an umbrella."
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 2,
+                "q": "Why should you check the weather before you go?",
+                "opts": [
+                    [
+                        "A",
+                        "To know what to take."
+                    ],
+                    [
+                        "B",
+                        "To find a good place."
+                    ],
+                    [
+                        "C",
+                        "To make a list."
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 3,
+                "q": "What does a list help you do?",
+                "opts": [
+                    [
+                        "A",
+                        "Remember the things you need."
+                    ],
+                    [
+                        "B",
+                        "Find a good place."
+                    ],
+                    [
+                        "C",
+                        "Keep your things safe."
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 4,
+                "q": "What is the passage mainly about?",
+                "opts": [
+                    [
+                        "A",
+                        "How to plan a holiday well."
+                    ],
+                    [
+                        "B",
+                        "How to cook food."
+                    ],
+                    [
+                        "C",
+                        "How to make friends."
+                    ]
+                ],
+                "answer": "A"
+            }
+        ]
+    },
+    "grammar_fill": {
+        "id": "LMX2026_L01_grammar_fill",
+        "title": "从方框内选择适当的词并用其正确形式填空（每空限填一词，每词限用一次）",
+        "passage": "Last weekend, I ___1___ to a beautiful town with my friends. We had a ___2___ time. We visited an old museum and ___3___ many interesting things. The weather was sunny, and there was ___4___ to worry about. I enjoyed ___5___ very much. Most of ___6___ like the trip. We took many photos and bought some ___7___. It was a ___8___ holiday, and I want to go there again.",
+        "word_bank": [
+            "go",
+            "wonderful",
+            "see",
+            "nothing",
+            "myself",
+            "we",
+            "card",
+            "fantastic",
+            "visit",
+            "something"
+        ],
+        "answers": [
+            "went",
+            "wonderful",
+            "saw",
+            "nothing",
+            "myself",
+            "us",
+            "cards",
+            "fantastic"
+        ],
+        "绑定": "五大句型·一般过去时·复合不定代词"
+    },
+    "sa": {
+        "id": "LMX2026_L01_sa",
+        "title": "阅读短文，回答问题或按要求完成句子",
+        "text": "My name is Tom. Last summer, I went to the beach with my family. We stayed there for three days. The beach was clean and the sea was blue. We played in the water and built sandcastles. My parents bought some fresh fruit for us. We enjoyed the delicious food and took a walk along the beach every evening. It was a wonderful holiday. I want to go there again next summer.",
+        "questions": [
+            {
+                "num": 1,
+                "q": "Where did Tom go last summer?",
+                "type": "简答",
+                "answer": "He went to the beach."
+            },
+            {
+                "num": 2,
+                "q": "How long did they stay there?",
+                "type": "简答",
+                "answer": "For three days."
+            },
+            {
+                "num": 3,
+                "q": "What did they do in the water?",
+                "type": "简答",
+                "answer": "They played in the water and built sandcastles."
+            },
+            {
+                "num": 4,
+                "q": "Do you want to go to the beach like Tom? Why or why not?",
+                "type": "简答",
+                "answer": "Yes, I do. Because the beach is beautiful and I can play in the water."
+            },
+            {
+                "num": 5,
+                "q": "将句子 “It was a wonderful holiday.” 译成中文。",
+                "type": "翻译",
+                "answer": "那是一个极好的假期。"
+            }
+        ]
+    },
+    "writing": {
+        "id": "LMX2026_L01_writing",
+        "title": "书面表达（15 分）",
+        "prompt": "你叫 Mike，请用英语写一篇短文，介绍你的一次假期经历或你想去的地方。",
+        "requirements": "1. 使用本课词汇与句型（一般过去时、五大句型、复合不定代词）；2. 80-100 词；3. 条理清楚，语句通顺，句式有变化。",
+        "sample": "My name is Mike. Last summer, I went to a beautiful town with my friends. We had a wonderful time. We visited an old museum and saw many interesting things. The scenery was breathtaking and the weather was sunny. We took many photos and bought some cards. I enjoyed myself very much. There was nothing to worry about, and everything was perfect. I want to go there again next summer."
+    },
+    "grammar_diag": {
+        "id": "LMX2026_L01_grammar",
+        "title": "语法诊断（五大句型 / 一般过去时 / 复合不定代词）",
+        "questions": [
+            {
+                "num": 1,
+                "q": "The sun shines. 属于哪种句型？",
+                "opts": [
+                    [
+                        "A",
+                        "SV"
+                    ],
+                    [
+                        "B",
+                        "SVO"
+                    ],
+                    [
+                        "C",
+                        "SP"
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 2,
+                "q": "We visited the museum. 属于哪种句型？",
+                "opts": [
+                    [
+                        "A",
+                        "SVO"
+                    ],
+                    [
+                        "B",
+                        "SV"
+                    ],
+                    [
+                        "C",
+                        "SP"
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 3,
+                "q": "go 的过去式是：",
+                "opts": [
+                    [
+                        "A",
+                        "went"
+                    ],
+                    [
+                        "B",
+                        "goed"
+                    ],
+                    [
+                        "C",
+                        "gone"
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 4,
+                "q": "I didn't ___ anything.",
+                "opts": [
+                    [
+                        "A",
+                        "see"
+                    ],
+                    [
+                        "B",
+                        "saw"
+                    ],
+                    [
+                        "C",
+                        "seen"
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 5,
+                "q": "Is there ___ in the box?",
+                "opts": [
+                    [
+                        "A",
+                        "anything"
+                    ],
+                    [
+                        "B",
+                        "something"
+                    ],
+                    [
+                        "C",
+                        "nothing"
+                    ]
+                ],
+                "answer": "A"
+            },
+            {
+                "num": 6,
+                "q": "用所给词的适当形式填空：We (visit) ___ the museum last week.",
+                "answer": "visited"
+            },
+            {
+                "num": 7,
+                "q": "用所给词的适当形式填空：She (be) ___ happy last week.",
+                "answer": "was"
+            },
+            {
+                "num": 8,
+                "q": "用所给词的适当形式填空：There (be) ___ something in the box.",
+                "answer": "is"
+            },
+            {
+                "num": 9,
+                "q": "用所给词的适当形式填空：Did you (go) ___ anywhere yesterday?",
+                "answer": "go"
+            },
+            {
+                "num": 10,
+                "q": "用所给词的适当形式填空：He (show) ___ us his photos yesterday.",
+                "answer": "showed"
+            }
+        ]
+    }
+}

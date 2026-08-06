@@ -1,0 +1,992 @@
+[
+  {
+    "id": "HN2026_L1_reading_a",
+    "genre": "记叙文",
+    "difficulty": "易",
+    "word_count": 70,
+    "vocab_rate": "14%",
+    "text": "My name is Tom. I am a new student at Sunshine Middle School. Today is my first day here. I meet a nice boy in my class. His name is Jack. He is from China. Jack says, \"Welcome to our school!\" We talk about our English teacher. Her name is Miss Wang. Jack and I are good friends now. I like my new school and my new class very much.",
+    "questions": [
+      {
+        "num": 1,
+        "q": "What is the boy's name?",
+        "opts": [
+          [
+            "A",
+            "Tom"
+          ],
+          [
+            "B",
+            "Jack"
+          ],
+          [
+            "C",
+            "Wang"
+          ],
+          [
+            "D",
+            "Mike"
+          ]
+        ]
+      },
+      {
+        "num": 2,
+        "q": "Where is Jack from?",
+        "opts": [
+          [
+            "A",
+            "China"
+          ],
+          [
+            "B",
+            "England"
+          ],
+          [
+            "C",
+            "America"
+          ],
+          [
+            "D",
+            "Japan"
+          ]
+        ]
+      },
+      {
+        "num": 3,
+        "q": "Who is Miss Wang?",
+        "opts": [
+          [
+            "A",
+            "Tom's mother"
+          ],
+          [
+            "B",
+            "Tom's English teacher"
+          ],
+          [
+            "C",
+            "Tom's friend"
+          ],
+          [
+            "D",
+            "Tom's sister"
+          ]
+        ]
+      },
+      {
+        "num": 4,
+        "q": "We can infer (推断) that Tom ______.",
+        "opts": [
+          [
+            "A",
+            "doesn't like school"
+          ],
+          [
+            "B",
+            "is happy at school"
+          ],
+          [
+            "C",
+            "is from America"
+          ],
+          [
+            "D",
+            "is a teacher"
+          ]
+        ]
+      },
+      {
+        "num": 5,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "Tom's family"
+          ],
+          [
+            "B",
+            "Tom's first day and new friend"
+          ],
+          [
+            "C",
+            "Tom's teacher"
+          ],
+          [
+            "D",
+            "Tom's school"
+          ]
+        ]
+      }
+    ],
+    "provenance": "真题母本改编（源：old_lessons.json L1 reading_a）"
+  },
+  {
+    "id": "HN2026_L1_reading_b",
+    "genre": "记叙文",
+    "difficulty": "中",
+    "word_count": 85,
+    "vocab_rate": "18%",
+    "text": "Hello! My name is Lucy. I am twelve years old. I am a student in Class Three, Grade Seven. My school is nice. There are many classrooms in it. Our English teacher is Miss Li. She is kind to us. I meet some new friends in my class. Their names are Anna and Bob. Anna is from China. Bob is an American boy. We help each other in class. My phone number is 138-1234-5678. I like my school life. It is a good day for me.",
+    "questions": [
+      {
+        "num": 6,
+        "q": "How old is Lucy?",
+        "opts": [
+          [
+            "A",
+            "Ten"
+          ],
+          [
+            "B",
+            "Eleven"
+          ],
+          [
+            "C",
+            "Twelve"
+          ],
+          [
+            "D",
+            "Thirteen"
+          ]
+        ]
+      },
+      {
+        "num": 7,
+        "q": "What class is Lucy in?",
+        "opts": [
+          [
+            "A",
+            "Class One"
+          ],
+          [
+            "B",
+            "Class Two"
+          ],
+          [
+            "C",
+            "Class Three"
+          ],
+          [
+            "D",
+            "Class Four"
+          ]
+        ]
+      },
+      {
+        "num": 8,
+        "q": "Where is Anna from?",
+        "opts": [
+          [
+            "A",
+            "America"
+          ],
+          [
+            "B",
+            "China"
+          ],
+          [
+            "C",
+            "England"
+          ],
+          [
+            "D",
+            "Japan"
+          ]
+        ]
+      },
+      {
+        "num": 9,
+        "q": "The underlined word \"kind\" means ______ in Chinese.",
+        "opts": [
+          [
+            "A",
+            "严厉的"
+          ],
+          [
+            "B",
+            "善良的"
+          ],
+          [
+            "C",
+            "忙碌的"
+          ],
+          [
+            "D",
+            "年轻的"
+          ]
+        ]
+      },
+      {
+        "num": 10,
+        "q": "We can infer that Lucy ______.",
+        "opts": [
+          [
+            "A",
+            "doesn't like her friends"
+          ],
+          [
+            "B",
+            "has a good day"
+          ],
+          [
+            "C",
+            "is a teacher"
+          ],
+          [
+            "D",
+            "is from America"
+          ]
+        ]
+      }
+    ],
+    "provenance": "真题母本改编（源：old_lessons.json L1 reading_b）"
+  },
+  {
+    "id": "HN2026_L1_cloze",
+    "genre": "记叙文",
+    "difficulty": "易",
+    "word_count": 66,
+    "vocab_rate": "15%",
+    "text": "My ___16___ is Tom. I am a ___17___ student at No. 1 Middle School. I am in ___18___ Two, Grade Seven. Today is my first day here. I meet a nice ___19___ in my class. ___20___ name is Jack. He ___21___ from China. Jack says, \"Welcome to ___22___ school!\" We talk about ___23___ English teacher. ___24___ name is Miss Wang. She is very kind. Jack and I ___25___ good friends now, and I like him very much.",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L1 cloze；完形母本（源题为空壳），选项题目待生成）"
+  },
+  {
+    "id": "HN2026_L1_w5",
+    "genre": "记叙文",
+    "difficulty": "中",
+    "word_count": 87,
+    "vocab_rate": "15%",
+    "text": "Hello, everyone! My name is David. I am a new student at No. 1 Middle School. ___11___ I am in Class Two, Grade Seven. My English teacher is Mr. Zhang. ___12___ He is very nice to us. He helps us with English. I have some good friends here. ___13___ Their names are Mike and Tom. We often play together after class. I like playing basketball with them. ___14___ It is my favorite sport. ___15___ I am happy to be here. I like my school, my teachers and my classmates. Welcome to my school!",
+    "questions": [
+      {
+        "num": 11,
+        "q": "（11）应填",
+        "opts": [
+          [
+            "A",
+            "He teaches us English."
+          ],
+          [
+            "B",
+            "We enjoy it very much."
+          ],
+          [
+            "C",
+            "I am new here."
+          ],
+          [
+            "D",
+            "I am in Grade Seven."
+          ],
+          [
+            "E",
+            "I like them very much."
+          ]
+        ],
+        "answer": "C"
+      },
+      {
+        "num": 12,
+        "q": "（12）应填",
+        "opts": [
+          [
+            "A",
+            "He teaches us English."
+          ],
+          [
+            "B",
+            "We enjoy it very much."
+          ],
+          [
+            "C",
+            "I am new here."
+          ],
+          [
+            "D",
+            "I am in Grade Seven."
+          ],
+          [
+            "E",
+            "I like them very much."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 13,
+        "q": "（13）应填",
+        "opts": [
+          [
+            "A",
+            "He teaches us English."
+          ],
+          [
+            "B",
+            "We enjoy it very much."
+          ],
+          [
+            "C",
+            "I am new here."
+          ],
+          [
+            "D",
+            "I am in Grade Seven."
+          ],
+          [
+            "E",
+            "I like them very much."
+          ]
+        ],
+        "answer": "E"
+      },
+      {
+        "num": 14,
+        "q": "（14）应填",
+        "opts": [
+          [
+            "A",
+            "He teaches us English."
+          ],
+          [
+            "B",
+            "We enjoy it very much."
+          ],
+          [
+            "C",
+            "I am new here."
+          ],
+          [
+            "D",
+            "I am in Grade Seven."
+          ],
+          [
+            "E",
+            "I like them very much."
+          ]
+        ],
+        "answer": "B"
+      }
+    ],
+    "provenance": "真题母本改编（源：old_lessons.json L1 w5；五选五母本（选项句存于源 w5.opts），题目待生成）",
+    "answers": {
+      "11": "C",
+      "12": "A",
+      "13": "E",
+      "14": "B"
+    },
+    "extra": "D",
+    "rationale": {
+      "11": "I am new here 是前文 new student 的最小改写，并过渡到班级信息。",
+      "12": "He 指 Mr. Zhang，teaches us English 与 English teacher 呼应。",
+      "13": "them 指前文 good friends，并自然过渡到 Mike 和 Tom。",
+      "14": "it 指 playing basketball，并与后文 favorite sport 呼应。"
+    },
+    "note": "删除原空15：It is my favorite sport. 与 I am happy to be here. 之间本身衔接自然，该空信息量最低；仅移除占位符，正文单词与标点未改动。自检：正文仅将保留的4个空规范为__(11)__—__(14)__；衔接类型依次为语义承接、代词指代、关系承接、代词指代。"
+  },
+  {
+    "id": "HN2026_L1_sa",
+    "genre": "记叙文",
+    "difficulty": "易",
+    "word_count": 63,
+    "vocab_rate": "16%",
+    "text": "My name is Kate Green. I am a student at No. 1 Middle School. I am in Class One, Grade Seven. My English teacher is Miss White. She is from England. Her phone number is 139-0000-0000. I have a good friend. His name is Tom. He is a nice boy. We help each other. I like my school very much. It is a nice place.",
+    "questions": [
+      {
+        "num": 36,
+        "q": "Who is Kate's English teacher?"
+      },
+      {
+        "num": 37,
+        "q": "Where is Miss White from?"
+      },
+      {
+        "num": 38,
+        "q": "Who is Kate's good friend?"
+      },
+      {
+        "num": 39,
+        "q": "你认为Tom是一个好朋友吗？请说明理由。"
+      }
+    ],
+    "provenance": "真题母本改编（源：old_lessons.json L1 sa）"
+  },
+  {
+    "id": "HN2026_L2_reading_a",
+    "genre": "应用文",
+    "difficulty": "易",
+    "word_count": 58,
+    "vocab_rate": "7%",
+    "text": "A Come and see our family photo album! It is big and nice. In the first picture, you can see my grandpa and grandma. They are kind. In the next picture are my father, my mother and me. Look at the little boy! That is my cute cousin. We are a happy family. Welcome to our class show!",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L2 reading_a；源题区为整卷阅读部分未切片，单篇题目待补）"
+  },
+  {
+    "id": "HN2026_L2_cloze",
+    "genre": "记叙文",
+    "difficulty": "易",
+    "word_count": 70,
+    "vocab_rate": "11%",
+    "text": "I have a nice family photo. Look! ___21___ is my father. He is tall. ___22___ is my mother. She is kind. These ___23___ my grandparents. They are old ___24___ happy. ___25___ is the little girl? She is my sister. She is very ___26___. We love each other. I am ___27___ to be in this family. Every evening, we have ___28___ together. My father ___29___ stories, and my mother sings songs. We laugh and talk. I love ___30___ family very much.",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L2 cloze；完形母本（源题为空壳），选项题目待生成）"
+  },
+  {
+    "id": "HN2026_L3_reading_a",
+    "genre": "应用文",
+    "difficulty": "易",
+    "word_count": 72,
+    "vocab_rate": "14%",
+    "text": "A Lost and Found in the School Library We found these things in the school library this week. Come and see if any are yours. A blue pencil box with two pens and a ruler. Found Monday. A white eraser with a cat picture. Found Tuesday. An English dictionary with a red cover. Found Wednesday. Call us at 8866-5533 or come to the library office. You must describe your thing before taking it.",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L3 reading_a；源题区为整卷阅读部分未切片，单篇题目待补）"
+  },
+  {
+    "id": "HN2026_L3_cloze",
+    "genre": "说明文",
+    "difficulty": "易",
+    "word_count": 68,
+    "vocab_rate": "9%",
+    "text": "This is Tom's desk. The blue pencil box is ___21___. There are two ___22___ and a ruler. The red dictionary is ___23___. ___24___ eraser is that? Is it Tom's? No, it is not ___25___. It is his ___26___ eraser. Her name is on it. Where is Tom's schoolbag? It is ___27___ the desk. There are ___28___ books in it. Tom is careful. He puts things in the ___29___ place. He says you ___30___ be careful!",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L3 cloze；完形母本（源题为空壳），选项题目待生成）"
+  },
+  {
+    "id": "HN2026_L3_sa",
+    "genre": "应用文",
+    "difficulty": "易",
+    "word_count": 70,
+    "vocab_rate": "10%",
+    "text": "Lost: My School ID Card I lost my school ID card in the library on Tuesday morning. My name is Jack Brown. The card is white and blue. It has my photo and name on it. This card is important to me. I need it to borrow books. I must find it before Friday. If you find it, call me at 139-8877-6655, or take it to the lost and found office.",
+    "questions": [
+      {
+        "num": 41,
+        "q": "What did Jack lose? ________________________________________"
+      },
+      {
+        "num": 42,
+        "q": "Where did he lose it? ________________________________________"
+      },
+      {
+        "num": 43,
+        "q": "What color is the card? ________________________________________"
+      },
+      {
+        "num": 44,
+        "q": "Why does he need to find it before Friday? ________________________________________"
+      },
+      {
+        "num": 45,
+        "q": "How can you return the card to Jack? ________________________________________"
+      }
+    ],
+    "provenance": "真题母本改编（源：old_lessons.json L3 sa）"
+  },
+  {
+    "id": "HN2026_L4_cloze",
+    "genre": "说明文",
+    "difficulty": "易",
+    "word_count": 75,
+    "vocab_rate": "7%",
+    "text": "Look at this nice photo of my home. This is my new 16. ____. It is small, 17. ____ it is very clean and tidy. My bed is 18. ____ to the window. On the bed, there is a soft blue 19. ____. My computer is on the 20. ____. Under the desk, you can see my 21. ____. I have many 22. ____, and they are all in the 23. ____. I 24. ____ clean my room on Sunday morning. It is a good 25. ____ for me to keep every day at home.",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L4 cloze；完形母本（源题为空壳），选项题目待生成）"
+  },
+  {
+    "id": "HN2026_L4_sa",
+    "genre": "说明文",
+    "difficulty": "中",
+    "word_count": 84,
+    "vocab_rate": "11%",
+    "text": "Lily is a middle school student. Her bedroom is very beautiful, clean and tidy. In her room, a warm bed is near the window. Next to the bed, there is a desk. A pink lamp is on the desk. Her clothes are in the big wardrobe. Under the chair, there is a blue soccer ball. Lily likes to read books at her desk every evening. She thinks a clean and tidy room always makes her feel very happy every single day of her life.",
+    "questions": [
+      {
+        "num": 34,
+        "q": "Where is Lily's bed? ________________________________________"
+      },
+      {
+        "num": 35,
+        "q": "What is on Lily's desk? ________________________________________"
+      },
+      {
+        "num": 36,
+        "q": "Where is the soccer ball? ________________________________________"
+      },
+      {
+        "num": 37,
+        "q": "What does Lily like to do at her desk? ________________________________________"
+      },
+      {
+        "num": 38,
+        "q": "How does a clean room make Lily feel? ________________________________________"
+      }
+    ],
+    "provenance": "真题母本改编（源：old_lessons.json L4 sa）"
+  },
+  {
+    "id": "HN2026_L6_reading_a",
+    "genre": "记叙文",
+    "difficulty": "中",
+    "word_count": 85,
+    "vocab_rate": "8%",
+    "text": "A Hello! I am Lily. I have good eating habits every day. For breakfast, I have milk and bread at home. For lunch at school, I eat rice, vegetables and chicken with my friends. For dinner, my family eat apples, bananas and oranges together. I like healthy food very much. I do not like fast food because it is not good. I drink water every day after meals. Fruit and milk help me grow tall and strong. I feel happy and healthy all the time!",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L6 reading_a；源题区为整卷阅读部分未切片，单篇题目待补）"
+  },
+  {
+    "id": "HN2026_L6_cloze",
+    "genre": "记叙文",
+    "difficulty": "中高",
+    "word_count": 149,
+    "vocab_rate": "20%",
+    "text": "I ___21___ healthy food every day because it makes me strong. For breakfast, I ___22___ milk and bread at home with my mum. I ___23___ like fast food because it is not good for my body. My mum ___24___ apples and bananas for us every week. We eat rice and ___25___ for lunch at school with friends. ___26___ dinner, we have chicken and vegetables together. I ___27___ an apple every day after school. My sister ___28___ eggs in the morning before class. We ___29___ water, not cola or juice. Good food ___30___ us strong and happy. A. like    B. likes    C. am A. have    B. has    C. drink A. don't    B. doesn't    C. am not A. like    B. likes    C. eat A. vegetable    B. vegetables    C. meats A. For    B. In    C. On A. eat    B. eats    C. has A. eat    B. eats    C. like A. drinks    B. drink    C. drinking A. make    B. makes    C. making",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L6 cloze；完形母本（源题为空壳），选项题目待生成）"
+  },
+  {
+    "id": "HN2026_L6_w5",
+    "genre": "说明文",
+    "difficulty": "中",
+    "word_count": 107,
+    "vocab_rate": "19%",
+    "text": "Eating healthy food is important for every student at school. Good food is the fuel for your body and your brain. A good breakfast helps you listen and learn in class with a clear mind. ___ We should eat fruit every day after our three meals because fruit gives us vitamins. ___ Fresh vegetables help our body grow tall and stay strong, so eat them often. ___ Drink milk for strong bones and white teeth every morning before school. ___ A good diet keeps us happy and full of energy for the whole day. Eat well, drink water often and move every day for a healthy life that you will love!",
+    "questions": [
+      {
+        "num": 11,
+        "q": "（11）应填",
+        "opts": [
+          [
+            "A",
+            "Fruit gives us vitamins."
+          ],
+          [
+            "B",
+            "We also need water every day."
+          ],
+          [
+            "C",
+            "Candy is bad for our teeth."
+          ],
+          [
+            "D",
+            "Exercise is good for us, too."
+          ],
+          [
+            "E",
+            "Cola is a good drink for health."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 12,
+        "q": "（12）应填",
+        "opts": [
+          [
+            "A",
+            "Fruit gives us vitamins."
+          ],
+          [
+            "B",
+            "We also need water every day."
+          ],
+          [
+            "C",
+            "Candy is bad for our teeth."
+          ],
+          [
+            "D",
+            "Exercise is good for us, too."
+          ],
+          [
+            "E",
+            "Cola is a good drink for health."
+          ]
+        ],
+        "answer": "B"
+      },
+      {
+        "num": 13,
+        "q": "（13）应填",
+        "opts": [
+          [
+            "A",
+            "Fruit gives us vitamins."
+          ],
+          [
+            "B",
+            "We also need water every day."
+          ],
+          [
+            "C",
+            "Candy is bad for our teeth."
+          ],
+          [
+            "D",
+            "Exercise is good for us, too."
+          ],
+          [
+            "E",
+            "Cola is a good drink for health."
+          ]
+        ],
+        "answer": "D"
+      },
+      {
+        "num": 14,
+        "q": "（14）应填",
+        "opts": [
+          [
+            "A",
+            "Fruit gives us vitamins."
+          ],
+          [
+            "B",
+            "We also need water every day."
+          ],
+          [
+            "C",
+            "Candy is bad for our teeth."
+          ],
+          [
+            "D",
+            "Exercise is good for us, too."
+          ],
+          [
+            "E",
+            "Cola is a good drink for health."
+          ]
+        ],
+        "answer": "C"
+      }
+    ],
+    "provenance": "真题母本改编（源：old_lessons.json L6 w5；五选五母本（选项句存于源 w5.opts），题目待生成）",
+    "answers": {
+      "11": "A",
+      "12": "B",
+      "13": "D",
+      "14": "C"
+    },
+    "extra": "E",
+    "rationale": {
+      "11": "fruit 与后句 fruit gives us vitamins 呼应，由早餐过渡到水果。",
+      "12": "water 与篇末 drink water often 呼应，并过渡到其他健康食物。",
+      "13": "Exercise 与篇末 move every day 呼应，构成健康习惯并列。",
+      "14": "teeth 与前句 white teeth 呼应，说明应少吃糖果。"
+    },
+    "note": "沿用原4个空位，采用任务包给出的在用范例。自检：正文只把裸空规范为__(11)__—__(14)__；衔接类型依次为主题引入、并列补充、并列补充、关键词照应。"
+  },
+  {
+    "id": "HN2026_L8_reading_a",
+    "genre": "记叙文",
+    "difficulty": "中",
+    "word_count": 108,
+    "vocab_rate": "28%",
+    "text": "A Yesterday was a busy and happy day for our family. In the morning, I packed my blue bag with clothes. I took a map, a camera and an umbrella for the trip. My mum took water and food for us. We wore red hats because the weather was sunny and warm. The bus was cheap and clean. We were happy and ready at eight. The trip started at 8 a.m. and finished at 6 p.m. We visited many places and took photos. We ate nice food on the bus. The guide was kind and funny. I bought a postcard for my friend. It was a great day!",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L8 reading_a；源题区为整卷阅读部分未切片，单篇题目待补）"
+  },
+  {
+    "id": "HN2026_L8_cloze",
+    "genre": "记叙文",
+    "difficulty": "中高",
+    "word_count": 165,
+    "vocab_rate": "32%",
+    "text": "Last summer, I ___21___ to Beijing with my family for a happy holiday by train. We ___22___ the Great Wall and walked a long way up the tall hill. It ___23___ very tall and long under the blue sky and white clouds. The weather ___24___ sunny and warm all day. We ___25___ many photos of the nice view from the top. My sister ___26___ an ice cream near the gate and smiled a lot. We ___27___ some delicious food at a small shop on the street. The happy trip ___28___ at 6 p.m. We ___29___ very happy and not tired after the long walk. It ___30___ a wonderful day for all of us to remember! A. went    B. go    C. goes A. visited    B. visit    C. visiting A. was    B. is    C. were A. was    B. is    C. were A. took    B. take    C. taking A. bought    B. buy    C. buys A. ate    B. eat    C. eats A. finished    B. finish    C. finishing A. were    B. are    C. was A. was    B. is    C. were",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L8 cloze；完形母本（源题为空壳），选项题目待生成）"
+  },
+  {
+    "id": "HN2026_L8_w5",
+    "genre": "记叙文",
+    "difficulty": "中",
+    "word_count": 132,
+    "vocab_rate": "26%",
+    "text": "We went on a school trip last month and it was a lot of fun for the whole class. A good plan before the day helps a lot to make the trip easy. ___ We visited the science museum and saw old and strange exhibits there with our eyes for the first time. ___ Our guide told us funny stories about small robots and stars in the sky. ___ We took many photos by the big door together to remember the day with joy. ___ Everyone enjoyed the trip and we went home happy and tired at night. The bus was yellow and clean, and the weather was fine and bright. We learned new things and made new friends on the way all together. Next time we want to go there again with the same smile!",
+    "questions": [
+      {
+        "num": 11,
+        "q": "（11）应填",
+        "opts": [
+          [
+            "A",
+            "The photos helped us remember the day."
+          ],
+          [
+            "B",
+            "Then we took the yellow bus to the museum."
+          ],
+          [
+            "C",
+            "We saw old and strange exhibits there."
+          ],
+          [
+            "D",
+            "There was a guide with us."
+          ],
+          [
+            "E",
+            "After listening, we went to the big door."
+          ]
+        ],
+        "answer": "B"
+      },
+      {
+        "num": 12,
+        "q": "（12）应填",
+        "opts": [
+          [
+            "A",
+            "The photos helped us remember the day."
+          ],
+          [
+            "B",
+            "Then we took the yellow bus to the museum."
+          ],
+          [
+            "C",
+            "We saw old and strange exhibits there."
+          ],
+          [
+            "D",
+            "There was a guide with us."
+          ],
+          [
+            "E",
+            "After listening, we went to the big door."
+          ]
+        ],
+        "answer": "D"
+      },
+      {
+        "num": 13,
+        "q": "（13）应填",
+        "opts": [
+          [
+            "A",
+            "The photos helped us remember the day."
+          ],
+          [
+            "B",
+            "Then we took the yellow bus to the museum."
+          ],
+          [
+            "C",
+            "We saw old and strange exhibits there."
+          ],
+          [
+            "D",
+            "There was a guide with us."
+          ],
+          [
+            "E",
+            "After listening, we went to the big door."
+          ]
+        ],
+        "answer": "E"
+      },
+      {
+        "num": 14,
+        "q": "（14）应填",
+        "opts": [
+          [
+            "A",
+            "The photos helped us remember the day."
+          ],
+          [
+            "B",
+            "Then we took the yellow bus to the museum."
+          ],
+          [
+            "C",
+            "We saw old and strange exhibits there."
+          ],
+          [
+            "D",
+            "There was a guide with us."
+          ],
+          [
+            "E",
+            "After listening, we went to the big door."
+          ]
+        ],
+        "answer": "A"
+      }
+    ],
+    "provenance": "真题母本改编（源：old_lessons.json L8 w5；五选五母本（选项句存于源 w5.opts），题目待生成）",
+    "answers": {
+      "11": "B",
+      "12": "D",
+      "13": "E",
+      "14": "A"
+    },
+    "extra": "C",
+    "rationale": {
+      "11": "Then 承接出发计划，yellow bus 与后文 The bus was yellow and clean 呼应，并引出 museum。",
+      "12": "a guide 与后句 Our guide 形成指代和信息承接。",
+      "13": "After listening 承接导游讲故事，big door 与后句 by the big door 呼应。",
+      "14": "The photos 指前句 many photos，remember the day 与前句同一目的呼应并过渡到总体感受。"
+    },
+    "note": "沿用原4个空位。自检：正文只把裸空规范为__(11)__—__(14)__；衔接类型依次为时间顺序、代词指代、时间顺序与地点照应、代词指代与总结过渡。"
+  },
+  {
+    "id": "HN2026_L13_reading_a",
+    "genre": "应用文",
+    "difficulty": "中",
+    "word_count": 124,
+    "vocab_rate": "31%",
+    "text": "A GREEN SUPERMARKET — BIG WEEKEND SALE! Come and shop with us from Friday to Sunday, June 6 to June 8. We have great deals for the whole family, with big savings on many of your favorite things. Fresh fruit and vegetables: twenty percent off every morning before nine o’clock. Milk, bread and eggs: buy two, get one free. A great choice for your family breakfast. Cooking oil and sugar: twenty percent off all week long. Special deal: spend over fifty yuan and get a free package of salt. New members can save an extra five yuan on their very first bill. We are open every day from eight in the morning to ten at night. Visit us at 28 Market Road, or call 555-0199 for more information.",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L13 reading_a；源题区为整卷阅读部分未切片，单篇题目待补）"
+  },
+  {
+    "id": "HN2026_L13_cloze",
+    "genre": "记叙文",
+    "difficulty": "中",
+    "word_count": 118,
+    "vocab_rate": "36%",
+    "text": "Last Saturday, my mom and I went to the market. She gave me a list and a budget of fifty yuan. First, we looked for vegetables. We picked some tomatoes and carrots. They were fresh and ___21___. Then we went to the meat section. Mom chose a kilo of chicken. It was a little ___22___, but good for dinner. Next, we needed some ___23___ for breakfast. Mom let me choose ___24___. I picked my ___25___ brand of pancakes. They were not ___26___, only eight yuan a bag. Mom also checked the ___27___ on the package. At the ___28___, the cashier told us the ___29___ was forty-two yuan. Mom paid with a fifty-yuan note and got eight yuan in ___30___. I was glad we had money left.",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L13 cloze；完形母本（源题为空壳），选项题目待生成）"
+  },
+  {
+    "id": "HN2026_L14_reading_a",
+    "genre": "记叙文",
+    "difficulty": "中",
+    "word_count": 133,
+    "vocab_rate": "23%",
+    "text": "A My favorite teacher is Mr. Lee. He is a tall and thin man of medium height. He has short black hair and a round face. His eyes are big and bright. He always wears a pair of glasses in class. Mr. Lee is a good teacher and a kind person. He is very popular because he is patient and funny. We all like his lessons. He often describes difficult ideas with easy examples so that every student can understand them. In my eyes, he is a handsome teacher in our school. I want to be a teacher like him when I grow up. Every morning he comes to school early and smiles at every student he meets. His neat appearance and warm smile make a good first impression on all of us.",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L14 reading_a；源题区为整卷阅读部分未切片，单篇题目待补）"
+  },
+  {
+    "id": "HN2026_L14_cloze",
+    "genre": "记叙文",
+    "difficulty": "中高",
+    "word_count": 142,
+    "vocab_rate": "30%",
+    "text": "My best friend is Linda. She is a girl of medium ___21___. She ___22___ long straight black hair and big bright eyes. Her face is ___23___ and round. Linda is not very tall, ___24___ she looks neat and energetic.\nLinda is a good student. She is also a good ___25___. She sings beautifully. ___26___ do so many students like her? ___27___ she is kind and helpful.\nWhen someone feels sad, Linda always gives a warm smile. Her smile makes people feel ___28___. She is a ___29___ girl, ___30___ we all like her. A. height    B. weight    C. color A. is    B. has    C. have A. small    B. long    C. round A. but    B. so    C. because A. singer    B. actor    C. artist A. What    B. Why    C. How A. So    B. Because    C. For A. warm    B. cold    C. sad A. big    B. tall    C. kind A. and    B. but    C. or",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L14 cloze；完形母本（源题为空壳），选项题目待生成）"
+  },
+  {
+    "id": "HN2026_L15_reading_a",
+    "genre": "应用文",
+    "difficulty": "中",
+    "word_count": 86,
+    "vocab_rate": "35%",
+    "text": "A Dear students,\nOur school trip to Green Mountain is on Saturday. Here is the weather forecast. In the morning, it is sunny and warm. The temperature is about 25 degrees. Please bring sunglasses and a hat. In the afternoon, it becomes cloudy. There is a chance of rain after 3:00 p.m. Please pack a small umbrella in your bag. The wind is mild. It is a good day for hiking. Please wear comfortable shoes and bring enough water. If you have questions, please call Mr. Wang.",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L15 reading_a；源题区为整卷阅读部分未切片，单篇题目待补）"
+  },
+  {
+    "id": "HN2026_L15_cloze",
+    "genre": "说明文",
+    "difficulty": "中高",
+    "word_count": 199,
+    "vocab_rate": "35%",
+    "text": "Sanya is a beautiful city by the sea. The weather there is warm all year. My family ___21___ to go there this summer. My mother ___22___ the weather forecast every day. She says, \"It is sunny and hot in Sanya now. The temperature is about 30 ___23___.\"\n\"Could you ___24___ me pack my swimsuit?\" I ask my sister. She is very ___25___ and helps me put clothes into my suitcase.\nWhen we arrive, it is ___26___ sunny. The sky is blue and clear. \"Would you like to go ___27___ with me?\" my father asks. We swim in the warm sea and play on the beach.\nIn the evening, the wind is ___28___. It is very comfortable. We sit outside and drink cold juice. \"___29___ a wonderful day!\" says my mother. I agree. The beautiful ___30___ makes our trip special. I hope we can visit Sanya again. A. plan    B. plans    C. planning A. check    B. checks    C. checking A. degree    B. degrees    C. degree's A. help    B. to help    C. helping A. sad    B. kind    C. angry A. real    B. really    C. very much A. swimming    B. shopping    C. hiking A. strong    B. mild    C. heavy A. What    B. How    C. What a A. scenery    B. hotel    C. raincoat",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L15 cloze；完形母本（源题为空壳），选项题目待生成）"
+  },
+  {
+    "id": "HN2026_L16_reading_a",
+    "genre": "应用文",
+    "difficulty": "中",
+    "word_count": 121,
+    "vocab_rate": "29%",
+    "text": "A Welcome to Sunshine Middle School! We have many interesting clubs for you this term. Here is some information about them. Sports Club: We play basketball, soccer, and volleyball every Tuesday and Thursday. Mr. Smith is our teacher. He is tall and strong. Come and play with us! Art Club: We draw pictures and make beautiful cards on Wednesday. Miss Li is our art teacher. She has long straight hair and she is very kind. Weather Club: We watch the weather and write reports every Monday. Mr. Brown is our teacher. He is short but very smart. Please sign up in the school office. You need to bring your student card. It is free for all students. Don't miss it!",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L16 reading_a；源题区为整卷阅读部分未切片，单篇题目待补）"
+  },
+  {
+    "id": "HN2026_L16_cloze",
+    "genre": "记叙文",
+    "difficulty": "中高",
+    "word_count": 143,
+    "vocab_rate": "27%",
+    "text": "My best friend is Lily. She is a tall girl ___21___ long straight hair. She ___22___ glasses every day. Lily is very ___23___ and she always helps me with my homework. Lily and I ___24___ in the same class. Our classroom is ___25___ the second floor. There ___26___ thirty students in our class. Our teacher, Miss Li, is very kind. She ___27___ English. Lily likes sports. She ___28___ basketball every day after school. She also likes ___29___ fruit, especially apples and bananas. She wants to be a great ___30___ when she grows up. A. has    B. with    C. have A. wear    B. wears    C. wearing A. kind    B. cold    C. boring A. am    B. is    C. are A. in    B. on    C. at A. is    B. are    C. be A. teach    B. teaches    C. teaching A. play    B. plays    C. playing A. eat    B. eating    C. eats A. teacher    B. teach    C. teachers",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L16 cloze；完形母本（源题为空壳），选项题目待生成）"
+  },
+  {
+    "id": "HN2026_L17_reading_a",
+    "genre": "应用文",
+    "difficulty": "中",
+    "word_count": 129,
+    "vocab_rate": "32%",
+    "text": "A Dear students, We are doing a survey about teenagers' daily habits. We want to know how often you exercise, what you eat, and how you spend your free time. Our results show that sixty percent of students exercise every day. Twenty percent exercise twice a week. But twenty percent hardly ever exercise. Eighty percent of students usually eat breakfast. However, forty percent sometimes eat junk food. Most students sleep about seven hours each night. We also find that fifty percent of students read books every day. Thirty percent read online sometimes. Twenty percent never read books after school. A healthy lifestyle is important for your body and mind. Please exercise regularly and eat well. Good habits give you energy for study. Thank you for your help! Mr. Wang",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L17 reading_a；源题区为整卷阅读部分未切片，单篇题目待补）"
+  },
+  {
+    "id": "HN2026_L17_cloze",
+    "genre": "记叙文",
+    "difficulty": "中高",
+    "word_count": 180,
+    "vocab_rate": "30%",
+    "text": "Lisa is a healthy girl. She ___21___ gets up at six o'clock every morning. She ___22___ for twenty minutes in the park every day. After that, she eats a healthy ___23___. She always eats fruit, eggs, and milk. She ___24___ eats junk food in the morning. Lisa always drinks water. She ___25___ eight glasses of water every day. She hardly ___26___ eats junk food. She thinks it is bad for her ___27___. She often reads books about nutrition and fitness. After school, Lisa usually plays basketball with her friends. She exercises ___28___ a week. Sometimes she reads books online in the ___29___. She usually sleeps eight hours every night. Lisa has a healthy ___30___. She is always full of energy. Her daily routine is a good example for everyone. A. usually    B. sometimes    C. never A. jogs    B. jog    C. jogging A. lunch    B. breakfast    C. dinner A. always    B. never    C. usually A. drink    B. drinks    C. drinking A. ever    B. never    C. always A. health    B. healthy    C. body A. twice    B. two    C. second A. morning    B. evening    C. afternoon A. lifestyle    B. habit    C. result",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L17 cloze；完形母本（源题为空壳），选项题目待生成）"
+  },
+  {
+    "id": "HN2026_L18_reading_a",
+    "genre": "应用文",
+    "difficulty": "中",
+    "word_count": 134,
+    "vocab_rate": "26%",
+    "text": "A Dear friends, We are doing a survey about family housework. We want to know what your family members are doing at home right now. Please answer these questions. Is your mother cooking in the kitchen? Is your father washing the car? What are your brothers or sisters doing? Are they studying or playing? Our survey shows some interesting results. Forty percent of mothers are cooking at the moment. Twenty-five percent of fathers are washing clothes. Thirty percent of children are doing homework. Only five percent are watching TV. Most families share housework. Doing housework together is fun. It helps family members talk and understand each other. Children who help with housework usually do better in school. Please share your family story with us! We want to hear from you. The Family Club",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L18 reading_a；源题区为整卷阅读部分未切片，单篇题目待补）"
+  },
+  {
+    "id": "HN2026_L18_cloze",
+    "genre": "记叙文",
+    "difficulty": "中高",
+    "word_count": 163,
+    "vocab_rate": "28%",
+    "text": "It is Sunday morning. The Wang family is very busy. Mom ___21___ in the kitchen. She is cooking a big breakfast. The food smells ___22___. Dad is sweeping the floor. He is ___23___ washing the windows. Their daughter Amy is in her room. She is ___24___ her bed and organizing her desk. She is a ___25___ girl. Their son Ben is in the ___26___. He is washing his clothes. He is ___27___ chatting with his friend online. Grandpa is resting on the sofa. He is ___28___ TV. Grandma is ___29___ next to him. She is reading a newspaper. Everyone is busy ___30___ happy. They love doing housework together as a family. A. is cooking    B. are cooking    C. cooks A. bad    B. wonderful    C. terrible A. also    B. too    C. either A. making    B. doing    C. washing A. lazy    B. tidy    C. messy A. kitchen    B. bathroom    C. garden A. too    B. also    C. either A. watching    B. seeing    C. looking A. sitting    B. standing    C. sleeping A. or    B. but    C. and",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L18 cloze；完形母本（源题为空壳），选项题目待生成）"
+  },
+  {
+    "id": "HN2026_L19_reading_a",
+    "genre": "应用文",
+    "difficulty": "中高",
+    "word_count": 161,
+    "vocab_rate": "29%",
+    "text": "A Weekend Activities Survey Dear students, we are doing a survey about your weekend activities. We want to know what you usually do on weekends. Please answer these questions. Do you go somewhere interesting? Do you plan to explore new places? Do you write a diary about your weekend? We want to hear from everyone! Our survey shows some interesting results. Fifty percent of students go somewhere fun on weekends. Thirty percent stay at home and read books. Twenty percent help with housework at home. Everyone seems to enjoy their weekend in different ways. Some students like to go abroad for their holidays. Some like to explore the city. Others just want to find somewhere quiet to rest. No one says they feel bored on weekends. Most students think their weekend is enjoyable. Please share your weekend story with us! The best story gets a prize. Write to us at the school office. We are waiting for someone special like you!",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L19 reading_a；源题区为整卷阅读部分未切片，单篇题目待补）"
+  },
+  {
+    "id": "HN2026_L19_cloze",
+    "genre": "记叙文",
+    "difficulty": "中高",
+    "word_count": 175,
+    "vocab_rate": "43%",
+    "text": "It is Sunday. Lisa is at home. She feels ___21___ because she has ___22___ to do. She looks around the house but can't find ___23___ interesting. \"I know!\" she says. \"I can plan ___24___ special. Let me explore the city today. I want to find ___25___ new and exciting.\" Lisa calls her friend Tom. \"Is ___26___ free today?\" she asks. \"I want to go somewhere fun. Do you want to come?\" Tom says yes. They meet at the bus station. Everyone ___27___ happy and excited. They explore the old town, visit a museum, and eat delicious food. In the evening, Lisa writes in her ___28___. \"Today is ___29___. There is ___30___ better than exploring with a good friend. I want to do this again.\" A. bored    B. happy    C. tired A. something    B. nothing    C. everything A. something    B. anything    C. nothing A. something    B. anything    C. nothing A. something    B. anything    C. everything A. someone    B. anyone    C. everyone A. seem    B. seems    C. seeming A. diary    B. book    C. letter A. bored    B. enjoyable    C. terrible A. something    B. nothing    C. anything",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L19 cloze；完形母本（源题为空壳），选项题目待生成）"
+  },
+  {
+    "id": "HN2026_L20_reading_a",
+    "genre": "说明文",
+    "difficulty": "中高",
+    "word_count": 165,
+    "vocab_rate": "38%",
+    "text": "A Welcome to Green Hill Town Welcome to Green Hill Town! This beautiful town sits below a green hill. The top of the hill is a short distance from the town center. You can climb the hill and see the entire town below. The old stone building at the top is a famous landmark for all tourists. On foggy mornings, the hill looks magical. Don't forget to bring an umbrella — the weather changes quickly here. You can also walk to the lake nearby. There, you will see many ducks swimming in the clear blue water. A local trader sells fresh fruit and snacks by the lake. If you feel hungry, just stop and try some. Green Hill Town is a perfect place for a short journey. Every year, thousands of tourists come here to enjoy the quiet scenery and fresh air. You can stay in a small hotel or camp by the lake. Come and explore this lovely little place with your family today!",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L20 reading_a；源题区为整卷阅读部分未切片，单篇题目待补）"
+  },
+  {
+    "id": "HN2026_L20_cloze",
+    "genre": "记叙文",
+    "difficulty": "中高",
+    "word_count": 199,
+    "vocab_rate": "39%",
+    "text": "Every weekend, Lisa ___21___ to a nearby hill with her family. They ride their bicycles for a short ___22___ to get there. The hill is not very tall, but the view at the ___23___ is always beautiful. Lisa loves to watch the ducks swim in the lake ___24___ the hill. She sometimes brings bread to feed them. Her mother always packs ___25___ food and water for the trip. Nobody feels hungry because they bring enough ___26___ to eat. On ___27___ mornings, the hill looks mysterious. Lisa remembers to bring an umbrella just in case. She ___28___ the foggy weather, but she still goes because she loves the fresh air on the hill. A local ___29___ often sells fruit at the foot of the hill. Lisa usually buys something from him. Each trip to the hill leaves her a sweet ___30___. She says the journey is always worth the time. A. go    B. goes    C. going A. distance    B. building    C. sentence A. below    B. top    C. hill A. on    B. below    C. above A. enough    B. hungry    C. entire A. umbrella    B. snacks    C. bicycle A. sunny    B. foggy    C. warm A. likes    B. dislikes    C. enjoys A. trader    B. tourist    C. guide A. memory    B. journey    C. building",
+    "questions": [],
+    "provenance": "真题母本改编（源：old_lessons.json L20 cloze；完形母本（源题为空壳），选项题目待生成）"
+  }
+]

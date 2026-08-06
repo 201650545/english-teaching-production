@@ -1,0 +1,670 @@
+{
+  "reading_a": {
+    "id": "XYJ2026_L17_reading_a",
+    "genre": "记叙文",
+    "difficulty": "中",
+    "word_count": 98,
+    "绑定": "daily routine / energy / lifestyle",
+    "paragraphs": [
+      "I am a middle school student, and I have a simple daily routine that keeps me fit. I get up at six thirty and run for twenty minutes in the park nearby. After that, I eat a healthy breakfast with milk, eggs and fruit at the table.",
+      "At school, I listen to the teacher carefully and do my homework on time each day. In the evening, I help my mother with the housework and then look at books. On weekends, I play basketball with my friends for an hour on the court.",
+      "Eighty percent of my classmates say they exercise. We all know good habits give us energy and keep our bodies strong and active. My lifestyle is not special, but it makes me happy and ready for each new day ahead."
+    ],
+    "questions": [
+      {
+        "q": "What does the writer do every morning?",
+        "opts": [
+          [
+            "A",
+            "Runs for twenty minutes."
+          ],
+          [
+            "B",
+            "Plays basketball."
+          ],
+          [
+            "C",
+            "Watches television."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "q": "What does the writer eat for breakfast?",
+        "opts": [
+          [
+            "A",
+            "Only bread."
+          ],
+          [
+            "B",
+            "Milk, eggs and fruit."
+          ],
+          [
+            "C",
+            "Hamburgers."
+          ]
+        ],
+        "answer": "B"
+      },
+      {
+        "q": "What do eighty percent of his classmates say?",
+        "opts": [
+          [
+            "A",
+            "They never run."
+          ],
+          [
+            "B",
+            "They hate fruit."
+          ],
+          [
+            "C",
+            "They exercise."
+          ]
+        ],
+        "answer": "C"
+      }
+    ]
+  },
+  "reading_b": {
+    "id": "XYJ2026_L17_reading_b",
+    "genre": "说明文",
+    "difficulty": "中",
+    "word_count": 102,
+    "绑定": "habits / sleep / healthy lifestyle",
+    "paragraphs": [
+      "Good habits are like seeds. If you plant them early, they grow into a healthy life. Exercise is one of the most important habits. It makes your body strong and your mind clear. A good breakfast gives you energy. Students who eat well get better results at school.",
+      "Enough sleep is another key habit. Children need about nine hours of sleep each night. Reading every day also helps. It builds your vocabulary and opens your mind to new ideas. Less sugar and fewer snacks keep your teeth and your weight in good shape for years.",
+      "Scientists say people with healthy habits live longer and feel happier than others do. Small daily actions, done again and again, become strong and useful habits over time. The earlier you start, the easier it is to keep a healthy lifestyle for the rest of life."
+    ],
+    "questions": [
+      {
+        "q": "What does the writer compare good habits to?",
+        "opts": [
+          [
+            "A",
+            "Stones."
+          ],
+          [
+            "B",
+            "Seeds."
+          ],
+          [
+            "C",
+            "Clouds."
+          ]
+        ],
+        "answer": "B"
+      },
+      {
+        "q": "How much sleep do children need each night?",
+        "opts": [
+          [
+            "A",
+            "About nine hours."
+          ],
+          [
+            "B",
+            "About five hours."
+          ],
+          [
+            "C",
+            "About two hours."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "q": "What does reading every day help build?",
+        "opts": [
+          [
+            "A",
+            "Muscle."
+          ],
+          [
+            "B",
+            "Teeth."
+          ],
+          [
+            "C",
+            "Vocabulary and an open mind."
+          ]
+        ],
+        "answer": "C"
+      },
+      {
+        "q": "According to scientists, what do healthy habits bring?",
+        "opts": [
+          [
+            "A",
+            "A longer and happier life."
+          ],
+          [
+            "B",
+            "More money."
+          ],
+          [
+            "C",
+            "Less sleep."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "reading_c": {
+    "id": "XYJ2026_L17_reading_c",
+    "genre": "应用文·建议",
+    "difficulty": "中",
+    "word_count": 104,
+    "绑定": "build a habit / progress",
+    "paragraphs": [
+      "Do you want to build a good habit? Here are some steps that really work for students. First, choose only one small habit. Do not try to change everything in a single day. Set a clear goal. For example, walk for fifteen minutes after dinner three times a week.",
+      "Place a note on your desk so you remember to do it every morning when you wake up. Find a friend to join you. When you exercise together, it is easier to keep going. Keep a small diary of your progress. Seeing your success makes you want to continue.",
+      "Do not give up if you miss one day. Start again the next morning and keep moving on. Good habits take time, but if you repeat the action daily, it becomes a natural part of you. Ask a friend to join you so you can help each other stay on track."
+    ],
+    "questions": [
+      {
+        "q": "What should you do first to build a habit?",
+        "opts": [
+          [
+            "A",
+            "Change everything."
+          ],
+          [
+            "B",
+            "Buy a diary."
+          ],
+          [
+            "C",
+            "Choose one small habit."
+          ]
+        ],
+        "answer": "C"
+      },
+      {
+        "q": "Why does the writer suggest finding a friend?",
+        "opts": [
+          [
+            "A",
+            "It is easier to keep going."
+          ],
+          [
+            "B",
+            "To save money."
+          ],
+          [
+            "C",
+            "To sleep more."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "q": "What should you do if you miss one day?",
+        "opts": [
+          [
+            "A",
+            "Give up."
+          ],
+          [
+            "B",
+            "Start again the next morning."
+          ],
+          [
+            "C",
+            "Eat more sugar."
+          ]
+        ],
+        "answer": "B"
+      },
+      {
+        "q": "What does keeping a diary of progress help you do?",
+        "opts": [
+          [
+            "A",
+            "It makes you want to continue."
+          ],
+          [
+            "B",
+            "It makes you forget the habit."
+          ],
+          [
+            "C",
+            "It helps you sleep early."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "w5": {
+    "id": "XYJ2026_L17_w5",
+    "title": "",
+    "paragraphs": [
+      "Exercise is good for every student, but many find it hard to keep the habit. ___1___ Choose an activity you enjoy. If you like sports, try basketball or running. ___2___ A helpful idea is to exercise with a friend. ___3___ It is easier and more fun to keep going.",
+      "Set a small goal at the start. ___4___ Do not try to do too much in the first week. Most importantly, make exercise a part of your daily plan, just like breakfast."
+    ],
+    "candidates": [
+      [
+        "A",
+        "Walking is also good if you prefer quiet time."
+      ],
+      [
+        "B",
+        "When you move together, it is easier to continue."
+      ],
+      [
+        "C",
+        "For example, walk for twenty minutes three times a week."
+      ],
+      [
+        "D",
+        "A good habit takes time, but it is worth it."
+      ],
+      [
+        "E",
+        "Here is some advice that really works."
+      ]
+    ],
+    "answers": {
+      "1": "E",
+      "2": "A",
+      "3": "B",
+      "4": "C"
+    }
+  },
+  "cloze": {
+    "id": "XYJ2026_L17_cloze",
+    "title": "阅读下面短文，从每题所给的 A、B、C 三个选项中选出最佳选项",
+    "绑定": "habits / runs / healthy / routine / percent / make / learn / grow",
+    "paragraphs": [
+      "I have a friend named Lily. She has many good ___1___. Every morning she ___2___ for twenty minutes, and that gives her energy for the day. She always eats a ___3___ breakfast with milk and fruit.",
+      "After school, she ___4___ her homework on time and then reads for half an hour. On weekends she ___5___ basketball with her classmates in the park near us. Her ___6___ is simple but healthy, and it keeps her body strong and her mind clear.",
+      "Eighty ___7___ of the students in her class say they exercise now. Lily says good habits ___8___ her happy and ready for each new day that comes. We should ___9___ from her and start one small good habit today without delay.",
+      "Small actions ___10___ into a healthy life for us all."
+    ],
+    "items": [
+      {
+        "num": 1,
+        "opts": [
+          [
+            "A",
+            "habits"
+          ],
+          [
+            "B",
+            "hobbies"
+          ],
+          [
+            "C",
+            "jobs"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "opts": [
+          [
+            "A",
+            "runs"
+          ],
+          [
+            "B",
+            "run"
+          ],
+          [
+            "C",
+            "running"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "opts": [
+          [
+            "A",
+            "healthy"
+          ],
+          [
+            "B",
+            "health"
+          ],
+          [
+            "C",
+            "healthily"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "opts": [
+          [
+            "A",
+            "finishes"
+          ],
+          [
+            "B",
+            "finish"
+          ],
+          [
+            "C",
+            "finishing"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 5,
+        "opts": [
+          [
+            "A",
+            "plays"
+          ],
+          [
+            "B",
+            "play"
+          ],
+          [
+            "C",
+            "playing"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 6,
+        "opts": [
+          [
+            "A",
+            "routine"
+          ],
+          [
+            "B",
+            "route"
+          ],
+          [
+            "C",
+            "rule"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 7,
+        "opts": [
+          [
+            "A",
+            "percent"
+          ],
+          [
+            "B",
+            "percents"
+          ],
+          [
+            "C",
+            "percentage"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 8,
+        "opts": [
+          [
+            "A",
+            "make"
+          ],
+          [
+            "B",
+            "makes"
+          ],
+          [
+            "C",
+            "making"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 9,
+        "opts": [
+          [
+            "A",
+            "learn"
+          ],
+          [
+            "B",
+            "learns"
+          ],
+          [
+            "C",
+            "learning"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 10,
+        "opts": [
+          [
+            "A",
+            "grow"
+          ],
+          [
+            "B",
+            "grows"
+          ],
+          [
+            "C",
+            "growing"
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "grammar_fill": {
+    "id": "XYJ2026_L17_grammar_fill",
+    "title": "从方框内选择适当的词并用其正确形式填空（每空限填一词，每词限用一次）",
+    "绑定": "routine / exercise / jog / body / energy / percent / lifestyle / result / television / health",
+    "word_bank": [
+      "health",
+      "body",
+      "routine",
+      "jog",
+      "lifestyle",
+      "energy",
+      "percent",
+      "result",
+      "television",
+      "exercise"
+    ],
+    "paragraphs": [
+      "A good ___1___ starts with small actions each day. ___2___ is important, so we should ___3___ every morning. It keeps our ___4___ strong and gives us ___5___ to study and play well at school. Eighty ___6___ of students with a healthy ___7___ get better ___8___ in their lessons.",
+      "We should not watch too much ___9___ in the evening before we go to bed early. Walking and playing sports give us ___10___, so let us move our bodies a little each day."
+    ],
+    "answers": [
+      "routine",
+      "exercise",
+      "jog",
+      "body",
+      "energy",
+      "percent",
+      "lifestyle",
+      "results",
+      "television",
+      "health"
+    ]
+  },
+  "sa": {
+    "id": "XYJ2026_L17_sa",
+    "title": "阅读下面短文，根据短文内容回答问题或翻译句子",
+    "绑定": "jog / healthy lifestyle / energy",
+    "paragraphs": [
+      "Ann is a healthy girl. Every morning she jogs for fifteen minutes in the park near her home. She eats a good breakfast with milk and fruit, and she never eats too much sugar. After school she does her homework on time and then looks at books for half an hour.",
+      "On weekends she plays basketball with friends. She says sports give her energy to learn. Her brother also jogs with her, and their mother is happy to see the children so active. They believe a healthy lifestyle is the best gift a family can give to growing children."
+    ],
+    "questions": [
+      {
+        "q": "How long does Ann jog every morning?",
+        "answer": "For fifteen minutes.",
+        "type": "简答"
+      },
+      {
+        "q": "What does Ann never eat too much of?",
+        "answer": "Sugar.",
+        "type": "简答"
+      },
+      {
+        "q": "What does Ann do after school?",
+        "answer": "She does her homework and looks at books for half an hour.",
+        "type": "简答"
+      },
+      {
+        "q": "Does Ann eat too much sugar?",
+        "answer": "No, she doesn't.",
+        "type": "简答"
+      },
+      {
+        "q": "将下列句子翻译成汉语：They believe a healthy lifestyle is the best gift a family can give to growing children.",
+        "answer": "他们认为健康的生活方式是家庭能给予成长中孩子的最好礼物。",
+        "type": "翻译"
+      }
+    ]
+  },
+  "writing": {
+    "id": "XYJ2026_L17_writing",
+    "title": "",
+    "prompt": "My Daily Routine",
+    "requirements": "Write about 60–80 words. Use the words you learned (routine, habit, healthy, exercise, energy). Describe your daily routine.\n· 你每天的作息\n· 你做的运动\n· 好习惯的好处",
+    "绑定": "daily routine / healthy lifestyle / energy",
+    "sample": [
+      "I have a healthy daily routine. I get up at six thirty and jog for twenty minutes every morning. A good breakfast with milk and eggs gives me energy for the day.",
+      "At school, I listen carefully and finish my homework on time. In the evening, I read books for half an hour. On weekends, I play basketball with my friends on the court.",
+      "Good habits make my body strong and my mind clear. I believe a healthy lifestyle is the best gift for a happy life."
+    ]
+  },
+  "grammar_diag": {
+    "id": "XYJ2026_L17_grammar",
+    "title": "语法复盘（教师课后诊断用 · 不计入考试）",
+    "mc": [
+      {
+        "q": "— _____ do you exercise every week? — Three times a week.",
+        "opts": [
+          [
+            "A",
+            "How often"
+          ],
+          [
+            "B",
+            "How long"
+          ],
+          [
+            "C",
+            "How much"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "q": "Eighty percent of the students _____ from Class One.",
+        "opts": [
+          [
+            "A",
+            "are"
+          ],
+          [
+            "B",
+            "is"
+          ],
+          [
+            "C",
+            "be"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "q": "She _____ breakfast at seven and then goes to school.",
+        "opts": [
+          [
+            "A",
+            "eats"
+          ],
+          [
+            "B",
+            "eat"
+          ],
+          [
+            "C",
+            "eating"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "q": "You _____ watch too much television. It is bad for your eyes.",
+        "opts": [
+          [
+            "A",
+            "shouldn't"
+          ],
+          [
+            "B",
+            "should"
+          ],
+          [
+            "C",
+            "must"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "q": "_____ is wrong with his leg, so he cannot run today.",
+        "opts": [
+          [
+            "A",
+            "Something"
+          ],
+          [
+            "B",
+            "Everything"
+          ],
+          [
+            "C",
+            "Anything"
+          ]
+        ],
+        "answer": "A"
+      }
+    ],
+    "fill": [
+      {
+        "q": "He _____ (go) jogging twice a week.",
+        "answer": "goes"
+      },
+      {
+        "q": "She is _____ (health), so she exercises every day.",
+        "answer": "healthy"
+      },
+      {
+        "q": "How often _____ (do) your sister jog? — Every morning.",
+        "answer": "does"
+      },
+      {
+        "q": "I brush my teeth _____ (two) a day.",
+        "answer": "twice"
+      },
+      {
+        "q": "We should keep _____ (we) body healthy by exercising.",
+        "answer": "our"
+      }
+    ]
+  }
+}

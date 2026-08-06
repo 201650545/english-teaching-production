@@ -1,0 +1,28 @@
+{
+  "$schema": "lesson-card/v1",
+  "_doc": "课程卡：课件/练习引擎的唯一输入。由学生简报(4行)经 derive_cards.py 自动派生，教师不逐课填写。",
+  "required": ["lesson", "student", "tier", "stage", "type", "grammar", "theme", "vocab", "phonics", "reading", "listening"],
+  "fields": {
+    "lesson": {"type": "int", "range": [1, 40], "doc": "课时序号"},
+    "student": {"type": "string", "doc": "学生姓名（关联学生规划）"},
+    "tier": {"enum": ["基础", "中等", "培优"], "doc": "难度层级"},
+    "stage": {"type": "string", "doc": "阶段锚点，如 S1(七上基础)"},
+    "type": {"enum": ["normal", "test", "sprint"], "doc": "normal=常规课 test=阶段测试 sprint=省卷冲刺"},
+    "grammar": {"type": "array", "len": 3, "item": "string", "doc": "3个语法考点；test/sprint 课为综合复盘"},
+    "theme": {"type": "string", "doc": "主题（驱动词汇/阅读/写作）"},
+    "vocab": {
+      "new_count": {"type": "int", "doc": "新词数（按学生配置，如20）"},
+      "review_count": {"type": "int", "doc": "巩固词数（前序课时滚动复现，如0或20）"},
+      "theme": {"type": "string", "doc": "选词主题（供 vocab_selector 匹配）"}
+    },
+    "phonics": {"type": "string", "doc": "自然拼读组合"},
+    "reading": {
+      "genres": {"type": "array", "doc": "A/B/C 文体（默认互异：记叙/说明/应用）"},
+      "w5": {"type": "bool", "doc": "是否含五选四（默认 true）"},
+      "vocab_rate": {"type": "string", "doc": "生词率窗口，按 tier 取 15%/17%/20%"}
+    },
+    "listening": {"type": "bool", "default": false, "doc": "听力开关（生成前必问用户）"},
+    "interactions": {"count_equals_new_knowledge_points": true, "doc": "创意组件数=新知识点数，AI按主题自选"},
+    "output": {"type": "array", "default": ["html", "docx", "outline_courseware", "outline_practice"]}
+  }
+}

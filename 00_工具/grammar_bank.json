@@ -1,0 +1,1534 @@
+{
+  "人称代词主格与宾格": {
+    "构成": "只有 you 和 it 主宾同形；he→him 加 m，she→her 变 r，其余完全变形。",
+    "例句6": [
+      "I am a student.（主格 I 做主语）",
+      "Can you help me?（宾格 me 做宾语）",
+      "She calls him every day.（主格 she 做主语，宾格 him 做宾语）"
+    ],
+    "易错5": [
+      "for he → for him（介词后用宾格）",
+      "help they → help them（动词后用宾格）",
+      "She and me are friends. → She and I are friends.（做主语用主格，且\"别人优先\"放前面）"
+    ],
+    "口诀": "主格做主语（I am, he is, she is），宾格做宾语（help me, call him, ask her）",
+    "六色卡": {
+      "用法": "只有 you 和 it 主宾同形；he→him 加 m，she→her 变 r，其余完全变形。",
+      "构成": "仅限主格/宾格，不涉及反身代词（myself/himself 留至后续综合）",
+      "易错": "for he → for him（介词后用宾格）",
+      "例句": "I am a student.（主格 I 做主语）",
+      "注意": "介词后必须用宾格：for me, with him, to her, about them（中考高频考点）",
+      "口诀": "主格做主语（I am, he is, she is），宾格做宾语（help me, call him, ask her）"
+    },
+    "中考考法": "介词后必须用宾格：for me, with him, to her, about them（中考高频考点）；动词后必须用宾格：help us, ask them, call me",
+    "stage": "S1",
+    "lesson": 1
+  },
+  "形容词性与名词性物主代词": {
+    "构成": "- 第一步记 G01 的\"主格→宾格\"（I→me, he→him, she→her） - 第二步在宾格后加一列\"形容词性物主\"（me→my, him→his, her→her） - 第三步再加一列\"名词性物主\"（my→mine, his→his, her→hers） - 名词性物主代词 = 形容词性物主代词 + s（mine 例外，yours/hers/ours/theirs 全加 s） - 只有 his 和 its 形容词性与名词性同形（不加 s）",
+    "例句6": [
+      "This is my book. That is your book.（形容词性 + 名词）",
+      "This book is mine. That book is yours.（名词性独立使用）",
+      "Her phone is red. His is blue.（His = His phone，名词性避免重复）"
+    ],
+    "易错5": [
+      "This is my. → This is mine.（无名词时用名词性）",
+      "This is mine book. → This is my book.（有名词时用形容词性）",
+      "her's → hers（名词性物主代词不加's，his 除外因为同形）"
+    ],
+    "口诀": "形容词性要加名词（my book），名词性自己当名词（The book is mine）",
+    "六色卡": {
+      "用法": "- 第一步记 G01 的\"主格→宾格\"（I→me, he→him, she→her） - 第二步在宾格后加一列\"形容词性物主\"（me→my, him→his, her→her） - 第三步再加一列\"名词性物主\"（my→mine, his→his, her→hers） - 名词性物主代词 = 形容词性物主代词 + s（mine 例外，yours/hers/ours/theirs 全加 s） - 只有 his 和 its 形容词性与名词性同形（不加 s）",
+      "构成": "仅限基础物主代词，不引入 whose 疑问代词",
+      "易错": "This is my. → This is mine.（无名词时用名词性）",
+      "例句": "This is my book. That is your book.（形容词性 + 名词）",
+      "注意": "形容词性物主代词不能单独使用，必须后接名词：my book ✅ / my ✅(❌)",
+      "口诀": "形容词性要加名词（my book），名词性自己当名词（The book is mine）"
+    },
+    "中考考法": "形容词性物主代词不能单独使用，必须后接名词：my book ✅ / my ✅(❌)；名词性物主代词单独使用，后不接名词：This is mine ✅ / This is mine book ✅(❌)；中考常考转换：my book = The book is mine",
+    "stage": "S1",
+    "lesson": 1
+  },
+  "be动词与人称搭配": {
+    "构成": "仅限现在时 be（am/is/are），不引入 was/were（留至 L8）",
+    "例句6": [
+      "I am a student. = I'm a student.",
+      "She is my friend. = She's my friend.",
+      "They are from China. = They're from China."
+    ],
+    "易错5": [
+      "I is a student. → I am a student.（I 固定搭配 am）",
+      "He are my friend. → He is my friend.（三单用 is）",
+      "They is from China. → They are from China.（复数用 are）"
+    ],
+    "口诀": "我用 am，你用 are，is 连着他她它，复数人称都用 are",
+    "六色卡": {
+      "用法": "仅限现在时 be（am/is/are），不引入 was/were（留至 L8）",
+      "构成": "仅限现在时 be（am/is/are），不引入 was/were（留至 L8）",
+      "易错": "I is a student. → I am a student.（I 固定搭配 am）",
+      "例句": "I am a student. = I'm a student.",
+      "注意": "be 动词随主语变化，不随性别变化：He is ✅ / She is ✅（he 和 she 都用 is）",
+      "口诀": "我用 am，你用 are，is 连着他她它，复数人称都用 are"
+    },
+    "中考考法": "be 动词随主语变化，不随性别变化：He is ✅ / She is ✅（he 和 she 都用 is）；复数名词做主语用 are：The students are happy.；不可数名词做主语用 is：The water is clean.",
+    "stage": "S1",
+    "lesson": 1
+  },
+  "指示代词this/that/these/those": {
+    "构成": "- 第一行记单数：this（近）→ that（远），字母 i 变 a - 第二行记复数：在单数后加 s，但 this→these（is 变 ese），that→those（at 变 ose） - this/these 指近处，that/those 指远处",
+    "例句6": [
+      "This is my father.（近处单数）",
+      "That is my mother.（远处单数）",
+      "These are my brothers.（近处复数）",
+      "Those are my sisters.（远处复数）"
+    ],
+    "易错5": [
+      "This are my father. → This is my father.（this 单数用 is）",
+      "Are these your brother? → Are these your brothers?（these 复数，名词也变复数）",
+      "Is this your father? Yes, this is. → Yes, it is.（答语用 it）"
+    ],
+    "口诀": "近处单数 this，远处单数 that；近处复数 these，远处复数 those",
+    "六色卡": {
+      "用法": "- 第一行记单数：this（近）→ that（远），字母 i 变 a - 第二行记复数：在单数后加 s，但 this→these（is 变 ese），that→those（at 变 ose） - this/these 指近处，that/those 指远处",
+      "构成": "仅限 this/that/these/those 四词指代，不引入 such 指示代词",
+      "易错": "This are my father. → This is my father.（this 单数用 is）",
+      "例句": "This is my father.（近处单数）",
+      "注意": "指示代词做主语时，单数用 is，复数用 are",
+      "口诀": "近处单数 this，远处单数 that；近处复数 these，远处复数 those"
+    },
+    "中考考法": "指示代词做主语时，单数用 is，复数用 are；回答 this/that 的疑问句时，答语用 it（不用 this/that）；回答 these/those 的疑问句时，答语用 they（不用 these/those）",
+    "stage": "S1",
+    "lesson": 2
+  },
+  "be动词否定与一般疑问": {
+    "构成": "仅限现在时 be（am/is/are）的否定和疑问，不涉及过去时（was/were 留至 L8）",
+    "例句6": [
+      "肯定：This is my photo. → 否定：This isn't my photo.",
+      "肯定：These are my parents. → 否定：These aren't my parents.",
+      "肯定：That is my uncle. → 疑问：Is that your uncle? → 回答：Yes, it is. / No, it isn't.",
+      "This is my father.",
+      "This is not my father.",
+      "This isn't my father."
+    ],
+    "易错5": [
+      "This no is my father. → This is not my father.（否定用 not，不用 no）",
+      "Is this your father? Yes, this is. → Yes, it is.（答语主语用 it）",
+      "Are not these your books? → Aren't these your books?（缩写疑问句）"
+    ],
+    "口诀": "否定加 not 紧跟 be，疑问把 be 提到主语前",
+    "六色卡": {
+      "用法": "仅限现在时 be（am/is/are）的否定和疑问，不涉及过去时（was/were 留至 L8）",
+      "构成": "仅限现在时 be（am/is/are）的否定和疑问，不涉及过去时（was/were 留至 L8）",
+      "易错": "This no is my father. → This is not my father.（否定用 not，不用 no）",
+      "例句": "肯定：This is my photo. → 否定：This isn't my photo.",
+      "注意": "否定句中 not 必须放在 be 动词之后，实义动词之前",
+      "口诀": "否定加 not 紧跟 be，疑问把 be 提到主语前"
+    },
+    "中考考法": "否定句中 not 必须放在 be 动词之后，实义动词之前；一般疑问句将 be 动词提到句首，首字母大写；否定回答不能用缩写：No, it isn't. ✅ / No, it's not. ✅ / No, it is not. ✅",
+    "stage": "S1",
+    "lesson": 2
+  },
+  "Who问身份": {
+    "构成": "仅限 Who 引导的疑问句，不引入 Whose（谁的）和 Whom（宾格谁）",
+    "例句6": [
+      "Who is this? — This is my brother, Tom.",
+      "Who are they? — They are my grandparents.",
+      "Who is that girl? — She is my cousin, Lily.",
+      "Who is that man?",
+      "Who are those people?",
+      "Who is Lily?"
+    ],
+    "易错5": [
+      "Who is that? That is my father. → He is my father.（回答用 He/She）",
+      "Who are they? They are teacher. → They are teachers.（复数主语配复数名词）",
+      "Who is she? She name is Lily. → Her name is Lily.（用形容词性物主代词）"
+    ],
+    "口诀": "Who 问\"是谁\"，回答用主格 + be + 身份/称呼",
+    "六色卡": {
+      "用法": "仅限 Who 引导的疑问句，不引入 Whose（谁的）和 Whom（宾格谁）",
+      "构成": "仅限 Who 引导的疑问句，不引入 Whose（谁的）和 Whom（宾格谁）",
+      "易错": "Who is that? That is my father. → He is my father.（回答用 He/She）",
+      "例句": "Who is this? — This is my brother, Tom.",
+      "注意": "Who 问人，What 问事物，Where 问地点",
+      "口诀": "Who 问\"是谁\"，回答用主格 + be + 身份/称呼"
+    },
+    "中考考法": "Who 问人，What 问事物，Where 问地点；Who is...? 的回答可以用人名或身份：He is Tom. / He is my father.；Who is this/that? 回答用 He/She（不用 This/That）",
+    "stage": "S1",
+    "lesson": 2
+  },
+  "名词所有格's与of": {
+    "构成": "- 第一步判断\"有无生命\"：有生命用 's，无生命用 of - 第二步判断\"复数结尾\"：复数以 s 结尾只加撇号（'），不以 s 结尾照加 's - 第三步判断\"并列归属\"：各自拥有分别加，共同拥有加一个",
+    "例句6": [
+      "This is Tom's pen.（Tom 的钢笔，有生命加 's）",
+      "The legs of the table are short.（桌子的腿，无生命用 of，倒装翻译为\"桌子的腿\"）",
+      "The students' schoolbags are in the library.（学生们的书包，复数 s 结尾只加撇号）",
+      "Tom's pen, my father's car",
+      "the students' books, the teachers' room",
+      "children's books, men's room"
+    ],
+    "易错5": [
+      "the table's leg → the leg of the table（无生命名词不用 's）",
+      "the students's books → the students' books（以 s 结尾复数只加撇号）",
+      "Tom and Jack's pens（各自拥有） → Tom's and Jack's pens（各自拥有需分别加 's）"
+    ],
+    "口诀": "有生命加 's（Tom's book），无生命用 of（the leg of the table）",
+    "六色卡": {
+      "用法": "- 第一步判断\"有无生命\"：有生命用 's，无生命用 of - 第二步判断\"复数结尾\"：复数以 s 结尾只加撇号（'），不以 s 结尾照加 's - 第三步判断\"并列归属\"：各自拥有分别加，共同拥有加一个",
+      "构成": "仅限 's 和 of 两种所有格，不引入双重所有格（a friend of mine / a friend of my father's 留至后续综合）",
+      "易错": "the table's leg → the leg of the table（无生命名词不用 's）",
+      "例句": "This is Tom's pen.（Tom 的钢笔，有生命加 's）",
+      "注意": "'s 所有格用于人、动物、时间、国家等有生命名词：Tom's book, a dog's tail, today's news, China's capital",
+      "口诀": "有生命加 's（Tom's book），无生命用 of（the leg of the table）"
+    },
+    "中考考法": "'s 所有格用于人、动物、时间、国家等有生命名词：Tom's book, a dog's tail, today's news, China's capital；of 所有格用于无生命名词：the door of the room, the name of the school；of 所有格翻译要倒装：the key of the box = 盒子的钥匙（of 后的词在中文里在前）；时间名词习惯用",
+    "stage": "S1",
+    "lesson": 3
+  },
+  "基数词与编号表达": {
+    "构成": "仅限基数词 1-100，不引入序数词（first/second/third 留至后续综合）",
+    "例句6": [
+      "I have two pens and three rulers.（数词 + 复数名词）",
+      "There are twenty students in the library.（数词 + 复数名词）",
+      "Call me at one three eight, zero zero zero, zero zero zero.（电话号码逐位读）",
+      "one, two, three... twelve",
+      "thirteen, fourteen, fifteen... nineteen",
+      "twenty, thirty, forty... ninety"
+    ],
+    "易错5": [
+      "five book → five books（大于 1 用复数）",
+      "fourty → forty（40 拼写无 u）",
+      "two hundreds books → two hundred books（hundred 前有数词时不加 s）"
+    ],
+    "口诀": "1-12 各不同，13-19 都加 teen，20-90 整十加 ty，几十几用连字符",
+    "六色卡": {
+      "用法": "仅限基数词 1-100，不引入序数词（first/second/third 留至后续综合）",
+      "构成": "仅限基数词 1-100，不引入序数词（first/second/third 留至后续综合）",
+      "易错": "five book → five books（大于 1 用复数）",
+      "例句": "I have two pens and three rulers.（数词 + 复数名词）",
+      "注意": "基数词修饰名词时，名词随数词变化：one book（单数）/ two books（复数）",
+      "口诀": "1-12 各不同，13-19 都加 teen，20-90 整十加 ty，几十几用连字符"
+    },
+    "中考考法": "基数词修饰名词时，名词随数词变化：one book（单数）/ two books（复数）；电话号码、房间号、年份用基数词逐位读：138 → one three eight；hundred 前有数词时不加 s：two hundred books ✅ / two hundreds books ✗",
+    "stage": "S1",
+    "lesson": 3
+  },
+  "Where问位置": {
+    "构成": "- in = \"进\"——进入容器里面 - on = \"昂\"——昂头看到桌面上 - under = \"下的\"——在下面",
+    "例句6": [
+      "Where is my eraser? — It is under the book.（Where 问位置 + under 方位）",
+      "There is a dictionary on the desk.（There is + 单数名词）",
+      "There are three pens in my pencil box.（There are + 复数名词 + in 方位）",
+      "Where is my pen?",
+      "Where are my keys?",
+      "Where is Tom?"
+    ],
+    "易错5": [
+      "Where is my pen? — It is desk. → It is on the desk.（必须用介词 + 名词）",
+      "There is two books on the desk. → There are two books on the desk.（复数用 are）",
+      "There are a pen and a ruler. → There is a pen and a ruler.（就近原则，最近的 pen 是单数用 is）"
+    ],
+    "口诀": "Where 问\"在哪里\"，in/on/under 答方位；There is 接单数，There are 接复数",
+    "六色卡": {
+      "用法": "- in = \"进\"——进入容器里面 - on = \"昂\"——昂头看到桌面上 - under = \"下的\"——在下面",
+      "构成": "仅限基础方位介词 in/on/under，不引入 behind/next to/in front of/between...and（留至 L4 G12）",
+      "易错": "Where is my pen? — It is desk. → It is on the desk.（必须用介词 + 名词）",
+      "例句": "Where is my eraser? — It is under the book.（Where 问位置 + under 方位）",
+      "注意": "There is 接单数/不可数名词，There are 接复数名词",
+      "口诀": "Where 问\"在哪里\"，in/on/under 答方位；There is 接单数，There are 接复数"
+    },
+    "中考考法": "There is 接单数/不可数名词，There are 接复数名词；Where 问位置，回答必须用介词短语（in/on/under + 名词），不能只答地点名词；There be 句型就近原则：There is a pen and two books on the desk.（be 由最近的主语 pen 决定用 is）",
+    "stage": "S1",
+    "lesson": 3
+  },
+  "名词单复数变化": {
+    "构成": "本课 20 词中，8 个可数名词全部适用规则 1（直接加 s），无一例外。介词（under/on/in/behind/next）、形容词（tidy/messy/clean）、副词（always/everywhere）、连词（but）、动词（keep）不变复数。",
+    "例句6": [
+      "I have two rooms.（room→rooms，直接加 s）",
+      "There are three boxes on the table.（box→boxes，加 es）",
+      "She has two dictionaries.（dictionary→dictionaries，去 y 加 ies）",
+      "room→rooms, book→books, pen→pens",
+      "box→boxes, watch→watches, bus→buses",
+      "family→families, dictionary→dictionaries"
+    ],
+    "易错5": [
+      "boxs → boxes（x 结尾加 es）",
+      "dictionarys → dictionaries（辅音+y 去 y 加 ies）",
+      "boys → boys（元音+y 直接加 s，不要误改）"
+    ],
+    "口诀": "直加 s 最常见，遇 s/x/sh/ch 加 es，辅音+y 去 y 加 ies",
+    "六色卡": {
+      "用法": "本课 20 词中，8 个可数名词全部适用规则 1（直接加 s），无一例外。介词（under/on/in/behind/next）、形容词（tidy/messy/clean）、副词（always/everywhere）、连词（but）、动词（keep）不变复数。",
+      "构成": "仅限规则变化，不引入不规则复数（man→men/child→children 留至 L11）",
+      "易错": "boxs → boxes（x 结尾加 es）",
+      "例句": "I have two rooms.（room→rooms，直接加 s）",
+      "注意": "中考常考 -es 变化：box, bus, watch, brush, class（以 s/x/sh/ch 结尾加 es）",
+      "口诀": "直加 s 最常见，遇 s/x/sh/ch 加 es，辅音+y 去 y 加 ies"
+    },
+    "中考考法": "中考常考 -es 变化：box, bus, watch, brush, class（以 s/x/sh/ch 结尾加 es）；中考常考 -ies 变化：family, dictionary, strawberry, library（辅音+y 去 y 加 ies）；元音+y 直接加 s 是高频陷阱：boy→boys ✅ / boies ❌",
+    "stage": "S1",
+    "lesson": 4
+  },
+  "tidy/messy等房间形容词": {
+    "构成": "仅限原级，严禁比较级（-er/more）和最高级（-est/most）",
+    "例句6": [
+      "This is a tidy room.（tidy 作定语，修饰 room）",
+      "The room is tidy.（tidy 作表语，跟在 is 后）",
+      "My desk is clean and big.（clean 和 big 作表语，跟在 is 后）",
+      "a tidy room, a clean desk, a big table",
+      "The room is tidy. The desk is clean."
+    ],
+    "易错5": [
+      "This is a room tidy. → This is a tidy room.（定语在名词前）",
+      "The room tidy. → The room is tidy.（表语需要 be 动词）",
+      "The room is a tidy. → The room is tidy.（表语不加 a/an）"
+    ],
+    "口诀": "定语在前修饰名（a tidy room），表语在后跟 be 动（The room is tidy）",
+    "六色卡": {
+      "用法": "仅限原级，严禁比较级（-er/more）和最高级（-est/most）",
+      "构成": "仅限原级，严禁比较级（-er/more）和最高级（-est/most）",
+      "易错": "This is a room tidy. → This is a tidy room.（定语在名词前）",
+      "例句": "This is a tidy room.（tidy 作定语，修饰 room）",
+      "注意": "定语位置：形容词必须在名词前——a tidy room ✅ / a room tidy ❌",
+      "口诀": "定语在前修饰名（a tidy room），表语在后跟 be 动（The room is tidy）"
+    },
+    "中考考法": "定语位置：形容词必须在名词前——a tidy room ✅ / a room tidy ❌；表语位置：形容词必须在 be 动词后——The room is tidy ✅ / The room tidy is ❌；多个形容词并列：a clean and tidy room（用 and 连接）；中考常考转换：a tidy room = The room is tidy",
+    "stage": "S1",
+    "lesson": 4
+  },
+  "房间介词与There be": {
+    "构成": "扩展方位介词，不引入 above/below（留至后续综合）",
+    "例句6": [
+      "The book is on the desk.（书在桌子上）",
+      "The cat is under the bed.（猫在床下）",
+      "The sofa is next to the window.（沙发紧挨着窗户）",
+      "The TV is between the bookcase and the door.（电视在书柜和门之间）",
+      "in the room, in the box",
+      "on the desk, on the wall"
+    ],
+    "易错5": [
+      "on wall → on the wall（方位介词后必须加 the）",
+      "next the desk → next to the desk（next to 是固定短语，不能省 to）",
+      "between the desk the bed → between the desk and the bed（between...and 缺一不可）"
+    ],
+    "口诀": "in 里面 on 上面，under 下面 behind 后；next to 紧挨着，between...and 夹中间",
+    "六色卡": {
+      "用法": "扩展方位介词，不引入 above/below（留至后续综合）",
+      "构成": "扩展方位介词，不引入 above/below（留至后续综合）",
+      "易错": "on wall → on the wall（方位介词后必须加 the）",
+      "例句": "The book is on the desk.（书在桌子上）",
+      "注意": "in vs. on：in 强调\"在里面\"（in the drawer），on 强调\"在表面\"（on the desk）",
+      "口诀": "in 里面 on 上面，under 下面 behind 后；next to 紧挨着，between...and 夹中间"
+    },
+    "中考考法": "in vs. on：in 强调\"在里面\"（in the drawer），on 强调\"在表面\"（on the desk）；next to vs. near：next to = 紧挨着（零距离），near = 附近（有距离）；in front of vs. in the front of：in front of = 在外部前方，in the front of = 在内部前方",
+    "stage": "S1",
+    "lesson": 4
+  },
+  "祈使句基础": {
+    "构成": "祈使句主语 you 通常省略；动词必须用原形，不加 -s/-es；否定一律用 Don't + 原形，不用 Doesn't/Don't to。",
+    "例句6": [
+      "Play sports every day.（肯定祈使，动词原形开头）",
+      "Don't watch TV in bed.（否定祈使，Don't + 原形）",
+      "Please pass the ball to me.（礼貌祈使，Please + 原形）",
+      "Play basketball.",
+      "Watch TV.",
+      "Listen to me."
+    ],
+    "易错5": [
+      "Don't to play soccer. → Don't play soccer.（Don't 后直接加原形，不加 to）",
+      "Plays basketball after class. → Play basketball after class.（祈使句用原形，不加 -s）",
+      "Not watch TV. → Don't watch TV.（否定祈使必须用 Don't，不用 Not）",
+      "Please you open the door. → Please open the door.（祈使句省略主语 you）"
+    ],
+    "口诀": "祈使句无主语，动词原形打头阵；肯定 Do 开头，否定 Don't 加原形",
+    "六色卡": {
+      "用法": "祈使句主语 you 通常省略；动词必须用原形，不加 -s/-es；否定一律用 Don't + 原形，不用 Doesn't/Don't to。",
+      "构成": "仅限肯定/否定祈使（Do/Don't），不引入 Let's 句型（Let's... 留至 L6 综合操练）",
+      "易错": "Don't to play soccer. → Don't play soccer.（Don't 后直接加原形，不加 to）",
+      "例句": "Play sports every day.（肯定祈使，动词原形开头）",
+      "注意": "祈使句首字母必须大写：Play ✅ / play ❌（句首）",
+      "口诀": "祈使句无主语，动词原形打头阵；肯定 Do 开头，否定 Don't 加原形"
+    },
+    "中考考法": "祈使句首字母必须大写：Play ✅ / play ❌（句首）；否定祈使句统一用 Don't，不分人称：Don't play ✅ / Doesn't play ❌（祈使句无第三人称）；please 位置灵活：Please sit down. = Sit down, please.",
+    "stage": "S1",
+    "lesson": 5
+  },
+  "What特殊疑问句": {
+    "构成": "What 单独提问泛指\"什么东西\"；What + 名词提问限定类别（What sports 限定运动类）。疑问句中动词用原形，借助 do/does 提前。",
+    "例句6": [
+      "What sports do you like?（What + 名词复数 + do + 主语 + 原形）",
+      "What do you watch on TV?（What 单独 + do + 主语 + 原形）",
+      "What is your favorite team?（What + is + 主语，be 动词句型）",
+      "What do you like?",
+      "What do you play?",
+      "What sports do you like?"
+    ],
+    "易错5": [
+      "What sport do you likes? → What sports do you like?（疑问句主语 you 后动词用原形）",
+      "What you like? → What do you like?（缺助动词 do）",
+      "What sports does you like? → What sports do you like?（主语 you 用 do 不用 does）",
+      "What sports do you like? —Yes, I do. → —I like basketball.（特殊疑问句不用 Yes/No 回答）"
+    ],
+    "口诀": "What 开头问什么，名词可跟在 What 后；助动词 do/does 跟着走，主语之后动词原形走",
+    "六色卡": {
+      "用法": "What 单独提问泛指\"什么东西\"；What + 名词提问限定类别（What sports 限定运动类）。疑问句中动词用原形，借助 do/does 提前。",
+      "构成": "仅限 What 基本句型，不引入 What color / What time / What day 等细分疑问词（留至 L7–L8 综合扩展）",
+      "易错": "What sport do you likes? → What sports do you like?（疑问句主语 you 后动词用原形）",
+      "例句": "What sports do you like?（What + 名词复数 + do + 主语 + 原形）",
+      "注意": "What sports vs. What sport：提问多种运动用复数 What sports；提问一种用 What sport（中考常考复数形式）",
+      "口诀": "What 开头问什么，名词可跟在 What 后；助动词 do/does 跟着走，主语之后动词原形走"
+    },
+    "中考考法": "What sports vs. What sport：提问多种运动用复数 What sports；提问一种用 What sport（中考常考复数形式）；What 单独 vs. What + 名词：What do you like?（泛指任何事物）vs. What sports do you like?（限定运动类）；疑问句必须借助助动词 do/does：What do you like? ✅ / ",
+    "stage": "S1",
+    "lesson": 5
+  },
+  "like的用法": {
+    "构成": "like 后接名词时不加 to；like 后接动词时本课只教 to do 形式。to do 结构首次接触，是\"动词 + to + 动词原形\"的入门，为 L6 want to do、L13 would like to do 螺旋上升奠基。",
+    "例句6": [
+      "I like basketball.（like + 名词单数）",
+      "I like sports.（like + 名词复数）",
+      "I like to play basketball after class.（like + to do）",
+      "We like to watch TV on weekends.（like + to do，复数主语）",
+      "I like basketball.",
+      "I like sports."
+    ],
+    "易错5": [
+      "I like play basketball. → I like to play basketball.（like 后接动词必须加 to，本课只教 to do）",
+      "I like to basketball. → I like basketball.（like 后接名词不加 to）",
+      "I likes sports. → I like sports.（主语 I 用原形 like，不加 s）",
+      "I like to playing basketball. → I like to play basketball.（to 后接动词原形，不接 -ing）"
+    ],
+    "口诀": "like 接名词喜欢物，like to do 喜欢做；名词复数表习惯，to do 首次来相识",
+    "六色卡": {
+      "用法": "like 后接名词时不加 to；like 后接动词时本课只教 to do 形式。to do 结构首次接触，是\"动词 + to + 动词原形\"的入门，为 L6 want to do、L13 would like to do 螺旋上升奠基。",
+      "构成": "仅限 like + 名词 / like + to do，不引入 like doing 形式（留至 L8–L9 综合对比 like to do vs. like doing）；to do 结构首次接触，不展开 want to do / would like to do（留至 L6、L13 螺旋）",
+      "易错": "I like play basketball. → I like to play basketball.（like 后接动词必须加 to，本课只教 to do）",
+      "例句": "I like basketball.（like + 名词单数）",
+      "注意": "like + 名词 vs. like to do：like basketball（喜欢篮球这项运动）vs. like to play basketball（喜欢打篮球这个动作）",
+      "口诀": "like 接名词喜欢物，like to do 喜欢做；名词复数表习惯，to do 首次来相识"
+    },
+    "中考考法": "like + 名词 vs. like to do：like basketball（喜欢篮球这项运动）vs. like to play basketball（喜欢打篮球这个动作）；like + 名词复数表习惯喜好：I like sports.（习惯性喜欢运动）；like + to do 表具体行为：I like to watch this game.（具体某次行为）；三单变化：He/She like",
+    "stage": "S1",
+    "lesson": 5
+  },
+  "一般现在时实义动词": {
+    "构成": "仅限非三单主语（I/you/we/they/复数名词），三单（he/she/it/单数名词）留至 L10（G25 三单 -s/-es 变化 + G26 does/doesn't 否定疑问）",
+    "例句6": [
+      "I eat an apple every day.（I 做主语，eat 用原形）",
+      "We like vegetables.（we 做主语，like 用原形）",
+      "They don't drink milk.（they 做主语，否定用 don't + 原形 drink）",
+      "Do you want breakfast?（you 做主语，疑问用 Do + 原形 want）",
+      "I like apples.",
+      "We eat rice."
+    ],
+    "易错5": [
+      "I don't likes apples. → I don't like apples.（don't 后动词用原形）",
+      "Do you wants rice? → Do you want rice?（Do 后动词用原形）",
+      "I not like milk. → I don't like milk.（否定用 don't，不用 not 直接否定实义动词）",
+      "Are you like chicken? → Do you like chicken?（实义动词疑问用 Do，不用 Are）"
+    ],
+    "口诀": "我你我们和他们，动词原形不变化；否定 don't 加原形，疑问 Do 开头加原形",
+    "六色卡": {
+      "用法": "仅限非三单主语（I/you/we/they/复数名词），三单（he/she/it/单数名词）留至 L10（G25 三单 -s/-es 变化 + G26 does/doesn't 否定疑问）",
+      "构成": "仅限非三单主语（I/you/we/they/复数名词），三单（he/she/it/单数名词）留至 L10（G25 三单 -s/-es 变化 + G26 does/doesn't 否定疑问）",
+      "易错": "I don't likes apples. → I don't like apples.（don't 后动词用原形）",
+      "例句": "I eat an apple every day.（I 做主语，eat 用原形）",
+      "注意": "don't = do not，口语和书面语中常用缩写形式 don't",
+      "口诀": "我你我们和他们，动词原形不变化；否定 don't 加原形，疑问 Do 开头加原形"
+    },
+    "中考考法": "don't = do not，口语和书面语中常用缩写形式 don't；否定句和疑问句中，动词必须用原形（不能加 -s/-es）——中考高频考点；don't 的位置：主语之后、动词之前（I don't like... ✅ / I like don't... ❌）；实义动词否定不能借助 be 动词：I am not like... ❌ / I don't like... ✅",
+    "stage": "S2",
+    "lesson": 6
+  },
+  "want/like表达": {
+    "构成": "仅限基础分类，不引入量词搭配（a cup of, two bowls of 留至 L12/G32）",
+    "例句6": [
+      "I like apples.（可数名词泛指用复数）",
+      "She drinks milk.（不可数名词不变复数）",
+      "We eat rice for lunch.（不可数名词直接用）",
+      "I eat two eggs every morning.（可数名词可数，用复数）",
+      "I like apples.",
+      "I eat two eggs."
+    ],
+    "易错5": [
+      "I like apple. → I like apples.（可数名词泛指用复数）",
+      "I drink milks. → I drink milk.（不可数名词不变复数）",
+      "I eat a rice. → I eat rice.（不可数名词不加 a，量词留至 L12）",
+      "I like tomatos. → I like tomatoes.（以 o 结尾加 -es）",
+      "I like strawberry. → I like strawberries.（辅音+y 去 y 加 ies）"
+    ],
+    "口诀": "能数有复数（apples, eggs），不能数没复数（milk, rice, bread）",
+    "六色卡": {
+      "用法": "仅限基础分类，不引入量词搭配（a cup of, two bowls of 留至 L12/G32）",
+      "构成": "仅限基础分类，不引入量词搭配（a cup of, two bowls of 留至 L12/G32）",
+      "易错": "I like apple. → I like apples.（可数名词泛指用复数）",
+      "例句": "I like apples.（可数名词泛指用复数）",
+      "注意": "可数名词单数不能\"裸奔\"：an apple ✅ / apple ❌（需冠词 a/an 或变复数）",
+      "口诀": "能数有复数（apples, eggs），不能数没复数（milk, rice, bread）"
+    },
+    "中考考法": "可数名词单数不能\"裸奔\"：an apple ✅ / apple ❌（需冠词 a/an 或变复数）；不可数名词没有复数形式：milks ❌ / rices ❌ / breads ❌；可数名词泛指用复数：I like apples. ✅ / I like apple. ❌；不可数名词泛指直接用：I like milk. ✅ / I like milks. ❌；中考常考陷阱：tomato→tomatoe",
+    "stage": "S2",
+    "lesson": 6
+  },
+  "食物可数与不可数": {
+    "构成": "仅限 want to do 基础结构（非三单），不引入 would like to do（留至 L13/G34）；三单 wants to do 留至 L10（G25/G26）",
+    "例句6": [
+      "I want to eat an apple.（want to + eat 原形）",
+      "We want to drink milk.（want to + drink 原形）",
+      "They don't want to have breakfast.（否定 don't want to + have 原形）",
+      "Do you want to eat rice for lunch?（疑问 Do + want to + eat 原形）",
+      "I want to eat an apple.",
+      "I want an apple."
+    ],
+    "易错5": [
+      "I want eat apple. → I want to eat an apple.（want 后加 to）",
+      "I want to eating rice. → I want to eat rice.（to 后用动词原形）",
+      "I want to apples. → I want apples. / I want to eat apples.（want sth. 或 want to do）"
+    ],
+    "口诀": "want 后接 to do，想要做某事；想要某物直接接，want sth. 要记牢",
+    "六色卡": {
+      "用法": "仅限 want to do 基础结构（非三单），不引入 would like to do（留至 L13/G34）；三单 wants to do 留至 L10（G25/G26）",
+      "构成": "仅限 want to do 基础结构（非三单），不引入 would like to do（留至 L13/G34）；三单 wants to do 留至 L10（G25/G26）",
+      "易错": "I want eat apple. → I want to eat an apple.（want 后加 to）",
+      "例句": "I want to eat an apple.（want to + eat 原形）",
+      "注意": "want to do vs. want doing：want 后必须接 to do（不定式），不能接 doing",
+      "口诀": "want 后接 to do，想要做某事；想要某物直接接，want sth. 要记牢"
+    },
+    "中考考法": "want to do vs. want doing：want 后必须接 to do（不定式），不能接 doing；✅ I want to eat. / ❌ I want eating.；want sth. vs. want to do：想要某物用 want sth.，想要做某事用 want to do；✅ I want an apple.（想要苹果）/ ✅ I want to eat an app",
+    "stage": "S2",
+    "lesson": 6
+  },
+  "一般过去时was/were": {
+    "构成": "- am → was（I 专用） - is → was（三单专用） - are → were（you / 复数专用） - 一句话：现在时的 is/am 都变 was，现在时的 are 变 were",
+    "例句6": [
+      "I was at home yesterday.（I 用 was）",
+      "She was happy last night.（三单用 was）",
+      "They were at the beach last weekend.（复数用 were）",
+      "The weather wasn't good. = The weather was not good.（否定缩写）",
+      "We weren't tired after the trip. = We were not tired.（否定缩写）"
+    ],
+    "易错5": [
+      "I were at home. → I was at home.（I 固定用 was）",
+      "He were happy. → He was happy.（三单用 was）",
+      "They was at school. → They were at school.（复数用 were）",
+      "You was tired. → You were tired.（you 永远用 were）"
+    ],
+    "口诀": "单数 was，复数 were，I 用 was 记心怀；否定 was/were 加 not，缩略 wasn't/weren't 来",
+    "六色卡": {
+      "用法": "- am → was（I 专用） - is → was（三单专用） - are → were（you / 复数专用） - 一句话：现在时的 is/am 都变 was，现在时的 are 变 were",
+      "构成": "仅限 be 过去式（was/were），不引入实义动词过去时（留至 G20），不引入 there was/there were 句型（留至综合课）",
+      "易错": "I were at home. → I was at home.（I 固定用 was）",
+      "例句": "I was at home yesterday.（I 用 was）",
+      "注意": "主谓一致是中考高频考点：I was ✅ / I were ❌（I 永远配 was）",
+      "口诀": "单数 was，复数 were，I 用 was 记心怀；否定 was/were 加 not，缩略 wasn't/weren't 来"
+    },
+    "中考考法": "主谓一致是中考高频考点：I was ✅ / I were ❌（I 永远配 was）；单复数名词决定 was/were：The book was ✅ / The books were ✅；缩写形式常考：wasn't = was not，weren't = were not",
+    "stage": "S2",
+    "lesson": 8
+  },
+  "一般过去时did": {
+    "构成": "- 第一步：看时间状语——有 yesterday / last / ago 等 → 过去时 - 第二步：看句型——肯定加 -ed，否定/疑问用 did + 原形 - 第三步：didn't 后永远是原形，不能再加 -ed（高频陷阱）",
+    "例句6": [
+      "We visited the museum yesterday.（肯定，visit 加 -ed）",
+      "I stayed at home last weekend.（肯定，stay 加 -ed）",
+      "She didn't go to school yesterday.（否定，didn't + 原形 go）",
+      "Did you enjoy the trip?（疑问，did + 原形 enjoy）",
+      "What did you do last night?（特殊疑问，did + 原形 do）",
+      "We visited the museum."
+    ],
+    "易错5": [
+      "I didn't visited the museum. → I didn't visit the museum.（didn't 后用原形）",
+      "Did you went to the beach? → Did you go to the beach?（did 后用原形）",
+      "He studyed English. → He studied English.（辅音+y 结尾，y 变 i 加 ed）",
+      "She stoped the car. → She stopped the car.（重读闭音节双写）"
+    ],
+    "口诀": "过去事情都用 did，肯定动词加 -ed；否定 didn't 加原形，疑问 did 提前莫忘形",
+    "六色卡": {
+      "用法": "- 第一步：看时间状语——有 yesterday / last / ago 等 → 过去时 - 第二步：看句型——肯定加 -ed，否定/疑问用 did + 原形 - 第三步：didn't 后永远是原形，不能再加 -ed（高频陷阱）",
+      "构成": "仅限规则动词 -ed 变化，不引入不规则动词过去式（如 go→went, have→had 留至后续综合课）；不引入 be 过去式（已由 G19 覆盖）",
+      "易错": "I didn't visited the museum. → I didn't visit the museum.（didn't 后用原形）",
+      "例句": "We visited the museum yesterday.（肯定，visit 加 -ed）",
+      "注意": "didn't 后接原形：didn't visited ❌ / didn't visit ✅（中考高频陷阱）",
+      "口诀": "过去事情都用 did，肯定动词加 -ed；否定 didn't 加原形，疑问 did 提前莫忘形"
+    },
+    "中考考法": "didn't 后接原形：didn't visited ❌ / didn't visit ✅（中考高频陷阱）；did 提问后动词还原：Did you went ❌ / Did you go ✅；规则动词 -ed 发音：visited /ɪd/，stayed /d/，tried /d/（轻读不重读）",
+    "stage": "S2",
+    "lesson": 8
+  },
+  "过去时间状语": {
+    "构成": "- 第一步：扫一眼句末/句首，找 yesterday / ago / last - 第二步：发现其一 → 判定为过去时 → 用 was/were 或 did - 第三步：注意 ago 的位置——ago 必须放在时间段之后（two years ago ✅ / ago two years ❌）",
+    "例句6": [
+      "I was at home yesterday.（yesterday 单独用）",
+      "She visited the museum two days ago.（时间段 + ago）",
+      "We went to the beach last weekend.（last + 时间名词）",
+      "Yesterday morning, he started his trip.（yesterday + 时段，句首）",
+      "They finished the work a week ago.（时间段 + ago）",
+      "I was happy yesterday."
+    ],
+    "易错5": [
+      "I was happy ago two days. → I was happy two days ago.（ago 在时间段后）",
+      "She went there last the week. → She went there last week.（last 后不加 the）",
+      "I visit the museum yesterday. → I visited the museum yesterday.（见 yesterday 用过去时）",
+      "He goes there two years ago. → He went there two years ago.（见 ago 用过去时）"
+    ],
+    "口诀": "yesterday 是昨天，ago 放在时间后，last 搭周月年事；见到三个用过去时",
+    "六色卡": {
+      "用法": "- 第一步：扫一眼句末/句首，找 yesterday / ago / last - 第二步：发现其一 → 判定为过去时 → 用 was/were 或 did - 第三步：注意 ago 的位置——ago 必须放在时间段之后（two years ago ✅ / ago two years ❌）",
+      "构成": "仅限识别 yesterday / ago / last...，不引入 for/since（完成时状语，留至 Stage 4）；不引入 before（完成时/泛指，留至综合）",
+      "易错": "I was happy ago two days. → I was happy two days ago.（ago 在时间段后）",
+      "例句": "I was at home yesterday.（yesterday 单独用）",
+      "注意": "ago 与 before 区别（中考易混）：ago 用于过去时（two years ago），before 用于完成时或泛指（before 1990）——本课仅考 ago",
+      "口诀": "yesterday 是昨天，ago 放在时间后，last 搭周月年事；见到三个用过去时"
+    },
+    "中考考法": "ago 与 before 区别（中考易混）：ago 用于过去时（two years ago），before 用于完成时或泛指（before 1990）——本课仅考 ago；last 后接时间名词：last week ✅ / last the week ❌（last 后不加 the）；yesterday 与时间段搭配：yesterday morning ✅ / yesterday in the mo",
+    "stage": "S2",
+    "lesson": 8
+  },
+  "特殊疑问句系统": {
+    "构成": "- 第一步：判断提问对象——事物→What，地点→Where，时间→When，原因→Why，人→Who，方式→How - 第二步：判断疑问词在句中角色——作主语（疑问词 + 谓语）/不作主语（疑问词 + be/助/情态 + 主语 + 谓语） - 第三步：注意时态——过去时用 did（疑问词 + did + 主语 + 原形），现在时用 do/does",
+    "例句6": [
+      "What did you see at the museum?（问事物，过去时用 did）",
+      "Where is the art gallery?（问地点，用 is）",
+      "When did you travel to Beijing?（问时间，过去时用 did）",
+      "Why was the traffic heavy?（问原因，过去时 be 用 was）",
+      "Who is your favorite guide?（问人，用 is）",
+      "How did you go to the station?（问方式，过去时用 did）"
+    ],
+    "易错5": [
+      "What you do? → What do you do?（需助动词 do）",
+      "Where you went? → Where did you go?（过去时需 did + 原形）",
+      "How old are you? - Yes. → How old are you? - I'm 12.（特殊疑问句不用 Yes/No 回答）",
+      "Who are there? → Who is there?（who 作主语用单数）"
+    ],
+    "口诀": "六宝疑问词开头，be/助/情态跟着走；主语谓语随后到，句末问号不能丢",
+    "六色卡": {
+      "用法": "- 第一步：判断提问对象——事物→What，地点→Where，时间→When，原因→Why，人→Who，方式→How - 第二步：判断疑问词在句中角色——作主语（疑问词 + 谓语）/不作主语（疑问词 + be/助/情态 + 主语 + 谓语） - 第三步：注意时态——过去时用 did（疑问词 + did + 主语 + 原形），现在时用 do/does",
+      "构成": "仅限六疑问词（What/Where/When/Why/Who/How），不引入 whose/which/whom；How 的扩展（how many/how much/how old 等）留至综合课",
+      "易错": "What you do? → What do you do?（需助动词 do）",
+      "例句": "What did you see at the museum?（问事物，过去时用 did）",
+      "注意": "What vs. Which：What 泛指（什么），Which 特指（哪一个，有范围）——本课仅考六宝，Which 留至综合",
+      "口诀": "六宝疑问词开头，be/助/情态跟着走；主语谓语随后到，句末问号不能丢"
+    },
+    "中考考法": "What vs. Which：What 泛指（什么），Which 特指（哪一个，有范围）——本课仅考六宝，Which 留至综合；How 的扩展（How many/much/old/long）：本课仅考基础 How，扩展用法留至综合；Who 作主语时动词用单数：Who is there? ✅ / Who are there? ❌；与 G06/G09/G14 螺旋关系：G06 单个疑问词、G09 疑问",
+    "stage": "S2",
+    "lesson": 9
+  },
+  "选择疑问句": {
+    "构成": "- 第一步：找 or——句中出现 or 连接两个选项 → 选择疑问句 - 第二步：禁用 Yes/No——选择疑问句绝不能用 Yes/No 回答 - 第三步：直接选答——从 A 或 B 中选一个，可完整回答（I like tea.）或简短回答（Tea.）",
+    "例句6": [
+      "Do you like tea or coffee? — I like coffee.（选 B）",
+      "Are you a teacher or a student? — I'm a student.（选 B）",
+      "Did you go by bus or by train? — By train.（选 B，简短回答）",
+      "Is the museum open today or tomorrow? — Today.（选 A，简短回答）",
+      "Would you like to visit the gallery or the station? — The gallery.（选 A）",
+      "Are you a teacher or a student?"
+    ],
+    "易错5": [
+      "Do you like tea or coffee? - Yes. → Do you like tea or coffee? - I like tea.（不能用 Yes/No）",
+      "Are you a teacher or a student? - Yes, I am. → Are you a teacher or a student? - I'm a student.（不能用 Yes/No）",
+      "Did you go by bus or by train? - No. → Did you go by bus or by train? - By train.（不能用 Yes/No）"
+    ],
+    "口诀": "or 连接选一个，Yes/No 不能答；直接选 A 或选 B，完整回答最稳当",
+    "六色卡": {
+      "用法": "- 第一步：找 or——句中出现 or 连接两个选项 → 选择疑问句 - 第二步：禁用 Yes/No——选择疑问句绝不能用 Yes/No 回答 - 第三步：直接选答——从 A 或 B 中选一个，可完整回答（I like tea.）或简短回答（Tea.）",
+      "构成": "仅限 or 选择结构，不引入 either...or/neither...nor；不引入 or 表\"否则\"的用法（留至综合课）",
+      "易错": "Do you like tea or coffee? - Yes. → Do you like tea or coffee? - I like tea.（不能用 Yes/No）",
+      "例句": "Do you like tea or coffee? — I like coffee.（选 B）",
+      "注意": "选择疑问句 vs. 一般疑问句：有 or 是选择疑问句，回答不用 Yes/No；无 or 是一般疑问句，用 Yes/No 回答",
+      "口诀": "or 连接选一个，Yes/No 不能答；直接选 A 或选 B，完整回答最稳当"
+    },
+    "中考考法": "选择疑问句 vs. 一般疑问句：有 or 是选择疑问句，回答不用 Yes/No；无 or 是一般疑问句，用 Yes/No 回答；or 连接的两个选项可以是名词、形容词、动词短语、介词短语；or 在否定句中表\"和\"（I don't like tea or coffee.），但本课仅考选择疑问句",
+    "stage": "S2",
+    "lesson": 9
+  },
+  "方位介词": {
+    "构成": "- 第一步：判断交通方式——by + 工具（by bus），on foot（步行） - 第二步：判断方向——turn left/right（转向），go straight（直走） - 第三步：判断方位——on the left/right（在左/右边） - 关键陷阱：by 后不加 a/the（by bus ✅ / by a bus ❌）；on foot 的 foot 不变复数（on foot ✅ / on feet ❌）",
+    "例句6": [
+      "I go to school by bus every day.（by + 工具，无冠词）",
+      "She goes to work on foot.（固定搭配，foot 不变复数）",
+      "Turn left at the traffic lights, then go straight.（转向 + 直走）",
+      "The art gallery is on your right.（方位表达）",
+      "We traveled by train to Beijing.（by + 工具，过去时）",
+      "by bus"
+    ],
+    "易错5": [
+      "I go to school by a bus. → I go to school by bus.（by 后无冠词）",
+      "I go to school on feet. → I go to school on foot.（foot 不变复数）",
+      "Turn to left. → Turn left.（turn + 方向直接连用）",
+      "The museum is in your right. → The museum is on your right.（方位用 on）"
+    ],
+    "口诀": "by 加交通工具，on foot 步行走；turn left/right 转方向，go straight 直走不回头",
+    "六色卡": {
+      "用法": "- 第一步：判断交通方式——by + 工具（by bus），on foot（步行） - 第二步：判断方向——turn left/right（转向），go straight（直走） - 第三步：判断方位——on the left/right（在左/右边） - 关键陷阱：by 后不加 a/the（by bus ✅ / by a bus ❌）；on foot 的 foot 不变复数（on foot ✅ / on feet ❌）",
+      "构成": "仅限交通方向介词（by/on foot/turn left/right/go straight/on the left/right），不引入 across/through/along；不引入方位介词 in/on/under/behind 的系统归纳（留至综合课）",
+      "易错": "I go to school by a bus. → I go to school by bus.（by 后无冠词）",
+      "例句": "I go to school by bus every day.（by + 工具，无冠词）",
+      "注意": "by + 交通工具 vs. in/on + 冠词 + 交通工具：by bus ✅（无冠词）/ in a bus ✅（有冠词，少用）",
+      "口诀": "by 加交通工具，on foot 步行走；turn left/right 转方向，go straight 直走不回头"
+    },
+    "中考考法": "by + 交通工具 vs. in/on + 冠词 + 交通工具：by bus ✅（无冠词）/ in a bus ✅（有冠词，少用）；on foot vs. by foot：on foot ✅（固定搭配）/ by foot ❌（错误表达）；by car vs. in a car：by car ✅（更常用）/ in a car ✅（强调在车内）",
+    "stage": "S2",
+    "lesson": 9
+  },
+  "一般现在时三单-s": {
+    "构成": "- 第一步：看主语是否三单（he/she/it/单数名词/不可数名词/单个人名） - 第二步：看动词词尾字母——一般加 s - 第三步：词尾是 s/x/ch/sh/o → 加 es（发音为 /ɪz/ 或 /z/） - 第四步：词尾是\"辅音+y\"→ y 变 i 加 es；\"元音+y\"→ 直接加 s - 唯一特例：have → has（不是 haves）",
+    "例句6": [
+      "He likes math.（一般加 s）",
+      "She watches TV every day.（ch 结尾加 es）",
+      "It goes to school by bus.（o 结尾加 es）",
+      "Tom studies Chinese hard.（辅音+y 变 i 加 es）",
+      "My sister has a new book.（have→has 特例）"
+    ],
+    "易错5": [
+      "He like math. → He likes math.（三单主语动词加 s）",
+      "She watchs TV. → She watches TV.（ch 结尾加 es）",
+      "He studys Chinese. → He studies Chinese.（辅音+y 变 i 加 es）",
+      "She haves a book. → She has a book.（have→has 特例）",
+      "The water have no color. → The water has no color.（不可数名词触发三单）"
+    ],
+    "口诀": "他她它做主语，动词尾巴加 s；s/x/ch/sh/o 加 es，辅音 y 变 i 加 es；have 变 has 是唯一特例",
+    "六色卡": {
+      "用法": "- 第一步：看主语是否三单（he/she/it/单数名词/不可数名词/单个人名） - 第二步：看动词词尾字母——一般加 s - 第三步：词尾是 s/x/ch/sh/o → 加 es（发音为 /ɪz/ 或 /z/） - 第四步：词尾是\"辅音+y\"→ y 变 i 加 es；\"元音+y\"→ 直接加 s - 唯一特例：have → has（不是 haves）",
+      "构成": "仅限一般现在时三单肯定句变化，否定疑问句留至 G26；不引入过去时（was/were/-ed 已学于 L8）",
+      "易错": "He like math. → He likes math.（三单主语动词加 s）",
+      "例句": "He likes math.（一般加 s）",
+      "注意": "三单变化看主语：he/she/it/单数名词/不可数名词/单个人名都触发三单",
+      "口诀": "他她它做主语，动词尾巴加 s；s/x/ch/sh/o 加 es，辅音 y 变 i 加 es；have 变 has 是唯一特例"
+    },
+    "中考考法": "三单变化看主语：he/she/it/单数名词/不可数名词/单个人名都触发三单；动词 have 的特殊变化：have→has（不是 haves），中考高频陷阱；主语为\"单数名词+and+单数名词\"时用复数（Tom and Jerry are...），不触发三单",
+    "stage": "S2",
+    "lesson": 10
+  },
+  "does否定与疑问": {
+    "构成": "- 第一步：三单主语的否定/疑问，借 does（肯定句的 likes 拆成 does + like） - 第二步：does/doesn't 后动词必须还原——does 是\"帮手\"，帮完就退场，动词回原形 - 第三步：does 是 do 的三单形式，does 本身已经带 s，后面动词不再加 s - 核心公式：likes = does + like；doesn't like = does not + like",
+    "例句6": [
+      "He doesn't understand the question.（否定，动词还原）",
+      "Does she study physics?（疑问，动词还原）",
+      "What does Tom do after school?（特殊疑问，动词还原）",
+      "— Does your sister have a new book? — Yes, she does.（问答，have 还原）",
+      "He likes math.",
+      "He doesn't like math."
+    ],
+    "易错5": [
+      "He doesn't likes math. → He doesn't like math.（doesn't 后动词还原）",
+      "Does she likes math? → Does she like math?（Does 后动词还原）",
+      "He don't like math. → He doesn't like math.（三单用 doesn't）",
+      "Does he has a book? → Does he have a book?（Does 后 have 还原）"
+    ],
+    "口诀": "does/doesn't 帮三单，动词一定还原形；肯定回答用 does，否定回答 doesn't",
+    "六色卡": {
+      "用法": "- 第一步：三单主语的否定/疑问，借 does（肯定句的 likes 拆成 does + like） - 第二步：does/doesn't 后动词必须还原——does 是\"帮手\"，帮完就退场，动词回原形 - 第三步：does 是 do 的三单形式，does 本身已经带 s，后面动词不再加 s - 核心公式：likes = does + like；doesn't like = does not + like",
+      "构成": "仅限 does/doesn't 三单否定疑问；do/don't 用于非三单（已学 G16）；不引入 did 过去时否定疑问（已学 L8）",
+      "易错": "He doesn't likes math. → He doesn't like math.（doesn't 后动词还原）",
+      "例句": "He doesn't understand the question.（否定，动词还原）",
+      "注意": "does/doesn't 后动词必须还原：doesn't likes ❌ → doesn't like ✅",
+      "口诀": "does/doesn't 帮三单，动词一定还原形；肯定回答用 does，否定回答 doesn't"
+    },
+    "中考考法": "does/doesn't 后动词必须还原：doesn't likes ❌ → doesn't like ✅；does 是 do 的三单形式，帮助三单主语构成否定疑问；do/don't 用于非三单（I/you/we/they/复数名词），does/doesn't 用于三单（he/she/it/单数名词）；have 在 does 后还原为 have：Does he have...? ✅（不是 Does",
+    "stage": "S2",
+    "lesson": 10
+  },
+  "学科表达": {
+    "构成": "- 第一步：study 直接接学科名词——study math / study physics（不加 to） - 第二步：finish 后接动名词——finish doing homework（不加 to do） - 第三步：have + 学科 + class 表示\"上某门课\"——have Chinese class",
+    "例句6": [
+      "He studies math and physics this term.（study + 学科）",
+      "She reads English in the library after school.（read + 地点状语）",
+      "Tom finishes his homework before dinner.（finish + 作业）",
+      "Does she have Chinese class on Monday?（have + 学科 class）",
+      "He studies math every day.",
+      "She reads in the library."
+    ],
+    "易错5": [
+      "study to math → study math（study 直接接学科，不加 to）",
+      "finish to do homework → finish doing homework（finish 后接动名词）",
+      "read in library → read in the library（特指某图书馆用 the）",
+      "have a Chinese class on Monday → have Chinese class on Monday（表\"上课\"不加 a）"
+    ],
+    "口诀": "study 后接学科名，read 图书馆里行，finish 后面接作业，学科搭配要记清",
+    "六色卡": {
+      "用法": "- 第一步：study 直接接学科名词——study math / study physics（不加 to） - 第二步：finish 后接动名词——finish doing homework（不加 to do） - 第三步：have + 学科 + class 表示\"上某门课\"——have Chinese class",
+      "构成": "仅限学科搭配动词（study/read/finish/have/do/answer/solve），不引入抽象动词（如 consider, realize, analyze 等留至后续综合）",
+      "易错": "study to math → study math（study 直接接学科，不加 to）",
+      "例句": "He studies math and physics this term.（study + 学科）",
+      "注意": "study vs. learn：study 强调学习过程，learn 强调学习结果（learn to swim / study math）",
+      "口诀": "study 后接学科名，read 图书馆里行，finish 后面接作业，学科搭配要记清"
+    },
+    "中考考法": "study vs. learn：study 强调学习过程，learn 强调学习结果（learn to swim / study math）；finish doing sth：finish 后接动名词，中考高频考点（finish doing homework ✅ / finish to do ❌）；have a class vs. have class：have a class 强调一节课，have",
+    "stage": "S2",
+    "lesson": 10
+  },
+  "祈使句/must/have to": {
+    "构成": "- 第一步：情态动词后必须接动词原形——can swim ✅ / can swims ❌ / can to swim ❌ - 第二步：区分 must（主观义务）与 have to（客观必须）——must 表\"我认为必须\"，have to 表\"外部要求必须\" - 第三步：祈使句省略主语 you，肯定句动词原形开头，否定句 Don't 开头 - 核心公式：情态动词 + 动词原形（永远不变）；祈使句 = 动词原形 / Don't + 动词原形",
+    "例句6": [
+      "You can wear your own clothes on Friday.（许可）",
+      "We must follow the school rules.（义务）",
+      "I have to finish my homework before dinner.（客观必须）",
+      "Be quiet in the library.（祈使肯定）",
+      "Don't fight with your classmates.（祈使否定）",
+      "I can swim."
+    ],
+    "易错5": [
+      "He cans swim. → He can swim.（情态动词后动词原形，不加 s）",
+      "We must to follow the rules. → We must follow the rules.（must 后不加 to）",
+      "Don't fighting. → Don't fight.（祈使否定用动词原形）",
+      "He have to wear a uniform. → He has to wear a uniform.（三单用 has to）"
+    ],
+    "口诀": "can 表能力或许可，must 表义务必须做；have to 是不得不，祈使句 Do/Don't 记清楚",
+    "六色卡": {
+      "用法": "- 第一步：情态动词后必须接动词原形——can swim ✅ / can swims ❌ / can to swim ❌ - 第二步：区分 must（主观义务）与 have to（客观必须）——must 表\"我认为必须\"，have to 表\"外部要求必须\" - 第三步：祈使句省略主语 you，肯定句动词原形开头，否定句 Don't 开头 - 核心公式：情态动词 + 动词原形（永远不变）；祈使句 = 动词原形 / Don't + 动词原形",
+      "构成": "仅限 can/can't/must/have to + 祈使句，不引入 should/may/might/need 等其他情态动词",
+      "易错": "He cans swim. → He can swim.（情态动词后动词原形，不加 s）",
+      "例句": "You can wear your own clothes on Friday.（许可）",
+      "注意": "can vs. may：can 表能力或许可（口语），may 表许可（正式）——本课仅限 can",
+      "口诀": "can 表能力或许可，must 表义务必须做；have to 是不得不，祈使句 Do/Don't 记清楚"
+    },
+    "中考考法": "can vs. may：can 表能力或许可（口语），may 表许可（正式）——本课仅限 can；must vs. have to：must 表主观义务，have to 表客观必须；mustn't vs. don't have to：mustn't = 禁止（绝对不行），don't have to = 不必（可以做也可以不做）——中考高频陷阱；祈使句主语 you 省略，但加 please 表礼貌：",
+    "stage": "S3",
+    "lesson": 11
+  },
+  "名词不规则复数": {
+    "构成": "- 第一组（a→e）：man→men, woman→women（男人女人 a 变 e） - 第二组（oo→ee）：foot→feet, tooth→teeth（脚和牙齿 oo 变 ee，一组记） - 第三组（特殊）：child→children（加 ren），sheep→sheep（不变），mouse→mice（变 ice） - 高频陷阱：sheep 单复同形——one sheep / two sheep（不加 s）",
+    "例句6": [
+      "Two men are talking in the hallway.（man→men）",
+      "The children are playing in the classroom.（child→children）",
+      "Sheep are quiet animals.（sheep 单复同形）",
+      "I have two feet.（foot→feet）",
+      "The mice run away.（mouse→mice）"
+    ],
+    "易错5": [
+      "two mans → two men（man→men）",
+      "three childs → three children（child→children）",
+      "five sheeps → five sheep（sheep 单复同形）",
+      "two mouses → two mice（mouse→mice）",
+      "three womans → three women（woman→women）"
+    ],
+    "口诀": "男人 man 变 men，女人 woman 变 women；孩子 child 变 children，脚 foot 变 feet；牙齿 tooth 变 teeth，绵羊 sheep 不变形",
+    "六色卡": {
+      "用法": "- 第一组（a→e）：man→men, woman→women（男人女人 a 变 e） - 第二组（oo→ee）：foot→feet, tooth→teeth（脚和牙齿 oo 变 ee，一组记） - 第三组（特殊）：child→children（加 ren），sheep→sheep（不变），mouse→mice（变 ice） - 高频陷阱：sheep 单复同形——one sheep / two sheep（不加 s）",
+      "构成": "仅限常见不规则复数（man/woman/child/foot/tooth/sheep/mouse/person），不引入罕见不规则变化（如 ox→oxen, goose→geese 留至后续综合）",
+      "易错": "two mans → two men（man→men）",
+      "例句": "Two men are talking in the hallway.（man→men）",
+      "注意": "man→men, woman→women：a 变 e，且 woman 发音 /ˈwɪmɪn/（复数发音变化）",
+      "口诀": "男人 man 变 men，女人 woman 变 women；孩子 child 变 children，脚 foot 变 feet；牙齿 tooth 变 teeth，绵羊 sheep 不变形"
+    },
+    "中考考法": "man→men, woman→women：a 变 e，且 woman 发音 /ˈwɪmɪn/（复数发音变化）；foot→feet, tooth→teeth：oo 变 ee（一组记忆，中考高频）；sheep→sheep：单复同形，中考高频陷阱——two sheeps ❌ / two sheep ✅；person→people：person 单数，people 复数（不是 persons，person",
+    "stage": "S3",
+    "lesson": 11
+  },
+  "规则介词": {
+    "构成": "- 第一步：地点介词——in 大空间（in the hallway/library），at 小地点（at the door/school） - 第二步：时间介词——on time（准时），on 某天（on Monday），at 时刻（at 8:00），in 月/年（in May） - 第三步：方式介词——in quiet（安静地），in order（有序地） - on time vs. in time：on time = 准时（不早不晚），in time = 及时（来得及）——中考高频",
+    "例句6": [
+      "Don't run in the hallway.（地点）",
+      "Please arrive on time.（时间）",
+      "Read in quiet in the library.（方式）",
+      "He is on duty today.（固定搭配）",
+      "We study at school.（地点）",
+      "Don't run in the hallway."
+    ],
+    "易错5": [
+      "on the hallway → in the hallway（走廊用 in）",
+      "in time (准时) → on time（准时）/ in time（及时）",
+      "at quiet → in quiet（安静地用 in）",
+      "in Monday → on Monday（星期用 on）"
+    ],
+    "口诀": "in the hallway 走廊里，on time 准时不迟到；in quiet 安静记心间，地点时间介词要分清",
+    "六色卡": {
+      "用法": "- 第一步：地点介词——in 大空间（in the hallway/library），at 小地点（at the door/school） - 第二步：时间介词——on time（准时），on 某天（on Monday），at 时刻（at 8:00），in 月/年（in May） - 第三步：方式介词——in quiet（安静地），in order（有序地） - on time vs. in time：on time = 准时（不早不晚），in time = 及时（来得及）——中考高频",
+      "构成": "仅限场景介词搭配（in/on/at + 地点/时间/方式），不引入 during/within/by/until 等高级时间介词",
+      "易错": "on the hallway → in the hallway（走廊用 in）",
+      "例句": "Don't run in the hallway.（地点）",
+      "注意": "in vs. on vs. at：in 大地方/长时间，on 具体某天/表面，at 小地点/具体时刻",
+      "口诀": "in the hallway 走廊里，on time 准时不迟到；in quiet 安静记心间，地点时间介词要分清"
+    },
+    "中考考法": "in vs. on vs. at：in 大地方/长时间，on 具体某天/表面，at 小地点/具体时刻；on time vs. in time：on time = 准时，in time = 及时（中考高频考点）；in class vs. in the class：in class = 在课上（场景），in the class = 在班级里（具体班级）",
+    "stage": "S3",
+    "lesson": 11
+  },
+  "冠词a/an/the": {
+    "构成": "- 第一步：看单词音标第一个音素，不是看首字母 - 第二步：元音音素(/æ//e//ɪ//ɒ//ʌ//uː/等)开头 → 用 an - 第三步：辅音音素(/b//k//d//j//w/等)开头 → 用 a - 高频陷阱：an hour（h 不发音），a university（u 发 /j/）",
+    "例句6": [
+      "I'd like an apple and a banana.（apple 元音开头用 an，banana 辅音开头用 a）",
+      "The soup on the table is for you.（特指桌上的那碗汤）",
+      "Water is good for your health.（不可数泛指，零冠词）",
+      "a book, a car, a university",
+      "an apple, an hour, an egg",
+      "the sun, the red car"
+    ],
+    "易错5": [
+      "I have apple. → I have an apple.（单数可数防裸奔）",
+      "an university → a university（u 发 /j/ 辅音）",
+      "an hour → an hour（h 不发音，元音开头）✅ 正确"
+    ],
+    "口诀": "a 辅音 an 元音看发音，the 特指双方都心知；单数可数不裸奔，出门必戴 a/an/the",
+    "六色卡": {
+      "用法": "- 第一步：看单词音标第一个音素，不是看首字母 - 第二步：元音音素(/æ//e//ɪ//ɒ//ʌ//uː/等)开头 → 用 an - 第三步：辅音音素(/b//k//d//j//w/等)开头 → 用 a - 高频陷阱：an hour（h 不发音），a university（u 发 /j/）",
+      "构成": "仅限 a/an/the，不引入零冠词抽象规则",
+      "易错": "I have apple. → I have an apple.（单数可数防裸奔）",
+      "例句": "I'd like an apple and a banana.（apple 元音开头用 an，banana 辅音开头用 a）",
+      "注意": "an vs. a 看发音：an hour ✅ / a hour ❌（h 不发音，元音开头）",
+      "口诀": "a 辅音 an 元音看发音，the 特指双方都心知；单数可数不裸奔，出门必戴 a/an/the"
+    },
+    "中考考法": "an vs. a 看发音：an hour ✅ / a hour ❌（h 不发音，元音开头）；a university ✅ / an university ❌（u 发 /j/，辅音开头）；the 用于特指：上文提过、双方共知、独一无二",
+    "stage": "S3",
+    "lesson": 12
+  },
+  "可数与不可数名词": {
+    "构成": "- 量词结构 = 数字 + 量词（可数） + of + 不可数名词 - 量词本身变复数：one cup → two cups（量词加 s，不可数名词不加 s）",
+    "例句6": [
+      "I'd like a glass of orange juice.（不可数名词用量词）",
+      "She eats two eggs every morning.（可数名词直接变复数）",
+      "We need three bowls of soup.（量词 bowl 变复数，soup 不变）",
+      "a cup of tea, a cup of yogurt",
+      "a glass of water, a glass of juice",
+      "a bowl of soup, a bowl of noodles"
+    ],
+    "易错5": [
+      "two waters → two glasses of water（不可数名词不能直接加 s）",
+      "two bowl of soup → two bowls of soup（量词要变复数）",
+      "a soup → a bowl of soup（soup 不可数，不能直接用 a）"
+    ],
+    "口诀": "可数能数有复数（egg→eggs），不可数不能数靠量词（a cup of water）",
+    "六色卡": {
+      "用法": "- 量词结构 = 数字 + 量词（可数） + of + 不可数名词 - 量词本身变复数：one cup → two cups（量词加 s，不可数名词不加 s）",
+      "构成": "螺旋自 G17（基础分类），补齐量词搭配",
+      "易错": "two waters → two glasses of water（不可数名词不能直接加 s）",
+      "例句": "I'd like a glass of orange juice.（不可数名词用量词）",
+      "注意": "可数 vs. 不可数高频词：milk, water, bread（不可数）vs. apple, egg, book（可数）",
+      "口诀": "可数能数有复数（egg→eggs），不可数不能数靠量词（a cup of water）"
+    },
+    "中考考法": "可数 vs. 不可数高频词：milk, water, bread（不可数）vs. apple, egg, book（可数）；量词复数变化：one bowl → two bowls（量词加 s），不可数名词不变",
+    "stage": "S3",
+    "lesson": 12
+  },
+  "some/any": {
+    "构成": "- 第一步：看句型——肯定句 → some；否定句/疑问句 → any - 第二步：看语气——Would you like / Could I have（礼貌邀请/请求）→ some（期待肯定回答） - 第三步：看条件——If 引导的条件句 → any",
+    "例句6": [
+      "I have some juice in the fridge.（肯定句用 some）",
+      "I don't have any milk.（否定句用 any）",
+      "Would you like some tea?（邀请/请求用 some，期待肯定回答）",
+      "Do you have any coffee?（疑问句用 any）",
+      "I have some water.",
+      "Would you like some tea?"
+    ],
+    "易错5": [
+      "Would you like any tea? → Would you like some tea?（邀请期待肯定用 some）",
+      "I don't have some water. → I don't have any water.（否定句用 any）",
+      "Do you want some coffee? → Do you want any coffee?（一般疑问用 any）"
+    ],
+    "口诀": "some 肯定和邀请，any 否定和疑问；请求建议用 some，条件句中 any 行",
+    "六色卡": {
+      "用法": "- 第一步：看句型——肯定句 → some；否定句/疑问句 → any - 第二步：看语气——Would you like / Could I have（礼貌邀请/请求）→ some（期待肯定回答） - 第三步：看条件——If 引导的条件句 → any",
+      "构成": "仅限 some/any，复合不定代词（someone/anything 留至 L19）",
+      "易错": "Would you like any tea? → Would you like some tea?（邀请期待肯定用 some）",
+      "例句": "I have some juice in the fridge.（肯定句用 some）",
+      "注意": "some 用于 Would you like...? / Could I have...?（期待肯定回答的请求）",
+      "口诀": "some 肯定和邀请，any 否定和疑问；请求建议用 some，条件句中 any 行"
+    },
+    "中考考法": "some 用于 Would you like...? / Could I have...?（期待肯定回答的请求）；any 用于 Do you have...?（单纯询问，不期待特定回答）；中考高频陷阱：Would you like some coffee? ✅ / Would you like any coffee? ❌",
+    "stage": "S3",
+    "lesson": 12
+  },
+  "would like结构": {
+    "构成": "- 第一阶（G15）：like to do sth.——喜欢做某事 - 第二阶（G18）：want to do sth.——想要做某事 - 第三阶（G34）：would like to do sth.——想要做某事（更礼貌委婉） - would like = want 的礼貌版，结构完全一致，都是\"动词 + to do\"",
+    "例句6": [
+      "I would like some dumplings.（would like + 名词，想要某物）",
+      "She would like to buy a new bag.（would like + to do，想要做某事）",
+      "I would like you to come to my party.（would like + sb. + to do，想要某人做某事）",
+      "— Would you like some tea? — Yes, please.（邀请用 some，期待肯定回答，呼应 G33）",
+      "I would like some tea.",
+      "I would like to buy a book."
+    ],
+    "易错5": [
+      "I would like buy a book. → I would like to buy a book.（would like + to do，不可省略 to）",
+      "I would like to some tea. → I would like some tea.（would like + 名词，不加 to）",
+      "Would you like any coffee? → Would you like some coffee?（邀请期待肯定用 some）"
+    ],
+    "口诀": "would like 想要，加 to do 表做事；直接接名词，要东西不费力；would like sb. to do，想让别人做某事",
+    "六色卡": {
+      "用法": "- 第一阶（G15）：like to do sth.——喜欢做某事 - 第二阶（G18）：want to do sth.——想要做某事 - 第三阶（G34）：would like to do sth.——想要做某事（更礼貌委婉） - would like = want 的礼貌版，结构完全一致，都是\"动词 + to do\"",
+      "构成": "仅限 would like to do / would like sth. / would like sb. to do，不引入 would rather（宁愿）与 used to（过去常常）",
+      "易错": "I would like buy a book. → I would like to buy a book.（would like + to do，不可省略 to）",
+      "例句": "I would like some dumplings.（would like + 名词，想要某物）",
+      "注意": "would like vs. want：would like 更礼貌委婉，常用于点餐、邀请；want 较直接，常用于陈述意愿",
+      "口诀": "would like 想要，加 to do 表做事；直接接名词，要东西不费力；would like sb. to do，想让别人做某事"
+    },
+    "中考考法": "would like vs. want：would like 更礼貌委婉，常用于点餐、邀请；want 较直接，常用于陈述意愿；would like to do = want to do（意思相同，语气不同）；Would you like some...?（邀请用 some，不用 any，呼应 G33 不定代词规则）",
+    "stage": "S3",
+    "lesson": 13
+  },
+  "how much/how many": {
+    "构成": "- 第一步：看划线部分——是\"数量\"还是\"价格\"？ - 第二步：看名词类别——可数复数 → how many；不可数 → how much - 第三步：问价格 → 一律用 how much（不论单复数） - 价格专属：How much is/are...? = 问价格，is 用于单数，are 用于复数",
+    "例句6": [
+      "How much water do you drink every day?（water 不可数，问数量）",
+      "How many dumplings would you like?（dumplings 可数复数，问数量）",
+      "How much is the pancake?（问价格，用 how much）",
+      "How much does the shirt cost?（问价格，动词用 cost）",
+      "How much sugar do you need?（对 two spoons 提问）",
+      "How much is the book?（对 50 yuan 提问）"
+    ],
+    "易错5": [
+      "How many sugar do you want? → How much sugar do you want?（sugar 不可数）",
+      "How much apples do you have? → How many apples do you have?（apples 可数复数）",
+      "How many is the book? → How much is the book?（问价格一律用 how much）"
+    ],
+    "口诀": "much 配不可数与价格，many 配可数复数；划线提问先看数，单数/液体问 much，复数问 many",
+    "六色卡": {
+      "用法": "- 第一步：看划线部分——是\"数量\"还是\"价格\"？ - 第二步：看名词类别——可数复数 → how many；不可数 → how much - 第三步：问价格 → 一律用 how much（不论单复数） - 价格专属：How much is/are...? = 问价格，is 用于单数，are 用于复数",
+      "构成": "仅限 how much / how many，不引入 how often（问频率）、how long（问时长）、how far（问距离）",
+      "易错": "How many sugar do you want? → How much sugar do you want?（sugar 不可数）",
+      "例句": "How much water do you drink every day?（water 不可数，问数量）",
+      "注意": "how much 问价格：How much is/are...? / How much does...cost? / How much do/does...pay?",
+      "口诀": "much 配不可数与价格，many 配可数复数；划线提问先看数，单数/液体问 much，复数问 many"
+    },
+    "中考考法": "how much 问价格：How much is/are...? / How much does...cost? / How much do/does...pay?；how much + 不可数名词 vs. how many + 可数复数：核心区分点；中考高频陷阱：How much are these apples?（问价格，用 are 因为 apples 复数）≠ How many apples",
+    "stage": "S3",
+    "lesson": 13
+  },
+  "数词与价格表达": {
+    "构成": "- cost 与 be 句型：物做主语（书花钱、书是钱） - spend 与 pay 句型：人做主语（我花钱、我付钱） - spend 搭配 on，pay 搭配 for（\"挂 on、换 for\"） - 螺旋自 G08（基数词）：数字 + 货币单位，本课补齐货币场景",
+    "例句6": [
+      "The pancake costs 5 yuan.（cost 句型，物做主语）",
+      "I spent 30 yuan on snacks.（spend 句型，人做主语，搭配 on）",
+      "She paid 100 dollars for the shirt.（pay 句型，人做主语，搭配 for）",
+      "The total is 80 yuan. Here is your change, 20 yuan.（总价 + 找零）",
+      "The book costs me 50 yuan.",
+      "I spent 50 yuan on the book."
+    ],
+    "易错5": [
+      "I cost 50 yuan on the book. → I spent 50 yuan on the book.（人做主语用 spend，不用 cost）",
+      "The book spent me 50 yuan. → The book cost me 50 yuan.（物做主语用 cost）",
+      "five yuans → five yuan（yuan 单复数同形，不加 s）",
+      "I paid 50 yuan on the book. → I paid 50 yuan for the book.（pay 搭配 for）"
+    ],
+    "口诀": "数字 + 货币直接连，yuan 不加 s，dollar 加 s 复数现；主语 cost(s) 表花费，sb. spend(s) 钱 on 物，sb. pay(s) 钱 for 物",
+    "六色卡": {
+      "用法": "- cost 与 be 句型：物做主语（书花钱、书是钱） - spend 与 pay 句型：人做主语（我花钱、我付钱） - spend 搭配 on，pay 搭配 for（\"挂 on、换 for\"） - 螺旋自 G08（基数词）：数字 + 货币单位，本课补齐货币场景",
+      "构成": "仅限基数词 + 货币（yuan/dollar）与 cost/spend/pay/be 四句型，不引入小数价格（$9.99 读法）与 take 句型（It takes sb. time to do 留至后续）",
+      "易错": "I cost 50 yuan on the book. → I spent 50 yuan on the book.（人做主语用 spend，不用 cost）",
+      "例句": "The pancake costs 5 yuan.（cost 句型，物做主语）",
+      "注意": "cost / spend / pay 三者主语不同：cost 物做主语，spend / pay 人做主语（最高频考点）",
+      "口诀": "数字 + 货币直接连，yuan 不加 s，dollar 加 s 复数现；主语 cost(s) 表花费，sb. spend(s) 钱 on 物，sb. pay(s) 钱 for 物"
+    },
+    "中考考法": "cost / spend / pay 三者主语不同：cost 物做主语，spend / pay 人做主语（最高频考点）；spend...on sth. vs. spend...(in) doing sth.（本课仅限 on sth.，doing 留至后续）；yuan 单复数同形 vs. dollar 复数加 s（呼应 G29 不规则复数）",
+    "stage": "S3",
+    "lesson": 13
+  },
+  "外貌描述be vs have": {
+    "构成": "- 第一步：看描述对象——身高、体型、胖瘦、高矮 → 用 be + 形容词 - 第二步：看描述对象——头发、眼睛、脸型、五官 → 用 have/has + 名词短语 - 第三步：看主语人称——第三人称单数（he/she/it）用 has，其余用 have",
+    "例句6": [
+      "He is tall and thin.（be + 形容词，描述身高体型）",
+      "She has long straight black hair.（has + 名词短语，描述头发）",
+      "My teacher has big eyes and a round face.（has + 名词短语，描述五官）",
+      "They have glasses.（have + 名词，描述特征）",
+      "He is tall. She is thin.",
+      "She has short hair. He has big eyes."
+    ],
+    "易错5": [
+      "He is short hair. → He has short hair.（hair 是名词，用 have/has）",
+      "She has tall. → She is tall.（tall 是形容词，用 be）",
+      "He have big eyes. → He has big eyes.（三单用 has）",
+      "She has a long hair. → She has long hair.（hair 不可数，不加 a，呼应 G32）"
+    ],
+    "口诀": "be 管身高与体型（is tall, is thin），have 管五官与头发（has short hair）；三单用 has，其余用 have",
+    "六色卡": {
+      "用法": "- 第一步：看描述对象——身高、体型、胖瘦、高矮 → 用 be + 形容词 - 第二步：看描述对象——头发、眼睛、脸型、五官 → 用 have/has + 名词短语 - 第三步：看主语人称——第三人称单数（he/she/it）用 has，其余用 have",
+      "构成": "仅限 be vs. have/has 外貌描述，不引入 wear（穿戴）与 glasses 的 wear 句型（wear glasses 留至后续综合）",
+      "易错": "He is short hair. → He has short hair.（hair 是名词，用 have/has）",
+      "例句": "He is tall and thin.（be + 形容词，描述身高体型）",
+      "注意": "be + 形容词 vs. have/has + 名词：核心区分点是\"形容词\"还是\"名词短语\"",
+      "口诀": "be 管身高与体型（is tall, is thin），have 管五官与头发（has short hair）；三单用 has，其余用 have"
+    },
+    "中考考法": "be + 形容词 vs. have/has + 名词：核心区分点是\"形容词\"还是\"名词短语\"；is tall（be + adj.）≠ has tall（错误）；has short hair（have + n.）≠ is short hair（错误）；中考高频陷阱：He is short hair. ❌ → He has short hair. ✅（头发是名词，用 have）",
+    "stage": "S3",
+    "lesson": 14
+  },
+  "why/because因果": {
+    "构成": "- 第一步：识别 why 问句——Why + 助动词/be + 主语 + ...? - 第二步：回答用 because——Because + 主语 + 谓语 + ... - 第三步：阅读/简答定位——找 why 后的原因句，或找 because 前的结果句 - because 不能与 so 连用：Because he is tall, so he plays basketball. ❌（二选一）",
+    "例句6": [
+      "— Why do you like this singer? — Because she sings very well.（问动作原因）",
+      "— Why is your mother happy? — Because today is her birthday.（问状态原因）",
+      "He is popular because he is handsome and kind.（because 引导原因从句）",
+      "Why does the artist wear glasses? Because his eyes are not good.（阅读定位练习）",
+      "— Why is he tall? — Because he plays basketball.",
+      "— Why do you like her? — Because she is kind."
+    ],
+    "易错5": [
+      "Because he is tall, so he plays basketball. → Because he is tall, he plays basketball.（because 与 so 不连用）",
+      "Why you like him? → Why do you like him?（why 后需助动词 do/does）",
+      "— Why is she thin? — For she eats little. → — Why is she thin? — Because she eats little.（why 用 because 答，不用 for）"
+    ],
+    "口诀": "why 问原因，because 答原因；阅读简答配成对，定位因果找关键",
+    "六色卡": {
+      "用法": "- 第一步：识别 why 问句——Why + 助动词/be + 主语 + ...? - 第二步：回答用 because——Because + 主语 + 谓语 + ... - 第三步：阅读/简答定位——找 why 后的原因句，或找 because 前的结果句 - because 不能与 so 连用：Because he is tall, so he plays basketball. ❌（二选一）",
+      "构成": "仅限 why / because，不引入 since / as / for（其他原因连词留至后续综合）",
+      "易错": "Because he is tall, so he plays basketball. → Because he is tall, he plays basketball.（because 与 so 不连用）",
+      "例句": "— Why do you like this singer? — Because she sings very well.（问动作原因）",
+      "注意": "why 问原因，because 答原因：固定配对，不可用 for/since 答 why（本课不引入）",
+      "口诀": "why 问原因，because 答原因；阅读简答配成对，定位因果找关键"
+    },
+    "中考考法": "why 问原因，because 答原因：固定配对，不可用 for/since 答 why（本课不引入）；because 与 so 不共存：Because...so... ❌（中文\"因为...所以...\"直译错误）；because of + 名词 vs. because + 句子：because of his hair（名词）/ because he is tall（句子），本课仅限 because",
+    "stage": "S3",
+    "lesson": 14
+  },
+  "形容词用法": {
+    "构成": "- 第一步：判断位置——名词前 → 修饰名词（定语）；be 动词后 → 作表语 - 第二步：判断功能——修饰名词给名词加特征；作表语描述主语状态 - 第三步：螺旋自 G11（基础形容词）——本课扩展至外貌描述场景 - 严禁比较级：tall / taller / tallest，本课仅限原级，比较级留至后续",
+    "例句6": [
+      "She has curly hair.（形容词修饰名词，定语）",
+      "Her hair is curly.（形容词作表语）",
+      "He is a tall and thin boy.（两个形容词修饰名词）",
+      "The beautiful singer has long blonde hair.（形容词修饰名词，描述外貌）",
+      "a tall boy, curly hair, big eyes",
+      "The boy is tall. Her hair is curly."
+    ],
+    "易错5": [
+      "She has hair curly. → She has curly hair.（形容词在名词前）",
+      "Her hair curly is. → Her hair is curly.（形容词作表语需 be 动词）",
+      "black long hair → long black hair（长短在颜色前）",
+      "She is taller than me.（本课不引入比较级） → She is tall.（仅限原级）"
+    ],
+    "口诀": "形容词修饰名词放前面（a tall boy），作表语放 be 后（The boy is tall）；描述外貌两相宜，比较等级暂不提",
+    "六色卡": {
+      "用法": "- 第一步：判断位置——名词前 → 修饰名词（定语）；be 动词后 → 作表语 - 第二步：判断功能——修饰名词给名词加特征；作表语描述主语状态 - 第三步：螺旋自 G11（基础形容词）——本课扩展至外貌描述场景 - 严禁比较级：tall / taller / tallest，本课仅限原级，比较级留至后续",
+      "构成": "仅限描述性形容词原级（修饰名词 + 作表语），严禁比较级（-er）与最高级（-est），留至后续综合课",
+      "易错": "She has hair curly. → She has curly hair.（形容词在名词前）",
+      "例句": "She has curly hair.（形容词修饰名词，定语）",
+      "注意": "形容词修饰名词 vs. 作表语：位置决定功能（名词前 vs. be 后）",
+      "口诀": "形容词修饰名词放前面（a tall boy），作表语放 be 后（The boy is tall）；描述外貌两相宜，比较等级暂不提"
+    },
+    "中考考法": "形容词修饰名词 vs. 作表语：位置决定功能（名词前 vs. be 后）；多个形容词顺序：长短/形状 → 颜色 → 名词（long black hair ✅ / black long hair ❌）；本课仅限原级：tall / thin / curly，不引入 taller / thinnest 等比较等级",
+    "stage": "S3",
+    "lesson": 14
+  },
+  "天气句型": {
+    "构成": "天气名词尾部加 y 即变形容词（sun→sunny 需去 e，其余直接加 y），五个词规律一致。",
+    "例句6": [
+      "How's the weather in summer? It's hot.（问天气 + 回答）",
+      "What's the weather like today? It's cloudy and windy.（两种问法等价）",
+      "It's warm in spring and cool in autumn.（描述季节天气）",
+      "How's the weather in Beijing? It's sunny.",
+      "What's the weather like? It's rainy.",
+      "It's sunny today."
+    ],
+    "易错5": [
+      "How's weather? → How's the weather?（weather 前必须加 the）",
+      "It's sun. → It's sunny.（回答用形容词，不用名词）",
+      "It's rain today. → It's rainy today.（描述天气用形容词形式）",
+      "sun+y → suny → sunny（sun 需去 e 再加 y，双写 n）"
+    ],
+    "口诀": "问天气 How's the weather，回答 It's 加形容；名词加 y 变形容，sun-sunny 雨雪风",
+    "六色卡": {
+      "用法": "天气名词尾部加 y 即变形容词（sun→sunny 需去 e，其余直接加 y），五个词规律一致。",
+      "构成": "首次引入，仅限天气句型，不引入温度表达（temperature/degrees 的数值问答留至后续综合）",
+      "易错": "How's weather? → How's the weather?（weather 前必须加 the）",
+      "例句": "How's the weather in summer? It's hot.（问天气 + 回答）",
+      "注意": "How's the weather? = What's the weather like?（两种问法等价，中考常考互换）",
+      "口诀": "问天气 How's the weather，回答 It's 加形容；名词加 y 变形容，sun-sunny 雨雪风"
+    },
+    "中考考法": "How's the weather? = What's the weather like?（两种问法等价，中考常考互换）；天气形容词回答一律用 It's 开头：It's sunny ✅ / Sunny ❌；描述天气用形容词形式，不用名词：It's rainy ✅ / It's rain ❌",
+    "stage": "S3",
+    "lesson": 15
+  },
+  "Could/Would礼貌请求": {
+    "构成": "- 第一步：识别 Could/Would → 礼貌请求句型 - 第二步：please 可前可后（Could you please V / Could you V, please） - 第三步：Could/Would 后接动词原形（与 can/must 规律一致，螺旋自 G28）",
+    "例句6": [
+      "Could you please close the door? — Sure.（请求 + 肯定回答）",
+      "Would you please tell me the weather? — Of course.（请求 + 肯定回答）",
+      "Could you please help me plan my trip? — Sorry, I can't.（请求 + 否定回答）",
+      "Could you please open the window?",
+      "Would you please pass me the umbrella?",
+      "Could you please help me with my trip?"
+    ],
+    "易错5": [
+      "Could you please opening the window? → Could you please open the window?（动词用原形）",
+      "Yes, I could. → Sure.（回答不用 Yes/No，用 Sure/Sorry）",
+      "Could you please to help me? → Could you please help me?（不加 to）"
+    ],
+    "口诀": "Could Would 加 please，动词原形跟在后；回答 Sure 或 Sorry，礼貌请求记心头",
+    "六色卡": {
+      "用法": "- 第一步：识别 Could/Would → 礼貌请求句型 - 第二步：please 可前可后（Could you please V / Could you V, please） - 第三步：Could/Would 后接动词原形（与 can/must 规律一致，螺旋自 G28）",
+      "构成": "螺旋自 G28（can/must 后接动词原形），补齐礼貌请求；不引入 would like to do（G34，L13 已覆盖）",
+      "易错": "Could you please opening the window? → Could you please open the window?（动词用原形）",
+      "例句": "Could you please close the door? — Sure.（请求 + 肯定回答）",
+      "注意": "Could/Would you please...? 比 Can you...? 更礼貌（中考常考语气辨析）",
+      "口诀": "Could Would 加 please，动词原形跟在后；回答 Sure 或 Sorry，礼貌请求记心头"
+    },
+    "中考考法": "Could/Would you please...? 比 Can you...? 更礼貌（中考常考语气辨析）；回答用 Sure / Of course（肯定），Sorry（否定），不用 Yes/No；Could/Would 后动词必须用原形：Could you please open ✅ / Could you please opening ❌",
+    "stage": "S3",
+    "lesson": 15
+  },
+  "It指代非人称": {
+    "构成": "- It 做非人称主语时，没有具体指代对象（不是\"它\"） - 天气：It's sunny / rainy / windy（与 G40 天气句型联动） - 时间：It's + 时刻（o'clock）/ 日期（Monday）/ 季节（spring） - 距离：It's far / It's + 数字 + kilometers - 形式主语：It's + adj. + to do sth.（It 占位，真正主语后置）",
+    "例句6": [
+      "It's rainy today. Take an umbrella.（指代天气）",
+      "It's eight o'clock. Let's go.（指代时间）",
+      "It's far from the hotel to the beach.（指代距离）",
+      "It's important to check the weather before a trip.（形式主语）",
+      "It's sunny today.",
+      "It's three o'clock."
+    ],
+    "易错5": [
+      "The weather is sunny today. → It's sunny today.（天气用 It 指代，不重复 the weather）",
+      "Today is rain. → It's rainy today.（天气用 It's + 形容词）",
+      "Is far from here. → It's far from here.（距离用 It 指代，不能省略）",
+      "It's sunny today, isn't it? → 正确（反义疑问句，天气用 It 指代）"
+    ],
+    "口诀": "It 指代三件事：天气时间与距离；It's sunny 是天气，It's three 是时间，It's far 是距离",
+    "六色卡": {
+      "用法": "- It 做非人称主语时，没有具体指代对象（不是\"它\"） - 天气：It's sunny / rainy / windy（与 G40 天气句型联动） - 时间：It's + 时刻（o'clock）/ 日期（Monday）/ 季节（spring） - 距离：It's far / It's + 数字 + kilometers - 形式主语：It's + adj. + to do sth.（It 占位，真正主语后置）",
+      "构成": "仅限现在时天气/时间/距离表达",
+      "易错": "The weather is sunny today. → It's sunny today.（天气用 It 指代，不重复 the weather）",
+      "例句": "It's rainy today. Take an umbrella.（指代天气）",
+      "注意": "It 指代天气 vs. 人称代词 it：It's sunny（天气）vs. It is a book（人称，指代具体事物）",
+      "口诀": "It 指代三件事：天气时间与距离；It's sunny 是天气，It's three 是时间，It's far 是距离"
+    },
+    "中考考法": "It 指代天气 vs. 人称代词 it：It's sunny（天气）vs. It is a book（人称，指代具体事物）；It's + adj. + to do sth. 是中考高频句型：It's nice to meet you. / It's hard to learn English.；时间表达：It's + 时刻（o'clock）/ 日期（Monday）/ 季节（spring）",
+    "stage": "S3",
+    "lesson": 15
+  },
+  "频度副词": {
+    "构成": "- be 动词后：She is always happy. / They are never late. - 实义动词前：I usually get up at six. / He often reads books. - 助动词后：I don't often go there. / She doesn't usually eat out.",
+    "例句6": [
+      "I usually get up at six o'clock.（实义动词前）",
+      "She is always happy and energetic.（be 动词后）",
+      "They hardly ever eat junk food.（实义动词前，hardly ever 连用）",
+      "We sometimes go shopping on weekends.（实义动词前）",
+      "He never drinks coffee or tea.（实义动词前）",
+      "She always is happy. → She is always happy."
+    ],
+    "易错5": [
+      "She always is happy. → She is always happy.（be 动词后）",
+      "He plays often basketball. → He often plays basketball.（实义动词前）",
+      "I usually don't eat out. → I don't usually eat out.（助动词后）",
+      "He hardly eats junk food. → He hardly ever eats junk food.（hardly 后加 ever）"
+    ],
+    "口诀": "频度副词六兄弟，always 到 never 百分降；be 后实前是位置，百分比来表达频",
+    "六色卡": {
+      "用法": "- be 动词后：She is always happy. / They are never late. - 实义动词前：I usually get up at six. / He often reads books. - 助动词后：I don't often go there. / She doesn't usually eat out.",
+      "构成": "首次引入频度副词，仅限 always/usually/often/sometimes/hardly ever/never 六个核心词，不引入其他频度表达（如 frequently, occasionally 等留至后续综合）",
+      "易错": "She always is happy. → She is always happy.（be 动词后）",
+      "例句": "I usually get up at six o'clock.（实义动词前）",
+      "注意": "always → usually → often → sometimes → hardly ever → never：频度从高到低排列",
+      "口诀": "频度副词六兄弟，always 到 never 百分降；be 后实前是位置，百分比来表达频"
+    },
+    "中考考法": "always → usually → often → sometimes → hardly ever → never：频度从高到低排列；hardly ever = almost never（几乎不），hardly 后常接 ever；频度副词放在 be 后、实义动词前是中考高频考点；sometimes 可放句首：Sometimes I walk to school. ✅",
+    "stage": "S4",
+    "lesson": 17
+  },
+  "how often问频率": {
+    "构成": "- 第一步：基数词 + times（once 特殊，twice 特殊，three times 及以上用 基数词+times） - 第二步：+ a/an + 时间单位（a week / a day / a month） - 第三步：once = one time（特殊变形），twice = two times（特殊变形）",
+    "例句6": [
+      "How often do you exercise? — I exercise twice a week.（问频率 + times 回答）",
+      "How often does she watch television? — She hardly ever watches TV.（问频率 + 频度副词回答）",
+      "How often do they go jogging? — They jog every day.（问频率 + every day 回答）",
+      "How often does he read online? — He reads online three times a week.（问频率 + times 回答）",
+      "How often do you exercise? — Twice a week.",
+      "How often does she read? — Every day."
+    ],
+    "易错5": [
+      "How often do you exercise? — Two times a week. → Twice a week.（两次用 twice）",
+      "How long do you exercise? — Twice a week. → How often do you exercise?（问频率用 how often）",
+      "one times a week → once a week（一次用 once）",
+      "three time a week → three times a week（三次用 times，加 s）"
+    ],
+    "口诀": "How often 问频率，回答用 times 加周期；once 一次 twice 两次，three times 三次记心间",
+    "六色卡": {
+      "用法": "- 第一步：基数词 + times（once 特殊，twice 特殊，three times 及以上用 基数词+times） - 第二步：+ a/an + 时间单位（a week / a day / a month） - 第三步：once = one time（特殊变形），twice = two times（特殊变形）",
+      "构成": "螺旋自 G35（how much/many），补齐 how often；不引入 how soon（多久以后）和 how long（多长时间）的辨析（留至后续综合）",
+      "易错": "How often do you exercise? — Two times a week. → Twice a week.（两次用 twice）",
+      "例句": "How often do you exercise? — I exercise twice a week.（问频率 + times 回答）",
+      "注意": "How often 问频率（多久一次），How long 问时长（多长时间），How far 问距离（多远）",
+      "口诀": "How often 问频率，回答用 times 加周期；once 一次 twice 两次，three times 三次记心间"
+    },
+    "中考考法": "How often 问频率（多久一次），How long 问时长（多长时间），How far 问距离（多远）；回答 How often 可用频度副词或 times 表达；once/twice 是特殊变形，不可说 one time/two time（但在口语中 one time 偶尔可接受，中考以 once/twice 为标准）",
+    "stage": "S4",
+    "lesson": 17
+  },
+  "基数词+times": {
+    "构成": "- 第一步：识别 \"数字 percent of + 名词\" 结构 - 第二步：看 of 后面的名词是可数还是不可数 - 第三步：可数复数→谓语复数；不可数/可数单数→谓语单数",
+    "例句6": [
+      "Eighty percent of students exercise every day.（百分比 + 复数名词 + 复数谓语）",
+      "Sixty percent of the water is clean.（百分比 + 不可数名词 + 单数谓语）",
+      "Ninety percent of the class likes English.（百分比 + 单数集合名词 + 单数谓语）",
+      "She usually sleeps 8 hours and often reads online.（频度副词 + 生活习惯短语）",
+      "Eighty percent of water is clean.",
+      "Eighty percent of the class is here."
+    ],
+    "易错5": [
+      "eighty percents → eighty percent（percent 不加 s）",
+      "Eighty percent of students is here. → Eighty percent of students are here.（复数名词→复数谓语）",
+      "Sixty percent of water are clean. → Sixty percent of water is clean.（不可数名词→单数谓语）",
+      "He usually sleep 8 hours. → He usually sleeps 8 hours.（三单加 s）"
+    ],
+    "口诀": "百分比加 of 名词，主谓一致看名词；生活习惯动词配，exercise sleep read 记牢",
+    "六色卡": {
+      "用法": "- 第一步：识别 \"数字 percent of + 名词\" 结构 - 第二步：看 of 后面的名词是可数还是不可数 - 第三步：可数复数→谓语复数；不可数/可数单数→谓语单数",
+      "构成": "仅限健康习惯搭配（exercise, sleep, read, watch TV, eat, drink, jog），不引入其他场景的百分比表达",
+      "易错": "eighty percents → eighty percent（percent 不加 s）",
+      "例句": "Eighty percent of students exercise every day.（百分比 + 复数名词 + 复数谓语）",
+      "注意": "percent 后不加 s：eighty percent ✅ / eighty percents ❌",
+      "口诀": "百分比加 of 名词，主谓一致看名词；生活习惯动词配，exercise sleep read 记牢"
+    },
+    "中考考法": "percent 后不加 s：eighty percent ✅ / eighty percents ❌；percent of + 复数名词 → 谓语用复数；percent of + 不可数名词 → 谓语用单数；\"percent of + 集合名词(the class)\"在中考中谓语可用单数或复数，以单数为标准",
+    "stage": "S4",
+    "lesson": 17
+  },
+  "现在进行时": {
+    "构成": "- 第一步：看主语选 be（I→am, he/she/it→is, we/you/they→are） - 第二步：动词加 -ing（直接加/去 e 加/双写加） - 第三步：be + V-ing 组合，否定加 not，疑问 be 提前",
+    "例句6": [
+      "I am doing housework now.（I 用 am）",
+      "She is washing the dishes.（she 用 is）",
+      "They are talking about the movie.（they 用 are）",
+      "He is not (isn't) sleeping. He is studying.（否定句）",
+      "Are you cooking dinner? — Yes, I am.（疑问句）",
+      "She is reading a book."
+    ],
+    "易错5": [
+      "She are reading. → She is reading.（she 用 is）",
+      "They is cooking. → They are cooking.（they 用 are）",
+      "He is read a book. → He is reading a book.（必须加 -ing）",
+      "She doesn't reading. → She isn't reading.（否定用 isn't，不用 doesn't）"
+    ],
+    "口诀": "现在进行时，be 加 ing；am is are 三选一，主语来决定；否定 not 跟 be 后，疑问 be 提前",
+    "六色卡": {
+      "用法": "- 第一步：看主语选 be（I→am, he/she/it→is, we/you/they→are） - 第二步：动词加 -ing（直接加/去 e 加/双写加） - 第三步：be + V-ing 组合，否定加 not，疑问 be 提前",
+      "构成": "首次引入现在进行时，仅限肯定/否定/疑问句结构，不引入过去进行时（was/were + V-ing）",
+      "易错": "She are reading. → She is reading.（she 用 is）",
+      "例句": "I am doing housework now.（I 用 am）",
+      "注意": "现在进行时表示此时此刻正在进行的动作，强调\"正在进行\"",
+      "口诀": "现在进行时，be 加 ing；am is are 三选一，主语来决定；否定 not 跟 be 后，疑问 be 提前"
+    },
+    "中考考法": "现在进行时表示此时此刻正在进行的动作，强调\"正在进行\"；be 动词必须与主语人称一致：I→am, he/she/it→is, we/you/they→are；否定句直接在 be 后加 not：is not = isn't, are not = aren't",
+    "stage": "S4",
+    "lesson": 18
+  },
+  "V-ing变化规则": {
+    "构成": "- 第一步：看动词结尾是否为\"辅音+不发音e\"→是→去 e 加 -ing（write→writing） - 第二步：看动词是否为\"重读闭音节\"（辅音+元音+辅音结尾且重读）→是→双写加 -ing（swim→swimming） - 第三步：以上都不是→直接加 -ing（read→reading）",
+    "例句6": [
+      "She is writing a letter.（write 去 e 加 -ing）",
+      "They are chatting online.（chat 双写 t 加 -ing）",
+      "He is reading a book.（read 直接加 -ing）",
+      "The girl is dancing to music.（dance 去 e 加 -ing）",
+      "read→reading, talk→talking, study→studying, sleep→sleeping, sing→singing, dance→dancing, wash→washing, look→looking, chat→chatting(双写), cook→cooking",
+      "write→writing, dance→dancing, notice→noticing, make→making, take→taking, come→coming"
+    ],
+    "易错5": [
+      "He is writeing. → He is writing.（去 e 加 -ing）",
+      "She is chatting... wait, chat 双写正确 → She is chatting.（双写 t）",
+      "They are runing. → They are running.（双写 n）",
+      "She is makeing tea. → She is making tea.（去 e 加 -ing）"
+    ],
+    "口诀": "ing 变化三规则：一般直接加，去 e 再加 ing，双写尾字母再加 ing",
+    "六色卡": {
+      "用法": "- 第一步：看动词结尾是否为\"辅音+不发音e\"→是→去 e 加 -ing（write→writing） - 第二步：看动词是否为\"重读闭音节\"（辅音+元音+辅音结尾且重读）→是→双写加 -ing（swim→swimming） - 第三步：以上都不是→直接加 -ing（read→reading）",
+      "构成": "仅限 V-ing 规则，不引入 V-ed 规则（已在 G20 涉及）；双写规则仅限常见词（swim, run, sit, chat, cut），不引入生僻词",
+      "易错": "He is writeing. → He is writing.（去 e 加 -ing）",
+      "例句": "She is writing a letter.（write 去 e 加 -ing）",
+      "注意": "以 ie 结尾的动词变 -ing 时，把 ie 变 y 再加 -ing：die→dying, lie→lying, tie→tying（超纲，了解即可）",
+      "口诀": "ing 变化三规则：一般直接加，去 e 再加 ing，双写尾字母再加 ing"
+    },
+    "中考考法": "以 ie 结尾的动词变 -ing 时，把 ie 变 y 再加 -ing：die→dying, lie→lying, tie→tying（超纲，了解即可）；以 e 结尾但 e 发音的动词不去 e：see→seeing, agree→agreeing；双写规则关键看\"重读闭音节\"：begin→beginning（重读），open→opening（不重读，不双写）",
+    "stage": "S4",
+    "lesson": 18
+  },
+  "进行时标志词": {
+    "构成": "- 第一步：看到 now / Look! / Listen! / at the moment → 提示用现在进行时 - 第二步：确认动作正在发生 → be + V-ing - 第三步：选择正确的 be 动词（am/is/are）",
+    "例句6": [
+      "Look! She is sweeping the floor.（Look! 提醒用进行时）",
+      "Listen! They are singing a song.（Listen! 提醒用进行时）",
+      "Mom is washing clothes now.（now 提示用进行时）",
+      "He is studying at the moment.（at the moment 提示用进行时）",
+      "She is reading now.",
+      "Look! He is drawing a picture."
+    ],
+    "易错5": [
+      "Look! She reads a book. → Look! She is reading a book.（Look! 提示进行时）",
+      "Listen! They sing a song. → Listen! They are singing a song.（Listen! 提示进行时）",
+      "She is reading every day. → She reads every day.（every day 用一般现在时）"
+    ],
+    "口诀": "now 正在此刻中，look listen 提醒你；at the moment 此刻间，看到它们用进行",
+    "六色卡": {
+      "用法": "- 第一步：看到 now / Look! / Listen! / at the moment → 提示用现在进行时 - 第二步：确认动作正在发生 → be + V-ing - 第三步：选择正确的 be 动词（am/is/are）",
+      "构成": "仅限 now/look/listen/at the moment，不引入 at 8 o'clock yesterday（过去进行时标志词）",
+      "易错": "Look! She reads a book. → Look! She is reading a book.（Look! 提示进行时）",
+      "例句": "Look! She is sweeping the floor.（Look! 提醒用进行时）",
+      "注意": "Look! 和 Listen! 在句首时，通常提示后面用现在进行时",
+      "口诀": "now 正在此刻中，look listen 提醒你；at the moment 此刻间，看到它们用进行"
+    },
+    "中考考法": "Look! 和 Listen! 在句首时，通常提示后面用现在进行时；now 可以用于一般现在时（She reads books now and then），但更多用于现在进行时；at the moment = right now = now，均提示进行时",
+    "stage": "S4",
+    "lesson": 18
+  },
+  "复合不定代词": {
+    "构成": "- 第一步：识别词根 some / any / no / every - 第二步：加后缀 -one（指人）/ -body（指人）/ -thing（指物）/ -where（指地点） - 第三步：some 类→肯定句；any 类→疑问/否定句 - 第四步：no 类本身是否定，不再加 not",
+    "例句6": [
+      "Someone is calling you on the phone.（some 类用于肯定句）",
+      "Is anyone else coming to the event?（any 类用于疑问句）",
+      "No one knows the answer to this question.（no 类表否定，本身含否定义）",
+      "Everyone seems happy about the weekend plan.（every 类表全部）",
+      "I can't find my diary anywhere.（any 类用于否定句）",
+      "Someone is at the door."
+    ],
+    "易错5": [
+      "I don't know someone here. → I don't know anyone here.（否定句用 any 类）",
+      "No one isn't here. → No one is here.（no 类本身否定，不再加 not）",
+      "Is there something wrong? → Is there anything wrong?（疑问句用 any 类）",
+      "Anyone is waiting for you. → Someone is waiting for you.（肯定句表\"某人\"用 some 类）"
+    ],
+    "口诀": "some any no every，加上 body/one/thing/where；肯定用 some 疑问 any，否定 any 或 no 来担当",
+    "六色卡": {
+      "用法": "- 第一步：识别词根 some / any / no / every - 第二步：加后缀 -one（指人）/ -body（指人）/ -thing（指物）/ -where（指地点） - 第三步：some 类→肯定句；any 类→疑问/否定句 - 第四步：no 类本身是否定，不再加 not",
+      "构成": "螺旋自 G33（some/any 基础用法），升级为复合不定代词（someone/anyone/something/nothing/everything 等）。仅限复合不定代词四类，不引入 both/neither/either 等其他不定代词（留至后续综合）。",
+      "易错": "I don't know someone here. → I don't know anyone here.（否定句用 any 类）",
+      "例句": "Someone is calling you on the phone.（some 类用于肯定句）",
+      "注意": "someone/somebody 通用，someone 更常用于书面；anyone/anybody 同理",
+      "口诀": "some any no every，加上 body/one/thing/where；肯定用 some 疑问 any，否定 any 或 no 来担当"
+    },
+    "中考考法": "someone/somebody 通用，someone 更常用于书面；anyone/anybody 同理；no one = nobody，但 no one 不连写（no one），nobody 连写；no one 指人，nothing 指物；some 类用于疑问句时，表示期待肯定回答：Would you like something to drink?（希望对方接受）；any 类用于肯定句时，表示",
+    "stage": "S4",
+    "lesson": 19
+  },
+  "定语后置": {
+    "构成": "- 第一步：识别\"复合不定代词 + 形容词\"结构 - 第二步：形容词必须放在复合不定代词之后 - 第三步：若还有不定式，顺序为\"代词 + 形容词 + to do\"：something easy to do",
+    "例句6": [
+      "I want to read something interesting this weekend.（something + interesting 后置）",
+      "Is there anything wrong with your plan?（anything + wrong 后置）",
+      "There is nothing new in today's diary.（nothing + new 后置）",
+      "Everything enjoyable seems hard to forget.（everything + enjoyable 后置）",
+      "Let's find somewhere quiet to talk.（somewhere + quiet 后置，地点副词同理）",
+      "something new"
+    ],
+    "易错5": [
+      "I have new something to tell you. → I have something new to tell you.（形容词后置）",
+      "Is there wrong anything? → Is there anything wrong?（形容词后置）",
+      "There is serious nothing. → There is nothing serious.（形容词后置）",
+      "I need good something to eat. → I need something good to eat.（形容词后置）"
+    ],
+    "口诀": "形容词修饰不定代，必须放在后面排；something new nothing wrong，后置规则记心间",
+    "六色卡": {
+      "用法": "- 第一步：识别\"复合不定代词 + 形容词\"结构 - 第二步：形容词必须放在复合不定代词之后 - 第三步：若还有不定式，顺序为\"代词 + 形容词 + to do\"：something easy to do",
+      "构成": "仅限形容词修饰复合不定代词后置规则，不引入 enough 修饰形容词后置（good enough）等其他后置现象。",
+      "易错": "I have new something to tell you. → I have something new to tell you.（形容词后置）",
+      "例句": "I want to read something interesting this weekend.（something + interesting 后置）",
+      "注意": "形容词修饰复合不定代词必须后置，这是中考高频考点",
+      "口诀": "形容词修饰不定代，必须放在后面排；something new nothing wrong，后置规则记心间"
+    },
+    "中考考法": "形容词修饰复合不定代词必须后置，这是中考高频考点；不定式修饰复合不定代词也后置：something to eat / nothing to do / someone to help；形容词修饰 somewhere/anywhere/nowhere 同样后置：somewhere quiet / anywhere safe；对比：形容词修饰普通名词前置（a good book），修饰不定代词后置（so",
+    "stage": "S4",
+    "lesson": 19
+  },
+  "主谓一致": {
+    "构成": "- 第一步：识别主语是复合不定代词（someone/anything/nothing/everything 等） - 第二步：无论语义上指\"一个人\"还是\"所有人\"，谓语动词一律用单数 - 第三步：be 动词用 is/was；实义动词加 -s（三单形式）",
+    "例句6": [
+      "Everyone is planning something for the weekend.（everyone + is，something 作宾语）",
+      "No one wants to feel bored on weekends.（no one + wants 三单）",
+      "Someone has left a diary on the desk.（someone + has 三单）",
+      "Is there anything interesting in the event?（anything + is，疑问句倒装）",
+      "Someone is at the door."
+    ],
+    "易错5": [
+      "Everyone are happy. → Everyone is happy.（谓语用单数）",
+      "Someone are calling you. → Someone is calling you.（谓语用单数）",
+      "Nothing are wrong. → Nothing is wrong.（谓语用单数）",
+      "Nobody know the plan. → Nobody knows the plan.（三单加 s）",
+      "Everything seem fine. → Everything seems fine.（三单加 s）"
+    ],
+    "口诀": "不定代词作主语，谓语动词用单数；someone is nothing is，三单形式别忘记",
+    "六色卡": {
+      "用法": "- 第一步：识别主语是复合不定代词（someone/anything/nothing/everything 等） - 第二步：无论语义上指\"一个人\"还是\"所有人\"，谓语动词一律用单数 - 第三步：be 动词用 is/was；实义动词加 -s（三单形式）",
+      "构成": "仅限复合不定代词作主语的主谓一致（谓语用单数），不引入集合名词（family/team/class）的主谓一致辨析，也不引入反意疑问句的深入规则。",
+      "易错": "Everyone are happy. → Everyone is happy.（谓语用单数）",
+      "例句": "Everyone is planning something for the weekend.（everyone + is，something 作宾语）",
+      "注意": "复合不定代词作主语，谓语动词一律用单数——这是中考必考点",
+      "口诀": "不定代词作主语，谓语动词用单数；someone is nothing is，三单形式别忘记"
+    },
+    "中考考法": "复合不定代词作主语，谓语动词一律用单数——这是中考必考点；everyone 虽然语义上是\"所有人\"，但谓语用单数：Everyone is here. ✅ / Everyone are here. ❌；no one / nobody / nothing 本身是否定词，后面不再加 not：No one is late. ✅ / No one isn't late. ❌；复合不定代词作主语时，反意疑问句",
+    "stage": "S4",
+    "lesson": 19
+  },
+  "过去时综合归纳": {
+    "构成": "- 第一步：判断动词类型——be 动词（am/is/are→was/were）还是实义动词 - 第二步：be 动词直接变 was/were；实义动词肯定句变过去式，否定/疑问用 did - 第三步：否定句 didn't + 动词原形；疑问句 Did + 主语 + 动词原形",
+    "例句6": [
+      "I was at the top of the hill at noon.（be 动词过去式）",
+      "We didn't bring enough water for the journey.（实义动词否定，didn't + 原形）",
+      "Did you see the ducks by the lake? — Yes, we did.（实义动词疑问，Did + 原形）",
+      "She rode a bicycle to the building.（不规则动词过去式 rode）",
+      "The weather was foggy, but we remained happy.（be 动词 + 实义动词过去式）",
+      "I was at the top of the hill."
+    ],
+    "易错5": [
+      "He didn't went there. → He didn't go there.（didn't 后接动词原形）",
+      "Did she was happy? → Was she happy?（be 动词疑问用 Was/Were）",
+      "They was tired. → They were tired.（复数用 were）",
+      "She weren't at home. → She wasn't at home.（单数用 was）"
+    ],
+    "口诀": "过去时态两套兵，was were 配主语；did 助动问与否，否定 didn't 加原形",
+    "六色卡": {
+      "用法": "- 第一步：判断动词类型——be 动词（am/is/are→was/were）还是实义动词 - 第二步：be 动词直接变 was/were；实义动词肯定句变过去式，否定/疑问用 did - 第三步：否定句 didn't + 动词原形；疑问句 Did + 主语 + 动词原形",
+      "构成": "螺旋自 G19/G20，仅限已学一般过去时（was/were & did）综合复习与混淆项排除，不引入过去进行时（was/were + V-ing）和过去完成时。",
+      "易错": "He didn't went there. → He didn't go there.（didn't 后接动词原形）",
+      "例句": "I was at the top of the hill at noon.（be 动词过去式）",
+      "注意": "was/were 用于 be 动词的过去式；did 是实义动词的助动词（疑问/否定），肯定句直接用动词过去式",
+      "口诀": "过去时态两套兵，was were 配主语；did 助动问与否，否定 didn't 加原形"
+    },
+    "中考考法": "was/were 用于 be 动词的过去式；did 是实义动词的助动词（疑问/否定），肯定句直接用动词过去式；否定句：be 动词加 not（wasn't/weren't）；实义动词用 didn't + 动词原形；疑问句：be 动词 Was/Were 提前；实义动词用 Did + 主语 + 动词原形；混淆高频考点：❌ He didn't went（did 后接原形）→ ✅ He didn't go",
+    "stage": "S4",
+    "lesson": 20
+  },
+  "不定代词综合": {
+    "构成": "- 第一步：看句型——肯定句用 some 系列，否定/疑问句用 any 系列 - 第二步：看主谓——复合不定代词作主语，谓语动词用单数（Everyone was...） - 第三步：看修饰——形容词修饰复合不定代词必须后置（something new）",
+    "例句6": [
+      "I bought something special on the journey.（some 系列 + 形容词后置）",
+      "Did you see anything below the hill?（any 系列 + 疑问句过去时）",
+      "Nobody disliked the trip.（no 系列 + 过去时）",
+      "We found nothing in the foggy building.（no 系列 + 过去时）",
+      "Everyone realized the journey was wonderful.（every 系列 + 过去时，谓语单数）",
+      "something new"
+    ],
+    "易错5": [
+      "I didn't see something. → I didn't see anything.（否定句用 any 系列）",
+      "We saw new something. → We saw something new.（形容词后置）",
+      "Everyone were tired. → Everyone was tired.（复合不定代词谓语单数）",
+      "I didn't see nobody. → I didn't see anybody. / I saw nobody.（不双重否定）"
+    ],
+    "口诀": "复合不定 some any no every，形容词后置跟在后；过去时中综合用，something anything 准确填",
+    "六色卡": {
+      "用法": "- 第一步：看句型——肯定句用 some 系列，否定/疑问句用 any 系列 - 第二步：看主谓——复合不定代词作主语，谓语动词用单数（Everyone was...） - 第三步：看修饰——形容词修饰复合不定代词必须后置（something new）",
+      "构成": "螺旋自 G49/G50，仅限已学复合不定代词在过去时语境中的综合运用，不引入 else 后缀结构（something else）和其他不定代词。",
+      "易错": "I didn't see something. → I didn't see anything.（否定句用 any 系列）",
+      "例句": "I bought something special on the journey.（some 系列 + 形容词后置）",
+      "注意": "some 系列用于肯定句，any 系列用于否定/疑问句；some 系列也可用于表示请求的疑问句（Would you like something to drink?）",
+      "口诀": "复合不定 some any no every，形容词后置跟在后；过去时中综合用，something anything 准确填"
+    },
+    "中考考法": "some 系列用于肯定句，any 系列用于否定/疑问句；some 系列也可用于表示请求的疑问句（Would you like something to drink?）；nothing = not anything，nobody = not anybody（否定句中不双重否定）；复合不定代词作主语时谓语用单数：Everyone was happy.（不用 were）；形容词修饰复合不定代词必须后置：",
+    "stage": "S4",
+    "lesson": 20
+  },
+  "60考点总复盘": {
+    "构成": "- 第一步：找时间词——every day/now/yesterday/last week 判断时态 - 第二步：定动词形式——现在时用原形/三单，进行时用 be+V-ing，过去时用 V-ed/was/were - 第三步：放频度副词——无论哪种时态，副词位置不变（be 后实前）",
+    "例句6": [
+      "She was always happy during the journey.（always + be 过去式 was）",
+      "We usually walked to the top of the hill.（usually + 实义动词过去式）",
+      "He hardly ever ate fast food last month.（hardly ever + 过去式）",
+      "Sometimes I went shopping last weekend.（sometimes 句首 + 过去式）",
+      "I never drank coffee in 2023.（never + 过去式）",
+      "She reads every day."
+    ],
+    "易错5": [
+      "She always was happy. → She was always happy.（be 动词后）",
+      "He usually didn't walked. → He didn't usually walk.（didn't + 原形，副词在 didn't 后）",
+      "She often play yesterday. → She often played yesterday.（过去时间词→过去式）",
+      "I never drink coffee yesterday. → I never drank coffee yesterday.（yesterday→过去式）"
+    ],
+    "口诀": "频度副词跨时态，现在过去位置同；be 后实前不变位，时间词辨时态用",
+    "六色卡": {
+      "用法": "- 第一步：找时间词——every day/now/yesterday/last week 判断时态 - 第二步：定动词形式——现在时用原形/三单，进行时用 be+V-ing，过去时用 V-ed/was/were - 第三步：放频度副词——无论哪种时态，副词位置不变（be 后实前）",
+      "构成": "螺旋自 G43，仅限已学频度副词与过去时间的跨时态对照识别，不引入其他时态（如现在完成时、过去完成时）。",
+      "易错": "She always was happy. → She was always happy.（be 动词后）",
+      "例句": "She was always happy during the journey.（always + be 过去式 was）",
+      "注意": "频度副词位置规则跨时态不变：be 后、实前、助动词后",
+      "口诀": "频度副词跨时态，现在过去位置同；be 后实前不变位，时间词辨时态用"
+    },
+    "中考考法": "频度副词位置规则跨时态不变：be 后、实前、助动词后；判断时态看时间词：every day→现在时；yesterday/last week→过去时；now→进行时；频度副词 + 过去时：副词位置不变，实义动词变过去式（He often played.）；always + was/were：She was always busy.（be 后）；否定句中频度副词位置：He didn't usually",
+    "stage": "S4",
+    "lesson": 20
+  }
+}

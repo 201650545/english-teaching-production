@@ -1,0 +1,4048 @@
+{
+ "meta": {
+  "built_by": "build_passage_questions.py",
+  "provenance": {
+   "cloze_real": [
+    "HN2026_L14_cloze",
+    "HN2026_L15_cloze",
+    "HN2026_L16_cloze",
+    "HN2026_L17_cloze",
+    "HN2026_L18_cloze",
+    "HN2026_L19_cloze",
+    "HN2026_L20_cloze",
+    "HN2026_L6_cloze",
+    "HN2026_L8_cloze"
+   ],
+   "cloze_adapted": [
+    "HN2026_L13_cloze",
+    "HN2026_L1_cloze",
+    "HN2026_L2_cloze",
+    "HN2026_L3_cloze",
+    "HN2026_L4_cloze"
+   ],
+   "w5_adapted": [
+    "HN2026_L1_w5",
+    "HN2026_L6_w5",
+    "HN2026_L8_w5"
+   ]
+  }
+ },
+ "reading": {
+  "HN2026_L6_reading_a": [
+   {
+    "num": 1,
+    "q": "What does Lily have for breakfast?",
+    "opts": [
+     [
+      "A",
+      "milk and bread"
+     ],
+     [
+      "B",
+      "rice and vegetables"
+     ],
+     [
+      "C",
+      "apples and bananas"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "Where does Lily eat lunch?",
+    "opts": [
+     [
+      "A",
+      "at home"
+     ],
+     [
+      "B",
+      "at school"
+     ],
+     [
+      "C",
+      "in a restaurant"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What do Lily's family eat for dinner?",
+    "opts": [
+     [
+      "A",
+      "rice and chicken"
+     ],
+     [
+      "B",
+      "bread and milk"
+     ],
+     [
+      "C",
+      "apples, bananas and oranges"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "Why does Lily NOT like fast food?",
+    "opts": [
+     [
+      "A",
+      "Because it is not good"
+     ],
+     [
+      "B",
+      "Because it is too expensive"
+     ],
+     [
+      "C",
+      "Because it is too sweet"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "What helps Lily grow tall and strong?",
+    "opts": [
+     [
+      "A",
+      "Fast food and cola"
+     ],
+     [
+      "B",
+      "Fruit and milk"
+     ],
+     [
+      "C",
+      "Candy and cakes"
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L8_reading_a": [
+   {
+    "num": 1,
+    "q": "When did the family go on the trip?",
+    "opts": [
+     [
+      "A",
+      "yesterday"
+     ],
+     [
+      "B",
+      "today"
+     ],
+     [
+      "C",
+      "tomorrow"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "What did the writer pack in the morning?",
+    "opts": [
+     [
+      "A",
+      "food and water"
+     ],
+     [
+      "B",
+      "clothes"
+     ],
+     [
+      "C",
+      "a postcard"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "How was the weather that day?",
+    "opts": [
+     [
+      "A",
+      "cold and rainy"
+     ],
+     [
+      "B",
+      "windy and dark"
+     ],
+     [
+      "C",
+      "sunny and warm"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "What time did the trip start?",
+    "opts": [
+     [
+      "A",
+      "at 8 a.m."
+     ],
+     [
+      "B",
+      "at 6 p.m."
+     ],
+     [
+      "C",
+      "at 9 a.m."
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "What did the writer buy for a friend?",
+    "opts": [
+     [
+      "A",
+      "a map"
+     ],
+     [
+      "B",
+      "a postcard"
+     ],
+     [
+      "C",
+      "a camera"
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L2_reading_a": [
+   {
+    "num": 1,
+    "q": "What is the passage mainly about?",
+    "opts": [
+     [
+      "A",
+      "a family photo album"
+     ],
+     [
+      "B",
+      "a school show"
+     ],
+     [
+      "C",
+      "a birthday party"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "Who can you see in the first picture?",
+    "opts": [
+     [
+      "A",
+      "father and mother"
+     ],
+     [
+      "B",
+      "grandpa and grandma"
+     ],
+     [
+      "C",
+      "my cousin"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "Who is the little boy in the picture?",
+    "opts": [
+     [
+      "A",
+      "my brother"
+     ],
+     [
+      "B",
+      "my friend"
+     ],
+     [
+      "C",
+      "my cousin"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "How is the family?",
+    "opts": [
+     [
+      "A",
+      "happy"
+     ],
+     [
+      "B",
+      "sad"
+     ],
+     [
+      "C",
+      "busy"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "The passage may be from ______.",
+    "opts": [
+     [
+      "A",
+      "a diary"
+     ],
+     [
+      "B",
+      "a class show"
+     ],
+     [
+      "C",
+      "a letter"
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L3_reading_a": [
+   {
+    "num": 1,
+    "q": "Where were the things found this week?",
+    "opts": [
+     [
+      "A",
+      "in the school library"
+     ],
+     [
+      "B",
+      "in the classroom"
+     ],
+     [
+      "C",
+      "in the park"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "When was the white eraser found?",
+    "opts": [
+     [
+      "A",
+      "on Monday"
+     ],
+     [
+      "B",
+      "on Tuesday"
+     ],
+     [
+      "C",
+      "on Wednesday"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What is in the blue pencil box?",
+    "opts": [
+     [
+      "A",
+      "a cat picture"
+     ],
+     [
+      "B",
+      "a red cover"
+     ],
+     [
+      "C",
+      "two pens and a ruler"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "What must you do before taking a thing?",
+    "opts": [
+     [
+      "A",
+      "describe your thing"
+     ],
+     [
+      "B",
+      "pay some money"
+     ],
+     [
+      "C",
+      "call your teacher"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "What does the English dictionary have?",
+    "opts": [
+     [
+      "A",
+      "a white eraser"
+     ],
+     [
+      "B",
+      "a red cover"
+     ],
+     [
+      "C",
+      "a blue pencil box"
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L13_reading_a": [
+   {
+    "num": 1,
+    "q": "When is the big weekend sale?",
+    "opts": [
+     [
+      "A",
+      "from Friday to Sunday"
+     ],
+     [
+      "B",
+      "from Monday to Friday"
+     ],
+     [
+      "C",
+      "every weekend in June"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "How much is the discount on fresh fruit before 9 a.m.?",
+    "opts": [
+     [
+      "A",
+      "ten percent off"
+     ],
+     [
+      "B",
+      "twenty percent off"
+     ],
+     [
+      "C",
+      "thirty percent off"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What is the special deal on milk, bread and eggs?",
+    "opts": [
+     [
+      "A",
+      "twenty percent off"
+     ],
+     [
+      "B",
+      "buy one, get one free"
+     ],
+     [
+      "C",
+      "buy two, get one free"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "What do you get if you spend over fifty yuan?",
+    "opts": [
+     [
+      "A",
+      "a free package of salt"
+     ],
+     [
+      "B",
+      "a free bag"
+     ],
+     [
+      "C",
+      "a free package of sugar"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "When is the supermarket open every day?",
+    "opts": [
+     [
+      "A",
+      "from 9 a.m. to 5 p.m."
+     ],
+     [
+      "B",
+      "from 8 a.m. to 10 p.m."
+     ],
+     [
+      "C",
+      "from 8 a.m. to 8 p.m."
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L14_reading_a": [
+   {
+    "num": 1,
+    "q": "Who is the writer's favorite teacher?",
+    "opts": [
+     [
+      "A",
+      "Mr. Lee"
+     ],
+     [
+      "B",
+      "Mr. Brown"
+     ],
+     [
+      "C",
+      "Miss Li"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "What does Mr. Lee look like?",
+    "opts": [
+     [
+      "A",
+      "short and thin"
+     ],
+     [
+      "B",
+      "tall and thin"
+     ],
+     [
+      "C",
+      "tall and fat"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "Why is Mr. Lee popular?",
+    "opts": [
+     [
+      "A",
+      "because he is strict"
+     ],
+     [
+      "B",
+      "because he is handsome"
+     ],
+     [
+      "C",
+      "because he is patient and funny"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "How does Mr. Lee explain difficult ideas?",
+    "opts": [
+     [
+      "A",
+      "with easy examples"
+     ],
+     [
+      "B",
+      "with long sentences"
+     ],
+     [
+      "C",
+      "with pictures"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "What does the writer want to be when he grows up?",
+    "opts": [
+     [
+      "A",
+      "a doctor"
+     ],
+     [
+      "B",
+      "a teacher like Mr. Lee"
+     ],
+     [
+      "C",
+      "a writer"
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L15_reading_a": [
+   {
+    "num": 1,
+    "q": "When is the school trip to Green Mountain?",
+    "opts": [
+     [
+      "A",
+      "on Saturday"
+     ],
+     [
+      "B",
+      "on Sunday"
+     ],
+     [
+      "C",
+      "on Friday"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "What is the weather like in the morning?",
+    "opts": [
+     [
+      "A",
+      "cloudy and cool"
+     ],
+     [
+      "B",
+      "sunny and warm"
+     ],
+     [
+      "C",
+      "rainy and cold"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What should students bring for the morning?",
+    "opts": [
+     [
+      "A",
+      "an umbrella"
+     ],
+     [
+      "B",
+      "comfortable shoes"
+     ],
+     [
+      "C",
+      "sunglasses and a hat"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "When is there a chance of rain?",
+    "opts": [
+     [
+      "A",
+      "after 3:00 p.m."
+     ],
+     [
+      "B",
+      "in the morning"
+     ],
+     [
+      "C",
+      "at noon"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "What should students wear for hiking?",
+    "opts": [
+     [
+      "A",
+      "new clothes"
+     ],
+     [
+      "B",
+      "comfortable shoes"
+     ],
+     [
+      "C",
+      "a coat"
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L16_reading_a": [
+   {
+    "num": 1,
+    "q": "What is the passage mainly about?",
+    "opts": [
+     [
+      "A",
+      "school clubs"
+     ],
+     [
+      "B",
+      "school lessons"
+     ],
+     [
+      "C",
+      "school food"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "When does the Sports Club meet?",
+    "opts": [
+     [
+      "A",
+      "every Monday"
+     ],
+     [
+      "B",
+      "every Tuesday and Thursday"
+     ],
+     [
+      "C",
+      "every Wednesday"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "Who is the art teacher?",
+    "opts": [
+     [
+      "A",
+      "Mr. Smith"
+     ],
+     [
+      "B",
+      "Mr. Brown"
+     ],
+     [
+      "C",
+      "Miss Li"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "What do students do in the Weather Club?",
+    "opts": [
+     [
+      "A",
+      "watch the weather and write reports"
+     ],
+     [
+      "B",
+      "play basketball"
+     ],
+     [
+      "C",
+      "draw pictures"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "What do students need to sign up for the clubs?",
+    "opts": [
+     [
+      "A",
+      "some money"
+     ],
+     [
+      "B",
+      "their student card"
+     ],
+     [
+      "C",
+      "their homework"
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L17_reading_a": [
+   {
+    "num": 1,
+    "q": "What is the survey about?",
+    "opts": [
+     [
+      "A",
+      "teenagers' daily habits"
+     ],
+     [
+      "B",
+      "family housework"
+     ],
+     [
+      "C",
+      "school clubs"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "How many percent of students exercise every day?",
+    "opts": [
+     [
+      "A",
+      "twenty percent"
+     ],
+     [
+      "B",
+      "sixty percent"
+     ],
+     [
+      "C",
+      "eighty percent"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "How many percent of students sometimes eat junk food?",
+    "opts": [
+     [
+      "A",
+      "forty percent"
+     ],
+     [
+      "B",
+      "twenty percent"
+     ],
+     [
+      "C",
+      "fifty percent"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "How long do most students sleep each night?",
+    "opts": [
+     [
+      "A",
+      "about seven hours"
+     ],
+     [
+      "B",
+      "about eight hours"
+     ],
+     [
+      "C",
+      "about six hours"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "According to the passage, what gives students energy for study?",
+    "opts": [
+     [
+      "A",
+      "watching TV"
+     ],
+     [
+      "B",
+      "good habits"
+     ],
+     [
+      "C",
+      "junk food"
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L18_reading_a": [
+   {
+    "num": 1,
+    "q": "What is the survey about?",
+    "opts": [
+     [
+      "A",
+      "family housework"
+     ],
+     [
+      "B",
+      "weekend activities"
+     ],
+     [
+      "C",
+      "school clubs"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "What are forty percent of mothers doing?",
+    "opts": [
+     [
+      "A",
+      "washing clothes"
+     ],
+     [
+      "B",
+      "cooking"
+     ],
+     [
+      "C",
+      "watching TV"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What are thirty percent of children doing?",
+    "opts": [
+     [
+      "A",
+      "watching TV"
+     ],
+     [
+      "B",
+      "playing games"
+     ],
+     [
+      "C",
+      "doing homework"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "How many percent of fathers are washing clothes?",
+    "opts": [
+     [
+      "A",
+      "twenty-five percent"
+     ],
+     [
+      "B",
+      "thirty percent"
+     ],
+     [
+      "C",
+      "forty percent"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "What does doing housework together help family members do?",
+    "opts": [
+     [
+      "A",
+      "get more money"
+     ],
+     [
+      "B",
+      "talk and understand each other"
+     ],
+     [
+      "C",
+      "study better at once"
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L19_reading_a": [
+   {
+    "num": 1,
+    "q": "What is the survey about?",
+    "opts": [
+     [
+      "A",
+      "weekend activities"
+     ],
+     [
+      "B",
+      "school subjects"
+     ],
+     [
+      "C",
+      "family food"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "How many percent of students go somewhere fun on weekends?",
+    "opts": [
+     [
+      "A",
+      "thirty percent"
+     ],
+     [
+      "B",
+      "fifty percent"
+     ],
+     [
+      "C",
+      "twenty percent"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What do thirty percent of students do on weekends?",
+    "opts": [
+     [
+      "A",
+      "go abroad"
+     ],
+     [
+      "B",
+      "explore the city"
+     ],
+     [
+      "C",
+      "stay at home and read books"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "What does the best story get?",
+    "opts": [
+     [
+      "A",
+      "a prize"
+     ],
+     [
+      "B",
+      "a book"
+     ],
+     [
+      "C",
+      "a trip"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "How do most students feel about their weekends?",
+    "opts": [
+     [
+      "A",
+      "bored"
+     ],
+     [
+      "B",
+      "enjoyable"
+     ],
+     [
+      "C",
+      "tired"
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L20_reading_a": [
+   {
+    "num": 1,
+    "q": "Where does Green Hill Town sit?",
+    "opts": [
+     [
+      "A",
+      "below a green hill"
+     ],
+     [
+      "B",
+      "on the top of a hill"
+     ],
+     [
+      "C",
+      "beside a big city"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "What can you see at the top of the hill?",
+    "opts": [
+     [
+      "A",
+      "the old stone building"
+     ],
+     [
+      "B",
+      "the entire town"
+     ],
+     [
+      "C",
+      "the lake"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What is the old stone building at the top?",
+    "opts": [
+     [
+      "A",
+      "a museum"
+     ],
+     [
+      "B",
+      "a church"
+     ],
+     [
+      "C",
+      "a famous landmark"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "What are the ducks doing in the lake?",
+    "opts": [
+     [
+      "A",
+      "swimming in the clear blue water"
+     ],
+     [
+      "B",
+      "eating fresh fruit"
+     ],
+     [
+      "C",
+      "sleeping by the lake"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "What can you do if you feel hungry by the lake?",
+    "opts": [
+     [
+      "A",
+      "go back to town"
+     ],
+     [
+      "B",
+      "try the fresh fruit and snacks"
+     ],
+     [
+      "C",
+      "camp by the lake"
+     ]
+    ],
+    "answer": "B"
+   }
+  ]
+ },
+ "cloze": {
+  "HN2026_L6_cloze": [
+   {
+    "num": 21,
+    "q": "I ___ healthy food every day because it makes me strong.",
+    "opts": [
+     [
+      "A",
+      "like"
+     ],
+     [
+      "B",
+      "likes"
+     ],
+     [
+      "C",
+      "am"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 22,
+    "q": "For breakfast, I ___ milk and bread at home with my mum.",
+    "opts": [
+     [
+      "A",
+      "have"
+     ],
+     [
+      "B",
+      "has"
+     ],
+     [
+      "C",
+      "drink"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 23,
+    "q": "I ___ like fast food because it is not good for my body.",
+    "opts": [
+     [
+      "A",
+      "don't"
+     ],
+     [
+      "B",
+      "doesn't"
+     ],
+     [
+      "C",
+      "am not"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 24,
+    "q": "My mum ___ apples and bananas for us every week.",
+    "opts": [
+     [
+      "A",
+      "like"
+     ],
+     [
+      "B",
+      "likes"
+     ],
+     [
+      "C",
+      "eat"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 25,
+    "q": "We eat rice and ___ for lunch at school with friends.",
+    "opts": [
+     [
+      "A",
+      "vegetable"
+     ],
+     [
+      "B",
+      "vegetables"
+     ],
+     [
+      "C",
+      "meats"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 26,
+    "q": "___ dinner, we have chicken and vegetables together.",
+    "opts": [
+     [
+      "A",
+      "For"
+     ],
+     [
+      "B",
+      "In"
+     ],
+     [
+      "C",
+      "On"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 27,
+    "q": "I ___ an apple every day after school.",
+    "opts": [
+     [
+      "A",
+      "eat"
+     ],
+     [
+      "B",
+      "eats"
+     ],
+     [
+      "C",
+      "has"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 28,
+    "q": "My sister ___ eggs in the morning before class.",
+    "opts": [
+     [
+      "A",
+      "eat"
+     ],
+     [
+      "B",
+      "eats"
+     ],
+     [
+      "C",
+      "like"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 29,
+    "q": "We ___ water, not cola or juice.",
+    "opts": [
+     [
+      "A",
+      "drinks"
+     ],
+     [
+      "B",
+      "drink"
+     ],
+     [
+      "C",
+      "drinking"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 30,
+    "q": "Good food ___ us strong and happy.",
+    "opts": [
+     [
+      "A",
+      "make"
+     ],
+     [
+      "B",
+      "makes"
+     ],
+     [
+      "C",
+      "making"
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L8_cloze": [
+   {
+    "num": 21,
+    "q": "Last summer, I ___ to Beijing with my family for a happy holiday by train.",
+    "opts": [
+     [
+      "A",
+      "went"
+     ],
+     [
+      "B",
+      "go"
+     ],
+     [
+      "C",
+      "goes"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 22,
+    "q": "We ___ the Great Wall and walked a long way up the tall hill.",
+    "opts": [
+     [
+      "A",
+      "visited"
+     ],
+     [
+      "B",
+      "visit"
+     ],
+     [
+      "C",
+      "visiting"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 23,
+    "q": "It ___ very tall and long under the blue sky and white clouds.",
+    "opts": [
+     [
+      "A",
+      "was"
+     ],
+     [
+      "B",
+      "is"
+     ],
+     [
+      "C",
+      "were"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 24,
+    "q": "The weather ___ sunny and warm all day.",
+    "opts": [
+     [
+      "A",
+      "was"
+     ],
+     [
+      "B",
+      "is"
+     ],
+     [
+      "C",
+      "were"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 25,
+    "q": "We ___ many photos of the nice view from the top.",
+    "opts": [
+     [
+      "A",
+      "took"
+     ],
+     [
+      "B",
+      "take"
+     ],
+     [
+      "C",
+      "taking"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 26,
+    "q": "My sister ___ an ice cream near the gate and smiled a lot.",
+    "opts": [
+     [
+      "A",
+      "bought"
+     ],
+     [
+      "B",
+      "buy"
+     ],
+     [
+      "C",
+      "buys"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 27,
+    "q": "We ___ some delicious food at a small shop on the street.",
+    "opts": [
+     [
+      "A",
+      "ate"
+     ],
+     [
+      "B",
+      "eat"
+     ],
+     [
+      "C",
+      "eats"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 28,
+    "q": "The happy trip ___ at 6 p.m.",
+    "opts": [
+     [
+      "A",
+      "finished"
+     ],
+     [
+      "B",
+      "finish"
+     ],
+     [
+      "C",
+      "finishing"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 29,
+    "q": "We ___ very happy and not tired after the long walk.",
+    "opts": [
+     [
+      "A",
+      "were"
+     ],
+     [
+      "B",
+      "are"
+     ],
+     [
+      "C",
+      "was"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 30,
+    "q": "It ___ a wonderful day for all of us to remember!",
+    "opts": [
+     [
+      "A",
+      "was"
+     ],
+     [
+      "B",
+      "is"
+     ],
+     [
+      "C",
+      "were"
+     ]
+    ],
+    "answer": "A"
+   }
+  ],
+  "HN2026_L14_cloze": [
+   {
+    "num": 21,
+    "q": "She is a girl of medium ___.",
+    "opts": [
+     [
+      "A",
+      "height"
+     ],
+     [
+      "B",
+      "weight"
+     ],
+     [
+      "C",
+      "color"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 22,
+    "q": "She ___ long straight black hair and big bright eyes.",
+    "opts": [
+     [
+      "A",
+      "is"
+     ],
+     [
+      "B",
+      "has"
+     ],
+     [
+      "C",
+      "have"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 23,
+    "q": "Her face is ___ and round.",
+    "opts": [
+     [
+      "A",
+      "small"
+     ],
+     [
+      "B",
+      "long"
+     ],
+     [
+      "C",
+      "round"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 24,
+    "q": "Linda is not very tall, ___ she looks neat and energetic.",
+    "opts": [
+     [
+      "A",
+      "but"
+     ],
+     [
+      "B",
+      "so"
+     ],
+     [
+      "C",
+      "because"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 25,
+    "q": "She is also a good ___. She sings beautifully.",
+    "opts": [
+     [
+      "A",
+      "singer"
+     ],
+     [
+      "B",
+      "actor"
+     ],
+     [
+      "C",
+      "artist"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 26,
+    "q": "___ do so many students like her?",
+    "opts": [
+     [
+      "A",
+      "What"
+     ],
+     [
+      "B",
+      "Why"
+     ],
+     [
+      "C",
+      "How"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 27,
+    "q": "___ she is kind and helpful.",
+    "opts": [
+     [
+      "A",
+      "So"
+     ],
+     [
+      "B",
+      "Because"
+     ],
+     [
+      "C",
+      "For"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 28,
+    "q": "Her smile makes people feel ___.",
+    "opts": [
+     [
+      "A",
+      "warm"
+     ],
+     [
+      "B",
+      "cold"
+     ],
+     [
+      "C",
+      "sad"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 29,
+    "q": "She is a ___ girl.",
+    "opts": [
+     [
+      "A",
+      "big"
+     ],
+     [
+      "B",
+      "tall"
+     ],
+     [
+      "C",
+      "kind"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 30,
+    "q": "She is a kind girl, ___ we all like her.",
+    "opts": [
+     [
+      "A",
+      "and"
+     ],
+     [
+      "B",
+      "but"
+     ],
+     [
+      "C",
+      "or"
+     ]
+    ],
+    "answer": "A"
+   }
+  ],
+  "HN2026_L15_cloze": [
+   {
+    "num": 21,
+    "q": "My family ___ to go there this summer.",
+    "opts": [
+     [
+      "A",
+      "plan"
+     ],
+     [
+      "B",
+      "plans"
+     ],
+     [
+      "C",
+      "planning"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 22,
+    "q": "My mother ___ the weather forecast every day.",
+    "opts": [
+     [
+      "A",
+      "check"
+     ],
+     [
+      "B",
+      "checks"
+     ],
+     [
+      "C",
+      "checking"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 23,
+    "q": "The temperature is about 30 ___.",
+    "opts": [
+     [
+      "A",
+      "degree"
+     ],
+     [
+      "B",
+      "degrees"
+     ],
+     [
+      "C",
+      "degree's"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 24,
+    "q": "Could you ___ me pack my swimsuit?",
+    "opts": [
+     [
+      "A",
+      "help"
+     ],
+     [
+      "B",
+      "to help"
+     ],
+     [
+      "C",
+      "helping"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 25,
+    "q": "She is very ___ and helps me put clothes into my suitcase.",
+    "opts": [
+     [
+      "A",
+      "sad"
+     ],
+     [
+      "B",
+      "kind"
+     ],
+     [
+      "C",
+      "angry"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 26,
+    "q": "When we arrive, it is ___ sunny.",
+    "opts": [
+     [
+      "A",
+      "real"
+     ],
+     [
+      "B",
+      "really"
+     ],
+     [
+      "C",
+      "very much"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 27,
+    "q": "Would you like to go ___ with me?",
+    "opts": [
+     [
+      "A",
+      "swimming"
+     ],
+     [
+      "B",
+      "shopping"
+     ],
+     [
+      "C",
+      "hiking"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 28,
+    "q": "In the evening, the wind is ___. It is very comfortable.",
+    "opts": [
+     [
+      "A",
+      "strong"
+     ],
+     [
+      "B",
+      "mild"
+     ],
+     [
+      "C",
+      "heavy"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 29,
+    "q": "___ a wonderful day!",
+    "opts": [
+     [
+      "A",
+      "What"
+     ],
+     [
+      "B",
+      "How"
+     ],
+     [
+      "C",
+      "What a"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 30,
+    "q": "The beautiful ___ makes our trip special.",
+    "opts": [
+     [
+      "A",
+      "scenery"
+     ],
+     [
+      "B",
+      "hotel"
+     ],
+     [
+      "C",
+      "raincoat"
+     ]
+    ],
+    "answer": "A"
+   }
+  ],
+  "HN2026_L16_cloze": [
+   {
+    "num": 21,
+    "q": "She is a tall girl ___ long straight hair.",
+    "opts": [
+     [
+      "A",
+      "has"
+     ],
+     [
+      "B",
+      "with"
+     ],
+     [
+      "C",
+      "have"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 22,
+    "q": "She ___ glasses every day.",
+    "opts": [
+     [
+      "A",
+      "wear"
+     ],
+     [
+      "B",
+      "wears"
+     ],
+     [
+      "C",
+      "wearing"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 23,
+    "q": "Lily is very ___ and she always helps me with my homework.",
+    "opts": [
+     [
+      "A",
+      "kind"
+     ],
+     [
+      "B",
+      "cold"
+     ],
+     [
+      "C",
+      "boring"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 24,
+    "q": "Lily and I ___ in the same class.",
+    "opts": [
+     [
+      "A",
+      "am"
+     ],
+     [
+      "B",
+      "is"
+     ],
+     [
+      "C",
+      "are"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 25,
+    "q": "Our classroom is ___ the second floor.",
+    "opts": [
+     [
+      "A",
+      "in"
+     ],
+     [
+      "B",
+      "on"
+     ],
+     [
+      "C",
+      "at"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 26,
+    "q": "There ___ thirty students in our class.",
+    "opts": [
+     [
+      "A",
+      "is"
+     ],
+     [
+      "B",
+      "are"
+     ],
+     [
+      "C",
+      "be"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 27,
+    "q": "She ___ English.",
+    "opts": [
+     [
+      "A",
+      "teach"
+     ],
+     [
+      "B",
+      "teaches"
+     ],
+     [
+      "C",
+      "teaching"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 28,
+    "q": "She ___ basketball every day after school.",
+    "opts": [
+     [
+      "A",
+      "play"
+     ],
+     [
+      "B",
+      "plays"
+     ],
+     [
+      "C",
+      "playing"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 29,
+    "q": "She also likes ___ fruit, especially apples and bananas.",
+    "opts": [
+     [
+      "A",
+      "eat"
+     ],
+     [
+      "B",
+      "eating"
+     ],
+     [
+      "C",
+      "eats"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 30,
+    "q": "She wants to be a great ___ when she grows up.",
+    "opts": [
+     [
+      "A",
+      "teacher"
+     ],
+     [
+      "B",
+      "teach"
+     ],
+     [
+      "C",
+      "teachers"
+     ]
+    ],
+    "answer": "A"
+   }
+  ],
+  "HN2026_L17_cloze": [
+   {
+    "num": 21,
+    "q": "She ___ gets up at six o'clock every morning.",
+    "opts": [
+     [
+      "A",
+      "usually"
+     ],
+     [
+      "B",
+      "sometimes"
+     ],
+     [
+      "C",
+      "never"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 22,
+    "q": "She ___ for twenty minutes in the park every day.",
+    "opts": [
+     [
+      "A",
+      "jogs"
+     ],
+     [
+      "B",
+      "jog"
+     ],
+     [
+      "C",
+      "jogging"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 23,
+    "q": "After that, she eats a healthy ___.",
+    "opts": [
+     [
+      "A",
+      "lunch"
+     ],
+     [
+      "B",
+      "breakfast"
+     ],
+     [
+      "C",
+      "dinner"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 24,
+    "q": "She ___ eats junk food in the morning.",
+    "opts": [
+     [
+      "A",
+      "always"
+     ],
+     [
+      "B",
+      "never"
+     ],
+     [
+      "C",
+      "usually"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 25,
+    "q": "She ___ eight glasses of water every day.",
+    "opts": [
+     [
+      "A",
+      "drink"
+     ],
+     [
+      "B",
+      "drinks"
+     ],
+     [
+      "C",
+      "drinking"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 26,
+    "q": "She hardly ___ eats junk food.",
+    "opts": [
+     [
+      "A",
+      "ever"
+     ],
+     [
+      "B",
+      "never"
+     ],
+     [
+      "C",
+      "always"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 27,
+    "q": "She thinks it is bad for her ___.",
+    "opts": [
+     [
+      "A",
+      "health"
+     ],
+     [
+      "B",
+      "healthy"
+     ],
+     [
+      "C",
+      "body"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 28,
+    "q": "She exercises ___ a week.",
+    "opts": [
+     [
+      "A",
+      "twice"
+     ],
+     [
+      "B",
+      "two"
+     ],
+     [
+      "C",
+      "second"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 29,
+    "q": "Sometimes she reads books online in the ___.",
+    "opts": [
+     [
+      "A",
+      "morning"
+     ],
+     [
+      "B",
+      "evening"
+     ],
+     [
+      "C",
+      "afternoon"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 30,
+    "q": "Lisa has a healthy ___.",
+    "opts": [
+     [
+      "A",
+      "lifestyle"
+     ],
+     [
+      "B",
+      "habit"
+     ],
+     [
+      "C",
+      "result"
+     ]
+    ],
+    "answer": "A"
+   }
+  ],
+  "HN2026_L18_cloze": [
+   {
+    "num": 21,
+    "q": "Mom ___ in the kitchen. She is cooking a big breakfast.",
+    "opts": [
+     [
+      "A",
+      "is cooking"
+     ],
+     [
+      "B",
+      "are cooking"
+     ],
+     [
+      "C",
+      "cooks"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 22,
+    "q": "The food smells ___.",
+    "opts": [
+     [
+      "A",
+      "bad"
+     ],
+     [
+      "B",
+      "wonderful"
+     ],
+     [
+      "C",
+      "terrible"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 23,
+    "q": "He is ___ washing the windows.",
+    "opts": [
+     [
+      "A",
+      "also"
+     ],
+     [
+      "B",
+      "too"
+     ],
+     [
+      "C",
+      "either"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 24,
+    "q": "She is ___ her bed and organizing her desk.",
+    "opts": [
+     [
+      "A",
+      "making"
+     ],
+     [
+      "B",
+      "doing"
+     ],
+     [
+      "C",
+      "washing"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 25,
+    "q": "She is a ___ girl.",
+    "opts": [
+     [
+      "A",
+      "lazy"
+     ],
+     [
+      "B",
+      "tidy"
+     ],
+     [
+      "C",
+      "messy"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 26,
+    "q": "Their son Ben is in the ___. He is washing his clothes.",
+    "opts": [
+     [
+      "A",
+      "kitchen"
+     ],
+     [
+      "B",
+      "bathroom"
+     ],
+     [
+      "C",
+      "garden"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 27,
+    "q": "He is ___ chatting with his friend online.",
+    "opts": [
+     [
+      "A",
+      "too"
+     ],
+     [
+      "B",
+      "also"
+     ],
+     [
+      "C",
+      "either"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 28,
+    "q": "He is ___ TV.",
+    "opts": [
+     [
+      "A",
+      "watching"
+     ],
+     [
+      "B",
+      "seeing"
+     ],
+     [
+      "C",
+      "looking"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 29,
+    "q": "Grandma is ___ next to him. She is reading a newspaper.",
+    "opts": [
+     [
+      "A",
+      "sitting"
+     ],
+     [
+      "B",
+      "standing"
+     ],
+     [
+      "C",
+      "sleeping"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 30,
+    "q": "Everyone is busy ___ happy.",
+    "opts": [
+     [
+      "A",
+      "or"
+     ],
+     [
+      "B",
+      "but"
+     ],
+     [
+      "C",
+      "and"
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L19_cloze": [
+   {
+    "num": 21,
+    "q": "It is Sunday. Lisa is at home. She feels ___ because she has nothing to do.",
+    "opts": [
+     [
+      "A",
+      "bored"
+     ],
+     [
+      "B",
+      "happy"
+     ],
+     [
+      "C",
+      "tired"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 22,
+    "q": "She feels bored because she has ___ to do.",
+    "opts": [
+     [
+      "A",
+      "something"
+     ],
+     [
+      "B",
+      "nothing"
+     ],
+     [
+      "C",
+      "everything"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 23,
+    "q": "She looks around the house but can't find ___ interesting.",
+    "opts": [
+     [
+      "A",
+      "something"
+     ],
+     [
+      "B",
+      "anything"
+     ],
+     [
+      "C",
+      "nothing"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 24,
+    "q": "\"I know!\" she says. \"I can plan ___ special.\"",
+    "opts": [
+     [
+      "A",
+      "something"
+     ],
+     [
+      "B",
+      "anything"
+     ],
+     [
+      "C",
+      "nothing"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 25,
+    "q": "I want to find ___ new and exciting.",
+    "opts": [
+     [
+      "A",
+      "something"
+     ],
+     [
+      "B",
+      "anything"
+     ],
+     [
+      "C",
+      "everything"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 26,
+    "q": "\"Is ___ free today?\" she asks.",
+    "opts": [
+     [
+      "A",
+      "someone"
+     ],
+     [
+      "B",
+      "anyone"
+     ],
+     [
+      "C",
+      "everyone"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 27,
+    "q": "Everyone ___ happy and excited.",
+    "opts": [
+     [
+      "A",
+      "seem"
+     ],
+     [
+      "B",
+      "seems"
+     ],
+     [
+      "C",
+      "seeming"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 28,
+    "q": "In the evening, Lisa writes in her ___.",
+    "opts": [
+     [
+      "A",
+      "diary"
+     ],
+     [
+      "B",
+      "book"
+     ],
+     [
+      "C",
+      "letter"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 29,
+    "q": "\"Today is ___.\"",
+    "opts": [
+     [
+      "A",
+      "bored"
+     ],
+     [
+      "B",
+      "enjoyable"
+     ],
+     [
+      "C",
+      "terrible"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 30,
+    "q": "There is ___ better than exploring with a good friend.",
+    "opts": [
+     [
+      "A",
+      "something"
+     ],
+     [
+      "B",
+      "nothing"
+     ],
+     [
+      "C",
+      "anything"
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L20_cloze": [
+   {
+    "num": 21,
+    "q": "Every weekend, Lisa ___ to a nearby hill with her family.",
+    "opts": [
+     [
+      "A",
+      "go"
+     ],
+     [
+      "B",
+      "goes"
+     ],
+     [
+      "C",
+      "going"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 22,
+    "q": "They ride their bicycles for a short ___ to get there.",
+    "opts": [
+     [
+      "A",
+      "distance"
+     ],
+     [
+      "B",
+      "building"
+     ],
+     [
+      "C",
+      "sentence"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 23,
+    "q": "The hill is not very tall, but the view at the ___ is always beautiful.",
+    "opts": [
+     [
+      "A",
+      "below"
+     ],
+     [
+      "B",
+      "top"
+     ],
+     [
+      "C",
+      "hill"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 24,
+    "q": "Lisa loves to watch the ducks swim in the lake ___ the hill.",
+    "opts": [
+     [
+      "A",
+      "on"
+     ],
+     [
+      "B",
+      "below"
+     ],
+     [
+      "C",
+      "above"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 25,
+    "q": "Her mother always packs ___ food and water for the trip.",
+    "opts": [
+     [
+      "A",
+      "enough"
+     ],
+     [
+      "B",
+      "hungry"
+     ],
+     [
+      "C",
+      "entire"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 26,
+    "q": "Nobody feels hungry because they bring enough ___ to eat.",
+    "opts": [
+     [
+      "A",
+      "umbrella"
+     ],
+     [
+      "B",
+      "snacks"
+     ],
+     [
+      "C",
+      "bicycle"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 27,
+    "q": "On ___ mornings, the hill looks mysterious.",
+    "opts": [
+     [
+      "A",
+      "sunny"
+     ],
+     [
+      "B",
+      "foggy"
+     ],
+     [
+      "C",
+      "warm"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 28,
+    "q": "She ___ the foggy weather, but she still goes because she loves the fresh air on the hill.",
+    "opts": [
+     [
+      "A",
+      "likes"
+     ],
+     [
+      "B",
+      "dislikes"
+     ],
+     [
+      "C",
+      "enjoys"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 29,
+    "q": "A local ___ often sells fruit at the foot of the hill.",
+    "opts": [
+     [
+      "A",
+      "trader"
+     ],
+     [
+      "B",
+      "tourist"
+     ],
+     [
+      "C",
+      "guide"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 30,
+    "q": "Each trip to the hill leaves her a sweet ___.",
+    "opts": [
+     [
+      "A",
+      "memory"
+     ],
+     [
+      "B",
+      "journey"
+     ],
+     [
+      "C",
+      "building"
+     ]
+    ],
+    "answer": "A"
+   }
+  ],
+  "HN2026_L1_cloze": [
+   {
+    "num": 16,
+    "q": "My ___ is Tom.",
+    "opts": [
+     [
+      "A",
+      "name"
+     ],
+     [
+      "B",
+      "room"
+     ],
+     [
+      "C",
+      "family"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 17,
+    "q": "I am a ___ student at No. 1 Middle School.",
+    "opts": [
+     [
+      "A",
+      "busy"
+     ],
+     [
+      "B",
+      "new"
+     ],
+     [
+      "C",
+      "old"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 18,
+    "q": "I am in ___ Two, Grade Seven.",
+    "opts": [
+     [
+      "A",
+      "Room"
+     ],
+     [
+      "B",
+      "Number"
+     ],
+     [
+      "C",
+      "Class"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 19,
+    "q": "I meet a nice ___ in my class.",
+    "opts": [
+     [
+      "A",
+      "book"
+     ],
+     [
+      "B",
+      "boy"
+     ],
+     [
+      "C",
+      "teacher"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 20,
+    "q": "___ name is Jack.",
+    "opts": [
+     [
+      "A",
+      "Her"
+     ],
+     [
+      "B",
+      "My"
+     ],
+     [
+      "C",
+      "His"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 21,
+    "q": "He ___ from China.",
+    "opts": [
+     [
+      "A",
+      "am"
+     ],
+     [
+      "B",
+      "is"
+     ],
+     [
+      "C",
+      "are"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 22,
+    "q": "Jack says, \"Welcome to ___ school!\"",
+    "opts": [
+     [
+      "A",
+      "our"
+     ],
+     [
+      "B",
+      "your"
+     ],
+     [
+      "C",
+      "my"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 23,
+    "q": "We talk about ___ English teacher.",
+    "opts": [
+     [
+      "A",
+      "his"
+     ],
+     [
+      "B",
+      "our"
+     ],
+     [
+      "C",
+      "her"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 24,
+    "q": "___ name is Miss Wang.",
+    "opts": [
+     [
+      "A",
+      "His"
+     ],
+     [
+      "B",
+      "My"
+     ],
+     [
+      "C",
+      "Her"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 25,
+    "q": "Jack and I ___ good friends now.",
+    "opts": [
+     [
+      "A",
+      "is"
+     ],
+     [
+      "B",
+      "am"
+     ],
+     [
+      "C",
+      "are"
+     ]
+    ],
+    "answer": "C"
+   }
+  ],
+  "HN2026_L2_cloze": [
+   {
+    "num": 21,
+    "q": "Look! ___ is my father. He is tall.",
+    "opts": [
+     [
+      "A",
+      "That"
+     ],
+     [
+      "B",
+      "This"
+     ],
+     [
+      "C",
+      "She"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 22,
+    "q": "___ is my mother. She is kind.",
+    "opts": [
+     [
+      "A",
+      "He"
+     ],
+     [
+      "B",
+      "It"
+     ],
+     [
+      "C",
+      "This"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 23,
+    "q": "These ___ my grandparents.",
+    "opts": [
+     [
+      "A",
+      "are"
+     ],
+     [
+      "B",
+      "is"
+     ],
+     [
+      "C",
+      "am"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 24,
+    "q": "They are old ___ happy.",
+    "opts": [
+     [
+      "A",
+      "but"
+     ],
+     [
+      "B",
+      "and"
+     ],
+     [
+      "C",
+      "so"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 25,
+    "q": "___ is the little girl?",
+    "opts": [
+     [
+      "A",
+      "Who"
+     ],
+     [
+      "B",
+      "What"
+     ],
+     [
+      "C",
+      "How"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 26,
+    "q": "She is very ___.",
+    "opts": [
+     [
+      "A",
+      "big"
+     ],
+     [
+      "B",
+      "kind"
+     ],
+     [
+      "C",
+      "sad"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 27,
+    "q": "I am ___ to be in this family.",
+    "opts": [
+     [
+      "A",
+      "sorry"
+     ],
+     [
+      "B",
+      "sad"
+     ],
+     [
+      "C",
+      "lucky"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 28,
+    "q": "Every evening, we have ___ together.",
+    "opts": [
+     [
+      "A",
+      "dinner"
+     ],
+     [
+      "B",
+      "breakfast"
+     ],
+     [
+      "C",
+      "lunch"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 29,
+    "q": "My father ___ stories, and my mother sings songs.",
+    "opts": [
+     [
+      "A",
+      "sings"
+     ],
+     [
+      "B",
+      "reads"
+     ],
+     [
+      "C",
+      "tells"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 30,
+    "q": "I love ___ family very much.",
+    "opts": [
+     [
+      "A",
+      "our"
+     ],
+     [
+      "B",
+      "my"
+     ],
+     [
+      "C",
+      "their"
+     ]
+    ],
+    "answer": "B"
+   }
+  ],
+  "HN2026_L3_cloze": [
+   {
+    "num": 21,
+    "q": "The blue pencil box is ___.",
+    "opts": [
+     [
+      "A",
+      "on the desk"
+     ],
+     [
+      "B",
+      "in the bag"
+     ],
+     [
+      "C",
+      "under the chair"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 22,
+    "q": "There are two ___ and a ruler.",
+    "opts": [
+     [
+      "A",
+      "cats"
+     ],
+     [
+      "B",
+      "pens"
+     ],
+     [
+      "C",
+      "rulers"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 23,
+    "q": "The red dictionary is ___.",
+    "opts": [
+     [
+      "A",
+      "old"
+     ],
+     [
+      "B",
+      "new"
+     ],
+     [
+      "C",
+      "Tom's"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 24,
+    "q": "___ eraser is that?",
+    "opts": [
+     [
+      "A",
+      "Whose"
+     ],
+     [
+      "B",
+      "What"
+     ],
+     [
+      "C",
+      "Which"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 25,
+    "q": "Is it Tom's? No, it is not ___.",
+    "opts": [
+     [
+      "A",
+      "hers"
+     ],
+     [
+      "B",
+      "his"
+     ],
+     [
+      "C",
+      "mine"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 26,
+    "q": "It is his ___ eraser. Her name is on it.",
+    "opts": [
+     [
+      "A",
+      "sister's"
+     ],
+     [
+      "B",
+      "brother's"
+     ],
+     [
+      "C",
+      "friend's"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 27,
+    "q": "Where is Tom's schoolbag? It is ___ the desk.",
+    "opts": [
+     [
+      "A",
+      "on"
+     ],
+     [
+      "B",
+      "in"
+     ],
+     [
+      "C",
+      "under"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 28,
+    "q": "There are ___ books in it.",
+    "opts": [
+     [
+      "A",
+      "many"
+     ],
+     [
+      "B",
+      "three"
+     ],
+     [
+      "C",
+      "five"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 29,
+    "q": "He puts things in the ___ place.",
+    "opts": [
+     [
+      "A",
+      "wrong"
+     ],
+     [
+      "B",
+      "right"
+     ],
+     [
+      "C",
+      "new"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 30,
+    "q": "He says you ___ be careful!",
+    "opts": [
+     [
+      "A",
+      "can"
+     ],
+     [
+      "B",
+      "must"
+     ],
+     [
+      "C",
+      "should"
+     ]
+    ],
+    "answer": "C"
+   }
+  ],
+  "HN2026_L4_cloze": [
+   {
+    "num": 16,
+    "q": "This is my new ___. It is small.",
+    "opts": [
+     [
+      "A",
+      "school"
+     ],
+     [
+      "B",
+      "room"
+     ],
+     [
+      "C",
+      "book"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 17,
+    "q": "It is small, ___ it is very clean and tidy.",
+    "opts": [
+     [
+      "A",
+      "so"
+     ],
+     [
+      "B",
+      "but"
+     ],
+     [
+      "C",
+      "and"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 18,
+    "q": "My bed is ___ to the window.",
+    "opts": [
+     [
+      "A",
+      "behind"
+     ],
+     [
+      "B",
+      "next"
+     ],
+     [
+      "C",
+      "in front"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 19,
+    "q": "On the bed, there is a soft blue ___.",
+    "opts": [
+     [
+      "A",
+      "quilt"
+     ],
+     [
+      "B",
+      "bag"
+     ],
+     [
+      "C",
+      "map"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 20,
+    "q": "My computer is on the ___.",
+    "opts": [
+     [
+      "A",
+      "bed"
+     ],
+     [
+      "B",
+      "desk"
+     ],
+     [
+      "C",
+      "chair"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 21,
+    "q": "Under the desk, you can see my ___.",
+    "opts": [
+     [
+      "A",
+      "clock"
+     ],
+     [
+      "B",
+      "plant"
+     ],
+     [
+      "C",
+      "schoolbag"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 22,
+    "q": "I have many ___, and they are all in the bookcase.",
+    "opts": [
+     [
+      "A",
+      "books"
+     ],
+     [
+      "B",
+      "pens"
+     ],
+     [
+      "C",
+      "rulers"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 23,
+    "q": "I have many books, and they are all in the ___.",
+    "opts": [
+     [
+      "A",
+      "box"
+     ],
+     [
+      "B",
+      "room"
+     ],
+     [
+      "C",
+      "bookcase"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 24,
+    "q": "I ___ clean my room on Sunday morning.",
+    "opts": [
+     [
+      "A",
+      "always"
+     ],
+     [
+      "B",
+      "never"
+     ],
+     [
+      "C",
+      "usually"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 25,
+    "q": "It is a good ___ for me to keep every day at home.",
+    "opts": [
+     [
+      "A",
+      "habit"
+     ],
+     [
+      "B",
+      "time"
+     ],
+     [
+      "C",
+      "way"
+     ]
+    ],
+    "answer": "A"
+   }
+  ],
+  "HN2026_L13_cloze": [
+   {
+    "num": 21,
+    "q": "We picked some tomatoes and carrots. They were fresh and ___.",
+    "opts": [
+     [
+      "A",
+      "heavy"
+     ],
+     [
+      "B",
+      "cheap"
+     ],
+     [
+      "C",
+      "expensive"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 22,
+    "q": "Mom chose a kilo of chicken. It was a little ___, but good for dinner.",
+    "opts": [
+     [
+      "A",
+      "cheap"
+     ],
+     [
+      "B",
+      "heavy"
+     ],
+     [
+      "C",
+      "expensive"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 23,
+    "q": "Next, we needed some ___ for breakfast.",
+    "opts": [
+     [
+      "A",
+      "pancakes"
+     ],
+     [
+      "B",
+      "bread"
+     ],
+     [
+      "C",
+      "milk"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 24,
+    "q": "Mom let me choose ___.",
+    "opts": [
+     [
+      "A",
+      "some"
+     ],
+     [
+      "B",
+      "one"
+     ],
+     [
+      "C",
+      "two"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 25,
+    "q": "I picked my ___ brand of pancakes.",
+    "opts": [
+     [
+      "A",
+      "new"
+     ],
+     [
+      "B",
+      "only"
+     ],
+     [
+      "C",
+      "favorite"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 26,
+    "q": "They were not ___, only eight yuan a bag.",
+    "opts": [
+     [
+      "A",
+      "fresh"
+     ],
+     [
+      "B",
+      "cheap"
+     ],
+     [
+      "C",
+      "expensive"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 27,
+    "q": "Mom also checked the ___ on the package.",
+    "opts": [
+     [
+      "A",
+      "date"
+     ],
+     [
+      "B",
+      "price"
+     ],
+     [
+      "C",
+      "name"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 28,
+    "q": "At the ___, the cashier told us the total was forty-two yuan.",
+    "opts": [
+     [
+      "A",
+      "checkout"
+     ],
+     [
+      "B",
+      "window"
+     ],
+     [
+      "C",
+      "door"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 29,
+    "q": "At the checkout, the cashier told us the ___ was forty-two yuan.",
+    "opts": [
+     [
+      "A",
+      "price"
+     ],
+     [
+      "B",
+      "bill"
+     ],
+     [
+      "C",
+      "total"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 30,
+    "q": "Mom paid with a fifty-yuan note and got eight yuan in ___.",
+    "opts": [
+     [
+      "A",
+      "change"
+     ],
+     [
+      "B",
+      "money"
+     ],
+     [
+      "C",
+      "coins"
+     ]
+    ],
+    "answer": "A"
+   }
+  ]
+ },
+ "w5": {
+  "HN2026_L6_w5": {
+   "candidates": [
+    [
+     "A",
+     "Running is the only way to stay healthy."
+    ],
+    [
+     "B",
+     "Fruit is also an important part of a healthy diet."
+    ],
+    [
+     "C",
+     "Vegetables are good for our body, too."
+    ],
+    [
+     "D",
+     "Drinking milk is a good habit every morning."
+    ],
+    [
+     "E",
+     "Do not forget to drink enough water every day."
+    ]
+   ],
+   "blanks": [
+    {
+     "num": 1,
+     "before": "A good breakfast helps you listen and learn in class with a clear mind.",
+     "after": "We should eat fruit every day after our three meals because fruit gives us vitamins.",
+     "answer": "B"
+    },
+    {
+     "num": 2,
+     "before": "We should eat fruit every day after our three meals because fruit gives us vitamins.",
+     "after": "Fresh vegetables help our body grow tall and stay strong, so eat them often.",
+     "answer": "C"
+    },
+    {
+     "num": 3,
+     "before": "Fresh vegetables help our body grow tall and stay strong, so eat them often.",
+     "after": "Drink milk for strong bones and white teeth every morning before school.",
+     "answer": "D"
+    },
+    {
+     "num": 4,
+     "before": "Drink milk for strong bones and white teeth every morning before school.",
+     "after": "A good diet keeps us happy and full of energy for the whole day.",
+     "answer": "E"
+    }
+   ]
+  },
+  "HN2026_L8_w5": {
+   "candidates": [
+    [
+     "A",
+     "First, we went there by a yellow school bus."
+    ],
+    [
+     "B",
+     "There were many interesting things to see."
+    ],
+    [
+     "C",
+     "The stories about robots made us laugh."
+    ],
+    [
+     "D",
+     "We learned a lot from the visit."
+    ],
+    [
+     "E",
+     "We played games in the garden that day."
+    ]
+   ],
+   "blanks": [
+    {
+     "num": 1,
+     "before": "A good plan before the day helps a lot to make the trip easy.",
+     "after": "We visited the science museum and saw old and strange exhibits there with our eyes for the first time.",
+     "answer": "A"
+    },
+    {
+     "num": 2,
+     "before": "We visited the science museum and saw old and strange exhibits there with our eyes for the first time.",
+     "after": "Our guide told us funny stories about small robots and stars in the sky.",
+     "answer": "B"
+    },
+    {
+     "num": 3,
+     "before": "Our guide told us funny stories about small robots and stars in the sky.",
+     "after": "We took many photos by the big door together to remember the day with joy.",
+     "answer": "C"
+    },
+    {
+     "num": 4,
+     "before": "We took many photos by the big door together to remember the day with joy.",
+     "after": "Everyone enjoyed the trip and we went home happy and tired at night.",
+     "answer": "D"
+    }
+   ]
+  },
+  "HN2026_L1_w5": {
+   "candidates": [
+    [
+     "A",
+     "This is a nice school."
+    ],
+    [
+     "B",
+     "He is tall and kind."
+    ],
+    [
+     "C",
+     "They are in my class."
+    ],
+    [
+     "D",
+     "We play basketball on the playground."
+    ],
+    [
+     "E",
+     "Sports make me strong and happy."
+    ],
+    [
+     "F",
+     "My favorite food is rice and chicken."
+    ]
+   ],
+   "blanks": [
+    {
+     "num": 11,
+     "before": "I am a new student at No. 1 Middle School.",
+     "after": "I am in Class Two, Grade Seven.",
+     "answer": "A"
+    },
+    {
+     "num": 12,
+     "before": "My English teacher is Mr. Zhang.",
+     "after": "He is very nice to us. He helps us with English.",
+     "answer": "B"
+    },
+    {
+     "num": 13,
+     "before": "I have some good friends here.",
+     "after": "Their names are Mike and Tom.",
+     "answer": "C"
+    },
+    {
+     "num": 14,
+     "before": "I like playing basketball with them.",
+     "after": "It is my favorite sport.",
+     "answer": "D"
+    },
+    {
+     "num": 15,
+     "before": "It is my favorite sport.",
+     "after": "I am happy to be here.",
+     "answer": "E"
+    }
+   ]
+  }
+ }
+}
