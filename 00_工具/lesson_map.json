@@ -1,0 +1,33 @@
+{
+  "_doc": "40课教学大纲数据化（源：教学规范与契约/01_40课时教学大纲与行为约束.md）。L1-L21语法期每课3考点；L22-L40零新语法冲刺。",
+  "lessons": {
+    "1":  {"stage": "S1", "type": "normal", "grammar": ["人称代词主格与宾格", "形容词性与名词性物主代词", "be动词与人称搭配"], "theme": "自我介绍与问候", "vocab_theme": "school", "phonics": "短元音 a/e/i/o/u"},
+    "2":  {"stage": "S1", "type": "normal", "grammar": ["指示代词this/that/these/those", "be动词否定与一般疑问", "Who问身份"], "theme": "家庭介绍", "vocab_theme": "family", "phonics": "th/sh/ch/wh/ph"},
+    "3":  {"stage": "S1", "type": "normal", "grammar": ["名词所有格's与of", "基数词与编号表达", "Where问位置"], "theme": "教室物品与失物招领", "vocab_theme": "school_things", "phonics": "th/wh/ph/ng/nk"},
+    "4":  {"stage": "S1", "type": "normal", "grammar": ["名词单复数变化", "tidy/messy等房间形容词", "房间介词与There be"], "theme": "我的房间", "vocab_theme": "room", "phonics": "br/cr/dr/fr/tr/gr"},
+    "5":  {"stage": "S1", "type": "normal", "grammar": ["祈使句基础", "What特殊疑问句", "like的用法"], "theme": "食物与日常", "vocab_theme": "food", "phonics": "bl/cl/fl/gl/pl/sl"},
+    "6":  {"stage": "S2", "type": "normal", "grammar": ["一般现在时实义动词", "want/like表达", "食物可数与不可数"], "theme": "三餐与饮食习惯", "vocab_theme": "meals", "phonics": "ar/or/ir/er/ur"},
+    "7":  {"stage": "S2", "type": "test", "name": "阶段测试Ⅰ·七上基础综合诊断", "grammar": ["L1-L6综合复盘"], "theme": "综合", "vocab_theme": "review", "phonics": "综合复习"},
+    "8":  {"stage": "S2", "type": "normal", "grammar": ["一般过去时was/were", "一般过去时did", "过去时间状语"], "theme": "昨日活动", "vocab_theme": "past_time", "phonics": "-ed 发音 /t//d//ɪd/"},
+    "9":  {"stage": "S2", "type": "normal", "grammar": ["特殊疑问句系统", "选择疑问句", "方位介词"], "theme": "问路与方向", "vocab_theme": "places", "phonics": "wh-问词家族"},
+    "10": {"stage": "S2", "type": "normal", "grammar": ["一般现在时三单-s", "does否定与疑问", "学科表达"], "theme": "学校课程", "vocab_theme": "subjects", "phonics": "三单-s/-es发音 /s//z//ɪz/"},
+    "11": {"stage": "S3", "type": "normal", "grammar": ["祈使句/must/have to", "名词不规则复数", "规则介词"], "theme": "规则与义务", "vocab_theme": "rules", "phonics": "魔法e a_e/i_e/o_e/u_e"},
+    "12": {"stage": "S3", "type": "normal", "grammar": ["冠词a/an/the", "可数与不可数名词", "some/any"], "theme": "购物与数量", "vocab_theme": "shopping", "phonics": "ai/ay/ea/ee"},
+    "13": {"stage": "S3", "type": "normal", "grammar": ["would like结构", "how much/how many", "数词与价格表达"], "theme": "点餐与价格", "vocab_theme": "price", "phonics": "oa/ow/oo"},
+    "14": {"stage": "S3", "type": "normal", "grammar": ["外貌描述be vs have", "why/because因果", "形容词用法"], "theme": "人物外貌", "vocab_theme": "appearance", "phonics": "er/or 后缀"},
+    "15": {"stage": "S3", "type": "normal", "grammar": ["天气句型", "Could/Would礼貌请求", "It指代非人称"], "theme": "天气与季节", "vocab_theme": "weather", "phonics": "ow/ou/oi/oy"},
+    "16": {"stage": "S4", "type": "test", "name": "阶段测试Ⅱ·L1-L15跨阶大诊断", "grammar": ["L1-L15综合复盘"], "theme": "综合", "vocab_theme": "review", "phonics": "综合复习"},
+    "17": {"stage": "S4", "type": "normal", "grammar": ["频度副词", "how often问频率", "基数词+times"], "theme": "日常习惯与健康", "vocab_theme": "habits", "phonics": "y结尾 /i/与/aɪ/"},
+    "18": {"stage": "S4", "type": "normal", "grammar": ["现在进行时", "V-ing变化规则", "进行时标志词"], "theme": "此刻活动", "vocab_theme": "activities", "phonics": "-ing 与双写规则"},
+    "19": {"stage": "S4", "type": "normal", "grammar": ["复合不定代词", "定语后置", "主谓一致"], "theme": "人与事物描述", "vocab_theme": "description", "phonics": "复合词重音"},
+    "20": {"stage": "S4", "type": "normal", "grammar": ["过去时综合归纳", "不定代词综合", "60考点总复盘"], "theme": "语法终点课", "vocab_theme": "review", "phonics": "综合复习"},
+    "21": {"stage": "S4", "type": "test", "name": "阶段测试Ⅲ·语法终点达标诊断", "grammar": ["L1-L20综合复盘"], "theme": "综合", "vocab_theme": "review", "phonics": "综合复习"}
+  },
+  "sprint": {
+    "range": [22, 40],
+    "type": "sprint",
+    "_doc": "L22-L40零新语法：五大题型SOP限时演练；L28/L35/L40阶段诊断测试。",
+    "skills": ["选词填空", "阅读五选四", "完形填空", "简答与翻译", "书面表达"],
+    "diagnostics": {"28": "阶段诊断Ⅰ·全真压轴", "35": "阶段诊断Ⅱ·全真压轴", "40": "毕业诊断·全真模拟"}
+  }
+}
