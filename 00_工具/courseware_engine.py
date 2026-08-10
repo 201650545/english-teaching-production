@@ -18,6 +18,8 @@
 """
 import json, os, re, importlib.util, html
 HERE = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = "D:/英语教学/01_数据"
+
 spec = importlib.util.spec_from_file_location("g", os.path.join(HERE, "gen_l1_l13_v2.py"))
 g = importlib.util.module_from_spec(spec); spec.loader.exec_module(g)
 # C3 第一批 3 组件（GM-V02/G03/R06）：HTML 在 components.py，JS/CSS 由本引擎统一注入
@@ -181,19 +183,19 @@ example_section = g.example_section; error_callout = g.error_callout; recall_gri
 spec2 = importlib.util.spec_from_file_location("courseware_core", os.path.join(HERE, "courseware_core.py"))
 core = importlib.util.module_from_spec(spec2); spec2.loader.exec_module(core)
 page = core.page; vocab_cards = core.vocab_cards; build_courseware = core.build_courseware
-vocab = json.load(open(os.path.join(HERE, "vocab_bank.json"), encoding="utf-8"))["words"]
-grammar = json.load(open(os.path.join(HERE, "grammar_bank.json"), encoding="utf-8"))
-passages = json.load(open(os.path.join(HERE, "passage_bank.json"), encoding="utf-8"))
+vocab = json.load(open(os.path.join(DATA_DIR, "banks", "vocab_bank.json"), encoding="utf-8"))["words"]
+grammar = json.load(open(os.path.join(DATA_DIR, "banks", "grammar_bank.json"), encoding="utf-8"))
+passages = json.load(open(os.path.join(DATA_DIR, "banks", "passage_bank.json"), encoding="utf-8"))
 try:
     # M6b 补充语篇库（原创·教师授权）：优先按课时取本课语料
-    passages += json.load(open(os.path.join(HERE, "passage_bank_supplement.json"), encoding="utf-8"))
+    passages += json.load(open(os.path.join(DATA_DIR, "banks", "passage_bank_supplement.json"), encoding="utf-8"))
 except FileNotFoundError:
     pass
-phonics = json.load(open(os.path.join(HERE, "phonics_bank.json"), encoding="utf-8"))
+phonics = json.load(open(os.path.join(DATA_DIR, "banks", "phonics_bank.json"), encoding="utf-8"))
 # 40 课教学大纲（阶段B 通用化：上/下节课复习与预告由 lesson_map 读前/后课卡驱动，替代硬编码 L4/L6）
 # 每课含 stage/type/grammar/theme/vocab_theme/phonics；复习课(type=test)无独立语法考点。
 try:
-    _lessons_map = json.load(open(os.path.join(HERE, "lesson_map.json"), encoding="utf-8"))["lessons"]
+    _lessons_map = json.load(open(os.path.join(DATA_DIR, "schemas", "lesson_map.json"), encoding="utf-8"))["lessons"]
 except (FileNotFoundError, KeyError, json.JSONDecodeError):
     _lessons_map = {}
 # L4 复习数据（兼容回退：仅当 lesson_map 缺失或上一课无数据时使用，避免通用化前退化）

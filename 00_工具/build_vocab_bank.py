@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """M2 词汇库构建：L1-L4已用词(从生成器提取) + 主题候选池 → vocab_bank.json + used_vocab.json"""
 import json
+DATA_DIR = "D:/英语教学/01_数据"
+
 import gen_l1_l13_v2 as g
 
 def tuples_to_words(tuples_, lesson, theme):
@@ -100,14 +102,14 @@ POOLS = {"food": FOOD, "meals": MEALS, "actions": ACTIONS}
 for theme, pool in POOLS.items():
     bank += tuples_to_words(pool, None, theme)
 
-json.dump({"words": bank}, open("vocab_bank.json", "w", encoding="utf-8"),
+json.dump({"words": bank}, open(os.path.join(DATA_DIR, "banks", "vocab_bank.json"), "w", encoding="utf-8"),
           ensure_ascii=False, indent=1)
 
 used = {}
 for n in (1, 2, 3, 4):
     used[str(n)] = [t[0] for t in getattr(g, "VOCAB_L%d" % n)]
 all_used = [w for lst in used.values() for w in lst]
-json.dump({"used": used, "all": all_used}, open("used_vocab.json", "w", encoding="utf-8"),
+json.dump({"used": used, "all": all_used}, open(os.path.join(DATA_DIR, "content", "used_vocab.json"), "w", encoding="utf-8"),
           ensure_ascii=False, indent=1)
 
 # 防呆：候选池与已用词零重叠校验

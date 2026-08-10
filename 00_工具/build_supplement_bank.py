@@ -10,15 +10,16 @@ provenance 必填溯源说明。制作练习符合本课规范（示例 70% 熟�
 import json, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-vocab_bank = json.load(open(os.path.join(HERE, "vocab_bank.json"), encoding="utf-8"))["words"]
+DATA_DIR = "D:/英语教学/01_数据"
+
+vocab_bank = json.load(open(os.path.join(DATA_DIR, "banks", "vocab_bank.json"), encoding="utf-8"))["words"]
 V = set(w["en"].lower() for w in vocab_bank)
 # M2b 基础已知词表（功能词+高频初等词）：计入生词率的"熟词"
 try:
-    base_vocab = json.load(open(os.path.join(HERE, "base_vocab.json"), encoding="utf-8"))["words"]
+    base_vocab = json.load(open(os.path.join(DATA_DIR, "banks", "base_vocab.json"), encoding="utf-8"))["words"]
     V |= set(w["en"].lower() for w in base_vocab)
 except FileNotFoundError:
     pass
-
 
 def stem(w):
     w = re.sub(r"[^a-zA-Z']", "", w).lower()
@@ -29,21 +30,17 @@ def stem(w):
             return w[:-len(suf)]
     return w
 
-
 def word_count(text):
     return len(re.findall(r"[A-Za-z]+", text))
-
 
 def vocab_rate(text):
     words = re.findall(r"[A-Za-z]+", text)
     known = sum(1 for w in words if stem(w) in V)
     return "%.0f%%" % (100.0 * known / len(words))
 
-
 def Q(n, q, opts, answer):
     """opts: [(letter, text)...], answer: 选项字母（大写）"""
     return {"num": n, "q": q, "opts": [[l, t] for l, t in opts], "answer": answer}
-
 
 def P(lesson, ptype, theme, genre, gfocus, prov, text, questions):
     return {
@@ -57,7 +54,6 @@ def P(lesson, ptype, theme, genre, gfocus, prov, text, questions):
         "theme": theme, "grammar_focus": gfocus, "text": text,
         "questions": questions,
     }
-
 
 PROV = "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测"
 
@@ -295,9 +291,8 @@ BANK.append(P(12, "reading_b", "野餐", "记叙文", ["some/any", "可数/不�
      Q(4, "What do some students do after lunch?", [("A", "fly kites"), ("B", "sleep"), ("C", "swim")], "A"),
      Q(5, "What do they see in the river?", [("A", "some fish"), ("B", "some ducks"), ("C", "some boats")], "A")]))
 
-
 def main():
-    out = os.path.join(HERE, "passage_bank_supplement.json")
+    out = os.path.join(DATA_DIR, "banks", "passage_bank_supplement.json")
     json.dump(BANK, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("补充语篇库生成：%s (%d 篇)" % (out, len(BANK)))
     for p in BANK:
@@ -310,7 +305,6 @@ def main():
             if q["answer"] not in letters:
                 raise SystemExit("答案 %s 不在选项 %s（%s）" % (q["answer"], letters, p["id"]))
     print("答案校验 OK")
-
 
 if __name__ == "__main__":
     main()

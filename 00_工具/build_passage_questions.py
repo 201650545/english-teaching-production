@@ -13,6 +13,7 @@ import json, os
 from collections import Counter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = "D:/英语教学/01_数据"
 
 def Q(n, q, opts, answer):
     return {"num": n, "q": q, "opts": [[l, t] for l, t in opts], "answer": answer}
@@ -366,7 +367,7 @@ def _check_items(pid, items, label):
     return mx <= 0.4
 
 def main():
-    out = os.path.join(HERE, "passage_questions.json")
+    out = os.path.join(DATA_DIR, "banks", "passage_questions.json")
     payload = {
         "meta": {"built_by": "build_passage_questions.py", "provenance": PROVENANCE},
         "reading": READING,

@@ -9,7 +9,9 @@
 import json, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-target = set(w["en"].lower() for w in json.load(open(os.path.join(HERE, "vocab_bank.json"), encoding="utf-8"))["words"])
+DATA_DIR = "D:/英语教学/01_数据"
+
+target = set(w["en"].lower() for w in json.load(open(os.path.join(DATA_DIR, "banks", "vocab_bank.json"), encoding="utf-8"))["words"])
 
 # 功能词 + 高频初等词（词性 n./v./adj./adv./prep./pron./conj./num./art./aux.）
 BASE = [
@@ -120,7 +122,6 @@ BASE = [
     ("like", "喜欢", "v."), ("love", "爱", "v."), ("need", "需要", "v."),
 ]
 
-
 def main():
     words = []
     seen = set()
@@ -134,11 +135,10 @@ def main():
         words.append({"en": en, "phonetic": "", "pos": pos, "cn": cn,
                       "collocation": "", "example": "", "hook": "",
                       "theme": "base", "used_by_lesson": 0, "frequency": "high"})
-    out = os.path.join(HERE, "base_vocab.json")
+    out = os.path.join(DATA_DIR, "banks", "base_vocab.json")
     json.dump({"words": words}, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("基础已知词表生成：%s（%d 词，剔除目标词库重复 %d）" %
           (out, len(words), len(BASE) - len(words)))
-
 
 if __name__ == "__main__":
     main()

@@ -12,6 +12,8 @@
 === 这是保守静态近似，不等同浏览器完整 CSS 解析或 computed style。===
 """
 from __future__ import annotations
+DATA_DIR = "D:/英语教学/01_数据"
+
 import html.parser
 import json
 import os
@@ -157,10 +159,10 @@ def _parse_css_selectors(css: str, section: str = "unknown") -> list[dict[str, A
 def load_visual_contract(path: str | None = None) -> dict[str, Any]:
     """加载视觉合同 JSON。"""
     if path is None:
-        path = os.path.join(os.path.dirname(__file__), "visual_contract_v1.json")
+        path = os.path.join(DATA_DIR, "schemas", "visual_contract_v1.json")
     if not os.path.exists(path):
         # 尝试从当前目录找
-        path = os.path.join(os.getcwd(), "visual_contract_v1.json")
+        path = os.path.join(DATA_DIR, "schemas", "visual_contract_v1.json")
     if not os.path.exists(path):
         raise FileNotFoundError(f"visual_contract_v1.json 未找到: {path}")
     return json.load(open(path, encoding="utf-8"))
@@ -547,7 +549,6 @@ def inspect_visual_html(
 
     return findings
 
-
 # ── CLI 入口 ──────────────────────────────────────────────────
 
 def main(argv: Sequence[str] | None = None) -> int:
@@ -630,7 +631,6 @@ def main(argv: Sequence[str] | None = None) -> int:
         print(f"\n视觉检查{'(--force)' if force else ''}: ERROR={len(errors)}  HIGH-WARN={len(high_warns)}  WARN={len(warns)}")
 
     return 1 if errors else 0
-
 
 if __name__ == "__main__":
     sys.exit(main())

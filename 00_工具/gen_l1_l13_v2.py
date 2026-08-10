@@ -7,10 +7,12 @@
 import os, sys, json
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = "D:/英语教学/01_数据"
+
 sys.path.insert(0, HERE)
 from courseware_core import page, vocab_cards, build_courseware
 
-OLD = json.load(open(os.path.join(HERE, "old_lessons.json"), encoding="utf-8"))
+OLD = json.load(open(os.path.join(DATA_DIR, "content", "old_lessons.json"), encoding="utf-8"))
 
 # ===================== 铁律样式 CSS =====================
 CSS_EXTRA = """
@@ -2244,7 +2246,6 @@ def build_lesson_3():
     for sid, (a, b) in seg.items():
         seg_pages[sid] = [a, b]
     return pages, seg_pages, total
-
 
 NAV = """<div class="nav-bar">
   <div class="nav-item" data-segment="1" onclick="jumpToSegment(1)"><span class="nav-num">①</span>复习导入</div>

@@ -12,6 +12,8 @@ v2 修复：
 import json, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = "D:/英语教学/01_数据"
+
 BLUEPRINT_DIR = os.path.join(os.path.dirname(HERE), "许颖嘉", "内容蓝图", "单课")
 
 def clean_md(text):
@@ -118,7 +120,6 @@ def extract_lesson_grammar(lesson_no):
         out.append(parsed)
     return out
 
-
 def seed_bank(lesson_map):
     """若 grammar_bank.json 不存在，从 lesson_map 重建占位条目"""
     bank = {}
@@ -137,7 +138,6 @@ def seed_bank(lesson_map):
                 "lesson": int(L) if str(L).isdigit() else 0,
             }
     return bank
-
 
 FORBIDDEN = ["will ", "be going to", "shall ", "better", "best", "worse", "worst",
              " more ", " most ", "have been", "has been", "is made", "are made"]
@@ -165,7 +165,6 @@ def scrub_entry(entry):
             keep = [p for p in parts if p and not _has_forbidden(p)]
             six[cat] = "；".join(keep) or entry.get("口诀", "")
     return entry
-
 
 def enrich(grammar_bank, lesson_map):
     n_filled = 0
@@ -206,8 +205,8 @@ def enrich(grammar_bank, lesson_map):
     return n_filled, n_missing, missing_info
 
 if __name__ == "__main__":
-    gb_path = os.path.join(HERE, "grammar_bank.json")
-    lm_path = os.path.join(HERE, "lesson_map.json")
+    gb_path = os.path.join(DATA_DIR, "banks", "grammar_bank.json")
+    lm_path = os.path.join(DATA_DIR, "schemas", "lesson_map.json")
     lm = json.load(open(lm_path, encoding="utf-8"))["lessons"]
     if os.path.exists(gb_path):
         gb = json.load(open(gb_path, encoding="utf-8"))

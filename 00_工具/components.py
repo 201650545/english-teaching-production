@@ -6,6 +6,7 @@
 import json, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = "D:/英语教学/01_数据"
 
 # ---------- 组件 1：翻牌记忆 ----------
 def flip_cards(words, title="翻牌记忆"):
@@ -597,6 +598,6 @@ if __name__ == "__main__":
     for desc in ["翻牌记忆", "投篮分类", "幸运转盘", "听音选词"]:
         print(f"  '{desc}' → {resolve(desc)}")
     # 保存 nl_map.json
-    with open(os.path.join(HERE, "nl_map.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(DATA_DIR, "schemas", "nl_map.json"), "w", encoding="utf-8") as f:
         json.dump(NL_MAP, f, ensure_ascii=False, indent=2)
     print("nl_map.json 已保存")

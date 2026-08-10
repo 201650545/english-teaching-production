@@ -5,7 +5,9 @@
 import json, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-lm = json.load(open(os.path.join(HERE, "lesson_map.json"), encoding="utf-8"))
+DATA_DIR = "D:/英语教学/01_数据"
+
+lm = json.load(open(os.path.join(DATA_DIR, "schemas", "lesson_map.json"), encoding="utf-8"))
 
 # 常见拼读组合 → 发音 + 词族（种子数据，后续可扩充）
 PHONICS_SEED = {
@@ -42,7 +44,7 @@ for key in sorted(lm["lessons"].keys(), key=int):
         "lesson": int(key)
     }
 
-out = os.path.join(HERE, "phonics_bank.json")
+out = os.path.join(DATA_DIR, "banks", "phonics_bank.json")
 with open(out, "w", encoding="utf-8") as f:
     json.dump(bank, f, ensure_ascii=False, indent=2)
 print(f"phonics_bank.json 生成完成：{len(bank)} 个拼读组合")

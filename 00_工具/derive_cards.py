@@ -2,6 +2,7 @@
 """M1 简报派生器：学生简报(4行) + lesson_map.json → 课程卡（引擎唯一输入）。
 用法: python derive_cards.py <student_brief.json> <lesson_no|all>"""
 import json, sys
+DATA_DIR = "D:/英语教学/01_数据"
 
 TIER_RATE = {"基础": "15%", "中等": "17%", "培优": "20%"}
 GENRES = ["记叙文", "说明文", "应用文"]
@@ -60,7 +61,7 @@ def derive_card(brief, lesson_no, lesson_map):
 
 def main():
     brief = load(sys.argv[1])
-    lm = load("lesson_map.json")
+    lm = load(os.path.join(DATA_DIR, "schemas", "lesson_map.json"))
     target = sys.argv[2] if len(sys.argv) > 2 else "all"
     # 红线第一章第7条：派生新课课程卡时主题查重（复习/诊断课 review 豁免）。
     from check_theme_reuse import load_registry, cmd_check

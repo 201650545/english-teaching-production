@@ -22,11 +22,13 @@ v2 相对 v1 的修复：
 import json, os, re, hashlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-old = json.load(open(os.path.join(HERE, "old_lessons.json"), encoding="utf-8"))
-vocab_bank = json.load(open(os.path.join(HERE, "vocab_bank.json"), encoding="utf-8"))["words"]
+DATA_DIR = "D:/英语教学/01_数据"
+
+old = json.load(open(os.path.join(DATA_DIR, "content", "old_lessons.json"), encoding="utf-8"))
+vocab_bank = json.load(open(os.path.join(DATA_DIR, "banks", "vocab_bank.json"), encoding="utf-8"))["words"]
 V = set(w["en"].lower() for w in vocab_bank)
 try:  # M2b 基础已知词表计入"熟词"
-    base_vocab = json.load(open(os.path.join(HERE, "base_vocab.json"), encoding="utf-8"))["words"]
+    base_vocab = json.load(open(os.path.join(DATA_DIR, "banks", "base_vocab.json"), encoding="utf-8"))["words"]
     V |= set(w["en"].lower() for w in base_vocab)
 except FileNotFoundError:
     pass
@@ -138,7 +140,7 @@ for lesson_key in sorted(old.keys(), key=int):
             "provenance": "真题母本改编（源：old_lessons.json L%s %s%s）" % (lesson_key, field, extra),
         })
 
-out = os.path.join(HERE, "passage_bank.json")
+out = os.path.join(DATA_DIR, "banks", "passage_bank.json")
 with open(out, "w", encoding="utf-8") as f:
     json.dump(bank, f, ensure_ascii=False, indent=2)
 

@@ -19,6 +19,8 @@ from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml.ns import qn
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = "D:/英语教学/01_数据"
+
 QI = Cm(0.6)    # 题号/正文缩进
 OPT = Cm(1.5)   # 选项缩进（A/B/C 同列竖向对齐）
 BCOL = Cm(7.0)  # B 列制表位（从左页边距起算，对齐 2026 中考固定列 x≈221pt）
@@ -554,7 +556,7 @@ if __name__ == "__main__":
         "theme": "运动与喜好表达", "vocab": {"new_count": 20, "review_count": 0, "theme": "sports"},
         "phonics": "bl/cl/fl/gl/pl/sl", "listening": False,
     }
-    content = json.load(open(os.path.join(HERE, "practice_content_DXH_L05.json"), encoding="utf-8"))
+    content = json.load(open(os.path.join(DATA_DIR, "content", "practice_content_DXH_L05.json"), encoding="utf-8"))
     out = os.path.join(os.path.dirname(HERE), "邓兴华", "第05课", "第05课_配套练习_中等.docx")
     p = build_practice(card, content, out)
     print("配套练习生成：%s (%d bytes)" % (p, os.path.getsize(p)))
