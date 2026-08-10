@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "phonics_bank 拼读库 Schema（按拼读组键控）",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "required": [
+      "组合",
+      "lesson"
+    ],
+    "properties": {
+      "组合": {
+        "type": "string"
+      },
+      "lesson": {
+        "type": [
+          "number",
+          "string"
+        ]
+      },
+      "发音": {
+        "type": "string"
+      },
+      "词族": {},
+      "儿歌": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "passage_questions 语篇题库 Schema",
+  "type": "object",
+  "required": [
+    "meta",
+    "reading",
+    "cloze",
+    "w5"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object"
+    },
+    "reading": {
+      "type": "object"
+    },
+    "cloze": {
+      "type": "object"
+    },
+    "w5": {
+      "type": "object"
+    }
+  }
+}

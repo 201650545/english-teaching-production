@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "vocab_bank 题库 Schema",
+  "type": "object",
+  "required": [
+    "words"
+  ],
+  "properties": {
+    "words": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "en",
+          "cn"
+        ],
+        "properties": {
+          "en": {
+            "type": "string"
+          },
+          "cn": {
+            "type": "string"
+          },
+          "phonetic": {
+            "type": "string"
+          },
+          "pos": {
+            "type": "string"
+          },
+          "collocation": {
+            "type": "string"
+          },
+          "example": {
+            "type": "string"
+          },
+          "hook": {
+            "type": "string"
+          },
+          "theme": {
+            "type": "string"
+          },
+          "used_by_lesson": {},
+          "frequency": {}
+        }
+      }
+    }
+  }
+}

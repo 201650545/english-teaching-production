@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "grammar_bank 语法库 Schema（按语法名键控）",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "required": [
+      "构成",
+      "stage",
+      "lesson"
+    ],
+    "properties": {
+      "构成": {
+        "type": "string"
+      },
+      "stage": {
+        "type": [
+          "string",
+          "number"
+        ]
+      },
+      "lesson": {
+        "type": [
+          "number",
+          "string"
+        ]
+      },
+      "口诀": {
+        "type": "string"
+      },
+      "中考考法": {
+        "type": "string"
+      },
+      "六色卡": {},
+      "例句6": {},
+      "易错5": {}
+    }
+  }
+}
