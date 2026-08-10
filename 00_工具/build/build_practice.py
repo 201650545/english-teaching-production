@@ -21,7 +21,7 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TOOL_DIR = os.path.dirname(HERE)  # 00_工具（引擎所在）
+TOOL_DIR = os.path.join(os.path.dirname(HERE), "engine")  # 00_工具/engine（引擎所在）
 
 
 def _load(name, fname):

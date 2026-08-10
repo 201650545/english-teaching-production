@@ -93,20 +93,31 @@ def git(*args, cwd):
 def main():
     dry = "--dry" in sys.argv
 
-    # 1) 同步三个目录到 staging
+    # 1) 同步到 staging
     all_copied = []
-    all_copied += sync_tools(os.path.join(BASE, "00_工具"),
-                             os.path.join(STAGING, "00_工具"))
-    # 00_工具/build/ 统一构建入口子目录（P1-1 起）
-    build_src = os.path.join(TOOL_DIR, "build")
-    build_dst = os.path.join(STAGING, "00_工具", "build")
-    if os.path.isdir(build_src):
-        os.makedirs(build_dst, exist_ok=True)
-        for fname in sorted(os.listdir(build_src)):
-            fp = os.path.join(build_src, fname)
+
+    def _sync_pydir(sub):
+        """同步 00_工具 的子目录（engine/build/ops）正式 .py。"""
+        src = os.path.join(TOOL_DIR, sub)
+        dst = os.path.join(STAGING, "00_工具", sub)
+        if not os.path.isdir(src):
+            return
+        os.makedirs(dst, exist_ok=True)
+        for fname in sorted(os.listdir(src)):
+            fp = os.path.join(src, fname)
             if os.path.isfile(fp) and is_formal_tool(fname):
-                shutil.copy2(fp, os.path.join(build_dst, fname))
-                all_copied.append(os.path.join("build", fname))
+                shutil.copy2(fp, os.path.join(dst, fname))
+                all_copied.append(os.path.join(sub, fname))
+
+    # 00_工具 顶层正式工具（P1-2 起仅数据维护工具；数据 JSON 已迁 01_数据）
+    all_copied += sync_tools(TOOL_DIR, os.path.join(STAGING, "00_工具"))
+    # 00_工具 子目录（engine/build/ops）
+    for sub in ("engine", "build", "ops"):
+        _sync_pydir(sub)
+    # 01_数据（content/banks/schemas，P1-2 起）
+    all_copied += sync_tree(os.path.join(BASE, "01_数据"),
+                            os.path.join(STAGING, "01_数据"),
+                            set())
     all_copied += sync_tree(os.path.join(BASE, "00_总规划"),
                             os.path.join(STAGING, "00_总规划"),
                             EXCLUDE_DIRS_TOP)
