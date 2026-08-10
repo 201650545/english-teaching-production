@@ -97,6 +97,16 @@ def main():
     all_copied = []
     all_copied += sync_tools(os.path.join(BASE, "00_工具"),
                              os.path.join(STAGING, "00_工具"))
+    # 00_工具/build/ 统一构建入口子目录（P1-1 起）
+    build_src = os.path.join(TOOL_DIR, "build")
+    build_dst = os.path.join(STAGING, "00_工具", "build")
+    if os.path.isdir(build_src):
+        os.makedirs(build_dst, exist_ok=True)
+        for fname in sorted(os.listdir(build_src)):
+            fp = os.path.join(build_src, fname)
+            if os.path.isfile(fp) and is_formal_tool(fname):
+                shutil.copy2(fp, os.path.join(build_dst, fname))
+                all_copied.append(os.path.join("build", fname))
     all_copied += sync_tree(os.path.join(BASE, "00_总规划"),
                             os.path.join(STAGING, "00_总规划"),
                             EXCLUDE_DIRS_TOP)
