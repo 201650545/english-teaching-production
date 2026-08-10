@@ -1,0 +1,175 @@
+{
+ "_doc": "邓兴华 L15 配套练习内容（中等）· 2026-08-08。主题：天气·季节与度假；语法：G40 天气表达句型 / G41 Could-Would 礼貌请求 / G42 非人称 It。难度：中等。结构对齐 exam_spec v2026.2（阅读30/语言25/综合25 + 教学诊断附件）。语篇为当下现在时原创（教师授权原创），source_id=DXH2026_L15_*。红线：L14/L15 禁过去时（全卷仅现在时/将来时）。",
+ "reading_a": {
+  "id": "DXH2026_L15_reading_a",
+  "genre": "应用文（天气预报与度假计划）",
+  "difficulty": "中",
+  "word_count": 129,
+  "provenance": "真题母本改编（教师授权原创 2026-08-08）",
+  "绑定": "G40 天气句型 / G41 Could-Would 请求 / G42 非人称 It / 天气词汇",
+  "paragraphs": [
+   "Here is the weather report for this week. On Monday, it is sunny and warm. The temperature is 25 degrees. On Tuesday, it is cloudy but dry. On Wednesday, it is rainy and cool.",
+   "The weather is different in each season. Spring is warm and wet. Summer is hot. Autumn is cool and dry. Winter is cold and snowy.",
+   "The Smiths want to go on a trip this weekend. They ask, \"Could you please tell us the weather on Saturday?\" The weatherman says, \"On Saturday, it will be sunny and windy. It is a good day for a picnic.\"",
+   "It is far from their home to the park, but they are happy. They will take a trip and enjoy the weekend."
+  ],
+  "questions": [
+   {"num": 1, "q": "What is the weather like on Monday?", "opts": [["A", "Sunny and warm."], ["B", "Rainy and cool."], ["C", "Cloudy and dry."]], "answer": "A"},
+   {"num": 2, "q": "Which season is cold and snowy?", "opts": [["A", "Spring."], ["B", "Summer."], ["C", "Winter."]], "answer": "C"},
+   {"num": 3, "q": "What does Mr. Smith ask the weatherman?", "opts": [["A", "\"What time is it?\""], ["B", "\"Could you please tell us the weather on Saturday?\""], ["C", "\"How much is the trip?\""]], "answer": "B"},
+   {"num": 4, "q": "What will the weather be like on Saturday?", "opts": [["A", "Rainy and cold."], ["B", "Sunny and windy."], ["C", "Snowy."]], "answer": "B"},
+   {"num": 5, "q": "What is the passage mainly about?", "opts": [["A", "How to make a weather report."], ["B", "The weather and a vacation plan."], ["C", "How to go on a trip."]], "answer": "B"}
+  ]
+ },
+ "reading_b": {
+  "id": "DXH2026_L15_reading_b",
+  "genre": "记叙文",
+  "difficulty": "中",
+  "word_count": 150,
+  "provenance": "真题母本改编（教师授权原创 2026-08-08）",
+  "绑定": "G40 天气句型 / G42 非人称 It / 度假词汇",
+  "paragraphs": [
+   "The summer vacation is coming. Amy and her family plan a trip to the beach. \"How's the weather in summer?\" Amy asks her mother. \"It's hot and sunny,\" her mother says. \"But the sea is cool and lovely.\"",
+   "Amy wants to bring many things. She says, \"Could I take my new sunglasses?\" Her mother says, \"Sure, go ahead.\" Amy also asks, \"Would you please buy some drinks for the trip?\" Her mother says, \"No problem.\"",
+   "On the day of the trip, it is a sunny day. It is far from their home to the beach, so they drive early. At the beach, Amy plays in the water and makes a sandcastle. She is very happy.",
+   "It is time to go home in the evening. Amy says, \"The trip is wonderful. I love summer vacation!\" Her family smiles. They will take another trip next year."
+  ],
+  "questions": [
+   {"num": 1, "q": "Where does Amy's family plan a trip?", "opts": [["A", "To the beach."], ["B", "To the mountain."], ["C", "To the city."]], "answer": "A"},
+   {"num": 2, "q": "How's the weather in summer?", "opts": [["A", "Cold and snowy."], ["B", "Hot and sunny."], ["C", "Cool and dry."]], "answer": "B"},
+   {"num": 3, "q": "What does Amy say to ask for permission?", "opts": [["A", "\"Could I take my new sunglasses?\""], ["B", "\"What time is it?\""], ["C", "\"How much is it?\""]], "answer": "A"},
+   {"num": 4, "q": "How do they go to the beach?", "opts": [["A", "By bus."], ["B", "By car."], ["C", "On foot."]], "answer": "B"},
+   {"num": 5, "q": "What does Amy do at the beach?", "opts": [["A", "She plays with snow."], ["B", "She plays in the water and makes a sandcastle."], ["C", "She goes swimming in the sea."]], "answer": "B"}
+  ]
+ },
+ "reading_c": {
+  "id": "DXH2026_L15_reading_c",
+  "genre": "说明文",
+  "difficulty": "中",
+  "word_count": 150,
+  "provenance": "真题母本改编（教师授权原创 2026-08-08）",
+  "绑定": "G40 天气句型 / G42 非人称 It / 四季科普",
+  "paragraphs": [
+   "There are four seasons in a year: spring, summer, autumn and winter. Each season has different weather.",
+   "In spring, it is warm and wet. Flowers bloom and trees turn green. Many people like spring because it is not too hot or too cold.",
+   "In summer, it is hot. The temperature is often over 30 degrees. Children like summer because they have a long vacation. They can go swimming.",
+   "In autumn, it is cool and dry. The leaves turn yellow and red. It is a good time for a trip. Many people climb mountains.",
+   "In winter, it is cold and snowy. The temperature is often below zero degrees. Children like winter because they can make snowmen and go skating.",
+   "It is important to check the weather before you go out. Put on warm clothes in cold days and take an umbrella on rainy days. Enjoy every season!"
+  ],
+  "questions": [
+   {"num": 1, "q": "How many seasons are there in a year?", "opts": [["A", "Three."], ["B", "Four."], ["C", "Five."]], "answer": "B"},
+   {"num": 2, "q": "Which season is warm and wet?", "opts": [["A", "Spring."], ["B", "Summer."], ["C", "Winter."]], "answer": "A"},
+   {"num": 3, "q": "Why do children like summer?", "opts": [["A", "Because they have a long vacation."], ["B", "Because it is cold."], ["C", "Because they can make snowmen."]], "answer": "A"},
+   {"num": 4, "q": "What should we do before we go out?", "opts": [["A", "Check the weather."], ["B", "Buy an umbrella."], ["C", "Call a friend."]], "answer": "A"},
+   {"num": 5, "q": "What is the passage mainly about?", "opts": [["A", "How to make a snowman."], ["B", "The four seasons and their weather."], ["C", "How to go swimming."]], "answer": "B"}
+  ]
+ },
+ "w5": {
+  "id": "DXH2026_L15_w5",
+  "title": "根据短文内容，从方框中选出最佳句子填入文中空白处，使短文通顺连贯（有一项为多余选项）",
+  "绑定": "天气表达/Could-Would请求/度假计划",
+  "paragraphs": [
+   "Tom wants to go on a trip this weekend. He asks his mother, \"___1___\"",
+   "His mother says, \"It will be sunny and warm on Saturday. It is a good day to go out.\"",
+   "Tom says, \"___2___\" His mother replies, \"Sure, but don't forget your umbrella.\"",
+   "\"Why do you say that?\" Tom asks. \"___3___ On Sunday it will be rainy, and we may stay home,\" his mother says.",
+   "Tom smiles. \"___4___\" He packs his bag and gets ready for the trip."
+  ],
+  "candidates": [
+   ["A", "Because the weather changes quickly."],
+   ["B", "How's the weather this weekend?"],
+   ["C", "Could you please help me make a plan?"],
+   ["D", "Thank you. I will be careful."],
+   ["E", "I want to buy a new raincoat."]
+  ],
+  "answers": {"1": "B", "2": "C", "3": "A", "4": "D"}
+ },
+ "cloze": {
+  "id": "DXH2026_L15_cloze",
+  "title": "完形填空",
+  "绑定": "G40 天气句型 / G41 Could-Would / G42 非人称 It / 天气词汇",
+  "paragraphs": [
+   "It is a ___1___ day today. The temperature is 25 ___2___. Lily and her friends want to go on a ___3___ to the park.",
+   "Lily says, \"___4___ you please bring some snacks?\" Her friend Tom says, \"Sure, ___5___ problem.\"",
+   "Lily asks, \"Would you please ___6___ an umbrella? It may rain.\" Tom says, \"Of course.\"",
+   "At the park, ___7___ is sunny and warm. They have a picnic under a big tree. \"How ___8___ the weather today!\" Lily says happily.",
+   "___9___ is time to go home in the evening. They are tired but happy. They all enjoy the beautiful ___10___ day."
+  ],
+  "items": [
+   {"num": 1, "opts": [["A", "sunny"], ["B", "rainy"], ["C", "snowy"]], "answer": "A"},
+   {"num": 2, "opts": [["A", "degrees"], ["B", "meters"], ["C", "kilos"]], "answer": "A"},
+   {"num": 3, "opts": [["A", "trip"], ["B", "meal"], ["C", "class"]], "answer": "A"},
+   {"num": 4, "opts": [["A", "Could"], ["B", "Do"], ["C", "Are"]], "answer": "A"},
+   {"num": 5, "opts": [["A", "no"], ["B", "not"], ["C", "some"]], "answer": "A"},
+   {"num": 6, "opts": [["A", "bring"], ["B", "brings"], ["C", "bringing"]], "answer": "A"},
+   {"num": 7, "opts": [["A", "it"], ["B", "they"], ["C", "she"]], "answer": "A"},
+   {"num": 8, "opts": [["A", "is"], ["B", "are"], ["C", "will"]], "answer": "A"},
+   {"num": 9, "opts": [["A", "It"], ["B", "This"], ["C", "That"]], "answer": "A"},
+   {"num": 10, "opts": [["A", "spring"], ["B", "summer"], ["C", "winter"]], "answer": "A"}
+  ]
+ },
+ "grammar_fill": {
+  "id": "DXH2026_L15_grammar_fill",
+  "title": "从方框内选择适当的词并用其正确形式填空，使短文通顺完整（每空限填一词，每词限用一次）",
+  "绑定": "G40 天气句型 / G41 Could-Would / G42 非人称 It / 天气词汇",
+  "word_bank": ["degrees", "it", "rainy", "season", "sunny", "trip", "warm", "winter", "would", "could", "extra11", "extra12"],
+  "paragraphs": [
+   "It is ___1___ today. The temperature is 20 ___2___. It is a good day for a ___3___.",
+   "Tom says, \"___4___ you please open the window?\" His mother says, \"Sure.\"",
+   "Then Tom asks, \"___5___ you like to go to the park with me?\" His mother says, \"I would love to.\"",
+   "In the park, ___6___ is sunny and warm. \"What a nice day!\" Tom says. \"In ___7___, it is cold and snowy. But today it is ___8___ and lovely.\""
+  ],
+  "answers": ["sunny", "degrees", "trip", "Could", "Would", "it", "winter", "warm"]
+ },
+ "sa": {
+  "id": "DXH2026_L15_sa",
+  "title": "阅读表达",
+  "passage_title": "A Nice Day for a Trip",
+  "绑定": "天气表达/Could-Would请求/非人称 It",
+  "paragraphs": [
+   "A Nice Day for a Trip",
+   "It is a sunny day today. The weather is warm and the sky is blue. Tom and his family want to go on a trip to the mountains.",
+   "Tom asks his mother, \"Could you please make some sandwiches?\" His mother says, \"Of course.\" Tom also asks his father, \"Would you please bring a camera?\" His father says, \"No problem.\"",
+   "They drive to the mountains. It is far from their home, but the trip is fun. At the top of the mountain, it is cool and windy. They have a picnic and take many pictures.",
+   "It is time to go home in the evening. Tom says, \"What a wonderful trip! I love the mountains.\""
+  ],
+  "questions": [
+   {"num": 1, "q": "What is the weather like today?", "answer": "It is sunny and warm.", "type": "简答"},
+   {"num": 2, "q": "Where do Tom and his family go for the trip?", "answer": "They go to the mountains.", "type": "简答"},
+   {"num": 3, "q": "What does Tom ask his mother to do?", "answer": "He asks her to make some sandwiches.", "type": "简答"},
+   {"num": 4, "q": "What is the weather like at the top of the mountain?", "answer": "It is cool and windy.", "type": "简答"},
+   {"num": 5, "q": "请把文中画线句子翻译成汉语（It is a sunny day today.）", "answer": "今天是一个晴朗的日子。", "type": "翻译"}
+  ]
+ },
+ "writing": {
+  "id": "DXH2026_L15_writing",
+  "title": "书面表达",
+  "prompt": "假如你是李华，请你用英语写一篇90词左右的短文，介绍你最喜欢的季节和你的度假计划。内容包括：\n1. 你最喜欢的季节是哪个、那里的天气怎么样；\n2. 你为什么喜欢这个季节（用 because 说明）；\n3. 在这个季节里你想去哪里、做什么（用 Could/Would you please... 提出至少一个请求）。",
+  "sample": [
+   "My Favorite Season",
+   "My favorite season is spring. The weather is warm and wet. It is not too hot or too cold. The flowers bloom and the trees turn green.",
+   "I like spring because it is the best time for a trip. I want to go on a trip to the countryside with my family. I say, \"Could you please make a picnic for us?\" My mother says, \"Of course.\" I also say, \"Would you please bring a camera?\" My father says, \"No problem.\"",
+   "In spring, the sky is blue and the air is fresh. I love the beautiful weather. I hope we will have a wonderful trip."
+  ],
+  "requirements": "1. 词数约 90 词；2. 包含所有提示要点；3. 语句通顺，意思连贯，语法正确；4. 可适当发挥。",
+  "绑定": "季节天气·度假计划"
+ },
+ "grammar_diag": {
+  "id": "DXH2026_L15_grammar_diag",
+  "mc": [
+   {"num": 1, "q": "____ the weather like in summer?", "opts": [["A", "What's"], ["B", "How's"], ["C", "What"]], "answer": "A", "绑定": "G40"},
+   {"num": 2, "q": "____ you please open the window?", "opts": [["A", "Could"], ["B", "Do"], ["C", "Are"]], "answer": "A", "绑定": "G41"},
+   {"num": 3, "q": "____ is sunny today.", "opts": [["A", "It"], ["B", "He"], ["C", "She"]], "answer": "A", "绑定": "G42"},
+   {"num": 4, "q": "Would you please ____ the door?", "opts": [["A", "closing"], ["B", "to close"], ["C", "close"]], "answer": "C", "绑定": "G41"},
+   {"num": 5, "q": "It's time ____ vacation.", "opts": [["A", "for"], ["B", "to"], ["C", "at"]], "answer": "A", "绑定": "G42"}
+  ],
+  "fill": [
+   {"num": 1, "q": "How's the ____ (weather) in Beijing today?", "answer": "weather", "绑定": "G40"},
+   {"num": 2, "q": "It ____ (be) cold and snowy in winter.", "answer": "is", "绑定": "G40"},
+   {"num": 3, "q": "____ (will) you please help me?", "answer": "Would", "绑定": "G41"},
+   {"num": 4, "q": "It's time ____ (for/to) lunch.", "answer": "for", "绑定": "G42"},
+   {"num": 5, "q": "The temperature is 25 ____ (degree).", "answer": "degrees", "绑定": "G40"}
+  ]
+ }
+}

@@ -1,0 +1,170 @@
+{
+ "_doc": "邓兴华 L19 配套练习内容（中等）· 2026-08-08。主题：复合不定代词·周末。语法：G49 复合不定代词分类 / G50 形容词后置 / G51 主谓一致。难度：中等。结构对齐 exam_spec v2026.2（阅读30/语言25/综合25/语法诊断20）。红线：L17/L18/L19 禁过去时（全卷仅一般现在时/现在进行时）。source_id=DXH2026_L19_*。",
+ "reading_a": {
+  "id": "DXH2026_L19_reading_a",
+  "genre": "应用文（周末活动通知）",
+  "difficulty": "中",
+  "word_count": 161,
+  "provenance": "真题母本改编 + 原创（教师授权 2026-08-08）",
+  "绑定": "G49 复合不定代词 / G50 形容词后置 / 周末词汇",
+  "paragraphs": [
+   "Attention, everyone! Our school has a weekend event this Saturday. We plan something fun for all students.",
+   "In the morning, there is a sports event in the park. Everyone is welcome to join. You can bring something interesting to share with your friends.",
+   "In the afternoon, we explore the city museum. Someone will show us around. Is anyone interested? Please sign up before Friday.",
+   "Everything is ready for the event. If you have nothing to do this weekend, come and join us. It will be an enjoyable day for everyone."
+  ],
+  "questions": [
+   {"num": 1, "q": "When is the weekend event?", "opts": [["A", "On Saturday."], ["B", "On Sunday."], ["C", "On Friday."]], "answer": "A"},
+   {"num": 2, "q": "What is there in the morning?", "opts": [["A", "A sports event."], ["B", "A music event."], ["C", "A reading event."]], "answer": "A"},
+   {"num": 3, "q": "Where do they go in the afternoon?", "opts": [["A", "To the city museum."], ["B", "To the library."], ["C", "To the cinema."]], "answer": "A"},
+   {"num": 4, "q": "What should you bring to share with friends?", "opts": [["A", "Something interesting."], ["B", "Nothing."], ["C", "Your diary."]], "answer": "A"},
+   {"num": 5, "q": "What is the passage mainly about?", "opts": [["A", "A school weekend event."], ["B", "How to keep a diary."], ["C", "How to plan a trip abroad."]], "answer": "A"}
+  ]
+ },
+ "reading_b": {
+  "id": "DXH2026_L19_reading_b",
+  "genre": "记叙文",
+  "difficulty": "中",
+  "word_count": 183,
+  "provenance": "真题母本改编 + 原创（教师授权 2026-08-08）",
+  "绑定": "G49-G51 复合不定代词 / 周末探索词汇",
+  "paragraphs": [
+   "This Sunday, I plan to do something special. I want to explore somewhere new in my city. It seems everyone is busy this weekend, so I go alone.",
+   "I take my notebook and my diary. I wonder what I will find. I walk along a quiet street and see a small park. There is nothing bored about it; the flowers are beautiful.",
+   "Suddenly, I hear someone laughing behind the trees. I look around but see nobody. Is anyone there? I call out, but no one answers.",
+   "At the end of the day, I go home and write everything in my diary. It is an enjoyable day. I learn that there is always something new to discover."
+  ],
+  "questions": [
+   {"num": 1, "q": "What does the writer plan to do this Sunday?", "opts": [["A", "Explore somewhere new."], ["B", "Travel abroad."], ["C", "Stay at home."]], "answer": "A"},
+   {"num": 2, "q": "What does the writer take when going out?", "opts": [["A", "A notebook and a diary."], ["B", "A phone and a camera."], ["C", "A book and a pencil."]], "answer": "A"},
+   {"num": 3, "q": "What does the girl hear behind the trees?", "opts": [["A", "Someone laughing."], ["B", "Someone singing."], ["C", "Someone crying."]], "answer": "A"},
+   {"num": 4, "q": "What does the underlined word \"alone\" mean?", "opts": [["A", "独自"], ["B", "一起"], ["C", "迟到"]], "answer": "A"},
+   {"num": 5, "q": "What does the writer learn at the end of the day?", "opts": [["A", "There is always something new to discover."], ["B", "It is better to stay home."], ["C", "Weekends are boring."]], "answer": "A"}
+  ]
+ },
+ "reading_c": {
+  "id": "DXH2026_L19_reading_c",
+  "genre": "说明文（周末科普）",
+  "difficulty": "中",
+  "word_count": 183,
+  "provenance": "真题母本改编 + 原创（教师授权 2026-08-08）",
+  "绑定": "G49-G51 复合不定代词 / 周末建议词汇",
+  "paragraphs": [
+   "How do you spend your weekend? Many students say they have nothing to do. But a good weekend can be very meaningful.",
+   "First, plan something you enjoy. You can read something interesting or explore somewhere special. Everyone needs time to relax and have fun.",
+   "Second, spend time with your family. Someone in your family may need your help. Doing something together is enjoyable for everyone.",
+   "Do not say you are bored. There is always something to learn or someone to meet. If you have nothing planned, try something new. An enjoyable weekend makes you feel good for the whole week."
+  ],
+  "questions": [
+   {"num": 1, "q": "What do many students say about their weekend?", "opts": [["A", "They have nothing to do."], ["B", "They are too busy."], ["C", "They like weekends."]], "answer": "A"},
+   {"num": 2, "q": "What can you read for a meaningful weekend?", "opts": [["A", "Something interesting."], ["B", "Nothing."], ["C", "Only homework."]], "answer": "A"},
+   {"num": 3, "q": "Who may need your help in the family?", "opts": [["A", "Someone in your family."], ["B", "Nobody."], ["C", "Everyone goes out."]], "answer": "A"},
+   {"num": 4, "q": "What should you do if you have nothing planned?", "opts": [["A", "Try something new."], ["B", "Stay in bed."], ["C", "Watch TV all day."]], "answer": "A"},
+   {"num": 5, "q": "What is the passage mainly about?", "opts": [["A", "How to spend a meaningful weekend."], ["B", "How to travel abroad."], ["C", "How to write a diary."]], "answer": "A"}
+  ]
+ },
+ "w5": {
+  "id": "DXH2026_L19_w5",
+  "title": "根据短文内容，从方框中选出最佳句子填入文中空白处，使短文通顺连贯（有一项为多余选项）",
+  "绑定": "周末计划对话 / 复合不定代词",
+  "paragraphs": [
+   "Tom and Lily are talking about their weekend. Tom says, \"___1___\"",
+   "Lily smiles and says, \"I plan to explore the new park. Would you like to join me?\"",
+   "Tom says, \"___2___ I want to go somewhere fun.\"",
+   "\"Great! ___3___\" Lily says. Tom asks, \"___4___\" Lily says, \"Sure, we can bring some snacks.\"",
+   "Then they are ready for a fun weekend."
+  ],
+  "candidates": [
+   ["A", "That sounds like a good idea."],
+   ["B", "Do you have anything to do this weekend?"],
+   ["C", "Let's meet at the park gate at nine."],
+   ["D", "Can we bring something to eat?"],
+   ["E", "It is too late to go out."]
+  ],
+  "answers": {"1": "B", "2": "A", "3": "C", "4": "D"}
+ },
+ "cloze": {
+  "id": "DXH2026_L19_cloze",
+  "title": "完形填空",
+  "绑定": "G49-G51 复合不定代词 / 周末词汇",
+  "paragraphs": [
+   "It is Saturday morning. ___1___ is planning a trip to the park.",
+   "Amy says, \"I want to bring ___2___ to eat.\" Her mother says, \"Sure, take some fruit.\"",
+   "\"Is there ___3___ in the park?\" Amy asks. Her mother says, \"Yes, ___4___ is playing there.\"",
+   "\"___5___ is wrong with that?\" Amy asks. \"Nothing, it is nice to have company,\" her mother says.",
+   "In the park, everyone is happy. Amy sees ___6___ interesting on the ground. \"Look! ___7___ is shining,\" she says.",
+   "\"___8___ is fine today,\" her mother says. They have an enjoyable morning."
+  ],
+  "items": [
+   {"num": 1, "opts": [["A", "Everyone"], ["B", "Anyone"], ["C", "No one"]], "answer": "A"},
+   {"num": 2, "opts": [["A", "something"], ["B", "anything"], ["C", "nothing"]], "answer": "A"},
+   {"num": 3, "opts": [["A", "anyone"], ["B", "someone"], ["C", "no one"]], "answer": "A"},
+   {"num": 4, "opts": [["A", "someone"], ["B", "anyone"], ["C", "nothing"]], "answer": "A"},
+   {"num": 5, "opts": [["A", "What"], ["B", "Who"], ["C", "Where"]], "answer": "A"},
+   {"num": 6, "opts": [["A", "something"], ["B", "anything"], ["C", "nothing"]], "answer": "A"},
+   {"num": 7, "opts": [["A", "Something"], ["B", "Anything"], ["C", "Nothing"]], "answer": "A"},
+   {"num": 8, "opts": [["A", "Everything"], ["B", "Anything"], ["C", "Nothing"]], "answer": "A"}
+  ]
+ },
+ "grammar_fill": {
+  "id": "DXH2026_L19_grammar_fill",
+  "title": "从方框内选择适当的词并用其正确形式填空，使短文通顺完整（每空限填一词，每词限用一次）",
+  "绑定": "G49-G51 复合不定代词 / 周末词汇",
+  "word_bank": ["everyone", "something", "anyone", "nothing", "everything", "somewhere", "enjoyable", "wonder", "plan", "event", "extra11", "extra12"],
+  "paragraphs": [
+   "On the weekend, ___1___ in my family is happy. We plan ___2___ fun to do together.",
+   "Is there ___3___ who wants to go to the park? My little sister always says yes. She finds ___4___ boring about going out.",
+   "We make a ___5___ and prepare for the ___6___. ___7___ is ready for a good time."
+  ],
+  "answers": ["everyone", "something", "anyone", "nothing", "plan", "event", "everything"]
+ },
+ "sa": {
+  "id": "DXH2026_L19_sa",
+  "title": "阅读表达",
+  "passage_title": "A Fun Weekend Plan",
+  "绑定": "复合不定代词 / 周末场景",
+  "paragraphs": [
+   "A Fun Weekend Plan",
+   "This weekend, my family makes a plan together. Everyone is happy about it.",
+   "On Saturday morning, we go to the park. I want to bring something to eat, so my mother makes some sandwiches. We play games and everyone has fun.",
+   "On Sunday, we explore the museum. Someone shows us around, and we learn something interesting about history. Everything is well organized.",
+   "At the end of the weekend, we feel tired but happy. We learn that an enjoyable weekend is better when everyone does something together."
+  ],
+  "questions": [
+   {"num": 1, "q": "What does the family do on Saturday morning?", "answer": "They go to the park.", "type": "简答"},
+   {"num": 2, "q": "What does the writer want to bring?", "answer": "Something to eat.", "type": "简答"},
+   {"num": 3, "q": "What do they do on Sunday?", "answer": "They explore the museum.", "type": "简答"},
+   {"num": 4, "q": "请把文中画线句子翻译成汉语（An enjoyable weekend is better when everyone does something together.）", "answer": "当大家在一起做些什么时，愉快的周末会更好。", "type": "翻译"}
+  ]
+ },
+ "writing": {
+  "id": "DXH2026_L19_writing",
+  "title": "书面表达",
+  "prompt": "假如你是李华，请你用英语写一篇90词左右的短文，介绍你计划渡过的一个难忘的周末。内容包括：\n1. 这个周末你计划做什么（用 plan/explore 等）；\n2. 你会做什么有趣的事（用 something/anything/everyone 等复合不定代词）；\n3. 你的期待是什么。",
+  "sample": [
+   "My Weekend Plan",
+   "This weekend, I plan to do something special. I want to explore a new park in my city.",
+   "Everyone in my family is happy about the plan. We will bring something to eat and play games together. I hope there is something interesting to see in the park.",
+   "I think an enjoyable weekend makes everyone feel good. Going out with my family is always fun. I am looking forward to this weekend!"
+  ],
+  "requirements": "1. 词数约 90 词；2. 用复合不定代词（something/anything/everyone 等）；3. 禁过去时；4. 语句通顺，意思连贯；5. 可适当发挥。",
+  "绑定": "周末计划·复合不定代词"
+ },
+ "grammar_diag": {
+  "id": "DXH2026_L19_grammar_diag",
+  "mc": [
+   {"num": 1, "q": "____ is knocking at the door.", "opts": [["A", "Someone"], ["B", "Any"], ["C", "Nothing"]], "answer": "A", "绑定": "G49"},
+   {"num": 2, "q": "I want to buy ____ new for the party.", "opts": [["A", "something"], ["B", "anything"], ["C", "nothing"]], "answer": "A", "绑定": "G50"},
+   {"num": 3, "q": "Everyone ____ here now.", "opts": [["A", "is"], ["B", "are"], ["C", "am"]], "answer": "A", "绑定": "G51"},
+   {"num": 4, "q": "Do you have ____ to do this afternoon?", "opts": [["A", "anything"], ["B", "someone"], ["C", "nothing"]], "answer": "A", "绑定": "G49"},
+   {"num": 5, "q": "There is ____ interesting in the box.", "opts": [["A", "something"], ["B", "some"], ["C", "any"]], "answer": "A", "绑定": "G50"}
+  ],
+  "fill": [
+   {"num": 1, "q": "____ (No one/Anyone) knows the answer to the question.", "answer": "No one", "绑定": "G49"},
+   {"num": 2, "q": "I have ____ (something/anything) to tell you.", "answer": "something", "绑定": "G49"},
+   {"num": 3, "q": "Everyone in my class ____ (like) English.", "answer": "likes", "绑定": "G51"},
+   {"num": 4, "q": "She is looking for ____ (somewhere/anywhere) quiet to read.", "answer": "somewhere", "绑定": "G49"},
+   {"num": 5, "q": "There is ____ (nothing/anything) wrong with the machine.", "answer": "nothing", "绑定": "G49"}
+  ]
+ }
+}

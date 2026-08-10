@@ -1,0 +1,1133 @@
+{
+  "_doc": "李民宪 L08 配套练习内容（培优）· 2026。主题：Unit 3 Same or Different?② 友谊与观点。含听力20分（独立不计入笔试）+ 阅读30 + 语言运用25 + 综合技能25 + 语法诊断20。无过去时新授测试，语法控制在 比较级复现·Fact vs Opinion·观点表达句型(In my opinion/For example/However) 内。",
+  "listening": {
+    "绑定": "友谊与观点（honest/opinion/friendship/spare time/pleasure）",
+    "part1_title": "第一节  听对话选答语（共 5 小题，每小题 1 分）",
+    "part1": {
+      "items": [
+        {
+          "id": "LMX2026_L08_listen_p1_1",
+          "q": "What is the most important thing in friendship?",
+          "opts": [
+            [
+              "A",
+              "Honesty."
+            ],
+            [
+              "B",
+              "Appearance."
+            ],
+            [
+              "C",
+              "Money."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L08_listen_p1_2",
+          "q": "What does the girl do in her spare time?",
+          "opts": [
+            [
+              "A",
+              "Read books."
+            ],
+            [
+              "B",
+              "Play games."
+            ],
+            [
+              "C",
+              "Watch TV."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L08_listen_p1_3",
+          "q": "What is the boy's friend Tom like?",
+          "opts": [
+            [
+              "A",
+              "Honest."
+            ],
+            [
+              "B",
+              "Lazy."
+            ],
+            [
+              "C",
+              "Shy."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L08_listen_p1_4",
+          "q": "What do they have in common?",
+          "opts": [
+            [
+              "A",
+              "Music."
+            ],
+            [
+              "B",
+              "Sports."
+            ],
+            [
+              "C",
+              "Movies."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L08_listen_p1_5",
+          "q": "What is the girl's opinion about friendship?",
+          "opts": [
+            [
+              "A",
+              "Differences make it stronger."
+            ],
+            [
+              "B",
+              "Friends must be the same."
+            ],
+            [
+              "C",
+              "Appearance matters."
+            ]
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    "part2_title": "第二节  听对话或独白选答案（共 15 小题，每小题 1 分）",
+    "part2": {
+      "materials": [
+        {
+          "lead": "听下面一段对话，回答第 6 至第 7 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L08_listen_p2_1",
+              "q": "What is the woman's opinion about a good friend?",
+              "opts": [
+                [
+                  "A",
+                  "A good friend is honest."
+                ],
+                [
+                  "B",
+                  "A good friend is rich."
+                ],
+                [
+                  "C",
+                  "A good friend is popular."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L08_listen_p2_2",
+              "q": "What is more important, according to the woman?",
+              "opts": [
+                [
+                  "A",
+                  "Personality."
+                ],
+                [
+                  "B",
+                  "Appearance."
+                ],
+                [
+                  "C",
+                  "Money."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 8 至第 10 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L08_listen_p2_3",
+              "q": "What is Anna like?",
+              "opts": [
+                [
+                  "A",
+                  "Honest and hard-working."
+                ],
+                [
+                  "B",
+                  "Lazy and shy."
+                ],
+                [
+                  "C",
+                  "Loud and funny."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L08_listen_p2_4",
+              "q": "What do they do in their spare time?",
+              "opts": [
+                [
+                  "A",
+                  "Read books and play basketball."
+                ],
+                [
+                  "B",
+                  "Watch movies."
+                ],
+                [
+                  "C",
+                  "Play games."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L08_listen_p2_5",
+              "q": "What do they have in common?",
+              "opts": [
+                [
+                  "A",
+                  "A lot."
+                ],
+                [
+                  "B",
+                  "Nothing."
+                ],
+                [
+                  "C",
+                  "Few things."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 11 至第 12 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L08_listen_p2_6",
+              "q": "What do the two friends have different opinions about?",
+              "opts": [
+                [
+                  "A",
+                  "Movies."
+                ],
+                [
+                  "B",
+                  "Food."
+                ],
+                [
+                  "C",
+                  "Sports."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L08_listen_p2_7",
+              "q": "What do they do when they disagree?",
+              "opts": [
+                [
+                  "A",
+                  "They respect each other."
+                ],
+                [
+                  "B",
+                  "They argue."
+                ],
+                [
+                  "C",
+                  "They stop talking."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 13 至第 15 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L08_listen_p2_8",
+              "q": "What problem does the girl have?",
+              "opts": [
+                [
+                  "A",
+                  "A big homework problem."
+                ],
+                [
+                  "B",
+                  "A health problem."
+                ],
+                [
+                  "C",
+                  "A money problem."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L08_listen_p2_9",
+              "q": "What does the boy do?",
+              "opts": [
+                [
+                  "A",
+                  "He helps her."
+                ],
+                [
+                  "B",
+                  "He laughs at her."
+                ],
+                [
+                  "C",
+                  "He leaves."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L08_listen_p2_10",
+              "q": "When should friends support each other?",
+              "opts": [
+                [
+                  "A",
+                  "In difficult times."
+                ],
+                [
+                  "B",
+                  "Only in happy times."
+                ],
+                [
+                  "C",
+                  "Never."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 16 至第 17 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L08_listen_p2_11",
+              "q": "What does friendship give the boy?",
+              "opts": [
+                [
+                  "A",
+                  "Pleasure and safety."
+                ],
+                [
+                  "B",
+                  "Money and food."
+                ],
+                [
+                  "C",
+                  "Toys and games."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L08_listen_p2_12",
+              "q": "What does the boy think about friends?",
+              "opts": [
+                [
+                  "A",
+                  "A few true friends are better."
+                ],
+                [
+                  "B",
+                  "More friends are always better."
+                ],
+                [
+                  "C",
+                  "Friends are not needed."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段独白，回答第 18 至第 20 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L08_listen_p2_13",
+              "q": "What did 68% of students think is most important?",
+              "opts": [
+                [
+                  "A",
+                  "Honesty."
+                ],
+                [
+                  "B",
+                  "Kindness."
+                ],
+                [
+                  "C",
+                  "Shared interests."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L08_listen_p2_14",
+              "q": "What did 55% of students think matters?",
+              "opts": [
+                [
+                  "A",
+                  "Kindness."
+                ],
+                [
+                  "B",
+                  "Honesty."
+                ],
+                [
+                  "C",
+                  "Appearance."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L08_listen_p2_15",
+              "q": "What does the speaker think the results show?",
+              "opts": [
+                [
+                  "A",
+                  "Personality is more important than appearance."
+                ],
+                [
+                  "B",
+                  "Appearance matters most."
+                ],
+                [
+                  "C",
+                  "Money is important."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        }
+      ]
+    },
+    "transcripts": [
+      "W: What do you think is the most important in friendship?  M: Honesty, of course.",
+      "M: What do you do in your spare time?  W: I enjoy reading books and listening to music.",
+      "W: Is your friend Tom honest?  M: Yes, he always tells the truth. It is a pleasure to have him as a friend.",
+      "M: We both like music.  W: That's right, we have a lot in common.",
+      "W: In my opinion, differences make friendship stronger.  M: I agree with you.",
+      "W: In my opinion, a good friend is always honest.  M: I think so too. But some people say appearance matters.  W: I don't agree. Personality is more important.",
+      "M: Let me introduce my best friend, Anna.  W: What is she like?  M: She is honest and hard-working. We have a lot in common.  W: What do you do together?  M: In our spare time, we read books and play basketball.  W: That sounds great.",
+      "W: Tom and I have different opinions about movies.  M: Do you argue about it?  W: No, we respect each other.  M: That's the key to good friendship.",
+      "W: I have a big problem with my homework.  M: Let me help you. A good friend supports you in difficult times.  W: Thank you. You are a true friend.  M: That's what friends are for. We should help each other.",
+      "W: What does friendship mean to you?  M: Friendship gives me pleasure and makes me feel safe.  W: That's nice. Do you have many friends?  M: A few true friends are better than many fake ones.",
+      "Hello, everyone. Here is the result of our friendship survey. We asked 100 students. 68% of them think honesty is the most important thing in a friend. 55% think kindness matters. Only 40% think shared interests are important. In my opinion, these results show that personality is more important than appearance. A true friend is someone who is honest and kind to you."
+    ]
+  },
+  "reading_a": {
+    "id": "LMX2026_L08_reading_a",
+    "genre": "应用文",
+    "difficulty": "培优",
+    "word_count": 185,
+    "provenance": "教师授权原创（2026-08-08）· 交友调查问卷",
+    "paragraphs": [
+      "Our school does a friendship survey every spring. We ask 100 students what they look for in a friend. The results are interesting. About 68% of the students say honesty is the most important thing. They think an honest friend will always tell the truth.",
+      "About 55% choose kindness. They believe a kind friend is easy to get along with. Only 40% think shared interests matter most. In my opinion, appearance is not important. A good friend's personality means much more.",
+      "Some students say they have a lot in common with their best friends, while others enjoy their differences. The survey shows that a strong friendship is built on honesty and respect, not on looks. We learn that it is a pleasure to have a friend who is true to us. If you want a good friend, first be a good friend yourself. The survey also shows that students want friends who listen to them. They enjoy sharing their spare time with a true friend. A little kindness goes a long way. A good friend listens and helps in spare time. We value these qualities in our friends."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "What do most students (68%) think is the most important thing?",
+        "opts": [
+          [
+            "A",
+            "Honesty."
+          ],
+          [
+            "B",
+            "Appearance."
+          ],
+          [
+            "C",
+            "Money."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "What percentage of students choose kindness?",
+        "opts": [
+          [
+            "A",
+            "55%."
+          ],
+          [
+            "B",
+            "68%."
+          ],
+          [
+            "C",
+            "40%."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "What does the writer think about appearance?",
+        "opts": [
+          [
+            "A",
+            "It is not important."
+          ],
+          [
+            "B",
+            "It matters most."
+          ],
+          [
+            "C",
+            "It is the only thing that matters."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "A friendship survey and its results."
+          ],
+          [
+            "B",
+            "How to win a prize."
+          ],
+          [
+            "C",
+            "A school sports day."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "reading_b": {
+    "id": "LMX2026_L08_reading_b",
+    "genre": "记叙文",
+    "difficulty": "培优",
+    "word_count": 207,
+    "provenance": "教师授权原创（2026-08-08）· 不同但在一起",
+    "paragraphs": [
+      "Tom and Jack have been good friends for three years. They are different in many ways, but their friendship is strong. Both of them like sports and music. In their spare time, Tom reads books in the library, while Jack watches movies and plays basketball.",
+      "Tom is quiet and hard-working. He likes to take notes and study alone. Jack is active and outgoing. He enjoys talking and making new friends. When they have different opinions, they do not argue. They listen to each other and try to understand.",
+      "For example, Tom thinks reading is the best way to relax, but Jack prefers playing games. They respect each other's choices. Their differences make their friendship more interesting. They have a lot in common, such as honesty and kindness. They are both honest with each other, and that builds trust. In the end, they believe that accepting differences is the key to a strong friendship. It is a pleasure to have a friend like that. They do not need to be the same to be good friends. In their opinion, respect and honesty matter most. They talk about their differences and learn new things. Their friendship grows every day. They prove that differences can bring people closer."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "What do both Tom and Jack like?",
+        "opts": [
+          [
+            "A",
+            "Sports and music."
+          ],
+          [
+            "B",
+            "Reading and drawing."
+          ],
+          [
+            "C",
+            "Movies and games."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "What does Jack like to do in his spare time?",
+        "opts": [
+          [
+            "A",
+            "Watch movies and play basketball."
+          ],
+          [
+            "B",
+            "Read books in the library."
+          ],
+          [
+            "C",
+            "Take notes and study."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "What does the word \"argue\" mean in the passage?",
+        "opts": [
+          [
+            "A",
+            "Disagree angrily."
+          ],
+          [
+            "B",
+            "Agree happily."
+          ],
+          [
+            "C",
+            "Talk quietly."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "Two friends who are different but close."
+          ],
+          [
+            "B",
+            "How to play basketball."
+          ],
+          [
+            "C",
+            "A library rule."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "reading_c": {
+    "id": "LMX2026_L08_reading_c",
+    "genre": "说明文",
+    "difficulty": "培优",
+    "word_count": 243,
+    "provenance": "教师授权原创（2026-08-08）· 什么是真正的友谊",
+    "paragraphs": [
+      "Many people ask: What makes true friendship? The answer is not simple. True friendship is not about having the same opinion on everything. It is about honesty, respect and support.",
+      "First, an honest friend tells you the truth, even when it is hard to hear. Honesty builds trust between friends. Second, a good friend respects your differences. You do not have to be the same to be close. In my opinion, accepting each other's personality makes the friendship stronger. Third, a true friend supports you in difficult times. When you have a problem, a real friend helps you find a solution.",
+      "Everyone has their own strengths and weaknesses. A good friend values your strengths and accepts your weaknesses. For example, if you are shy, a good friend will encourage you instead of laughing at you. Friendship also gives us pleasure. It is a pleasure to share happy moments with someone we trust. However, friendship takes time and effort. We should care for our friends every day, not only when we need them. In short, true friendship is a gift that we build with honesty, respect and love. Different opinions can make a friendship richer. We should listen to each other and stay open-minded. A good friend gives us honest advice. In this way, we grow together and build true friendship. We should choose friends who are honest and kind. A true friend stays with us in good times and bad times."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "What is the first thing a true friend should do?",
+        "opts": [
+          [
+            "A",
+            "Tell the truth / be honest."
+          ],
+          [
+            "B",
+            "Be rich."
+          ],
+          [
+            "C",
+            "Be popular."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "Why does the writer say a good friend accepts your weaknesses?",
+        "opts": [
+          [
+            "A",
+            "To support you and build trust."
+          ],
+          [
+            "B",
+            "To make fun of you."
+          ],
+          [
+            "C",
+            "To change you."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "What makes true friendship."
+          ],
+          [
+            "B",
+            "How to be shy."
+          ],
+          [
+            "C",
+            "How to win a prize."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "w5": {
+    "id": "LMX2026_L08_w5",
+    "title": "阅读短文，从方框中选出可以填入空白处的最佳选项（有一项为多余选项）",
+    "paragraphs": [
+      "To build true friendship, you should be honest. ___1___, always tell your friends the truth. ___2___, respect their differences and opinions. ___3___, help them when they have problems. ___4___, remember that friendship takes time and effort."
+    ],
+    "candidates": [
+      [
+        "A",
+        "First of all,"
+      ],
+      [
+        "B",
+        "Also,"
+      ],
+      [
+        "C",
+        "In addition,"
+      ],
+      [
+        "D",
+        "Finally,"
+      ],
+      [
+        "E",
+        "If you are lazy,"
+      ]
+    ],
+    "answers": {
+      "1": "A",
+      "2": "B",
+      "3": "C",
+      "4": "D"
+    },
+    "绑定": "真正友谊建议（连接词）"
+  },
+  "cloze": {
+    "id": "LMX2026_L08_cloze",
+    "title": "阅读短文，从每题所给的 A、B、C 三个选项中选出最佳选项",
+    "paragraphs": [
+      "My best friend Amy and I have a lot in ___1___. We both like music and reading. In our ___2___ time, we often talk and share ideas. Amy is ___3___ than me, so she always tells me the truth. In my ___4___, honesty is the most important thing in a friendship.",
+      "___5___, we sometimes have different opinions. We do not ___6___ about small things. We listen to each other and try to understand. For example, Amy thinks sports are boring, but I love them. We respect each other's ___7___. Everyone has his or her own ___8___ and weaknesses. A good friend accepts them. ___9___, a true friend always helps you when you need him. It is a ___10___ to have such a friend."
+    ],
+    "items": [
+      {
+        "num": 1,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "common"
+          ],
+          [
+            "B",
+            "opinion"
+          ],
+          [
+            "C",
+            "pleasure"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "spare"
+          ],
+          [
+            "B",
+            "busy"
+          ],
+          [
+            "C",
+            "free"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "honest"
+          ],
+          [
+            "B",
+            "more honest"
+          ],
+          [
+            "C",
+            "most honest"
+          ]
+        ],
+        "answer": "B"
+      },
+      {
+        "num": 4,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "opinion"
+          ],
+          [
+            "B",
+            "mind"
+          ],
+          [
+            "C",
+            "idea"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 5,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "However"
+          ],
+          [
+            "B",
+            "Also"
+          ],
+          [
+            "C",
+            "Because"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 6,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "argue"
+          ],
+          [
+            "B",
+            "argues"
+          ],
+          [
+            "C",
+            "arguing"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 7,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "opinions"
+          ],
+          [
+            "B",
+            "opinion"
+          ],
+          [
+            "C",
+            "strength"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 8,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "strengths"
+          ],
+          [
+            "B",
+            "strength"
+          ],
+          [
+            "C",
+            "strong"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 9,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "Finally"
+          ],
+          [
+            "B",
+            "First"
+          ],
+          [
+            "C",
+            "But"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 10,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "pleasure"
+          ],
+          [
+            "B",
+            "happy"
+          ],
+          [
+            "C",
+            "strength"
+          ]
+        ],
+        "answer": "A"
+      }
+    ],
+    "绑定": "友谊与观点·比较级复现·Fact/Opinion"
+  },
+  "grammar_fill": {
+    "id": "LMX2026_L08_grammar_fill",
+    "title": "从方框内选择适当的词并用其正确形式填空（每空限填一词，每词限用一次）",
+    "paragraphs": [
+      "In our ___1___ time, my best friend and I like to talk. We have a lot in ___2___, such as music and books. An ___3___ friend always tells the truth. In my ___4___, honesty matters most in a ___5___. We should not judge people by their ___6___.",
+      "Everyone has his or her own ___7___ and weaknesses. It is a ___8___ to have a friend who understands you. We respect each other's ___9___, even when they are different. Accepting our ___10___ makes us closer."
+    ],
+    "word_bank": [
+      "spare",
+      "common",
+      "honest",
+      "opinion",
+      "friendship",
+      "appearance",
+      "strength",
+      "pleasure",
+      "personality",
+      "difference"
+    ],
+    "answers": [
+      "spare",
+      "common",
+      "honest",
+      "opinion",
+      "friendship",
+      "appearance",
+      "strength",
+      "pleasure",
+      "personality",
+      "differences"
+    ],
+    "绑定": "友谊词汇·比较级复现·观点句型"
+  },
+  "sa": {
+    "id": "LMX2026_L08_sa",
+    "title": "阅读短文，回答下列问题或按要求完成句子",
+    "paragraphs": [
+      "I have a good friend named Mary. We are different in personality, but we have a lot in common. We both like reading and music. Mary is more honest than many people I know. In my opinion, honesty is the most important quality in a friend. For example, when I make a mistake, Mary tells me the truth. However, she also supports me and helps me solve problems. True friendship is a pleasure because it makes us feel safe and happy."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "What do the writer and Mary have in common?",
+        "type": "简答",
+        "answer": "They both like reading and music."
+      },
+      {
+        "num": 2,
+        "q": "What is the most important quality in a friend according to the writer?",
+        "type": "简答",
+        "answer": "Honesty."
+      },
+      {
+        "num": 3,
+        "q": "What does Mary do when the writer makes a mistake?",
+        "type": "简答",
+        "answer": "She tells the truth and helps solve problems."
+      },
+      {
+        "num": 4,
+        "q": "Do you think honesty is important in friendship? Why or why not?",
+        "type": "简答",
+        "answer": "Yes, I do. Because honesty builds trust."
+      },
+      {
+        "num": 5,
+        "q": "将句子 “True friendship is a pleasure because it makes us feel safe and happy.” 译成中文。",
+        "type": "翻译",
+        "answer": "真正的友谊是一种快乐，因为它让我们感到安全而幸福。"
+      }
+    ],
+    "绑定": "友谊观点（In my opinion/For example/However）"
+  },
+  "writing": {
+    "id": "LMX2026_L08_writing",
+    "title": "书面表达（15 分）",
+    "prompt": "请用英语写一篇短文，表达你对“什么是好朋友”的观点。至少使用一个 In my opinion 句和一个 For example 句。",
+    "requirements": "1. 使用本课词汇与句型（In my opinion... / I think that... / For example, ... / However, ...）；2. 80-100 词；3. 条理清楚，观点明确，有事实或例子支撑。",
+    "sample": "In my opinion, a good friend should be honest and kind. I think that honesty is the most important thing in friendship. For example, when I make a mistake, my best friend Mary tells me the truth. However, she always supports me and helps me solve problems. We have a lot in common, such as music and reading. It is a pleasure to have a friend like her."
+  },
+  "grammar_diag": {
+    "id": "LMX2026_L08_grammar",
+    "title": "语法诊断（比较级复现·Fact vs Opinion·观点句型）",
+    "questions": [
+      {
+        "num": 1,
+        "q": "Lucy is ___ honest than her best friend.",
+        "opts": [
+          [
+            "A",
+            "more"
+          ],
+          [
+            "B",
+            "most"
+          ],
+          [
+            "C",
+            "much"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "She is the ___ honest person I know.",
+        "opts": [
+          [
+            "A",
+            "most"
+          ],
+          [
+            "B",
+            "more"
+          ],
+          [
+            "C",
+            "much"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "Tom is ___ honest as his brother.",
+        "opts": [
+          [
+            "A",
+            "as"
+          ],
+          [
+            "B",
+            "so"
+          ],
+          [
+            "C",
+            "more"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "___ my opinion, a good friend should be kind.",
+        "opts": [
+          [
+            "A",
+            "In"
+          ],
+          [
+            "B",
+            "On"
+          ],
+          [
+            "C",
+            "At"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 5,
+        "q": "“Tom is 14 years old.” 属于下列哪一项？",
+        "opts": [
+          [
+            "A",
+            "Fact"
+          ],
+          [
+            "B",
+            "Opinion"
+          ],
+          [
+            "C",
+            "Question"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 6,
+        "q": "用所给词的适当形式填空：Mary is (honest) ___ than her sister.",
+        "answer": "more honest"
+      },
+      {
+        "num": 7,
+        "q": "用所给词的适当形式填空：He is the (kind) ___ student in our class.",
+        "answer": "kindest"
+      },
+      {
+        "num": 8,
+        "q": "用所给词的适当形式填空：I believe that friendship (be) ___ more important than appearance.",
+        "answer": "is"
+      },
+      {
+        "num": 9,
+        "q": "用所给词的适当形式填空：For example, my best friend and I (have) ___ different hobbies.",
+        "answer": "have"
+      },
+      {
+        "num": 10,
+        "q": "用所给词的适当形式填空：However, differences (make) ___ friendship stronger.",
+        "answer": "make"
+      }
+    ]
+  }
+}

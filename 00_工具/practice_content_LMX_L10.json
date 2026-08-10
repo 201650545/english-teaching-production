@@ -1,0 +1,1133 @@
+{
+  "_doc": "李民宪 L10 配套练习内容（培优）· 2026。主题：Unit 4 Amazing Plants and Animals② 生态联系。含听力20分（独立不计入笔试）+ 阅读30 + 语言运用25 + 综合技能25 + 语法诊断20。无过去时新授测试，语法控制在 because/so/if 因果句·主旨与细节·词义猜测 内。",
+  "listening": {
+    "绑定": "生态联系（connect/be connected with/pollination/protect/importance/climate/play a role in）",
+    "part1_title": "第一节  听对话选答语（共 5 小题，每小题 1 分）",
+    "part1": {
+      "items": [
+        {
+          "id": "LMX2026_L10_listen_p1_1",
+          "q": "What do bees do for plants?",
+          "opts": [
+            [
+              "A",
+              "Carry pollen."
+            ],
+            [
+              "B",
+              "Eat leaves."
+            ],
+            [
+              "C",
+              "Drink water."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L10_listen_p1_2",
+          "q": "Why should we protect pandas?",
+          "opts": [
+            [
+              "A",
+              "They are in danger."
+            ],
+            [
+              "B",
+              "They are common."
+            ],
+            [
+              "C",
+              "They are fast."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L10_listen_p1_3",
+          "q": "What is a big problem for animals?",
+          "opts": [
+            [
+              "A",
+              "Climate change."
+            ],
+            [
+              "B",
+              "Too much food."
+            ],
+            [
+              "C",
+              "Too much rain."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L10_listen_p1_4",
+          "q": "What plays an important role in the ecosystem?",
+          "opts": [
+            [
+              "A",
+              "Small insects."
+            ],
+            [
+              "B",
+              "Big cars."
+            ],
+            [
+              "C",
+              "Plastic bags."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L10_listen_p1_5",
+          "q": "What happens if bees disappear?",
+          "opts": [
+            [
+              "A",
+              "Fewer flowers and fruits."
+            ],
+            [
+              "B",
+              "More flowers."
+            ],
+            [
+              "C",
+              "Nothing happens."
+            ]
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    "part2_title": "第二节  听对话或独白选答案（共 15 小题，每小题 1 分）",
+    "part2": {
+      "materials": [
+        {
+          "lead": "听下面一段对话，回答第 6 至第 7 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L10_listen_p2_1",
+              "q": "What do bees do?",
+              "opts": [
+                [
+                  "A",
+                  "They carry pollen."
+                ],
+                [
+                  "B",
+                  "They eat flowers."
+                ],
+                [
+                  "C",
+                  "They sleep."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L10_listen_p2_2",
+              "q": "Why is pollination important?",
+              "opts": [
+                [
+                  "A",
+                  "Plants can make seeds."
+                ],
+                [
+                  "B",
+                  "Plants can run."
+                ],
+                [
+                  "C",
+                  "Plants can talk."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 8 至第 10 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L10_listen_p2_3",
+              "q": "Why are pandas in danger?",
+              "opts": [
+                [
+                  "A",
+                  "Because they lose their homes."
+                ],
+                [
+                  "B",
+                  "Because they eat too much."
+                ],
+                [
+                  "C",
+                  "Because they run fast."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L10_listen_p2_4",
+              "q": "What can we do to help pandas?",
+              "opts": [
+                [
+                  "A",
+                  "Protect the bamboo forest."
+                ],
+                [
+                  "B",
+                  "Take them to a shop."
+                ],
+                [
+                  "C",
+                  "Stop feeding them."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L10_listen_p2_5",
+              "q": "What will happen if we protect pandas?",
+              "opts": [
+                [
+                  "A",
+                  "They will have a good life."
+                ],
+                [
+                  "B",
+                  "They will disappear."
+                ],
+                [
+                  "C",
+                  "Nothing will happen."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 11 至第 12 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L10_listen_p2_6",
+              "q": "What is a big problem?",
+              "opts": [
+                [
+                  "A",
+                  "Climate change."
+                ],
+                [
+                  "B",
+                  "Too much rain."
+                ],
+                [
+                  "C",
+                  "Too many trees."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L10_listen_p2_7",
+              "q": "How does climate change affect animals?",
+              "opts": [
+                [
+                  "A",
+                  "Some cannot find food."
+                ],
+                [
+                  "B",
+                  "They grow faster."
+                ],
+                [
+                  "C",
+                  "They sleep more."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 13 至第 15 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L10_listen_p2_8",
+              "q": "What is a forest?",
+              "opts": [
+                [
+                  "A",
+                  "A big ecosystem."
+                ],
+                [
+                  "B",
+                  "A small garden."
+                ],
+                [
+                  "C",
+                  "A lake."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L10_listen_p2_9",
+              "q": "What do birds do?",
+              "opts": [
+                [
+                  "A",
+                  "Eat insects and spread seeds."
+                ],
+                [
+                  "B",
+                  "Eat trees."
+                ],
+                [
+                  "C",
+                  "Sleep in the water."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L10_listen_p2_10",
+              "q": "Why can new trees grow?",
+              "opts": [
+                [
+                  "A",
+                  "Because birds spread seeds."
+                ],
+                [
+                  "B",
+                  "Because birds eat trees."
+                ],
+                [
+                  "C",
+                  "Because there is no water."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 16 至第 17 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L10_listen_p2_11",
+              "q": "Where do sea animals live?",
+              "opts": [
+                [
+                  "A",
+                  "In the ocean."
+                ],
+                [
+                  "B",
+                  "In the forest."
+                ],
+                [
+                  "C",
+                  "In the desert."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L10_listen_p2_12",
+              "q": "What can we do to protect sea animals?",
+              "opts": [
+                [
+                  "A",
+                  "Keep the ocean clean."
+                ],
+                [
+                  "B",
+                  "Throw rubbish in the sea."
+                ],
+                [
+                  "C",
+                  "Catch them."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段独白，回答第 18 至第 20 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L10_listen_p2_13",
+              "q": "What did the speaker see the bees doing?",
+              "opts": [
+                [
+                  "A",
+                  "Carrying pollen."
+                ],
+                [
+                  "B",
+                  "Sleeping."
+                ],
+                [
+                  "C",
+                  "Playing games."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L10_listen_p2_14",
+              "q": "What was the mother bird doing?",
+              "opts": [
+                [
+                  "A",
+                  "Feeding her babies."
+                ],
+                [
+                  "B",
+                  "Flying far away."
+                ],
+                [
+                  "C",
+                  "Building a nest."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L10_listen_p2_15",
+              "q": "What did the speaker learn?",
+              "opts": [
+                [
+                  "A",
+                  "Every living thing is important."
+                ],
+                [
+                  "B",
+                  "Only big animals matter."
+                ],
+                [
+                  "C",
+                  "We should not protect nature."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        }
+      ]
+    },
+    "transcripts": [
+      "W: What do bees do for plants?  M: They carry pollen from flower to flower.",
+      "M: Why should we protect pandas?  W: Because they are in danger.",
+      "W: What is a big problem for animals?  M: Climate change. It changes the weather.",
+      "M: Do small insects matter?  W: Yes, they play an important role in the ecosystem.",
+      "W: What happens if bees disappear?  M: We will have fewer flowers and fruits.",
+      "W: Look at the bees on the flowers.  M: They are working hard.  W: What do they do?  M: They carry pollen from flower to flower. This is pollination. Because of it, plants can make seeds.",
+      "M: Why are pandas in danger?  W: Because they lose their homes.  M: What can we do?  W: We can protect the bamboo forest.  M: That's a good idea.  W: If we protect them, pandas will have a good life.",
+      "W: The weather is getting warmer.  M: Yes, climate change is a big problem.  W: How does it affect animals?  M: Some animals cannot find food. So we must protect the environment.",
+      "M: A forest is a big ecosystem.  W: What lives there?  M: Trees, animals and insects. They are connected with each other.  W: How?  M: Birds eat insects and spread seeds. So trees can grow.  W: That's amazing.",
+      "W: Do you know about sea animals?  M: Yes, they live in the ocean.  W: Why should we protect them?  M: Because they play an important role in the sea ecosystem.  W: What can we do?  M: We can keep the ocean clean.",
+      "Hello, everyone. This morning I went to the park for nature observation. I saw bees carrying pollen on the flowers. A mother bird was feeding her babies. I noticed that the trees and the insects are connected. Because the insects help the trees, the forest stays healthy. I learned that every living thing is important. If we protect nature, our planet will be a wonderful home."
+    ]
+  },
+  "reading_a": {
+    "id": "LMX2026_L10_reading_a",
+    "genre": "记叙文",
+    "difficulty": "培优",
+    "word_count": 189,
+    "provenance": "教师授权原创（2026-08-08）· 花园里的早晨",
+    "paragraphs": [
+      "On a sunny morning, I go to the garden to watch the bees. I want to see how they help plants. A bee flies to a flower and lands on it. It carries pollen from that flower to another one. This is called pollination. Because of this, plants can make seeds and grow.",
+      "I imagine a world without bees. There would be no flowers or fruits. The bees are connected with the plants in the garden. They play an important role in the ecosystem. A butterfly also flies by and helps with pollination.",
+      "I learn that even small insects are important. Because bees work so hard, our garden is full of life. If we do not protect them, many plants may disappear. Now I understand the importance of every living thing. I will always remember this morning in the garden. I look at the garden and see the flowers opening. The bees move from one flower to the next. They never stop working. This small garden is a busy place. The garden is a good place to learn about nature. I watch the bees and the flowers every day."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "What did the bee carry from flower to flower?",
+        "opts": [
+          [
+            "A",
+            "Pollen."
+          ],
+          [
+            "B",
+            "Water."
+          ],
+          [
+            "C",
+            "Leaves."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "What is this called when bees carry pollen?",
+        "opts": [
+          [
+            "A",
+            "Pollination."
+          ],
+          [
+            "B",
+            "Climate change."
+          ],
+          [
+            "C",
+            "Ecosystem."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "What does the word \"imagine\" mean in the passage?",
+        "opts": [
+          [
+            "A",
+            "Form a picture in your mind."
+          ],
+          [
+            "B",
+            "Throw something away."
+          ],
+          [
+            "C",
+            "Buy something."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "How bees help plants in the garden."
+          ],
+          [
+            "B",
+            "How to keep the garden clean."
+          ],
+          [
+            "C",
+            "How to plant a tree."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "reading_b": {
+    "id": "LMX2026_L10_reading_b",
+    "genre": "说明文",
+    "difficulty": "培优",
+    "word_count": 202,
+    "provenance": "教师授权原创（2026-08-08）· 地球上共同生活",
+    "paragraphs": [
+      "All living things on Earth are connected with each other. Plants and animals depend on one another. For example, bees help plants by carrying pollen. Because of this, plants can grow and give us food. Animals play an important role in the ecosystem too.",
+      "Birds eat insects and spread seeds. Some animals keep the balance of nature. The importance of this connection is clear. If one kind of animal disappears, other animals may be in danger. We must protect the ecosystem to keep everything in balance.",
+      "Climate change is a big problem for plants and animals. Because the weather is changing, some animals cannot find food. So we should work together to protect our natural world. We can plant trees, save water and reduce waste. If we all do our part, the earth will be a healthy home for everyone. Remember, every small action is connected with the future of our planet. Nature is a team. Every plant and animal has a job. If we hurt one part, the whole team may break. So we must be careful with our actions. We share the earth with many living things. Every one of them is connected with us. Protecting nature means protecting ourselves."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "How do bees help plants?",
+        "opts": [
+          [
+            "A",
+            "By carrying pollen."
+          ],
+          [
+            "B",
+            "By eating leaves."
+          ],
+          [
+            "C",
+            "By drinking water."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "Why is climate change a problem?",
+        "opts": [
+          [
+            "A",
+            "Some animals cannot find food."
+          ],
+          [
+            "B",
+            "Animals grow too fast."
+          ],
+          [
+            "C",
+            "Trees stop growing."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "What does the word \"balance\" mean in the passage?",
+        "opts": [
+          [
+            "A",
+            "A state where things are equal."
+          ],
+          [
+            "B",
+            "A kind of food."
+          ],
+          [
+            "C",
+            "A type of tree."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "How plants and animals are connected."
+          ],
+          [
+            "B",
+            "How to save water."
+          ],
+          [
+            "C",
+            "How to plant trees."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "reading_c": {
+    "id": "LMX2026_L10_reading_c",
+    "genre": "说明文",
+    "difficulty": "培优",
+    "word_count": 226,
+    "provenance": "教师授权原创（2026-08-08）· 动植物的重要性",
+    "paragraphs": [
+      "Why are plants and animals important? The answer is simple: we need them every day. Plants and animals are connected with our lives in many ways. First, plants give us food and clean air. We eat vegetables and fruits, and trees give us oxygen. Because plants make oxygen, we can breathe.",
+      "Animals also give us food, such as meat, milk and eggs. Second, animals help plants grow. Bees carry pollen from flower to flower, so plants can make seeds. This is pollination, and it plays an important role in our food supply. If we imagine a world without bees, we would have fewer fruits and vegetables. So we must protect them.",
+      "Third, a healthy ecosystem keeps the earth in balance. Forests, animals and insects all work together. Climate change can break this balance, because it changes the weather. So we should protect the environment. If we all do our part, our planet will stay beautiful for a long time. Remember the importance of every plant and animal. Plants and animals are not only food for us. They are our partners on Earth. We share the same sky and the same land. If we take care of them, they will take care of us. Nature gives us food, air and beauty. We should thank it and protect it. A healthy planet means a happy life for everyone."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "What do plants give us?",
+        "opts": [
+          [
+            "A",
+            "Food and clean air."
+          ],
+          [
+            "B",
+            "Meat and milk."
+          ],
+          [
+            "C",
+            "Eggs and water."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "Why should we protect bees?",
+        "opts": [
+          [
+            "A",
+            "Because they help plants grow."
+          ],
+          [
+            "B",
+            "Because they are big animals."
+          ],
+          [
+            "C",
+            "Because they eat trees."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "Why plants and animals are important."
+          ],
+          [
+            "B",
+            "How to make food."
+          ],
+          [
+            "C",
+            "How to change the weather."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "w5": {
+    "id": "LMX2026_L10_w5",
+    "title": "阅读短文，从方框中选出可以填入空白处的最佳选项（有一项为多余选项）",
+    "paragraphs": [
+      "We can do many things to protect the ecosystem. ___1___, plant trees and flowers in your community. ___2___, save water and reduce waste. ___3___, protect insects like bees and butterflies. ___4___, remember that every small action is connected with nature."
+    ],
+    "candidates": [
+      [
+        "A",
+        "First of all,"
+      ],
+      [
+        "B",
+        "Also,"
+      ],
+      [
+        "C",
+        "In addition,"
+      ],
+      [
+        "D",
+        "Finally,"
+      ],
+      [
+        "E",
+        "If the weather is too hot,"
+      ]
+    ],
+    "answers": {
+      "1": "A",
+      "2": "B",
+      "3": "C",
+      "4": "D"
+    },
+    "绑定": "生态保护建议（连接词）"
+  },
+  "cloze": {
+    "id": "LMX2026_L10_cloze",
+    "title": "阅读短文，从每题所给的 A、B、C 三个选项中选出最佳选项",
+    "paragraphs": [
+      "Plants and animals are connected with each other. Bees ___1___ pollen from flower to flower. ___2___ of this, plants can make seeds. Birds eat insects and ___3___ seeds to other places. Every animal ___4___ a role in the ecosystem.",
+      "If bees ___5___ away, there will be fewer fruits. So we must ___6___ them. The ___7___ of bees is very clear. Climate ___8___ is a big problem for animals. ___9___ the weather changes, some animals lose their home. ___10___ we should protect our natural world."
+    ],
+    "items": [
+      {
+        "num": 1,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "carry"
+          ],
+          [
+            "B",
+            "carries"
+          ],
+          [
+            "C",
+            "carrying"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "Because"
+          ],
+          [
+            "B",
+            "So"
+          ],
+          [
+            "C",
+            "If"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "spread"
+          ],
+          [
+            "B",
+            "spreads"
+          ],
+          [
+            "C",
+            "spreading"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "plays"
+          ],
+          [
+            "B",
+            "play"
+          ],
+          [
+            "C",
+            "playing"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 5,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "go"
+          ],
+          [
+            "B",
+            "goes"
+          ],
+          [
+            "C",
+            "going"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 6,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "protect"
+          ],
+          [
+            "B",
+            "protects"
+          ],
+          [
+            "C",
+            "protecting"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 7,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "importance"
+          ],
+          [
+            "B",
+            "important"
+          ],
+          [
+            "C",
+            "import"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 8,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "change"
+          ],
+          [
+            "B",
+            "changes"
+          ],
+          [
+            "C",
+            "changing"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 9,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "Because"
+          ],
+          [
+            "B",
+            "So"
+          ],
+          [
+            "C",
+            "But"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 10,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "So"
+          ],
+          [
+            "B",
+            "Because"
+          ],
+          [
+            "C",
+            "If"
+          ]
+        ],
+        "answer": "A"
+      }
+    ],
+    "绑定": "because/so/if 因果句·生态联系"
+  },
+  "grammar_fill": {
+    "id": "LMX2026_L10_grammar_fill",
+    "title": "从方框内选择适当的词并用其正确形式填空（每空限填一词，每词限用一次）",
+    "paragraphs": [
+      "Bees carry ___1___ from flower to flower. Plants and animals are ___2___ with each other in the ___3___. Bees play an important ___4___ in nature. We should ___5___ them. The ___6___ of bees is very clear.",
+      "___7___ the weather changes, some animals are in danger. So ___8___ change is a big problem. We can ___9___ trees to help the environment. ___10___ a world without bees; there would be no flowers."
+    ],
+    "word_bank": [
+      "connect",
+      "protect",
+      "imagine",
+      "pollen",
+      "ecosystem",
+      "importance",
+      "climate",
+      "role",
+      "because",
+      "plant"
+    ],
+    "answers": [
+      "pollen",
+      "connected",
+      "ecosystem",
+      "role",
+      "protect",
+      "importance",
+      "because",
+      "climate",
+      "plant",
+      "imagine"
+    ],
+    "绑定": "because/so/if·生态词汇"
+  },
+  "sa": {
+    "id": "LMX2026_L10_sa",
+    "title": "阅读短文，回答下列问题或按要求完成句子",
+    "paragraphs": [
+      "Bees are very important to plants. They carry pollen from flower to flower, so plants can make seeds. Because of bees, we have many fruits and vegetables. If bees disappear, there will be fewer flowers and less food. So we must protect bees and their homes. Every small insect plays an important role in the ecosystem."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "Why are bees important to plants?",
+        "type": "简答",
+        "answer": "Because they carry pollen and help plants make seeds."
+      },
+      {
+        "num": 2,
+        "q": "What do plants make because of bees?",
+        "type": "简答",
+        "answer": "Seeds (and fruits and vegetables)."
+      },
+      {
+        "num": 3,
+        "q": "What will happen if bees disappear?",
+        "type": "简答",
+        "answer": "There will be fewer flowers and less food."
+      },
+      {
+        "num": 4,
+        "q": "Do you think we should protect small insects? Why or why not?",
+        "type": "简答",
+        "answer": "Yes, I do. Because they play an important role in the ecosystem."
+      },
+      {
+        "num": 5,
+        "q": "将句子 “Every small insect plays an important role in the ecosystem.” 译成中文。",
+        "type": "翻译",
+        "answer": "每个小昆虫都在生态系统中发挥着重要作用。"
+      }
+    ],
+    "绑定": "because/so/if·生态联系"
+  },
+  "writing": {
+    "id": "LMX2026_L10_writing",
+    "title": "书面表达（15 分）",
+    "prompt": "请用英语写一段说明文，回答 “Why are plants and animals important?”，至少使用 6 个本课目标词。",
+    "requirements": "1. 使用本课词汇与句型（because/so/if 因果句、connect、be connected with、play a role in、importance）；2. 至少用 6 个目标词；3. 80 词左右；4. 条理清楚，有主题句和支撑细节。",
+    "sample": "Plants and animals are very important to us. They are connected with our lives. Plants give us food and clean air. Because plants make oxygen, we can breathe. Animals also give us food, such as milk and eggs. Bees play an important role in the ecosystem. If bees disappear, there will be fewer flowers and fruits. So we must protect them and their homes. Every living thing is important."
+  },
+  "grammar_diag": {
+    "id": "LMX2026_L10_grammar",
+    "title": "语法诊断（because/so/if 因果句·主旨细节·词义猜测）",
+    "questions": [
+      {
+        "num": 1,
+        "q": "Bees are important ___ they help plants grow.",
+        "opts": [
+          [
+            "A",
+            "because"
+          ],
+          [
+            "B",
+            "so"
+          ],
+          [
+            "C",
+            "if"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "Bees carry pollen, ___ plants can grow.",
+        "opts": [
+          [
+            "A",
+            "so"
+          ],
+          [
+            "B",
+            "because"
+          ],
+          [
+            "C",
+            "if"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "___ we protect bees, plants will grow well.",
+        "opts": [
+          [
+            "A",
+            "If"
+          ],
+          [
+            "B",
+            "Because"
+          ],
+          [
+            "C",
+            "So"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "为了让读者理解段落中心，文章通常会有 ___。",
+        "opts": [
+          [
+            "A",
+            "a topic sentence"
+          ],
+          [
+            "B",
+            "a question"
+          ],
+          [
+            "C",
+            "a mistake"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 5,
+        "q": "猜词：If bees disappear, they are gone. 句中 disappear 意为 ___。",
+        "opts": [
+          [
+            "A",
+            "消失"
+          ],
+          [
+            "B",
+            "出现"
+          ],
+          [
+            "C",
+            "生长"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 6,
+        "q": "用所给词的适当形式填空：Bees (help) ___ plants grow.",
+        "answer": "help"
+      },
+      {
+        "num": 7,
+        "q": "用所给词的适当形式填空：Plants are (connect) ___ with animals.",
+        "answer": "connected"
+      },
+      {
+        "num": 8,
+        "q": "用所给词的适当形式填空：We must (protect) ___ the ecosystem.",
+        "answer": "protect"
+      },
+      {
+        "num": 9,
+        "q": "用所给词的适当形式填空：Bees (carry) ___ pollen from flower to flower.",
+        "answer": "carry"
+      },
+      {
+        "num": 10,
+        "q": "用所给词的适当形式填空：The (important) ___ of bees is clear.",
+        "answer": "importance"
+      }
+    ]
+  }
+}

@@ -246,6 +246,15 @@ def inspect(html, level="medium", force=False):
     #   B) click-zone 覆盖翻页（此时交互容器 CSS 需 z-index 高于 click-zone 的 1）。
     findings += _check_pagination_exemption(html, sev(True))
 
+    # ── VIS-615：data-interaction-* 属性必须在标签内（防泄露复发） ──
+    # 检查 > data-interaction-item= 模式（标签闭合后紧跟属性串，泄露特征）
+    findings += _check_attr_in_tag(html, sev(True))
+
+    # ── VIS-616：交互元素必须在 quiz-q 容器内（防采集断裂复发） ──
+    # 单选按钮等交互元素若游离在 quiz-q 容器之外，采集时容器定位（closest('.quiz-q')）
+    # 无法取到 data-qid，会导致答题数据永不落库。用开闭标签配平逐段解析校验。
+    findings += _check_container_structure(html, sev(True))
+
     return findings
 
 
@@ -287,6 +296,113 @@ def _check_pagination_exemption(html: str, sev_error: str) -> list[Finding]:
                         "VIS-614", sev_error,
                         f"click-zone 覆盖翻页下，.{c} 的 z-index 未高于 click-zone(z-index:1)，点击会被覆盖层拦截"
                     ))
+    return findings
+
+
+def _check_attr_in_tag(html: str, sev_error: str) -> list[Finding]:
+    """检查 VIS-615：data-interaction-* 属性必须位于标签内而非标签外。
+
+    泄露特征：标签闭合 > 后紧跟空白 + data-interaction-item=。
+    修正后：每个 data-interaction-item= 的前面应有 <div class="quiz-q" 且在该标签的 > 之前。
+    """
+    findings = []
+    # 检查 1：> data-interaction-item= 模式（标签外泄露的精确特征）
+    leaked = re.findall(r'> data-interaction-item=', html)
+    if leaked:
+        findings.append(Finding(
+            "VIS-615", sev_error,
+            f"data-interaction-* 属性泄露在标签之外：检测到 {len(leaked)} 处 '> data-interaction-item=' 模式（属性串被浏览器当正文渲染）"
+        ))
+    # 检查 2：每个 data-interaction-item= 必须出现在 <div class="quiz-q" 的 > 之前
+    for m in re.finditer(r'data-interaction-item=', html):
+        start = html.rfind('<div class="quiz-q"', 0, m.start())
+        if start == -1:
+            findings.append(Finding(
+                "VIS-615", sev_error,
+                "data-interaction-item= 前无 <div class=\"quiz-q\" 容器，属性位置异常"
+            ))
+            continue
+        open_gt = html.find('>', start)
+        if not (start < m.start() < open_gt):
+            findings.append(Finding(
+                "VIS-615", sev_error,
+                "data-interaction-item= 不在 <div class=\"quiz-q\" 标签的 > 之前，属性泄露在标签外"
+            ))
+    # 检查 3：quiz-q 标签必须闭合（data-scorable 后直接跟 <div 即缺 >）
+    missing = re.findall(r'data-scorable="true"<div class="qq-text"', html)
+    if missing:
+        findings.append(Finding(
+            "VIS-615", sev_error,
+            f"quiz-q 标签缺闭合 >：检测到 {len(missing)} 处 'data-scorable=\"true\"<div' 模式（答题数据不落库，必须修复）"
+        ))
+    return findings
+
+
+# 需在 quiz-q 容器内才能正常采集的交互元素 class token。
+# 仅纳入 quiz-q 承载的交互（单选按钮/填空/拖拽块）：它们靠 closest('.quiz-q') 定位 data-qid。
+# 连线/排序/配对（.match-item/.link-item/.order-chunk）位于各自独立容器
+# （.match-container/.link-container/.order-container），有各自的 closest 采集逻辑，故不在此列，
+# 否则会对那些合法结构误报 "游离"。
+_INTERACTIVE_TOKENS = (
+    "quiz-opt",       # 单选/多选按钮（采集核心）
+    "fill-input",     # 填空输入框
+    "drag-word",      # 拖拽词块
+)
+
+
+def _check_container_structure(html: str, sev_error: str) -> list[Finding]:
+    """检查 VIS-616：每个交互元素必须位于 quiz-q 容器内（祖先链可达）。
+
+    用 div 开闭标签配平逐段解析：扫描 HTML 标签序列，用栈维护 div 嵌套层级
+    （每个 <div> 入栈并标记是否为 quiz-q，每个 </div> 出栈），同时跳过
+    <script>/<style> 内容（避免其中字符串/伪标签干扰配平）。对每个出现在标签
+    class 中的交互 token，若当时栈中不含任何 quiz-q 标记，则判定为游离 → ERROR。
+    """
+    findings = []
+    tag_re = re.compile(r'<(/)?([a-zA-Z][a-zA-Z0-9]*)([^>]*?)(/?)>', re.S)
+
+    in_script = in_style = False
+    # div 嵌套栈：True=该 div 是 quiz-q 容器，False=普通 div
+    div_stack = []
+    # token -> 总数 / 游离数
+    totals = {t: 0 for t in _INTERACTIVE_TOKENS}
+    detatched = {t: 0 for t in _INTERACTIVE_TOKENS}
+
+    for m in tag_re.finditer(html):
+        closing, tagname, attrs, selfclose = m.group(1), m.group(2).lower(), m.group(3), m.group(4)
+        if tagname == "script":
+            in_script = not closing
+            continue
+        if tagname == "style":
+            in_style = not closing
+            continue
+        if in_script or in_style:
+            continue
+
+        if not closing and not selfclose:
+            if tagname == "div":
+                is_q = bool(re.search(r'\bquiz-q\b', attrs))
+                div_stack.append(is_q)
+            # 交互元素：检查本标签 class 中是否含交互 token
+            for tok in _INTERACTIVE_TOKENS:
+                pat = r'class="[^"]*\b' + re.escape(tok) + r'\b'
+                if re.search(pat, attrs or ""):
+                    totals[tok] += 1
+                    if not any(div_stack):
+                        detatched[tok] += 1
+        elif closing:
+            if tagname == "div" and div_stack:
+                div_stack.pop()
+
+    for tok in _INTERACTIVE_TOKENS:
+        if totals[tok] == 0:
+            continue
+        if detatched[tok] > 0:
+            findings.append(Finding(
+                "VIS-616", sev_error,
+                f"交互元素 .{tok} 游离在 quiz-q 容器外 {detatched[tok]}/{totals[tok]} 处 "
+                f"（按钮/输入不在 quiz-q 内，采集时 closest('.quiz-q') 取不到 data-qid，答题数据可能不落库）"
+            ))
     return findings
 
 def main():

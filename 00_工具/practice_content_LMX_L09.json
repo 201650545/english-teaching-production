@@ -1,0 +1,1133 @@
+{
+  "_doc": "李民宪 L09 配套练习内容（培优）· 2026。主题：Unit 4 Amazing Plants and Animals① 特征与观察。含听力20分（独立不计入笔试）+ 阅读30 + 语言运用25 + 综合技能25 + 语法诊断20。无过去时新授测试，语法控制在 数量长度重量表达(How long/tall/much·meters/kilograms)·比较级最高级复习·信息卡句式(This is/It has/It can) 内。",
+  "listening": {
+    "绑定": "动植物特征·观察（cheetah/weigh/fast/butterfly/appear/bamboo/popular/tool/moss/redwood）",
+    "part1_title": "第一节  听对话选答语（共 5 小题，每小题 1 分）",
+    "part1": {
+      "items": [
+        {
+          "id": "LMX2026_L09_listen_p1_1",
+          "q": "What is the fastest animal on land?",
+          "opts": [
+            [
+              "A",
+              "The cheetah."
+            ],
+            [
+              "B",
+              "The elephant."
+            ],
+            [
+              "C",
+              "The panda."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L09_listen_p1_2",
+          "q": "How much does the panda weigh?",
+          "opts": [
+            [
+              "A",
+              "About 100 kilograms."
+            ],
+            [
+              "B",
+              "About 60 kilograms."
+            ],
+            [
+              "C",
+              "About 10 kilograms."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L09_listen_p1_3",
+          "q": "What color is the butterfly?",
+          "opts": [
+            [
+              "A",
+              "Red."
+            ],
+            [
+              "B",
+              "Blue."
+            ],
+            [
+              "C",
+              "Green."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L09_listen_p1_4",
+          "q": "What do pandas like to eat?",
+          "opts": [
+            [
+              "A",
+              "Bamboo."
+            ],
+            [
+              "B",
+              "Grass."
+            ],
+            [
+              "C",
+              "Fish."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L09_listen_p1_5",
+          "q": "How tall can the redwood be?",
+          "opts": [
+            [
+              "A",
+              "Over 100 meters."
+            ],
+            [
+              "B",
+              "Over 10 meters."
+            ],
+            [
+              "C",
+              "Over 50 meters."
+            ]
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    "part2_title": "第二节  听对话或独白选答案（共 15 小题，每小题 1 分）",
+    "part2": {
+      "materials": [
+        {
+          "lead": "听下面一段对话，回答第 6 至第 7 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L09_listen_p2_1",
+              "q": "What is the boy's favorite animal?",
+              "opts": [
+                [
+                  "A",
+                  "The cheetah."
+                ],
+                [
+                  "B",
+                  "The panda."
+                ],
+                [
+                  "C",
+                  "The elephant."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L09_listen_p2_2",
+              "q": "Why does he like the cheetah?",
+              "opts": [
+                [
+                  "A",
+                  "It is the fastest."
+                ],
+                [
+                  "B",
+                  "It is the biggest."
+                ],
+                [
+                  "C",
+                  "It is the cutest."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 8 至第 10 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L09_listen_p2_3",
+              "q": "What is the plant?",
+              "opts": [
+                [
+                  "A",
+                  "A kind of moss."
+                ],
+                [
+                  "B",
+                  "A bamboo."
+                ],
+                [
+                  "C",
+                  "A redwood."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L09_listen_p2_4",
+              "q": "What does the plant have?",
+              "opts": [
+                [
+                  "A",
+                  "Green leaves and a small flower."
+                ],
+                [
+                  "B",
+                  "Long branches."
+                ],
+                [
+                  "C",
+                  "No leaves."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L09_listen_p2_5",
+              "q": "Where does moss like to live?",
+              "opts": [
+                [
+                  "A",
+                  "In wet places."
+                ],
+                [
+                  "B",
+                  "In dry places."
+                ],
+                [
+                  "C",
+                  "In the sea."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 11 至第 12 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L09_listen_p2_6",
+              "q": "How tall can the redwood be?",
+              "opts": [
+                [
+                  "A",
+                  "Over 100 meters."
+                ],
+                [
+                  "B",
+                  "Over 50 meters."
+                ],
+                [
+                  "C",
+                  "Over 200 meters."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L09_listen_p2_7",
+              "q": "How fast can the cheetah run?",
+              "opts": [
+                [
+                  "A",
+                  "100 kilometers an hour."
+                ],
+                [
+                  "B",
+                  "50 kilometers an hour."
+                ],
+                [
+                  "C",
+                  "200 kilometers an hour."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 13 至第 15 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L09_listen_p2_8",
+              "q": "What is the panda doing?",
+              "opts": [
+                [
+                  "A",
+                  "Eating bamboo."
+                ],
+                [
+                  "B",
+                  "Sleeping."
+                ],
+                [
+                  "C",
+                  "Running."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L09_listen_p2_9",
+              "q": "What do pandas eat?",
+              "opts": [
+                [
+                  "A",
+                  "Bamboo."
+                ],
+                [
+                  "B",
+                  "Grass."
+                ],
+                [
+                  "C",
+                  "Fruit."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L09_listen_p2_10",
+              "q": "How much does an adult panda weigh?",
+              "opts": [
+                [
+                  "A",
+                  "About 100 kilograms."
+                ],
+                [
+                  "B",
+                  "About 10 kilograms."
+                ],
+                [
+                  "C",
+                  "About 1000 kilograms."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 16 至第 17 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L09_listen_p2_11",
+              "q": "When did the butterfly appear?",
+              "opts": [
+                [
+                  "A",
+                  "This morning."
+                ],
+                [
+                  "B",
+                  "This evening."
+                ],
+                [
+                  "C",
+                  "Yesterday."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L09_listen_p2_12",
+              "q": "What does the butterfly look like?",
+              "opts": [
+                [
+                  "A",
+                  "Yellow with black spots."
+                ],
+                [
+                  "B",
+                  "All red."
+                ],
+                [
+                  "C",
+                  "Green and small."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段独白，回答第 18 至第 20 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L09_listen_p2_13",
+              "q": "What did the speaker see near the flowers?",
+              "opts": [
+                [
+                  "A",
+                  "A butterfly."
+                ],
+                [
+                  "B",
+                  "A cheetah."
+                ],
+                [
+                  "C",
+                  "A panda."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L09_listen_p2_14",
+              "q": "How tall can bamboo grow?",
+              "opts": [
+                [
+                  "A",
+                  "More than 30 meters."
+                ],
+                [
+                  "B",
+                  "More than 100 meters."
+                ],
+                [
+                  "C",
+                  "More than 10 meters."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L09_listen_p2_15",
+              "q": "What should we do, according to the speaker?",
+              "opts": [
+                [
+                  "A",
+                  "Protect plants and animals."
+                ],
+                [
+                  "B",
+                  "Catch animals."
+                ],
+                [
+                  "C",
+                  "Cut trees."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        }
+      ]
+    },
+    "transcripts": [
+      "M: What is the fastest animal on land?  W: The cheetah, of course.",
+      "W: How much does the panda weigh?  M: About 100 kilograms. It eats a lot of bamboo.",
+      "M: Look at the butterfly!  W: It is red and beautiful.",
+      "W: What do pandas like to eat?  M: They love bamboo.",
+      "M: How tall is the redwood?  W: It can be over 100 meters tall.",
+      "W: What is your favorite animal?  M: I like the cheetah.  W: Why?  M: It is the fastest animal on land. It has long legs and can run very fast.",
+      "M: Let's look at this plant.  W: It has green leaves and a small flower.  M: What is it?  W: I think it is a kind of moss.  M: It feels soft and wet.  W: Yes, moss likes wet places.",
+      "W: Do you know the redwood?  M: Yes, it is one of the tallest trees. It can be over 100 meters tall.  W: And the cheetah?  M: It runs as fast as 100 kilometers an hour.",
+      "W: Look at the panda. It is eating bamboo.  M: Pandas eat a lot of bamboo every day.  W: How much does it weigh?  M: An adult panda can weigh about 100 kilograms.",
+      "M: A butterfly appeared in the garden this morning.  W: What does it look like?  M: It is yellow with black spots.  W: It must be beautiful.  M: Yes, it is light and I can see it flying from flower to flower.",
+      "Hello, everyone. Today I watched the plants and animals in the forest. I saw a tall redwood and some green moss. A butterfly appeared near the flowers. I saw a cheetah run by very fast. I also learned that bamboo can grow more than 30 meters tall. Plants and animals are all important in the ecosystem. We should protect them."
+    ]
+  },
+  "reading_a": {
+    "id": "LMX2026_L09_reading_a",
+    "genre": "记叙文",
+    "difficulty": "培优",
+    "word_count": 184,
+    "provenance": "教师授权原创（2026-08-08）· 观察动植物的一天",
+    "paragraphs": [
+      "Today I go to the park to watch plants and animals. It is a sunny day, and everything looks beautiful. I see green moss on the old stones near the lake. The moss feels soft and wet. A red butterfly appears suddenly and lands on a flower. Its wings are light and colorful.",
+      "I watch a small bird build its nest in a tree. It works very hard. I also notice some bees flying from flower to flower. They help plants make seeds. I want to know how much a big stone weighs, but I cannot lift it. So I just look at it.",
+      "The park is full of life. Plants and animals live together there. I learn that even the smallest moss is important. Now I understand why we should protect nature. I will come again next week to see more. I look around and see many small things. Some leaves are green, and some flowers are yellow. Every plant and animal has its own beauty. The park gives us a place to learn about nature. I love to watch the animals play."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "What does the writer see on the old stones?",
+        "opts": [
+          [
+            "A",
+            "Green moss."
+          ],
+          [
+            "B",
+            "A red butterfly."
+          ],
+          [
+            "C",
+            "A small bird."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "What color is the butterfly?",
+        "opts": [
+          [
+            "A",
+            "Red."
+          ],
+          [
+            "B",
+            "Blue."
+          ],
+          [
+            "C",
+            "Green."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "What does the word \"appears\" mean in the passage?",
+        "opts": [
+          [
+            "A",
+            "Comes into view."
+          ],
+          [
+            "B",
+            "Goes away."
+          ],
+          [
+            "C",
+            "Falls down."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "A day of watching plants and animals."
+          ],
+          [
+            "B",
+            "How to build a nest."
+          ],
+          [
+            "C",
+            "How much stones weigh."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "reading_b": {
+    "id": "LMX2026_L09_reading_b",
+    "genre": "说明文",
+    "difficulty": "培优",
+    "word_count": 199,
+    "provenance": "教师授权原创（2026-08-08）· 自然之最",
+    "paragraphs": [
+      "Nature is full of amazing records. Some plants and animals are the tallest, the fastest or the biggest in the world. The redwood is one of the tallest trees. It can be over 100 meters tall. In a redwood forest, the trees look like towers.",
+      "The cheetah is the fastest animal on land. It can run as fast as 100 kilometers an hour. A cheetah is about 75 centimeters tall and weighs about 60 kilograms. It has long legs and a small head, which help it run fast.",
+      "The biggest animal on land is the elephant. An adult elephant can weigh about 6000 kilograms. It is as big as a small car. These records teach us how amazing nature is. But we must remember that many of these animals and plants need our help. If we do not protect them, they may disappear. We should care for our natural world and keep these records for a long time. These records are not only fun to read. They also teach us to respect nature. If we care for animals and plants, we can keep these wonders alive. These amazing records show the wonder of the natural world. We must keep them safe for the future."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "How tall can a redwood be?",
+        "opts": [
+          [
+            "A",
+            "Over 100 meters."
+          ],
+          [
+            "B",
+            "Over 10 meters."
+          ],
+          [
+            "C",
+            "Over 50 meters."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "What is the fastest animal on land?",
+        "opts": [
+          [
+            "A",
+            "The cheetah."
+          ],
+          [
+            "B",
+            "The elephant."
+          ],
+          [
+            "C",
+            "The panda."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "What does the word \"disappear\" mean in the passage?",
+        "opts": [
+          [
+            "A",
+            "Go away / be gone."
+          ],
+          [
+            "B",
+            "Grow taller."
+          ],
+          [
+            "C",
+            "Become faster."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "Amazing records of nature."
+          ],
+          [
+            "B",
+            "How to run fast."
+          ],
+          [
+            "C",
+            "A kind of tree."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "reading_c": {
+    "id": "LMX2026_L09_reading_c",
+    "genre": "说明文",
+    "difficulty": "培优",
+    "word_count": 227,
+    "provenance": "教师授权原创（2026-08-08）· 生活中的竹子",
+    "paragraphs": [
+      "Bamboo is a wonder of nature. It grows very fast and can be very tall. Some bamboo can grow more than 30 meters high. Bamboo is popular with people all over the world. It is also a useful tool in our daily life.",
+      "People use bamboo to make many things. They make folding fans, baskets, chairs and even houses. A bamboo folding fan is light and easy to open. In the summer, an old man may use a bamboo folding fan to cool himself. Bamboo is also good for the environment. It grows quickly and keeps the soil clean.",
+      "Animals love bamboo too. Pandas eat bamboo every day. A panda can eat a lot of bamboo and weigh about 100 kilograms. Bamboo appears in many parts of our life, from the tools we use to the food we eat. It is green, strong and beautiful. If we use bamboo well, it can help us for many years. We should learn to love and protect this wonderful plant. People use bamboo to make many things, such as chairs, bridges and tools. It is strong but light. Because bamboo grows fast, it is a very useful plant. We should protect the bamboo forest and use it wisely. Bamboo is a gift from nature to people. Its uses are many, and its value is great. We should thank nature for this wonder."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "How tall can some bamboo grow?",
+        "opts": [
+          [
+            "A",
+            "More than 30 meters."
+          ],
+          [
+            "B",
+            "More than 100 meters."
+          ],
+          [
+            "C",
+            "More than 10 meters."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "What do people use bamboo to make?",
+        "opts": [
+          [
+            "A",
+            "Folding fans, baskets, chairs and houses."
+          ],
+          [
+            "B",
+            "Cars and planes."
+          ],
+          [
+            "C",
+            "Books and pens."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "Bamboo in our life."
+          ],
+          [
+            "B",
+            "A kind of animal."
+          ],
+          [
+            "C",
+            "How to make a fan."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "w5": {
+    "id": "LMX2026_L09_w5",
+    "title": "阅读短文，从方框中选出可以填入空白处的最佳选项（有一项为多余选项）",
+    "paragraphs": [
+      "When you watch a plant or an animal, you can make a small information card. ___1___, write down its name. ___2___, describe what it looks like and how big it is. ___3___, write what it can do or where it lives. ___4___, draw a picture of it to make the card beautiful."
+    ],
+    "candidates": [
+      [
+        "A",
+        "First of all,"
+      ],
+      [
+        "B",
+        "Then,"
+      ],
+      [
+        "C",
+        "Next,"
+      ],
+      [
+        "D",
+        "Finally,"
+      ],
+      [
+        "E",
+        "If it is too heavy,"
+      ]
+    ],
+    "answers": {
+      "1": "A",
+      "2": "B",
+      "3": "C",
+      "4": "D"
+    },
+    "绑定": "信息卡制作步骤（连接词）"
+  },
+  "cloze": {
+    "id": "LMX2026_L09_cloze",
+    "title": "阅读短文，从每题所给的 A、B、C 三个选项中选出最佳选项",
+    "paragraphs": [
+      "In the forest, we see many plants and animals. The ___1___ is the tallest tree there. It is more than 100 meters ___2___. A cheetah runs by us very fast; it is the ___3___ animal on land. We see a big panda. It ___4___ about 100 kilograms.",
+      "My teacher asks, '___5___ does this bamboo weigh?' We do not know, so we guess. A butterfly ___6___ on a flower. Its wings are beautiful. Every plant and animal ___7___ in the ecosystem. We should ___8___ them. 'This moss is a small ___9___,' says my teacher. 'It keeps the stones wet.' We learn that even small things are important. I want to ___10___ more about nature."
+    ],
+    "items": [
+      {
+        "num": 1,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "redwood"
+          ],
+          [
+            "B",
+            "cheetah"
+          ],
+          [
+            "C",
+            "moss"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "tall"
+          ],
+          [
+            "B",
+            "taller"
+          ],
+          [
+            "C",
+            "tallest"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "fast"
+          ],
+          [
+            "B",
+            "faster"
+          ],
+          [
+            "C",
+            "fastest"
+          ]
+        ],
+        "answer": "C"
+      },
+      {
+        "num": 4,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "weighs"
+          ],
+          [
+            "B",
+            "weigh"
+          ],
+          [
+            "C",
+            "weighing"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 5,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "How much"
+          ],
+          [
+            "B",
+            "How long"
+          ],
+          [
+            "C",
+            "How many"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 6,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "appeared"
+          ],
+          [
+            "B",
+            "appears"
+          ],
+          [
+            "C",
+            "appearing"
+          ]
+        ],
+        "answer": "B"
+      },
+      {
+        "num": 7,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "plays"
+          ],
+          [
+            "B",
+            "play"
+          ],
+          [
+            "C",
+            "playing"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 8,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "protect"
+          ],
+          [
+            "B",
+            "protects"
+          ],
+          [
+            "C",
+            "protecting"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 9,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "plant"
+          ],
+          [
+            "B",
+            "animal"
+          ],
+          [
+            "C",
+            "tool"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 10,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "learn"
+          ],
+          [
+            "B",
+            "learns"
+          ],
+          [
+            "C",
+            "learning"
+          ]
+        ],
+        "answer": "A"
+      }
+    ],
+    "绑定": "数量长度重量·比较级最高级·信息卡"
+  },
+  "grammar_fill": {
+    "id": "LMX2026_L09_grammar_fill",
+    "title": "从方框内选择适当的词并用其正确形式填空（每空限填一词，每词限用一次）",
+    "paragraphs": [
+      "The ___1___ is the tallest tree in the forest. The ___2___ is the fastest animal on land. Pandas love to eat ___3___, and a panda can ___4___ about 100 kilograms. A small ___5___ flies from flower to flower. Green ___6___ covers the old stones near the river.",
+      "A useful ___7___ can help people cut things. Butterflies ___8___ in the garden in spring. Bamboo is ___9___ with children because it is tall and green. Bamboo can ___10___ very fast in warm weather."
+    ],
+    "word_bank": [
+      "redwood",
+      "cheetah",
+      "bamboo",
+      "weigh",
+      "butterfly",
+      "moss",
+      "tool",
+      "appear",
+      "popular",
+      "grow"
+    ],
+    "answers": [
+      "redwood",
+      "cheetah",
+      "bamboo",
+      "weigh",
+      "butterfly",
+      "moss",
+      "tool",
+      "appear",
+      "popular",
+      "grow"
+    ],
+    "绑定": "动植物词汇·数量长度重量·信息卡"
+  },
+  "sa": {
+    "id": "LMX2026_L09_sa",
+    "title": "阅读短文，回答下列问题或按要求完成句子",
+    "paragraphs": [
+      "The cheetah is a beautiful animal. It lives in Africa. A cheetah has long legs and a small head. It is about 75 centimeters tall and weighs about 60 kilograms. The cheetah can run very fast. It is the fastest animal on land. People should protect cheetahs because they are in danger. If we do not help them, they may disappear."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "Where does the cheetah live?",
+        "type": "简答",
+        "answer": "In Africa."
+      },
+      {
+        "num": 2,
+        "q": "How much does a cheetah weigh?",
+        "type": "简答",
+        "answer": "About 60 kilograms."
+      },
+      {
+        "num": 3,
+        "q": "Why should people protect cheetahs?",
+        "type": "简答",
+        "answer": "Because they are in danger."
+      },
+      {
+        "num": 4,
+        "q": "Do you think we should protect wild animals? Why or why not?",
+        "type": "简答",
+        "answer": "Yes, I do. Because they are important to nature."
+      },
+      {
+        "num": 5,
+        "q": "将句子 “If we do not help them, they may disappear.” 译成中文。",
+        "type": "翻译",
+        "answer": "如果我们不帮助它们，它们可能会消失。"
+      }
+    ],
+    "绑定": "动物信息卡（This is/It has/It can/weighs）"
+  },
+  "writing": {
+    "id": "LMX2026_L09_writing",
+    "title": "书面表达（15 分）",
+    "prompt": "请选择一种动植物（如熊猫、蝴蝶、红杉等），用英语写一篇“信息卡”短文介绍它。",
+    "requirements": "1. 使用 This is... / It has... / It can... 等信息卡句式；2. 包含数量、长度或重量数据；3. 至少用 1 个比较级或最高级；4. 80 词左右。",
+    "sample": "This is a panda. It is a lovely animal. It has black and white fur and a round face. The panda is about 1.5 meters tall and weighs about 100 kilograms. It can climb trees and eat bamboo. Pandas are popular with children. The panda is the heaviest animal in our zoo. We should protect pandas because they are in danger."
+  },
+  "grammar_diag": {
+    "id": "LMX2026_L09_grammar",
+    "title": "语法诊断（数量长度重量·比较级最高级·信息卡）",
+    "questions": [
+      {
+        "num": 1,
+        "q": "___ long is this bamboo?",
+        "opts": [
+          [
+            "A",
+            "How"
+          ],
+          [
+            "B",
+            "What"
+          ],
+          [
+            "C",
+            "How much"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "How ___ does the panda weigh?",
+        "opts": [
+          [
+            "A",
+            "much"
+          ],
+          [
+            "B",
+            "long"
+          ],
+          [
+            "C",
+            "tall"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "The cheetah is the ___ animal on land.",
+        "opts": [
+          [
+            "A",
+            "fastest"
+          ],
+          [
+            "B",
+            "faster"
+          ],
+          [
+            "C",
+            "fast"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "The redwood is ___ than the pine tree.",
+        "opts": [
+          [
+            "A",
+            "taller"
+          ],
+          [
+            "B",
+            "tall"
+          ],
+          [
+            "C",
+            "tallest"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 5,
+        "q": "This is ___ cheetah.",
+        "opts": [
+          [
+            "A",
+            "a"
+          ],
+          [
+            "B",
+            "an"
+          ],
+          [
+            "C",
+            "the same"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 6,
+        "q": "用所给词的适当形式填空：The panda (weigh) ___ about 100 kilograms.",
+        "answer": "weighs"
+      },
+      {
+        "num": 7,
+        "q": "用所给词的适当形式填空：The cheetah is (fast) ___ than the lion.",
+        "answer": "faster"
+      },
+      {
+        "num": 8,
+        "q": "用所给词的适当形式填空：It (have) ___ long legs.",
+        "answer": "has"
+      },
+      {
+        "num": 9,
+        "q": "用所给词的适当形式填空：Bamboo is (popular) ___ than moss.",
+        "answer": "more popular"
+      },
+      {
+        "num": 10,
+        "q": "用所给词的适当形式填空：The elephant is the (big) ___ animal on land.",
+        "answer": "biggest"
+      }
+    ]
+  }
+}

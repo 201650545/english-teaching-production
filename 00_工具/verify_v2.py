@@ -26,10 +26,30 @@ RC_CLASSES = ["rc-zhug", "rc-bin", "rc-xing", "rc-ming", "rc-warn", "rc-qita"]
 PAGE_ID_MIN, PAGE_ID_MAX = 40, 45
 SLIDE_MIN, SLIDE_MAX = 25, 60
 
+def _resolve_node():
+    """定位 node 可执行文件：优先 playwright driver 目录，其次 PATH。
+    Windows 下 subprocess 用裸命令名 'node' 时有 CreateProcess 解析问题，
+    故解析为绝对路径以保证稳定。"""
+    import shutil
+    candidates = []
+    # 常见 playwright driver 位置
+    rel = os.path.join("Lib", "site-packages", "playwright", "driver", "node.exe")
+    for base in (os.path.dirname(sys.prefix) if sys.prefix else "", os.path.dirname(sys.executable)):
+        if base:
+            candidates.append(os.path.join(base, rel))
+    sh = shutil.which("node")
+    if sh:
+        candidates.append(sh)
+    for c in candidates:
+        if c and os.path.exists(c):
+            return c
+    return "node"
+
+
 def detect_contract(html):
     """自动识别课件契约类型"""
     id_pages = len(re.findall(r'<div class="page[^"]*" id="page\d+"', html)) or \
-               len(re.findall(r'id="page\d+"', html))
+                len(re.findall(r'id="page\d+"', html))
     # slide 页面容器：<div class="slide"> 或 <div class="slide cover-slide active">（排除 slide-title 等子元素）
     slides = len(re.findall(r'<div class="slide(?:"| )', html))
     quiz_opt_dc = len(re.findall(r'quiz-opt[^>]*data-correct="[01]"', html))
@@ -104,7 +124,8 @@ def check_one(path, force=False):
         try:
             with open(tmp, "w", encoding="utf-8") as fj:
                 fj.write(m.group(1))
-            r = subprocess.run(["node", "--check", tmp], capture_output=True, text=True)
+            node_exe = _resolve_node()
+            r = subprocess.run([node_exe, "--check", tmp], capture_output=True, text=True)
             js_ok = r.returncode == 0
             js_err = r.stderr.strip()
         finally:

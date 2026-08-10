@@ -1,0 +1,173 @@
+{
+ "_doc": "邓兴华 L18 配套练习内容（中等）· 2026-08-08。主题：现在进行时·家务。语法：G46 现在进行时结构 / G47 V-ing 变化规则 / G48 标志词识别。难度：中等。结构对齐 exam_spec v2026.2（阅读30/语言25/综合25/语法诊断20）。红线：L17/L18/L19 禁过去时（全卷仅一般现在时/现在进行时，无过去时）。source_id=DXH2026_L18_*。",
+ "reading_a": {
+  "id": "DXH2026_L18_reading_a",
+  "genre": "应用文（家务分工表）",
+  "difficulty": "中",
+  "word_count": 161,
+  "provenance": "真题母本改编 + 原创（教师授权 2026-08-08）",
+  "绑定": "G46 现在进行时 / G48 标志词 now / 家务词汇",
+  "paragraphs": [
+   "Here is our housework chart for this Saturday morning. Everyone in my family is busy now.",
+   "My father is sweeping the floor in the living room. My mother is cooking breakfast in the kitchen. My brother is washing the dishes.",
+   "I am studying in my room because I have a test on Monday. My little sister is not doing housework; she is sleeping on the sofa. She is very young.",
+   "Look! My grandpa is reading a newspaper on the chair. My grandma is drawing a picture for me. We are all doing something at the moment."
+  ],
+  "questions": [
+   {"num": 1, "q": "What is the father doing now?", "opts": [["A", "He is cooking."], ["B", "He is sweeping the floor."], ["C", "He is reading."]], "answer": "B"},
+   {"num": 2, "q": "Where is the mother cooking breakfast?", "opts": [["A", "In the kitchen."], ["B", "In the living room."], ["C", "In the bedroom."]], "answer": "A"},
+   {"num": 3, "q": "What is the little sister doing?", "opts": [["A", "She is washing dishes."], ["B", "She is sleeping."], ["C", "She is studying."]], "answer": "B"},
+   {"num": 4, "q": "What is the writer doing in the room?", "opts": [["A", "Studying."], ["B", "Drawing."], ["C", "Reading."]], "answer": "A"},
+   {"num": 5, "q": "What is the passage mainly about?", "opts": [["A", "What the family is doing now."], ["B", "How to cook breakfast."], ["C", "Where the family lives."]], "answer": "A"}
+  ]
+ },
+ "reading_b": {
+  "id": "DXH2026_L18_reading_b",
+  "genre": "记叙文",
+  "difficulty": "中",
+  "word_count": 183,
+  "provenance": "真题母本改编 + 原创（教师授权 2026-08-08）",
+  "绑定": "G46 现在进行时 / G47 V-ing / G48 标志词 Listen/Look / 家务词汇",
+  "paragraphs": [
+   "It is a busy Saturday morning in my home. Listen! My mother is singing in the kitchen while she cooks. My father is talking to the neighbor at the door.",
+   "Look! My sister is dancing in the living room. She is dancing to some music on her phone. My brother is not dancing; he is writing a letter at his desk.",
+   "I am helping with the housework. Now I am washing the dishes. The water is running, and I am hearing the sound of the tap.",
+   "At the moment, my mother calls me, \"Come and take a rest!\" I look at her and smile. I am chatting with her for a moment, and then I go back to work."
+  ],
+  "questions": [
+   {"num": 1, "q": "What is the mother doing in the kitchen?", "opts": [["A", "She is singing while she cooks."], ["B", "She is dancing."], ["C", "She is sleeping."]], "answer": "A"},
+   {"num": 2, "q": "What is the sister doing?", "opts": [["A", "She is dancing."], ["B", "She is washing dishes."], ["C", "She is writing a letter."]], "answer": "A"},
+   {"num": 3, "q": "What does the underlined word \"tap\" mean?", "opts": [["A", "水龙头"], ["B", "桌子"], ["C", "门"]], "answer": "A"},
+   {"num": 4, "q": "What is the writer doing now?", "opts": [["A", "Washing the dishes."], ["B", "Dancing."], ["C", "Reading."]], "answer": "A"},
+   {"num": 5, "q": "What does the mother call the writer to do?", "opts": [["A", "To take a rest."], ["B", "To do more work."], ["C", "To go to school."]], "answer": "A"}
+  ]
+ },
+ "reading_c": {
+  "id": "DXH2026_L18_reading_c",
+  "genre": "说明文（家务科普）",
+  "difficulty": "中",
+  "word_count": 183,
+  "provenance": "真题母本改编 + 原创（教师授权 2026-08-08）",
+  "绑定": "G46 现在进行时 / G47 V-ing / G43 频度副词复现 / 家务词汇",
+  "paragraphs": [
+   "Doing housework is good for teenagers. It helps them learn many life skills.",
+   "When you are sweeping the floor, you are exercising your body. When you are washing the dishes, you are practicing careful work. When you are cooking dinner, you are learning about food and safety.",
+   "Housework also helps families. If every child often helps with the housework, the home is clean and warm. Parents are not so tired after work.",
+   "So next time, do not say, \"I am too busy.\" Look around and see what you can do. You are always growing when you help at home."
+  ],
+  "questions": [
+   {"num": 1, "q": "What does sweeping the floor help you do?", "opts": [["A", "Exercise your body."], ["B", "Learn to draw."], ["C", "Read faster."]], "answer": "A"},
+   {"num": 2, "q": "What are you learning when you cook dinner?", "opts": [["A", "About food and safety."], ["B", "About music."], ["C", "About drawing."]], "answer": "A"},
+   {"num": 3, "q": "What happens if every child helps with the housework?", "opts": [["A", "The home is clean and warm."], ["B", "Parents are more tired."], ["C", "Children are bored."]], "answer": "A"},
+   {"num": 4, "q": "What does the passage suggest at the end?", "opts": [["A", "Help with housework."], ["B", "Do more homework."], ["C", "Stay at school."]], "answer": "A"},
+   {"num": 5, "q": "What is the passage mainly about?", "opts": [["A", "Why housework is good for teenagers."], ["B", "How to cook dinner."], ["C", "Where to buy food."]], "answer": "A"}
+  ]
+ },
+ "w5": {
+  "id": "DXH2026_L18_w5",
+  "title": "根据短文内容，从方框中选出最佳句子填入文中空白处，使短文通顺连贯（有一项为多余选项）",
+  "绑定": "家务对话 / 现在进行时",
+  "paragraphs": [
+   "Tom calls his friend Lily on Saturday morning. \"Hi, Lily! ___1___\"",
+   "Lily says, \"I am washing the dishes with my mom. What about you?\"",
+   "Tom says, \"___2___ My father is sweeping the floor.\"",
+   "Lily laughs and says, \"___3___\" Tom says, \"Yes, we are all busy. ___4___\"",
+   "Then they say goodbye and go back to their work."
+  ],
+  "candidates": [
+   ["A", "I am helping my family with the housework."],
+   ["B", "Let's meet after we finish."],
+   ["C", "What are you doing now?"],
+   ["D", "You are doing a good job!"],
+   ["E", "I am going to the cinema."]
+  ],
+  "answers": {"1": "C", "2": "A", "3": "D", "4": "B"}
+ },
+ "cloze": {
+  "id": "DXH2026_L18_cloze",
+  "title": "完形填空",
+  "绑定": "G46 现在进行时 / G47 V-ing / G48 标志词 / 家务词汇",
+  "paragraphs": [
+   "It is Saturday afternoon. Look! Lily ___1___ the floor in the living room.",
+   "Her mother is ___2___ dinner in the kitchen. Her father is ___3___ the dishes.",
+   "Lily's little brother is not helping. He is ___4___ on the sofa.",
+   "\"Listen! Someone is ___5___ a song outside,\" Lily says. She ___6___ to the window and looks out.",
+   "A boy is ___7___ his bike in front of the house. He is ___8___ happily.",
+   "Lily's mother opens the door and ___9___ to the boy. The boy says, \"I am ___10___ my friend for the afternoon.\""
+  ],
+  "items": [
+   {"num": 1, "opts": [["A", "is sweeping"], ["B", "sweep"], ["C", "sweeps"]], "answer": "A"},
+   {"num": 2, "opts": [["A", "cooking"], ["B", "cook"], ["C", "cooks"]], "answer": "A"},
+   {"num": 3, "opts": [["A", "wash"], ["B", "washing"], ["C", "washes"]], "answer": "B"},
+   {"num": 4, "opts": [["A", "sleeping"], ["B", "sleep"], ["C", "sleeps"]], "answer": "A"},
+   {"num": 5, "opts": [["A", "singing"], ["B", "sing"], ["C", "sings"]], "answer": "A"},
+   {"num": 6, "opts": [["A", "runs"], ["B", "is running"], ["C", "run"]], "answer": "B"},
+   {"num": 7, "opts": [["A", "riding"], ["B", "ride"], ["C", "rides"]], "answer": "A"},
+   {"num": 8, "opts": [["A", "singing"], ["B", "sing"], ["C", "sings"]], "answer": "A"},
+   {"num": 9, "opts": [["A", "talks"], ["B", "is talking"], ["C", "talk"]], "answer": "B"},
+   {"num": 10, "opts": [["A", "looking for"], ["B", "look for"], ["C", "looks for"]], "answer": "A"}
+  ]
+ },
+ "grammar_fill": {
+  "id": "DXH2026_L18_grammar_fill",
+  "title": "从方框内选择适当的词并用其正确形式填空，使短文通顺完整（每空限填一词，每词限用一次）",
+  "绑定": "G46 现在进行时 / G47 V-ing / 家务词汇",
+  "word_bank": ["sweep", "wash", "cook", "write", "dance", "study", "chat", "look", "moment", "now", "extra11", "extra12"],
+  "paragraphs": [
+   "It is Sunday morning. Mom is ___1___ breakfast in the kitchen. Dad is ___2___ the floor.",
+   "I am ___3___ my homework at my desk. My sister is not ___4___; she is ___5___ with her friend online.",
+   "At the ___6___, I ___7___ up and see the sunshine. \"It is a good day ___8___!\" I say happily."
+  ],
+  "answers": ["cooking", "sweeping", "writing", "dancing", "chatting", "moment", "look", "now"]
+ },
+ "sa": {
+  "id": "DXH2026_L18_sa",
+  "title": "阅读表达",
+  "passage_title": "Busy Sunday",
+  "绑定": "现在进行时 / 家务场景",
+  "paragraphs": [
+   "Busy Sunday",
+   "It is Sunday morning in the Li family. Everyone is doing something at home.",
+   "Mom is cooking noodles in the kitchen. Dad is washing the car in the yard. My brother is sweeping the floor in the living room.",
+   "I am studying English in my room. Listen! Someone is singing outside. It is my little sister. She is dancing slowly in the garden.",
+   "At the moment, Dad calls, \"Lunch is ready!\" We all stop our work and go to the kitchen. What a busy but happy Sunday!"
+  ],
+  "questions": [
+   {"num": 1, "q": "What is Mom doing in the kitchen?", "answer": "She is cooking noodles.", "type": "简答"},
+   {"num": 2, "q": "What is the brother doing?", "answer": "He is sweeping the floor.", "type": "简答"},
+   {"num": 3, "q": "What is the little sister doing in the garden?", "answer": "She is singing and dancing slowly.", "type": "简答"},
+   {"num": 4, "q": "请把文中画线句子翻译成汉语（What a busy but happy Sunday!）", "answer": "多么忙碌却又快乐的星期天啊！", "type": "翻译"}
+  ]
+ },
+ "writing": {
+  "id": "DXH2026_L18_writing",
+  "title": "书面表达",
+  "prompt": "假如你是李华，请你用英语写一篇90词左右的短文，介绍你家周末做家务的场景。内容包括：\n1. 在什么时间、家人分别在做什么（用现在进行时 be + V-ing）；\n2. 你在做什么家务（用 sweep/wash/cook 等动词）；\n3. 你的感受是什么。",
+  "sample": [
+   "A Busy Weekend at Home",
+   "It is Saturday morning now. My family is busy with the housework.",
+   "Look! My father is sweeping the floor in the living room. My mother is cooking breakfast in the kitchen. My brother is washing the dishes after the meal.",
+   "I am helping too. Now I am tidying my room and writing my homework. Listen! My little sister is singing happily in the garden.",
+   "At the moment, is everyone doing something? Yes! We are all busy but happy. Doing housework together makes our home clean and warm."
+  ],
+  "requirements": "1. 词数约 90 词；2. 用现在进行时描写正在做的事；3. 语句通顺，意思连贯；4. 可适当发挥。",
+  "绑定": "周末家务·现在进行时"
+ },
+ "grammar_diag": {
+  "id": "DXH2026_L18_grammar_diag",
+  "mc": [
+   {"num": 1, "q": "Look! The boys ____ basketball now.", "opts": [["A", "are playing"], ["B", "play"], ["C", "playing"]], "answer": "A", "绑定": "G46"},
+   {"num": 2, "q": "She is ____ a letter to her friend.", "opts": [["A", "writing"], ["B", "writeing"], ["C", "writes"]], "answer": "A", "绑定": "G47"},
+   {"num": 3, "q": "Listen! Someone ____ in the next room.", "opts": [["A", "is singing"], ["B", "sings"], ["C", "singing"]], "answer": "A", "绑定": "G48"},
+   {"num": 4, "q": "They ____ not watching TV now.", "opts": [["A", "are"], ["B", "is"], ["C", "am"]], "answer": "A", "绑定": "G46"},
+   {"num": 5, "q": "He is ____ a book at the moment.", "opts": [["A", "reading"], ["B", "read"], ["C", "reads"]], "answer": "A", "绑定": "G47"}
+  ],
+  "fill": [
+   {"num": 1, "q": "The baby is ____ (sleep) now.", "answer": "sleeping", "绑定": "G47"},
+   {"num": 2, "q": "Look! They ____ (have) dinner together.", "answer": "are having", "绑定": "G46"},
+   {"num": 3, "q": "She is ____ (write) a composition for the class.", "answer": "writing", "绑定": "G47"},
+   {"num": 4, "q": "The boy is ____ (chat) with his friend online.", "answer": "chatting", "绑定": "G47"},
+   {"num": 5, "q": "____ (Listen/Look)! The teacher is coming.", "answer": "Look", "绑定": "G48"}
+  ]
+ }
+}

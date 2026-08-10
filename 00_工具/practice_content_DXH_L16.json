@@ -1,0 +1,181 @@
+{
+ "_doc": "邓兴华 L16 阶段测试卷内容（中等）· 2026-08-08（重做）。主题：阶段测试Ⅱ·学习工具与学术任务跨阶诊断。语法：G01-G42 滚动回顾（本课为测试课，无新考点，练习全卷滚动覆盖已学考点）。难度：中等。结构对齐阶段测试卷 100 分标准（蓝图 4.1：阅读40/语言20/综合30/语法诊断10，G01-G42 覆盖）。语篇为复习型，可含过去时（G19/G20 为 L8 已学考点，属回顾非新授）。source_id=DXH2026_L16_*。",
+ "reading_a": {
+  "id": "DXH2026_L16_reading_a",
+  "genre": "应用文（测试准备指南）",
+  "difficulty": "中",
+  "word_count": 129,
+  "provenance": "真题母本改编 + 原创（教师授权 2026-08-08，测试课复习诊断）",
+  "绑定": "G14 What 提问 / G31 冠词 / G35 how many / 学习工具词汇",
+  "paragraphs": [
+   "Here is a guide for your English test on Friday. The test has three parts: a quiz, a short article, and a small project.",
+   "For the quiz, please review your notebook and your textbook. Write key words in your notebook and underline important sentences. For the article, read the passage once and circle the heading before you answer.",
+   "The project is a group survey. You and your partner need to make five questions and interview three classmates. Then you write a short composition about the results.",
+   "Remember to bring a pencil and fill in the blanks on the answer sheet. Good luck on your test!"
+  ],
+  "questions": [
+   {"num": 1, "q": "When is the English test?", "opts": [["A", "On Monday."], ["B", "On Friday."], ["C", "On Sunday."]], "answer": "B"},
+   {"num": 2, "q": "How many parts does the test have?", "opts": [["A", "Two."], ["B", "Three."], ["C", "Four."]], "answer": "B"},
+   {"num": 3, "q": "What should you do before you answer the reading article?", "opts": [["A", "Write a composition."], ["B", "Interview three classmates."], ["C", "Circle the heading."]], "answer": "C"},
+   {"num": 4, "q": "What do you need to bring to the test?", "opts": [["A", "A pencil."], ["B", "A notebook."], ["C", "A survey."]], "answer": "A"},
+   {"num": 5, "q": "What is the passage mainly about?", "opts": [["A", "How to make a survey."], ["B", "A guide for an English test."], ["C", "How to write better."]], "answer": "B"}
+  ]
+ },
+ "reading_b": {
+  "id": "DXH2026_L16_reading_b",
+  "genre": "记叙文",
+  "difficulty": "中",
+  "word_count": 150,
+  "provenance": "真题母本改编 + 原创（教师授权 2026-08-08，测试课复习诊断）",
+  "绑定": "G19 过去时 be / G20 过去时 did / G38 why-because / 学术任务词汇",
+  "paragraphs": [
+   "Last week, we had a big presentation in our class. I was very nervous before it. My teacher asked us to give a short talk about a project we did.",
+   "My project was about our school library. I did a survey and interviewed the librarian. I wrote an article and made a few pictures for it.",
+   "On the day of the presentation, I took a deep breath and spoke slowly. My classmates listened carefully. When I finished, they clapped loudly. My teacher was proud of me.",
+   "After class, my friend asked me, \"Why were you so nervous? You did a great job!\" I smiled and said, \"Because I practiced a lot, and it helped.\""
+  ],
+  "questions": [
+   {"num": 1, "q": "What was the project about?", "opts": [["A", "The school library."], ["B", "The school garden."], ["C", "The school canteen."]], "answer": "A"},
+   {"num": 2, "q": "Who did the writer interview?", "opts": [["A", "A doctor."], ["B", "The librarian."], ["C", "A teacher."]], "answer": "B"},
+   {"num": 3, "q": "What does the underlined word \"clapped\" mean?", "opts": [["A", "To hit hands together."], ["B", "To open a door."], ["C", "To write a letter."]], "answer": "A"},
+   {"num": 4, "q": "Why was the writer nervous before the presentation?", "opts": [["A", "Because he was sick."], ["B", "Because it was his first big talk."], ["C", "Because he forgot his article."]], "answer": "B"},
+   {"num": 5, "q": "How did the teacher feel about the writer?", "opts": [["A", "Proud."], ["B", "Angry."], ["C", "Bored."]], "answer": "A"}
+  ]
+ },
+ "reading_c": {
+  "id": "DXH2026_L16_reading_c",
+  "genre": "说明文（写作技巧）",
+  "difficulty": "中",
+  "word_count": 150,
+  "provenance": "真题母本改编 + 原创（教师授权 2026-08-08，测试课复习诊断）",
+  "绑定": "G13 祈使句 / G22 疑问词六宝 / G31 冠词 / 写作方法词汇",
+  "paragraphs": [
+   "Do you want to write a good composition? Here are some easy steps.",
+   "First, choose a clear title. The title tells the reader what your passage is about. Then write a short paragraph for the beginning. In the beginning, answer the question \"What is my article about?\"",
+   "Second, write two or three body paragraphs. Use headings to separate your ideas. Remember to underline the key sentence in each paragraph. Do not use too many blanks in your writing.",
+   "Finally, write a short end. Circle the main idea and check your brackets for any mistakes. Practice writing one paragraph every day, and your writing will improve a lot."
+  ],
+  "questions": [
+   {"num": 1, "q": "What should you choose first when writing a composition?", "opts": [["A", "A clear title."], ["B", "A long heading."], ["C", "A blank page."]], "answer": "A"},
+   {"num": 2, "q": "How many body paragraphs should you write?", "opts": [["A", "One."], ["B", "Two or three."], ["C", "Five."]], "answer": "B"},
+   {"num": 3, "q": "What should you do with the key sentence in each paragraph?", "opts": [["A", "Circle it."], ["B", "Underline it."], ["C", "Delete it."]], "answer": "B"},
+   {"num": 4, "q": "What should you do at the end of the passage?", "opts": [["A", "Write a short end."], ["B", "Add a new title."], ["C", "Make a survey."]], "answer": "A"},
+   {"num": 5, "q": "What is the passage mainly about?", "opts": [["A", "How to do a survey."], ["B", "How to write a composition."], ["C", "How to read faster."]], "answer": "B"}
+  ]
+ },
+ "w5": {
+  "id": "DXH2026_L16_w5",
+  "title": "根据短文内容，从方框中选出最佳句子填入文中空白处，使短文通顺连贯（有一项为多余选项）",
+  "绑定": "学术任务对话 / 祈使句 / 疑问词",
+  "paragraphs": [
+   "Tom and Lily are working on a group project. Tom says, \"___1___\"",
+   "Lily replies, \"Yes, we need to ask five students about their reading habits.\"",
+   "Tom says, \"___2___\" Lily says, \"Six questions are enough, I think.\"",
+   "\"What should we do after the survey?\" Tom asks. \"___3___\u201d Lily answers.",
+   "Tom smiles. \"___4___ Let's start now!\" Then they begin their interview.",
+   "After the interview, Lily says, \"___5___\" Tom says, \"Good idea. See you tonight.\""
+  ],
+  "candidates": [
+   ["A", "We write a short composition about the results."],
+   ["B", "It's a good idea."],
+   ["C", "Do we need to make a survey first?"],
+   ["D", "How many questions should we ask?"],
+   ["E", "Let's go to the library to read books."],
+   ["F", "Let's review our notes this evening."]
+  ],
+  "answers": {"1": "C", "2": "D", "3": "A", "4": "B", "5": "F"}
+ },
+ "cloze": {
+  "id": "DXH2026_L16_cloze",
+  "title": "完形填空",
+  "绑定": "G01-G42 滚动 / 学习场景词汇",
+  "paragraphs": [
+   "It is the ___1___ before our English test. Amy is in her room. She ___2___ her notebook and reads it again.",
+   "Her mother comes in and ___3___, \"Do you want some tea?\" Amy says, \"Yes, ___4___ you please bring a cup?\"",
+   "\"How ___5___ tea do you want?\" her mother asks. \"One cup is ___6___,\" Amy says.",
+   "Amy looks at the ___7___ and sees many key words. She ___8___ the important sentences with a pencil.",
+   "\"___9___ is your test?\" her mother asks. \"It is on Friday,\" Amy says. \"I want to do ___10___ well.\""
+  ],
+  "items": [
+   {"num": 1, "opts": [["A", "day"], ["B", "year"], ["C", "month"]], "answer": "A"},
+   {"num": 2, "opts": [["A", "opens"], ["B", "open"], ["C", "opening"]], "answer": "A"},
+   {"num": 3, "opts": [["A", "asks"], ["B", "ask"], ["C", "asked"]], "answer": "A"},
+   {"num": 4, "opts": [["A", "could"], ["B", "do"], ["C", "are"]], "answer": "A"},
+   {"num": 5, "opts": [["A", "much"], ["B", "many"], ["C", "often"]], "answer": "A"},
+   {"num": 6, "opts": [["A", "enough"], ["B", "too"], ["C", "very"]], "answer": "A"},
+   {"num": 7, "opts": [["A", "notebook"], ["B", "bracket"], ["C", "blank"]], "answer": "A"},
+   {"num": 8, "opts": [["A", "underlines"], ["B", "underline"], ["C", "underlined"]], "answer": "A"},
+   {"num": 9, "opts": [["A", "When"], ["B", "Where"], ["C", "Who"]], "answer": "A"},
+   {"num": 10, "opts": [["A", "very"], ["B", "some"], ["C", "any"]], "answer": "A"}
+  ]
+ },
+ "grammar_fill": {
+  "id": "DXH2026_L16_grammar_fill",
+  "title": "从方框内选择适当的词并用其正确形式填空（每空限填一词，每词限用一次）",
+  "绑定": "G01-G42 滚动 / 学习场景",
+  "word_bank": ["blank", "underline", "survey", "carefully", "notebook", "important", "article", "test", "bracket", "review", "circle", "sentence"],
+  "paragraphs": [
+   "Don't leave any ___1___ on the answer sheet.",
+   "Please ___2___ the key words in the article.",
+   "We made a ___3___ about our reading habits.",
+   "The teacher told us to read every question ___4___.",
+   "Before the test, I reviewed my ___5___.",
+   "This is a very ___6___ sentence; remember it.",
+   "Write an ___7___ about the survey results.",
+   "We will have a big ___8___ on Friday.",
+   "Put the correct answer in the ___9___.",
+   "Please ___10___ your notes before the exam."
+  ],
+  "answers": ["blank", "underline", "survey", "carefully", "notebook", "important", "article", "test", "bracket", "review"]
+ },
+ "sa": {
+  "id": "DXH2026_L16_sa",
+  "title": "阅读表达",
+  "passage_title": "A Busy Study Week",
+  "绑定": "学习策略 / 疑问词 / 复习诊断",
+  "paragraphs": [
+   "A Busy Study Week",
+   "This week, our class did a big review for the English test. On Monday, we did a quiz about verbs. On Tuesday, we read a passage and answered questions.",
+   "On Wednesday, we worked on a group project. We made a survey about our favorite subjects. I interviewed four classmates and wrote an article about the results.",
+   "On Thursday, we checked our notebooks and underlined the important sentences. On Friday, we had the test. I was a little nervous, but I felt ready.",
+   "After the test, my teacher said, \"Why did you do so well?\" I said, \"Because I practiced every day.\""
+  ],
+  "questions": [
+   {"num": 1, "q": "What did the class do on Monday?", "answer": "They did a quiz about verbs.", "type": "简答"},
+   {"num": 2, "q": "How many classmates did the writer interview?", "answer": "Four classmates.", "type": "简答"},
+   {"num": 3, "q": "What did they do with the important sentences on Thursday?", "answer": "They underlined them.", "type": "简答"},
+   {"num": 4, "q": "请把文中画线句子翻译成汉语（I was a little nervous, but I felt ready.）", "answer": "我有点紧张，但我感觉自己准备好了。", "type": "翻译"},
+   {"num": 5, "q": "What did the class do on Tuesday?", "answer": "They read a passage and answered questions.", "type": "简答"}
+  ]
+ },
+ "writing": {
+  "id": "DXH2026_L16_writing",
+  "title": "书面表达",
+  "prompt": "假如你是李华，请你用英语写一篇100词左右的短文，介绍你一次参加测试或课题的经历。内容包括：\n1. 你参加了什么测试或课题、在什么时候；\n2. 你做了什么准备（用 notebook/textbook/underline 等学习工具类词汇）；\n3. 结果怎么样、你的感受是什么。",
+  "sample": [
+   "An Unforgettable Test",
+   "Last month, I had a big English test at school. I was nervous, so I prepared carefully.",
+   "I opened my textbook and notebook every day. I underlined the important sentences and circled the key words. I read the passage again and again. I also practiced writing a short composition.",
+   "On the day of the test, I was a little worried, but I did my best. When the result came, I was very happy because I got a good grade. I learned that hard work helps a lot."
+  ],
+  "requirements": "1. 词数约 100 词；2. 包含所有提示要点；3. 语句通顺，意思连贯，语法正确；4. 可适当发挥。",
+  "绑定": "测试经历·学习工具"
+ },
+ "grammar_diag": {
+  "id": "DXH2026_L16_grammar_diag",
+  "mc": [
+   {"num": 1, "q": "____ you like orange juice?", "opts": [["A", "Do"], ["B", "Does"], ["C", "Is"]], "answer": "A", "绑定": "G16"},
+   {"num": 2, "q": "She ____ a red dress yesterday.", "opts": [["A", "wear"], ["B", "wore"], ["C", "wears"]], "answer": "B", "绑定": "G20"},
+   {"num": 3, "q": "There ____ some books on the desk.", "opts": [["A", "is"], ["B", "are"], ["C", "am"]], "answer": "B", "绑定": "G09"},
+   {"num": 4, "q": "____ you please pass me the salt?", "opts": [["A", "Could"], ["B", "Do"], ["C", "Are"]], "answer": "A", "绑定": "G41"},
+   {"num": 5, "q": "How ____ milk do we need?", "opts": [["A", "much"], ["B", "many"], ["C", "often"]], "answer": "A", "绑定": "G35"}
+  ],
+  "fill": [
+   {"num": 1, "q": "This is my pen. That is ____ (she).", "answer": "hers", "绑定": "G01"},
+   {"num": 2, "q": "I ____ (have) a good time last weekend.", "answer": "had", "绑定": "G20"},
+   {"num": 3, "q": "There are two ____ (box) under the chair.", "answer": "boxes", "绑定": "G10"},
+   {"num": 4, "q": "Would you like ____ (some/any) tea?", "answer": "some", "绑定": "G33"},
+   {"num": 5, "q": "It is time ____ (for/to) lunch.", "answer": "for", "绑定": "G42"}
+  ]
+ }
+}

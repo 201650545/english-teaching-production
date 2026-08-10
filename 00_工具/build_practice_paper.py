@@ -134,9 +134,16 @@ def _rand_w5(w, rng, prev):
     return w["answers"][bl[-1]]
 
 def randomize_all(content, seed):
-    """按卷面顺序统一打乱所有选择题选项，保证相邻两题正确字母不同（seed=lesson 可复现）。"""
+    """按卷面顺序统一打乱所有选择题选项，保证相邻两题正确字母不同（seed=lesson 可复现）。
+    听力（若有）先于阅读打乱，使听力最后题与阅读首题也符合相邻不同字母。"""
     rng = random.Random(seed)
     prev = None
+    if content.get("listening"):
+        for it in content["listening"]["part1"]["items"]:
+            prev = _shuffle_one(it, rng, prev)
+        for mat in content["listening"]["part2"]["materials"]:
+            for it in mat["items"]:
+                prev = _shuffle_one(it, rng, prev)
     for tag in ("a", "b", "c"):
         for q in content["reading_%s" % tag]["questions"]:
             prev = _shuffle_one(q, rng, prev)
@@ -223,6 +230,33 @@ def _render_answer_card(doc, ans_list):
         i += 4
 
 # ─────────────────────────── 题型渲染 ───────────────────────────
+def _render_listening(doc, content, qnum):
+    """听力模块（独立 20 分，不计入笔试）：第一节 5 题听对话选答语 + 第二节 15 题（6 段材料）。
+    学生只见题干与选项；听力原文（tapescript）存于 content['listening']['transcripts']，
+    由调用方在参考答案区单独呈现供教师操作朗读。"""
+    lis = content["listening"]
+    ans, bp = [], []
+    _sub(doc, lis.get("part1_title", "第一节  听对话选答语（共 5 小题，每小题 1 分）"))
+    for it in lis["part1"]["items"]:
+        _question(doc, qnum, it["q"])
+        _options3(doc, it["opts"])
+        ans.append((qnum, it["answer"]))
+        bp.append({"题号": qnum, "题型": "听力·第一节", "分值": 1,
+                   "绑定考点/词": lis.get("绑定", ""), "难度": "中", "母本源ID": it["id"]})
+        qnum += 1
+    _sub(doc, lis.get("part2_title", "第二节  听对话或独白选答案（共 15 小题，每小题 1 分）"))
+    for mat in lis["part2"]["materials"]:
+        if mat.get("lead"):
+            _para(doc, mat["lead"], size=10.5, left_indent=QI, space_after=2, cn="黑体", bold=True)
+        for it in mat["items"]:
+            _question(doc, qnum, it["q"])
+            _options3(doc, it["opts"])
+            ans.append((qnum, it["answer"]))
+            bp.append({"题号": qnum, "题型": "听力·第二节", "分值": 1,
+                       "绑定考点/词": lis.get("绑定", ""), "难度": "中", "母本源ID": it["id"]})
+            qnum += 1
+    return qnum, ans, bp
+
 def _render_reading_choice(doc, content, qnum):
     ans, bp = [], []
     for tag in ("a", "b", "c"):
@@ -339,6 +373,7 @@ def _render_grammar(doc, content, qnum):
 def build_practice(card, content, out_path):
     lesson, student, tier = card["lesson"], card["student"], card["tier"]
     theme = card["theme"]
+    has_lis = bool(content.get("listening"))
     # 答案选项随机化 + 连续两题不同字母（2026-08-03 教师规范）
     randomize_all(content, lesson)
     doc = Document()
@@ -347,13 +382,22 @@ def build_practice(card, content, out_path):
         s.left_margin = Cm(1.5); s.right_margin = Cm(1.5)
 
     _heading(doc, "第 %02d 课时配套练习" % lesson)
-    _para(doc, "学生：%s    层级：%s    主题：%s    难度：中等" % (student, tier, theme),
+    _para(doc, "学生：%s    层级：%s    主题：%s    难度：培优" % (student, tier, theme),
           align=WD_ALIGN_PARAGRAPH.CENTER, size=10.5)
     _para(doc, "姓名：____________    得分：____________    用时：____________",
           align=WD_ALIGN_PARAGRAPH.CENTER, size=10.5)
-    _para(doc, "结构对齐 2026 湖南中考（不含听力）· 满分：80 分（含听力 100 分）", align=WD_ALIGN_PARAGRAPH.CENTER, size=10)
+    if has_lis:
+        _para(doc, "结构对齐 2026 湖南中考（含听力）· 笔试满分：100 分（另含独立听力 20 分）",
+              align=WD_ALIGN_PARAGRAPH.CENTER, size=10)
+    else:
+        _para(doc, "结构对齐 2026 湖南中考（不含听力）· 满分：80 分（含听力 100 分）",
+              align=WD_ALIGN_PARAGRAPH.CENTER, size=10)
 
     qnum = 1
+    ans_lis, lis_bp = [], []
+    if has_lis:
+        _section(doc, "听力部分（共 20 分 · 独立于笔试，不计入笔试满分）")
+        qnum, ans_lis, lis_bp = _render_listening(doc, content, qnum)
     ans1_rd, ans1_w5 = [], []   # 阅读选择 / 五选四
     ans2_cl, ans2_gf = [], []   # 完形 / 语法填空
     ans3_sa, ans3_wr = [], []   # 简答 / 书面表达
@@ -390,6 +434,14 @@ def build_practice(card, content, out_path):
     # ── 参考答案（对齐 2026 中考答案页：字母题连排、词句题逐行） ──
     doc.add_page_break()
     _section(doc, "参考答案")
+    if has_lis:
+        _sub(doc, "听力部分")
+        for ln in _ans_runs(ans_lis):
+            _para(doc, ln, size=10.5, space_after=1)
+        _sub(doc, "听力原文（听力磁带文稿，供教师届时朗读）")
+        for i, scr in enumerate(content["listening"].get("transcripts", []), 1):
+            _para(doc, "〔%d〕" % i, size=10.5, bold=True, space_after=1)
+            _passage(doc, [scr], first_indent=0)
     _sub(doc, "第一部分　阅读理解")
     for ln in _ans_runs(ans1_rd):
         _para(doc, ln, size=10.5, space_after=1)
@@ -417,6 +469,9 @@ def build_practice(card, content, out_path):
     # ── 答题卡 ──
     doc.add_page_break()
     _section(doc, "答题卡")
+    if has_lis:
+        _sub(doc, "听力部分（用 2B 铅笔填涂）")
+        _render_answer_card(doc, ans_lis)
     _sub(doc, "第一部分　阅读理解（用 2B 铅笔填涂）")
     # 阅读选择 + 五选四
     _render_answer_card(doc, ans1_rd + ans1_w5)
@@ -443,14 +498,19 @@ def build_practice(card, content, out_path):
     doc.add_page_break()
     _section(doc, "命题双向细目表")
     bp_rows = []
-    # 阅读选择 (q1-11)
-    qn = 1
+    # 听力 (q1-20，若有)
+    if has_lis:
+        for r in lis_bp:
+            bp_rows.append([str(r["题号"]), r["题型"], str(r["分值"]),
+                            r.get("绑定考点/词", ""), "中", r.get("母本源ID", "")])
+    # 阅读选择 (q21-31)
+    qn = (20 if has_lis else 1)
     for tag in ("a", "b", "c"):
         pg = content["reading_%s" % tag]
         for i, q in enumerate(pg["questions"]):
             bp_rows.append([str(qn), "阅读选择·%s篇" % tag.upper(), str(2), pg.get("绑定", ""), "中", pg["id"]])
             qn += 1
-    # 五选四 (q12-15)
+    # 五选四 (q32-35)
     w = content["w5"]
     for k in sorted(w["answers"], key=int):
         bp_rows.append([str(qn), "五选四", str(2), w.get("绑定", ""), "中", w["id"]])
