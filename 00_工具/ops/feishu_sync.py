@@ -6,6 +6,11 @@
 数据流向：本地（D:\\英语教学）→ 飞书「英语教学流水线」Base →「课程进度看板」表
 原则：本地 = 规范真源；飞书 = 状态镜像。单向同步，飞书不改数据。
 
+独占写入声明（P2-3）：本脚本为「英语教学流水线」Base →「课程进度看板」表
+（tblDQL47cLPeDkqg）的**唯一写入方**。AI Hub 中央平台 feishu_sync.py 写的是
+另一张飞书 Base（AI Hub 网关数据 4 表），与本脚本无交集，双写分工见
+`TOPOLOGY.md`。
+
 用法：
     python feishu_sync.py init    # 全量新建记录（首跑，表应为空）
     python feishu_sync.py sync    # 增量同步（按「课时编号」匹配更新，缺则新建）
