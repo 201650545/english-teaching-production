@@ -64,6 +64,8 @@ def should_skip(fname):
     # 临时/调试残留（_ 开头、_temp_、zip）不入库
     if fname.startswith("_"):
         return True
+    if "备份" in fname or "旧件" in fname:
+        return True
     return fname.lower().endswith(".zip")
 
 def sync_tree(src, dst, excluded_top_dirs):
