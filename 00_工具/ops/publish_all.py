@@ -24,7 +24,7 @@ import sys
 BASE = r"D:\英语教学"
 STAGING = r"C:\Users\郭永涛\AppData\Local\Temp\eng-teaching-up"
 TOOL_DIR = os.path.join(BASE, "00_工具")
-FEISHU_SYNC = os.path.join(TOOL_DIR, "feishu_sync.py")
+FEISHU_SYNC = os.path.join(TOOL_DIR, "ops", "feishu_sync.py")
 
 # ---------- 00_工具 过滤 ----------
 # 一次性调试/工具脚本（不以 _/fix_/check_ 开头、但属临时性质）不入库
