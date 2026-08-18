@@ -1,0 +1,130 @@
+{
+  "course": "第09课 · 特殊疑问句系统、选择疑问句与方位介词",
+  "stage": "Stage 3",
+  "lesson": "L09",
+  "duration": "90min",
+  "totalPages": 42,
+  "brand": "#3498DB",
+  "accent": "#F39C12",
+  "bgGradient": "#EAF7FB → #D6EAF8",
+  "pageIdContract": true,
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "realtime",
+    "exportFormats": ["json", "csv"],
+    "sessionIdRule": "L09_{studentId}_{YYYYMMDD}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  },
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": [
+        {
+          "page": 0,
+          "type": "cover",
+          "title": "第09课 · 特殊疑问句系统、选择疑问句与方位介词",
+          "subtitle": "Stage 3 · 博物馆·交通·文化 | 90分钟课程",
+          "objectives": ["掌握20个博物馆交通核心词汇", "掌握六疑问词G22/选择疑问句G23/方向介词G24", "完成ar/ɑː与al/ɔː拼读学习"],
+          "meta": [{"label": "核心场景", "value": "博物馆交通"}, {"label": "新词", "value": "20 Words"}, {"label": "时长", "value": "90 min"}, {"label": "语法", "value": "G22/G23/G24"}]
+        }
+      ]
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 2,
+      "pages": [
+        {
+          "page": 1,
+          "type": "review-grammar",
+          "title": "L8 语法回顾",
+          "content": ["G19 基数词&时间表达", "G20 百分数/分数/倍数", "G21 一般疑问句与否定句"],
+          "interactions": ["formula-box × 3"]
+        },
+        {
+          "page": 2,
+          "type": "review-vocab",
+          "title": "L8 词汇快闪 + 导入",
+          "content": ["L8 20词分类速览", "3句口头翻译", "导入：What did you see? Where did you go?"],
+          "interactions": ["answer-mask × 3"]
+        }
+      ]
+    },
+    {
+      "name": "新词20",
+      "start": 3,
+      "end": 8,
+      "pages": [
+        {"page": 3, "type": "vocab-group", "title": "博物馆场景 A组 (1-5)", "words": ["shining", "display", "share", "machine", "fresh"], "layout": "item-board 2col"},
+        {"page": 4, "type": "vocab-group", "title": "交通与场馆类 (6-10)", "words": ["station", "direction", "gallery", "history", "special"], "layout": "item-board 2col"},
+        {"page": 5, "type": "vocab-group", "title": "文化评价类 (11-15)", "words": ["choice", "favorite", "travel", "traffic", "culture"], "layout": "item-board 2col"},
+        {"page": 6, "type": "vocab-group", "title": "知识体系类 (16-20)", "words": ["art", "national", "science", "future", "world"], "layout": "item-board 2col"},
+        {"page": 7, "type": "vocab-matrix", "title": "20词分类矩阵 + 快闪复习", "content": ["语义场分类表格", "mini-flash 20词"], "interactions": ["gtab", "mini-flash-grid"]},
+        {"page": 8, "type": "vocab-preview", "title": "Stage 3 疑问词系统预览", "content": ["六疑问词思维导图", "引出G22语法环节"]}
+      ]
+    },
+    {
+      "name": "语法3考点",
+      "start": 9,
+      "end": 19,
+      "pages": [
+        {"page": 9, "type": "grammar", "title": "G22 六疑问词系统归纳", "content": ["口诀", "六疑问词对照表", "疑问句结构公式", "六宝三步判断法"], "grammarTag": "G22"},
+        {"page": 10, "type": "grammar-examples", "title": "G22 例句精讲 + 易错点", "content": ["6条例句", "5条易错点", "中考辨析"], "grammarTag": "G22"},
+        {"page": 11, "type": "interactive-1", "title": "六疑问词接线台", "component": "wh-connector", "whwords": ["What", "Where", "When", "Why", "Who", "How"]},
+        {"page": 12, "type": "grammar", "title": "G23 选择疑问句（or）", "content": ["口诀", "结构对照表", "禁用Yes/No三步法", "防越级约束"], "grammarTag": "G23"},
+        {"page": 13, "type": "grammar-examples", "title": "G23 例句精讲 + 易错点", "content": ["5条例句", "3条易错点", "中考辨析"], "grammarTag": "G23"},
+        {"page": 14, "type": "grammar", "title": "G24 交通与方向介词", "content": ["口诀", "交通方式+方向对照表", "三步判断法", "关键陷阱"], "grammarTag": "G24"},
+        {"page": 15, "type": "grammar-examples", "title": "G24 例句精讲 + 易错点", "content": ["5条例句", "4条易错点", "中考辨析"], "grammarTag": "G24"},
+        {"page": 16, "type": "interactive-2", "title": "博物馆问路器", "component": "museum-route", "transports": ["by bus", "on foot", "by train"], "directions": ["turn left", "turn right", "go straight"]},
+        {"page": 17, "type": "grammar-compare", "title": "G22/G23/G24 综合对比", "content": ["三考点横向对比", "疑问句系统流程图"]},
+        {"page": 18, "type": "quiz", "title": "随堂演练 上（G22+G23）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]},
+        {"page": 19, "type": "quiz", "title": "随堂演练 下（G24+综合）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]}
+      ]
+    },
+    {
+      "name": "阅读理解",
+      "start": 20,
+      "end": 24,
+      "pages": [
+        {"page": 20, "type": "reading", "title": "阅读A篇 A Guide to the National Science Museum", "content": ["107词", "5选择题"]},
+        {"page": 21, "type": "reading", "title": "阅读B篇 At the National Science Museum", "content": ["129词", "3选择题"]},
+        {"page": 22, "type": "reading", "title": "阅读B篇（下）+ 五选四", "content": ["2选择题", "阅读回答问题"]},
+        {"page": 23, "type": "reading", "title": "阅读C篇 How Museums Change Our Lives", "content": ["129词", "5选择题"]},
+        {"page": 24, "type": "reading", "title": "阅读五选四 Traveling to the Museum", "content": ["129词", "5空4选"]}
+      ]
+    },
+    {
+      "name": "句子练习",
+      "start": 25,
+      "end": 27,
+      "pages": [
+        {"page": 25, "type": "translation", "title": "汉译英 5句", "content": ["六疑问词2句", "选择疑问句2句", "方向介词1句"], "interactions": ["answer-mask × 5"]},
+        {"page": 26, "type": "sentence-build", "title": "造句练习 5句", "content": ["G22/G23/G24造句"], "interactions": ["answer-mask × 5"]},
+        {"page": 27, "type": "error-correction", "title": "改错练习 5句", "content": ["G22/G23/G24易错点"], "interactions": ["answer-mask × 5"]}
+      ]
+    },
+    {
+      "name": "自然拼读",
+      "start": 28,
+      "end": 31,
+      "pages": [
+        {"page": 28, "type": "phonics", "title": "ar/ɑː 与 al/ɔː 音素学习", "content": ["ar /ɑː/", "al /ɔː/"], "grammarTag": "PH"},
+        {"page": 29, "type": "phonics-read", "title": "练习1 朗读词汇表", "content": ["ar × 6词", "al × 6词"]},
+        {"page": 30, "type": "phonics-exercise", "title": "练习2+3 听音选词 + 看词归音", "content": ["4题听音选词", "4题看词归音"]},
+        {"page": 31, "type": "phonics-exercise", "title": "练习4 + 拼读总结", "content": ["4题最小对立对", "拼读总结"]}
+      ]
+    },
+    {
+      "name": "课堂总结",
+      "start": 32,
+      "end": 33,
+      "pages": [
+        {"page": 32, "type": "summary", "title": "核心总结", "content": ["G22/G23/G24三卡片", "20词快闪", "口诀汇总"]},
+        {"page": 33, "type": "mindmap", "title": "思维导图 + 完成提示", "content": ["六疑问词系统思维导图", "完成提示"]}
+      ]
+    }
+  ]
+}

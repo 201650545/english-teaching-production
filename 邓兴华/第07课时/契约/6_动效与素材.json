@@ -1,0 +1,80 @@
+{
+  "course": "第07课",
+  "courseType": "test-review",
+  "animations": {
+    "css": [
+      {"name": "fadeSlideUp", "definition": "from {opacity:0; transform:translateY(30px)} to {opacity:1; transform:translateY(0)}", "usage": "页面进入、内容块出现"},
+      {"name": "scaleUp", "definition": "from {opacity:0; transform:scale(0.85)} to {opacity:1; transform:scale(1)}", "usage": "卡片缩放出现"},
+      {"name": "bounceIn", "definition": "0%{opacity:0;transform:scale(0.3)} 50%{transform:scale(1.08)} 70%{transform:scale(0.95)} 100%{opacity:1;transform:scale(1)}", "usage": "正确反馈"},
+      {"name": "bpSwing", "definition": "0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)}", "usage": "错误反馈摇摆"},
+      {"name": "pulse", "definition": "0%,100%{transform:scale(1)} 50%{transform:scale(1.05)}", "usage": "高亮脉冲"},
+      {"name": "slideInLeft", "definition": "from {opacity:0; transform:translateX(-40px)} to {opacity:1; transform:translateX(0)}", "usage": "列表项进入"},
+      {"name": "shimmer", "definition": "0%{background-position:-200% center} 100%{background-position:200% center}", "usage": "进度条闪光"}
+    ],
+    "additional": [
+      {"name": "radarDraw", "definition": "0%{opacity:0;transform:scale(0)} 50%{opacity:0.5} 100%{opacity:1;transform:scale(1)}", "usage": "雷达图绘制动画"},
+      {"name": "barGrow", "definition": "0%{transform:scaleX(0)} 100%{transform:scaleX(1)}", "usage": "柱状图增长"},
+      {"name": "highlightPulse", "definition": "0%,100%{box-shadow:0 0 0 0 rgba(6,214,160,0.4)} 50%{box-shadow:0 0 0 8px rgba(6,214,160,0)}", "usage": "考点高亮脉冲"}
+    ]
+  },
+  "interactions": {
+    "navigation": {
+      "halfScreenClick": true,
+      "keyboardArrows": true,
+      "navPills": true,
+      "progressBarClick": true
+    },
+    "radarChart": {
+      "type": "canvas",
+      "dataPoints": 18,
+      "labels": ["G01", "G02", "G03", "G04", "G05", "G06", "G07", "G08", "G09", "G10", "G11", "G12", "G13", "G14", "G15", "G16", "G17", "G18"],
+      "hover": "显示考点详情与得分率",
+      "animation": "radarDraw"
+    },
+    "errorNav": {
+      "type": "jumpLink",
+      "action": "点击Top10错题→跳转至对应精讲页"
+    },
+    "answerMask": {
+      "type": "toggleMask",
+      "initial": "遮罩显示'🔍 点击揭晓'",
+      "revealed": "浅绿色背景显示答案 + 正确音效"
+    }
+  },
+  "interactiveComponents": {
+    "component1": {
+      "name": "G01-G18考点雷达图",
+      "page": 1,
+      "type": "radarChart",
+      "canvas": true,
+      "dataPoints": 18,
+      "labels": ["G01", "G02", "G03", "G04", "G05", "G06", "G07", "G08", "G09", "G10", "G11", "G12", "G13", "G14", "G15", "G16", "G17", "G18"],
+      "hover": "显示考点名称、得分率、诊断等级",
+      "animation": "radarDraw"
+    },
+    "component2": {
+      "name": "错题跳转导航",
+      "page": 2,
+      "type": "errorNav",
+      "items": 10,
+      "action": "点击→跳转至对应精讲页"
+    },
+    "component3": {
+      "name": "口诀快闪遮罩",
+      "pages": "3-12",
+      "type": "formulaReveal",
+      "action": "遮罩点击揭示口诀全文"
+    }
+  },
+  "audio": {
+    "correct": {"freq": [880, 1100], "duration": [0.15, 0.2], "type": "sine"},
+    "error": {"freq": 220, "duration": 0.3, "type": "sawtooth"},
+    "pageTurn": {"freq": 440, "duration": 0.1, "type": "triangle"},
+    "radarDraw": {"type": "ascending-scale", "description": "上升音阶配合雷达图绘制"}
+  },
+  "assets": {
+    "emojis": ["✅", "❌", "📊", "🎯", "💡", "📚", "✏️", "🔍", "📈", "⭐", "🏆"],
+    "images": "none (all CSS/Canvas based)",
+    "externalLibs": "none (vanilla JS + Canvas)"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "course": "第10课 · 一般现在时三单 -s、does 否定疑问与学科表达",
+  "stage": "Stage 3",
+  "lesson": "L10",
+  "duration": "90min",
+  "totalPages": 38,
+  "brand": "#3498DB",
+  "accent": "#F39C12",
+  "bgGradient": "#EBF5FB → #D6EAF8",
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "realtime",
+    "exportFormats": ["json", "csv"],
+    "sessionIdRule": "L10_{studentId}_{YYYYMMDD}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  },
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": [
+        {
+          "page": 0,
+          "type": "cover",
+          "title": "第10课 · 一般现在时三单 -s、does 否定疑问与学科表达",
+          "subtitle": "Stage 3 · 学科·校园生活 | 90分钟课程",
+          "objectives": ["掌握20个学科与校园核心词汇", "理解三单变化+does/doesn't+学科短语", "完成er/ir/ur /ɜː/拼读学习"],
+          "meta": [{"label": "核心场景", "value": "学科校园"}, {"label": "新词", "value": "20 Words"}, {"label": "时长", "value": "90 min"}, {"label": "语法", "value": "G25/G26/G27"}]
+        }
+      ]
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 2,
+      "pages": [
+        {
+          "page": 1,
+          "type": "review-grammar",
+          "title": "L9 语法回顾",
+          "content": ["G22 六疑问词", "G23 选择疑问句", "G24 交通方位介词"],
+          "interactions": ["formula-box × 3"]
+        },
+        {
+          "page": 2,
+          "type": "review-vocab",
+          "title": "L9 词汇快闪 + 导入",
+          "content": ["L9 20词分类速览", "3句口头翻译", "导入：He likes math. She studies Chinese."],
+          "interactions": ["answer-mask × 3"]
+        }
+      ]
+    },
+    {
+      "name": "新词20",
+      "start": 3,
+      "end": 9,
+      "pages": [
+        {"page": 3, "type": "vocab-group", "title": "学科类 A组 (1-5)", "words": ["Chinese", "math", "physics", "geography", "biology"], "layout": "item-board 2col"},
+        {"page": 4, "type": "vocab-group", "title": "学科+学习动作 (6-10)", "words": ["subject", "lesson", "exercise", "practice", "complete"], "layout": "item-board 2col"},
+        {"page": 5, "type": "vocab-group", "title": "学习动作类 (11-15)", "words": ["begin", "understand", "question", "answer", "problem"], "layout": "item-board 2col"},
+        {"page": 6, "type": "vocab-group", "title": "评价+校园 (16-20)", "words": ["reason", "simple", "quick", "careful", "classmate"], "layout": "item-board 2col"},
+        {"page": 7, "type": "vocab-matrix", "title": "20词分类矩阵 + 快闪复习", "content": ["语义场分类表格", "mini-flash 20词"], "interactions": ["gtab", "mini-flash-grid"]},
+        {"page": 8, "type": "vocab-preview", "title": "三单概念预览", "content": ["I like → He likes", "非三单 vs 三单对照"]},
+        {"page": 9, "type": "vocab-preview", "title": "学科搭配预览", "content": ["study + 学科", "have + 学科 class"]}
+      ]
+    },
+    {
+      "name": "语法3考点",
+      "start": 10,
+      "end": 18,
+      "pages": [
+        {"page": 10, "type": "grammar", "title": "G25 三单 -s/-es 变化规则", "content": ["口诀", "变化规则对照表", "四步判断法", "防越级约束"], "grammarTag": "G25"},
+        {"page": 11, "type": "grammar-examples", "title": "G25 例句精讲 + 易错点", "content": ["5条例句", "5条易错点", "中考辨析"], "grammarTag": "G25"},
+        {"page": 12, "type": "interactive-1", "title": "三单变形魔术盒", "component": "singular-magic", "subjects": ["I", "You", "He", "She", "It", "We", "They"], "verbs": ["like", "watch", "study", "go", "have", "play"]},
+        {"page": 13, "type": "grammar", "title": "G26 does/doesn't 三单否定疑问", "content": ["口诀", "肯定→否定→疑问→回答对比", "does三步法", "防越级约束"], "grammarTag": "G26"},
+        {"page": 14, "type": "grammar-examples", "title": "G26 例句精讲 + 易错点", "content": ["4条例句", "4条易错点", "中考辨析"], "grammarTag": "G26"},
+        {"page": 15, "type": "grammar", "title": "G27 学科与学习动作短语", "content": ["口诀", "学科搭配对照表", "学科名词速记表", "防越级约束"], "grammarTag": "G27"},
+        {"page": 16, "type": "grammar-examples", "title": "G27 例句精讲 + 易错点", "content": ["4条例句", "4条易错点", "中考辨析"], "grammarTag": "G27"},
+        {"page": 17, "type": "interactive-2", "title": "课程表对话器", "component": "timetable-talk", "persons": ["Tom", "Lily", "the teacher"], "subjects": ["Chinese", "math", "physics", "geography", "biology"], "actions": ["studies", "reads", "finishes", "begins", "understands"]},
+        {"page": 18, "type": "grammar-compare", "title": "语法综合对比表", "content": ["G25/G26/G27横向对比", "do/don't vs does/doesn't对照", "三单变化+否定疑问流程图"]}
+      ]
+    },
+    {
+      "name": "随堂演练",
+      "start": 19,
+      "end": 20,
+      "pages": [
+        {"page": 19, "type": "quiz", "title": "随堂演练 上 (G25+G26)", "questions": 4, "interactions": ["checkQuiz × 4"]},
+        {"page": 20, "type": "quiz", "title": "随堂演练 下 (G27+综合)", "questions": 4, "interactions": ["checkQuiz × 4"]}
+      ]
+    },
+    {
+      "name": "阅读理解",
+      "start": 21,
+      "end": 23,
+      "pages": [
+        {"page": 21, "type": "reading", "title": "阅读A篇 — My Busy School Day", "wordCount": 107, "questions": 5},
+        {"page": 22, "type": "reading", "title": "阅读B篇 — A Day in the Library (上)", "wordCount": 129, "questions": 3},
+        {"page": 23, "type": "reading", "title": "阅读B篇 (下) + 五选四", "wordCount": 129, "questions": 5}
+      ]
+    },
+    {
+      "name": "句子练习",
+      "start": 24,
+      "end": 26,
+      "pages": [
+        {"page": 24, "type": "translation", "title": "汉译英 5句", "interactions": ["answer-mask × 5"]},
+        {"page": 25, "type": "sentence-building", "title": "造句练习 5句", "interactions": ["answer-mask × 5"]},
+        {"page": 26, "type": "error-correction", "title": "改错练习 5句", "interactions": ["answer-mask × 5"]}
+      ]
+    }
+  ],
+  "phonicsSection": {
+    "note": "自然拼读6页在句子练习之后、课堂总结之前",
+    "pages": [
+      {"type": "phonics-learning", "title": "er/ir/ur /ɜː/ 音素学习", "letters": ["er", "ir", "ur"]},
+      {"type": "phonics-exercise-1", "title": "朗读词汇表", "wordCount": 12},
+      {"type": "phonics-exercise-2", "title": "听音选词", "questions": 4},
+      {"type": "phonics-exercise-3-4", "title": "看词归音 + 最小对立对", "questions": 8}
+    ]
+  },
+  "summary": {
+    "page": "last",
+    "type": "summary",
+    "title": "第10课 · 核心总结",
+    "content": ["summary-grid 三卡片", "20词 mini-flash", "super-mn 口诀汇总"]
+  }
+}

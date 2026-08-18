@@ -1,0 +1,101 @@
+{
+  "lesson_id": "第08课",
+  "theme": {
+    "style": "友谊蓝紫",
+    "primary_color": "#3498DB",
+    "accent_color": "#9B59B6",
+    "font_size_base": "26px"
+  },
+  "total_pages": 43,
+  "pages": [
+    {"page_index": 1, "section": "导入热身", "title": "封面：友谊与观点", "layout_type": "Cover", "components": [{"type": "cover", "data": {"title": "Unit 3 Same or Different?②"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 2, "section": "导入热身", "title": "话题引入：友谊热场", "layout_type": "Split-2", "components": [{"type": "scenario", "data": {"count": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "scenario"},
+    {"page_index": 3, "section": "导入热身", "title": "学习目标", "layout_type": "Split-2", "components": [{"type": "goal-list", "data": {"count": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 4, "section": "导入热身", "title": "课堂游戏①规则说明", "layout_type": "Split-2", "components": [{"type": "game-rule", "data": {"gameType": "T1-I", "words": 20}}], "vocabReviewTier": "T1", "vocabReviewScope": "in-lesson", "gameType": "T1-I", "trainingObjective": "RET", "promptLevel": 3, "contextType": "word"},
+    {"page_index": 5, "section": "词汇教学", "title": "目标词①：友谊核心 7 词", "layout_type": "Grid-5", "components": [{"type": "word-card", "data": {"words": ["spare time", "pleasure", "have sth in common", "opinion", "honest"]}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "word"},
+    {"page_index": 6, "section": "词汇教学", "title": "目标词②：友谊与差异", "layout_type": "Grid-5", "components": [{"type": "word-card", "data": {"words": ["friendship", "difference", "appearance", "personality", "strength"]}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "word"},
+    {"page_index": 7, "section": "词汇教学", "title": "复习词快速闪卡", "layout_type": "Grid-5", "components": [{"type": "word-card", "data": {"words": 20}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": "REC", "promptLevel": 1, "contextType": "word"},
+    {"page_index": 8, "section": "词汇教学", "title": "词块与搭配", "layout_type": "Split-2", "components": [{"type": "example-line", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "sentence"},
+    {"page_index": 9, "section": "词汇教学", "title": "语境例句", "layout_type": "Exercise-List", "components": [{"type": "example-line", "data": {"count": 10}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "sentence"},
+    {"page_index": 10, "section": "词汇教学", "title": "课堂游戏①：中文选英文", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "T1-I", "words": 20}}], "vocabReviewTier": "T1", "vocabReviewScope": "in-lesson", "gameType": "T1-I", "trainingObjective": "RET", "promptLevel": 3, "contextType": "word"},
+    {"page_index": 11, "section": "词汇教学", "title": "词汇小结与记忆法", "layout_type": "Split-2", "components": [{"type": "summary-table", "data": {"words": 10}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "word"},
+    {"page_index": 12, "section": "词汇教学", "title": "词汇综合练习", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 13, "section": "语法/能力", "title": "比较级复现运用", "layout_type": "Formula-Card", "components": [{"type": "formula-box", "data": {"formula": "A is more honest than B / as honest as / the most honest / not as honest as"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 14, "section": "语法/能力", "title": "Fact vs Opinion 讲解", "layout_type": "Formula-Card", "components": [{"type": "formula-box", "data": {"formula": "Fact: 数据/可观察 / Opinion: think/believe/in my opinion"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 15, "section": "语法/能力", "title": "Fact vs Opinion 判断练习", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 10}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 16, "section": "语法/能力", "title": "观点表达句型", "layout_type": "Formula-Card", "components": [{"type": "formula-box", "data": {"formula": "In my opinion, ... / I think that ... / For example, ... / However, ..."}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 17, "section": "语法/能力", "title": "观点句型练习", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 18, "section": "语法/能力", "title": "段落写作框架", "layout_type": "Exercise-List", "components": [{"type": "writing-frame", "data": {"sentences": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 19, "section": "拼读教学", "title": "-tion 后缀 /ʃən/", "layout_type": "Split-2", "components": [{"type": "formula-box", "data": {"formula": "-tion → /ʃən/"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 20, "section": "拼读教学", "title": "-sion 后缀 /ʒən/", "layout_type": "Split-2", "components": [{"type": "formula-box", "data": {"formula": "-sion(元音后) → /ʒən/ / -sion(辅音后) → /ʃən/"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 21, "section": "拼读教学", "title": "分类朗读", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 6}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 22, "section": "拼读教学", "title": "拼读练习", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 23, "section": "听力训练", "title": "听力策略提示", "layout_type": "Split-2", "components": [{"type": "strategy-box", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 24, "section": "听力训练", "title": "第一节：听对话选答语", "layout_type": "Exercise-List", "components": [{"type": "listening-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 25, "section": "听力训练", "title": "第二节：听对话/独白选答案①", "layout_type": "Exercise-List", "components": [{"type": "listening-item", "data": {"count": 8}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 26, "section": "听力训练", "title": "第二节：②+答案解析", "layout_type": "Exercise-List", "components": [{"type": "listening-item", "data": {"count": 7}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 27, "section": "阅读训练", "title": "阅读 A 篇：Friendship Survey", "layout_type": "Reading-Passage", "components": [{"type": "reading-passage", "data": {"words": 130}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 28, "section": "阅读训练", "title": "阅读 A 题目", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 29, "section": "阅读训练", "title": "阅读 B 篇：Different but Together", "layout_type": "Reading-Passage", "components": [{"type": "reading-passage", "data": {"words": 150}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 30, "section": "阅读训练", "title": "阅读 B 题目", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 31, "section": "阅读训练", "title": "阅读 C 篇：What Makes True Friendship?", "layout_type": "Reading-Passage", "components": [{"type": "reading-passage", "data": {"words": 150}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 32, "section": "阅读训练", "title": "阅读 C 题目（五选四）", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 33, "section": "阅读训练", "title": "阅读策略与答案解析", "layout_type": "Exercise-List", "components": [{"type": "explanation", "data": {"count": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 34, "section": "写作输出", "title": "书面表达任务", "layout_type": "Split-2", "components": [{"type": "exercise-item", "data": {"count": 1}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": "EXP", "promptLevel": 3, "contextType": "scenario"},
+    {"page_index": 35, "section": "写作输出", "title": "范文分析", "layout_type": "Split-2", "components": [{"type": "model-writing", "data": {"sentences": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 36, "section": "写作输出", "title": "课堂游戏②：语境填空选择", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "T2-G", "questions": 6}}], "vocabReviewTier": "T2", "vocabReviewScope": "in-lesson", "gameType": "T2-G", "trainingObjective": "CTX", "promptLevel": 3, "contextType": "passage"},
+    {"page_index": 37, "section": "写作输出", "title": "学生写作", "layout_type": "Exercise-List", "components": [{"type": "writing-input", "data": {"words": 100}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": "EXP", "promptLevel": 3, "contextType": "scenario"},
+    {"page_index": 38, "section": "写作输出", "title": "口头表达与互评", "layout_type": "Split-2", "components": [{"type": "peer-review", "data": {"criteria": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": "EXP", "promptLevel": 3, "contextType": "scenario"},
+    {"page_index": 39, "section": "写作输出", "title": "反馈与订正", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 40, "section": "总结拓展", "title": "思维导图", "layout_type": "Split-2", "components": [{"type": "mind-map", "data": {"branches": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 41, "section": "总结拓展", "title": "课堂游戏③：语篇重建", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "T3-G", "sentences": 6}}], "vocabReviewTier": "T3", "vocabReviewScope": "cross-lesson", "gameType": "T3-G", "trainingObjective": "CTX", "promptLevel": 3, "contextType": "passage"},
+    {"page_index": 42, "section": "总结拓展", "title": "作业布置", "layout_type": "Split-2", "components": [{"type": "homework", "data": {"count": 2}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 43, "section": "总结拓展", "title": "Exit Ticket 退出检测", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 6}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null}
+  ],
+  "vocabReviewPlan": {
+    "inLessonGames": [
+      {"pageIndex": 10, "tier": "T1", "gameType": "T1-I", "trainingObjective": "RET", "promptLevel": 3, "wordCount": 20},
+      {"pageIndex": 36, "tier": "T2", "gameType": "T2-G", "trainingObjective": "CTX", "promptLevel": 3, "wordCount": 6}
+    ],
+    "crossLessonGame": {
+      "pageIndex": 41,
+      "tier": "T3",
+      "gameType": "T3-G",
+      "trainingObjective": "CTX",
+      "promptLevel": 3,
+      "reviewLessonId": "L07",
+      "wordCount": 6
+    },
+    "miniTask": {
+      "pageIndex": 34,
+      "taskContext": "写 A good friend 观点短文",
+      "communicationGoal": "用观点表达四句型 + 比较级复现 + 事实/观点/例子",
+      "requiredWords": ["spare time", "pleasure", "have sth in common", "opinion", "honest", "friendship", "difference"],
+      "sentenceStarter": "In my opinion, ... / I think that ... / For example, ... / However, ...",
+      "completionCriteria": "至少 5 个必用词 + 含事实/观点/例子 + 四句型框架 + 结构完整"
+    },
+    "exitTicket": {
+      "pageIndex": 43,
+      "questionCount": 6,
+      "recQuestions": 2,
+      "retQuestions": 2,
+      "expQuestions": 1,
+      "hasSelfAssessment": true
+    },
+    "errorWordPool": {
+      "recentRatio": 40,
+      "errorRatio": 35,
+      "longTermRatio": 25,
+      "classificationDepth": "full-D-page"
+    }
+  },
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "csv",
+    "exportFormats": ["json", "csv"],
+    "questionIdPrefix": "L08",
+    "sessionIdRule": "stu_001_YYYYMMDDAM/PM",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  }
+}

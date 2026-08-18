@@ -1,0 +1,1132 @@
+{
+  "_doc": "李民宪 L06 配套练习内容（培优）· 2026。主题：Unit 2 Home Sweet Home② 家庭合作与社区。含听力20分（独立不计入笔试）+ 阅读30 + 语言运用25 + 综合技能25 + 语法诊断20。无过去时新授测试（L02已授），语法控制在 borrow/lend·until·祈使提建议·社区信息表述内。",
+  "listening": {
+    "绑定": "家庭合作与社区互助（borrow/lend、give a lift、clean up、until、community）",
+    "part1_title": "第一节  听对话选答语（共 5 小题，每小题 1 分）",
+    "part1": {
+      "items": [
+        {
+          "id": "LMX2026_L06_listen_p1_1",
+          "q": "What does the girl want to borrow?",
+          "opts": [
+            [
+              "A",
+              "A pen."
+            ],
+            [
+              "B",
+              "A book."
+            ],
+            [
+              "C",
+              "A ruler."
+            ]
+          ],
+          "answer": "B"
+        },
+        {
+          "id": "LMX2026_L06_listen_p1_2",
+          "q": "What will the man give the woman?",
+          "opts": [
+            [
+              "A",
+              "A lift home."
+            ],
+            [
+              "B",
+              "A gift."
+            ],
+            [
+              "C",
+              "A map."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L06_listen_p1_3",
+          "q": "What do they plan to do?",
+          "opts": [
+            [
+              "A",
+              "Clean up the park."
+            ],
+            [
+              "B",
+              "Go to the movies."
+            ],
+            [
+              "C",
+              "Cook dinner."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L06_listen_p1_4",
+          "q": "What does the boy share with his sister?",
+          "opts": [
+            [
+              "A",
+              "His snacks."
+            ],
+            [
+              "B",
+              "His notes."
+            ],
+            [
+              "C",
+              "His toys."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L06_listen_p1_5",
+          "q": "When can they leave?",
+          "opts": [
+            [
+              "A",
+              "Until the rain stops."
+            ],
+            [
+              "B",
+              "Before 8:00."
+            ],
+            [
+              "C",
+              "Right now."
+            ]
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    "part2_title": "第二节  听对话或独白选答案（共 15 小题，每小题 1 分）",
+    "part2": {
+      "materials": [
+        {
+          "lead": "听下面一段对话，回答第 6 至第 7 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L06_listen_p2_1",
+              "q": "What can the girl do to help?",
+              "opts": [
+                [
+                  "A",
+                  "Wash the dishes."
+                ],
+                [
+                  "B",
+                  "Cook dinner."
+                ],
+                [
+                  "C",
+                  "Clean the room."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L06_listen_p2_2",
+              "q": "What does the brother do?",
+              "opts": [
+                [
+                  "A",
+                  "Take out the rubbish."
+                ],
+                [
+                  "B",
+                  "Wash dishes."
+                ],
+                [
+                  "C",
+                  "Water the flowers."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 8 至第 10 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L06_listen_p2_3",
+              "q": "What does the girl borrow?",
+              "opts": [
+                [
+                  "A",
+                  "A storybook."
+                ],
+                [
+                  "B",
+                  "A picture book."
+                ],
+                [
+                  "C",
+                  "A dictionary."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L06_listen_p2_4",
+              "q": "When must she return it?",
+              "opts": [
+                [
+                  "A",
+                  "By Friday."
+                ],
+                [
+                  "B",
+                  "By Monday."
+                ],
+                [
+                  "C",
+                  "By Sunday."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L06_listen_p2_5",
+              "q": "What will the girl do while reading?",
+              "opts": [
+                [
+                  "A",
+                  "Take notes."
+                ],
+                [
+                  "B",
+                  "Draw pictures."
+                ],
+                [
+                  "C",
+                  "Make a list."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 11 至第 12 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L06_listen_p2_6",
+              "q": "Where does the woman want to go?",
+              "opts": [
+                [
+                  "A",
+                  "The community center."
+                ],
+                [
+                  "B",
+                  "The library."
+                ],
+                [
+                  "C",
+                  "The park."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L06_listen_p2_7",
+              "q": "When is her meeting?",
+              "opts": [
+                [
+                  "A",
+                  "At 3:00."
+                ],
+                [
+                  "B",
+                  "At 4:00."
+                ],
+                [
+                  "C",
+                  "At 2:00."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 13 至第 15 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L06_listen_p2_8",
+              "q": "When is the clean-up day?",
+              "opts": [
+                [
+                  "A",
+                  "This Saturday."
+                ],
+                [
+                  "B",
+                  "This Sunday."
+                ],
+                [
+                  "C",
+                  "Next Monday."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L06_listen_p2_9",
+              "q": "What do they do in the park?",
+              "opts": [
+                [
+                  "A",
+                  "Pick up rubbish and plant flowers."
+                ],
+                [
+                  "B",
+                  "Play games."
+                ],
+                [
+                  "C",
+                  "Take photos."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L06_listen_p2_10",
+              "q": "Who can join the activity?",
+              "opts": [
+                [
+                  "A",
+                  "Children and their parents."
+                ],
+                [
+                  "B",
+                  "Only adults."
+                ],
+                [
+                  "C",
+                  "Only teachers."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 16 至第 17 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L06_listen_p2_11",
+              "q": "What is the gift for Mrs. Green?",
+              "opts": [
+                [
+                  "A",
+                  "A book about flowers."
+                ],
+                [
+                  "B",
+                  "A box of candies."
+                ],
+                [
+                  "C",
+                  "A garden tool."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L06_listen_p2_12",
+              "q": "When will the woman give the gift?",
+              "opts": [
+                [
+                  "A",
+                  "Tomorrow."
+                ],
+                [
+                  "B",
+                  "Today."
+                ],
+                [
+                  "C",
+                  "Next week."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段独白，回答第 18 至第 20 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L06_listen_p2_13",
+              "q": "When should families come to the park?",
+              "opts": [
+                [
+                  "A",
+                  "At 9:00 in the morning."
+                ],
+                [
+                  "B",
+                  "At 9:00 in the evening."
+                ],
+                [
+                  "C",
+                  "At noon."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L06_listen_p2_14",
+              "q": "What should they bring?",
+              "opts": [
+                [
+                  "A",
+                  "Bags and gloves."
+                ],
+                [
+                  "B",
+                  "Flowers and water."
+                ],
+                [
+                  "C",
+                  "Books and maps."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L06_listen_p2_15",
+              "q": "What will they do after cleaning?",
+              "opts": [
+                [
+                  "A",
+                  "Share some snacks."
+                ],
+                [
+                  "B",
+                  "Play a game."
+                ],
+                [
+                  "C",
+                  "Go home."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        }
+      ]
+    },
+    "transcripts": [
+      "W: Can I borrow your English book, Tom?  M: Sure, here you are.",
+      "M: Can I give you a lift home?  W: Yes, thanks. That's very kind of you.",
+      "W: Let's clean up the park this afternoon.  M: Good idea! I'll bring some bags.",
+      "M: I'll share my snacks with you, sister.  W: Thank you, that's so nice of you.",
+      "W: When can we leave?  M: We must wait until the rain stops.",
+      "W: Dad, can I help with the housework today?  M: Of course. You can wash the dishes after dinner.  W: What about my brother?  M: He can clean up his room and take out the rubbish.  W: When do we finish?  M: We stop until everything is tidy.",
+      "W: Hi, Jack. Can I borrow your storybook?  M: Sure. But please return it by Friday.  W: I will. Do you have any other books to share?  M: Yes, I have a picture book about animals.  W: Great! I'll take notes while I read.  M: OK. Remember, don't lose it.",
+      "W: Excuse me, can you give me a lift to the community center?  M: Of course. Get in.  W: Thank you. I have a meeting at 3:00.  M: Don't worry. We'll get there on time.  W: How long does it take?  M: About ten minutes.",
+      "W: There is a big clean-up day in our community this Saturday.  M: What do we need to do?  W: We pick up rubbish and plant flowers in the park.  M: Can children join?  W: Of course. They can help and share their ideas.  M: Great! I'll bring some tools and my parents will come too.",
+      "W: I bought a gift for Mrs. Green's birthday.  M: What is it?  W: A beautiful book about flowers.  M: That's a nice idea. She loves her garden.  W: I'll give it to her tomorrow.  M: Let's wrap it together after dinner.",
+      "Good morning, everyone. This is a message from our community. This month, we will have a big cleaning day at the park. Families should come at 9:00 in the morning. Please bring bags and gloves. We will clean up the park and the streets. Children can help pick up rubbish. We will stop working until everything is clean. After that, we will share some snacks together. We hope every family can join us."
+    ]
+  },
+  "reading_a": {
+    "id": "LMX2026_L06_reading_a",
+    "genre": "记叙文",
+    "difficulty": "培优",
+    "word_count": 183,
+    "provenance": "教师授权原创（2026-08-08）· 社区大扫除日",
+    "paragraphs": [
+      "Every Saturday, our community has a clean-up day. Families come together to help clean the park and the streets. My neighbour Mrs. Green always brings her big garden tools. She borrows a long ladder from my father to lift the leaves off the roof. We work until the sun goes down, but nobody feels tired.",
+      "The children pick up rubbish and put it in bags. My sister shares her snacks with everyone during the break. At lunchtime, we eat together in the garden like one big family. Our teacher asks us to take notes about what we do, so we can write a report later.",
+      "'Why not make it a game?' she says. 'Let's see who can clean up the most rubbish.' We all laugh and work harder. When the day ends, the park looks clean and beautiful. We feel happy because we help our community. Everyone agrees that working together makes the neighbourhood a better place. I can't wait for the next Saturday. We collect the leaves and put them in big bags. The streets look clean and bright."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "Where does the community help clean up?",
+        "opts": [
+          [
+            "A",
+            "The park and the streets."
+          ],
+          [
+            "B",
+            "The museum."
+          ],
+          [
+            "C",
+            "The school library."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "What does Mrs. Green borrow from the writer's father?",
+        "opts": [
+          [
+            "A",
+            "A long ladder."
+          ],
+          [
+            "B",
+            "A big bag."
+          ],
+          [
+            "C",
+            "A garden tool."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "What does the word \"lift\" mean in the passage?",
+        "opts": [
+          [
+            "A",
+            "Raise up."
+          ],
+          [
+            "B",
+            "Put down."
+          ],
+          [
+            "C",
+            "Buy back."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "A community clean-up day."
+          ],
+          [
+            "B",
+            "How to write a report."
+          ],
+          [
+            "C",
+            "A family picnic."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "reading_b": {
+    "id": "LMX2026_L06_reading_b",
+    "genre": "说明文",
+    "difficulty": "培优",
+    "word_count": 217,
+    "provenance": "教师授权原创（2026-08-08）· 家庭合作",
+    "paragraphs": [
+      "Family members work together to keep the home clean and happy. In my family, everyone has a job. My father cooks dinner, and my mother washes the dishes. My brother and I clean up our rooms every weekend. We do not stop until the rooms look tidy.",
+      "'Let's take turns to do the housework,' says my mother. 'That is fair for everyone.' We also help each other. When I need a book from the library, my sister lets me borrow it, and she shares her notes with me before the test. Sometimes we hunt for things we put away in the wrong place. We learn to use a list and take notes so we do not lose anything again.",
+      "Our family is like a small community because everyone helps and supports each other. We believe that doing chores together is not boring; it is a chance to talk and have fun. My parents say that a clean home makes us feel good. When we finish, we play a game or watch a movie together. We keep working until the job is done, and then we enjoy our free time. Working as a team makes our family strong and close. We take turns to do the housework every day. Everyone feels happy when the home is tidy."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "Who washes the dishes in the family?",
+        "opts": [
+          [
+            "A",
+            "The mother."
+          ],
+          [
+            "B",
+            "The sister."
+          ],
+          [
+            "C",
+            "The writer."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "What does the word \"hunt\" mean in the passage?",
+        "opts": [
+          [
+            "A",
+            "Search for."
+          ],
+          [
+            "B",
+            "Throw away."
+          ],
+          [
+            "C",
+            "Clean up."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "Why does the writer think chores are not boring?",
+        "opts": [
+          [
+            "A",
+            "Because it is a chance to talk and have fun."
+          ],
+          [
+            "B",
+            "Because they can watch movies."
+          ],
+          [
+            "C",
+            "Because they can play games at work."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "How families work together."
+          ],
+          [
+            "B",
+            "How to clean a room."
+          ],
+          [
+            "C",
+            "How to borrow books."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "reading_c": {
+    "id": "LMX2026_L06_reading_c",
+    "genre": "说明文",
+    "difficulty": "培优",
+    "word_count": 256,
+    "provenance": "教师授权原创（2026-08-08）· 社区寻宝",
+    "paragraphs": [
+      "Every autumn, our community center holds a treasure hunt in the park. It is a big event, and many families take part. The idea is simple: teams look for small treasures that the teachers hide around the park. Each team gets a map and some clues. The clues tell us where to find the next treasure. We must hunt carefully and read every clue.",
+      "'Don't forget to share the map with your team,' the teacher says. 'Teamwork is the key to winning.' On the morning of the hunt, we gather at the gate. We bring bags to collect the treasures, and some people bring a ladder to lift treasures off the low branches. We keep playing until noon, and the park is full of happy noise.",
+      "The treasures are small gifts, such as books, games and candies. In the end, every team finds something, so nobody goes home empty-handed. The students take notes during the hunt and write a short report about it later. The treasure hunt is not really about the gifts; it is about working together and having fun in the community. Parents say it teaches children to help each other and to be patient. We wait until the last clue, and that makes the win even more special. I enjoy the hunt every year, and I hope it continues for a long time. The teachers hide the treasures in trees and under the benches. We must look carefully and share our ideas. The hunt teaches us to be patient and kind."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "What do the teams need to win the treasure hunt?",
+        "opts": [
+          [
+            "A",
+            "Teamwork and careful reading."
+          ],
+          [
+            "B",
+            "A big ladder."
+          ],
+          [
+            "C",
+            "Lots of money."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "Why do parents think the treasure hunt is good for children?",
+        "opts": [
+          [
+            "A",
+            "It teaches them to help each other and be patient."
+          ],
+          [
+            "B",
+            "It gives them many expensive gifts."
+          ],
+          [
+            "C",
+            "It keeps them at home."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "A community treasure hunt."
+          ],
+          [
+            "B",
+            "How to buy gifts."
+          ],
+          [
+            "C",
+            "A school report."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "w5": {
+    "id": "LMX2026_L06_w5",
+    "title": "阅读短文，从方框中选出可以填入空白处的最佳选项（有一项为多余选项）",
+    "paragraphs": [
+      "Joining activities in your community is a good idea. ___1___, you can meet new neighbours and make friends. ___2___, helping others makes you feel happy. For example, you can help clean up the park or share your toys with younger children. ___3___, you can take notes about the activities you like best. ___4___, every small help makes the community a better place."
+    ],
+    "candidates": [
+      [
+        "A",
+        "First of all,"
+      ],
+      [
+        "B",
+        "Also,"
+      ],
+      [
+        "C",
+        "At last,"
+      ],
+      [
+        "D",
+        "But remember,"
+      ],
+      [
+        "E",
+        "If you want to borrow a book,"
+      ]
+    ],
+    "answers": {
+      "1": "A",
+      "2": "B",
+      "3": "C",
+      "4": "D"
+    },
+    "绑定": "社区活动建议（连接词）"
+  },
+  "cloze": {
+    "id": "LMX2026_L06_cloze",
+    "title": "阅读短文，从每题所给的 A、B、C 三个选项中选出最佳选项",
+    "paragraphs": [
+      "My family lives near a beautiful community park. Every weekend, we ___1___ to keep it clean. My father ___2___ a big rake from the gardener, and we ___3___ up the leaves together. My mother ___4___ flowers in the garden. My little sister ___5___ her ice cream with a friend.",
+      "We work ___6___ the sun goes down. '___7___ we invite our neighbours to help?' my father asks. Everyone says yes. We ___8___ notes about what we need. ___9___ the end, the park looks wonderful. We are happy because we ___10___ our community a better place."
+    ],
+    "items": [
+      {
+        "num": 1,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "help"
+          ],
+          [
+            "B",
+            "helps"
+          ],
+          [
+            "C",
+            "helping"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "borrows"
+          ],
+          [
+            "B",
+            "borrow"
+          ],
+          [
+            "C",
+            "borrowing"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "clean"
+          ],
+          [
+            "B",
+            "cleans"
+          ],
+          [
+            "C",
+            "cleaning"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "plant"
+          ],
+          [
+            "B",
+            "plants"
+          ],
+          [
+            "C",
+            "planting"
+          ]
+        ],
+        "answer": "B"
+      },
+      {
+        "num": 5,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "share"
+          ],
+          [
+            "B",
+            "shares"
+          ],
+          [
+            "C",
+            "sharing"
+          ]
+        ],
+        "answer": "B"
+      },
+      {
+        "num": 6,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "until"
+          ],
+          [
+            "B",
+            "for"
+          ],
+          [
+            "C",
+            "from"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 7,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "Can"
+          ],
+          [
+            "B",
+            "Do"
+          ],
+          [
+            "C",
+            "Why not"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 8,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "take"
+          ],
+          [
+            "B",
+            "takes"
+          ],
+          [
+            "C",
+            "taking"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 9,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "In"
+          ],
+          [
+            "B",
+            "On"
+          ],
+          [
+            "C",
+            "At"
+          ]
+        ],
+        "answer": "C"
+      },
+      {
+        "num": 10,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "make"
+          ],
+          [
+            "B",
+            "makes"
+          ],
+          [
+            "C",
+            "making"
+          ]
+        ],
+        "answer": "A"
+      }
+    ],
+    "绑定": "borrow/lend·until·祈使提建议·社区信息"
+  },
+  "grammar_fill": {
+    "id": "LMX2026_L06_grammar_fill",
+    "title": "从方框内选择适当的词并用其正确形式填空（每空限填一词，每词限用一次）",
+    "paragraphs": [
+      "In our ___1___, neighbours often help each other. If I need a book, I can ___2___ it from my friend. His father is kind and likes to ___3___ his books to others. When my mother is ___4___, the neighbours ___5___ her with the housework. We ___6___ the kitchen together after dinner. We do not stop ___7___ everything is clean. My sister takes ___8___ in class and ___9___ them with me. My father can ___10___ the heavy box for our neighbour."
+    ],
+    "word_bank": [
+      "borrow",
+      "lend",
+      "until",
+      "clean",
+      "community",
+      "share",
+      "note",
+      "help",
+      "busy",
+      "lift"
+    ],
+    "answers": [
+      "community",
+      "borrow",
+      "lend",
+      "busy",
+      "help",
+      "clean",
+      "until",
+      "notes",
+      "shares",
+      "lift"
+    ],
+    "绑定": "borrow/lend·until·Let's·helpers"
+  },
+  "sa": {
+    "id": "LMX2026_L06_sa",
+    "title": "阅读短文，回答下列问题或按要求完成句子",
+    "paragraphs": [
+      "Our community holds a big clean-up day every month. Families come to the park to pick up rubbish and plant flowers. The children help too, and they share their snacks during the break. Everyone works together until the park looks clean. We believe that a small help can make our community a better place. If everyone joins, our neighbourhood will be clean and happy."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "How often does the community hold a clean-up day?",
+        "type": "简答",
+        "answer": "Every month."
+      },
+      {
+        "num": 2,
+        "q": "What do the children share during the break?",
+        "type": "简答",
+        "answer": "They share their snacks."
+      },
+      {
+        "num": 3,
+        "q": "What do the families do in the park?",
+        "type": "简答",
+        "answer": "They pick up rubbish and plant flowers."
+      },
+      {
+        "num": 4,
+        "q": "Do you think you can help keep your community clean? Why or why not?",
+        "type": "简答",
+        "answer": "Yes, I do. Because I can pick up rubbish and plant flowers."
+      },
+      {
+        "num": 5,
+        "q": "将句子 “If everyone joins, our neighbourhood will be clean and happy.” 译成中文。",
+        "type": "翻译",
+        "answer": "如果每个人都参与，我们的社区将变得干净而快乐。"
+      }
+    ],
+    "绑定": "社区活动信息（when/where/who/what/why）"
+  },
+  "writing": {
+    "id": "LMX2026_L06_writing",
+    "title": "书面表达（15 分）",
+    "prompt": "你所在社区将在周末举办一次“大扫除日”。请用英语写一篇短文，介绍这次活动的安排和你打算如何参与。",
+    "requirements": "1. 使用本课词汇（borrow, clean up, community, share, until 等）与句型（Let's / Can you help / Why not / not...until）；2. 80 词左右；3. 条理清楚，语句通顺，句式有变化。",
+    "sample": "Our community will have a clean-up day this Saturday. We will meet at the park at nine in the morning. Let's pick up rubbish and plant flowers together. I will borrow some tools from my neighbour. My sister will share her snacks with everyone. We do not stop working until the park looks clean. Why not join us? A small help can make our community a better place. I am happy to help my neighbours."
+  },
+  "grammar_diag": {
+    "id": "LMX2026_L06_grammar",
+    "title": "语法诊断（borrow/lend·until·祈使提建议）",
+    "questions": [
+      {
+        "num": 1,
+        "q": "Can you ___ me your pen?",
+        "opts": [
+          [
+            "A",
+            "lend"
+          ],
+          [
+            "B",
+            "borrow"
+          ],
+          [
+            "C",
+            "give in"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "I ___ a book from the library.",
+        "opts": [
+          [
+            "A",
+            "borrow"
+          ],
+          [
+            "B",
+            "lend"
+          ],
+          [
+            "C",
+            "give"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "We do not leave ___ 8:00.",
+        "opts": [
+          [
+            "A",
+            "until"
+          ],
+          [
+            "B",
+            "for"
+          ],
+          [
+            "C",
+            "at"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "___ clean up the park together!",
+        "opts": [
+          [
+            "A",
+            "Let's"
+          ],
+          [
+            "B",
+            "Let"
+          ],
+          [
+            "C",
+            "Why"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 5,
+        "q": "___ not share your toys with your sister?",
+        "opts": [
+          [
+            "A",
+            "Why"
+          ],
+          [
+            "B",
+            "What"
+          ],
+          [
+            "C",
+            "How"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 6,
+        "q": "用所给词的适当形式填空：Can you (help) ___ me lift the box?",
+        "answer": "help"
+      },
+      {
+        "num": 7,
+        "q": "用所给词的适当形式填空：Let's (take) ___ notes in class.",
+        "answer": "take"
+      },
+      {
+        "num": 8,
+        "q": "用所给词的适当形式填空：Don't forget (clean) ___ up your room.",
+        "answer": "to clean"
+      },
+      {
+        "num": 9,
+        "q": "用所给词的适当形式填空：My father (give) ___ me a lift to school every day.",
+        "answer": "gives"
+      },
+      {
+        "num": 10,
+        "q": "用所给词的适当形式填空：Why not (share) ___ your food with your friend?",
+        "answer": "share"
+      }
+    ]
+  }
+}

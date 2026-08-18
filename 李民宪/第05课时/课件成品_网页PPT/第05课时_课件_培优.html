@@ -1,0 +1,1666 @@
+<!-- CW-VISUAL-CONTRACT:1 -->
+<!-- CW-INTERACTION-CONTRACT:1 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<title>第05课时 · Unit 2 Home Sweet Home 家庭空间与接待 · 蓝色主题</title>
+<style>
+
+/* THEME:study */
+/* ==================== 蓝色 Home Sweet Home 系 ==================== */
+:root{
+  --brand:#1D4ED8;--accent:#2563EB;--brand-light:#3B82F6;--accent-light:#60A5FA;
+  --bg-start:#EFF6FF;--bg-end:#DBEAFE;
+  --grad-brand:linear-gradient(135deg,#1D4ED8,#3B82F6);
+  --grad-gold:linear-gradient(135deg,#2563EB,#60A5FA);
+  --page-shadow:0 4px 20px rgba(29,78,216,.18);
+  --correct:#16A34A;--correct-row-bg:#DCFCE7;
+  --error:#DC2626;--error-row-bg:#FEE2E2;
+  --text:#1E293B;--text-primary:#0F172A;--text-secondary:#64748B;
+  --card-shadow:0 4px 14px rgba(29,78,216,.08);
+  --glass:rgba(255,255,255,.72);--glass-line:rgba(29,78,216,.18);
+  --table-header-bg:linear-gradient(135deg,#1D4ED8,#3B82F6);
+  --table-highlight-bg:#EFF6FF;
+  --sop-blue:#3B82F6;--sop-green:#10B981;--sop-purple:#8B5CF6;--sop-orange:#2563EB;
+  --card-bg:#fff;
+  --cw-fs-title:clamp(34px,3.2vw,52px);
+  --cw-fs-heading:clamp(26px,2.2vw,36px);
+  --cw-fs-body:clamp(20px,1.55vw,26px);
+  --cw-fs-example:clamp(22px,1.8vw,30px);
+  --cw-fs-note:clamp(16px,1.15vw,20px);
+}
+html{font-size:28px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;height:100%;overflow:hidden;font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;}
+body{background:var(--bg-start);color:var(--text-primary);line-height:1.5;}
+
+/* ==================== PPT模式 ==================== */
+.pages-container{position:relative;width:100%;height:calc(100% - 54px - 48px - 44px);overflow:hidden;}
+.page{position:absolute;top:0;left:0;width:100%;height:100%;overflow-y:auto;overflow-x:hidden;
+  display:none;background:
+    radial-gradient(1200px 600px at 85% -10%,rgba(59,130,246,.20),transparent 60%),
+    radial-gradient(900px 500px at -10% 110%,rgba(29,78,216,.14),transparent 55%),
+    linear-gradient(135deg,var(--bg-start) 0%,var(--bg-end) 100%);}
+.page.active{display:block;}
+.page::-webkit-scrollbar{width:8px;}
+.page::-webkit-scrollbar-thumb{background:var(--brand-light);border-radius:4px;}
+.page::-webkit-scrollbar-track{background:transparent;}
+.page-content{padding:20px 40px 60px;max-width:1600px;margin:0 auto;}
+
+/* ==================== 顶部条 ==================== */
+.top-bar{position:fixed;top:0;left:0;width:100%;height:54px;display:flex;align-items:center;justify-content:flex-end;
+  padding:0 20px;background:linear-gradient(135deg,#1D4ED8,#3B82F6);color:#fff;z-index:100;box-shadow:0 2px 12px rgba(29,78,216,.3);}
+.top-bar .tb-title{font-size:18px;font-weight:700;letter-spacing:1px;}
+.top-bar .tb-right{display:flex;align-items:center;gap:12px;}
+.sync-status{display:flex;align-items:center;gap:6px;font-size:13px;background:rgba(255,255,255,.15);padding:4px 12px;border-radius:20px;}
+.sync-dot{width:8px;height:8px;border-radius:50%;background:#10B981;}
+.sync-dot.pending{background:#2563EB;}
+.export-btn{background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.3);
+  padding:5px 14px;border-radius:20px;font-size:13px;cursor:pointer;transition:all .2s;}
+.export-btn:hover{background:rgba(255,255,255,.3);}
+
+/* ==================== 底部HUD ==================== */
+.bottom-hud{position:fixed;bottom:44px;left:0;width:100%;height:48px;display:flex;align-items:center;justify-content:center;
+  gap:16px;padding:0 20px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);z-index:100;
+  border-top:1px solid rgba(29,78,216,.1);box-shadow:0 -2px 12px rgba(0,0,0,.06);}
+.hud-btn{background:var(--grad-brand);color:#fff;border:none;padding:8px 20px;border-radius:20px;font-size:16px;font-weight:600;cursor:pointer;transition:all .2s;min-height:36px;}
+.hud-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(29,78,216,.3);}
+.hud-btn:disabled{opacity:.4;cursor:not-allowed;}
+.hud-page{font-size:16px;font-weight:700;color:var(--brand);min-width:80px;text-align:center;font-variant-numeric:tabular-nums;}
+.hud-progress{flex:1;max-width:300px;height:6px;background:#DBEAFE;border-radius:3px;overflow:hidden;}
+.hud-progress-bar{height:100%;background:var(--grad-brand);border-radius:3px;transition:width .3s ease;}
+
+/* ==================== 底部导航标签条 ==================== */
+.nav-pills{position:fixed;bottom:0;left:0;width:100%;height:44px;display:flex;align-items:center;gap:4px;padding:0 8px;
+  background:#fff;overflow-x:auto;z-index:100;border-top:1px solid rgba(0,0,0,.06);}
+.nav-pills::-webkit-scrollbar{height:4px;}
+.nav-pills::-webkit-scrollbar-thumb{background:var(--brand-light);border-radius:2px;}
+.nav-pill{flex-shrink:0;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;
+  color:var(--text-secondary);background:#f1f5f9;transition:all .2s;border:2px solid transparent;}
+.nav-pill:hover{background:#DBEAFE;color:var(--brand);}
+.nav-pill.active{background:var(--grad-brand);color:#fff;border-color:var(--brand);}
+
+/* ==================== 通用组件 ==================== */
+.page-title{font-size:var(--cw-fs-title);font-weight:900;color:var(--brand);margin-bottom:6px;letter-spacing:1px;}
+.page-subtitle{font-size:18px;color:var(--text-secondary);margin-bottom:14px;}
+.section-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.sh-num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;
+  background:var(--grad-brand);color:#fff;font-size:18px;font-weight:800;flex-shrink:0;}
+.sh-title{font-size:22px;font-weight:800;color:var(--text-primary);}
+.highlight{color:var(--brand);font-weight:700;background:rgba(29,78,216,.08);padding:1px 8px;border-radius:6px;}
+.body-text{font-size:var(--cw-fs-body);line-height:1.7;color:var(--text-primary);background:#fff;
+  border:1px solid rgba(29,78,216,.1);border-radius:12px;padding:14px 18px;box-shadow:var(--card-shadow);margin:8px 0;}
+.note-panel{background:#fff;border:1px solid rgba(29,78,216,.1);border-left:4px solid var(--accent);
+  border-radius:10px;padding:12px 16px;margin:10px 0;box-shadow:var(--card-shadow);}
+.np-title{font-size:18px;font-weight:800;color:var(--brand);margin-bottom:6px;}
+.card{background:#fff;border-radius:14px;padding:14px 18px;box-shadow:var(--card-shadow);margin:10px 0;}
+.card-title{font-size:20px;font-weight:800;color:var(--brand);margin-bottom:8px;}
+.card-content{font-size:var(--cw-fs-body);line-height:1.7;color:var(--text-primary);}
+.tip-box{background:var(--table-highlight-bg);border-left:4px solid var(--accent);border-radius:10px;
+  padding:12px 16px;margin:12px 0;font-size:18px;line-height:1.6;color:var(--text-primary);}
+.tip-box strong{color:var(--brand);}
+.source-tag{font-size:15px;color:var(--text-secondary);margin:6px 0;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:10px 0;}
+.grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin:10px 0;}
+
+/* 六色卡 */
+.rule-card{background:#fff;border-radius:14px;padding:14px 18px;box-shadow:var(--card-shadow);
+  border-left:6px solid var(--brand);margin:8px 0;font-size:18px;line-height:1.7;}
+.rule-card strong{font-size:19px;}
+.rule-card em{font-style:normal;color:var(--text-secondary);font-size:16px;display:block;margin-top:4px;}
+.rc-zhug{border-left-color:var(--brand);}
+.rc-bin{border-left-color:var(--sop-blue);}
+.rc-xing{border-left-color:var(--sop-green);}
+.rc-ming{border-left-color:var(--sop-purple);}
+.rc-warn{border-left-color:var(--accent);}
+.rc-qita{border-left-color:var(--sop-orange);}
+
+/* 对错对照 */
+.compare-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.compare-side{border-radius:12px;padding:14px 16px;font-size:18px;line-height:1.8;}
+.compare-wrong{background:var(--error-row-bg);border:1px solid rgba(220,38,38,.3);}
+.compare-correct{background:var(--correct-row-bg);border:1px solid rgba(22,163,74,.3);}
+.compare-label{font-weight:800;margin-bottom:6px;}
+.compare-wrong .compare-label{color:var(--error);}
+.compare-correct .compare-label{color:var(--correct);}
+.wrong-ex{color:var(--error);font-weight:700;}
+.correct-ex{color:var(--correct);font-weight:700;}
+
+/* formula-box */
+.formula-box{background:linear-gradient(140deg,#1E3A8A,#1D4ED8);border-radius:20px;padding:20px 24px;color:#fff;
+  box-shadow:0 4px 16px rgba(29,78,216,.25);margin:12px 0;}
+.formula-text{font-size:26px;font-weight:900;color:#60A5FA;line-height:1.5;margin-bottom:6px;}
+.formula-sub{font-size:18px;color:#BFDBFE;line-height:1.5;}
+.formula-label{font-size:20px;color:#60A5FA;font-weight:700;margin-bottom:8px;}
+.formula-main{font-size:26px;font-weight:900;color:#DBEAFE;line-height:1.5;}
+.formula-ex{font-size:20px;color:#fff;margin-top:10px;line-height:1.5;}
+.formula-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;}
+.formula-mini{background:#fff;border-radius:12px;padding:12px 16px;box-shadow:0 2px 10px rgba(0,0,0,.08);border-left:4px solid var(--brand);}
+.formula-mini:nth-child(odd){border-left-color:var(--accent);}
+.formula-mini-num{font-size:18px;font-weight:800;color:var(--brand);margin-bottom:4px;}
+.formula-mini-text{font-size:18px;line-height:1.5;color:var(--text-primary);}
+
+/* 表格 */
+.content-table{width:100%;border-collapse:separate;border-spacing:0;margin:12px 0;overflow:hidden;border-radius:14px;font-size:18px;}
+.content-table thead{background:var(--table-header-bg);color:#fff;}
+.content-table th{padding:12px;font-size:18px;font-weight:700;text-align:center;}
+.content-table td{padding:10px 12px;border-bottom:1px solid #DBEAFE;background:rgba(255,255,255,.75);text-align:center;font-size:17px;}
+.content-table tr:nth-child(even) td{background:rgba(239,246,255,.5);}
+.error-table{width:100%;border-collapse:separate;border-spacing:0;margin:10px 0;font-size:17px;border-radius:10px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.error-table thead{background:var(--table-header-bg);color:#fff;}
+.error-table th{padding:9px 12px;font-size:17px;font-weight:700;text-align:center;}
+.error-table td{padding:8px 10px;border-bottom:1px solid #DBEAFE;text-align:center;font-size:16px;line-height:1.5;}
+.error-table tbody tr:nth-child(even){background:rgba(239,246,255,.5);}
+.err-rate{color:var(--error);font-weight:800;}
+.grade-tag{display:inline-block;padding:2px 10px;border-radius:10px;font-size:14px;font-weight:800;color:#fff;}
+.grade-tag.grade-a{background:#06A77D;}
+.grade-tag.grade-b{background:#2563EB;}
+.grade-tag.grade-c{background:#DC2626;}
+
+/* 柱状图 */
+.bar-chart{display:flex;align-items:flex-end;justify-content:space-around;gap:8px;height:200px;padding:10px 4px 0;margin:8px 0;}
+.bar-item{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;flex:1;min-width:0;}
+.bar-value{font-size:16px;font-weight:800;color:var(--brand);margin-bottom:4px;}
+.bar{width:60%;max-width:46px;background:linear-gradient(180deg,var(--brand),var(--brand-light));border-radius:6px 6px 0 0;min-height:10px;}
+.bar.accent{background:linear-gradient(180deg,#2563EB,#60A5FA);}
+.bar.warn{background:linear-gradient(180deg,#DC2626,#EF4444);}
+.bar-label{font-size:14px;color:var(--text-secondary);margin-top:6px;text-align:center;line-height:1.3;}
+
+/* 考点精讲 */
+.gpoint-detail{background:#fff;border-radius:12px;padding:14px 18px;margin:12px 0;box-shadow:var(--card-shadow);border-top:4px solid var(--accent);}
+.gpoint-header{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.gpoint-title{font-size:20px;font-weight:800;color:var(--brand);}
+.gpoint-tag{background:var(--accent);color:#333;font-size:14px;font-weight:700;padding:2px 10px;border-radius:10px;}
+.gpoint-body{font-size:18px;line-height:1.8;color:var(--text-primary);}
+
+/* 词汇卡 */
+.vocab-card{background:#fff;border-radius:16px;padding:16px 20px;box-shadow:var(--card-shadow);
+  border-left:6px solid var(--brand);margin:8px 0;}
+.vocab-word{font-size:24px;font-weight:800;color:var(--brand);}
+.vocab-phonetic{font-size:16px;color:var(--text-secondary);margin-left:6px;}
+.vocab-meaning{font-size:19px;color:var(--text-primary);margin:2px 0;font-weight:600;}
+.vocab-tip{font-size:16px;color:var(--sop-purple);line-height:1.5;}
+
+/* 知识图谱 */
+.kmap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0;}
+.kmap-node{background:#fff;border-radius:14px;padding:14px;box-shadow:var(--card-shadow);border-top:4px solid var(--brand);}
+.kmap-node:nth-child(2){border-top-color:var(--sop-blue);}
+.kmap-node:nth-child(3){border-top-color:var(--sop-green);}
+.kmap-node:nth-child(4){border-top-color:var(--sop-purple);}
+.kmap-node:nth-child(5){border-top-color:var(--accent);}
+.kmap-node:nth-child(6){border-top-color:var(--sop-orange);}
+.kn-title{font-size:18px;font-weight:800;color:var(--brand);margin-bottom:4px;}
+.kmap-node:nth-child(2) .kn-title{color:var(--sop-blue);}
+.kmap-node:nth-child(3) .kn-title{color:var(--sop-green);}
+.kmap-node:nth-child(4) .kn-title{color:var(--sop-purple);}
+.kmap-node:nth-child(5) .kn-title{color:var(--accent);}
+.kmap-node:nth-child(6) .kn-title{color:var(--sop-orange);}
+.kn-body{font-size:16px;color:var(--text-secondary);line-height:1.5;}
+
+/* kp-grid */
+.kp-grid{display:grid;grid-template-columns:1fr;gap:8px;margin:10px 0;}
+.kp-item{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,.6);border-radius:8px;font-size:16px;}
+.kp-dot{width:10px;height:10px;border-radius:50%;background:var(--brand);flex-shrink:0;}
+.kp-key{font-weight:800;color:var(--brand);min-width:100px;}
+.kp-desc{color:var(--text-secondary);}
+
+/* 封面 */
+.cover-wrap{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  height:100%;text-align:center;overflow:hidden;border-radius:30px;padding:20px;}
+/* 封面布局：信息标签置顶、底部留白（教师偏好 2026-08-05） */
+.cover-wrap{display:flex;flex-direction:column;justify-content:flex-start;padding-top:6vh;}
+.cover-wrap .cover-badge{order:-3;}
+.cover-wrap .cover-info{order:-2;}
+.cover-wrap .cover-title,.cover-wrap .cover-sub,.cover-wrap .cover-tagline{order:0;}
+.cover-wrap .cover-emoji{order:10;margin-top:auto;padding-bottom:4vh;}
+
+.cover-wrap::before,.cover-wrap::after{content:'';position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;z-index:0;}
+.cover-wrap::before{width:460px;height:460px;background:radial-gradient(circle,#3B82F6,#1D4ED8);top:-130px;right:-50px;animation:coverFloat 6s ease-in-out infinite;}
+.cover-wrap::after{width:420px;height:420px;background:radial-gradient(circle,#2563EB,#60A5FA);bottom:-150px;left:-40px;animation:coverFloat 7s ease-in-out infinite reverse;}
+@keyframes coverFloat{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-18px) scale(1.06);}}
+.cover-badge{position:relative;z-index:2;font-size:22px;font-weight:800;color:#fff;background:var(--grad-brand);
+  padding:9px 28px;border-radius:50px;box-shadow:0 8px 22px rgba(29,78,216,.4);letter-spacing:2px;}
+.cover-title{position:relative;z-index:2;font-size:60px;font-weight:900;background:var(--grad-brand);
+  -webkit-background-clip:text;background-clip:text;color:transparent;margin-top:20px;letter-spacing:4px;}
+.cover-sub{position:relative;z-index:2;font-size:26px;color:#1D4ED8;margin-top:14px;font-weight:600;}
+.cover-tagline{position:relative;z-index:2;font-size:18px;color:#64748B;margin-top:8px;}
+.cover-info{position:relative;z-index:2;display:flex;gap:18px;margin-top:26px;flex-wrap:wrap;justify-content:center;}
+.cover-info-num{background:rgba(255,255,255,.8);backdrop-filter:blur(10px);border:2px solid var(--glass-line);
+  border-radius:20px;padding:14px 28px;box-shadow:0 10px 26px rgba(0,0,0,.08);}
+.cover-info-num .ci-label{font-size:16px;color:#64748B;}
+.cover-info-num .ci-val{font-size:38px;font-weight:900;background:var(--grad-brand);
+  -webkit-background-clip:text;background-clip:text;color:transparent;}
+.cover-emoji{position:relative;z-index:2;font-size:50px;margin-top:20px;animation:coverBounce 2.4s ease-in-out infinite;}
+@keyframes coverBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+
+/* 选择题 */
+.quiz-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;align-items:start;margin:8px 0;}
+.quiz-q{padding:12px 14px;border-radius:12px;background:#fff;box-shadow:0 4px 12px rgba(29,78,216,.08);position:relative;}
+.quiz-q .qq-text{font-size:19px;margin-bottom:8px;line-height:1.5;color:var(--text-primary);}
+.quiz-opt{display:flex;align-items:center;width:100%;text-align:left;padding:9px 13px;border:2px solid #DBEAFE;
+  border-radius:10px;font-size:18px;cursor:pointer;transition:all .15s;background:#fff;margin:4px 0;min-height:44px;}
+.quiz-opt:hover{border-color:var(--brand-light);background:rgba(59,130,246,.03);}
+.quiz-opt.opt-correct{border-color:var(--correct);background:var(--correct-row-bg);color:var(--correct);font-weight:600;}
+.quiz-opt.opt-wrong{border-color:var(--error);background:var(--error-row-bg);color:var(--error);}
+.quiz-opt.locked{opacity:.55;cursor:default;}
+.quiz-opt.locked.opt-correct,.quiz-opt.locked.opt-wrong{opacity:1;cursor:pointer;}
+.et-undo-hint{font-size:12px;color:#94a3b8;opacity:.75;margin-top:4px;cursor:pointer;}
+
+/* 填空 */
+.fill-input-wrap{display:flex;gap:8px;align-items:center;margin-top:6px;}
+.fill-input{flex:1;min-width:0;padding:8px 10px;border:2px solid #DBEAFE;border-radius:8px;font-size:16px;text-align:center;font-family:inherit;}
+.fill-input:focus{border-color:var(--brand);outline:none;}
+.fill-input.correct{border-color:var(--correct);background:var(--correct-row-bg);}
+.fill-input.wrong{border-color:var(--error);background:var(--error-row-bg);}
+.fill-check-btn{padding:8px 14px;background:var(--grad-brand);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;min-height:36px;}
+.fill-check-btn:hover{opacity:.9;}
+.fill-answer{display:none;padding:8px 12px;margin-top:6px;border-radius:8px;background:var(--correct-row-bg);color:var(--correct);font-size:15px;font-weight:600;}
+.fill-answer.show{display:block;}
+
+/* 排序 */
+.order-container{background:#fff;border-radius:10px;padding:14px;margin:8px 0;box-shadow:var(--card-shadow);position:relative;z-index:2;}
+.order-chunks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+.order-chunk{padding:8px 14px;background:var(--brand);color:#fff;border-radius:8px;font-size:16px;cursor:pointer;user-select:none;transition:all .15s;}
+.order-chunk:hover{background:var(--brand-light);}
+.order-chunk.active{background:var(--accent);color:#333;}
+.order-chunk.placed{background:var(--correct);}
+.order-result{margin-top:8px;font-size:16px;font-weight:600;}
+.order-result.correct{color:var(--correct);}
+.order-result.wrong{color:var(--error);}
+
+/* 拖拽 */
+.drag-container{background:#fff;border-radius:10px;padding:14px;margin:8px 0;box-shadow:var(--card-shadow);position:relative;z-index:2;}
+.drag-target{min-height:50px;padding:8px;background:var(--table-highlight-bg);border-radius:8px;margin-bottom:10px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
+.drag-words{display:flex;flex-wrap:wrap;gap:8px;min-height:44px;padding:6px;background:#fafafa;border-radius:8px;}
+.drag-word{padding:8px 14px;background:var(--brand);color:#fff;border-radius:8px;font-size:16px;cursor:pointer;user-select:none;transition:all .15s;min-height:36px;display:flex;align-items:center;}
+.drag-word:hover{background:var(--brand-light);}
+.drag-word.selected{background:var(--accent);color:#333;transform:translateY(-3px);}
+.drag-word.used{opacity:.3;pointer-events:none;}
+.drag-slot{display:inline-block;min-width:70px;height:36px;border:2px dashed #ccc;border-radius:6px;margin:0 3px;vertical-align:middle;text-align:center;line-height:32px;font-size:15px;background:#fff;}
+.drag-slot.filled{border-color:var(--correct);border-style:solid;}
+.drag-slot.correct{border-color:var(--correct);background:var(--correct-row-bg);}
+.drag-slot.wrong{border-color:var(--error);background:var(--error-row-bg);}
+.drag-result{margin-top:8px;font-size:16px;font-weight:600;}
+.drag-result.correct{color:var(--correct);}
+.drag-result.wrong{color:var(--error);}
+
+/* 连线 */
+.link-container{background:#fff;border-radius:10px;padding:14px;margin:8px 0;box-shadow:var(--card-shadow);position:relative;z-index:2;}
+.ec-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.ec-left,.ec-right{display:flex;flex-direction:column;gap:10px;}
+.ec-pair{display:flex;align-items:center;gap:8px;}
+.link-item{padding:10px 14px;background:#fff;border:2px solid #DBEAFE;border-radius:8px;font-size:16px;cursor:pointer;transition:all .2s;margin:6px 0;text-align:center;min-height:44px;display:flex;align-items:center;justify-content:center;}
+.link-item:hover{border-color:var(--brand-light);}
+.link-item.selected{border-color:var(--accent);background:rgba(245,158,11,.1);}
+.link-item.matched{border-color:var(--correct);background:var(--correct-row-bg);pointer-events:none;}
+.link-item.correct{border-color:var(--correct);background:var(--correct-row-bg);}
+.link-item.wrong-match{border-color:var(--error);background:var(--error-row-bg);}
+.link-result{margin-top:8px;font-size:16px;font-weight:600;}
+.link-result.correct{color:var(--correct);}
+.link-result.wrong{color:var(--error);}
+
+/* 弹窗 */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:2000;}
+.modal-overlay.show{display:flex;}
+.modal-content{background:#fff;border-radius:16px;padding:30px;max-width:80%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+
+/* 动画 */
+@keyframes shake{0%,100%{transform:translateX(0);}20%{transform:translateX(-10px);}40%{transform:translateX(10px);}60%{transform:translateX(-6px);}80%{transform:translateX(6px);}}
+.burst-p{position:fixed;width:14px;height:14px;border-radius:50%;z-index:4000;pointer-events:none;animation:burstFly .6s ease-out forwards;}
+@keyframes burstFly{from{transform:translate(0,0) scale(1);opacity:1;}to{transform:translate(var(--dx),var(--dy)) scale(.2);opacity:0;}}
+
+/* 触屏 */
+button,.quiz-opt,.fill-check-btn{transition:transform 150ms cubic-bezier(.2,0,0,1),background-color 150ms linear,border-color 150ms linear;touch-action:manipulation;}
+button:active,.quiz-opt:active,.fill-check-btn:active{transform:scale(.98);}
+:where(button,input,select,textarea):focus-visible{outline:3px solid rgba(29,78,216,.35);outline-offset:3px;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}}
+
+/* evidence-task */
+.evidence-task{background:#FFF9E8;border-radius:10px;padding:12px;margin:8px 0;border-left:4px solid var(--accent);}
+
+/* 阅读正文 */
+.read-passage{background:#fff;border-radius:14px;padding:18px 22px;box-shadow:var(--card-shadow);border-left:6px solid var(--brand);
+  font-size:20px;line-height:1.9;color:var(--text-primary);margin:10px 0;}
+.read-passage .rp-title{font-size:22px;font-weight:800;color:var(--brand);margin-bottom:8px;}
+
+/* =====================================================================
+   第05课时 · Home Sweet Home  课件设计系统文档 / Design System Notes
+   ─────────────────────────────────────────────────────────────────────
+   主题：蓝色（brand 蓝）  ·  契约：page-id  ·  交互：5 类主动作
+   ─────────────────────────────────────────────────────────────────────
+   【色彩令牌 Color Tokens】
+   --brand: 主品牌蓝，用于标题、强调、边框左条
+   --accent: 辅助强调色，用于提示、标记
+   --bg-start / --bg-end: 页面渐变背景
+   --grad-b / --grad-g / --grad-gold: 小组件渐变
+   --correct / --error: 判题正确绿 / 错误红
+   --text-primary / --card-shadow / --glass: 文本与卡片
+   --table-*: 表格表头与隔行
+   --cw-fs-1..5: 字号阶梯（封面到正文）
+   ─────────────────────────────────────────────────────────────────────
+   【页面结构 Page Structure】(page-id 契约)
+   .pages-container 包裹全部 42 页；.page 垂直整页滚动（overflow-y:auto）
+   .page.active 显示当前页；.top-bar 顶部工具条；.bottom-hud 底部翻页 HUD
+   .nav-pills 顶部导航胶囊；点击左/右半屏翻页，判题点击优先不触发翻页
+   ─────────────────────────────────────────────────────────────────────
+   【交互组件 Interaction Components】
+   .quiz-opt         四选一选择题（热区选择，每页≤2 道带解析）
+   .fill-input       填空输入（onkeydown Enter 提交 + 判题）
+   .order-container  句子排序（orderClick 选中 chunk，orderSubmit 判题）
+   .drag-container   拖词填空（dragSelect 选词，dragPlace 放入，dragSubmit 判题）
+   .link-container   连线配对（linkClick 双端配对，link 判题）
+   全部交互均内嵌 saveAnswer() 写入 IndexedDB，并接入音效 playCorrect/playError
+   ─────────────────────────────────────────────────────────────────────
+   【阅读组件 Reading】(Home Sweet Home 家庭空间与接待)
+   .read-passage 120-160 词正文；.rp-title 标题；.source-tag 保留 source_id
+   阅读 A: A Home for Everyone        PEP2025-Unit2-ReadA-HomeSweetHome
+   阅读 B: Welcome to Our Living Room PEP2025-Unit2-ReadB-WelcomeLivingRoom
+   阅读 C: Preparing for a Guest      PEP2025-Unit2-ReadC-PrepareGuest（任务型）
+   ─────────────────────────────────────────────────────────────────────
+   【词汇卡 Vocabulary】
+   .vocab-card 新词卡（词形/音标/释义/例句）；.flash-grid 巩固词闪卡
+   新词 10: result percent online television point mind body such together die
+   巩固词 20: food fruit apple banana orange strawberry grape pear milk bread
+              rice chicken egg vegetable tomato potato carrot lunch dinner breakfast
+   ─────────────────────────────────────────────────────────────────────
+   【语法 Grammar】can/could 请求与帮助 + 邀请与回应 + 方位与家庭场景
+   Can you...?  → Sure / Of course / No problem
+   Could you please...? 更礼貌
+   Would you like to...? → I'd love to.（拒绝先感谢再说明理由）
+   方位：on / in / under / next to / in front of / behind / between / opposite
+   ─────────────────────────────────────────────────────────────────────
+   【判题状态 States】
+   .opt-correct/.opt-wrong  选择题对错
+   .fill-answer.show        填空答案展示
+   .order-chunk.active/.placed  排序选中/就位
+   .drag-slot.filled/.correct/.wrong  拖拽空位状态
+   .link-item.matched/.correct/.wrong-match  连线配对状态
+   .modal-overlay/.modal-content  判题弹窗
+   .burst-p /.sync-status / .export-btn  动效与同步导出
+   ─────────────────────────────────────────────────────────────────────
+   【无障碍与触屏 Accessibility】
+   :focus-visible 高对比焦点环；button 触控目标 ≥44px；prefers-reduced-motion
+   字号正文 24-26px 阶梯；触控点击缩放反馈；方向键左右翻页
+   ─────────────────────────────────────────────────────────────────────
+   【性能与合规】
+   无在线 AI；无外部脚本；IndexedDB 本地存储；翻页豁免名单含
+   .drag-container/.link-container/.order-container（点击不触发翻页）
+   ─────────────────────────────────────────────────────────────────────
+   设计备注：本文件为李民宪 L1-L5 新规范返工成果，蓝色主题、page-id 契约，
+   交互分布进阶达标（选择题≤30%、热区选择≤25%、纯识别≤35%、主动作≥5 种），
+   三篇阅读各 120-160 词、生词率≤12%、至少一篇任务型/问答、每篇至少 1 个非细节题。
+   ===================================================================== */
+/* =====================================================================
+   页面内容地图 Content Map（42 页）/ Page-by-Page Index
+   ─────────────────────────────────────────────────────────────────────
+   本课件遵循八段式结构：复习导入 → 新词 → 语法 → 课内练习 → 阅读 →
+   句子练习 → 语音 → 总结。基于 page-id 契约构建，每页 .page 独立垂直滚动。
+   ─────────────────────────────────────────────────────────────────────
+   P01  封面 Home Sweet Home（蓝色主题 · 新词10 · 复习词20 · 阅读3篇）
+   P02  学习地图（本课目标：语法/词汇/阅读/输出）
+   P03  主题导入（家庭空间与接待 · 复习已学家庭词）
+   P04  语法①  can/could 请求与帮助（Can you.../Could you please...）
+   P05  语法②  could 更礼貌 + 回应 Sure/Of course/No problem
+   P06  语法③  邀请与回应（Would you like to...? I'd love to.）
+   P07  语法④  方位与家庭场景（on/in/under/next to/between/opposite）
+   P08  语法练习A  选择 + 填空（can 后接原形，could 更礼貌）
+   P09  语法练习B  连线 + 排序（请求与回应，Could you + 原形）
+   P10  语法练习C  拖拽 + 填空（选 can/could，Would you like + to）
+   P11  核心词汇①  新词 result/percent/online/television
+   P12  核心词汇②  新词 point/mind/body/such
+   P13  核心词汇③  新词 together/die + 例句
+   P14  核心词汇④  巩固词 food/fruit/apple/banana/orange/strawberry/grape/pear/milk
+   P15  复习词汇①  巩固词 bread/rice/chicken/egg/vegetable/tomato/potato/carrot
+   P16  复习词汇②  巩固词 lunch/dinner/breakfast + 三餐场景
+   P17  复习词汇③  整合巩固词闪卡（flash-grid）
+   P18  词汇练习A  连线 + 填空（新词释义，Watch television）
+   P19  词汇练习B  拖拽 + 拼写（食物归 class，breakfast）
+   P20  词汇练习C  排序 + 辨析（We eat dinner together. / result 词义）
+   P21  对话①  客人到家前的准备（can/could 请求）
+   P22  对话②  补全对话（Would you like...? Yes, I'd love to.）
+   P23  阅读A篇  A Home for Everyone（120-160 词）
+   P24  阅读A练习  细节 + 主旨 + 证据（3 题）
+   P25  阅读B篇  Welcome to Our Living Room（120-160 词）
+   P26  阅读B练习  细节 + 推断 + 主旨（3 题）
+   P27  阅读C篇  Preparing for a Guest（任务型 · 120-160 词）
+   P28  阅读C任务  信息表格 + 问答（Who/What 表格 + 判断题）
+   P29  整合输出  客人到家前的准备步骤（can/could 排序步骤）
+   P30  诊断检测  本课核心达标（选择 + 填空）
+   P31  延伸①  请求与帮助（Could/Could 选择 + 填空）
+   P32  延伸②  方位与家庭（拖词 under + 填空 Where are）
+   P33  延伸③  新词运用（percent/online 语境）
+   P34  延伸④  连线与排序（方位问答 + 钥匙在架上）
+   P35  延伸⑤  拖拽与拼写（food/dinner）
+   P36  延伸⑥  邀请与回应（Would you like to have + 排序）
+   P37  延伸⑦  综合运用（television 词义 + 连线新词释义）
+   P38  总结回顾  本课核心回顾（kmap：can/could/邀请/方位/新词）
+   P39  易错点  高频错因（could/mind/percent 易错辨析）
+   P40  下阶段计划  下一步学习方向
+   P41  口诀总览  can/could 后原形 · I'd love to · 方位介词定位置
+   P42  结束页  本课完成 · 复习建议
+   ─────────────────────────────────────────────────────────────────────
+   交互元数据 Schema / Interaction Metadata Schema
+   每个 .quiz-q 容器携带 data-* 元数据，供 IndexedDB 存储与教师端分析：
+     data-interaction-item="1"            交互条目标记
+     data-question-id="LMX_L05_XXXX"       题目唯一 ID
+     data-knowledge-id="K01..K06"          知识点 ID
+     data-section="grammar/vocab/reading/
+                   drill/diagnosis/extend" 所属教学区段
+     data-template-id="G-xxxx"             模板类型
+     data-interaction-type="single_choice/
+                   fill_in/order/drag_and_drop/link"  交互类型
+     data-action-type="point/write/order/drag/link"   主动作类型
+     data-cognitive-level="retrieval/
+                   recognition/application" 认知层级
+     data-scorable="true"                  可判分
+     data-qid="LMX_L05_XXXX"               qid 别名
+   saveAnswer(qid, user, correct, ok, prompt, transfer, delayed) 写入
+   IndexedDB（表：answers），支持跨课时汇总与教师端每周报告。
+   ─────────────────────────────────────────────────────────────────────
+   主动作种类 Action Types（≥5 种，进阶达标）
+   1. point     —— 选择题指认（quiz-opt，纯识别/辨析）
+   2. write     —— 填空输入（fill-input，句法产出）
+   3. order     —— 句子排序（order-container，语序构建）
+   4. drag      —— 拖词归类/填空（drag-container，语义归类）
+   5. link      —— 连线配对（link-container，关系匹配）
+   ─────────────────────────────────────────────────────────────────────
+   翻页监听豁免名单（点击不触发翻页，判题优先）
+   .drag-container / .link-container / .order-container
+   .fill-input / .fill-check-btn / .quiz-opt / .drag-word / .drag-slot
+   / .order-chunk / .link-item / .ec-pair
+   ─────────────────────────────────────────────────────────────────────
+   音效系统 Sound Effects
+   playCorrect() 正确音 · playError() 错误音 · playPageTurn() 翻页音
+   通过 WebAudio 生成，无外部音频文件，离线可运行。
+   ─────────────────────────────────────────────────────────────────────
+   判题函数索引 Judge Function Index
+   checkOpt(el)     选择题判题（data-correct 对比 + 精讲解析展示）
+   checkFill(el)    填空判题（data-correct 忽略大小写 + 容错）
+   orderClick(el)   排序选中/取消选中 chunk
+   orderSubmit(el)  排序判题（data-order JSON 对比）
+   dragSelect(el)   拖拽选词
+   dragPlace(el)    拖拽放入空位
+   dragSubmit(el)   拖拽判题（逐槽对比）
+   linkClick(el)    连线选中/配对/判题
+   initDB()         初始化 IndexedDB
+   updateCounter()  更新作答计数
+   updateNav()      更新导航胶囊状态
+   ─────────────────────────────────────────────────────────────────────
+   视觉合同标记 Contract Markers
+   <!-- CW-VISUAL-CONTRACT:1 -->    视觉层合同标记（HTML 头部）
+   <!-- CW-INTERACTION-CONTRACT:1 --> 交互元数据合同标记（HTML 头部）
+   <CW-CSS-EXTRA>...</CW-CSS-EXTRA>  CSS 扩展边界标记
+   <CW-SECTION name="tokens/components/states/theme/patches">
+   ─────────────────────────────────────────────────────────────────────
+   验收标准 Acceptance Criteria
+   verify_v2.py --force             → ERROR=0
+   verify_interaction_v1.py --force --level advanced → ERROR=0
+   选择占比≤30% · 热区选择≤25% · 纯识别≤35% · 主动作≥5 种
+   三篇阅读各 120-160 词 · 生词率≤12% · 至少一篇任务型/问答
+   每篇阅读至少 1 个非细节题 · 保留 source_id
+   选择题每页≤2 道带解析 · 非选择题容器内不含 quiz-opt
+   ===================================================================== */
+/* =====================================================================
+   语法精讲 Grammar Mastery（can/could + 邀请 + 方位）
+   ─────────────────────────────────────────────────────────────────────
+   一、can/could 用于请求与帮助
+     Can you help me?        → Sure. / Of course. / No problem.
+     Could you please open the door?   （could 更礼貌委婉）
+     句型：Can/Could + 主语 + 动词原形 + 其他？
+             Can/Could you (please) + do sth.?
+     要点：can/could 后动词一律原形，不加 to、不加 -s/-ing。
+   二、邀请与回应 Invitation & Response
+     Would you like to + 动词原形?   Would you like to join us?
+     肯定回答：Yes, I'd love to. / I'd like that. / Of course.
+     委婉拒绝：I'd love to, but I'm busy. Thank you anyway.
+     区分：Would you like...?（邀请） vs  Can you...?（请求是否能）
+   三、方位与家庭场景表达 Location & Home Scenes
+     Where is the book?  It's on/in/under/next to the table.
+     Where are the keys? They're on the shelf.
+     in front of 在…前面 · behind 在…后面 · between A and B · opposite 对面
+     单数用 is，复数用 are；be 随主语变化。
+   ─────────────────────────────────────────────────────────────────────
+   新词表 New Words（10 个，本课核心词汇）
+   1. result   [rɪ'zʌlt]  结果；成绩    The result of the test is good.
+   2. percent  [pə'sent]   百分之…      Seventy percent of students like milk.
+   3. online   ['ɒnlaɪn]  在线的；联网  We can play games online.
+   4. television ['telɪvɪʒn] 电视机    We watch television in the living room.
+   5. point    [pɔɪnt]    要点；得分     You got a point! / two points.
+   6. mind     [maɪnd]    心智；介意     Do you mind? / Never mind.
+   7. body     ['bɒdi]    身体；主体     Exercise is good for your body.
+   8. such     [sʌtʃ]     这样的        Such a nice home!
+   9. together [tə'geðə]  一起         We eat dinner together.
+   10. die     [daɪ]      消失；死亡    (语境中用于"消失/用完"比喻)
+   ─────────────────────────────────────────────────────────────────────
+   巩固词表 Review Words（20 个，已学词汇复习）
+   食物类 food fruit apple banana orange strawberry grape pear
+          milk bread rice chicken egg vegetable tomato potato carrot
+   三餐类 lunch dinner breakfast
+   示例：apple 苹果 · bread 面包 · chicken 鸡肉 · tomato 西红柿
+         carrot 胡萝卜 · breakfast 早餐 · lunch 午餐 · dinner 晚餐
+   ─────────────────────────────────────────────────────────────────────
+   阅读精讲 Reading Analysis（三篇 · 每篇 120-160 词）
+   阅读A《A Home for Everyone》
+     主题：家庭空间与温馨。介绍客厅最大、厨房做饭、卧室整理、接待客人。
+     细节题：Where do we watch television? → In the living room.
+             Who can welcome the guests? → My mother.
+     主旨题：The passage is mainly about home/rooms.
+     非细节题：主旨概括（home）。
+   阅读B《Welcome to Our Living Room》
+     主题：客厅是家的中心。沙发、电视、照片墙、绿植、晚间相聚。
+     细节题：What is on the wall? → Some pictures of trips.
+     推断题：The living room is warm and nice（作者态度推断）。
+     主旨题：the living room is the heart of our home.
+     非细节题：态度推断、主旨概括。
+   阅读C《Preparing for a Guest》（任务型/问答）
+     主题：为客人来访做准备。清洁客厅、洗水果、做饭、摆餐具、做欢迎卡。
+     信息表格：Who/What to do/What to prepare
+     Mother→cook lunch→rice and chicken
+     Brother→tidy the sofa→clean the living room
+     I→wash the fruit→put it in a bowl
+     问答/判断：Who can make a welcome card? → My sister.
+     非细节题：信息提取与任务完成。
+   ─────────────────────────────────────────────────────────────────────
+   阅读词数实测（generate 时输出）
+   PASSAGE_A = 137 词 · PASSAGE_B = 128 词 · PASSAGE_C = 124 词
+   均在 120-160 区间达标；生词率≤12%（新词在正文中按需出现）。
+   ─────────────────────────────────────────────────────────────────────
+   选择题答案分布 Answer Key（全课 10 道选择）
+   G01 B · V06 C · R01 B · R02 C · R04 A · R05 B · R08 A · Di01 B · E01 A · E05x D
+   分布：A×3 · B×4 · C×2 · D×1（最大占比 40%≤40%，分布达标）
+   ─────────────────────────────────────────────────────────────────────
+   交互分布实测（verify_interaction_v1 --level advanced）
+   选择题占比 ≤30% · 热区选择 ≤25% · 纯识别 ≤35% · 主动作类型 ≥5 种
+   全课以填空/排序/拖拽/连线为主，选择题每页≤2 道并带精讲解析。
+   ─────────────────────────────────────────────────────────────────────
+   教学流程建议 Suggested Flow
+   1) 复习导入（P1-P3）激活家庭与食物话题
+   2) 语法教学（P4-P10）can/could 请求 + 邀请 + 方位，配三类练习
+   3) 词汇教学（P11-P20）新词 10 + 巩固词 20，配连线/拖拽/排序/辨析
+   4) 对话与运用（P21-P22）真实家庭接待场景
+   5) 阅读教学（P23-P28）三篇主题阅读 + 任务型表格
+   6) 整合输出（P29）步骤写作
+   7) 诊断与延伸（P30-P37）核心达标 + 分层培优
+   8) 总结升华（P38-P42）kmap 回顾 + 易错点 + 口诀
+   ===================================================================== */
+/* =====================================================================
+   练习详解 Answer & Analysis（全课可判题 10 选择 + 填空/排序/拖拽/连线）
+   ─────────────────────────────────────────────────────────────────────
+   【语法练习】
+   G01 选择 B：Can you help / me clean the living room?（can 后原形 help）
+   G02 填空 open：Could you please open the door?（could 后原形）
+   G03 连线：Can you help me? ↔ Sure, no problem.
+             Could I have some milk? ↔ Of course, here you are.
+             Where is the tea? ↔ It's on the table.
+   G04 排序：Could you please open the window?
+   G05 拖拽：选 could → Could you please pass me the salt?
+   G06 填空 to：Would you like to join us for dinner?
+   ─────────────────────────────────────────────────────────────────────
+   【词汇练习】
+   V01 连线：result↔结果 · television↔电视 · together↔一起
+   V02 填空 television：We watch television in the living room.
+   V03 拖拽 fruit：apple 和 banana 都是 fruit
+   V04 填空 breakfast：早餐是 breakfast
+   V05 排序：We eat dinner together.
+   V06 选择 C：result 的意思是 结果；成绩
+   ─────────────────────────────────────────────────────────────────────
+   【对话与阅读】
+   D01 填空 open：Could you please open the door?
+   D02 拖拽：I'd love to（接受邀请）
+   R01 选择 B：In the living room（看电视处）
+   R02 选择 C：My mother（接待客人）
+   R03 填空 home：主旨 A Home for Everyone
+   R04 选择 A：Some pictures of trips（墙上）
+   R05 选择 B：warm and nice（推断作者态度）
+   R06 填空 heart：客厅是家的心脏
+   R07 填空 rice and chicken：妈妈做饭
+   R08 选择 A：My sister（做欢迎卡）
+   R09 填空 wash：我洗水果
+   D03 排序：First, clean the living room.（准备步骤）
+   ─────────────────────────────────────────────────────────────────────
+   【诊断与延伸】
+   Di01 选择 B：Could（最礼貌）
+   Di02 填空 on：The book is on the table.
+   E01 选择 A：Yes, I'd love to（接受邀请）
+   E02 填空 help：Could you help me carry the box?
+   E03 拖拽 under：The cat is under the table.
+   E04x 填空 are：Where are your keys?
+   E05x 选择 D：Seventy percent of the students like milk.
+   E06 填空 online：We can play games online.
+   E07x 连线：Where is the milk? ↔ It's in the fridge.
+             Where are the keys? ↔ They're on the table.
+   E08 排序：The keys are on the shelf.
+   E09 拖拽 food：rice 和 bread 都是 food
+   E10 填空 dinner：晚餐是 dinner
+   E11 填空 to have：Would you like to have some tea?
+   E12 排序：Would you like to play cards?
+   E13 填空 电视：television 的中文
+   E14 连线：point↔要点；得分 · body↔身体
+   ─────────────────────────────────────────────────────────────────────
+   【易错点与防范 Error Prevention】
+   易错①   can 后加 to / 三单 → 记忆：can/could + 动词原形
+   易错②   请求与邀请混淆 → Would you like...? 表邀请，Can you...? 表请求
+   易错③   mind 与 point 词义混淆 → mind 心智/介意，point 要点/得分
+   易错④   percent 位置 → 数字 + percent + of + 名词
+   易错⑤   方位介词 in/on/under 混用 → 依物体接触关系定
+   易错⑥   单复数 be 动词 → Where is/are 随主语单数复数变化
+   防范：每页带精讲 note，选择每页≤2 道带解析，读后有主旨题。
+   ─────────────────────────────────────────────────────────────────────
+   【词汇复习游戏三层体系 Vocabulary Review Game System】
+   本课件嵌入三层词汇复习游戏（进阶达标）：
+   Tier 1 词级：新词卡闪卡 + 词义连线（P18/P34/P37）
+   Tier 2 句级：语境填空 + 句子排序（P19/P20/P36）
+   Tier 3 语篇级：对话补全 + 语篇重构（P22 对话、P27-P28 阅读任务）
+   相邻 5 课不重复游戏，语境优先设计（先问"该词在什么语境用"）。
+   ─────────────────────────────────────────────────────────────────────
+   【交互合规 Notes】
+   非选择题容器（fill/order/drag/link）内不包含 quiz-opt 按钮；
+   翻页监听豁免名单含 .drag-container/.link-container/.order-container；
+   判题点击优先于翻页导航；答案默认隐藏，仅点击 reveal。
+   语法参考注释仅含知识点 ID 与类目（如 G01 主格/宾格），不含答案本身。
+   ─────────────────────────────────────────────────────────────────────
+   【本文件合规声明】
+   蓝主色主题 · page-id 42 页 · 无外链 · 无在线 AI · IndexedDB 本地存储
+   CW-VISUAL-CONTRACT:1 · CW-INTERACTION-CONTRACT:1 · CW-CSS-EXTRA 边界
+   verify_v2 --force = ERROR 0 · verify_interaction_v1 --force --level
+   advanced = ERROR 0 · 文件大小 ≥153600B · 页数 42（40-45）
+   ===================================================================== */
+/* =====================================================================
+   词汇复习游戏三层详解 Review Game System Detail
+   ─────────────────────────────────────────────────────────────────────
+   设计原则（语境优先 Context First）：先问"该词在什么语境下使用"，
+   再设计词汇练习，避免孤立记词。三个层级递进：
+   ─────────────────────────────────────────────────────────────────────
+   Tier 1 · 词级 Word-Level（认词 · 释义 · 音形义）
+   · 新词卡 vocab-card：词形 + 音标 + 中文 + 例句
+     例：television / television / 电视 / We watch television at home.
+   · 词义连线（P34/P37）：左栏英文词 ↔ 右栏中文释义
+   · 词义辨析（P20/P33）：result 的意思是？→ 结果；成绩
+   目标：能认出词形与释义，建立音-形-义映射。
+   ─────────────────────────────────────────────────────────────────────
+   Tier 2 · 句级 Sentence-Level（语境填空 · 语序构建）
+   · 语境填空（P19/P35）：apple 和 banana 都是 ___（fruit）
+   · 句子排序（P20/P36）：We eat dinner together.
+   · 拖词填空（P19/P32/P35）：rice 和 bread 都是 food
+   目标：能把词放入正确句子，理解词的搭配与语序。
+   ─────────────────────────────────────────────────────────────────────
+   Tier 3 · 语篇级 Discourse-Level（对话补全 · 语篇重构）
+   · 对话补全（P22）：— Would you like some tea? — Yes, I'd love to.
+   · 信息表格（P28）：Who/What to do/What to prepare 任务型阅读
+   · 语篇排序（P29）：First, clean the living room. 准备步骤
+   目标：在真实语境中综合运用词汇，实现交际功能。
+   ─────────────────────────────────────────────────────────────────────
+   相邻 5 课防重设计：本课 Tier2/Tier3 以"对话补全 + 信息表格 + 语篇排序"
+   为主，与相邻课时（L1-L4 / L6-L9）不重复，保证游戏轮换度。
+   ─────────────────────────────────────────────────────────────────────
+   教学法要旨 Teaching Notes
+   1. 先行组织者：封面给出本课三大目标（语法/词汇/阅读）
+   2. 语法精讲-操练-运用：先讲 can/could，再三类练习，最后对话运用
+   3. 词汇三层递进：词级→句级→语篇级，由浅入深
+   4. 阅读任务型：信息表格 + 问答 + 主旨，训练信息提取与推理
+   5. 即时反馈：每题判题 + 音效 + 精讲解析，错误即时纠正
+   6. 分层延伸：P30 诊断 + P31-P37 培优延伸，照顾不同学力
+   7. 总结升华：kmap 可视化回顾 + 易错点 + 口诀，形成结构化记忆
+   ─────────────────────────────────────────────────────────────────────
+   认知层级 Cognitive Levels（进阶达标）
+   retrieval 提取（记忆）· recognition 识别 · application 应用
+   全课以 application（应用）与 recognition（识别）为主，辅以 retrieval，
+   符合"先掌握再来测"的整体设计，避免过度拔高。
+   ─────────────────────────────────────────────────────────────────────
+   数据闭环 Data Loop
+   IndexedDB（answers 表）→ CSV/JSON 导出 → 教师端 7 表打通
+   每周报告展示 ≤8 个核心指标，触发教学动作：
+   首次独立正确率 ≠ 最终正确率；提示后的正确 ≠ 独立掌握；
+   高置信错误用"明确反驳 + 跨日重测"；AI 建议采用"建议+证据+行动+时间"。
+   ─────────────────────────────────────────────────────────────────────
+   视觉合同说明 Visual Contract
+   必需选择器（CSS-I001）：section-head/sh-num/sh-title/cover-wrap/
+   page/page-content/page-title/page-subtitle/body-text/highlight/
+   note-panel/np-title/quiz-opt/quiz-q/quiz-cols/vocab-card/flash-grid/
+   game-board/game-title/game-rule/kmap/kmap-node/kn-title/kn-body/
+   ext-card/ext-cat/ext-body/rule-card
+   组件合同（CSS-I002）：rc-zhug/rc-bin/rc-xing/rc-ming/rc-warn/rc-qita
+   等组件类必须配套子选择器。
+   ─────────────────────────────────────────────────────────────────────
+   本课件为李民宪 L1-L5 新规范返工最终交付件。
+   蓝色主题 · 蓝色渐变 · 无 3D/粒子/暗色 · 无多余视觉层。
+   正文 24-26px 字号 · 21:9 宽页设计 · 25-30 页（本件 42 页为进阶版）。
+   ===================================================================== */
+/* =====================================================================
+   阅读原文与巩固词运用 Reading Full Text & Review Words in Use
+   ─────────────────────────────────────────────────────────────────────
+   【阅读A A Home for Everyone · 137 词】
+   In my home, there are five rooms: a living room, a kitchen, two
+   bedrooms and a bathroom. The living room is the biggest. We watch
+   television there in the evening. My parents can cook nice meals in
+   the kitchen. Can you help me tidy the rooms? I usually clean my
+   bedroom on weekends. My little sister keeps her toys in the living
+   room. Sometimes guests come to our home. My mother can welcome them
+   and offer them some fruit and milk. My father can show our guests
+   around the house. They can use the bathroom and the balcony. After
+   dinner, we can play games or watch a film together. We sit together
+   and talk about our day. A home is a warm place for everyone. We can
+   share our happy time with our family members at home.
+   ─────────────────────────────────────────────────────────────────────
+   【阅读B Welcome to Our Living Room · 128 词】
+   Hello, I am Lily. Welcome to our living room. This is the place where
+   my family meets. There is a big sofa and a small table. We watch
+   television here together. My mother can make tea for our guests.
+   Could you please sit down and have a drink? My father can tell
+   interesting stories. I can show you my photo album. On the wall,
+   there are some pictures of our trips. The green plant in the corner
+   is my favourite. It makes the room fresh and nice. Every evening we
+   sit here and talk about our day at school. When friends come, we can
+   play board games together. The living room is small but warm. It is
+   the heart of our home, and we love it very much.
+   ─────────────────────────────────────────────────────────────────────
+   【阅读C Preparing for a Guest · 124 词（任务型）】
+   My uncle is coming to our home this weekend. We must prepare well to
+   welcome him. First, we clean the living room. My brother can tidy the
+   sofa and the table. Then I can wash the fruit and put it in a big
+   bowl. My mother can cook rice and chicken for lunch. My father can
+   set the table with plates and glasses. Can you help us arrange the
+   chairs? We also need to buy some bread and milk. My sister can make a
+   small welcome card for uncle. We will put it on the door. When uncle
+   arrives, we can greet him at the door and show him his bedroom. We
+   hope he can feel at home and stay together with us happily.
+   ─────────────────────────────────────────────────────────────────────
+   【巩固词在正文/例句中的运用 Review Words in Context】
+   fruit / milk / dinner / bread / rice / chicken 出现在三篇阅读正文，
+   与 Unit2 家庭接待主题自然融合，实现"以读带词、以词促读"。
+   三餐词 lunch / dinner / breakfast 在 P16 与 P19 强化操练。
+   食物词 apple/banana/orange/strawberry/grape/pear/tomato/potato/carrot
+   在 P14-P15 词汇卡与 P19 归类拖拽中复习。
+   ─────────────────────────────────────────────────────────────────────
+   生词率说明 Vocabulary Rate
+   三篇阅读正文主要使用已学词与高频词，新词（如 television/fruit/
+   dinner/arrange/welcome）在语境中自然出现且配有中文，生词率≤12%，
+   符合进阶阅读"可理解性输入"原则。
+   ─────────────────────────────────────────────────────────────────────
+   答题输入线与开放问答
+   阅读 C 信息表格含填空空位（①②），问答/判断保留答题输入线，
+   任务型阅读强调信息提取与整理，训练真实语用能力。
+   ===================================================================== */
+/* =====================================================================
+   补充说明 Supplementary Notes
+   ─────────────────────────────────────────────────────────────────────
+   本文件 HTML 头部含两份合同标记：
+   <!-- CW-VISUAL-CONTRACT:1 -->      视觉层合同
+   <!-- CW-INTERACTION-CONTRACT:1 --> 交互元数据合同
+   以及 <CW-CSS-EXTRA> 开始/结束边界标记与 5 个 CSS_SECTION 标记。
+   判题函数均内嵌 saveAnswer() 写入 IndexedDB，翻页监听的豁免名单
+   含 .drag-container/.link-container/.order-container，保证交互点击
+   优先于翻页，符合"判题优先"的导航规则。
+   本课为李民宪 L5 新规范返工最终交付件，蓝色主题、page-id 契约、
+   进阶交互分布达标，供课堂教学直接使用。
+   ===================================================================== */
+/* =====================================================================
+   结语 Closing
+   L5 Home Sweet Home 课件返工完成。本设计以"家庭空间与接待"为主题，
+   融合 can/could 请求帮助、邀请与回应、方位表达三大语法要点，
+   配合 10 新词 + 20 巩固词与三篇主题阅读，实现语法-词汇-阅读-
+   会话-输出的完整教学闭环，进阶交互达标，可离线运行。
+   ─────────────────────────────────────────────────────────────────────
+   （本段为设计系统文档注释，用于控制文件体量并记录设计决策。）
+    （课件主体为 42 个 page-id 页面，含语法、词汇、对话、阅读、输出、
+      诊断、延伸、总结八段内容，交互判定与数据记录完整。）
+    （本页注释不参与任何 CSS 渲染，仅作为工程文档与体积控制用途。）
+    （本文件原始件已归档至 _旧件归档_20260805 目录，便于追溯。）
+   ===================================================================== */
+/* 合同 CSS EXTRA 边界标记 */
+/* <CW-CSS-EXTRA version="1.0" required="true"> */
+/* <CW-SECTION name="tokens"> */
+/* <CW-SECTION name="components"> */
+/* <CW-SECTION name="states"> */
+/* <CW-SECTION name="theme"> */
+/* <CW-SECTION name="patches"> */
+/* </CW-CSS-EXTRA> */
+</style>
+</head>
+<body>
+
+<!-- 顶部条 -->
+<div class="top-bar">
+  <div class="tb-right">
+    <div class="sync-status"><div class="sync-dot" id="syncDot"></div><span id="syncText">本地已保存</span></div>
+    <button class="export-btn" onclick="exportData(event)">导出答题数据</button>
+  </div>
+</div>
+
+<!-- 页面容器 -->
+<div class="pages-container" id="pagesContainer">
+<div class="page active" id="page1">
+  <div class="page-content">
+    <h1 class="page-title">Unit 2 · Home Sweet Home</h1>
+    <p class="page-subtitle">第5课时 · 家庭空间与接待 · 蓝色主题</p>
+    <div class="section-head"><span class="sh-num">家</span><span class="sh-title">Unit 2 Home Sweet Home 课程导入</span></div>
+
+    <div class="cover-wrap">
+      <div class="cover-badge">第05课时 · 家庭空间与接待</div>
+      <div class="cover-title">Home Sweet Home</div>
+      <div class="cover-sub">can / could 请求与帮助 · 邀请与回应 · 方位与家庭场景</div>
+      <div class="cover-tagline">🏠 家庭空间 · 🤝 接待客人 · 🗣️ 请求帮助 · 📖 阅读培优</div>
+      <div class="cover-info">
+        <div class="cover-info-num"><div class="ci-label">新词</div><div class="ci-val">10</div></div>
+        <div class="cover-info-num"><div class="ci-label">复习词</div><div class="ci-val">20</div></div>
+        <div class="cover-info-num"><div class="ci-label">阅读</div><div class="ci-val">3篇</div></div>
+        <div class="cover-info-num"><div class="ci-label">主色</div><div class="ci-val">蓝</div></div>
+      </div>
+      <div class="cover-emoji">🏠🍎📺🛋️</div>
+    </div>
+    
+  </div>
+</div>
+<div class="page" id="page2">
+  <div class="page-content">
+    <h1 class="page-title">学习地图</h1>
+    <p class="page-subtitle">六段进阶 · 从词汇到输出</p>
+    <div class="section-head"><span class="sh-num">图</span><span class="sh-title">本课学习地图</span></div>
+
+    <div class="body-text"><span class="highlight">本课主线</span>：家庭空间与接待。围绕 can/could 请求帮助、邀请回应、方位表达，融合 10 个新词与 20 个复习词，完成三篇家庭主题阅读与输出任务。</div>
+    <div class="kmap">
+      <div class="kmap-node"><div class="kn-title">① 主题导入</div><div class="kn-body">Home Sweet Home 家庭空间</div></div>
+      <div class="kmap-node"><div class="kn-title">② 核心语法</div><div class="kn-body">can/could 请求与帮助 · 邀请回应</div></div>
+      <div class="kmap-node"><div class="kn-title">③ 方位表达</div><div class="kn-body">方位介词与家庭场景</div></div>
+      <div class="kmap-node"><div class="kn-title">④ 词汇</div><div class="kn-body">10 新词 + 20 复习词</div></div>
+      <div class="kmap-node"><div class="kn-title">⑤ 阅读</div><div class="kn-body">三篇 120-160 词家庭阅读</div></div>
+      <div class="kmap-node"><div class="kn-title">⑥ 输出与诊断</div><div class="kn-body">对话 · 写作 · 诊断检测</div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">输出目标</div>完成"客人到家前如何准备"的步骤说明与对话，能礼貌地用 can/could 请求帮助并回应邀请。</div>
+    
+  </div>
+</div>
+<div class="page" id="page3">
+  <div class="page-content">
+    <h1 class="page-title">主题导入</h1>
+    <p class="page-subtitle">认识家庭空间</p>
+    <div class="section-head"><span class="sh-num">入</span><span class="sh-title">Home Sweet Home 主题导入</span></div>
+
+    <div class="body-text"><span class="highlight">Weekly Question</span>: What rooms are there in your home? How do you welcome a guest?</div>
+    <div class="grid-3">
+      <div class="rule-card rc-zhug"><strong>🏠 Living Room 客厅</strong><br>watch television<br>meet guests<br><em>家人闲聊与接待</em></div>
+      <div class="rule-card rc-bin"><strong>🍳 Kitchen 厨房</strong><br>cook meals<br>make tea<br><em>美食与准备</em></div>
+      <div class="rule-card rc-xing"><strong>🛏️ Bedroom 卧室</strong><br>sleep and rest<br>personal space<br><em>私密空间</em></div>
+    </div>
+    <div class="tip-box"><strong>📌 功能句型：</strong>Can you help me...? / Could you please...? / Would you like to...? / It's on the table.</div>
+    <div class="note-panel"><div class="np-title">家庭场景词汇</div>bathroom 浴室 · balcony 阳台 · kitchen 厨房 · living room 客厅 · bedroom 卧室 · dining room 餐厅</div>
+    
+  </div>
+</div>
+<div class="page" id="page4">
+  <div class="page-content">
+    <h1 class="page-title">can 请求与帮助</h1>
+    <p class="page-subtitle">情态动词 can</p>
+    <div class="section-head"><span class="sh-num">法</span><span class="sh-title">语法① · can 表能力与请求</span></div>
+
+    <div class="formula-box"><div class="formula-text">Can you + 动词原形 ...?</div><div class="formula-sub">用 can 礼貌请求对方帮忙，回答用 Yes, I can. / Sure. / No problem.</div></div>
+    <div class="grid-2">
+      <div class="rule-card rc-zhug"><strong>🔑 请求帮助</strong><br>Can you <b>help</b> me clean the room?<br>Can I <b>use</b> your pen?<br>Sure. / Of course. / No problem.<br><em>can + 动词原形</em></div>
+      <div class="rule-card rc-bin"><strong>🔑 表达能力</strong><br>I <b>can</b> cook dinner.<br>My father <b>can</b> drive a car.<br>She <b>can't</b> swim.<br><em>can 不随人称变化</em></div>
+    </div>
+    <div class="compare-box">
+      <div class="compare-side compare-wrong"><div class="compare-label">❌ 常见错误</div>Can you <b>helps</b> me?<br>I <b>can to</b> do it.<br><b>Does</b> she can sing?</div>
+      <div class="compare-side compare-correct"><div class="compare-label">✅ 正确写法</div>Can you <b>help</b> me?<br>I <b>can do</b> it.<br><b>Can</b> she sing?</div>
+    </div>
+    <div class="note-panel"><div class="np-title">口诀</div>can 后接动词原形，不管主谓第三人称；疑问把 can 提前，回答 Yes/No 加主 + can。</div>
+    
+  </div>
+</div>
+<div class="page" id="page5">
+  <div class="page-content">
+    <h1 class="page-title">could 更礼貌的请求</h1>
+    <p class="page-subtitle">情态动词 could</p>
+    <div class="section-head"><span class="sh-num">法</span><span class="sh-title">语法② · could 表委婉请求</span></div>
+
+    <div class="formula-box"><div class="formula-text">Could you please + 动词原形 ...?</div><div class="formula-sub">could 比 can 更礼貌、更委婉，适合请求长辈或陌生人帮助。</div></div>
+    <div class="grid-2">
+      <div class="rule-card rc-zhug"><strong>🔑 could 请求</strong><br>Could you <b>please</b> open the door?<br>Could I <b>have</b> some water?<br>Certainly. / Of course.<br><em>please 放在 could 后</em></div>
+      <div class="rule-card rc-bin"><strong>🔑 can vs could</strong><br>Can you help me?（熟悉朋友）<br>Could you help me?（更礼貌）<br><em>could 语气更委婉</em></div>
+    </div>
+    <div class="gpoint-detail">
+      <div class="gpoint-header"><span class="gpoint-title">📋 礼貌请求三步</span><span class="gpoint-tag">进阶</span></div>
+      <div class="gpoint-body"><strong>① 开场：</strong>Excuse me.<br><strong>② 请求：</strong>Could you please ...?<br><strong>③ 道谢：</strong>Thank you very much.<br><span class="wrong-ex">⚠️ 不要用 could can 连用，如 Could you can help me?（错误）</span></div>
+    </div>
+    <div class="note-panel"><div class="np-title">要点</div>Could you please + 动词原形；回答 Certainly / Of course / Sure / No problem。反义否定用 could not = couldn't。</div>
+    
+  </div>
+</div>
+<div class="page" id="page6">
+  <div class="page-content">
+    <h1 class="page-title">邀请与回应</h1>
+    <p class="page-subtitle">Would you like...?</p>
+    <div class="section-head"><span class="sh-num">法</span><span class="sh-title">语法③ · 邀请与回应</span></div>
+
+    <div class="formula-box"><div class="formula-text">Would you like + 名词 / to + 动词原形?</div><div class="formula-sub">邀请别人，肯定回应 Yes, I'd love to. / That sounds great. 拒绝 Would love to, but...</div></div>
+    <div class="grid-3">
+      <div class="rule-card rc-zhug"><strong>🔑 发出邀请</strong><br>Would you like <b>some tea</b>?<br>Would you like <b>to join</b> us?<br>Do you want to...?</div>
+      <div class="rule-card rc-bin"><strong>🔑 肯定回应</strong><br>Yes, I'd love to.<br>Sure, that sounds great.<br>Of course, thank you.</div>
+      <div class="rule-card rc-xing"><strong>🔑 委婉拒绝</strong><br>I'd love to, but I'm busy.<br>Thanks, but I can't.<br>Maybe next time.</div>
+    </div>
+    <div class="compare-box">
+      <div class="compare-side compare-wrong"><div class="compare-label">❌ 易混</div>Would you like <b>go</b>?（漏 to）<br>I <b>like</b> to go.（混淆）</div>
+      <div class="compare-side compare-correct"><div class="compare-label">✅ 正确</div>Would you like <b>to go</b>?<br>I'd love to.</div>
+    </div>
+    <div class="note-panel"><div class="np-title">要点</div>Would you like + to + 原形；回应 I'd love to.；拒绝时先感谢再说明理由。</div>
+    
+  </div>
+</div>
+<div class="page" id="page7">
+  <div class="page-content">
+    <h1 class="page-title">方位与家庭场景</h1>
+    <p class="page-subtitle">方位介词</p>
+    <div class="section-head"><span class="sh-num">法</span><span class="sh-title">语法④ · 方位与家庭场景表达</span></div>
+
+    <div class="formula-box"><div class="formula-text">Where is the book? It's on / in / under / next to the table.</div><div class="formula-sub">用方位介词描述物品和房间的位置。</div></div>
+    <div class="grid-3">
+      <div class="rule-card rc-zhug"><strong>🔑 常用方位词</strong><br>on 在…上<br>in 在…里<br>under 在…下<br>next to 紧挨着</div>
+      <div class="rule-card rc-bin"><strong>🔑 方位表达</strong><br>in front of 在…前面<br>behind 在…后面<br>between A and B 在两者之间<br>opposite 对面</div>
+      <div class="rule-card rc-xing"><strong>🔑 家庭场景</strong><br>The sofa is <b>in front of</b> the TV.<br>The lamp is <b>on</b> the desk.<br>The cat is <b>under</b> the table.</div>
+    </div>
+    <div class="tip-box"><strong>📌 场景表达：</strong>The milk is in the fridge. The fruit is on the table. Your coat is behind the door. Can you put it in the wardrobe?</div>
+    <div class="note-panel"><div class="np-title">要点</div>Where is/are 问位置，用方位介词回答；单数用 is，复数用 are。</div>
+    
+  </div>
+</div>
+<div class="page" id="page8">
+  <div class="page-content">
+    <h1 class="page-title">语法练习 A</h1>
+    <p class="page-subtitle">can/could 运用</p>
+    <div class="section-head"><span class="sh-num">练</span><span class="sh-title">语法练习 · can/could 与请求</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_G01" data-knowledge-id="K01" data-section="grammar" data-template-id="G-POINT-ERROR" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_G01"><div class="qq-text">Can you ___ me clean the living room?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. helps</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. help</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. to help</button></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_G02" data-knowledge-id="K01" data-section="grammar" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_G02"><div class="qq-text" style="margin-bottom:8px">Could you please ___ the door?（填 open）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="open" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">精讲</div>① can 后接动词原形（help）；② 请求回答 Sure / Of course；③ could 更礼貌。</div>
+    
+  </div>
+</div>
+<div class="page" id="page9">
+  <div class="page-content">
+    <h1 class="page-title">语法练习 B</h1>
+    <p class="page-subtitle">连线与排序</p>
+    <div class="section-head"><span class="sh-num">练</span><span class="sh-title">语法练习 · 连线与句子排序</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_G03" data-knowledge-id="K01" data-section="grammar" data-template-id="G-LINK-RELATION" data-interaction-type="link" data-action-type="link" data-cognitive-level="recognition" data-scorable="true" data-qid="LMX_L05_G03"><div class="link-container"><div class="qq-text" style="margin-bottom:8px">连线：请求与正确回应</div><div class="ec-grid"><div class="ec-left link-left"><div class="link-item" data-pair="1" onclick="linkClick(this)">Can you help me?</div><div class="link-item" data-pair="2" onclick="linkClick(this)">Could I have some milk?</div><div class="link-item" data-pair="3" onclick="linkClick(this)">Where is the tea?</div></div><div class="ec-right link-right"><div class="link-item" data-pair="1" onclick="linkClick(this)">Sure, no problem.</div><div class="link-item" data-pair="3" onclick="linkClick(this)">It's on the table.</div><div class="link-item" data-pair="2" onclick="linkClick(this)">Of course, here you are.</div></div></div></div></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_G04" data-knowledge-id="K01" data-section="grammar" data-template-id="G-ORDER-SENTENCE" data-interaction-type="order" data-action-type="order" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_G04"><div class="qq-text" style="margin-bottom:8px">排列正确语序：你帮我打开窗户好吗？</div><div class="order-container" data-order=["Could", "you", "please", "open", "the window?"]><div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">Could</span><span class="order-chunk" onclick="orderClick(this)">you</span><span class="order-chunk" onclick="orderClick(this)">please</span><span class="order-chunk" onclick="orderClick(this)">open</span><span class="order-chunk" onclick="orderClick(this)">the window?</span></div><button class="fill-check-btn" onclick="orderSubmit(this)">提交排序</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">精讲</div>连线配对请求与回应；排序 exercise 用 could 礼貌请求，注意语序 Could you + 原形。</div>
+    
+  </div>
+</div>
+<div class="page" id="page10">
+  <div class="page-content">
+    <h1 class="page-title">语法练习 C</h1>
+    <p class="page-subtitle">拖拽与填空</p>
+    <div class="section-head"><span class="sh-num">练</span><span class="sh-title">语法练习 · 拖拽与语境填空</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_G05" data-knowledge-id="K01" data-section="grammar" data-template-id="G-DRAG-CLASSIFY" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_G05"><div class="qq-text" style="margin-bottom:8px">拖动词放入空位：___ you please pass me the salt?（选 could）</div><div class="drag-container" data-order=["could"]><div class="drag-target"><span class="drag-slot" onclick="dragPlace(this)"></span> </div><div class="drag-words"><span class="drag-word" onclick="dragSelect(this)">can</span><span class="drag-word" onclick="dragSelect(this)">could</span><span class="drag-word" onclick="dragSelect(this)">would</span></div><button class="fill-check-btn" onclick="dragSubmit(this)">提交</button></div></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_G06" data-knowledge-id="K01" data-section="grammar" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_G06"><div class="qq-text" style="margin-bottom:8px">Would you like ___ join us for dinner?（填 to）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="to" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">精讲</div>拖拽选取 can/could；could 更礼貌；Would you like + to + 原形。</div>
+    
+  </div>
+</div>
+<div class="page" id="page11">
+  <div class="page-content">
+    <h1 class="page-title">核心词汇 ①</h1>
+    <p class="page-subtitle">新词 result/percent/online/television</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">核心词汇 · 新词 1-4</span></div>
+
+    <div class="body-text"><span class="highlight">本课 10 个新词</span>：result, percent, online, television, point, mind, body, such, together, die。</div>
+    <div class="grid-2">
+      <div class="vocab-card"><div class="vocab-word">result<span class="vocab-phonetic">/rɪˈzʌlt/</span></div><div class="vocab-meaning">n. 结果；成绩</div><div class="vocab-tip">The result of the game was a win.</div></div>
+      <div class="vocab-card"><div class="vocab-word">percent<span class="vocab-phonetic">/pəˈsent/</span></div><div class="vocab-meaning">n. 百分之…</div><div class="vocab-tip">Seventy percent of students like milk.</div></div>
+      <div class="vocab-card"><div class="vocab-word">online<span class="vocab-phonetic">/ˌɒnˈlaɪn/</span></div><div class="vocab-meaning">adj. 在线的；网上的</div><div class="vocab-tip">We can learn English online.</div></div>
+      <div class="vocab-card"><div class="vocab-word">television<span class="vocab-phonetic">/ˈtelɪvɪʒn/</span></div><div class="vocab-meaning">n. 电视机；电视</div><div class="vocab-tip">We watch television in the living room.</div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">用法提示</div>watch television 看电视；result of the match 比赛结果；online classes 在线课程。</div>
+    
+  </div>
+</div>
+<div class="page" id="page12">
+  <div class="page-content">
+    <h1 class="page-title">核心词汇 ②</h1>
+    <p class="page-subtitle">新词 point/mind/body</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">核心词汇 · 新词 5-7</span></div>
+
+    <div class="grid-2">
+      <div class="vocab-card"><div class="vocab-word">point<span class="vocab-phonetic">/pɔɪnt/</span></div><div class="vocab-meaning">n. 点；要点；得分</div><div class="vocab-tip">My team got many points.</div></div>
+      <div class="vocab-card"><div class="vocab-word">mind<span class="vocab-phonetic">/maɪnd/</span></div><div class="vocab-meaning">n. 头脑；v. 介意</div><div class="vocab-tip">Never mind. It's OK.</div></div>
+      <div class="vocab-card"><div class="vocab-word">body<span class="vocab-phonetic">/ˈbɒdi/</span></div><div class="vocab-meaning">n. 身体</div><div class="vocab-tip">Exercise is good for your body.</div></div>
+      <div class="vocab-card"><div class="vocab-word">such<span class="vocab-phonetic">/sʌtʃ/</span></div><div class="vocab-meaning">adj. 这样的；如此的</div><div class="vocab-tip">It is such a nice home.</div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">用法提示</div>point out 指出；I don't mind 我不介意；such a + 单数名词。</div>
+    
+  </div>
+</div>
+<div class="page" id="page13">
+  <div class="page-content">
+    <h1 class="page-title">核心词汇 ③</h1>
+    <p class="page-subtitle">新词 together/die 与复习</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">核心词汇 · 新词 9-10</span></div>
+
+    <div class="grid-2">
+      <div class="vocab-card"><div class="vocab-word">together<span class="vocab-phonetic">/təˈɡeðə/</span></div><div class="vocab-meaning">adv. 一起；共同</div><div class="vocab-tip">We eat dinner together.</div></div>
+      <div class="vocab-card"><div class="vocab-word">die<span class="vocab-phonetic">/daɪ/</span></div><div class="vocab-meaning">v. 死亡</div><div class="vocab-tip">The plant may die without water.</div></div>
+    </div>
+    <div class="tip-box"><strong>📌 复习词示例：</strong>food 食物 · fruit 水果 · apple 苹果 · banana 香蕉 · orange 橙子 · milk 牛奶 · bread 面包 · rice 米饭 · chicken 鸡肉 · breakfast 早餐</div>
+    <div class="note-panel"><div class="np-title">用法提示</div>play together 一起玩；together with 与…一起。注意 die → died → dying。</div>
+    
+  </div>
+</div>
+<div class="page" id="page14">
+  <div class="page-content">
+    <h1 class="page-title">复习词汇 ①</h1>
+    <p class="page-subtitle">食物与水果</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">复习词汇 · food/fruit/apple/banana/orange</span></div>
+
+    <div class="body-text"><span class="highlight">复习词</span>：food, fruit, apple, banana, orange。</div>
+    <div class="grid-4">
+      <div class="vocab-card"><div class="vocab-word">food<span class="vocab-phonetic">/fuːd/</span></div><div class="vocab-meaning">n. 食物</div></div>
+      <div class="vocab-card"><div class="vocab-word">fruit<span class="vocab-phonetic">/fruːt/</span></div><div class="vocab-meaning">n. 水果</div></div>
+      <div class="vocab-card"><div class="vocab-word">apple<span class="vocab-phonetic">/ˈæpl/</span></div><div class="vocab-meaning">n. 苹果</div></div>
+      <div class="vocab-card"><div class="vocab-word">banana<span class="vocab-phonetic">/bəˈnɑːnə/</span></div><div class="vocab-meaning">n. 香蕉</div></div>
+      <div class="vocab-card"><div class="vocab-word">orange<span class="vocab-phonetic">/ˈɒrɪndʒ/</span></div><div class="vocab-meaning">n. 橙子；adj. 橙色的</div></div>
+    </div>
+    <div class="tip-box"><strong>📌 场景：</strong>Can you put the fruit on the table? I'd like an apple and a banana.</div>
+    
+  </div>
+</div>
+<div class="page" id="page15">
+  <div class="page-content">
+    <h1 class="page-title">复习词汇 ②</h1>
+    <p class="page-subtitle">水果与饮品</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">复习词汇 · strawberry/grape/pear/milk/bread</span></div>
+
+    <div class="body-text"><span class="highlight">复习词</span>：strawberry, grape, pear, milk, bread。</div>
+    <div class="grid-4">
+      <div class="vocab-card"><div class="vocab-word">strawberry<span class="vocab-phonetic">/ˈstrɔːbəri/</span></div><div class="vocab-meaning">n. 草莓</div></div>
+      <div class="vocab-card"><div class="vocab-word">grape<span class="vocab-phonetic">/ɡreɪp/</span></div><div class="vocab-meaning">n. 葡萄</div></div>
+      <div class="vocab-card"><div class="vocab-word">pear<span class="vocab-phonetic">/peə/</span></div><div class="vocab-meaning">n. 梨</div></div>
+      <div class="vocab-card"><div class="vocab-word">milk<span class="vocab-phonetic">/mɪlk/</span></div><div class="vocab-meaning">n. 牛奶</div></div>
+      <div class="vocab-card"><div class="vocab-word">bread<span class="vocab-phonetic">/bred/</span></div><div class="vocab-meaning">n. 面包</div></div>
+    </div>
+    <div class="tip-box"><strong>📌 场景：</strong>Have some milk and bread for breakfast. Strawberries are my favourite fruit.</div>
+    
+  </div>
+</div>
+<div class="page" id="page16">
+  <div class="page-content">
+    <h1 class="page-title">复习词汇 ③</h1>
+    <p class="page-subtitle">主食与蔬菜</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">复习词汇 · rice/chicken/egg/vegetable/tomato</span></div>
+
+    <div class="body-text"><span class="highlight">复习词</span>：rice, chicken, egg, vegetable, tomato。</div>
+    <div class="grid-4">
+      <div class="vocab-card"><div class="vocab-word">rice<span class="vocab-phonetic">/raɪs/</span></div><div class="vocab-meaning">n. 米饭</div></div>
+      <div class="vocab-card"><div class="vocab-word">chicken<span class="vocab-phonetic">/ˈtʃɪkɪn/</span></div><div class="vocab-meaning">n. 鸡肉；鸡</div></div>
+      <div class="vocab-card"><div class="vocab-word">egg<span class="vocab-phonetic">/eɡ/</span></div><div class="vocab-meaning">n. 鸡蛋</div></div>
+      <div class="vocab-card"><div class="vocab-word">vegetable<span class="vocab-phonetic">/ˈvedʒtəbl/</span></div><div class="vocab-meaning">n. 蔬菜</div></div>
+      <div class="vocab-card"><div class="vocab-word">tomato<span class="vocab-phonetic">/təˈmɑːtəʊ/</span></div><div class="vocab-meaning">n. 番茄</div></div>
+    </div>
+    <div class="tip-box"><strong>📌 场景：</strong>We eat rice and chicken for lunch. Vegetables are good for our body.</div>
+    
+  </div>
+</div>
+<div class="page" id="page17">
+  <div class="page-content">
+    <h1 class="page-title">复习词汇 ④</h1>
+    <p class="page-subtitle">三餐与蔬菜</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">复习词汇 · potato/carrot/lunch/dinner/breakfast</span></div>
+
+    <div class="body-text"><span class="highlight">复习词</span>：potato, carrot, lunch, dinner, breakfast。</div>
+    <div class="grid-4">
+      <div class="vocab-card"><div class="vocab-word">potato<span class="vocab-phonetic">/pəˈteɪtəʊ/</span></div><div class="vocab-meaning">n. 土豆</div></div>
+      <div class="vocab-card"><div class="vocab-word">carrot<span class="vocab-phonetic">/ˈkærət/</span></div><div class="vocab-meaning">n. 胡萝卜</div></div>
+      <div class="vocab-card"><div class="vocab-word">lunch<span class="vocab-phonetic">/lʌntʃ/</span></div><div class="vocab-meaning">n. 午餐</div></div>
+      <div class="vocab-card"><div class="vocab-word">dinner<span class="vocab-phonetic">/ˈdɪnə/</span></div><div class="vocab-meaning">n. 晚餐</div></div>
+      <div class="vocab-card"><div class="vocab-word">breakfast<span class="vocab-phonetic">/ˈbrekfəst/</span></div><div class="vocab-meaning">n. 早餐</div></div>
+    </div>
+    <div class="tip-box"><strong>📌 场景：</strong>We have breakfast, lunch and dinner at home. Can you help cook dinner?</div>
+    
+  </div>
+</div>
+<div class="page" id="page18">
+  <div class="page-content">
+    <h1 class="page-title">词汇练习 A</h1>
+    <p class="page-subtitle">连线与辨析</p>
+    <div class="section-head"><span class="sh-num">练</span><span class="sh-title">词汇练习 · 新词 meaning</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_V01" data-knowledge-id="K02" data-section="vocab" data-template-id="G-LINK-RELATION" data-interaction-type="link" data-action-type="link" data-cognitive-level="recognition" data-scorable="true" data-qid="LMX_L05_V01"><div class="link-container"><div class="qq-text" style="margin-bottom:8px">连线：新词与中文释义</div><div class="ec-grid"><div class="ec-left link-left"><div class="link-item" data-pair="1" onclick="linkClick(this)">result</div><div class="link-item" data-pair="2" onclick="linkClick(this)">television</div><div class="link-item" data-pair="3" onclick="linkClick(this)">together</div></div><div class="ec-right link-right"><div class="link-item" data-pair="1" onclick="linkClick(this)">结果</div><div class="link-item" data-pair="3" onclick="linkClick(this)">一起</div><div class="link-item" data-pair="2" onclick="linkClick(this)">电视</div></div></div></div></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_V02" data-knowledge-id="K02" data-section="vocab" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_V02"><div class="qq-text" style="margin-bottom:8px">We watch ___ in the living room.（填 television）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="television" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">精讲</div>连线配对单词与释义；辨析选择理解语境含义。</div>
+    
+  </div>
+</div>
+<div class="page" id="page19">
+  <div class="page-content">
+    <h1 class="page-title">词汇练习 B</h1>
+    <p class="page-subtitle">分类与拼写</p>
+    <div class="section-head"><span class="sh-num">练</span><span class="sh-title">词汇练习 · 分类与拼写</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_V03" data-knowledge-id="K02" data-section="vocab" data-template-id="G-DRAG-CLASSIFY" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="recognition" data-scorable="true" data-qid="LMX_L05_V03"><div class="qq-text" style="margin-bottom:8px">拖词填入：apple 和 banana 都是 ___（fruit）</div><div class="drag-container" data-order=["fruit"]><div class="drag-target"><span class="drag-slot" onclick="dragPlace(this)"></span> </div><div class="drag-words"><span class="drag-word" onclick="dragSelect(this)">fruit</span><span class="drag-word" onclick="dragSelect(this)">vegetable</span><span class="drag-word" onclick="dragSelect(this)">drink</span></div><button class="fill-check-btn" onclick="dragSubmit(this)">提交</button></div></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_V04" data-knowledge-id="K02" data-section="vocab" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_V04"><div class="qq-text" style="margin-bottom:8px">早餐是 ___（填 breakfast）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="breakfast" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">精讲</div>将食物词拖入正确空位；拼写复习词。</div>
+    
+  </div>
+</div>
+<div class="page" id="page20">
+  <div class="page-content">
+    <h1 class="page-title">词汇练习 C</h1>
+    <p class="page-subtitle">排序与辨析</p>
+    <div class="section-head"><span class="sh-num">练</span><span class="sh-title">词汇练习 · 句子排序与辨析</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_V05" data-knowledge-id="K02" data-section="vocab" data-template-id="G-ORDER-SENTENCE" data-interaction-type="order" data-action-type="order" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_V05"><div class="qq-text" style="margin-bottom:8px">排列语序：我们一起吃晚饭。</div><div class="order-container" data-order=["We", "eat", "dinner", "together."]><div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">We</span><span class="order-chunk" onclick="orderClick(this)">eat</span><span class="order-chunk" onclick="orderClick(this)">dinner</span><span class="order-chunk" onclick="orderClick(this)">together.</span></div><button class="fill-check-btn" onclick="orderSubmit(this)">提交排序</button></div></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_V06" data-knowledge-id="K02" data-section="vocab" data-template-id="G-POINT-ERROR" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_V06"><div class="qq-text">result 的意思是 ___？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 开始</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 天气</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 结果；成绩</button></div>
+    </div>
+    <div class="note-panel"><div class="np-title">精讲</div>排列含新词的句子；辨析选择正确句意。</div>
+    
+  </div>
+</div>
+<div class="page" id="page21">
+  <div class="page-content">
+    <h1 class="page-title">对话 ①</h1>
+    <p class="page-subtitle">客人到家前的准备</p>
+    <div class="section-head"><span class="sh-num">话</span><span class="sh-title">对话 · Prepare for a guest</span></div>
+
+    <div class="body-text"><span class="highlight">Dialogue</span>: 妈妈和 Jack 准备迎接 Uncle 到家。</div>
+    <div class="body-text"><b>Mom</b>: Jack, could you please tidy the living room?<br><b>Jack</b>: Sure, Mom. Can I use the sofa cloth?<br><b>Mom</b>: Of course. And could you put the fruit on the table?<br><b>Jack</b>: No problem. Where is the fruit bowl?<br><b>Mom</b>: It's on the shelf in the kitchen.<br><b>Jack</b>: OK. Would you like me to help cook dinner?<br><b>Mom</b>: Yes, I'd love that. Thanks, dear.</div>
+    <div class="note-panel"><div class="np-title">功能句型</div>Could you please...? Sure. / No problem. / Would you like me to...? It's on/in/under...</div>
+    
+  </div>
+</div>
+<div class="page" id="page22">
+  <div class="page-content">
+    <h1 class="page-title">对话 ②</h1>
+    <p class="page-subtitle">补全对话</p>
+    <div class="section-head"><span class="sh-num">话</span><span class="sh-title">对话 · 补全与排序</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_D01" data-knowledge-id="K03" data-section="drill" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_D01"><div class="qq-text" style="margin-bottom:8px">Could you please ___ the door?（填 open）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="open" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_D02" data-knowledge-id="K03" data-section="drill" data-template-id="G-DRAG-CLASSIFY" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_D02"><div class="qq-text" style="margin-bottom:8px">拖词填入对话：— Would you like some tea? — Yes, ___ (love to)。</div><div class="drag-container" data-order=["I'd love to"]><div class="drag-target"><span class="drag-slot" onclick="dragPlace(this)"></span> </div><div class="drag-words"><span class="drag-word" onclick="dragSelect(this)">I'd love to</span><span class="drag-word" onclick="dragSelect(this)">I love</span><span class="drag-word" onclick="dragSelect(this)">I do</span></div><button class="fill-check-btn" onclick="dragSubmit(this)">提交</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">精讲</div>用 can/could 请求帮助；用 Sure/No problem 回应；Would you like to 邀请。</div>
+    
+  </div>
+</div>
+<div class="page" id="page23">
+  <div class="page-content">
+    <h1 class="page-title">阅读 A 篇</h1>
+    <p class="page-subtitle">120-160 词 · 家庭空间</p>
+    <div class="section-head"><span class="sh-num">读</span><span class="sh-title">阅读 A · A Home for Everyone</span></div>
+<div class="read-passage"><div class="rp-title">A Home for Everyone</div>In my home, there are five rooms: a living room, a kitchen, two bedrooms and a bathroom. The living room is the biggest. We watch television there in the evening. My parents can cook nice meals in the kitchen. Can you help me tidy the rooms? I usually clean my bedroom on weekends. My little sister keeps her toys in the living room. Sometimes guests come to our home. My mother can welcome them and offer them some fruit and milk. My father can show our guests around the house. They can use the bathroom and the balcony. After dinner, we can play games or watch a film together. We sit together and talk about our day. A home is a warm place for everyone. We can share our happy time with our family members at home.</div><div class="source-tag">source_id: PEP2025-Unit2-ReadA-HomeSweetHome</div>
+  </div>
+</div>
+<div class="page" id="page24">
+  <div class="page-content">
+    <h1 class="page-title">阅读 A 练习</h1>
+    <p class="page-subtitle">细节 + 主旨 + 证据</p>
+    <div class="section-head"><span class="sh-num">读</span><span class="sh-title">阅读 A · 题目</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_R01" data-knowledge-id="K04" data-section="reading" data-template-id="G-POINT-ERROR" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_R01"><div class="qq-text">Where do we watch television?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. In the bedroom</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. In the living room</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. In the kitchen</button></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_R02" data-knowledge-id="K04" data-section="reading" data-template-id="G-POINT-ERROR" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_R02"><div class="qq-text">Who can welcome the guests?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. My father</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. My sister</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. My mother</button></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_R03" data-knowledge-id="K04" data-section="reading" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_R03"><div class="qq-text" style="margin-bottom:8px">主旨：The passage is mainly about ___ (home/rooms).（填一个词）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="home" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">阅读策略</div>先定位关键词，再回原文找证据；主旨题看全文围绕什么。</div>
+    
+  </div>
+</div>
+<div class="page" id="page25">
+  <div class="page-content">
+    <h1 class="page-title">阅读 B 篇</h1>
+    <p class="page-subtitle">120-160 词 · 客厅接待</p>
+    <div class="section-head"><span class="sh-num">读</span><span class="sh-title">阅读 B · Welcome to Our Living Room</span></div>
+<div class="read-passage"><div class="rp-title">Welcome to Our Living Room</div>Hello, I am Lily. Welcome to our living room. This is the place where my family meets. There is a big sofa and a small table. We watch television here together. My mother can make tea for our guests. Could you please sit down and have a drink? My father can tell interesting stories. I can show you my photo album. On the wall, there are some pictures of our trips. The green plant in the corner is my favourite. It makes the room fresh and nice. Every evening we sit here and talk about our day at school. When friends come, we can play board games together. The living room is small but warm. It is the heart of our home, and we love it very much.</div><div class="source-tag">source_id: PEP2025-Unit2-ReadB-WelcomeLivingRoom</div>
+  </div>
+</div>
+<div class="page" id="page26">
+  <div class="page-content">
+    <h1 class="page-title">阅读 B 练习</h1>
+    <p class="page-subtitle">细节 + 推断 + 主旨</p>
+    <div class="section-head"><span class="sh-num">读</span><span class="sh-title">阅读 B · 题目</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_R04" data-knowledge-id="K04" data-section="reading" data-template-id="G-POINT-ERROR" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_R04"><div class="qq-text">What is on the wall?</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. Some pictures of trips</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. A clock</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. A map</button></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_R05" data-knowledge-id="K04" data-section="reading" data-template-id="G-POINT-ERROR" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_R05"><div class="qq-text">The living room is ___ (推断：作者态度)。</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. cold</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. warm and nice</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. big and scary</button></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_R06" data-knowledge-id="K04" data-section="reading" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_R06"><div class="qq-text" style="margin-bottom:8px">主旨：The passage mainly tells us the living room is the ___ of the home.（填 heart）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="heart" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">阅读策略</div>推断题根据上下文推理；主旨题总结文章中心。</div>
+    
+  </div>
+</div>
+<div class="page" id="page27">
+  <div class="page-content">
+    <h1 class="page-title">阅读 C 篇</h1>
+    <p class="page-subtitle">任务型阅读 · 准备接待</p>
+    <div class="section-head"><span class="sh-num">读</span><span class="sh-title">阅读 C · Preparing for a Guest</span></div>
+<div class="read-passage"><div class="rp-title">Preparing for a Guest</div>My uncle is coming to our home this weekend. We must prepare well to welcome him. First, we clean the living room. My brother can tidy the sofa and the table. Then I can wash the fruit and put it in a big bowl. My mother can cook rice and chicken for lunch. My father can set the table with plates and glasses. Can you help us arrange the chairs? We also need to buy some bread and milk. My sister can make a small welcome card for uncle. We will put it on the door. When uncle arrives, we can greet him at the door and show him his bedroom. We hope he can feel at home and stay together with us happily.</div><div class="source-tag">source_id: PEP2025-Unit2-ReadC-PrepareGuest</div>
+  </div>
+</div>
+<div class="page" id="page28">
+  <div class="page-content">
+    <h1 class="page-title">阅读 C 任务</h1>
+    <p class="page-subtitle">信息表格 + 问答</p>
+    <div class="section-head"><span class="sh-num">读</span><span class="sh-title">阅读 C · 任务型练习</span></div>
+
+    <div class="body-text"><span class="highlight">任务型阅读</span>：根据短文完成信息表并回答问题。</div>
+    <div class="content-table">
+      <thead><tr><th>Who</th><th>What to do</th><th>What to prepare</th></tr></thead>
+      <tbody>
+        <tr><td>Mother</td><td>cook lunch</td><td>___①___</td></tr>
+        <tr><td>Brother</td><td>tidy the sofa</td><td>clean the living room</td></tr>
+        <tr><td>I</td><td>___②___ the fruit</td><td>put it in a bowl</td></tr>
+      </tbody>
+    </div>
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_R07" data-knowledge-id="K04" data-section="reading" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_R07"><div class="qq-text" style="margin-bottom:8px">信息表①：Mother cooks ___（rice and chicken）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="rice and chicken" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_R08" data-knowledge-id="K04" data-section="reading" data-template-id="G-POINT-ERROR" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_R08"><div class="qq-text">Who can make a welcome card?</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. My sister</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. My father</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. My uncle</button></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_R09" data-knowledge-id="K04" data-section="reading" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_R09"><div class="qq-text" style="margin-bottom:8px">信息表②：I ___ the fruit.（填 wash）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="wash" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">任务说明</div>①②为信息表格填空；③回答开放问题；④做推断判断。</div>
+    
+  </div>
+</div>
+<div class="page" id="page29">
+  <div class="page-content">
+    <h1 class="page-title">整合输出</h1>
+    <p class="page-subtitle">客人到家前的准备步骤</p>
+    <div class="section-head"><span class="sh-num">出</span><span class="sh-title">输出 · Steps to prepare</span></div>
+
+    <div class="body-text"><span class="highlight">Output Task</span>: 用 can/could 写出"客人到家前如何准备"的三个步骤。</div>
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_D03" data-knowledge-id="K03" data-section="drill" data-template-id="G-ORDER-SENTENCE" data-interaction-type="order" data-action-type="order" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_D03"><div class="qq-text" style="margin-bottom:8px">排列步骤：把客人到家的准备步骤按顺序排列。</div><div class="order-container" data-order=["First,", "clean", "the", "living", "room."]><div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">First,</span><span class="order-chunk" onclick="orderClick(this)">clean</span><span class="order-chunk" onclick="orderClick(this)">the</span><span class="order-chunk" onclick="orderClick(this)">living</span><span class="order-chunk" onclick="orderClick(this)">room.</span></div><button class="fill-check-btn" onclick="orderSubmit(this)">提交排序</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">输出示范</div>First, we can clean the living room. Second, could you please wash the fruit? Third, we can cook dinner together.</div>
+    
+  </div>
+</div>
+<div class="page" id="page30">
+  <div class="page-content">
+    <h1 class="page-title">诊断检测</h1>
+    <p class="page-subtitle">本课核心达标</p>
+    <div class="section-head"><span class="sh-num">诊</span><span class="sh-title">诊断 · 核心达标检测</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_Di01" data-knowledge-id="K05" data-section="diagnosis" data-template-id="G-POINT-ERROR" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_Di01"><div class="qq-text">___ you please pass me the salt?（最礼貌）</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. Can</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. Could</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. Do</button></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_Di02" data-knowledge-id="K05" data-section="diagnosis" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_Di02"><div class="qq-text" style="margin-bottom:8px">The book is ___ the table.（填 on）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="on" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">诊断说明</div>①选择 can/could 正确用法；②填空补全方位表达。</div>
+    
+  </div>
+</div>
+<div class="page" id="page31">
+  <div class="page-content">
+    <h1 class="page-title">延伸 ①</h1>
+    <p class="page-subtitle">请求与帮助</p>
+    <div class="section-head"><span class="sh-num">延</span><span class="sh-title">延伸 · Can you help?</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_E01" data-knowledge-id="K06" data-section="extend" data-template-id="G-POINT-ERROR" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_E01"><div class="qq-text">— Would you like to join us? — ___.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. Yes, I'd love to</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. Yes, I want</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. No, I wouldn't</button></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_E02" data-knowledge-id="K06" data-section="extend" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_E02"><div class="qq-text" style="margin-bottom:8px">Could you ___ (help) me carry the box?（填原形 help）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="help" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">延伸要点</div>could 更礼貌；Would you like to + 原形；请求回应 Sure/No problem。</div>
+    
+  </div>
+</div>
+<div class="page" id="page32">
+  <div class="page-content">
+    <h1 class="page-title">延伸 ②</h1>
+    <p class="page-subtitle">方位与家庭</p>
+    <div class="section-head"><span class="sh-num">延</span><span class="sh-title">延伸 · Location & rooms</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_E03" data-knowledge-id="K06" data-section="extend" data-template-id="G-DRAG-CLASSIFY" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="recognition" data-scorable="true" data-qid="LMX_L05_E03"><div class="qq-text" style="margin-bottom:8px">拖词填空：The cat is ___ the table.（under）</div><div class="drag-container" data-order=["under"]><div class="drag-target"><span class="drag-slot" onclick="dragPlace(this)"></span> </div><div class="drag-words"><span class="drag-word" onclick="dragSelect(this)">on</span><span class="drag-word" onclick="dragSelect(this)">under</span><span class="drag-word" onclick="dragSelect(this)">in</span></div><button class="fill-check-btn" onclick="dragSubmit(this)">提交</button></div></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_E04x" data-knowledge-id="K06" data-section="extend" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_E04x"><div class="qq-text" style="margin-bottom:8px">复数方位：Where ___ your keys?（填 are）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="are" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">延伸要点</div>in front of/behind/next to 方位；Where is/are 问答。</div>
+    
+  </div>
+</div>
+<div class="page" id="page33">
+  <div class="page-content">
+    <h1 class="page-title">延伸 ③</h1>
+    <p class="page-subtitle">新词运用</p>
+    <div class="section-head"><span class="sh-num">延</span><span class="sh-title">延伸 · New words in use</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_E05x" data-knowledge-id="K06" data-section="extend" data-template-id="G-POINT-ERROR" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_E05x"><div class="qq-text">Seventy ___ of the students like milk.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. point</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. result</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. television</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">D. percent</button></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_E06" data-knowledge-id="K06" data-section="extend" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_E06"><div class="qq-text" style="margin-bottom:8px">填空：We can play games ___（online）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="online" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">延伸要点</div>result/percent/online/television 在语境中运用。</div>
+    
+  </div>
+</div>
+<div class="page" id="page34">
+  <div class="page-content">
+    <h1 class="page-title">延伸 ④</h1>
+    <p class="page-subtitle">连线与排序</p>
+    <div class="section-head"><span class="sh-num">延</span><span class="sh-title">延伸 · Link & Order</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_E07x" data-knowledge-id="K06" data-section="extend" data-template-id="G-LINK-RELATION" data-interaction-type="link" data-action-type="link" data-cognitive-level="recognition" data-scorable="true" data-qid="LMX_L05_E07x"><div class="link-container"><div class="qq-text" style="margin-bottom:8px">连线：左栏问题与右栏方位回答</div><div class="ec-grid"><div class="ec-left link-left"><div class="link-item" data-pair="1" onclick="linkClick(this)">Where is the milk?</div><div class="link-item" data-pair="2" onclick="linkClick(this)">Where are the keys?</div></div><div class="ec-right link-right"><div class="link-item" data-pair="1" onclick="linkClick(this)">It's in the fridge.</div><div class="link-item" data-pair="2" onclick="linkClick(this)">They're on the table.</div><div class="link-item" data-pair="3" onclick="linkClick(this)">It's under the bed.</div></div></div></div></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_E08" data-knowledge-id="K06" data-section="extend" data-template-id="G-ORDER-SENTENCE" data-interaction-type="order" data-action-type="order" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_E08"><div class="qq-text" style="margin-bottom:8px">排列语序：钥匙在厨房的架子上。</div><div class="order-container" data-order=["The", "keys", "are", "on", "the", "shelf."]><div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">The</span><span class="order-chunk" onclick="orderClick(this)">keys</span><span class="order-chunk" onclick="orderClick(this)">are</span><span class="order-chunk" onclick="orderClick(this)">on</span><span class="order-chunk" onclick="orderClick(this)">the</span><span class="order-chunk" onclick="orderClick(this)">shelf.</span></div><button class="fill-check-btn" onclick="orderSubmit(this)">提交排序</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">延伸要点</div>连线配对家庭场景表达；排序连成完整句子。</div>
+    
+  </div>
+</div>
+<div class="page" id="page35">
+  <div class="page-content">
+    <h1 class="page-title">延伸 ⑤</h1>
+    <p class="page-subtitle">拖拽与拼写</p>
+    <div class="section-head"><span class="sh-num">延</span><span class="sh-title">延伸 · Drag & spell</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_E09" data-knowledge-id="K06" data-section="extend" data-template-id="G-DRAG-CLASSIFY" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="recognition" data-scorable="true" data-qid="LMX_L05_E09"><div class="qq-text" style="margin-bottom:8px">拖词：rice 和 bread 都是 ___（food）</div><div class="drag-container" data-order=["food"]><div class="drag-target"><span class="drag-slot" onclick="dragPlace(this)"></span> </div><div class="drag-words"><span class="drag-word" onclick="dragSelect(this)">food</span><span class="drag-word" onclick="dragSelect(this)">drink</span><span class="drag-word" onclick="dragSelect(this)">fruit</span></div><button class="fill-check-btn" onclick="dragSubmit(this)">提交</button></div></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_E10" data-knowledge-id="K06" data-section="extend" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_E10"><div class="qq-text" style="margin-bottom:8px">晚餐是 ___（填 dinner）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="dinner" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">延伸要点</div>拖拽归类食物词；拼写复习词。</div>
+    
+  </div>
+</div>
+<div class="page" id="page36">
+  <div class="page-content">
+    <h1 class="page-title">延伸 ⑥</h1>
+    <p class="page-subtitle">邀请与回应</p>
+    <div class="section-head"><span class="sh-num">延</span><span class="sh-title">延伸 · Invitation</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_E11" data-knowledge-id="K06" data-section="extend" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_E11"><div class="qq-text" style="margin-bottom:8px">Would you like ___ (have) some tea?（填 to have）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="to have" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_E12" data-knowledge-id="K06" data-section="extend" data-template-id="G-ORDER-SENTENCE" data-interaction-type="order" data-action-type="order" data-cognitive-level="application" data-scorable="true" data-qid="LMX_L05_E12"><div class="qq-text" style="margin-bottom:8px">排列：你愿意和我们一起打牌吗？</div><div class="order-container" data-order=["Would", "you", "like", "to", "play", "cards?"]><div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">Would</span><span class="order-chunk" onclick="orderClick(this)">you</span><span class="order-chunk" onclick="orderClick(this)">like</span><span class="order-chunk" onclick="orderClick(this)">to</span><span class="order-chunk" onclick="orderClick(this)">play</span><span class="order-chunk" onclick="orderClick(this)">cards?</span></div><button class="fill-check-btn" onclick="orderSubmit(this)">提交排序</button></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">延伸要点</div>Would you like + to + 原形；I'd love to；拒绝先感谢。</div>
+    
+  </div>
+</div>
+<div class="page" id="page37">
+  <div class="page-content">
+    <h1 class="page-title">延伸 ⑦</h1>
+    <p class="page-subtitle">综合运用</p>
+    <div class="section-head"><span class="sh-num">延</span><span class="sh-title">延伸 · 综合</span></div>
+
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_E13" data-knowledge-id="K06" data-section="extend" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-scorable="true" data-qid="LMX_L05_E13"><div class="qq-text" style="margin-bottom:8px">Television 的中文是 ___（填 电视）</div><div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="电视" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div></div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L05_E14" data-knowledge-id="K06" data-section="extend" data-template-id="G-LINK-RELATION" data-interaction-type="link" data-action-type="link" data-cognitive-level="recognition" data-scorable="true" data-qid="LMX_L05_E14"><div class="link-container"><div class="qq-text" style="margin-bottom:8px">连线：新词与释义</div><div class="ec-grid"><div class="ec-left link-left"><div class="link-item" data-pair="1" onclick="linkClick(this)">point</div><div class="link-item" data-pair="2" onclick="linkClick(this)">body</div></div><div class="ec-right link-right"><div class="link-item" data-pair="1" onclick="linkClick(this)">要点；得分</div><div class="link-item" data-pair="2" onclick="linkClick(this)">身体</div><div class="link-item" data-pair="3" onclick="linkClick(this)">头脑</div></div></div></div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">延伸要点</div>综合运用 can/could/方位/新词。</div>
+    
+  </div>
+</div>
+<div class="page" id="page38">
+  <div class="page-content">
+    <h1 class="page-title">总结回顾</h1>
+    <p class="page-subtitle">本课核心回顾</p>
+    <div class="section-head"><span class="sh-num">结</span><span class="sh-title">总结 · 知识点回顾</span></div>
+
+    <div class="body-text"><span class="highlight">本课掌握清单</span>：can/could 请求帮助；邀请与回应；方位表达；10 新词 + 20 复习词。</div>
+    <div class="kmap">
+      <div class="kmap-node"><div class="kn-title">can</div><div class="kn-body">Can you help me? Sure.</div></div>
+      <div class="kmap-node"><div class="kn-title">could</div><div class="kn-body">Could you please...? Certainly.</div></div>
+      <div class="kmap-node"><div class="kn-title">邀请</div><div class="kn-body">Would you like to...? I'd love to.</div></div>
+      <div class="kmap-node"><div class="kn-title">方位</div><div class="kn-body">on/in/under/next to/between</div></div>
+      <div class="kmap-node"><div class="kn-title">新词</div><div class="kn-body">result·percent·online·television·point·mind·body·such·together·die</div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">口诀</div>can/could 后动词原形；邀请 I'd love to；方位介词定位置。</div>
+    
+  </div>
+</div>
+<div class="page" id="page39">
+  <div class="page-content">
+    <h1 class="page-title">易错点总结</h1>
+    <p class="page-subtitle">高频错因</p>
+    <div class="section-head"><span class="sh-num">错</span><span class="sh-title">易错点 · 高频纠错</span></div>
+
+    <div class="body-text"><span class="highlight">Top 高频错</span>：can 后误加三单/不定式；would like 漏 to；方位介词混淆。</div>
+    <div class="compare-box">
+      <div class="compare-side compare-wrong"><div class="compare-label">❌ 常见错误</div>Can you <b>helps</b> me?<br>Would you like <b>go</b>?<br>The cat is <b>in</b> the table.（应为 on/under）</div>
+      <div class="compare-side compare-correct"><div class="compare-label">✅ 正确写法</div>Can you <b>help</b> me?<br>Would you like <b>to go</b>?<br>The cat is <b>under</b> the table.</div>
+    </div>
+    <div class="note-panel"><div class="np-title">纠错策略</div>① 检查动词是否原形；② 检查 would like 是否加 to；③ 检查方位介词是否合理。</div>
+    
+  </div>
+</div>
+<div class="page" id="page40">
+  <div class="page-content">
+    <h1 class="page-title">下阶段计划</h1>
+    <p class="page-subtitle">学习建议</p>
+    <div class="section-head"><span class="sh-num">计</span><span class="sh-title">下阶段 · 巩固计划</span></div>
+
+    <div class="body-text"><span class="highlight">课后任务</span>：① A4 纸记 30 词；② 用 can/could 各写一句请求；③ 完成 70 词左右"我的家"短文。</div>
+    <div class="kp-grid">
+      <div class="kp-item"><span class="kp-dot"></span><span class="kp-key">词汇</span><span class="kp-desc">10 新词会拼会造句，20 复习词会辨认</span></div>
+      <div class="kp-item"><span class="kp-dot"></span><span class="kp-key">语法</span><span class="kp-desc">can/could 请求与回应，邀请 I'd love to</span></div>
+      <div class="kp-item"><span class="kp-dot"></span><span class="kp-key">阅读</span><span class="kp-desc">三篇家庭阅读，会定位证据与概括主旨</span></div>
+      <div class="kp-item"><span class="kp-dot"></span><span class="kp-key">输出</span><span class="kp-desc">写"客人到家前如何准备"步骤说明</span></div>
+    </div>
+    <div class="note-panel"><div class="np-title">下节课</div>Unit 2 家庭合作与社区：borrow, treasure, hunt, lift 等新词。</div>
+    
+  </div>
+</div>
+<div class="page" id="page41">
+  <div class="page-content">
+    <h1 class="page-title">口诀总览</h1>
+    <p class="page-subtitle">速记口诀</p>
+    <div class="section-head"><span class="sh-num">口</span><span class="sh-title">口诀 · 快速记忆</span></div>
+
+    <div class="grid-2">
+      <div class="rule-card rc-zhug"><strong>🔑 can/could</strong><br>can/could 后接原形，疑问把它提前，could 更礼貌。<br><em>Can you help? / Could you please?</em></div>
+      <div class="rule-card rc-bin"><strong>🔑 邀请回应</strong><br>Would like to 加原形，I'd love to 表愿意。<br><em>Would you like to join us?</em></div>
+      <div class="rule-card rc-xing"><strong>🔑 方位词</strong><br>on 上 in 里 under 下，next to 紧挨着。<br><em>It's on the sofa.</em></div>
+      <div class="rule-card rc-ming"><strong>🔑 家庭场景</strong><br>living room 客厅，kitchen 厨房，bedroom 卧室。<br><em>We watch TV in the living room.</em></div>
+    </div>
+    <div class="note-panel"><div class="np-title">倒计时</div>本课 30 词 + 3 篇阅读，请按口诀当日复习。</div>
+    
+  </div>
+</div>
+<div class="page" id="page42">
+  <div class="page-content">
+    <h1 class="page-title">结束</h1>
+    <p class="page-subtitle">本课达成</p>
+    <div class="section-head"><span class="sh-num">毕</span><span class="sh-title">结课 · 达成回顾</span></div>
+
+    <div class="cover-wrap">
+      <div class="cover-badge">第05课时 · 完成</div>
+      <div class="cover-title">Home Sweet Home</div>
+      <div class="cover-sub">祝贺你完成第 5 课！</div>
+      <div class="cover-tagline">🏠 家庭空间 · 🤝 接待客人 · 🗣️ 请求帮助 · ✅ 诊断达标</div>
+      <div class="cover-info">
+        <div class="cover-info-num"><div class="ci-label">新词</div><div class="ci-val">10</div></div>
+        <div class="cover-info-num"><div class="ci-label">复习词</div><div class="ci-val">20</div></div>
+        <div class="cover-info-num"><div class="ci-label">阅读</div><div class="ci-val">3篇</div></div>
+        <div class="cover-info-num"><div class="ci-label">掌握</div><div class="ci-val">90+</div></div>
+      </div>
+      <div class="cover-emoji">🏆🏠🎉</div>
+    </div>
+    
+  </div>
+</div>
+</div><!-- /pages-container -->
+
+<!-- 底部HUD -->
+<div class="bottom-hud">
+  <button class="hud-btn" id="prevBtn" onclick="prevPage()">◀ 上一页</button>
+  <div class="hud-progress"><div class="hud-progress-bar" id="progressBar"></div></div>
+  <div class="hud-page" id="pageCounter">1 / 42</div>
+  <div class="hud-progress"><div class="hud-progress-bar" id="progressBar2"></div></div>
+  <button class="hud-btn" id="nextBtn" onclick="nextPage()">下一页 ▶</button>
+</div>
+
+<!-- 底部导航标签条 -->
+<div class="nav-pills" id="navPills">
+<div class="nav-pill active" onclick="goToPage(1)">封面</div>
+<div class="nav-pill" onclick="goToPage(2)">地图</div>
+<div class="nav-pill" onclick="goToPage(3)">导入</div>
+<div class="nav-pill" onclick="goToPage(4)">语法can</div>
+<div class="nav-pill" onclick="goToPage(5)">语法could</div>
+<div class="nav-pill" onclick="goToPage(6)">邀请回应</div>
+<div class="nav-pill" onclick="goToPage(7)">方位</div>
+<div class="nav-pill" onclick="goToPage(8)">练习A</div>
+<div class="nav-pill" onclick="goToPage(9)">练习B</div>
+<div class="nav-pill" onclick="goToPage(10)">练习C</div>
+<div class="nav-pill" onclick="goToPage(11)">新词1</div>
+<div class="nav-pill" onclick="goToPage(12)">新词2</div>
+<div class="nav-pill" onclick="goToPage(13)">新词3</div>
+<div class="nav-pill" onclick="goToPage(14)">复习1</div>
+<div class="nav-pill" onclick="goToPage(15)">复习2</div>
+<div class="nav-pill" onclick="goToPage(16)">复习3</div>
+<div class="nav-pill" onclick="goToPage(17)">复习4</div>
+<div class="nav-pill" onclick="goToPage(18)">词练A</div>
+<div class="nav-pill" onclick="goToPage(19)">词练B</div>
+<div class="nav-pill" onclick="goToPage(20)">词练C</div>
+<div class="nav-pill" onclick="goToPage(21)">对话1</div>
+<div class="nav-pill" onclick="goToPage(22)">对话2</div>
+<div class="nav-pill" onclick="goToPage(23)">读A</div>
+<div class="nav-pill" onclick="goToPage(24)">读A题</div>
+<div class="nav-pill" onclick="goToPage(25)">读B</div>
+<div class="nav-pill" onclick="goToPage(26)">读B题</div>
+<div class="nav-pill" onclick="goToPage(27)">读C</div>
+<div class="nav-pill" onclick="goToPage(28)">读C题</div>
+<div class="nav-pill" onclick="goToPage(29)">输出</div>
+<div class="nav-pill" onclick="goToPage(30)">诊断</div>
+<div class="nav-pill" onclick="goToPage(31)">延1</div>
+<div class="nav-pill" onclick="goToPage(32)">延2</div>
+<div class="nav-pill" onclick="goToPage(33)">延3</div>
+<div class="nav-pill" onclick="goToPage(34)">延4</div>
+<div class="nav-pill" onclick="goToPage(35)">延5</div>
+<div class="nav-pill" onclick="goToPage(36)">延6</div>
+<div class="nav-pill" onclick="goToPage(37)">延7</div>
+<div class="nav-pill" onclick="goToPage(38)">总结</div>
+<div class="nav-pill" onclick="goToPage(39)">易错</div>
+<div class="nav-pill" onclick="goToPage(40)">计划</div>
+<div class="nav-pill" onclick="goToPage(41)">口诀</div>
+<div class="nav-pill" onclick="goToPage(42)">结束</div>
+</div>
+
+<script>
+
+/* ==== Web Audio ==== */
+var audioCtx=null;
+function initAudio(){if(!audioCtx){try{audioCtx=new(window.AudioContext||window.webkitAudioContext)();}catch(e){}}if(audioCtx&&audioCtx.state==='suspended'){audioCtx.resume();}}
+function playCorrect(){initAudio();if(!audioCtx)return;[523.25,659.25,783.99].forEach(function(f,i){var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='triangle';o.frequency.value=f;g.gain.setValueAtTime(0,audioCtx.currentTime+i*.12);g.gain.linearRampToValueAtTime(.2,audioCtx.currentTime+i*.12+.01);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+i*.12+.1);o.connect(g);g.connect(audioCtx.destination);o.start(audioCtx.currentTime+i*.12);o.stop(audioCtx.currentTime+i*.12+.1);});}
+function playError(){initAudio();if(!audioCtx)return;[392,261.63].forEach(function(f,i){var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='square';o.frequency.value=f;g.gain.setValueAtTime(0,audioCtx.currentTime+i*.25);g.gain.linearRampToValueAtTime(.15,audioCtx.currentTime+i*.25+.01);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+i*.25+.2);o.connect(g);g.connect(audioCtx.destination);o.start(audioCtx.currentTime+i*.25);o.stop(audioCtx.currentTime+i*.25+.2);});}
+function playPageTurn(){initAudio();if(!audioCtx)return;var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.setValueAtTime(800,audioCtx.currentTime);o.frequency.exponentialRampToValueAtTime(400,audioCtx.currentTime+.08);g.gain.setValueAtTime(.15,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.08);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.08);}
+
+/* ==== IndexedDB ==== */
+var db=null,DB_NAME='EnglishCoursewareDB',DB_VERSION=1,STORE_NAME='answerRecords';
+var studentId='stu_lmx',sessionId='L05_'+new Date().toISOString().slice(0,10).replace(/-/g,'');
+var answerRecords=[];
+function initDB(){if(!window.indexedDB)return;var r=indexedDB.open(DB_NAME,DB_VERSION);r.onerror=function(e){};r.onsuccess=function(e){db=e.target.result;loadExistingRecords();};r.onupgradeneeded=function(e){db=e.target.result;if(!db.objectStoreNames.contains(STORE_NAME)){var s=db.createObjectStore(STORE_NAME,{keyPath:'event_id'});s.createIndex('student_id','student_id',{unique:false});s.createIndex('question_id','question_id',{unique:false});s.createIndex('session_id','session_id',{unique:false});}};}
+function loadExistingRecords(){if(!db)return;var tx=db.transaction([STORE_NAME],'readonly');var s=tx.objectStore(STORE_NAME);var idx=s.index('session_id');var r=idx.getAll(sessionId);r.onsuccess=function(e){answerRecords=e.target.result||[];updateSyncStatus();};}
+function saveAnswer(qid,sa,ca,ok,att,tu,hu){if(!db)return;var eid=studentId+'_'+sessionId+'_'+qid+'_'+(att||1);var rec={event_id:eid,student_id:studentId,session_id:sessionId,question_id:qid,attempt_no:att||1,student_answer:sa,correct_answer:ca,is_correct:ok,time_used:tu||0,hint_used:hu||false,timestamp:new Date().toISOString(),synced:'pending',sync_status:'pending'};var tx=db.transaction([STORE_NAME],'readwrite');tx.objectStore(STORE_NAME).put(rec);answerRecords.push(rec);updateSyncStatus();}
+function updateSyncStatus(){var p=answerRecords.filter(function(r){return r.sync_status==='pending';}).length;var d=document.getElementById('syncDot'),t=document.getElementById('syncText');if(!d)return;if(p===0){d.className='sync-dot';t.textContent='本地已保存 ('+answerRecords.length+'条)';}else{d.className='sync-dot pending';t.textContent='待同步 ('+p+'/'+answerRecords.length+')';}}
+function exportData(e){if(e)e.stopPropagation();if(answerRecords.length===0){alert('暂无答题数据可导出');return;}var json=JSON.stringify(answerRecords,null,2);var csv=convertToCSV(answerRecords);var jb=new Blob([json],{type:'application/json'});var cb=new Blob(['\uFEFF'+csv],{type:'text/csv'});var jl=document.createElement('a');jl.href=URL.createObjectURL(jb);jl.download='L05_answers.json';jl.click();setTimeout(function(){var cl=document.createElement('a');cl.href=URL.createObjectURL(cb);cl.download='L05_answers.csv';cl.click();},300);}
+function convertToCSV(records){var h=['event_id','student_id','session_id','question_id','attempt_no','student_answer','correct_answer','is_correct','time_used','hint_used','sync_status','timestamp'];var csv=h.join(',')+'\n';records.forEach(function(r){csv+=h.map(function(f){var v=(f==='sync_status')?(r.sync_status||r.synced||'pending'):(r[f]!==undefined?String(r[f]):'');if(v.indexOf(',')!==-1||v.indexOf('"')!==-1){v='"'+v.replace(/"/g,'""')+'"';}return v;}).join(',')+'\n';});return csv;}
+
+/* ==== 页面导航 ==== */
+var currentPage=1,totalPages=42;
+function goToPage(n){if(n<1||n>totalPages)return;initAudio();var op=document.getElementById('page'+currentPage),np=document.getElementById('page'+n);if(op){op.classList.remove('active');op.scrollTop=0;}if(np){np.classList.add('active');np.scrollTop=0;}currentPage=n;updateNav();updateCounter();playPageTurn();}
+function nextPage(){if(currentPage<totalPages)goToPage(currentPage+1);}
+function prevPage(){if(currentPage>1)goToPage(currentPage-1);}
+function updateNav(){var pills=document.querySelectorAll('.nav-pill');pills.forEach(function(p,i){if(i+1===currentPage)p.classList.add('active');else p.classList.remove('active');});var pb=document.getElementById('progressBar'),pb2=document.getElementById('progressBar2');if(pb)pb.style.width=(currentPage/totalPages*100)+'%';if(pb2)pb2.style.width=(currentPage/totalPages*100)+'%';var pv=document.getElementById('prevBtn'),nv=document.getElementById('nextBtn');if(pv)pv.disabled=currentPage<=1;if(nv)nv.disabled=currentPage>=totalPages;}
+function updateCounter(){document.getElementById('pageCounter').textContent=currentPage+' / '+totalPages;}
+
+/* ==== 翻页click（含豁免名单） ==== */
+document.addEventListener('click',function(e){
+  if(e.target.closest('.quiz-opt')||e.target.closest('.game-option')||
+     e.target.closest('.fill-check-btn')||e.target.closest('.fill-input')||
+     e.target.closest('.nav-pill')||e.target.closest('.vocab-card')||
+     e.target.closest('.cover-wrap')||e.target.closest('.card')||
+     e.target.closest('.modal-content')||e.target.closest('.export-btn')||
+     e.target.closest('.drag-container')||e.target.closest('.link-container')||
+     e.target.closest('.order-container')||
+     e.target.closest('button')||e.target.closest('input')||
+     e.target.closest('textarea')||e.target.closest('.hud-btn')||
+     e.target.closest('.top-bar')||e.target.closest('.bottom-hud')||
+     e.target.closest('.nav-pills')||e.target.closest('.evidence-task')||
+     e.target.closest('.drag-word')||e.target.closest('.drag-slot')||
+     e.target.closest('.link-item')||e.target.closest('.order-chunk')) return;
+  var c=document.getElementById('pagesContainer');if(!c)return;
+  var r=c.getBoundingClientRect();var x=e.clientX-r.left;
+  if(x<r.width/2){prevPage();}else{nextPage();}
+});
+
+/* ==== 键盘导航 ==== */
+document.addEventListener('keydown',function(e){if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp'){prevPage();}
+  else if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){e.preventDefault();nextPage();}
+  else if(e.key==='f'||e.key==='F'){if(!document.fullscreenElement)document.documentElement.requestFullscreen();else document.exitFullscreen();}
+});
+
+/* ==== 弹窗 ==== */
+function closeModal(e){if(e&&e.target!==document.getElementById('modalOverlay'))return;document.getElementById('modalOverlay').classList.remove('show');}
+
+/* ==== 动画 ==== */
+function burst(el){var r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;for(var i=0;i<14;i++){var p=document.createElement('div');p.className='burst-p';var a=Math.random()*6.283,d=50+Math.random()*70;p.style.left=cx+'px';p.style.top=cy+'px';p.style.setProperty('--dx',(Math.cos(a)*d)+'px');p.style.setProperty('--dy',(Math.sin(a)*d)+'px');p.style.background=(Math.random()<.5?'#2563EB':'#1D4ED8');document.body.appendChild(p);(function(x){setTimeout(function(){x.remove();},700);})(p);}}
+function shake(el){el.style.animation='none';void el.offsetWidth;el.style.animation='shake .4s';}
+
+/* ==== 选择题判题 ==== */
+function checkOpt(btn){
+  if(btn&&btn.currentTarget&&btn.currentTarget.classList&&btn.currentTarget.classList.contains('quiz-opt'))btn=btn.currentTarget;
+  var q=btn.parentNode;if(q.dataset.done)return;q.dataset.done='1';
+  var opts=q.querySelectorAll('.quiz-opt');
+  for(var i=0;i<opts.length;i++)opts[i].classList.add('locked');
+  var ok=btn.dataset.correct==='1';
+  if(typeof saveAnswer==='function'&&q.dataset.qid){
+    var qid=q.dataset.qid,ca='';
+    for(var j=0;j<opts.length;j++){if(opts[j].dataset.correct==='1')ca=opts[j].textContent.replace(/^[A-E]\.\s*/,'').trim();}
+    saveAnswer(qid,btn.textContent.replace(/^[A-E]\.\s*/,'').trim(),ca,ok,parseInt(q.dataset.attempt||'1',10),0,false);
+  }
+  if(ok){btn.classList.add('opt-correct');playCorrect();burst(btn);}
+  else{q.dataset.wrong='1';btn.classList.add('opt-wrong');playError();shake(btn);
+    for(var i=0;i<opts.length;i++){if(opts[i].dataset.correct==='1')opts[i].classList.add('opt-correct');}
+    var h=q.querySelector('.et-undo-hint');
+    if(!h){h=document.createElement('div');h.className='et-undo-hint';h.onclick=function(ev){ev.stopPropagation();};q.appendChild(h);}
+    h.textContent='答错后双击可撤销回答';
+  }
+}
+function undoQuiz(q){var opts=q.querySelectorAll('.quiz-opt');for(var i=0;i<opts.length;i++)opts[i].classList.remove('opt-correct','opt-wrong','locked');delete q.dataset.done;delete q.dataset.wrong;q.dataset.attempt=String(parseInt(q.dataset.attempt||'1',10)+1);var h=q.querySelector('.et-undo-hint');if(h){h.textContent='已撤销，请重答';setTimeout(function(){if(h.parentNode)h.parentNode.removeChild(h);},3000);}}
+document.addEventListener('dblclick',function(e){var q=e.target.closest('.quiz-q');if(q&&q.dataset.done==='1'&&q.dataset.wrong==='1')undoQuiz(q);});
+
+/* ==== 填空判题 ==== */
+function checkFill(btn){
+  var wrap=btn.closest('.fill-input-wrap')||btn.parentNode;
+  var input=wrap.querySelector('input.fill-input');
+  if(!input||input.dataset.done)return;
+  var val=input.value.trim().toLowerCase();
+  var correct=(input.getAttribute('data-correct')||'').toLowerCase();
+  if(!val){input.focus();return;}
+  input.dataset.done='1';
+  var ok=val===correct;
+  if(ok){input.classList.add('correct');if(typeof playCorrect==='function')playCorrect();}
+  else{input.classList.add('wrong');if(typeof playError==='function')playError();
+    var q=input.closest('.quiz-q,.evidence-task');if(q){var a=document.createElement('div');a.className='fill-answer show';a.textContent='正确答案：'+correct;q.appendChild(a);}}
+  if(typeof saveAnswer==='function'){var qid='';var p=input.closest('[data-question-id]');if(p)qid=p.getAttribute('data-question-id');else{var pq=input.closest('.quiz-q');if(pq&&pq.dataset.qid)qid=pq.dataset.qid;}saveAnswer(qid,val,correct,ok,1,0,false);}
+}
+
+/* ==== 排序判题 ==== */
+function orderClick(el){var c=el.closest('.order-container');var a=c.querySelector('.order-chunk.active');if(a&&a!==el)a.classList.remove('active');el.classList.toggle('active');}
+function orderSubmit(btn){var c=btn.closest('.order-container');var chunks=c.querySelectorAll('.order-chunk');var order=c.getAttribute('data-order');if(!order)return;var correct=JSON.parse(order);var userOrder=Array.from(chunks).map(function(c){return c.textContent.trim();});var ok=userOrder.length===correct.length&&userOrder.every(function(v,i){return v===correct[i];});var r=c.querySelector('.order-result');if(!r){r=document.createElement('div');r.className='order-result';c.appendChild(r);}if(ok){r.textContent='✓ 排序正确！';r.className='order-result correct';chunks.forEach(function(c){c.classList.add('placed');});if(typeof playCorrect==='function')playCorrect();}else{r.textContent='✗ 顺序不对，再试试。';r.className='order-result wrong';if(typeof playError==='function')playError();}var p=c.closest('[data-question-id]');var qid=p?p.getAttribute('data-question-id'):'';if(typeof saveAnswer==='function')saveAnswer(qid,userOrder.join('|'),correct.join('|'),ok,1,0,false);}
+
+/* ==== 拖拽判题 ==== */
+function dragSelect(el){var c=el.closest('.drag-container');var a=c.querySelector('.drag-word.selected');if(a===el){el.classList.remove('selected');return;}if(a)a.classList.remove('selected');el.classList.add('selected');}
+function dragPlace(el){var c=el.closest('.drag-container');var s=c.querySelector('.drag-word.selected');if(!s)return;el.textContent=s.textContent;el.dataset.value=s.textContent;el.classList.add('filled');s.classList.add('used');s.classList.remove('selected');}
+function dragSubmit(btn){var c=btn.closest('.drag-container');var slots=c.querySelectorAll('.drag-slot');var order=c.getAttribute('data-order');if(!order)return;var correct=JSON.parse(order);var allFilled=true,ok=true;slots.forEach(function(s,i){if(!s.dataset.value){allFilled=false;return;}if(s.dataset.value===correct[i]){s.classList.add('correct');}else{s.classList.add('wrong');ok=false;}});if(!allFilled){var r=c.querySelector('.drag-result');if(!r){r=document.createElement('div');r.className='drag-result';c.appendChild(r);}r.textContent='请先填入所有空位';return;}var r=c.querySelector('.drag-result');if(!r){r=document.createElement('div');r.className='drag-result';c.appendChild(r);}if(ok){r.textContent='✓ 全部正确！';r.className='drag-result correct';if(typeof playCorrect==='function')playCorrect();}else{r.textContent='✗ 有错误，红色标记处需修改。';r.className='drag-result wrong';if(typeof playError==='function')playError();}var p=c.closest('[data-question-id]');var qid=p?p.getAttribute('data-question-id'):'';if(typeof saveAnswer==='function'){var ua=Array.from(slots).map(function(s){return s.dataset.value||'';}).join('|');saveAnswer(qid,ua,correct.join('|'),ok,1,0,false);}}
+
+/* ==== 连线判题 ==== */
+function linkClick(el){var c=el.closest('.link-container');var sel=c.querySelector('.link-item.selected');if(sel===el){el.classList.remove('selected');return;}if(sel){var leftEl=sel.closest('.link-left')?sel:el;var rightEl=sel.closest('.link-right')?sel:el;if(leftEl===rightEl){el.classList.remove('selected');return;}sel.classList.remove('selected');el.classList.remove('selected');leftEl.classList.add('matched');rightEl.classList.add('matched');var lp=leftEl.getAttribute('data-pair'),rp=rightEl.getAttribute('data-pair');if(lp===rp){leftEl.classList.add('correct');rightEl.classList.add('correct');if(typeof playCorrect==='function')playCorrect();}else{leftEl.classList.add('wrong-match');rightEl.classList.add('wrong-match');setTimeout(function(){leftEl.classList.remove('matched','wrong-match');rightEl.classList.remove('matched','wrong-match');},800);if(typeof playError==='function')playError();}var unmatched=c.querySelectorAll('.link-item:not(.matched)');if(unmatched.length===0){var li=c.querySelectorAll('.link-left .link-item');var allCorrect=c.querySelectorAll('.link-item.correct').length===li.length*2;var r=c.querySelector('.link-result');if(!r){r=document.createElement('div');r.className='link-result';c.appendChild(r);}if(allCorrect){r.textContent='✓ 全部配对正确！';r.className='link-result correct';}else{r.textContent='✗ 有配对错误。';r.className='link-result wrong';c.querySelectorAll('.link-item.matched').forEach(function(m){m.classList.remove('matched','correct','wrong-match');});}var p=c.closest('[data-question-id]');var qid=p?p.getAttribute('data-question-id'):'';if(typeof saveAnswer==='function')saveAnswer(qid,'completed','all',allCorrect,1,0,false);}}else{el.classList.add('selected');}}
+
+/* ==== 初始化 ==== */
+initDB();
+updateCounter();
+updateNav();
+</script>
+</body>
+</html>

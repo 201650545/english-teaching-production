@@ -1,0 +1,326 @@
+{
+  "lesson": "L14",
+  "reform": "3+2 (3 无选项 fill-input + 2 有选项 quiz-opt)",
+  "scope": "阅读 A/B/C 篇 · 每篇 5 题",
+  "spec": "01_课件格式规范.md §3.18",
+  "contract": "契约\\1_课程概要.md 词汇池(20词)/语法上限(G37 be-have, G38 why-because, G39 形容词)",
+  "passages": {
+    "A": {
+      "title": "Describing My Favorite Teacher",
+      "questions": [
+        {
+          "qid": "Q025",
+          "question_id": "L14A01",
+          "type": "fill",
+          "question": "What is Miss Wang's height?",
+          "canonical_answer": "medium height",
+          "minimum_acceptable_answer": "medium height",
+          "accepted_answers": [
+            "medium height",
+            "of medium height",
+            "she is of medium height",
+            "she is medium height"
+          ],
+          "required_vocab": [
+            "medium",
+            "height"
+          ],
+          "required_grammar": "G37 be + 形容词/介词短语描述身高（of medium height），未超上限"
+        },
+        {
+          "qid": "Q026",
+          "question_id": "L14A02",
+          "type": "fill",
+          "question": "What does Miss Wang wear?",
+          "canonical_answer": "glasses",
+          "minimum_acceptable_answer": "glasses",
+          "accepted_answers": [
+            "glasses",
+            "she wears glasses",
+            "a pair of glasses"
+          ],
+          "required_vocab": [
+            "glass"
+          ],
+          "required_grammar": "G37 wear + glasses（答名词短语即可），未超上限"
+        },
+        {
+          "qid": "Q027",
+          "question_id": null,
+          "type": "opt",
+          "question": "What does Miss Wang look like?",
+          "canonical_answer": "She is of medium height and thin.",
+          "correct_index": 2,
+          "options": [
+            "She is tall and heavy.",
+            "She is short and has curly hair.",
+            "She is of medium height and thin."
+          ],
+          "open_degree": "综合概括细节（多项特征叠加），答案边界宽 → 有选项",
+          "required_vocab": [
+            "medium",
+            "thin",
+            "hair",
+            "tall",
+            "short",
+            "curly"
+          ],
+          "required_grammar": "G37"
+        },
+        {
+          "qid": "Q028",
+          "question_id": "L14A04",
+          "type": "fill",
+          "question": "Why does the writer like Miss Wang?",
+          "canonical_answer": "because she is very friendly",
+          "minimum_acceptable_answer": "she is friendly",
+          "accepted_answers": [
+            "because she is very friendly",
+            "because she is friendly",
+            "she is very friendly",
+            "she is friendly",
+            "friendly"
+          ],
+          "required_vocab": [
+            "friendly（原文词，L1-13 基础形容词，可原文摘录）"
+          ],
+          "required_grammar": "G38 because 因果（课上核心考点）"
+        },
+        {
+          "qid": "Q029",
+          "question_id": null,
+          "type": "opt",
+          "question": "What is the main idea of this passage?",
+          "canonical_answer": "Miss Wang is the writer's favorite teacher because she is kind and friendly.",
+          "correct_index": 0,
+          "options": [
+            "Miss Wang is the writer's favorite teacher because she is kind and friendly.",
+            "Miss Wang is tall and heavy.",
+            "The writer wants a new teacher."
+          ],
+          "open_degree": "主旨大意 → 有选项",
+          "required_vocab": [
+            "person",
+            "kind",
+            "friendly"
+          ],
+          "required_grammar": "G38"
+        }
+      ]
+    },
+    "B": {
+      "title": "The New Art Teacher",
+      "questions": [
+        {
+          "qid": "Q030",
+          "question_id": "L14B01",
+          "type": "fill",
+          "question": "What is Mr. Lee's hair like?",
+          "canonical_answer": "curly hair",
+          "minimum_acceptable_answer": "curly hair",
+          "accepted_answers": [
+            "curly",
+            "curly hair",
+            "his hair is curly",
+            "he has curly hair"
+          ],
+          "required_vocab": [
+            "curly",
+            "hair"
+          ],
+          "required_grammar": "G37 has + 名词 / be + 形容词"
+        },
+        {
+          "qid": "Q031",
+          "question_id": "L14B02",
+          "type": "fill",
+          "question": "What does Mr. Lee teach us to draw?",
+          "canonical_answer": "persons and animals",
+          "minimum_acceptable_answer": "persons",
+          "accepted_answers": [
+            "persons and animals",
+            "people and animals",
+            "animals and persons",
+            "persons",
+            "animals"
+          ],
+          "required_vocab": [
+            "person"
+          ],
+          "required_grammar": "G37 名词短语（原文可提取）"
+        },
+        {
+          "qid": "Q032",
+          "question_id": null,
+          "type": "opt",
+          "question": "What does the word \"artist\" mean in this passage?",
+          "canonical_answer": "a person who draws pictures",
+          "correct_index": 1,
+          "options": [
+            "a person who sings songs",
+            "a person who draws pictures",
+            "a person who is short"
+          ],
+          "open_degree": "开放性词义判断 → 有选项",
+          "required_vocab": [
+            "artist",
+            "person"
+          ],
+          "required_grammar": "G39 形容词/名词基础"
+        },
+        {
+          "qid": "Q033",
+          "question_id": "L14B04",
+          "type": "fill",
+          "question": "Why do we like Mr. Lee?",
+          "canonical_answer": "because he is very kind and funny",
+          "minimum_acceptable_answer": "he is kind and funny",
+          "accepted_answers": [
+            "because he is very kind and funny",
+            "because he is kind and funny",
+            "he is very kind and funny",
+            "he is kind and funny",
+            "kind and funny"
+          ],
+          "required_vocab": [
+            "kind",
+            "funny（原文词，L1-13 基础形容词，可原文摘录）"
+          ],
+          "required_grammar": "G38 because 因果（课上核心考点）"
+        },
+        {
+          "qid": "Q034",
+          "question_id": null,
+          "type": "opt",
+          "question": "How do the students feel about Mr. Lee?",
+          "canonical_answer": "They are happy and like his class.",
+          "correct_index": 0,
+          "options": [
+            "They are happy and like his class.",
+            "They want him to leave.",
+            "They think his class is boring."
+          ],
+          "open_degree": "推断（由 We are happy / Every student likes his class 概括）→ 有选项",
+          "required_vocab": [
+            "actor",
+            "artist"
+          ],
+          "required_grammar": "G37"
+        }
+      ]
+    },
+    "C": {
+      "title": "Why We Look Different",
+      "questions": [
+        {
+          "qid": "Q035",
+          "question_id": "L14C01",
+          "type": "fill",
+          "question": "Why do people look different?",
+          "canonical_answer": "because every person has different height, weight and hair",
+          "minimum_acceptable_answer": "different height, weight and hair",
+          "accepted_answers": [
+            "because every person has different height, weight and hair",
+            "because every person has different height, weight, and hair",
+            "every person has different height, weight and hair",
+            "every person has different height, weight, and hair",
+            "different height, weight and hair",
+            "height, weight and hair"
+          ],
+          "required_vocab": [
+            "height",
+            "weight",
+            "hair"
+          ],
+          "required_grammar": "G38 because 因果（课上核心考点）"
+        },
+        {
+          "qid": "Q036",
+          "question_id": "L14C02",
+          "type": "fill",
+          "question": "What can hair be?",
+          "canonical_answer": "straight or curly",
+          "minimum_acceptable_answer": "straight or curly",
+          "accepted_answers": [
+            "straight or curly",
+            "straight and curly",
+            "curly or straight"
+          ],
+          "required_vocab": [
+            "straight",
+            "curly"
+          ],
+          "required_grammar": "G37 be + 形容词表语"
+        },
+        {
+          "qid": "Q037",
+          "question_id": "L14C03",
+          "type": "fill",
+          "question": "Where does your height come from?",
+          "canonical_answer": "from my parents",
+          "minimum_acceptable_answer": "parents",
+          "accepted_answers": [
+            "from my parents",
+            "from parents",
+            "my parents",
+            "parents",
+            "it is from my parents",
+            "from your parents"
+          ],
+          "required_vocab": [
+            "height",
+            "parents（原文词，可原文摘录）"
+          ],
+          "required_grammar": "G37 基础 be + 介词短语表来源（be from）"
+        },
+        {
+          "qid": "Q038",
+          "question_id": null,
+          "type": "opt",
+          "question": "How does the writer feel about people looking different?",
+          "canonical_answer": "He thinks it is fun and makes everyone special.",
+          "correct_index": 2,
+          "options": [
+            "He thinks it is a problem.",
+            "He thinks people should look the same.",
+            "He thinks it is fun and makes everyone special."
+          ],
+          "open_degree": "态度推断（由 appearance makes you special / fun to learn 概括）→ 有选项",
+          "required_vocab": [
+            "appearance",
+            "person"
+          ],
+          "required_grammar": "G37"
+        },
+        {
+          "qid": "Q039",
+          "question_id": null,
+          "type": "opt",
+          "question": "What is the main idea of this passage?",
+          "canonical_answer": "People look different because of height, weight, hair and more.",
+          "correct_index": 2,
+          "options": [
+            "All people look the same.",
+            "Only tall people are special.",
+            "People look different because of height, weight, hair and more."
+          ],
+          "open_degree": "主旨大意 → 有选项（原 Q016 题面保留，选项轮转）",
+          "required_vocab": [
+            "height",
+            "weight",
+            "hair"
+          ],
+          "required_grammar": "G38"
+        }
+      ]
+    }
+  },
+  "qa_notes": [
+    "每篇 5 题 = 3 fill-input + 2 quiz-opt（3+2 默认配额，无 2+3 弹性需求）",
+    "无选项题均满足：必读文章才能答 + 本等级短答案可作答 + 合理措辞差异已入 accepted_answers",
+    "判分：忽略大小写/首尾空格/连续空格/句末标点，全串精确匹配，禁止关键词包含判分",
+    "placeholder 均为中性提示「输入答案」，无答案/同义/首字母泄漏",
+    "required_vocab 中 friendly/kind/funny/parents 等非本课新词池词均为原文词，学生可原文摘录作答（§3.18.4 允许）",
+    "语法均 ≤ G37/G38/G39，无 will/比较级/完成时/被动"
+  ]
+}

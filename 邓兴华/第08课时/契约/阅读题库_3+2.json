@@ -1,0 +1,166 @@
+{
+  "lesson": "L08",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A/B 各 3 无选项 + 2 有选项（默认 3+2，无需 2+3 弹性标注）",
+  "vocab_pool": [
+    "stay",
+    "visit",
+    "spent",
+    "delicious",
+    "terrible",
+    "cheap",
+    "expensive",
+    "place",
+    "museum",
+    "camp",
+    "beach",
+    "guide",
+    "activity",
+    "decide",
+    "try",
+    "feel",
+    "start",
+    "finish",
+    "enjoy",
+    "ago"
+  ],
+  "grammar_cap": "G19-G21（was/were · did/didn't+规则-ed · yesterday/ago/last）；禁止 will/比较级/最高级/完成时/被动；不规则动词仅限原文摘录",
+  "A篇_Getting_Dressed_for_Yesterdays_Trip": {
+    "RA-01": {
+      "question": "Where did they decide to go yesterday?",
+      "type": "fill",
+      "openness": "地点细节·原文直接提取",
+      "canonical_answer": "the beach",
+      "minimum_acceptable_answer": "the beach",
+      "accepted_answers": [
+        "the beach",
+        "beach",
+        "to the beach",
+        "visit the beach",
+        "we decided to visit the beach"
+      ],
+      "required_vocab": [
+        "beach"
+      ],
+      "required_grammar": "无（名词短语，原文摘录）"
+    },
+    "RA-02": {
+      "question": "What time did they start the trip?",
+      "type": "fill",
+      "openness": "时间细节·原文直接提取",
+      "canonical_answer": "8 a.m.",
+      "minimum_acceptable_answer": "8 a.m.",
+      "accepted_answers": [
+        "8 a.m.",
+        "8:00 a.m.",
+        "8 am",
+        "8:00 am",
+        "8:00am",
+        "8am",
+        "at 8 a.m.",
+        "at 8:00 a.m.",
+        "eight",
+        "eight o'clock"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（时间名词短语，前期已学）"
+    },
+    "RA-03": {
+      "question": "How did the writer feel about the trip?",
+      "type": "fill",
+      "openness": "感受细节·原文直接提取",
+      "canonical_answer": "happy",
+      "minimum_acceptable_answer": "happy",
+      "accepted_answers": [
+        "happy",
+        "very happy",
+        "i felt very happy",
+        "felt very happy"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（形容词；felt 为原文词摘录 §3.18.4.4）"
+    },
+    "RA-04": {
+      "question": "What was NOT mentioned in the passage?",
+      "type": "opt",
+      "openness": "排除/否定细节·开放度高→有选项",
+      "correct": "C",
+      "note": "原文提到了 cheap snacks / a hat，未提及 a guide"
+    },
+    "RA-05": {
+      "question": "What did the writer bring for the trip?",
+      "type": "opt",
+      "openness": "细节提取（多项并列，回答开放度高）→有选项",
+      "correct": "B",
+      "note": "原文：I brought some cheap snacks and water；不需要夹克，未提及 umbrella"
+    }
+  },
+  "B篇_Yesterdays_Trip_to_the_Beach": {
+    "RB-01": {
+      "question": "What did they try first at the beach?",
+      "type": "fill",
+      "openness": "活动细节·原文直接提取",
+      "canonical_answer": "beach volleyball",
+      "minimum_acceptable_answer": "beach volleyball",
+      "accepted_answers": [
+        "beach volleyball",
+        "volleyball",
+        "we tried beach volleyball"
+      ],
+      "required_vocab": [
+        "beach"
+      ],
+      "required_grammar": "无（名词短语，原文摘录）"
+    },
+    "RB-02": {
+      "question": "The word \"memorable\" means ____.",
+      "type": "opt",
+      "openness": "开放性词义判断→有选项",
+      "correct": "B",
+      "note": "memorable = 难忘的（unforgettable）"
+    },
+    "RB-03": {
+      "question": "Why did they decide to go home?",
+      "type": "fill",
+      "openness": "明确因果·原文摘录",
+      "canonical_answer": "because it started to rain",
+      "minimum_acceptable_answer": "it started to rain",
+      "accepted_answers": [
+        "because it started to rain",
+        "it started to rain",
+        "because it rained",
+        "it rained",
+        "the weather became terrible",
+        "because the weather became terrible",
+        "the weather became terrible and it started to rain"
+      ],
+      "required_vocab": [
+        "start"
+      ],
+      "required_grammar": "无（一般过去时规则动词 started/rained 为原文摘录，G20 已学）"
+    },
+    "RB-04": {
+      "question": "How did they feel about the guide's stories?",
+      "type": "fill",
+      "openness": "感受细节·原文直接提取",
+      "canonical_answer": "amazed",
+      "minimum_acceptable_answer": "amazed",
+      "accepted_answers": [
+        "amazed",
+        "we felt amazed",
+        "felt amazed",
+        "amazed by the stories",
+        "we felt amazed by the stories"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（形容词；felt 为原文词摘录 §3.18.4.4）"
+    },
+    "RB-05": {
+      "question": "What can we infer from the passage?",
+      "type": "opt",
+      "openness": "态度推断·开放度高→有选项",
+      "correct": "B",
+      "note": "Although it rained, we enjoyed the trip — 尽管下雨仍享受旅行"
+    }
+  }
+}

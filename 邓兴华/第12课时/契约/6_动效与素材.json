@@ -1,0 +1,104 @@
+{
+  "course": "第12课",
+  "animations": {
+    "css": [
+      {"name": "fadeSlideUp", "definition": "from {opacity:0; transform:translateY(30px)} to {opacity:1; transform:translateY(0)}", "usage": "页面进入、内容块出现"},
+      {"name": "scaleUp", "definition": "from {opacity:0; transform:scale(0.85)} to {opacity:1; transform:scale(1)}", "usage": "卡片缩放出现"},
+      {"name": "bounceIn", "definition": "0%{opacity:0;transform:scale(0.3)} 50%{transform:scale(1.08)} 70%{transform:scale(0.95)} 100%{opacity:1;transform:scale(1)}", "usage": "正确反馈"},
+      {"name": "bpSwing", "definition": "0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)}", "usage": "错误反馈摇摆"},
+      {"name": "pulse", "definition": "0%,100%{transform:scale(1)} 50%{transform:scale(1.05)}", "usage": "高亮脉冲"},
+      {"name": "slideInLeft", "definition": "from {opacity:0; transform:translateX(-40px)} to {opacity:1; transform:translateX(0)}", "usage": "句子行进入"},
+      {"name": "floatY", "definition": "0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)}", "usage": "emoji浮动"},
+      {"name": "shimmer", "definition": "0%{background-position:-200% center} 100%{background-position:200% center}", "usage": "进度条闪光"}
+    ],
+    "additional": [
+      {"name": "articleDrop", "definition": "0%{opacity:0;transform:translateY(-30px)} 100%{opacity:1;transform:translateY(0)}", "usage": "冠词分类下落动画"},
+      {"name": "cartFlow", "definition": "0%{transform:translateX(0);opacity:1} 100%{transform:translateX(60px);opacity:0}", "usage": "点餐加入购物车动画"},
+      {"name": "shakeX", "definition": "0%,100%{transform:translateX(0)} 10%,30%,50%,70%,90%{transform:translateX(-4px)} 20%,40%,60%,80%{transform:translateX(4px)}", "usage": "错误抖动"},
+      {"name": "cardFlyIn", "definition": "0%{opacity:0;transform:translateY(-30px) scale(0.5) rotate(-10deg)} 60%{transform:translateY(5px) scale(1.1) rotate(2deg)} 100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}", "usage": "词卡飞入"},
+      {"name": "mindBranch", "definition": "0%{opacity:0;transform:scale(0.5)} 100%{opacity:1;transform:scale(1)}", "usage": "思维导图分支展开"}
+    ]
+  },
+  "interactions": {
+    "navigation": {
+      "halfScreenClick": true,
+      "pageTurnExemption": ["quiz-q", "quiz-container", "drag-container", "link-container", "order-container"],
+      "answerRevealPriority": true,
+      "keyboardArrows": true,
+      "navPills": true
+    },
+    "quiz": {
+      "type": "checkOpt",
+      "containerResolve": "btn.closest('.quiz-container')||btn.closest('.quiz-q')",
+      "feedback": {
+        "correct": "蓝色✅ + bounceIn动画 + 正确音效",
+        "wrong": "红色❌ + bpSwing动画 + 错误音效"
+      },
+      "undo": {
+        "doubleClick": true,
+        "description": "答错后双击可撤销重答"
+      },
+      "disableAfterAnswer": false,
+      "showCorrectAnswer": true
+    },
+    "dataCollection": {
+      "type": "IndexedDB",
+      "recordAnswer": true,
+      "recordUndo": true,
+      "syncMode": "realtime",
+      "exportFormats": ["json", "csv"]
+    },
+    "phonics": {
+      "type": "checkPhonics",
+      "feedback": "同quiz"
+    },
+    "answerMask": {
+      "type": "toggleMask",
+      "initial": "蓝色遮罩显示'🔍 点击揭晓'",
+      "revealed": "浅蓝色背景显示答案 + 正确音效"
+    }
+  },
+  "interactiveComponents": {
+    "component1": {
+      "name": "冠词分类投掷器",
+      "grammarTag": "G31",
+      "elements": {
+        "scene": ".article-thrower-scene",
+        "nouns": ["egg", "carrot", "onion", "menu", "noodle"],
+        "categories": ["a", "an", "the", "零冠词"]
+      },
+      "logic": {
+        "selectNoun": "选择名词卡片",
+        "judgeArticle": "判断用a/an/the/零冠词",
+        "classify": "实时分类反馈",
+        "highlight": "高亮音素判断依据"
+      }
+    },
+    "component2": {
+      "name": "点餐购物车",
+      "grammarTag": "G32",
+      "elements": {
+        "scene": ".order-cart-scene",
+        "foods": ["tea", "noodles", "beef", "soup", "egg"],
+        "measures": ["a cup of", "a bowl of", "a piece of", "some"]
+      },
+      "logic": {
+        "selectFood": "选择食物",
+        "selectMeasure": "选择量词",
+        "generateOrder": "生成点餐句子",
+        "calcTotal": "计算总价"
+      }
+    }
+  },
+  "audio": {
+    "correct": {"freq": [880, 1100], "duration": [0.15, 0.2], "type": "sine"},
+    "error": {"freq": 220, "duration": 0.3, "type": "sawtooth"},
+    "pageTurn": {"freq": 440, "duration": 0.1, "type": "triangle"},
+    "articleDrop": {"type": "drop-chime", "description": "冠词分类下落音效"}
+  },
+  "assets": {
+    "emojis": ["🥛", "💧", "🧃", "🍵", "☕", "🥩", "🍖", "🥓", "🐟", "🍲", "🥚", "🍜", "🥬", "🥕", "🧅", "📏", "🥣", "💰", "📋", "🧑", "🤔", "😊", "⚡", "🔍", "❓", "💬", "🧩", "✅", "❌"],
+    "images": "none (all CSS/emoji based)",
+    "externalLibs": "none (vanilla JS)"
+  }
+}

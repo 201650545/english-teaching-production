@@ -1,0 +1,148 @@
+{
+  "css_animations": {
+    "fadeSlideUp": "from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}",
+    "scaleUp": "from{opacity:0;transform:scale(0.85)}to{opacity:1;transform:scale(1)}",
+    "bounceIn": "0%{opacity:0;transform:scale(0.3)}50%{transform:scale(1.08)}70%{transform:scale(0.95)}100%{opacity:1;transform:scale(1)}",
+    "bpSwing": "0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}",
+    "pulse": "0%,100%{transform:scale(1)}50%{transform:scale(1.05)}",
+    "slideInLeft": "from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}",
+    "floatY": "0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}",
+    "shimmer": "0%{background-position:-200% center}100%{background-position:200% center}"
+  },
+  "page_transition": {
+    "type": "fadeSlideUp",
+    "duration": "0.5s",
+    "easing": "ease"
+  },
+  "stagger_delays": {
+    "item_card": "0.05s per card",
+    "quiz_q": "0.1s per question",
+    "phonics_card": "0.05s per card",
+    "sentence_row": "0.05s per row",
+    "summary_card": "0.1s per card"
+  },
+  "interactive_effects": {
+    "answer_mask": {
+      "trigger": "click",
+      "animation": "scale(1.03)",
+      "sound": "correct"
+    },
+    "quiz_option_correct": {
+      "animation": "bounceIn 0.4s",
+      "color": "#27AE60",
+      "sound": "correct"
+    },
+    "quiz_option_wrong": {
+      "animation": "bpSwing 0.4s",
+      "color": "#E74C3C",
+      "sound": "error"
+    },
+    "plural_builder": {
+      "button_active": "background:#27AE60;color:#fff;box-shadow:0 4px 12px rgba(39,174,96,0.35)",
+      "plural_switch": "bounceIn 0.6s",
+      "pronunciation_fade": "fadeSlideUp 0.5s"
+    },
+    "room_arranger": {
+      "button_active": "background:#E67E22;color:#fff;box-shadow:0 4px 12px rgba(230,126,34,0.35)",
+      "furniture_move": "bounceIn 0.6s",
+      "sentence_fade": "fadeSlideUp 0.5s"
+    }
+  },
+  "sound_effects": {
+    "correct": {
+      "freq_start": 880,
+      "freq_end": 1100,
+      "duration": 0.15,
+      "type": "sine"
+    },
+    "error": {
+      "freq": 220,
+      "duration": 0.3,
+      "type": "sawtooth"
+    },
+    "page_turn": {
+      "freq": 440,
+      "duration": 0.1,
+      "type": "triangle"
+    }
+  },
+  "brand_colors": {
+    "brand": "#27AE60",
+    "accent": "#E67E22",
+    "bg_start": "#F4F9F4",
+    "bg_end": "#E8F5E9",
+    "success": "#27AE60",
+    "error": "#E74C3C"
+  },
+  "assets": {
+    "emojis": {
+      "room": "🏠",
+      "bed": "🛏️",
+      "table": "🍽️",
+      "chair": "🪑",
+      "desk": "📝",
+      "bookcase": "📚",
+      "sofa": "🛋️",
+      "under": "⬇️",
+      "on": "⬆️",
+      "in": "🔲",
+      "behind": "↩️",
+      "next": "➡️",
+      "everywhere": "🌐",
+      "always": "♾️",
+      "tidy": "✨",
+      "but": "🔀",
+      "messy": "🌀",
+      "habit": "🔄",
+      "clean": "🧹",
+      "keep": "🤲"
+    },
+    "phonics": {
+      "Pp": {
+        "sound": "/p/",
+        "words": [
+          "pen",
+          "pig",
+          "cup",
+          "map"
+        ]
+      },
+      "Qq": {
+        "sound": "/kw/",
+        "words": [
+          "queen",
+          "quick",
+          "quiet",
+          "square"
+        ]
+      },
+      "Rr": {
+        "sound": "/r/",
+        "words": [
+          "red",
+          "run",
+          "room",
+          "rice"
+        ]
+      },
+      "Ss": {
+        "sound": "/s/",
+        "words": [
+          "sun",
+          "bus",
+          "yes",
+          "sit"
+        ]
+      },
+      "Tt": {
+        "sound": "/t/",
+        "words": [
+          "table",
+          "cat",
+          "ten",
+          "foot"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1133 @@
+{
+  "_doc": "李民宪 L07 配套练习内容（培优）· 2026。主题：Unit 3 Same or Different?① 人物差异。含听力20分（独立不计入笔试）+ 阅读30 + 语言运用25 + 综合技能25 + 语法诊断20。无过去时新授测试，语法控制在 比较级-er/more·as...as·人物对比句式(Both/...but.../is more...than) 内。",
+  "listening": {
+    "绑定": "人物差异·性格对比（compare/outgoing/hard-working/perform/prize/attend）",
+    "part1_title": "第一节  听对话选答语（共 5 小题，每小题 1 分）",
+    "part1": {
+      "items": [
+        {
+          "id": "LMX2026_L07_listen_p1_1",
+          "q": "What is the girl's sister like?",
+          "opts": [
+            [
+              "A",
+              "She is shy."
+            ],
+            [
+              "B",
+              "She is outgoing."
+            ],
+            [
+              "C",
+              "She is lazy."
+            ]
+          ],
+          "answer": "B"
+        },
+        {
+          "id": "LMX2026_L07_listen_p1_2",
+          "q": "Who is taller, Tom or Jack?",
+          "opts": [
+            [
+              "A",
+              "Tom."
+            ],
+            [
+              "B",
+              "Jack."
+            ],
+            [
+              "C",
+              "They are the same."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L07_listen_p1_3",
+          "q": "What does the boy like to do?",
+          "opts": [
+            [
+              "A",
+              "Sing."
+            ],
+            [
+              "B",
+              "Draw."
+            ],
+            [
+              "C",
+              "Dance."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L07_listen_p1_4",
+          "q": "Who won the prize?",
+          "opts": [
+            [
+              "A",
+              "The girl."
+            ],
+            [
+              "B",
+              "The boy."
+            ],
+            [
+              "C",
+              "Nobody."
+            ]
+          ],
+          "answer": "A"
+        },
+        {
+          "id": "LMX2026_L07_listen_p1_5",
+          "q": "What are they talking about?",
+          "opts": [
+            [
+              "A",
+              "Their hobbies."
+            ],
+            [
+              "B",
+              "Their homework."
+            ],
+            [
+              "C",
+              "Their friends."
+            ]
+          ],
+          "answer": "A"
+        }
+      ]
+    },
+    "part2_title": "第二节  听对话或独白选答案（共 15 小题，每小题 1 分）",
+    "part2": {
+      "materials": [
+        {
+          "lead": "听下面一段对话，回答第 6 至第 7 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L07_listen_p2_1",
+              "q": "What does the brother look like?",
+              "opts": [
+                [
+                  "A",
+                  "Tall with short hair."
+                ],
+                [
+                  "B",
+                  "Short with long hair."
+                ],
+                [
+                  "C",
+                  "Tall with glasses."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L07_listen_p2_2",
+              "q": "What does Leo look like?",
+              "opts": [
+                [
+                  "A",
+                  "Shorter with a round face."
+                ],
+                [
+                  "B",
+                  "Tall and thin."
+                ],
+                [
+                  "C",
+                  "Short with glasses."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 8 至第 10 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L07_listen_p2_3",
+              "q": "What is Ann like?",
+              "opts": [
+                [
+                  "A",
+                  "Outgoing."
+                ],
+                [
+                  "B",
+                  "Shy."
+                ],
+                [
+                  "C",
+                  "Lazy."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L07_listen_p2_4",
+              "q": "What is the girl like?",
+              "opts": [
+                [
+                  "A",
+                  "Quieter and hard-working."
+                ],
+                [
+                  "B",
+                  "Loud and funny."
+                ],
+                [
+                  "C",
+                  "Outgoing."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L07_listen_p2_5",
+              "q": "How do they help each other?",
+              "opts": [
+                [
+                  "A",
+                  "By using their differences."
+                ],
+                [
+                  "B",
+                  "By doing nothing."
+                ],
+                [
+                  "C",
+                  "By staying away."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 11 至第 12 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L07_listen_p2_6",
+              "q": "When is the talent show?",
+              "opts": [
+                [
+                  "A",
+                  "This Friday."
+                ],
+                [
+                  "B",
+                  "This Sunday."
+                ],
+                [
+                  "C",
+                  "Next week."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L07_listen_p2_7",
+              "q": "What will the boy do?",
+              "opts": [
+                [
+                  "A",
+                  "Perform a dance."
+                ],
+                [
+                  "B",
+                  "Sing a song."
+                ],
+                [
+                  "C",
+                  "Play the piano."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 13 至第 15 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L07_listen_p2_8",
+              "q": "When is the club meeting?",
+              "opts": [
+                [
+                  "A",
+                  "This Saturday."
+                ],
+                [
+                  "B",
+                  "This Friday."
+                ],
+                [
+                  "C",
+                  "Tomorrow."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L07_listen_p2_9",
+              "q": "What will they plan?",
+              "opts": [
+                [
+                  "A",
+                  "A class party."
+                ],
+                [
+                  "B",
+                  "A sports day."
+                ],
+                [
+                  "C",
+                  "A school trip."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L07_listen_p2_10",
+              "q": "What can the boy help do?",
+              "opts": [
+                [
+                  "A",
+                  "Solve the problems."
+                ],
+                [
+                  "B",
+                  "Cook food."
+                ],
+                [
+                  "C",
+                  "Draw pictures."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段对话，回答第 16 至第 17 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L07_listen_p2_11",
+              "q": "What prize did the boy win?",
+              "opts": [
+                [
+                  "A",
+                  "Second prize."
+                ],
+                [
+                  "B",
+                  "First prize."
+                ],
+                [
+                  "C",
+                  "Third prize."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L07_listen_p2_12",
+              "q": "Who helped the boy?",
+              "opts": [
+                [
+                  "A",
+                  "His teacher."
+                ],
+                [
+                  "B",
+                  "His brother."
+                ],
+                [
+                  "C",
+                  "His friend."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        },
+        {
+          "lead": "听下面一段独白，回答第 18 至第 20 小题。",
+          "items": [
+            {
+              "id": "LMX2026_L07_listen_p2_13",
+              "q": "What is May like?",
+              "opts": [
+                [
+                  "A",
+                  "Hard-working and outgoing."
+                ],
+                [
+                  "B",
+                  "Shy and lazy."
+                ],
+                [
+                  "C",
+                  "Quiet and funny."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L07_listen_p2_14",
+              "q": "What does May like to do in her spare time?",
+              "opts": [
+                [
+                  "A",
+                  "Draw and play basketball."
+                ],
+                [
+                  "B",
+                  "Sing and dance."
+                ],
+                [
+                  "C",
+                  "Read and write."
+                ]
+              ],
+              "answer": "A"
+            },
+            {
+              "id": "LMX2026_L07_listen_p2_15",
+              "q": "What do the two friends have in common?",
+              "opts": [
+                [
+                  "A",
+                  "They both like music."
+                ],
+                [
+                  "B",
+                  "They both like drawing."
+                ],
+                [
+                  "C",
+                  "They both like sports."
+                ]
+              ],
+              "answer": "A"
+            }
+          ]
+        }
+      ]
+    },
+    "transcripts": [
+      "M: Is your sister outgoing?  W: Yes, she loves to talk and make new friends.",
+      "W: Tom is taller than Jack.  M: Yes, and Tom runs faster too.",
+      "W: Do you like to perform?  M: Yes, I love to sing on stage.",
+      "W: I won first prize in the contest!  M: Great! You're so hard-working.",
+      "M: I like sports and music.  W: So do I. We have a lot in common.",
+      "W: Look at the two boys in the photo.  M: Which one is your brother?  W: The taller one. He has short hair.  M: Who is the other boy?  W: He is my friend Leo. He is shorter and has a round face.",
+      "W: My best friend Ann is very outgoing.  M: Is she louder than you?  W: Yes, she talks a lot and makes everyone laugh.  M: What about you?  W: I am quieter and more hard-working. We help each other.",
+      "M: There is a talent show this Friday.  W: Are you going to attend?  M: Yes, I'll perform a dance.  W: What about your sister?  M: She will sing a song. We practice together every day.",
+      "W: The school club will have a meeting this Saturday.  M: What will we do?  W: We will plan a class party. Everyone can attend.  M: Can I help solve the problems?  W: Sure. Your ideas are always useful.  M: Great! I'll be there on time.",
+      "W: I heard you won a prize in the singing contest.  M: Yes, I got second prize.  W: That's great! How did you do it?  M: I practiced every day and my teacher helped me a lot.",
+      "Hello, everyone. Let me introduce my best friend. Her name is May. She is a hard-working student and she always solves problems in class. May is more outgoing than me, so she has many friends. In her spare time, she likes to draw and play basketball. We are different, but we have a lot in common. We both like music and we both attend the school club. I think our differences make our friendship stronger."
+    ]
+  },
+  "reading_a": {
+    "id": "LMX2026_L07_reading_a",
+    "genre": "记叙文",
+    "difficulty": "培优",
+    "word_count": 184,
+    "provenance": "教师授权原创（2026-08-08）· 两个朋友两种风格",
+    "paragraphs": [
+      "My best friends are Lily and Lucy. They are in my class, but they are very different. Lily is a shy girl. She does not talk much, and she is quiet in class. Lucy, on the other hand, is outgoing. She loves to sing and perform on stage.",
+      "Lily is hard-working. She always does her homework carefully and takes notes in class. Lucy is more creative than Lily, but she is lazy about homework. If we compare them, we can see that their differences make them interesting. Lily is better at solving problems, while Lucy is stronger at making friends.",
+      "They both attend the school club, and they help each other. Sometimes Lucy is too loud, and Lily asks her to be quiet. But they never fight. Their differences make our class more fun. I think everyone is different, and that is a good thing. My friend Li Ming is more outgoing than me. He talks a lot, but I am a quiet listener. Every day we compare our ideas and learn from each other. We are different, but we work well together."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "What is Lily like?",
+        "opts": [
+          [
+            "A",
+            "Shy and quiet."
+          ],
+          [
+            "B",
+            "Outgoing and loud."
+          ],
+          [
+            "C",
+            "Lazy and funny."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "What does Lucy love to do?",
+        "opts": [
+          [
+            "A",
+            "Sing and perform on stage."
+          ],
+          [
+            "B",
+            "Solve math problems."
+          ],
+          [
+            "C",
+            "Take notes in class."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "What does the word \"compare\" mean in the passage?",
+        "opts": [
+          [
+            "A",
+            "Look at how things are the same or different."
+          ],
+          [
+            "B",
+            "Buy something new."
+          ],
+          [
+            "C",
+            "Forget about something."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "Two friends with different styles."
+          ],
+          [
+            "B",
+            "How to win a prize."
+          ],
+          [
+            "C",
+            "A school club meeting."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "reading_b": {
+    "id": "LMX2026_L07_reading_b",
+    "genre": "说明文",
+    "difficulty": "培优",
+    "word_count": 230,
+    "provenance": "教师授权原创（2026-08-08）· 差异让友谊更牢固",
+    "paragraphs": [
+      "People often think that good friends must be the same. But the truth is, differences can make friendship stronger. When two friends are different, they can learn from each other. For example, a shy boy can learn to be more outgoing from his brave friend. A hard-working student can help a lazy one finish the work on time.",
+      "They can also solve problems together, because each one brings a different idea. If we compare a quiet friend with a loud one, we see that the quiet one listens more and the loud one talks more. Both are useful in a team. A good friend does not have to be as outgoing as you are, or as smart as you are. What matters is that you accept each other's differences.",
+      "Some people attend a club to meet new friends, while others prefer to stay with old friends. Both ways work. In my opinion, friendship is not about being the same; it is about learning and growing together. When you respect differences, your friendship becomes stronger and more fun. We are not the same, and that is a good thing. She likes to plan everything, while I like to be free. We accept each other's differences and stay close. We learn from each other and grow stronger. Friends do not have to be the same to be true friends."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "According to the writer, what can differences do for friends?",
+        "opts": [
+          [
+            "A",
+            "Help them learn from each other."
+          ],
+          [
+            "B",
+            "Make them angry."
+          ],
+          [
+            "C",
+            "Keep them apart."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "What does the word \"accept\" mean in the passage?",
+        "opts": [
+          [
+            "A",
+            "Take someone as they are."
+          ],
+          [
+            "B",
+            "Refuse someone."
+          ],
+          [
+            "C",
+            "Change someone."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "Why is a quiet friend useful in a team?",
+        "opts": [
+          [
+            "A",
+            "Because he or she listens more."
+          ],
+          [
+            "B",
+            "Because he or she talks more."
+          ],
+          [
+            "C",
+            "Because he or she is lazy."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "Why differences make friendship stronger."
+          ],
+          [
+            "B",
+            "How to be outgoing."
+          ],
+          [
+            "C",
+            "How to win a prize."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "reading_c": {
+    "id": "LMX2026_L07_reading_c",
+    "genre": "说明文",
+    "difficulty": "培优",
+    "word_count": 244,
+    "provenance": "教师授权原创（2026-08-08）· 校园才艺秀",
+    "paragraphs": [
+      "Every year, our school holds a talent show in the gym. Students perform on stage, and the best one wins a prize. This year, my classmates and I decide to attend. We plan a short play together.",
+      "Wang Lei is hard-working and calm. He writes the play and solves many problems for us. Li Mei is outgoing and funny. She acts the main part and makes everyone laugh with her loud voice. Zhang Dan is shy, but she is very good at singing. She sings the closing song, and her quiet voice touches all of us.",
+      "We compare our ideas and choose the best one. We practice until the show day. On the night, we are nervous but happy. When we finish, the audience claps loudly. In the end, our play wins first prize. We are so proud. The teacher says our win comes from teamwork, not from one person. We learn that each person is different, and those differences work together. The talent show teaches us that when we respect each other's abilities, we can do great things. I can't wait for next year's show. Some students are good at dancing, and others are good at singing. Everyone has a special strength. We support each other on the stage. The teachers and the audience enjoy the show together. The talent show gives us a chance to show who we are. We work as a team and enjoy the night."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "What does Li Mei do in the play?",
+        "opts": [
+          [
+            "A",
+            "She acts the main part."
+          ],
+          [
+            "B",
+            "She writes the play."
+          ],
+          [
+            "C",
+            "She sings the closing song."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "Why does the writer say their win comes from teamwork?",
+        "opts": [
+          [
+            "A",
+            "Because different abilities work together."
+          ],
+          [
+            "B",
+            "Because one person does everything."
+          ],
+          [
+            "C",
+            "Because they are lazy."
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "What is the passage mainly about?",
+        "opts": [
+          [
+            "A",
+            "The school talent show experience."
+          ],
+          [
+            "B",
+            "How to write a play."
+          ],
+          [
+            "C",
+            "A singing contest."
+          ]
+        ],
+        "answer": "A"
+      }
+    ]
+  },
+  "w5": {
+    "id": "LMX2026_L07_w5",
+    "title": "阅读短文，从方框中选出可以填入空白处的最佳选项（有一项为多余选项）",
+    "paragraphs": [
+      "Comparing yourself with a friend can teach you a lot. ___1___, you can see what you have in common. ___2___, you may find your differences, and that is OK. ___3___, differences help you learn from each other. ___4___, remember that each person is unique and valuable."
+    ],
+    "candidates": [
+      [
+        "A",
+        "First of all,"
+      ],
+      [
+        "B",
+        "Also,"
+      ],
+      [
+        "C",
+        "In fact,"
+      ],
+      [
+        "D",
+        "Finally,"
+      ],
+      [
+        "E",
+        "If you are lazy,"
+      ]
+    ],
+    "answers": {
+      "1": "A",
+      "2": "C",
+      "3": "B",
+      "4": "D"
+    },
+    "绑定": "人物比较建议（连接词）"
+  },
+  "cloze": {
+    "id": "LMX2026_L07_cloze",
+    "title": "阅读短文，从每题所给的 A、B、C 三个选项中选出最佳选项",
+    "paragraphs": [
+      "My friend Tom is very different from me. I am shy, but he is ___1___ and likes to talk. Tom is ___2___ than me at sports, so he runs fast. In class, I am hard-working and ___3___ notes carefully. Tom is a little ___4___ about homework, but he is smart.",
+      "We ___5___ each other with our problems. If we ___6___ our hobbies, we see we like music. ___7___ Tom and I like singing. He sings ___8___ than me, but I am better at drawing. We practice together and ___9___ in the school show. The differences make our friendship ___10___ than ever."
+    ],
+    "items": [
+      {
+        "num": 1,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "outgoing"
+          ],
+          [
+            "B",
+            "outgoinger"
+          ],
+          [
+            "C",
+            "more outgoing"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "good"
+          ],
+          [
+            "B",
+            "better"
+          ],
+          [
+            "C",
+            "best"
+          ]
+        ],
+        "answer": "B"
+      },
+      {
+        "num": 3,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "take"
+          ],
+          [
+            "B",
+            "takes"
+          ],
+          [
+            "C",
+            "taking"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "lazy"
+          ],
+          [
+            "B",
+            "lazier"
+          ],
+          [
+            "C",
+            "more lazy"
+          ]
+        ],
+        "answer": "B"
+      },
+      {
+        "num": 5,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "help"
+          ],
+          [
+            "B",
+            "helps"
+          ],
+          [
+            "C",
+            "helping"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 6,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "compare"
+          ],
+          [
+            "B",
+            "compares"
+          ],
+          [
+            "C",
+            "comparing"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 7,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "Both"
+          ],
+          [
+            "B",
+            "Either"
+          ],
+          [
+            "C",
+            "Neither"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 8,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "well"
+          ],
+          [
+            "B",
+            "better"
+          ],
+          [
+            "C",
+            "best"
+          ]
+        ],
+        "answer": "B"
+      },
+      {
+        "num": 9,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "perform"
+          ],
+          [
+            "B",
+            "performs"
+          ],
+          [
+            "C",
+            "performing"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 10,
+        "q": "",
+        "opts": [
+          [
+            "A",
+            "strong"
+          ],
+          [
+            "B",
+            "stronger"
+          ],
+          [
+            "C",
+            "strongest"
+          ]
+        ],
+        "answer": "B"
+      }
+    ],
+    "绑定": "比较级·as...as·Both/but/is more than"
+  },
+  "grammar_fill": {
+    "id": "LMX2026_L07_grammar_fill",
+    "title": "从方框内选择适当的词并用其正确形式填空（每空限填一词，每词限用一次）",
+    "paragraphs": [
+      "Tom and I are good friends, but we are different. Lucy is ___1___ and talks to everyone. Mike is ___2___ and does not speak much. Both of them are ___3___ in class, so they always finish their work. I am a little ___4___ about homework, but I try hard. We often ___5___ our ideas and choose the best one.",
+      "My brother is clever and can ___6___ any problem. My sister loves to ___7___ on stage and sing. She hopes to win a ___8___ in the contest. We all ___9___ the school club every week. A ___10___ voice is not always a problem; sometimes it makes people happy."
+    ],
+    "word_bank": [
+      "outgoing",
+      "shy",
+      "hard-working",
+      "lazy",
+      "compare",
+      "solve",
+      "perform",
+      "prize",
+      "attend",
+      "loud"
+    ],
+    "answers": [
+      "outgoing",
+      "shy",
+      "hard-working",
+      "lazy",
+      "compare",
+      "solve",
+      "perform",
+      "prize",
+      "attend",
+      "loud"
+    ],
+    "绑定": "比较级·as...as·人物对比"
+  },
+  "sa": {
+    "id": "LMX2026_L07_sa",
+    "title": "阅读短文，回答下列问题或按要求完成句子",
+    "paragraphs": [
+      "Lily and I are best friends. Lily is more outgoing than me, and she loves to talk and make friends. I am quieter, but I am hard-working and good at solving problems. We both like music and sports. At school, we help each other with our homework. Lily sings better than me, but I am better at drawing. Our differences make our friendship stronger. If we were the same, life would be boring."
+    ],
+    "questions": [
+      {
+        "num": 1,
+        "q": "Who is more outgoing, Lily or the writer?",
+        "type": "简答",
+        "answer": "Lily is more outgoing."
+      },
+      {
+        "num": 2,
+        "q": "What is the writer good at?",
+        "type": "简答",
+        "answer": "He/She is good at solving problems and drawing."
+      },
+      {
+        "num": 3,
+        "q": "What do both of them like?",
+        "type": "简答",
+        "answer": "They both like music and sports."
+      },
+      {
+        "num": 4,
+        "q": "Do you think differences can make friendship stronger? Why or why not?",
+        "type": "简答",
+        "answer": "Yes, I do. Because we can learn from each other."
+      },
+      {
+        "num": 5,
+        "q": "将句子 “If we were the same, life would be boring.” 译成中文。",
+        "type": "翻译",
+        "answer": "如果我们都一样，生活会很无聊。"
+      }
+    ],
+    "绑定": "人物对比（Both/but/is more than）"
+  },
+  "writing": {
+    "id": "LMX2026_L07_writing",
+    "title": "书面表达（15 分）",
+    "prompt": "请用英语写一篇短文，比较你和一位朋友在性格、兴趣或能力方面的异同，至少使用一句 Both... 和一句 ...is more...than。",
+    "requirements": "1. 使用本课词汇与句型（比较级、as...as、Both.../...but.../...is more...than）；2. 80 词左右；3. 条理清楚，语句通顺，句式有变化。",
+    "sample": "My best friend is Mike. We are good friends, but we are different. Mike is more outgoing than me, and he loves to talk. I am quieter, but I am hard-working. We both like sports and music. Mike is better at playing basketball than me, but I am better at drawing. We help each other with our homework. Our differences make our friendship stronger. I am happy to have a friend like him."
+  },
+  "grammar_diag": {
+    "id": "LMX2026_L07_grammar",
+    "title": "语法诊断（比较级·as...as·人物对比句式）",
+    "questions": [
+      {
+        "num": 1,
+        "q": "Tom is ___ than me.",
+        "opts": [
+          [
+            "A",
+            "taller"
+          ],
+          [
+            "B",
+            "more tall"
+          ],
+          [
+            "C",
+            "tallest"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 2,
+        "q": "Lucy is ___ outgoing than her sister.",
+        "opts": [
+          [
+            "A",
+            "more"
+          ],
+          [
+            "B",
+            "most"
+          ],
+          [
+            "C",
+            "much"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 3,
+        "q": "I am ___ tall as my friend.",
+        "opts": [
+          [
+            "A",
+            "as"
+          ],
+          [
+            "B",
+            "so"
+          ],
+          [
+            "C",
+            "more"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 4,
+        "q": "___ Lily and Lucy are outgoing.",
+        "opts": [
+          [
+            "A",
+            "Both"
+          ],
+          [
+            "B",
+            "Either"
+          ],
+          [
+            "C",
+            "Neither"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 5,
+        "q": "He is not ___ loud as his brother.",
+        "opts": [
+          [
+            "A",
+            "as"
+          ],
+          [
+            "B",
+            "so"
+          ],
+          [
+            "C",
+            "more"
+          ]
+        ],
+        "answer": "A"
+      },
+      {
+        "num": 6,
+        "q": "用所给词的适当形式填空：My friend runs (fast) ___ than me.",
+        "answer": "faster"
+      },
+      {
+        "num": 7,
+        "q": "用所给词的适当形式填空：She is (hard-working) ___ than her brother.",
+        "answer": "more hard-working"
+      },
+      {
+        "num": 8,
+        "q": "用所给词的适当形式填空：He is (lazy) ___ than before.",
+        "answer": "lazier"
+      },
+      {
+        "num": 9,
+        "q": "用所给词的适当形式填空：I am as (tall) ___ as Lucy.",
+        "answer": "tall"
+      },
+      {
+        "num": 10,
+        "q": "用所给词的适当形式填空：Tom is (quiet) ___ than before.",
+        "answer": "quieter"
+      }
+    ]
+  }
+}

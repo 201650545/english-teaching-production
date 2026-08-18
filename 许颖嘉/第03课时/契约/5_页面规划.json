@@ -1,0 +1,473 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LessonPagePlan",
+  "lesson_id": "第03课",
+  "theme": {
+    "style": "LostFoundStation Sky Blue + Amber Orange",
+    "primary_color": "#4A90E2",
+    "accent_color": "#F39C12",
+    "bg_gradient": "linear-gradient(135deg, #F0F6FC 0%, #E3F0FA 100%)",
+    "card_bg": "#FFFFFF",
+    "text_primary": "#2C3E50",
+    "text_secondary": "#5A6C7D",
+    "success": "#27AE60",
+    "warning": "#F1C40F",
+    "error": "#E74C3C",
+    "brand_light": "#D6EAF8",
+    "accent_light": "#FDEBD0",
+    "font_cn": "微软雅黑, Microsoft YaHei, sans-serif",
+    "font_en": "Arial, sans-serif",
+    "font_ipa": "Segoe UI, Arial, sans-serif",
+    "font_size_base": "28px"
+  },
+  "total_pages": 25,
+  "stage_badge": "Stage 1 · L03",
+  "creative_theme": "失物招领站（LostFoundStation）",
+  "pages": [
+    {
+      "page_index": 0,
+      "section": "封面",
+      "title": "第03课 · 名词所有格、基数词与问位置",
+      "layout_type": "Cover",
+      "components": [
+        {"type": "lost-found-tag", "data": {"icon": "📋", "text": "失物招领站", "position": "top-left"}},
+        {"type": "word-card", "data": {"element": "cover-title", "text": "名词所有格、基数词与问位置", "font_size": "42px", "font_weight": "bold"}},
+        {"type": "word-card", "data": {"element": "cover-subtitle", "text": "Stage 1 · 文具·失物招领 | 90分钟", "font_size": "16px"}},
+        {"type": "word-card", "data": {"element": "stage-badge", "text": "Stage 1 · L03", "position": "top-right"}}
+      ]
+    },
+    {
+      "page_index": 1,
+      "section": "复习导入",
+      "title": "复习导入 · L2语法回顾",
+      "layout_type": "Formula-Card",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "formula-box", "data": {"point_id": "G04", "name": "指示代词", "formula": "this/these近指，that/those远指", "mask": true}},
+        {"type": "formula-box", "data": {"point_id": "G05", "name": "be否定疑问", "formula": "is not = isn't, are not = aren't", "mask": true}},
+        {"type": "formula-box", "data": {"point_id": "G06", "name": "Who疑问句", "formula": "Who is...? / Who are...?", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 2,
+      "section": "复习导入",
+      "title": "L2词汇闪回",
+      "layout_type": "Grid-4",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "word-card", "data": {"element": "cat-label", "text": "文具类"}},
+        {"type": "word-card", "data": {"element": "word-chip", "words": ["book","pencil","case","eraser","ruler","bag","desk","chair","pen","notebook"]}},
+        {"type": "word-card", "data": {"element": "cat-label", "text": "人物类"}},
+        {"type": "word-card", "data": {"element": "word-chip", "words": ["teacher","student","friend","boy","girl","man","woman","child","classmate","parent"]}}
+      ]
+    },
+    {
+      "page_index": 3,
+      "section": "复习导入",
+      "title": "L2核心句翻译",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "sentence-row", "data": {"no": 1, "cn": "这是我的书。", "en": "This is my book.", "mask": true}},
+        {"type": "sentence-row", "data": {"no": 2, "cn": "那些是你的老师吗？", "en": "Are those your teachers?", "mask": true}},
+        {"type": "sentence-row", "data": {"no": 3, "cn": "谁是你的朋友？", "en": "Who is your friend?", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 4,
+      "section": "新词20",
+      "title": "新词·文具类（上）5词",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "word-card", "data": {"element": "item-board", "title": "失物招领站·第一批登记物品"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "📦", "word": "box", "ipa": "/bɒks/", "pos": "n.", "cn": "盒子；箱子", "collocation": "pencil box / a box of", "example": "My pencil box is blue.", "memory": "b-ox——盒子(box)里关着牛(ox)"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "🔑", "word": "key", "ipa": "/kiː/", "pos": "n.", "cn": "钥匙；关键", "collocation": "the key to / car key", "example": "Where is my key? It's in the box.", "memory": "谐音'开'——钥匙用来开锁"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "☕", "word": "cup", "ipa": "/kʌp/", "pos": "n.", "cn": "杯子", "collocation": "a cup of tea / coffee cup", "example": "There is a cup on the table.", "memory": "c-up——杯子口朝上(up)"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "🖊️", "word": "pen", "ipa": "/pen/", "pos": "n.", "cn": "钢笔；笔", "collocation": "pen pal / with a pen", "example": "This is my pen.", "memory": "谐音'喷'——钢笔喷出墨水"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "📏", "word": "ruler", "ipa": "/ˈruːlə(r)/", "pos": "n.", "cn": "尺子；直尺", "collocation": "a ruler / ruler of", "example": "My ruler is long.", "memory": "rul(e)r——规则(rule)的人(er)"}}
+      ]
+    },
+    {
+      "page_index": 5,
+      "section": "新词20",
+      "title": "新词·文具类（下）4词",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "word-card", "data": {"element": "item-board", "title": "失物招领站·第二批登记物品"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "🧽", "word": "eraser", "ipa": "/ɪˈreɪzə(r)/", "pos": "n.", "cn": "橡皮", "collocation": "an eraser / use an eraser", "example": "Is this your eraser?", "memory": "e-rase-r——erase(擦除)+r=橡皮"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "✏️", "word": "pencil", "ipa": "/ˈpensl/", "pos": "n.", "cn": "铅笔", "collocation": "pencil box / pencil case", "example": "My pencil is on the desk.", "memory": "pen-cil——钢笔(pen)变细(cil)=铅笔"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "🎒", "word": "schoolbag", "ipa": "/ˈskuːlbæɡ/", "pos": "n.", "cn": "书包", "collocation": "my schoolbag / in the schoolbag", "example": "My schoolbag is heavy.", "memory": "school(学校)+bag(包)=书包"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "📖", "word": "dictionary", "ipa": "/ˈdɪkʃənri/", "pos": "n.", "cn": "字典；词典", "collocation": "look up in a dictionary", "example": "I look up the word in the dictionary.", "memory": "dic-tion-ary——说话的工具=字典"}}
+      ]
+    },
+    {
+      "page_index": 6,
+      "section": "新词20",
+      "title": "新词·失物招领类（上）6词",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "word-card", "data": {"element": "item-board", "title": "失物招领站·工作流程关键词"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "📚", "word": "library", "ipa": "/ˈlaɪbrəri/", "pos": "n.", "cn": "图书馆", "collocation": "in the library / library card", "example": "Don't talk in the library.", "memory": "libr(书)+ary(地方)=放书的地方"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "❓", "word": "lost", "ipa": "/lɒst/", "pos": "adj.", "cn": "丢失的；迷路的", "collocation": "lost and found / get lost", "example": "My pen is lost.", "memory": "lose(丢)的过去分词"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "✅", "word": "found", "ipa": "/faʊnd/", "pos": "v.", "cn": "找到（find的过去式）", "collocation": "found in / lost and found", "example": "I found my key in the box.", "memory": "find(找到)的过去式"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "📞", "word": "call", "ipa": "/kɔːl/", "pos": "v./n.", "cn": "打电话；呼叫", "collocation": "call sb. / phone call", "example": "Please call me at 138-0000-0000.", "memory": "c-all——打电话给所有人(all)"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "⚠️", "word": "must", "ipa": "/mʌst/", "pos": "v.", "cn": "必须；一定", "collocation": "must do / must be", "example": "You must find your pen.", "memory": "谐音'马斯特'——必须马上特殊对待"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "🙋", "word": "ask", "ipa": "/ɑːsk/", "pos": "v.", "cn": "问；要求；请求", "collocation": "ask sb. for help / ask a question", "example": "You can ask the teacher for help.", "memory": "谐音'啊思考'——提问之前先思考"}}
+      ]
+    },
+    {
+      "page_index": 7,
+      "section": "新词20",
+      "title": "新词·失物招领类（下）5词",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "word-card", "data": {"element": "item-board", "title": "失物招领站·服务用语关键词"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "🆘", "word": "help", "ipa": "/help/", "pos": "v./n.", "cn": "帮助；帮忙", "collocation": "help sb. (to) do / help with", "example": "Can you help me?", "memory": "h-elp——帮助像精灵(elf)一样神奇"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "🙏", "word": "thank", "ipa": "/θæŋk/", "pos": "v./n.", "cn": "感谢", "collocation": "thank you / thanks for", "example": "Thank you for your help.", "memory": "th-ank——感谢要锚定在心"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "👤", "word": "owner", "ipa": "/ˈəʊnə(r)/", "pos": "n.", "cn": "主人；物主", "collocation": "the owner of / lost owner", "example": "Who is the owner of this pen?", "memory": "own-er——拥有(own)的人(er)=主人"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "ℹ️", "word": "information", "ipa": "/ˌɪnfəˈmeɪʃn/", "pos": "n.", "cn": "信息；资料", "collocation": "information about", "example": "I need some information about the lost pen.", "memory": "in-form-ation——里面形成的东西=信息"}},
+        {"type": "word-card", "data": {"element": "item-card", "emoji": "💳", "word": "card", "ipa": "/kɑːd/", "pos": "n.", "cn": "卡片；名片", "collocation": "ID card / library card", "example": "This is my library card.", "memory": "谐音'卡的'——卡片是硬的"}}
+      ]
+    },
+    {
+      "page_index": 8,
+      "section": "新词20",
+      "title": "基数词搭配小结",
+      "layout_type": "Table",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "table.gtab", "data": {"title": "数词+名词搭配规律", "columns": ["结构","公式","示例"], "rows": [["基数词+名词(=1)","one + 单数名词","one pen, one book"],["基数词+名词(>1)","数词 + 复数名词","two books, five rulers, twelve erasers"]]}}
+      ]
+    },
+    {
+      "page_index": 9,
+      "section": "新词20",
+      "title": "20词快速闪回",
+      "layout_type": "Grid-4",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "word-card", "data": {"element": "mini-flash", "words": ["box","key","cup","pen","ruler","eraser","pencil","schoolbag","dictionary","library","lost","found","call","must","ask","help","thank","owner","information","card"], "note": "3秒一个，大声朗读！"}}
+      ]
+    },
+    {
+      "page_index": 10,
+      "section": "新词20",
+      "title": "新词随堂小测",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "quiz-q", "data": {"no": 1, "question": "'字典'的英文是？", "options": ["A. dictionary","B. library","C. card"], "answer": "A"}},
+        {"type": "quiz-q", "data": {"no": 2, "question": "'失物招领'的英文是？", "options": ["A. lost and found","B. call and ask","C. help and thank"], "answer": "A"}},
+        {"type": "quiz-q", "data": {"no": 3, "question": "'主人'的英文是？", "options": ["A. owner","B. eraser","C. pencil"], "answer": "A"}},
+        {"type": "quiz-q", "data": {"no": 4, "question": "'信息'的英文是？", "options": ["A. information","B. schoolbag","C. ruler"], "answer": "A"}}
+      ]
+    },
+    {
+      "page_index": 11,
+      "section": "语法3考点",
+      "title": "G07 名词所有格 口诀与对照表",
+      "layout_type": "Formula-Card",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "formula-box", "data": {"point_id": "G07", "name": "名词所有格（'s / of）", "formula": "有生命加 's（Tom's book），无生命用 of（the leg of the table）", "font_size": "38px", "font_weight": "bold"}},
+        {"type": "table.gtab", "data": {"title": "所有格六种类型", "columns": ["类型","构成","示例"], "rows": [["'s单数","名词+'s","Tom's pen"],["'s复数s结尾","名词+'","the students' books"],["'s复数非s结尾","名词+'s","children's books"],["of无生命","A of B","the key of the box"],["并列各自","A's and B's+复数","Tom's and Jack's pens"],["并列共同","A and B's+单数","Tom and Jack's room"]]}}
+      ]
+    },
+    {
+      "page_index": 12,
+      "section": "语法3考点",
+      "title": "G07 possessive-builder 互动搭配器",
+      "layout_type": "Interactive",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "possessive-builder", "data": {"buttons": ["有生命","无生命"], "alive_examples": ["Tom's pen","the students' books","children's books"], "nonalive_examples": ["the key of the box","the leg of the table","the name of the school"]}},
+        {"type": "tip-box", "data": {"text": "无生命名词不用 's，要用 of 结构"}}
+      ]
+    },
+    {
+      "page_index": 13,
+      "section": "语法3考点",
+      "title": "G07 易错点与中考辨析",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "err-box", "data": {"wrong": "the table's leg", "right": "the leg of the table", "note": "无生命不用's"}},
+        {"type": "err-box", "data": {"wrong": "the students's books", "right": "the students' books", "note": "复数s结尾只加撇号"}},
+        {"type": "err-box", "data": {"wrong": "Tom and Jack's pens（各自）", "right": "Tom's and Jack's pens", "note": "各自拥有分别加's"}},
+        {"type": "tip-box", "data": {"text": "时间名词习惯用's：today's news, a week's time"}}
+      ]
+    },
+    {
+      "page_index": 14,
+      "section": "语法3考点",
+      "title": "G08 基数词1-100 口诀与分段拼写表",
+      "layout_type": "Formula-Card",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "formula-box", "data": {"point_id": "G08", "name": "基数词1-100", "formula": "1-12各不同，13-19都加teen，20-90整十加ty，几十几用连字符", "font_size": "38px", "font_weight": "bold"}},
+        {"type": "table.gtab", "data": {"title": "分段拼写表", "columns": ["范围","规律","示例"], "rows": [["1-12","各自独立","one, two... twelve"],["13-19","基础词+teen","thirteen, fourteen... nineteen"],["20-90","基础词+ty","twenty, thirty... ninety"],["几十几","整十-连字符-个位","twenty-one, thirty-five"],["100","hundred","one hundred"]]}}
+      ]
+    },
+    {
+      "page_index": 15,
+      "section": "语法3考点",
+      "title": "G08 number-builder 互动拼写器",
+      "layout_type": "Interactive",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "number-builder", "data": {"buttons": ["1-12","13-19","20-90","几十几"], "range_1_12": ["one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"], "range_13_19": ["thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"], "range_20_90": ["twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"], "range_compound": ["twenty-one","thirty-five","ninety-nine"]}}
+      ]
+    },
+    {
+      "page_index": 16,
+      "section": "语法3考点",
+      "title": "G08 特殊拼写易错表",
+      "layout_type": "Table",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "err-box", "data": {"wrong": "fiveteen", "right": "fifteen", "note": "five→fif+teen"}},
+        {"type": "table.gtab", "data": {"title": "五个高频陷阱", "columns": ["数字","正确","常见错误","说明"], "rows": [["15","fifteen","fiveteen","ve变f"],["40","forty","fourty","去掉u"],["80","eighty","eightty","去掉t"],["30","thirty","threety","ee变ir"],["50","fifty","fivety","ve变f"]]}},
+        {"type": "tip-box", "data": {"text": "hundred前有数词不加s：two hundred books ✅"}}
+      ]
+    },
+    {
+      "page_index": 17,
+      "section": "语法3考点",
+      "title": "G09 Where疑问句与方位介词",
+      "layout_type": "Formula-Card",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "formula-box", "data": {"point_id": "G09", "name": "Where疑问句+方位介词", "formula": "Where问'在哪里'，in/on/under答方位", "font_size": "38px", "font_weight": "bold"}},
+        {"type": "table.gtab", "data": {"title": "Where疑问句对照", "columns": ["问句类型","句型","示例"], "rows": [["Where is+单数","Where is+物/人?","Where is my pen? → It is in the box."],["Where are+复数","Where are+物/人?","Where are my keys? → They are on the table."]]}},
+        {"type": "table.gtab", "data": {"title": "方位介词对照", "columns": ["介词","含义","示例"], "rows": [["in","在...里面","The pen is in the box."],["on","在...上面","The cup is on the table."],["under","在...下面","The cat is under the chair."]]}}
+      ]
+    },
+    {
+      "page_index": 18,
+      "section": "语法3考点",
+      "title": "G09 where-locator 方位演示器",
+      "layout_type": "Interactive",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "where-locator", "data": {"buttons": ["in","on","under"], "in_example": "The pen is in the box.", "on_example": "The pen is on the desk.", "under_example": "The pen is under the chair."}}
+      ]
+    },
+    {
+      "page_index": 19,
+      "section": "语法3考点",
+      "title": "G09 There is/are 存在句与就近原则",
+      "layout_type": "Table",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "table.gtab", "data": {"title": "There be句型六种形式", "columns": ["句型","公式","示例"], "rows": [["肯定单数","There is+单数名词+介词短语","There is a pen on the desk."],["肯定复数","There are+复数名词+介词短语","There are two books in the box."],["否定单数","There isn't+单数名词+...","There isn't a pen on the desk."],["否定复数","There aren't+复数名词+...","There aren't two books in the box."],["疑问单数","Is there+单数名词+...?","Is there a pen on the desk?"],["疑问复数","Are there+复数名词+...?","Are there two books in the box?"]]}},
+        {"type": "tip-box", "data": {"text": "就近原则：There is a pen and two books on the desk.（be由最近的pen决定用is）"}}
+      ]
+    },
+    {
+      "page_index": 20,
+      "section": "随堂演练",
+      "title": "随堂演练 · 名词所有格",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "quiz-q", "data": {"no": 1, "question": "'Tom的钢笔'正确表达？", "options": ["A. Tom's pen","B. the pen of Tom","C. Tom pen"], "answer": "A"}},
+        {"type": "quiz-q", "data": {"no": 2, "question": "'桌子的腿'正确表达？", "options": ["A. the table's leg","B. the leg of the table","C. the table leg"], "answer": "B"}},
+        {"type": "quiz-q", "data": {"no": 3, "question": "'学生们的书'（复数s结尾）正确表达？", "options": ["A. the students's books","B. the students' books","C. the student's books"], "answer": "B"}}
+      ]
+    },
+    {
+      "page_index": 21,
+      "section": "随堂演练",
+      "title": "随堂演练 · 基数词",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "quiz-q", "data": {"no": 1, "question": "'40'的正确拼写？", "options": ["A. fourty","B. forty","C. fourtys"], "answer": "B"}},
+        {"type": "quiz-q", "data": {"no": 2, "question": "'25'的正确拼写？", "options": ["A. twenty five","B. twenty-five","C. twentyfifth"], "answer": "B"}},
+        {"type": "quiz-q", "data": {"no": 3, "question": "选择正确句子：", "options": ["A. two hundreds books","B. two hundred books","C. two hundred book"], "answer": "B"}}
+      ]
+    },
+    {
+      "page_index": 22,
+      "section": "随堂演练",
+      "title": "随堂演练 · Where / There be",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "quiz-q", "data": {"no": 1, "question": "'我的钢笔在哪里？'正确问句？", "options": ["A. Where is my pen?","B. Where my pen is?","C. What is my pen?"], "answer": "A"}},
+        {"type": "quiz-q", "data": {"no": 2, "question": "'桌上有两本书'正确表达？", "options": ["A. There is two books on the desk.","B. There are two books on the desk.","C. There has two books on the desk."], "answer": "B"}},
+        {"type": "quiz-q", "data": {"no": 3, "question": "There ___ a pen and two rulers in the box.（就近原则）", "options": ["A. is","B. are","C. has"], "answer": "A"}}
+      ]
+    },
+    {
+      "page_index": 23,
+      "section": "阅读理解",
+      "title": "阅读A篇 · Lost and Found in the School Library",
+      "layout_type": "Reading-Passage",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "reading-passage", "data": {"title": "Lost and Found in the School Library", "word_count": 65, "word_range": "63-66", "theme": "图书馆失物招领处寻找文具失主"}},
+        {"type": "strategy-list", "data": {"title": "阅读指导五步法", "steps": ["1.速读抓主旨","2.精读划关键词","3.解题回原文","4.排除干扰项","5.复述巩固"]}}
+      ]
+    },
+    {
+      "page_index": 24,
+      "section": "阅读理解",
+      "title": "阅读B篇 · Library Rules for Everyone",
+      "layout_type": "Reading-Passage",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "reading-passage", "data": {"title": "Library Rules for Everyone", "word_count": 86, "word_range": "84-88", "theme": "图书馆使用规则与文具保管要求"}},
+        {"type": "quiz-q", "data": {"no": 1, "question": "细节题", "mask": true}},
+        {"type": "quiz-q", "data": {"no": 2, "question": "词义题", "mask": true}},
+        {"type": "quiz-q", "data": {"no": 3, "question": "推断题", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 25,
+      "section": "阅读理解",
+      "title": "阅读C篇 · How Does the Lost and Found Work?",
+      "layout_type": "Reading-Passage",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "reading-passage", "data": {"title": "How Does the Lost and Found Work?", "word_count": 85, "word_range": "84-88", "theme": "学校失物招领处工作流程：收集→记录→匹配→归还"}},
+        {"type": "quiz-q", "data": {"no": 1, "question": "细节题", "mask": true}},
+        {"type": "quiz-q", "data": {"no": 2, "question": "词义题", "mask": true}},
+        {"type": "quiz-q", "data": {"no": 3, "question": "推断题", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 26,
+      "section": "句子练习",
+      "title": "句子练习 · 名词所有格",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "sentence-row", "data": {"no": 1, "cn": "这是Tom的字典。", "en": "This is Tom's dictionary.", "mask": true}},
+        {"type": "sentence-row", "data": {"no": 2, "cn": "盒子的钥匙在桌上。", "en": "The key of the box is on the desk.", "mask": true}},
+        {"type": "sentence-row", "data": {"no": 3, "cn": "学生们的书包在图书馆里。", "en": "The students' schoolbags are in the library.", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 27,
+      "section": "句子练习",
+      "title": "句子练习 · 基数词",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "sentence-row", "data": {"no": 1, "cn": "我有两支钢笔和三把尺子。", "en": "I have two pens and three rulers.", "mask": true}},
+        {"type": "sentence-row", "data": {"no": 2, "cn": "图书馆里有二十名学生。", "en": "There are twenty students in the library.", "mask": true}},
+        {"type": "sentence-row", "data": {"no": 3, "cn": "请拨打138-0000-0000联系我。", "en": "Please call me at one three eight, zero zero zero, zero zero zero.", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 28,
+      "section": "句子练习",
+      "title": "句子练习 · Where / There be",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "sentence-row", "data": {"no": 1, "cn": "我的橡皮在哪里？它在书下面。", "en": "Where is my eraser? It is under the book.", "mask": true}},
+        {"type": "sentence-row", "data": {"no": 2, "cn": "桌子上有一本字典。", "en": "There is a dictionary on the desk.", "mask": true}},
+        {"type": "sentence-row", "data": {"no": 3, "cn": "我的文具盒里有三支铅笔。", "en": "There are three pencils in my pencil box.", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 29,
+      "section": "句子练习",
+      "title": "句子练习 · 综合汉译英",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "sentence-row", "data": {"no": 1, "cn": "这是Tom的文具盒，里面有两支铅笔。", "en": "This is Tom's pencil box. There are two pencils in it.", "mask": true}},
+        {"type": "sentence-row", "data": {"no": 2, "cn": "失物招领处有五把钥匙。", "en": "There are five keys in the lost and found.", "mask": true}},
+        {"type": "sentence-row", "data": {"no": 3, "cn": "你必须找到你的书包。", "en": "You must find your schoolbag.", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 30,
+      "section": "自然拼读",
+      "title": "自然拼读 · Kk /k/",
+      "layout_type": "Phonics-Card",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "phonics-card", "data": {"letter": "Kk", "phoneme": "/k/", "tip": "舌根抵软腭，气流冲出（清辅音，声带不振动）", "font_size": "48px"}},
+        {"type": "word-card", "data": {"element": "ph-word-grid", "words": ["key","cup","clock","king"]}}
+      ]
+    },
+    {
+      "page_index": 31,
+      "section": "自然拼读",
+      "title": "自然拼读 · Ll /l/",
+      "layout_type": "Phonics-Card",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "phonics-card", "data": {"letter": "Ll", "phoneme": "/l/", "tip": "舌尖抵上齿龈，气流从舌两侧流出（边音）", "font_size": "48px"}},
+        {"type": "word-card", "data": {"element": "ph-word-grid", "words": ["look","long","lamp","lemon"]}}
+      ]
+    },
+    {
+      "page_index": 32,
+      "section": "自然拼读",
+      "title": "自然拼读 · Mm /m/",
+      "layout_type": "Phonics-Card",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "phonics-card", "data": {"letter": "Mm", "phoneme": "/m/", "tip": "双唇闭合，气流从鼻腔流出（鼻音，双唇音）", "font_size": "48px"}},
+        {"type": "word-card", "data": {"element": "ph-word-grid", "words": ["man","milk","moon","monkey"]}}
+      ]
+    },
+    {
+      "page_index": 33,
+      "section": "自然拼读",
+      "title": "自然拼读 · Nn /n/",
+      "layout_type": "Phonics-Card",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "phonics-card", "data": {"letter": "Nn", "phoneme": "/n/", "tip": "舌尖抵上齿龈，气流从鼻腔流出（鼻音，齿龈音）", "font_size": "48px"}},
+        {"type": "word-card", "data": {"element": "ph-word-grid", "words": ["nose","nut","nine","nest"]}}
+      ]
+    },
+    {
+      "page_index": 34,
+      "section": "自然拼读",
+      "title": "自然拼读 · Oo /ɒ/",
+      "layout_type": "Phonics-Card",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "phonics-card", "data": {"letter": "Oo", "phoneme": "/ɒ/", "tip": "口腔半开，嘴唇收圆，短促有力（短元音）", "font_size": "48px"}},
+        {"type": "word-card", "data": {"element": "ph-word-grid", "words": ["box","hot","pot","top"]}}
+      ]
+    },
+    {
+      "page_index": 35,
+      "section": "自然拼读",
+      "title": "自然拼读 · 综合练习",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "quiz-q", "data": {"no": 1, "question": "哪个单词含/k/音？", "options": ["A. key","B. boy","C. day"], "answer": "A"}},
+        {"type": "quiz-q", "data": {"no": 2, "question": "哪个单词含/ɒ/音？", "options": ["A. box","B. book","C. bike"], "answer": "A"}},
+        {"type": "quiz-q", "data": {"no": 3, "question": "最小对立对：key vs gay，哪个含/k/？", "options": ["A. key","B. gay"], "answer": "A"}},
+        {"type": "quiz-q", "data": {"no": 4, "question": "moon vs noon，哪个含/m/？", "options": ["A. moon","B. noon"], "answer": "A"}}
+      ]
+    },
+    {
+      "page_index": 36,
+      "section": "课堂总结",
+      "title": "课堂总结",
+      "layout_type": "Summary",
+      "components": [
+        {"type": "lost-found-tag"},
+        {"type": "super-mn", "data": {"text": "有生命加's无生命用of，1-100分段记，Where问位置There be答！", "font_size": "48px", "font_weight": "bold"}},
+        {"type": "summary-grid", "data": {"card1": {"title": "G07 名词所有格", "content": "有生命's，无生命of"}, "card2": {"title": "G08 基数词", "content": "1-12各不同，13-19加teen，整十加ty"}, "card3": {"title": "G09 Where/There be", "content": "Where问位置，There is单数are复数"}}},
+        {"type": "lf-ticket", "data": {"title": "失物招领站·本课总结票据", "items": ["20新词", "3语法考点", "5拼读音素"]}},
+        {"type": "word-card", "data": {"element": "mini-flash", "words": ["box","key","cup","pen","ruler","eraser","pencil","schoolbag","dictionary","library","lost","found","call","must","ask","help","thank","owner","information","card"]}}
+      ]
+    }
+  ]
+}

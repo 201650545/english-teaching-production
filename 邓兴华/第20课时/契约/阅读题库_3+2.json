@@ -1,0 +1,157 @@
+{
+  "lesson": "L20",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A/B 各 3 无选项 + 2 有选项（默认 3+2）；第三篇（HTML page29 五选四 · My Travel Diary）为 b5 选句填空（5 空 5 句），无 quiz-opt 阅读交互题，不纳入 3+2（五选四 §3.16 单独统计）",
+  "vocab_pool": [
+    "building",
+    "trader",
+    "distance",
+    "top",
+    "umbrella",
+    "foggy",
+    "dislike",
+    "hungry",
+    "hill",
+    "duck",
+    "enough",
+    "realize",
+    "imagine",
+    "below",
+    "bicycle",
+    "remain",
+    "memory",
+    "sentence",
+    "entire",
+    "journey"
+  ],
+  "grammar_cap": "G52-G54 语法终点（一般过去时全套综合 / 复合不定代词+形容词后置在过去时中的综合 / 频度副词跨时态对照）；L20 为 Stage 5 唯一可含过去时的练习卷；防越级：不引入过去进行时/过去完成时",
+  "A篇_A_Guide_to_Green_Hill_Park": {
+    "RA-Q1": {
+      "question": "What is at the entrance of the park?",
+      "type": "fill",
+      "openness": "细节·原文直接提取（第一段）",
+      "canonical_answer": "a tall building",
+      "minimum_acceptable_answer": "a tall building",
+      "accepted_answers": [
+        "a tall building",
+        "a visitor center",
+        "the visitor center",
+        "a tall building at the entrance",
+        "a visitor center at the entrance"
+      ],
+      "required_vocab": [
+        "building"
+      ],
+      "required_grammar": "无（名词短语；visitor center 变体为原文同义指代，原文摘录）"
+    },
+    "RA-Q2": {
+      "question": "What should you take on a foggy day?",
+      "type": "fill",
+      "openness": "条件细节·原文直接提取（第三段）",
+      "canonical_answer": "an umbrella",
+      "minimum_acceptable_answer": "an umbrella",
+      "accepted_answers": [
+        "an umbrella",
+        "umbrella",
+        "take an umbrella"
+      ],
+      "required_vocab": [
+        "umbrella"
+      ],
+      "required_grammar": "无（名词短语；foggy 为题干用词，本课池内词）"
+    },
+    "RA-Q3": {
+      "question": "How far is it from the bottom to the top of the hill?",
+      "type": "fill",
+      "openness": "数据细节·原文直接提取（第二段）",
+      "canonical_answer": "about two kilometers",
+      "minimum_acceptable_answer": "about two kilometers",
+      "accepted_answers": [
+        "about two kilometers",
+        "two kilometers",
+        "about 2 kilometers",
+        "2 kilometers",
+        "two km"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（数量短语；distance/top/hill 为题干用词，池内词）"
+    },
+    "RA-Q4": {
+      "question": "What can you see at the top of the hill?",
+      "type": "opt",
+      "openness": "细节确认·原文直接提取（第二段）",
+      "correct": "B",
+      "note": "选项 B：The whole city below. 解析：\"At the top, you can see the whole city below you.\""
+    },
+    "RA-Q5": {
+      "question": "What is the passage mainly about?",
+      "type": "opt",
+      "openness": "主旨概括·开放度高→有选项",
+      "correct": "B",
+      "note": "选项 B：A guide to a park. 解析：文章是 Green Hill Park 的指南，应用文。"
+    }
+  },
+  "B篇_An_Unforgettable_Journey": {
+    "RB-Q1": {
+      "question": "When did the family go on the journey?",
+      "type": "fill",
+      "openness": "时间细节·原文直接提取（首句）",
+      "canonical_answer": "last summer",
+      "minimum_acceptable_answer": "last summer",
+      "accepted_answers": [
+        "last summer"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（时间短语）；题干 did+go 为一般过去时疑问（G52 范围内）"
+    },
+    "RB-Q2": {
+      "question": "What did they eat for lunch?",
+      "type": "fill",
+      "openness": "细节·原文直接提取（第二段）",
+      "canonical_answer": "roast duck",
+      "minimum_acceptable_answer": "roast duck",
+      "accepted_answers": [
+        "roast duck",
+        "they ate roast duck",
+        "some roast duck"
+      ],
+      "required_vocab": [
+        "duck"
+      ],
+      "required_grammar": "无（名词短语）；变体 they ate roast duck 含一般过去时 ate（G52 范围，原文结构摘录）"
+    },
+    "RB-Q3": {
+      "question": "What does the word \"remained\" mean in the passage?",
+      "type": "opt",
+      "openness": "词义判断·开放度高→有选项",
+      "correct": "B",
+      "note": "选项 B：保持。解析：remained silent = 保持沉默，remain = 保持（池内词 #16）。"
+    },
+    "RB-Q4": {
+      "question": "What did the writer realize?",
+      "type": "fill",
+      "openness": "心理/因果细节·原文直接提取（第三段）",
+      "canonical_answer": "he didn't dislike the rain at all",
+      "minimum_acceptable_answer": "didn't dislike the rain at all",
+      "accepted_answers": [
+        "he didn't dislike the rain at all",
+        "he did not dislike the rain at all",
+        "didn't dislike the rain at all",
+        "did not dislike the rain at all",
+        "that he didn't dislike the rain",
+        "that he did not dislike the rain"
+      ],
+      "required_vocab": [
+        "dislike"
+      ],
+      "required_grammar": "一般过去时否定 didn't + 动词原形（G52）；dislike 为池内词（#7）；题干 realize 为池内词（#12），原文摘录"
+    },
+    "RB-Q5": {
+      "question": "What can we infer from the last sentence?",
+      "type": "opt",
+      "openness": "推断·开放度高→有选项",
+      "correct": "B",
+      "note": "选项 B：The writer values family trips. 解析：\"The best journeys are the ones we share with family.\" 说明作者重视家庭旅行。"
+    }
+  }
+}

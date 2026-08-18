@@ -1,0 +1,20 @@
+{
+  "lesson_id": "第14课",
+  "version": "V17.2",
+  "creative_id": "外貌鉴定镜 Appearance Mirror (Canvas)",
+  "interaction": {
+    "navigation": "split-screen click (left=prev, right=next)",
+    "answer_priority": "highest, event.stopPropagation()",
+    "sub_page": "vertical scroll with fixed page index",
+    "audio": "Web Audio API: ok = 3-note sine arpeggio, err = sawtooth"
+  },
+  "mirror_animation": {
+    "trigger": "on correct answer (checkQ) or answer reveal",
+    "elements": [
+      "ellipse mirror frame",
+      "silhouette",
+      "checkmark"
+    ],
+    "color": "#7C6BD6"
+  }
+}

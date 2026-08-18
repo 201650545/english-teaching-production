@@ -1,0 +1,133 @@
+{
+  "course": "第11课 · 情态动词、名词不规则复数与规则介词",
+  "stage": "Stage 3",
+  "lesson": "L11",
+  "duration": "90min",
+  "totalPages": 28,
+  "brand": "#1E8449",
+  "accent": "#F39C12",
+  "bgGradient": "#F0FAF0 → #E8F8F0",
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": [
+        {
+          "page": 0,
+          "type": "cover",
+          "title": "第11课 · 情态动词、名词不规则复数与规则介词",
+          "subtitle": "Stage 3 · 班规·校园行为规范 | 90分钟课程",
+          "objectives": ["掌握20个班规与校园行为核心词汇", "理解can/can't/must/have to/不规则复数/时间介词", "完成or/ore组合/ɔː/拼读学习"],
+          "meta": [
+            {"label": "核心场景", "value": "班规·校园规范"},
+            {"label": "新词", "value": "20 Words"},
+            {"label": "时长", "value": "90 min"},
+            {"label": "语法", "value": "G28/G29/G30"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 3,
+      "pages": [
+        {
+          "page": 1,
+          "type": "review-grammar",
+          "title": "L10 语法回顾",
+          "content": ["G25 三单-s变化口诀", "G26 does/doesn't否定疑问", "G27 学科表达"],
+          "interactions": ["formula-box × 3"]
+        },
+        {
+          "page": 2,
+          "type": "review-vocab",
+          "title": "L10 词汇快闪 + 句型复习",
+          "content": ["L10 20词分类速览：学科类Chinese/math/physics + 学习类exercise/practice/complete", "3句口头翻译"],
+          "interactions": ["answer-mask × 3"]
+        },
+        {
+          "page": 3,
+          "type": "objectives",
+          "title": "学习目标 · Today's Goals",
+          "content": ["G28/G29/G30 三考点预览", "20词分类预览（规则名词类+行为动词类+校园场景类+评价类）", "or/ore音素预览"],
+          "interactions": ["formula-box × 3", "word-chips"]
+        }
+      ]
+    },
+    {
+      "name": "新词20",
+      "start": 4,
+      "end": 10,
+      "pages": [
+        {"page": 4, "type": "vocab-group", "title": "规则名词类 A组 (1-5)", "words": ["rule", "strict", "follow", "break", "quiet"], "layout": "item-board 2col"},
+        {"page": 5, "type": "vocab-group", "title": "校园场景类 A组 (6-10)", "words": ["noise", "hallway", "uniform", "wear", "listen"], "layout": "item-board 2col"},
+        {"page": 6, "type": "vocab-group", "title": "行为动词类 (11-15)", "words": ["fight", "arrive", "late", "forget", "remember"], "layout": "item-board 2col"},
+        {"page": 7, "type": "vocab-group", "title": "评价与其他类 (16-20)", "words": ["order", "punish", "save", "warning", "behavior"], "layout": "item-board 2col"},
+        {"page": 8, "type": "vocab-matrix", "title": "20词分类矩阵 + 快闪复习", "content": ["分类表格", "mini-flash 20词", "检查清单"], "interactions": ["gtab", "mini-flash-grid"]},
+        {"page": 9, "type": "vocab-game-1", "title": "班规词汇消消乐 (T1-I)", "gameType": "T1-I", "gameName": "vocab-match-eliminate", "description": "词汇与中文释义配对消除"},
+        {"page": 10, "type": "vocab-game-2", "title": "跨课词汇竞技场 (T3-B)", "gameType": "T3-B", "gameName": "cross-lesson-arena", "description": "L8-L10 60词 + L11 20词综合复习"}
+      ]
+    },
+    {
+      "name": "语法3考点",
+      "start": 11,
+      "end": 18,
+      "pages": [
+        {"page": 11, "type": "grammar", "title": "G28 情态动词 can/can't 及 must/have to", "content": ["口诀", "公式矩阵6种结构", "can vs must vs have to辨析", "防越级约束"], "grammarTag": "G28"},
+        {"page": 12, "type": "grammar-examples", "title": "G28 例句精讲 + 易错点", "content": ["6条例句", "4条易错点", "mustn't vs don't have to中考辨析"], "grammarTag": "G28"},
+        {"page": 13, "type": "interactive-1", "title": "班规指挥台", "component": "rule-command-scene", "buttons": ["Can we...?", "Must...", "Don't have to", "Mustn't"], "animations": ["bounceIn", "shakeX", "slideInLeft"]},
+        {"page": 14, "type": "grammar", "title": "G29 名词复数不规则变化", "content": ["口诀", "公式矩阵9词", "单复同形sheep/deer/fish", "防越级约束"], "grammarTag": "G29"},
+        {"page": 15, "type": "grammar-examples", "title": "G29 例句精讲 + 易错点", "content": ["5条例句", "5条易错点", "women teachers双重变化"], "grammarTag": "G29"},
+        {"page": 16, "type": "grammar", "title": "G30 规则与时间介词 in/on/at", "content": ["口诀", "公式矩阵三大介词", "三步判断法", "防越级约束"], "grammarTag": "G30"},
+        {"page": 17, "type": "grammar-examples", "title": "G30 例句精讲 + 易错点", "content": ["5条例句", "4条易错点", "in the morning vs on Monday morning辨析"], "grammarTag": "G30"},
+        {"page": 18, "type": "interactive-2", "title": "时间介词日历", "component": "time-calendar-scene", "buttons": ["in", "on", "at"], "elements": ["📅 日历", "🕐 时钟"]}
+      ]
+    },
+    {
+      "name": "随堂演练",
+      "start": 19,
+      "end": 20,
+      "pages": [
+        {"page": 19, "type": "quiz", "title": "随堂演练 上 (G28+G29)", "questions": 4, "interactions": ["checkQuiz × 4"]},
+        {"page": 20, "type": "quiz", "title": "随堂演练 下 (G30+综合)", "questions": 4, "interactions": ["checkQuiz × 4"]}
+      ]
+    },
+    {
+      "name": "阅读理解",
+      "start": 21,
+      "end": 23,
+      "pages": [
+        {"page": 21, "type": "reading", "title": "阅读A篇 — Our Class Rules", "wordCount": 107, "questions": 5},
+        {"page": 22, "type": "reading", "title": "阅读B篇 — A New Student's First Week (上)", "wordCount": 129, "questions": 3},
+        {"page": 23, "type": "reading", "title": "阅读B篇 (下) + 五选四 — Rules Make Us Better", "wordCount": 129, "questions": 5}
+      ]
+    },
+    {
+      "name": "句子练习",
+      "start": 24,
+      "end": 26,
+      "pages": [
+        {"page": 24, "type": "translation", "title": "汉译英 5句（规则表达+情态动词）", "interactions": ["answer-mask × 5"]},
+        {"page": 25, "type": "sentence-building", "title": "造句练习 5句（不规则复数+时间介词）", "interactions": ["answer-mask × 5"]},
+        {"page": 26, "type": "error-correction", "title": "改错练习 5句", "interactions": ["answer-mask × 5"]}
+      ]
+    }
+  ],
+  "phonicsSection": {
+    "note": "自然拼读在句子练习之后、课堂总结之前",
+    "pages": [
+      {"type": "phonics-learning", "title": "or/ore 组合 /ɔː/ 音素学习", "letters": ["or", "ore"], "sounds": ["/ɔː/"]},
+      {"type": "phonics-exercise-1", "title": "拆拼朗读词汇表", "wordCount": 12, "words": ["for", "morning", "short", "horse", "storm", "north", "more", "store", "before", "score", "shore", "chore"]},
+      {"type": "phonics-exercise-2", "title": "听音选词", "questions": 4},
+      {"type": "phonics-exercise-3-4", "title": "看词归音 + 最小对立对辨析", "questions": 8, "pairs": ["for/four", "morning/borning", "more/may", "store/star"]}
+    ]
+  },
+  "summary": {
+    "page": "last",
+    "type": "summary",
+    "title": "第11课 · 核心总结",
+    "content": ["summary-grid 三卡片（G28/G29/G30）", "20词 mini-flash", "super-mn 口诀汇总"]
+  }
+}

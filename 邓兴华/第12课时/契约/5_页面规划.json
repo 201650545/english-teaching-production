@@ -1,0 +1,130 @@
+{
+  "course": "第12课 · 冠词 a/an/the、可数不可数与 some/any",
+  "stage": "Stage 3",
+  "lesson": "L12",
+  "duration": "90min",
+  "totalPages": 42,
+  "brand": "#3498DB",
+  "accent": "#F39C12",
+  "bgGradient": "#EAF7FB → #D6EAF8",
+  "pageIdContract": true,
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "realtime",
+    "exportFormats": ["json", "csv"],
+    "sessionIdRule": "L12_{studentId}_{YYYYMMDD}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  },
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": [
+        {
+          "page": 0,
+          "type": "cover",
+          "title": "第12课 · 冠词 a/an/the、可数不可数与 some/any",
+          "subtitle": "Stage 3 · 饮食·点餐与食物名词 | 90分钟课程",
+          "objectives": ["掌握20个饮食点餐核心词汇", "掌握冠词G31/量词G32/some-any G33", "完成igh/aɪ与y/aɪ拼读学习"],
+          "meta": [{"label": "核心场景", "value": "饮食点餐"}, {"label": "新词", "value": "20 Words"}, {"label": "时长", "value": "90 min"}, {"label": "语法", "value": "G31/G32/G33"}]
+        }
+      ]
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 2,
+      "pages": [
+        {
+          "page": 1,
+          "type": "review-grammar",
+          "title": "L11 语法回顾",
+          "content": ["时间介词 in/on/at", "can/can't, must/have to 情态动词"],
+          "interactions": ["formula-box × 3"]
+        },
+        {
+          "page": 2,
+          "type": "review-vocab",
+          "title": "L11 词汇快闪 + 导入",
+          "content": ["L11 20词分类速览", "3句口头翻译", "导入：I'd like a bowl of noodles."],
+          "interactions": ["answer-mask × 3"]
+        }
+      ]
+    },
+    {
+      "name": "新词20",
+      "start": 3,
+      "end": 8,
+      "pages": [
+        {"page": 3, "type": "vocab-group", "title": "饮品类 A组 (1-5)", "words": ["yogurt", "water", "juice", "tea", "coffee"], "layout": "item-board 2col"},
+        {"page": 4, "type": "vocab-group", "title": "肉类汤品类 (6-10)", "words": ["beef", "mutton", "pork", "fish", "soup"], "layout": "item-board 2col"},
+        {"page": 5, "type": "vocab-group", "title": "蔬菜主食类 (11-15)", "words": ["egg", "noodle", "cabbage", "carrot", "onion"], "layout": "item-board 2col"},
+        {"page": 6, "type": "vocab-group", "title": "点餐服务类 (16-20)", "words": ["size", "bowl", "tip", "menu", "customer"], "layout": "item-board 2col"},
+        {"page": 7, "type": "vocab-matrix", "title": "20词分类矩阵 + 快闪复习", "content": ["语义场分类表格", "mini-flash 20词"], "interactions": ["gtab", "mini-flash-grid"]},
+        {"page": 8, "type": "vocab-preview", "title": "可数/不可数概念预览", "content": ["可数vs不可数预判", "量词预览"]}
+      ]
+    },
+    {
+      "name": "语法3考点",
+      "start": 9,
+      "end": 19,
+      "pages": [
+        {"page": 9, "type": "grammar", "title": "G31 冠词 a/an/the", "content": ["口诀", "冠词用法对照表", "a/an判断法", "三类特指"], "grammarTag": "G31"},
+        {"page": 10, "type": "grammar-examples", "title": "G31 例句精讲 + 易错点", "content": ["6条例句", "5条易错点", "中考辨析"], "grammarTag": "G31"},
+        {"page": 11, "type": "interactive-1", "title": "冠词分类投掷器", "component": "article-thrower", "nouns": ["egg", "carrot", "onion", "menu", "noodle"]},
+        {"page": 12, "type": "grammar", "title": "G32 可数不可数与量词", "content": ["口诀", "可数/不可数分类表", "量词表达结构表", "量词单复数"], "grammarTag": "G32"},
+        {"page": 13, "type": "grammar-examples", "title": "G32 例句精讲 + 易错点", "content": ["5条例句", "易错点", "中考辨析"], "grammarTag": "G32"},
+        {"page": 14, "type": "grammar", "title": "G33 some/any 用法", "content": ["口诀", "some/any对照表", "礼貌请求特殊用法"], "grammarTag": "G33"},
+        {"page": 15, "type": "grammar-examples", "title": "G33 例句精讲 + 易错点", "content": ["5条例句", "易错点", "中考辨析"], "grammarTag": "G33"},
+        {"page": 16, "type": "interactive-2", "title": "点餐购物车", "component": "order-cart", "foods": ["tea", "noodles", "beef", "soup", "egg"]},
+        {"page": 17, "type": "grammar-compare", "title": "G31/G32/G33 综合对比", "content": ["三考点横向对比", "冠词+量词+some/any流程"]},
+        {"page": 18, "type": "quiz", "title": "随堂演练 上（G31+G32）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]},
+        {"page": 19, "type": "quiz", "title": "随堂演练 下（G33+综合）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]}
+      ]
+    },
+    {
+      "name": "阅读理解",
+      "start": 20,
+      "end": 24,
+      "pages": [
+        {"page": 20, "type": "reading", "title": "阅读A篇 Welcome to Healthy Noodle House", "content": ["107词", "5选择题"]},
+        {"page": 21, "type": "reading", "title": "阅读B篇 Ordering Lunch at the Noodle House", "content": ["129词", "3选择题"]},
+        {"page": 22, "type": "reading", "title": "阅读B篇（下）+ 五选四", "content": ["2选择题", "阅读回答问题"]},
+        {"page": 23, "type": "reading", "title": "阅读C篇 How to Eat a Balanced Meal", "content": ["129词", "5选择题"]},
+        {"page": 24, "type": "reading", "title": "阅读五选四 A Special Order at the Noodle House", "content": ["129词", "5空4选"]}
+      ]
+    },
+    {
+      "name": "句子练习",
+      "start": 25,
+      "end": 27,
+      "pages": [
+        {"page": 25, "type": "translation", "title": "汉译英 5句", "content": ["冠词2句", "量词2句", "some/any 1句"], "interactions": ["answer-mask × 5"]},
+        {"page": 26, "type": "sentence-build", "title": "造句练习 5句", "content": ["G31/G32/G33造句"], "interactions": ["answer-mask × 5"]},
+        {"page": 27, "type": "error-correction", "title": "改错练习 5句", "content": ["G31/G32/G33易错点"], "interactions": ["answer-mask × 5"]}
+      ]
+    },
+    {
+      "name": "自然拼读",
+      "start": 28,
+      "end": 31,
+      "pages": [
+        {"page": 28, "type": "phonics", "title": "igh/aɪ 与 y/aɪ 音素学习", "content": ["igh /aɪ/", "y /aɪ/"], "grammarTag": "PH"},
+        {"page": 29, "type": "phonics-read", "title": "练习1 朗读词汇表", "content": ["igh × 6词", "y × 6词"]},
+        {"page": 30, "type": "phonics-exercise", "title": "练习2+3 听音选词 + 看词归音", "content": ["4题听音选词", "4题看词归音"]},
+        {"page": 31, "type": "phonics-exercise", "title": "练习4 + 拼读总结", "content": ["4题最小对立对", "拼读总结"]}
+      ]
+    },
+    {
+      "name": "课堂总结",
+      "start": 32,
+      "end": 33,
+      "pages": [
+        {"page": 32, "type": "summary", "title": "核心总结", "content": ["G31/G32/G33三卡片", "20词快闪", "口诀汇总"]},
+        {"page": 33, "type": "mindmap", "title": "思维导图 + 完成提示", "content": ["冠词/量词/some-any系统", "完成提示"]}
+      ]
+    }
+  ]
+}

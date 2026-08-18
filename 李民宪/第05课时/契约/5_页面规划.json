@@ -1,0 +1,84 @@
+{
+  "lesson_id": "第05课",
+  "theme": {
+    "style": "红金家园",
+    "primary_color": "#E63946",
+    "accent_color": "#FFD700",
+    "font_size_base": "26px"
+  },
+  "total_pages": 26,
+  "pages": [
+    {"page_index": 1, "section": "复习导入", "title": "语法回顾：can/could 初测", "layout_type": "Split-2", "components": [{"type": "exercise-item", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 2, "section": "复习导入", "title": "跨课词汇复习：假期计划语篇重建", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "T3-B", "sentences": 6}}], "vocabReviewTier": "T3", "vocabReviewScope": "cross-lesson", "gameType": "T3-B", "trainingObjective": "CTX", "promptLevel": 3, "contextType": "passage"},
+    {"page_index": 3, "section": "新词20", "title": "目标词①：房间与空间", "layout_type": "Grid-5", "components": [{"type": "word-card", "data": {"words": ["pack", "pack up", "bathroom", "sort", "bedroom"]}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "word"},
+    {"page_index": 4, "section": "新词20", "title": "目标词②：接待与动作", "layout_type": "Grid-5", "components": [{"type": "word-card", "data": {"words": ["balcony", "hang up", "invite", "living room", "arrival"]}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "word"},
+    {"page_index": 5, "section": "新词20", "title": "词块与搭配", "layout_type": "Split-2", "components": [{"type": "example-line", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "sentence"},
+    {"page_index": 6, "section": "新词20", "title": "语境例句", "layout_type": "Exercise-List", "components": [{"type": "example-line", "data": {"count": 10}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "sentence"},
+    {"page_index": 7, "section": "新词20", "title": "课内游戏①：中文选英文", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "T1-G", "words": 20}}], "vocabReviewTier": "T1", "vocabReviewScope": "in-lesson", "gameType": "T1-G", "trainingObjective": "RET", "promptLevel": 3, "contextType": "word"},
+    {"page_index": 8, "section": "新词20", "title": "课内游戏②：角色对话填词", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "T3-D", "questions": 6}}], "vocabReviewTier": "T3", "vocabReviewScope": "in-lesson", "gameType": "T3-D", "trainingObjective": "CTX", "promptLevel": 3, "contextType": "dialogue"},
+    {"page_index": 9, "section": "语法3考点", "title": "语法①：can/could 请求与帮助", "layout_type": "Formula-Card", "components": [{"type": "formula-box", "data": {"formula": "Can/Could you (please) + 动词原形?"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 10, "section": "语法3考点", "title": "语法①练习：请求选择", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 11, "section": "语法3考点", "title": "语法②：邀请与回应", "layout_type": "Formula-Card", "components": [{"type": "formula-box", "data": {"formula": "Would you like to + 动词原形?"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 12, "section": "语法3考点", "title": "语法②练习：回应匹配", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 13, "section": "语法3考点", "title": "语法③：方位表达", "layout_type": "Formula-Card", "components": [{"type": "formula-box", "data": {"formula": "某物 + is/are + 方位介词 + 地点"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 14, "section": "语法3考点", "title": "语法③练习：方位选择", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 15, "section": "随堂演练", "title": "Mini Task：客人到家前准备", "layout_type": "Split-2", "components": [{"type": "exercise-item", "data": {"count": 1}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": "EXP", "promptLevel": 3, "contextType": "scenario"},
+    {"page_index": 16, "section": "随堂演练", "title": "常规练习：情景对话", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 17, "section": "阅读理解", "title": "阅读短文：Preparing for a Guest", "layout_type": "Reading-Passage", "components": [{"type": "reading-passage", "data": {"words": 160}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 18, "section": "阅读理解", "title": "阅读题目①", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 19, "section": "阅读理解", "title": "阅读题目②", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 2}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 20, "section": "句子练习", "title": "插空造句①", "layout_type": "Split-2", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 21, "section": "句子练习", "title": "插空造句②", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 22, "section": "句子练习", "title": "翻译练习", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 23, "section": "自然拼读", "title": "-oom 发音规则", "layout_type": "Split-2", "components": [{"type": "formula-box", "data": {"formula": "-oom → /uːm/"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 24, "section": "自然拼读", "title": "-oom/-oo 发音区分", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 8}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 25, "section": "自然拼读", "title": "拼读练习", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 26, "section": "课堂总结", "title": "Exit Ticket 退出检测", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 6}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null}
+  ],
+  "vocabReviewPlan": {
+    "inLessonGames": [
+      {"pageIndex": 7, "tier": "T1", "gameType": "T1-G", "trainingObjective": "RET", "promptLevel": 3, "wordCount": 20},
+      {"pageIndex": 8, "tier": "T3", "gameType": "T3-D", "trainingObjective": "CTX", "promptLevel": 3, "wordCount": 6}
+    ],
+    "crossLessonGame": {
+      "pageIndex": 2,
+      "tier": "T3",
+      "gameType": "T3-B",
+      "trainingObjective": "CTX",
+      "promptLevel": 3,
+      "reviewLessonId": "L04",
+      "wordCount": 6
+    },
+    "miniTask": {
+      "pageIndex": 15,
+      "taskContext": "最好的朋友明天来家做客，提前做好接待准备",
+      "communicationGoal": "用 can/could 请求帮助 + Would you like to 邀请 + 方位词介绍房间",
+      "requiredWords": ["pack", "pack up", "sort", "clean", "invite", "bathroom", "bedroom", "balcony", "living room", "next to"],
+      "sentenceStarter": "First, I will... / Could you please...? / Would you like to...? / The... is next to the...",
+      "completionCriteria": "至少 5 个必用词 + 结构完整（准备→邀请→接待）+ 语言正确"
+    },
+    "exitTicket": {
+      "pageIndex": 26,
+      "questionCount": 6,
+      "recQuestions": 2,
+      "retQuestions": 2,
+      "expQuestions": 1,
+      "hasSelfAssessment": true
+    },
+    "errorWordPool": {
+      "recentRatio": 40,
+      "errorRatio": 35,
+      "longTermRatio": 25,
+      "classificationDepth": "full-D-page"
+    }
+  },
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "csv",
+    "exportFormats": ["json", "csv"],
+    "questionIdPrefix": "L05",
+    "sessionIdRule": "stu_001_YYYYMMDDAM/PM",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  }
+}

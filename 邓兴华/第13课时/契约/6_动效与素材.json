@@ -1,0 +1,104 @@
+{
+  "course": "第13课",
+  "animations": {
+    "css": [
+      {"name": "fadeSlideUp", "definition": "from {opacity:0; transform:translateY(30px)} to {opacity:1; transform:translateY(0)}", "usage": "页面进入、内容块出现"},
+      {"name": "scaleUp", "definition": "from {opacity:0; transform:scale(0.85)} to {opacity:1; transform:scale(1)}", "usage": "卡片缩放出现"},
+      {"name": "bounceIn", "definition": "0%{opacity:0;transform:scale(0.3)} 50%{transform:scale(1.08)} 70%{transform:scale(0.95)} 100%{opacity:1;transform:scale(1)}", "usage": "正确反馈"},
+      {"name": "bpSwing", "definition": "0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)}", "usage": "错误反馈摇摆"},
+      {"name": "pulse", "definition": "0%,100%{transform:scale(1)} 50%{transform:scale(1.05)}", "usage": "高亮脉冲"},
+      {"name": "slideInLeft", "definition": "from {opacity:0; transform:translateX(-40px)} to {opacity:1; transform:translateX(0)}", "usage": "句子行进入"},
+      {"name": "floatY", "definition": "0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)}", "usage": "emoji浮动"},
+      {"name": "shimmer", "definition": "0%{background-position:-200% center} 100%{background-position:200% center}", "usage": "进度条闪光"}
+    ],
+    "additional": [
+      {"name": "orderDrop", "definition": "0%{opacity:0;transform:translateY(-30px) scale(0.8)} 100%{opacity:1;transform:translateY(0) scale(1)}", "usage": "点餐选择下落动画"},
+      {"name": "coinFlow", "definition": "0%{transform:translateY(0);opacity:1} 100%{transform:translateY(40px);opacity:0}", "usage": "结算找零动画"},
+      {"name": "shakeX", "definition": "0%,100%{transform:translateX(0)} 10%,30%,50%,70%,90%{transform:translateX(-4px)} 20%,40%,60%,80%{transform:translateX(4px)}", "usage": "错误抖动"},
+      {"name": "cardFlyIn", "definition": "0%{opacity:0;transform:translateY(-30px) scale(0.5) rotate(-10deg)} 60%{transform:translateY(5px) scale(1.1) rotate(2deg)} 100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}", "usage": "词卡飞入"},
+      {"name": "mindBranch", "definition": "0%{opacity:0;transform:scale(0.5)} 100%{opacity:1;transform:scale(1)}", "usage": "思维导图分支展开"}
+    ]
+  },
+  "interactions": {
+    "navigation": {
+      "halfScreenClick": true,
+      "pageTurnExemption": ["quiz-q", "quiz-container", "drag-container", "link-container", "order-container"],
+      "answerRevealPriority": true,
+      "keyboardArrows": true,
+      "navPills": true
+    },
+    "quiz": {
+      "type": "checkOpt",
+      "containerResolve": "btn.closest('.quiz-container')||btn.closest('.quiz-q')",
+      "feedback": {
+        "correct": "蓝色✅ + bounceIn动画 + 正确音效",
+        "wrong": "红色❌ + bpSwing动画 + 错误音效"
+      },
+      "undo": {
+        "doubleClick": true,
+        "description": "答错后双击可撤销重答"
+      },
+      "disableAfterAnswer": false,
+      "showCorrectAnswer": true
+    },
+    "dataCollection": {
+      "type": "IndexedDB",
+      "recordAnswer": true,
+      "recordUndo": true,
+      "syncMode": "realtime",
+      "exportFormats": ["json", "csv"]
+    },
+    "phonics": {
+      "type": "checkPhonics",
+      "feedback": "同quiz"
+    },
+    "answerMask": {
+      "type": "toggleMask",
+      "initial": "蓝色遮罩显示'🔍 点击揭晓'",
+      "revealed": "浅蓝色背景显示答案 + 正确音效"
+    }
+  },
+  "interactiveComponents": {
+    "component1": {
+      "name": "点餐选择器",
+      "grammarTag": "G34",
+      "elements": {
+        "scene": ".order-selector-scene",
+        "foods": ["pancake", "dumplings", "dessert", "snacks"],
+        "actions": ["buy", "have", "try"]
+      },
+      "logic": {
+        "selectFood": "选择食物",
+        "selectAction": "选择动作",
+        "generateSentence": "生成would like句子",
+        "toggleQuestion": "切换肯定/否定/疑问"
+      }
+    },
+    "component2": {
+      "name": "购物结算台",
+      "grammarTag": "G36",
+      "elements": {
+        "scene": ".checkout-counter-scene",
+        "goods": ["dumplings", "pancakes", "snacks"],
+        "quantities": ["one", "two", "three"]
+      },
+      "logic": {
+        "selectGood": "选择商品",
+        "selectQty": "选择数量",
+        "calcTotal": "计算总价",
+        "generatePrice": "生成价格表达句子"
+      }
+    }
+  },
+  "audio": {
+    "correct": {"freq": [880, 1100], "duration": [0.15, 0.2], "type": "sine"},
+    "error": {"freq": 220, "duration": 0.3, "type": "sawtooth"},
+    "pageTurn": {"freq": 440, "duration": 0.1, "type": "triangle"},
+    "coinFlow": {"type": "coin-chime", "description": "结算找零音效"}
+  },
+  "assets": {
+    "emojis": ["🥞", "🥟", "🍰", "🍿", "🍬", "🧂", "🛢️", "💲", "💵", "💴", "🧾", "💳", "🪙", "💸", "💰", "🏷️", "🛒", "🏪", "🏬", "🤵", "🤔", "😊", "⚡", "🔍", "❓", "💬", "🧩", "✅", "❌"],
+    "images": "none (all CSS/emoji based)",
+    "externalLibs": "none (vanilla JS)"
+  }
+}

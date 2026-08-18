@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第27课时 · 阅读理解选择SOP专项冲刺</title>
+<style>
+/* <CW-CSS-EXTRA version="1.0" required="true"> */
+/* <CW-SECTION name="theme"> */
+:root {
+  --brand: #0891B2;
+  --accent: #F59E0B;
+  --brand-light: #22D3EE;
+  --brand-dark: #0E7490;
+  --bg-start: #F0F9FF;
+  --bg-end: #E0F2FE;
+  --card-shadow: 0 2px 12px rgba(8,145,178,0.10);
+  --text-primary: #1a1a2e;
+  --text-secondary: #64748b;
+  --correct: #10b981;
+  --error: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  min-height: 100vh;
+  color: var(--text-primary);
+}
+.page {
+  display: none;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: calc(100vh - 80px);
+}
+.page.active { display: block; }
+.bg-white {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--card-shadow);
+}
+h2 {
+  color: var(--brand);
+  margin-bottom: 20px;
+  font-size: 22px;
+  border-bottom: 2px solid var(--brand-light);
+  padding-bottom: 10px;
+}
+h3 {
+  color: var(--brand-dark);
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+/* Cover */
+.cover {
+  text-align: center;
+  padding: 60px 20px;
+}
+.cover .lesson-num {
+  font-size: 72px;
+  font-weight: bold;
+  color: var(--brand);
+  margin-bottom: 10px;
+}
+.cover h1 {
+  font-size: 32px;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+.cover .subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+/* Vocabulary grid */
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 15px;
+}
+.vocab-card {
+  background: linear-gradient(135deg, #f8fffe 0%, #eef8fb 100%);
+  border: 1.5px solid var(--brand-light);
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.vocab-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(8,145,178,0.2);
+}
+.vocab-card .word {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--brand-dark);
+}
+.vocab-card .phonetic {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 3px 0;
+}
+.vocab-card .pos {
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: bold;
+}
+.vocab-card .cn {
+  font-size: 13px;
+  color: var(--text-primary);
+  margin-top: 4px;
+  display: none;
+}
+.vocab-card.revealed .cn { display: block; }
+.vocab-card.revealed {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  color: white;
+}
+.vocab-card.revealed .word,
+.vocab-card.revealed .phonetic,
+.vocab-card.revealed .pos,
+.vocab-card.revealed .cn { color: white; }
+/* Quiz */
+.quiz-block {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 3px solid var(--brand);
+}
+.q-text {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+.quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.quiz-option {
+  background: white;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.quiz-option:hover { border-color: var(--brand); background: #f0f9ff; }
+.quiz-option.correct { border-color: var(--correct); background: #ecfdf5; }
+.quiz-option.wrong { border-color: var(--error); background: #fef2f2; }
+.opt-letter {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--brand-light);
+  color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: bold;
+  flex-shrink: 0;
+}
+.opt-text { font-size: 14px; color: var(--text-primary); }
+.feedback-area {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: none;
+}
+.feedback-area.show { display: block; }
+.feedback-area.correct-fb { background: #ecfdf5; color: var(--correct); }
+.feedback-area.wrong-fb { background: #fef2f2; color: var(--error); }
+/* Reading passage */
+.reading-passage {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  line-height: 1.9;
+  font-size: 15px;
+  color: var(--text-primary);
+  border: 1px solid #e5e7eb;
+}
+.reading-passage h3 {
+  color: var(--brand);
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.reading-passage p { margin-bottom: 12px; text-indent: 2em; }
+/* SOP Steps */
+.sop-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+.sop-step {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 15px 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.sop-step:hover { transform: scale(1.05); }
+.step-num { font-size: 28px; font-weight: bold; margin-bottom: 5px; }
+.step-title { font-size: 13px; font-weight: bold; margin-bottom: 4px; }
+.step-desc { font-size: 11px; opacity: 0.85; }
+/* Five choice */
+.five-choice-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.five-choice-opt {
+  background: white;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 14px;
+}
+.five-choice-opt:hover { border-color: var(--brand); background: #f0f9ff; }
+.five-choice-opt.selected { border-color: var(--brand); background: #e0f2fe; }
+.five-choice-opt.correct-opt { border-color: var(--correct); background: #ecfdf5; }
+.five-choice-opt.wrong-opt { border-color: var(--error); background: #fef2f2; }
+.five-choice-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+.five-choice-slot {
+  background: var(--brand-light);
+  color: white;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 60px;
+  text-align: center;
+}
+.five-choice-slot.used { opacity: 0.4; cursor: default; }
+/* Phonics */
+.phonics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 15px;
+}
+.phonics-card {
+  background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 15px;
+}
+.phonics-card .rule {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+.phonics-card .example {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.phonics-card .sound-words {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.phonics-card .sound-words div {
+  background: var(--accent);
+  color: white;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+/* Objectives */
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.objective-num {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: bold; font-size: 14px;
+  flex-shrink: 0;
+}
+.objective-text { font-size: 14px; line-height: 1.6; }
+/* Summary */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+.summary-card {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+}
+.summary-card .num { font-size: 32px; font-weight: bold; }
+.summary-card .label { font-size: 13px; opacity: 0.9; margin-top: 5px; }
+/* Nav */
+.nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+.nav-btn {
+  background: var(--brand);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.nav-btn:hover { background: var(--brand-dark); }
+.page-indicator { color: var(--text-secondary); font-size: 14px; }
+/* Feedback bubble */
+.feedback-bubble {
+  position: fixed;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 12px;
+  padding: 12px 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  display: none;
+  align-items: center;
+  gap: 10px;
+  z-index: 99;
+  max-width: 500px;
+}
+.feedback-bubble.show { display: flex; }
+.feedback-icon { font-size: 24px; }
+.feedback-text { font-size: 14px; color: var(--text-primary); }
+/* Exit ticket */
+.exit-ticket {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 15px;
+}
+.exit-ticket h3 { color: var(--accent); }
+.exit-ticket textarea {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 80px;
+  margin-top: 10px;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .sop-grid { grid-template-columns: repeat(3, 1fr); }
+  .quiz-options { grid-template-columns: 1fr; }
+  .phonics-grid { grid-template-columns: 1fr; }
+  .summary-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div id="page1" class="page active">
+  <div class="bg-white">
+    <div class="cover">
+      <div class="lesson-num">27</div>
+      <h1>阅读理解选择<br>SOP专项冲刺</h1>
+      <div class="subtitle">许颖嘉 · 七年级 · 湖南中考省卷冲刺</div>
+    </div>
+  </div>
+</div>
+<div id="page2" class="page">
+  <div class="bg-white">
+    <h2>📋 学习目标</h2>
+    <div class="objective-item">
+      <div class="objective-num">1</div>
+      <div class="objective-text">掌握阅读理解选择SOP五步法：审题定位→扫读寻证→比对选项→排除干扰→验证答案</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num">2</div>
+      <div class="objective-text">熟练运用SOP解阅读A（通知类）、阅读B（记叙文）、阅读C（说明文）三篇真题改编</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num">3</div>
+      <div class="objective-text">识别常见干扰项类型：偷换概念、过度推断、无中生有、绝对化表述</div>
+    </div>
+    <div class="objective-item">
+      <div class="objective-num">4</div>
+      <div class="objective-text">积累20个高频阅读词汇，提升阅读速度和理解准确率</div>
+    </div>
+  </div>
+</div>
+<div id="page3" class="page">
+  <div class="bg-white">
+    <h2>🎯 阅读理解SOP五步法</h2>
+    <p style="margin-bottom:15px;color:var(--text-secondary);">点击每步查看详细技巧，点击卡片试听提示音</p>
+    <div class="sop-grid">
+<div class="sop-step" onclick="playCorrect()"><div class="step-num">①</div><div class="step-title">审题定位</div><div class="step-desc">圈关键词:人名、地点、时间、核心名词</div></div>
+<div class="sop-step" onclick="playCorrect()"><div class="step-num">②</div><div class="step-title">扫读寻证</div><div class="step-desc">快速扫描文章，找对应表述</div></div>
+<div class="sop-step" onclick="playCorrect()"><div class="step-num">③</div><div class="step-title">比对选项</div><div class="step-desc">逐个选项与原文比对，找依据</div></div>
+<div class="sop-step" onclick="playCorrect()"><div class="step-num">④</div><div class="step-title">排除干扰</div><div class="step-desc">识别偷换概念、过度推断、无中生有</div></div>
+<div class="sop-step" onclick="playCorrect()"><div class="step-num">⑤</div><div class="step-title">验证答案</div><div class="step-desc">回查原文确认，确保逻辑一致</div></div>
+    </div>
+    <p style="margin-top:20px;padding:15px;background:#FFF8F0;border-radius:8px;color:var(--brand);font-size:14px;">💡 阅读SOP核心口诀：<strong>先审题，再扫读；找答案，比选项；排干扰，再验证</strong></p>
+  </div>
+</div>
+<div id="page4" class="page">
+  <div class="bg-white">
+    <h2>📚 词汇检测</h2>
+    <p style="margin-bottom:15px;color:var(--text-secondary);">点击卡片查看释义，快速检测你的掌握程度：</p>
+    <div class="vocab-grid">
+<div class="vocab-card" data-word="achieve" data-cn="实现；达到" data-phonetic="/əˈtʃiːv/" data-pos="v."><div class="word">achieve</div><div class="phonetic">/əˈtʃiːv/</div><div class="pos">v.</div><div class="cn">实现；达到</div></div>
+<div class="vocab-card" data-word="agree" data-cn="同意；赞同" data-phonetic="/əˈɡriː/" data-pos="v."><div class="word">agree</div><div class="phonetic">/əˈɡriː/</div><div class="pos">v.</div><div class="cn">同意；赞同</div></div>
+<div class="vocab-card" data-word="allow" data-cn="允许；让" data-phonetic="/əˈlaʊ/" data-pos="v."><div class="word">allow</div><div class="phonetic">/əˈlaʊ/</div><div class="pos">v.</div><div class="cn">允许；让</div></div>
+<div class="vocab-card" data-word="appear" data-cn="出现；显得" data-phonetic="/əˈpɪə(r)/" data-pos="v."><div class="word">appear</div><div class="phonetic">/əˈpɪə(r)/</div><div class="pos">v.</div><div class="cn">出现；显得</div></div>
+<div class="vocab-card" data-word="arrive" data-cn="到达" data-phonetic="/əˈraɪv/" data-pos="v."><div class="word">arrive</div><div class="phonetic">/əˈraɪv/</div><div class="pos">v.</div><div class="cn">到达</div></div>
+<div class="vocab-card" data-word="begin" data-cn="开始" data-phonetic="/bɪˈɡɪn/" data-pos="v."><div class="word">begin</div><div class="phonetic">/bɪˈɡɪn/</div><div class="pos">v.</div><div class="cn">开始</div></div>
+<div class="vocab-card" data-word="choose" data-cn="选择" data-phonetic="/tʃuːz/" data-pos="v."><div class="word">choose</div><div class="phonetic">/tʃuːz/</div><div class="pos">v.</div><div class="cn">选择</div></div>
+<div class="vocab-card" data-word="compare" data-cn="比较；对比" data-phonetic="/kəmˈpeə(r)/" data-pos="v."><div class="word">compare</div><div class="phonetic">/kəmˈpeə(r)/</div><div class="pos">v.</div><div class="cn">比较；对比</div></div>
+<div class="vocab-card" data-word="complete" data-cn="完成" data-phonetic="/kəmˈpliːt/" data-pos="v."><div class="word">complete</div><div class="phonetic">/kəmˈpliːt/</div><div class="pos">v.</div><div class="cn">完成</div></div>
+<div class="vocab-card" data-word="consider" data-cn="考虑；认为" data-phonetic="/kənˈsɪdə(r)/" data-pos="v."><div class="word">consider</div><div class="phonetic">/kənˈsɪdə(r)/</div><div class="pos">v.</div><div class="cn">考虑；认为</div></div>
+<div class="vocab-card" data-word="describe" data-cn="描述；形容" data-phonetic="/dɪˈskraɪb/" data-pos="v."><div class="word">describe</div><div class="phonetic">/dɪˈskraɪb/</div><div class="pos">v.</div><div class="cn">描述；形容</div></div>
+<div class="vocab-card" data-word="encourage" data-cn="鼓励；激励" data-phonetic="/ɪnˈkʌrɪdʒ/" data-pos="v."><div class="word">encourage</div><div class="phonetic">/ɪnˈkʌrɪdʒ/</div><div class="pos">v.</div><div class="cn">鼓励；激励</div></div>
+<div class="vocab-card" data-word="explain" data-cn="解释；说明" data-phonetic="/ɪkˈspleɪn/" data-pos="v."><div class="word">explain</div><div class="phonetic">/ɪkˈspleɪn/</div><div class="pos">v.</div><div class="cn">解释；说明</div></div>
+<div class="vocab-card" data-word="imagine" data-cn="想象；设想" data-phonetic="/ɪˈmædʒɪn/" data-pos="v."><div class="word">imagine</div><div class="phonetic">/ɪˈmædʒɪn/</div><div class="pos">v.</div><div class="cn">想象；设想</div></div>
+<div class="vocab-card" data-word="improve" data-cn="改善；提高" data-phonetic="/ɪmˈpruːv/" data-pos="v."><div class="word">improve</div><div class="phonetic">/ɪmˈpruːv/</div><div class="pos">v.</div><div class="cn">改善；提高</div></div>
+<div class="vocab-card" data-word="include" data-cn="包括；包含" data-phonetic="/ɪnˈkluːd/" data-pos="v."><div class="word">include</div><div class="phonetic">/ɪnˈkluːd/</div><div class="pos">v.</div><div class="cn">包括；包含</div></div>
+<div class="vocab-card" data-word="increase" data-cn="增加；增长" data-phonetic="/ɪnˈkriːs/" data-pos="v."><div class="word">increase</div><div class="phonetic">/ɪnˈkriːs/</div><div class="pos">v.</div><div class="cn">增加；增长</div></div>
+<div class="vocab-card" data-word="influence" data-cn="影响" data-phonetic="/ˈɪnfluəns/" data-pos="v./n."><div class="word">influence</div><div class="phonetic">/ˈɪnfluəns/</div><div class="pos">v./n.</div><div class="cn">影响</div></div>
+<div class="vocab-card" data-word="introduce" data-cn="介绍；引进" data-phonetic="/ɪnˈtrədjuːs/" data-pos="v."><div class="word">introduce</div><div class="phonetic">/ɪnˈtrədjuːs/</div><div class="pos">v.</div><div class="cn">介绍；引进</div></div>
+<div class="vocab-card" data-word="mention" data-cn="提到；提及" data-phonetic="/ˈmenʃn/" data-pos="v."><div class="word">mention</div><div class="phonetic">/ˈmenʃn/</div><div class="pos">v.</div><div class="cn">提到；提及</div></div>
+    </div>
+    <p style="margin-top:20px;text-align:center;color:var(--text-secondary);font-size:13px;">点击卡片翻转查看中文释义</p>
+  </div>
+</div>
+<div id="page5" class="page">
+  <div class="bg-white">
+    <h2 style="color:var(--brand);margin-bottom:15px;">📖 新词学习 ①1</h2>
+    <div class="vocab-grid">
+<div class="vocab-card" data-word="achieve" data-cn="实现；达到" data-phonetic="/əˈtʃiːv/" data-pos="v."><div class="word">achieve</div><div class="phonetic">/əˈtʃiːv/</div><div class="pos">v.</div><div class="cn">实现；达到</div></div>
+<div class="vocab-card" data-word="agree" data-cn="同意；赞同" data-phonetic="/əˈɡriː/" data-pos="v."><div class="word">agree</div><div class="phonetic">/əˈɡriː/</div><div class="pos">v.</div><div class="cn">同意；赞同</div></div>
+<div class="vocab-card" data-word="allow" data-cn="允许；让" data-phonetic="/əˈlaʊ/" data-pos="v."><div class="word">allow</div><div class="phonetic">/əˈlaʊ/</div><div class="pos">v.</div><div class="cn">允许；让</div></div>
+<div class="vocab-card" data-word="appear" data-cn="出现；显得" data-phonetic="/əˈpɪə(r)/" data-pos="v."><div class="word">appear</div><div class="phonetic">/əˈpɪə(r)/</div><div class="pos">v.</div><div class="cn">出现；显得</div></div>
+<div class="vocab-card" data-word="arrive" data-cn="到达" data-phonetic="/əˈraɪv/" data-pos="v."><div class="word">arrive</div><div class="phonetic">/əˈraɪv/</div><div class="pos">v.</div><div class="cn">到达</div></div>
+    </div>
+    <p style="margin-top:15px;text-align:center;color:var(--text-secondary);font-size:13px;">点击卡片查看释义，大声跟读</p>
+  </div>
+</div>
+<div id="page6" class="page">
+  <div class="bg-white">
+    <h2 style="color:var(--brand);margin-bottom:15px;">📖 新词学习 ②1</h2>
+    <div class="vocab-grid">
+<div class="vocab-card" data-word="begin" data-cn="开始" data-phonetic="/bɪˈɡɪn/" data-pos="v."><div class="word">begin</div><div class="phonetic">/bɪˈɡɪn/</div><div class="pos">v.</div><div class="cn">开始</div></div>
+<div class="vocab-card" data-word="choose" data-cn="选择" data-phonetic="/tʃuːz/" data-pos="v."><div class="word">choose</div><div class="phonetic">/tʃuːz/</div><div class="pos">v.</div><div class="cn">选择</div></div>
+<div class="vocab-card" data-word="compare" data-cn="比较；对比" data-phonetic="/kəmˈpeə(r)/" data-pos="v."><div class="word">compare</div><div class="phonetic">/kəmˈpeə(r)/</div><div class="pos">v.</div><div class="cn">比较；对比</div></div>
+<div class="vocab-card" data-word="complete" data-cn="完成" data-phonetic="/kəmˈpliːt/" data-pos="v."><div class="word">complete</div><div class="phonetic">/kəmˈpliːt/</div><div class="pos">v.</div><div class="cn">完成</div></div>
+<div class="vocab-card" data-word="consider" data-cn="考虑；认为" data-phonetic="/kənˈsɪdə(r)/" data-pos="v."><div class="word">consider</div><div class="phonetic">/kənˈsɪdə(r)/</div><div class="pos">v.</div><div class="cn">考虑；认为</div></div>
+    </div>
+    <p style="margin-top:15px;text-align:center;color:var(--text-secondary);font-size:13px;">点击卡片查看释义，大声跟读</p>
+  </div>
+</div>
+<div id="page7" class="page">
+  <div class="bg-white">
+    <h2 style="color:var(--brand);margin-bottom:15px;">📖 新词学习 ①2</h2>
+    <div class="vocab-grid">
+<div class="vocab-card" data-word="describe" data-cn="描述；形容" data-phonetic="/dɪˈskraɪb/" data-pos="v."><div class="word">describe</div><div class="phonetic">/dɪˈskraɪb/</div><div class="pos">v.</div><div class="cn">描述；形容</div></div>
+<div class="vocab-card" data-word="encourage" data-cn="鼓励；激励" data-phonetic="/ɪnˈkʌrɪdʒ/" data-pos="v."><div class="word">encourage</div><div class="phonetic">/ɪnˈkʌrɪdʒ/</div><div class="pos">v.</div><div class="cn">鼓励；激励</div></div>
+<div class="vocab-card" data-word="explain" data-cn="解释；说明" data-phonetic="/ɪkˈspleɪn/" data-pos="v."><div class="word">explain</div><div class="phonetic">/ɪkˈspleɪn/</div><div class="pos">v.</div><div class="cn">解释；说明</div></div>
+<div class="vocab-card" data-word="imagine" data-cn="想象；设想" data-phonetic="/ɪˈmædʒɪn/" data-pos="v."><div class="word">imagine</div><div class="phonetic">/ɪˈmædʒɪn/</div><div class="pos">v.</div><div class="cn">想象；设想</div></div>
+<div class="vocab-card" data-word="improve" data-cn="改善；提高" data-phonetic="/ɪmˈpruːv/" data-pos="v."><div class="word">improve</div><div class="phonetic">/ɪmˈpruːv/</div><div class="pos">v.</div><div class="cn">改善；提高</div></div>
+    </div>
+    <p style="margin-top:15px;text-align:center;color:var(--text-secondary);font-size:13px;">点击卡片查看释义，大声跟读</p>
+  </div>
+</div>
+<div id="page8" class="page">
+  <div class="bg-white">
+    <h2 style="color:var(--brand);margin-bottom:15px;">📖 新词学习 ②2</h2>
+    <div class="vocab-grid">
+<div class="vocab-card" data-word="include" data-cn="包括；包含" data-phonetic="/ɪnˈkluːd/" data-pos="v."><div class="word">include</div><div class="phonetic">/ɪnˈkluːd/</div><div class="pos">v.</div><div class="cn">包括；包含</div></div>
+<div class="vocab-card" data-word="increase" data-cn="增加；增长" data-phonetic="/ɪnˈkriːs/" data-pos="v."><div class="word">increase</div><div class="phonetic">/ɪnˈkriːs/</div><div class="pos">v.</div><div class="cn">增加；增长</div></div>
+<div class="vocab-card" data-word="influence" data-cn="影响" data-phonetic="/ˈɪnfluəns/" data-pos="v./n."><div class="word">influence</div><div class="phonetic">/ˈɪnfluəns/</div><div class="pos">v./n.</div><div class="cn">影响</div></div>
+<div class="vocab-card" data-word="introduce" data-cn="介绍；引进" data-phonetic="/ɪnˈtrədjuːs/" data-pos="v."><div class="word">introduce</div><div class="phonetic">/ɪnˈtrədjuːs/</div><div class="pos">v.</div><div class="cn">介绍；引进</div></div>
+<div class="vocab-card" data-word="mention" data-cn="提到；提及" data-phonetic="/ˈmenʃn/" data-pos="v."><div class="word">mention</div><div class="phonetic">/ˈmenʃn/</div><div class="pos">v.</div><div class="cn">提到；提及</div></div>
+    </div>
+    <p style="margin-top:15px;text-align:center;color:var(--text-secondary);font-size:13px;">点击卡片查看释义，大声跟读</p>
+  </div>
+</div>
+<div id="page9" class="page">
+  <div class="bg-white">
+    <h2 style="color:var(--brand);margin-bottom:15px;">🎯 新词闯关 ①</h2>
+    <p style="margin-bottom:15px;color:var(--text-secondary);">根据中文释义，选择正确的英文单词：</p>
+    <div>
+      <div class="quiz-block" id="vq_0_0" data-interaction-type="single_choice">
+        <div class="q-text">1. 实现；达到 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">imagine</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">improve</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">C</div><div class="opt-text">achieve</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">allow</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_0_1" data-interaction-type="single_choice">
+        <div class="q-text">2. 同意；赞同 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="true"><div class="opt-letter">A</div><div class="opt-text">agree</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">consider</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">appear</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">begin</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_0_2" data-interaction-type="single_choice">
+        <div class="q-text">3. 允许；让 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="true"><div class="opt-letter">A</div><div class="opt-text">allow</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">appear</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">agree</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">introduce</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_0_3" data-interaction-type="single_choice">
+        <div class="q-text">4. 出现；显得 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">complete</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">introduce</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">C</div><div class="opt-text">appear</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">begin</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_0_4" data-interaction-type="single_choice">
+        <div class="q-text">5. 到达 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">appear</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">complete</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">describe</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">D</div><div class="opt-text">arrive</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_0_5" data-interaction-type="single_choice">
+        <div class="q-text">6. 开始 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">influence</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">B</div><div class="opt-text">begin</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">explain</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">consider</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_0_6" data-interaction-type="single_choice">
+        <div class="q-text">7. 选择 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">allow</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">B</div><div class="opt-text">choose</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">mention</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">increase</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_0_7" data-interaction-type="single_choice">
+        <div class="q-text">8. 比较；对比 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">arrive</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">imagine</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">C</div><div class="opt-text">compare</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">encourage</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_0_8" data-interaction-type="single_choice">
+        <div class="q-text">9. 完成 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="true"><div class="opt-letter">A</div><div class="opt-text">complete</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">imagine</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">compare</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">explain</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_0_9" data-interaction-type="single_choice">
+        <div class="q-text">10. 考虑；认为 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="true"><div class="opt-letter">A</div><div class="opt-text">consider</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">complete</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">include</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">explain</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div></div>
+  </div>
+</div>
+<div id="page10" class="page">
+  <div class="bg-white">
+    <h2 style="color:var(--brand);margin-bottom:15px;">🎯 新词闯关 ②</h2>
+    <p style="margin-bottom:15px;color:var(--text-secondary);">根据中文释义，选择正确的英文单词：</p>
+    <div>
+      <div class="quiz-block" id="vq_1_0" data-interaction-type="single_choice">
+        <div class="q-text">1. 描述；形容 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">arrive</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">B</div><div class="opt-text">describe</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">introduce</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">include</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_1_1" data-interaction-type="single_choice">
+        <div class="q-text">2. 鼓励；激励 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">choose</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">explain</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">mention</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">D</div><div class="opt-text">encourage</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_1_2" data-interaction-type="single_choice">
+        <div class="q-text">3. 解释；说明 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">arrive</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">begin</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">C</div><div class="opt-text">explain</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">encourage</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_1_3" data-interaction-type="single_choice">
+        <div class="q-text">4. 想象；设想 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="true"><div class="opt-letter">A</div><div class="opt-text">imagine</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">choose</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">allow</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">include</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_1_4" data-interaction-type="single_choice">
+        <div class="q-text">5. 改善；提高 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">compare</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">achieve</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">choose</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">D</div><div class="opt-text">improve</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_1_5" data-interaction-type="single_choice">
+        <div class="q-text">6. 包括；包含 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="true"><div class="opt-letter">A</div><div class="opt-text">include</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">appear</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">encourage</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">mention</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_1_6" data-interaction-type="single_choice">
+        <div class="q-text">7. 增加；增长 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">influence</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">achieve</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">include</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">D</div><div class="opt-text">increase</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_1_7" data-interaction-type="single_choice">
+        <div class="q-text">8. 影响 (v./n.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="true"><div class="opt-letter">A</div><div class="opt-text">influence</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">imagine</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">compare</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">include</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_1_8" data-interaction-type="single_choice">
+        <div class="q-text">9. 介绍；引进 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="true"><div class="opt-letter">A</div><div class="opt-text">introduce</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">arrive</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">allow</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">explain</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="vq_1_9" data-interaction-type="single_choice">
+        <div class="q-text">10. 提到；提及 (v.)</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">compare</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">complete</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">improve</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">D</div><div class="opt-text">mention</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div></div>
+  </div>
+</div>
+<div id="page15" class="page">
+  <div class="bg-white">
+    <h2>📦 词汇归纳箱</h2>
+    <p style="margin-bottom:15px;color:var(--text-secondary);">按前缀分类，建立词汇网络：</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;">
+      <div style="background:#f0f9ff;border-radius:10px;padding:15px;border-left:3px solid var(--brand);">
+        <h3 style="color:var(--brand);margin-bottom:8px;">⬆️ a- 前缀 (5词)</h3>
+        <div style="font-size:14px;line-height:2;">
+          <strong>achieve</strong> 实现<br><strong>agree</strong> 同意<br><strong>allow</strong> 允许<br><strong>appear</strong> 出现<br><strong>arrive</strong> 到达
+        </div>
+      </div>
+      <div style="background:#fefce8;border-radius:10px;padding:15px;border-left:3px solid var(--accent);">
+        <h3 style="color:var(--accent);margin-bottom:8px;">⬆️ com-/im-/in- 前缀 (7词)</h3>
+        <div style="font-size:14px;line-height:2;">
+          <strong>compare</strong> 比较<br><strong>complete</strong> 完成<br><strong>consider</strong> 考虑<br><strong>describe</strong> 描述<br><strong>encourage</strong> 鼓励<br><strong>imagine</strong> 想象<br><strong>improve</strong> 提高
+        </div>
+      </div>
+      <div style="background:#f0fdf4;border-radius:10px;padding:15px;border-left:3px solid #10b981;">
+        <h3 style="color:#10b981;margin-bottom:8px;">⬆️ in- 前缀 (5词)</h3>
+        <div style="font-size:14px;line-height:2;">
+          <strong>include</strong> 包括<br><strong>increase</strong> 增加<br><strong>influence</strong> 影响<br><strong>introduce</strong> 介绍<br><strong>mention</strong> 提到
+        </div>
+      </div>
+      <div style="background:#fef2f2;border-radius:10px;padding:15px;border-left:3px solid #ef4444;">
+        <h3 style="color:#ef4444;margin-bottom:8px;">⬆️ ex- 前缀 (1词)</h3>
+        <div style="font-size:14px;line-height:2;">
+          <strong>explain</strong> 解释
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:15px;padding:12px;background:#f8fafc;border-radius:8px;font-size:13px;color:var(--text-secondary);">💡 前缀记忆法：a-表"向/在"，com-/im-/in-表"向内/共同"，ex-表"向外"</p>
+  </div>
+</div>
+<div id="page16" class="page">
+  <div class="bg-white">
+    <h2 style="color:var(--brand);margin-bottom:15px;">📖 阅读A 通知类</h2>
+    <p style="margin-bottom:10px;color:var(--text-secondary);font-size:13px;">文体：通知类 | 词数：约155词</p>
+    <div class="reading-passage">
+      <h3>A School Science Fair</h3>
+      <p>Our school will hold a science fair on Friday, June 20th, 2025. The event starts at 9:00 a.m. in the school gym and ends at 4:00 p.m.</p>       <p>All students are welcome to join. You can show your science projects, experiments, or inventions. Teachers will choose the best three projects. Winners will get prizes and certificates.</p>       <p>If you want to take part, please sign up (报名) at the science office before June 15th. Bring your project to the gym on Friday morning.</p>       <p>Don\'t miss this chance to show your creativity and love for science!</p>       <p>For more information, call Mr. Smith at 8866-1234.</p>
+    </div>
+    <div style="margin-top:25px;">
+
+      <div class="quiz-block" id="ra_q0" data-interaction-type="single_choice">
+        <div class="q-text">1. When will the science fair start?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">D. June 30th</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">B</div><div class="opt-text">B. June 20th</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">A. June 15th</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">C. June 25th</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="ra_q1" data-interaction-type="single_choice">
+        <div class="q-text">2. Where will the science fair be held?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">B. In the library</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">B</div><div class="opt-text">C. In the school gym</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">D. In the dining hall</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">A. In the classroom</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="ra_q2" data-interaction-type="single_choice">
+        <div class="q-text">3. What should students do if they want to join?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="true"><div class="opt-letter">A</div><div class="opt-text">B. Sign up at the science office</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">A. Call Mr. Smith</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">D. Tell their parents</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">C. Email the headmaster</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="ra_q3" data-interaction-type="single_choice">
+        <div class="q-text">4. What can students show at the fair?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">D. Sports equipment</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">A. Food and drinks</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">C. Art drawings</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">D</div><div class="opt-text">B. Science projects</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="ra_q4" data-interaction-type="single_choice">
+        <div class="q-text">5. What will winners get?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">C. Trophies and medals</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">D. Tickets and gifts</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">C</div><div class="opt-text">B. Prizes and certificates</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">A. Money and books</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>    </div>
+    <p style="margin-top:15px;padding:12px;background:#f0f9ff;border-radius:8px;font-size:13px;color:var(--text-secondary);">📌 SOP提醒：先回原文定位关键词，再逐项比对</p>
+  </div>
+</div>
+<div id="page17" class="page">
+  <div class="bg-white">
+    <h2 style="color:var(--brand);margin-bottom:15px;">📖 阅读B 记叙文</h2>
+    <p style="margin-bottom:10px;color:var(--text-secondary);font-size:13px;">文体：记叙文 | 词数：约185词</p>
+    <div class="reading-passage">
+      <h3>The Little Gardener</h3>
+      <p>Last spring, ten-year-old Lily noticed that the empty lot (空地) near her house was full of weeds (杂草). She wanted to make it beautiful, so she decided to plant flowers.</p>       <p>First, Lily asked her parents for help. They bought some flower seeds and tools for her. Then, every weekend, Lily went to the lot with her mom. They cleaned the weeds, dug the soil (土壤), and planted the seeds together.</p>       <p>Weeks passed, and little green shoots (嫩芽) began to appear. Lily watered them every day. Slowly, colorful flowers started to bloom. Neighbors walked by and smiled. Some even stopped to pick up litter (垃圾) around the lot.</p>       <p>Six months later, the empty lot became a small garden with roses, tulips, and sunflowers. People called it "Lily\'s Garden". The community (社区) held a small party to celebrate.</p>       <p>Lily learned that one person\'s small action can make a big difference. She said, "I just love flowers, and I\'m happy that others can enjoy them too."</p>       <p>Now, Lily plans to plant more flowers next spring. She wants to make the whole street beautiful.</p>
+    </div>
+    <div style="margin-top:25px;">
+
+      <div class="quiz-block" id="rb_q0" data-interaction-type="single_choice">
+        <div class="q-text">1. Why did Lily decide to plant flowers?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">D. Her teacher asked her to do so</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">B</div><div class="opt-text">C. She wanted to make the empty lot beautiful</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">A. She wanted to make money</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">B. She needed to complete homework</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="rb_q1" data-interaction-type="single_choice">
+        <div class="q-text">2. What did Lily do every weekend?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">C. She sold flowers to neighbors</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">B</div><div class="opt-text">B. She cleaned the lot with her mom</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">D. She drew pictures of the garden</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">A. She read books about flowers</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="rb_q2" data-interaction-type="single_choice">
+        <div class="q-text">3. What does the underlined word 'bloom' mean?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="true"><div class="opt-letter">A</div><div class="opt-text">C. Open/flower</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">A. Die</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">D. Fall</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">B. Grow</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="rb_q3" data-interaction-type="single_choice">
+        <div class="q-text">4. How did neighbors react to the garden?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">D. They asked Lily to remove the flowers</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">A. They complained about the weeds</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">B. They ignored the changes</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">D</div><div class="opt-text">C. They smiled and helped keep it clean</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="rb_q4" data-interaction-type="single_choice">
+        <div class="q-text">5. What did Lily learn from the experience?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">C. She should plant more kinds of flowers</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">D. Her parents should help her more</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">C</div><div class="opt-text">B. Small actions can make a big difference</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">A. Gardening is hard work</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="rb_q5" data-interaction-type="single_choice">
+        <div class="q-text">6. What will Lily probably do next spring?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="true"><div class="opt-letter">A</div><div class="opt-text">C. Plant more flowers to make the street beautiful</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">B. Stop gardening because it\'s too much work</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">A. Sell her garden to the community</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">D. Move to a new house</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>    </div>
+    <p style="margin-top:15px;padding:12px;background:#f0f9ff;border-radius:8px;font-size:13px;color:var(--text-secondary);">📌 SOP提醒：记叙文注意时态和人物情感变化，答案往往在细节处</p>
+  </div>
+</div>
+<div id="page18" class="page">
+  <div class="bg-white">
+    <h2 style="color:var(--brand);margin-bottom:15px;">📖 阅读C 说明文</h2>
+    <p style="margin-bottom:10px;color:var(--text-secondary);font-size:13px;">文体：说明文 | 词数：约178词</p>
+    <div class="reading-passage">
+      <h3>Why Do We Dream?</h3>
+      <p>Dreams are one of the biggest mysteries in science. Most people dream several times every night, but no one knows exactly why we dream or what dreams mean.</p>       <p>Some scientists believe that dreams help us process (处理) our daily experiences. When we sleep, our brain sorts through (梳理) everything that happened during the day. It keeps important memories and throws away unimportant information.</p>       <p>Other scientists think dreams are like a safety practice. They believe that dreaming helps us prepare for difficult situations. For example, if you dream about being chased by a dog, your brain is practicing how to run away or fight back.</p>       <p>A recent study showed that students who dreamed about a task performed better the next day. This supports the idea that dreams help us learn and remember.</p>       <p>But some researchers disagree. They say dreams are just random (随机的) brain activity with no special meaning. Like a computer cleaning its hard drive, the brain just activates (激活) random thoughts during sleep.</p>       <p>Whatever the truth is, one thing is clear: dreams are a normal and important part of healthy sleep. Everyone dreams, even if they do not remember them.</p>
+    </div>
+    <div style="margin-top:25px;">
+
+      <div class="quiz-block" id="rc_q0" data-interaction-type="single_choice">
+        <div class="q-text">1. What do most scientists agree on?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">D. Only some people dream</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">B</div><div class="opt-text">B. Dreams help process daily experiences</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">A. Dreams have no meaning at all</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">C. Dreams are just random activity</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="rc_q1" data-interaction-type="single_choice">
+        <div class="q-text">2. What does the dog-chasing dream example show?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">B. Dreams are always scary</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">B</div><div class="opt-text">C. Dreams practice handling difficult situations</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">D. Dreams predict the future</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">A. Dogs are common in dreams</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="rc_q2" data-interaction-type="single_choice">
+        <div class="q-text">3. What did the recent study find?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="true"><div class="opt-letter">A</div><div class="opt-text">B. Students who dreamed about a task performed better</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">A. Dreams make people sleepy</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">D. Students who do not remember dreams are smarter</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">C. Dreams only happen before exams</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="rc_q3" data-interaction-type="single_choice">
+        <div class="q-text">4. What do some researchers believe?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">D. Dreams are caused by eating before sleep</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">A. Dreams are essential for survival</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">C</div><div class="opt-text">C. Dreams only happen to students</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">D</div><div class="opt-text">B. Dreams are random brain activity like computer cleanup</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>
+      <div class="quiz-block" id="rc_q4" data-interaction-type="single_choice">
+        <div class="q-text">5. What is clear about dreams according to the passage?</div>
+        <div class="quiz-options"><div class="quiz-option" data-correct="false"><div class="opt-letter">A</div><div class="opt-text">C. They only happen during REM sleep</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">B</div><div class="opt-text">D. They are caused by stress</div></div>
+<div class="quiz-option" data-correct="true"><div class="opt-letter">C</div><div class="opt-text">A. They are a normal part of healthy sleep</div></div>
+<div class="quiz-option" data-correct="false"><div class="opt-letter">D</div><div class="opt-text">B. They always have deep meanings</div></div>
+</div>
+        <div class="feedback-area" style="display:none;"></div>
+      </div>    </div>
+    <p style="margin-top:15px;padding:12px;background:#f0f9ff;border-radius:8px;font-size:13px;color:var(--text-secondary);">📌 SOP提醒：说明文重点在定义、原因、分类，注意连接词</p>
+  </div>
+</div>
+<div id="page19" class="page">
+  <div class="bg-white">
+    <h2 style="color:var(--brand);margin-bottom:15px;">🧩 五选四专项练习</h2>
+    <p style="margin-bottom:10px;color:var(--text-secondary);font-size:13px;">文体：说明文 | 词数：约118词</p>
+    <div class="reading-passage">
+      <h3>How to Stay Focused in Class</h3>
+      <p>Staying focused in class is important for every student. Here are some tips to help you pay attention and learn better.
+
+First, sit in the front row if possible. (1) _______ This helps you see the board clearly and hear the teacher better. It also makes it harder to sleep or look at your phone.
+
+Second, take notes by hand.  <strong>___2___</strong>  _______ Writing things down helps your brain remember the information. You do not need to write every word—just the key points.
+
+Third, ask questions when you do not understand.  <strong>___3___</strong>  _______ Teachers usually appreciate (欣赏) students who are interested in the lesson. Asking questions also helps you stay engaged.
+
+Fourth, avoid multitasking.  <strong>___4___</strong>  _______ Your brain can only focus on one thing at a time. If you check messages during class, you will miss important information.
+
+Finally, get enough sleep.  <strong>___5___</strong>  _______ A tired brain cannot focus well. Try to sleep at least eight hours every night.</p>
+    </div>
+    <p style="margin-top:15px;font-weight:bold;color:var(--brand);">📌 选项栏（点击选择填入空格）：</p>
+    <div class="five-choice-options"><div class="five-choice-opt" data-id="A" onclick="toggleFiveChoice(this)">A. You will be closer to the teacher and less likely to be distracted.</div>
+<div class="five-choice-opt" data-id="B" onclick="toggleFiveChoice(this)">B. Your hand movements help you remember better than typing on a keyboard.</div>
+<div class="five-choice-opt" data-id="C" onclick="toggleFiveChoice(this)">C. It shows the teacher that you are paying attention and want to learn.</div>
+<div class="five-choice-opt" data-id="D" onclick="toggleFiveChoice(this)">D. Doing two things at once means you do neither well.</div>
+<div class="five-choice-opt" data-id="E" onclick="toggleFiveChoice(this)">E. Sleep is when your brain processes and stores everything you learned that day.</div>
+</div>
+    <p style="margin-top:15px;font-weight:bold;color:var(--brand);">📌 填空区（点击清空）：</p>
+    <div class="five-choice-slots"><div class="five-choice-slot" id="slot1" onclick="clearSlot(this)" data-answer="">空</div>
+<div class="five-choice-slot" id="slot2" onclick="clearSlot(this)" data-answer="">空</div>
+<div class="five-choice-slot" id="slot3" onclick="clearSlot(this)" data-answer="">空</div>
+<div class="five-choice-slot" id="slot4" onclick="clearSlot(this)" data-answer="">空</div>
+<div class="five-choice-slot" id="slot5" onclick="clearSlot(this)" data-answer="">空</div>
+</div>
+  </div>
+</div>
+<div id="page20" class="page">
+  <div class="bg-white">
+    <h2 style="color:var(--brand);margin-bottom:15px;">✅ 五选四答案解析</h2>
+    <div style="background:#f0fdf4;border-radius:10px;padding:15px;margin-bottom:15px;">
+      <h3 style="color:var(--correct);margin-bottom:10px;">正确答案</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <span style="background:var(--correct);color:white;border-radius:20px;padding:6px 16px;font-weight:bold;">1-A</span>
+        <span style="background:var(--correct);color:white;border-radius:20px;padding:6px 16px;font-weight:bold;">2-B</span>
+        <span style="background:var(--correct);color:white;border-radius:20px;padding:6px 16px;font-weight:bold;">3-C</span>
+        <span style="background:var(--correct);color:white;border-radius:20px;padding:6px 16px;font-weight:bold;">4-D</span>
+        <span style="background:var(--correct);color:white;border-radius:20px;padding:6px 16px;font-weight:bold;">5-E</span>
+      </div>
+    </div>
+    <div style="background:#f8fafc;border-radius:10px;padding:15px;">
+      <h3 style="margin-bottom:10px;">📝 详细解析</h3>
+      <p style="margin-bottom:8px;font-size:13px;"><strong style="color:var(--brand);">A</strong> - The sentence about sitting in the front row explains the benefit: being closer to the teacher reduces distractions.</p>
+<p style="margin-bottom:8px;font-size:13px;"><strong style="color:var(--brand);">B</strong> - The sentence is about taking notes by hand, and this option explains why handwriting is better than typing.</p>
+<p style="margin-bottom:8px;font-size:13px;"><strong style="color:var(--brand);">C</strong> - The sentence is about asking questions, and this option explains how teachers feel about interested students.</p>
+<p style="margin-bottom:8px;font-size:13px;"><strong style="color:var(--brand);">D</strong> - The sentence warns against multitasking, and this option explains the problem with doing two things at once.</p>
+<p style="margin-bottom:8px;font-size:13px;"><strong style="color:var(--brand);">E</strong> - The sentence is about getting enough sleep, and this option explains why sleep matters for learning.</p>
+
+    </div>
+    <p style="margin-top:15px;padding:12px;background:#FFF8F0;border-radius:8px;font-size:13px;color:var(--brand);">💡 五选四技巧：先读选项划关键词→扫读语篇找逻辑词→逐项代入验证</p>
+  </div>
+</div>
+<div id="page21" class="page">
+  <div class="bg-white">
+    <h2 style="color:var(--brand);margin-bottom:15px;">🔤 拼读规则复习</h2>
+    <p style="margin-bottom:15px;color:var(--text-secondary);">点击单词听发音，巩固自然拼读规则：</p>
+    <div class="phonics-grid">
+
+      <div class="phonics-card">
+        <div class="rule">ai /eɪ/</div>
+        <div class="example">例词：rain, paint, train, main</div>
+        <div class="sound-words"><div onclick="playSound('rain')">rain</div><div onclick="playSound('train')">train</div><div onclick="playSound('paint')">paint</div></div>
+      </div>
+      <div class="phonics-card">
+        <div class="rule">ee /iː/</div>
+        <div class="example">例词：feel, keep, sleep, deep</div>
+        <div class="sound-words"><div onclick="playSound('feel')">feel</div><div onclick="playSound('sleep')">sleep</div><div onclick="playSound('keep')">keep</div></div>
+      </div>
+      <div class="phonics-card">
+        <div class="rule">igh /aɪ/</div>
+        <div class="example">例词：light, night, right, bright</div>
+        <div class="sound-words"><div onclick="playSound('light')">light</div><div onclick="playSound('night')">night</div><div onclick="playSound('bright')">bright</div></div>
+      </div>
+      <div class="phonics-card">
+        <div class="rule">oa /əʊ/</div>
+        <div class="example">例词：boat, road, go, home</div>
+        <div class="sound-words"><div onclick="playSound('boat')">boat</div><div onclick="playSound('road')">road</div><div onclick="playSound('home')">home</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="page22" class="page">
+  <div class="bg-white">
+    <h2>📊 课堂总结</h2>
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="num">3</div>
+        <div class="label">阅读篇章</div>
+      </div>
+      <div class="summary-card">
+        <div class="num">16</div>
+        <div class="label">选择题练习</div>
+      </div>
+      <div class="summary-card">
+        <div class="num">1</div>
+        <div class="label">五选四练习</div>
+      </div>
+      <div class="summary-card">
+        <div class="num">20</div>
+        <div class="label">新词积累</div>
+      </div>
+      <div class="summary-card">
+        <div class="num">5</div>
+        <div class="label">SOP步骤</div>
+      </div>
+      <div class="summary-card">
+        <div class="num">4</div>
+        <div class="label">拼读规则</div>
+      </div>
+    </div>
+    <div style="margin-top:20px;padding:15px;background:#f0f9ff;border-radius:10px;">
+      <h3 style="color:var(--brand);margin-bottom:10px;">🏆 今日核心口诀</h3>
+      <p style="font-size:15px;line-height:1.8;text-align:center;color:var(--text-primary);">
+        <strong>审题圈关键词，扫读找答案</strong><br>
+        <strong>选项逐一比对，干扰要排除</strong><br>
+        <strong>回查原文再验证，正确率翻倍</strong>
+      </p>
+    </div>
+  </div>
+</div>
+<div id="page23" class="page">
+  <div class="bg-white">
+    <h2>🎫 Exit Ticket</h2>
+    <div class="exit-ticket">
+      <h3>课后反思</h3>
+      <p style="font-size:14px;margin-top:8px;">1. 今天学到的最重要的一个阅读技巧是什么？</p>
+      <textarea placeholder="写下你的答案..."></textarea>
+      <p style="font-size:14px;margin-top:15px;">2. 你做错的题目中，主要问题是什么？</p>
+      <textarea placeholder="写下你的分析..."></textarea>
+      <p style="font-size:14px;margin-top:15px;">3. 明天继续练习的关键词/方法：</p>
+      <textarea placeholder="写下你的计划..."></textarea>
+    </div>
+    <p style="margin-top:15px;text-align:center;color:var(--text-secondary);font-size:13px;">填写完毕后交给老师，作为本节课反馈</p>
+  </div>
+</div>
+<div id="page24" class="page">
+  <div class="bg-white">
+    <h2>🏠 课后作业 & 思维导图</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:15px;">
+      <div style="background:#f0f9ff;border-radius:12px;padding:20px;">
+        <h3 style="color:var(--brand);margin-bottom:12px;">📝 作业清单</h3>
+        <div style="font-size:14px;line-height:2;">
+          ✅ 复习今日20个新词（achieve→mention）<br>
+          ✅ 重做今日错题，写出错误原因<br>
+          ✅ 用SOP五步法做2篇阅读练习<br>
+          ✅ 预习下节课：完形填空SOP专项<br>
+        </div>
+      </div>
+      <div style="background:#fefce8;border-radius:12px;padding:20px;">
+        <h3 style="color:var(--accent);margin-bottom:12px;">🧠 思维导图</h3>
+        <div style="font-size:13px;line-height:1.8;">
+          <strong style="color:var(--brand);">阅读理解选择</strong><br>
+          ├─ SOP五步法<br>
+          │  ├─ 审题定位 → 圈关键词<br>
+          │  ├─ 扫读寻证 → 找对应句<br>
+          │  ├─ 比对选项 → 逐项对照<br>
+          │  ├─ 排除干扰 → 识别陷阱<br>
+          │  └─ 验证答案 → 回查确认<br>
+          ├─ 文体类型<br>
+          │  ├─ A: 通知类 ( factual )<br>
+          │  ├─ B: 记叙文 ( story )<br>
+          │  └─ C: 说明文 ( explanation )<br>
+          └─ 干扰项类型<br>
+             ├─ 偷换概念<br>
+             ├─ 过度推断<br>
+             ├─ 无中生有<br>
+             └─ 绝对化表述<br>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:20px;padding:15px;background:#ecfdf5;border-radius:10px;text-align:center;">
+      <p style="font-size:16px;font-weight:bold;color:var(--correct);">🎉 第27课时完成！离中考又近一步！</p>
+      <p style="font-size:13px;color:var(--text-secondary);margin-top:5px;">继续保持SOP思维，阅读选择稳拿满分！</p>
+    </div>
+  </div>
+</div>
+
+<div class="nav-bar">
+  <button class="nav-btn" id="prevBtn" onclick="prevPage()">← 上一页</button>
+  <span class="page-indicator" id="pageIndicator">1 / 42</span>
+  <button class="nav-btn" id="nextBtn" onclick="nextPage()">下一页 →</button>
+</div>
+<div class="feedback-bubble" id="feedbackBubble">
+  <div class="feedback-icon" id="feedbackIcon">💡</div>
+  <div class="feedback-text" id="feedbackText"></div>
+</div>
+
+<script>
+/* <CW-INTERACTION-CONTRACT> */
+/* <CW-DIFF-STYLE> <CW-STYLE-FAMILY> <CW-VISUAL-CONTRACT> */
+/* Version: L27-V2 | Interactions: flip, single_choice, five_choice, write, audio */
+/* <CW-SECTION name="navigation"> */
+let currentPage = 1;
+const totalPages = 42;
+
+function showPage(n) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  const pg = document.getElementById("page" + n);
+  if (pg) { pg.classList.add("active"); currentPage = n; }
+  document.getElementById("pageIndicator").textContent = n + " / " + totalPages;
+  playPageTurn();
+}
+
+function nextPage() { if (currentPage < totalPages) showPage(currentPage + 1); }
+function prevPage() { if (currentPage > 1) showPage(currentPage - 1); }
+
+document.addEventListener("keydown", function(e) {
+  if (e.key === "ArrowRight" || e.key === " ") nextPage();
+  if (e.key === "ArrowLeft") prevPage();
+});
+
+/* <CW-SECTION name="vocab_flip"> */
+/* Interaction: flip - click vocab card to reveal Chinese meaning */
+document.querySelectorAll(".vocab-card").forEach(card => {
+  card.addEventListener("click", function() {
+    this.classList.toggle("revealed");
+    playCorrect();
+  });
+});
+
+/* <CW-SECTION name="quiz_choice"> */
+/* Interaction: single_choice - click options for quiz feedback */
+document.querySelectorAll(".quiz-block").forEach(block => {
+  block.querySelectorAll(".quiz-option").forEach(opt => {
+    opt.addEventListener("click", function() {
+      const isCorrect = this.dataset.correct === "true";
+      const feedback = block.querySelector(".feedback-area");
+      block.querySelectorAll(".quiz-option").forEach(o => {
+        o.style.pointerEvents = "none";
+        if (o.dataset.correct === "true") o.classList.add("correct");
+        else if (o === this && !isCorrect) o.classList.add("wrong");
+      });
+      feedback.style.display = "block";
+      feedback.className = "feedback-area show " + (isCorrect ? "correct-fb" : "wrong-fb");
+      feedback.textContent = isCorrect ? "✅ 正确！" : "❌ 错误，请回顾原文再试。";
+      if (isCorrect) playCorrect(); else playError();
+    });
+  });
+});
+
+/* <CW-SECTION name="five_choice"> */
+/* Interaction: drag_and_drop (click-based) - drag options to slots */
+let selectedFiveOpt = null;
+function toggleFiveChoice(el) {
+  if (el.classList.contains("selected")) {
+    el.classList.remove("selected");
+    selectedFiveOpt = null;
+  } else {
+    document.querySelectorAll(".five-choice-opt").forEach(o => o.classList.remove("selected"));
+    el.classList.add("selected");
+    selectedFiveOpt = el;
+  }
+}
+
+const fiveAnswers = ["A","B","C","D","E"];
+document.querySelectorAll(".five-choice-slot").forEach((slot, i) => {
+  slot.addEventListener("click", function() {
+    if (selectedFiveOpt && !this.dataset.answer) {
+      this.textContent = selectedFiveOpt.dataset.id + " ";
+      this.dataset.answer = selectedFiveOpt.dataset.id;
+      selectedFiveOpt.classList.remove("selected");
+      selectedFiveOpt = null;
+      playCorrect();
+    } else if (this.dataset.answer) {
+      this.textContent = "空";
+      this.dataset.answer = "";
+    }
+    // Check if all filled
+    const allFilled = document.querySelectorAll(".five-choice-slot[data-answer]:not(:empty)").length === 5;
+    if (allFilled) {
+      setTimeout(checkFiveChoice, 300);
+    }
+  });
+});
+
+function clearSlot(el) {
+  el.textContent = "空";
+  el.dataset.answer = "";
+}
+
+function checkFiveChoice() {
+  const slots = document.querySelectorAll(".five-choice-slot");
+  let correct = 0;
+  slots.forEach((slot, i) => {
+    if (slot.dataset.answer === fiveAnswers[i]) {
+      slot.style.background = "var(--correct)";
+      correct++;
+    } else if (slot.dataset.answer) {
+      slot.style.background = "var(--error)";
+    }
+  });
+  showFeedback("五选四结果：" + correct + "/5 " + (correct === 5 ? "全对！" : "再检查一遍！"));
+}
+
+/* <CW-SECTION name="feedback"> */
+function showFeedback(text, icon) {
+  const bubble = document.getElementById("feedbackBubble");
+  document.getElementById("feedbackIcon").textContent = icon || "💡";
+  document.getElementById("feedbackText").textContent = text;
+  bubble.classList.add("show");
+  setTimeout(() => bubble.classList.remove("show"), 3000);
+}
+
+/* <CW-SECTION name="audio"> */
+/* Web Audio API for correct/wrong/page turn sounds */
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+function playTone(freq, duration, type) {
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  osc.type = type || "sine";
+  osc.frequency.value = freq;
+  gain.gain.value = 0.15;
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start();
+  osc.stop(audioCtx.currentTime + duration);
+}
+function playCorrect() { playTone(880, 0.15); setTimeout(() => playTone(1100, 0.15), 100); }
+function playError() { playTone(300, 0.2); setTimeout(() => playTone(200, 0.2), 150); }
+function playPageTurn() { playTone(660, 0.08); }
+
+/* Phonics sound placeholder */
+function playSound(word) { showFeedback("🔊 发音: " + word, "🔊"); }
+</script>
+</body>
+</html>

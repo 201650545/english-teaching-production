@@ -1,0 +1,143 @@
+{
+  "L12-RA-01": {
+    "question": "What kind of noodles are very popular?",
+    "canonical_answer": "beef noodles",
+    "minimum_acceptable_answer": "beef noodles",
+    "accepted_answers": [
+      "beef noodles",
+      "the beef noodles"
+    ],
+    "required_vocab": [
+      "noodles",
+      "popular"
+    ],
+    "required_grammar": "名词短语"
+  },
+  "L12-RA-02": {
+    "question": "How much is a large bowl of beef noodles?",
+    "canonical_answer": "15 yuan",
+    "minimum_acceptable_answer": "15",
+    "accepted_answers": [
+      "15 yuan",
+      "15",
+      "fifteen yuan"
+    ],
+    "required_vocab": [
+      "large",
+      "bowl",
+      "yuan"
+    ],
+    "required_grammar": "价格表达（数词+yuan）"
+  },
+  "L12-RA-04": {
+    "question": "How much is a glass of juice?",
+    "canonical_answer": "8 yuan",
+    "minimum_acceptable_answer": "8",
+    "accepted_answers": [
+      "8 yuan",
+      "8",
+      "eight yuan"
+    ],
+    "required_vocab": [
+      "glass",
+      "juice"
+    ],
+    "required_grammar": "价格表达"
+  },
+  "L12-RB-01": {
+    "question": "Who did Tom go to the restaurant with?",
+    "canonical_answer": "his sister Lily",
+    "minimum_acceptable_answer": "his sister",
+    "accepted_answers": [
+      "his sister Lily",
+      "his sister",
+      "Lily"
+    ],
+    "required_vocab": [
+      "sister",
+      "restaurant"
+    ],
+    "required_grammar": "物主代词 his"
+  },
+  "L12-RB-02": {
+    "question": "What did Tom order?",
+    "canonical_answer": "a large bowl of beef noodles",
+    "minimum_acceptable_answer": "beef noodles",
+    "accepted_answers": [
+      "a large bowl of beef noodles",
+      "beef noodles",
+      "a large bowl of beef noodle"
+    ],
+    "required_vocab": [
+      "large",
+      "bowl",
+      "beef",
+      "noodles"
+    ],
+    "required_grammar": "量词 a bowl of"
+  },
+  "L12-RB-03": {
+    "question": "What did Lily drink?",
+    "canonical_answer": "a glass of juice",
+    "minimum_acceptable_answer": "juice",
+    "accepted_answers": [
+      "a glass of juice",
+      "juice"
+    ],
+    "required_vocab": [
+      "glass",
+      "juice"
+    ],
+    "required_grammar": "量词 a glass of"
+  },
+  "L12-RC-01": {
+    "question": "What are grains in the passage?",
+    "canonical_answer": "rice, noodles and bread",
+    "minimum_acceptable_answer": "rice, noodles and bread",
+    "accepted_answers": [
+      "rice, noodles and bread",
+      "rice noodles and bread",
+      "rice, noodles, bread",
+      "rice noodles bread"
+    ],
+    "required_vocab": [
+      "rice",
+      "noodles",
+      "bread",
+      "grains"
+    ],
+    "required_grammar": "并列名词"
+  },
+  "L12-RC-02": {
+    "question": "Which food gives us vitamins?",
+    "canonical_answer": "vegetables and fruit",
+    "minimum_acceptable_answer": "vegetables and fruit",
+    "accepted_answers": [
+      "vegetables and fruit",
+      "vegetables and fruits",
+      "vegetables, fruit"
+    ],
+    "required_vocab": [
+      "vegetables",
+      "fruit",
+      "vitamins"
+    ],
+    "required_grammar": "并列名词"
+  },
+  "L12-RC-03": {
+    "question": "What should we drink with the meal?",
+    "canonical_answer": "water",
+    "minimum_acceptable_answer": "water",
+    "accepted_answers": [
+      "water",
+      "water or soup",
+      "some water"
+    ],
+    "required_vocab": [
+      "water",
+      "meal",
+      "drink"
+    ],
+    "required_grammar": "情态动词 should（本课内）"
+  }
+}

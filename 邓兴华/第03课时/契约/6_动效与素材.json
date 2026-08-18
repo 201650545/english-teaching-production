@@ -1,0 +1,71 @@
+{
+  "course": "第03课 · 名词所有格、基数词与问位置",
+  "animations": {
+    "required": [
+      {"name": "fadeSlideUp", "css": "from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); }", "usage": "页面进入默认动画"},
+      {"name": "scaleUp", "css": "from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); }", "usage": "phonics-card进入"},
+      {"name": "bounceIn", "css": "0% { opacity: 0; transform: scale(0.3); } 50% { transform: scale(1.08); } 70% { transform: scale(0.95); } 100% { opacity: 1; transform: scale(1); }", "usage": "正确答案反馈/封面标题"},
+      {"name": "bpSwing", "css": "0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); }", "usage": "swing-tag摆动/错误答案抖动"},
+      {"name": "pulse", "css": "0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); }", "usage": "stage-badge/提示文字"},
+      {"name": "slideInLeft", "css": "from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); }", "usage": "quiz-q/sentence-row进入"},
+      {"name": "floatY", "css": "0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); }", "usage": "item-emoji浮动"},
+      {"name": "shimmer", "css": "0% { background-position: -200% center; } 100% { background-position: 200% center; }", "usage": "progress-bar光泽"}
+    ]
+  },
+  "interactiveComponents": {
+    "stationeryFinder": {
+      "type": "interactive-scene",
+      "page": 18,
+      "cssClass": "room-scene",
+      "elements": {
+        "box": {"element": "div", "class": "finder-box", "content": "📦", "position": "center"},
+        "pen": {"element": "div", "class": "finder-pen", "content": "🖊️", "transition": "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)"}
+      },
+      "buttons": [
+        {"label": "in", "action": "movePen('in')", "cssPosition": "pen在盒子内部，半透明opacity:0.7"},
+        {"label": "on", "action": "movePen('on')", "cssPosition": "pen在盒子顶部，top偏移"},
+        {"label": "under", "action": "movePen('under')", "cssPosition": "pen在盒子下方，bottom偏移"}
+      ],
+      "sentenceDisplay": {
+        "there": "There is a pen {prep} the box.",
+        "where": "Where is the pen? — It is {prep} the box."
+      },
+      "activeButtonClass": "active"
+    },
+    "answerMask": {
+      "type": "reveal",
+      "cssClass": "answer-mask",
+      "clickHandler": "toggleMask(el)",
+      "states": ["hidden", "revealed"]
+    },
+    "quizOption": {
+      "type": "click-feedback",
+      "cssClass": "q-option",
+      "clickHandler": "checkQuiz(el, chosen, correct, feedback)",
+      "states": ["default", "correct", "wrong", "disabled"]
+    },
+    "phonicsOption": {
+      "type": "click-feedback",
+      "cssClass": "ph-option",
+      "clickHandler": "checkPhonics(el, chosen, correct, feedback)",
+      "states": ["default", "correct", "wrong", "disabled"]
+    }
+  },
+  "audioEffects": {
+    "correct": {"freq1": 880, "freq2": 1100, "duration": 0.15, "type": "sine"},
+    "error": {"freq": 220, "duration": 0.3, "type": "sawtooth"},
+    "pageTurn": {"freq": 440, "duration": 0.1, "type": "triangle"}
+  },
+  "navigation": {
+    "halfScreenClick": true,
+    "keyboard": ["ArrowRight", "ArrowLeft"],
+    "progressBarClick": true,
+    "stopPropagationSelectors": [".answer-mask", ".q-option", ".ph-option", ".interact-btn", ".nav-pill", ".word-chip", ".mini-flash", ".q-feedback", ".ph-feedback", ".finder-btn", ".finder-scene"]
+  },
+  "assets": {
+    "externalImages": [],
+    "externalAudio": [],
+    "webFonts": ["Segoe UI", "PingFang SC", "Microsoft YaHei"],
+    "emoji": ["📦","🗝️","☕","🖊️","📏","🧽","✏️","🎒","📖","🏛️","❓","✅","📞","⚡","🙋","🤝","🙏","👤","ℹ️","💳","🔍","👆","🎯","📐","💡","✨","🎉"]
+  }
+}

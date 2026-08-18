@@ -1,0 +1,101 @@
+{
+  "lesson_id": "第06课",
+  "theme": {
+    "style": "蓝绿社区",
+    "primary_color": "#2E86DE",
+    "accent_color": "#27AE60",
+    "font_size_base": "26px"
+  },
+  "total_pages": 43,
+  "pages": [
+    {"page_index": 1, "section": "封面", "title": "封面：家庭合作与社区", "layout_type": "Cover", "components": [{"type": "cover", "data": {"title": "Unit 2 Home Sweet Home②"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 2, "section": "复习导入", "title": "话题引入：社区互助", "layout_type": "Split-2", "components": [{"type": "scenario", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "scenario"},
+    {"page_index": 3, "section": "复习导入", "title": "学习目标", "layout_type": "Split-2", "components": [{"type": "goal-list", "data": {"count": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 4, "section": "复习导入", "title": "跨课词汇复习：家庭活动语篇重建", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "T3-C", "sentences": 6}}], "vocabReviewTier": "T3", "vocabReviewScope": "cross-lesson", "gameType": "T3-C", "trainingObjective": "CTX", "promptLevel": 3, "contextType": "passage"},
+    {"page_index": 5, "section": "新词20", "title": "目标词①：借还与社区", "layout_type": "Grid-5", "components": [{"type": "word-card", "data": {"words": ["borrow", "treasure", "lift", "until", "community"]}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "word"},
+    {"page_index": 6, "section": "新词20", "title": "目标词②：分享与合作", "layout_type": "Grid-5", "components": [{"type": "word-card", "data": {"words": ["share", "hunt", "take notes", "clean up", "rubbish"]}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "word"},
+    {"page_index": 7, "section": "新词20", "title": "词块与搭配", "layout_type": "Split-2", "components": [{"type": "example-line", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "sentence"},
+    {"page_index": 8, "section": "新词20", "title": "语境例句", "layout_type": "Exercise-List", "components": [{"type": "example-line", "data": {"count": 10}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "sentence"},
+    {"page_index": 9, "section": "新词20", "title": "复习词闪卡", "layout_type": "Grid-5", "components": [{"type": "word-card", "data": {"words": 20}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": "REC", "promptLevel": 1, "contextType": "word"},
+    {"page_index": 10, "section": "新词20", "title": "课内游戏①：中文选英文", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "T1-H", "words": 20}}], "vocabReviewTier": "T1", "vocabReviewScope": "in-lesson", "gameType": "T1-H", "trainingObjective": "RET", "promptLevel": 3, "contextType": "word"},
+    {"page_index": 11, "section": "新词20", "title": "课内游戏②：角色对话填词", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "T3-E", "questions": 6}}], "vocabReviewTier": "T3", "vocabReviewScope": "in-lesson", "gameType": "T3-E", "trainingObjective": "CTX", "promptLevel": 3, "contextType": "dialogue"},
+    {"page_index": 12, "section": "新词20", "title": "词汇小结与记忆法", "layout_type": "Split-2", "components": [{"type": "summary-table", "data": {"words": 10}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "word"},
+    {"page_index": 13, "section": "语法", "title": "语法①：家庭/社区活动表达", "layout_type": "Formula-Card", "components": [{"type": "formula-box", "data": {"formula": "borrow sth. from sb. / lend sb. sth. / give sb. a lift / not...until"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 14, "section": "语法", "title": "语法①练习：借还选择", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 15, "section": "语法", "title": "语法②：祈使句与提建议", "layout_type": "Formula-Card", "components": [{"type": "formula-box", "data": {"formula": "Let's + V / Can you help me...? / Don't forget to / Why not + V"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 16, "section": "语法", "title": "语法②练习：建议选择", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 17, "section": "语法", "title": "语法③：社区信息五要素", "layout_type": "Formula-Card", "components": [{"type": "formula-box", "data": {"formula": "when/where/who/what/why + 活动 + 目的"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 18, "section": "语法", "title": "语法③练习：信息选择", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 19, "section": "自然拼读", "title": "-all/-ill 发音规则①", "layout_type": "Split-2", "components": [{"type": "formula-box", "data": {"formula": "-all → /ɔːl/ / -ill → /ɪl/"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 20, "section": "自然拼读", "title": "-ell 发音规则②与对比", "layout_type": "Split-2", "components": [{"type": "formula-box", "data": {"formula": "-ell → /el/"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 21, "section": "自然拼读", "title": "辨音归类", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 15}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 22, "section": "自然拼读", "title": "拼读练习", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 23, "section": "听力", "title": "听力策略提示", "layout_type": "Split-2", "components": [{"type": "strategy-box", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 24, "section": "听力", "title": "第一节：听对话选答语", "layout_type": "Exercise-List", "components": [{"type": "listening-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 25, "section": "听力", "title": "第二节：听对话/独白选答案①", "layout_type": "Exercise-List", "components": [{"type": "listening-item", "data": {"count": 8}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 26, "section": "听力", "title": "第二节：②+答案解析", "layout_type": "Exercise-List", "components": [{"type": "listening-item", "data": {"count": 7}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 27, "section": "阅读理解", "title": "阅读 A 短文：A Helping Day in Our Community", "layout_type": "Reading-Passage", "components": [{"type": "reading-passage", "data": {"words": 180}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 28, "section": "阅读理解", "title": "阅读 A 题目", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 29, "section": "阅读理解", "title": "阅读 B 短文：How Families Work Together", "layout_type": "Reading-Passage", "components": [{"type": "reading-passage", "data": {"words": 220}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 30, "section": "阅读理解", "title": "阅读 B 题目", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 31, "section": "阅读理解", "title": "阅读 C 短文：A Treasure Hunt in the Park", "layout_type": "Reading-Passage", "components": [{"type": "reading-passage", "data": {"words": 260}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 32, "section": "阅读理解", "title": "阅读 C 题目", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 33, "section": "阅读理解", "title": "阅读策略与答案解析", "layout_type": "Exercise-List", "components": [{"type": "explanation", "data": {"count": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 34, "section": "输出任务", "title": "Mini Task：社区活动说明", "layout_type": "Split-2", "components": [{"type": "exercise-item", "data": {"count": 1}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": "EXP", "promptLevel": 3, "contextType": "scenario"},
+    {"page_index": 35, "section": "输出任务", "title": "输出任务①：活动名称与时间地点", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 36, "section": "输出任务", "title": "输出任务②：活动内容与目的", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 37, "section": "输出任务", "title": "课堂游戏②：社区大扫除排序", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "sorting", "steps": 4}}], "vocabReviewTier": "T1", "vocabReviewScope": "in-lesson", "gameType": "sorting", "trainingObjective": "CTX", "promptLevel": 2, "contextType": "passage"},
+    {"page_index": 38, "section": "输出任务", "title": "课堂游戏：借还配对", "layout_type": "Exercise-List", "components": [{"type": "matching", "data": {"pairs": 4}}], "vocabReviewTier": "T2", "vocabReviewScope": "in-lesson", "gameType": "matching", "trainingObjective": "RET", "promptLevel": 2, "contextType": "sentence"},
+    {"page_index": 39, "section": "输出任务", "title": "学生输出展示与互评", "layout_type": "Split-2", "components": [{"type": "peer-review", "data": {"criteria": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": "EXP", "promptLevel": 3, "contextType": "scenario"},
+    {"page_index": 40, "section": "总结", "title": "思维导图", "layout_type": "Split-2", "components": [{"type": "mind-map", "data": {"branches": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 41, "section": "总结", "title": "课堂游戏③：知识快闪", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "flash", "words": 10}}], "vocabReviewTier": "T1", "vocabReviewScope": "in-lesson", "gameType": "flash", "trainingObjective": "RET", "promptLevel": 2, "contextType": "word"},
+    {"page_index": 42, "section": "总结", "title": "作业布置", "layout_type": "Split-2", "components": [{"type": "homework", "data": {"count": 2}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 43, "section": "总结", "title": "Exit Ticket 退出检测", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 6}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null}
+  ],
+  "vocabReviewPlan": {
+    "inLessonGames": [
+      {"pageIndex": 10, "tier": "T1", "gameType": "T1-H", "trainingObjective": "RET", "promptLevel": 3, "wordCount": 20},
+      {"pageIndex": 11, "tier": "T3", "gameType": "T3-E", "trainingObjective": "CTX", "promptLevel": 3, "wordCount": 6}
+    ],
+    "crossLessonGame": {
+      "pageIndex": 4,
+      "tier": "T3",
+      "gameType": "T3-C",
+      "trainingObjective": "CTX",
+      "promptLevel": 3,
+      "reviewLessonId": "L05",
+      "wordCount": 6
+    },
+    "miniTask": {
+      "pageIndex": 34,
+      "taskContext": "写一段家庭或社区活动说明",
+      "communicationGoal": "用 borrow/lend 借还 + 祈使句 + 社区信息五要素",
+      "requiredWords": ["borrow", "treasure", "lift", "until", "community", "share"],
+      "sentenceStarter": "Let's... / Can you help me...? / Don't forget to... / We do it to keep...",
+      "completionCriteria": "至少 6 个必用词 + 结构完整（活动名称→时间地点→内容→目的）+ 语言正确"
+    },
+    "exitTicket": {
+      "pageIndex": 43,
+      "questionCount": 6,
+      "recQuestions": 2,
+      "retQuestions": 2,
+      "expQuestions": 1,
+      "hasSelfAssessment": true
+    },
+    "errorWordPool": {
+      "recentRatio": 40,
+      "errorRatio": 35,
+      "longTermRatio": 25,
+      "classificationDepth": "full-D-page"
+    }
+  },
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "csv",
+    "exportFormats": ["json", "csv"],
+    "questionIdPrefix": "L06",
+    "sessionIdRule": "stu_001_YYYYMMDDAM/PM",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  }
+}

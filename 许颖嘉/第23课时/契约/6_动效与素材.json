@@ -1,0 +1,568 @@
+{
+  "version": "1.0",
+  "courseId": "L23",
+  "courseName": "中考题型SOPⅡ·阅读五选四与简答翻译",
+  "cssVariables": {
+    "--brand": "#E63946",
+    "--accent": "#FFD700",
+    "--brand-light": "#FF6B6B",
+    "--accent-light": "#FFE66D",
+    "--bg-start": "#FFF8F0",
+    "--bg-end": "#FFE8D6",
+    "--text-primary": "#1A1A2E",
+    "--text-secondary": "#555555",
+    "--correct": "#06A77D",
+    "--error": "#E63946",
+    "--gray-node": "#C0C0C0",
+    "--gray-border": "#999999",
+    "--card-bg": "#FFFFFF",
+    "--table-header-bg": "#E63946",
+    "--table-header-text": "#FFFFFF",
+    "--table-highlight-bg": "#FFF8E1",
+    "--mnemonic-border": "#FFD700",
+    "--mnemonic-text": "#E63946",
+    "--error-row-bg": "#FFEBEE",
+    "--correct-row-bg": "#E8F5E9",
+    "--page-shadow": "0 4px 20px rgba(230, 57, 70, 0.15)",
+    "--card-shadow": "0 2px 12px rgba(0, 0, 0, 0.08)",
+    "--sop-blue": "#3B82F6",
+    "--sop-green": "#10B981",
+    "--sop-purple": "#8B5CF6",
+    "--sop-orange": "#F59E0B"
+  },
+  "fontSpecs": {
+    "fontFamily": "'Noto Sans SC', 'Microsoft YaHei', 'PingFang SC', sans-serif",
+    "sizes": {
+      "pageTitle": "36px",
+      "subtitle": "22px",
+      "body": "22px",
+      "bodySmall": "18px",
+      "tableHeader": "18px",
+      "tableContent": "17px",
+      "mnemonic": "32px",
+      "mnemonicCard": "18px",
+      "navItem": "14px",
+      "pageNumber": "16px",
+      "stageBadge": "14px",
+      "caption": "16px",
+      "buttonText": "16px"
+    },
+    "weights": {
+      "pageTitle": "700",
+      "subtitle": "600",
+      "body": "400",
+      "mnemonic": "700",
+      "navItem": "500",
+      "stageBadge": "600",
+      "tableHeader": "600"
+    }
+  },
+  "animations": [
+    {
+      "name": "titleFadeIn",
+      "target": ".page-title",
+      "keyframes": [
+        {
+          "opacity": 0,
+          "transform": "translateY(-20px)"
+        },
+        {
+          "opacity": 1,
+          "transform": "translateY(0)"
+        }
+      ],
+      "duration": "800ms",
+      "easing": "ease-out",
+      "fillMode": "forwards",
+      "pages": [
+        1
+      ]
+    },
+    {
+      "name": "coverInfoPop",
+      "target": ".cover-info-item, .cover-nav-item",
+      "keyframes": [
+        {
+          "transform": "scale(0)",
+          "opacity": 0
+        },
+        {
+          "transform": "scale(1.1)",
+          "opacity": 1,
+          "offset": 0.7
+        },
+        {
+          "transform": "scale(1)",
+          "opacity": 1
+        }
+      ],
+      "duration": "400ms",
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "fillMode": "forwards",
+      "pages": [
+        1
+      ],
+      "stagger": "80ms"
+    },
+    {
+      "name": "vocabCardHover",
+      "target": ".vocab-card",
+      "keyframes": [
+        {
+          "transform": "translateY(0)",
+          "box-shadow": "0 2px 12px rgba(0,0,0,.08)"
+        },
+        {
+          "transform": "translateY(-2px)",
+          "box-shadow": "0 4px 16px rgba(0,0,0,.12)"
+        }
+      ],
+      "duration": "200ms",
+      "easing": "ease-out",
+      "pages": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "name": "matchClickPulse",
+      "target": ".match-item.selected",
+      "keyframes": [
+        {
+          "transform": "scale(1)"
+        },
+        {
+          "transform": "scale(1.05)",
+          "offset": 0.5
+        },
+        {
+          "transform": "scale(1)"
+        }
+      ],
+      "duration": "300ms",
+      "easing": "ease-out",
+      "pages": [
+        3
+      ]
+    },
+    {
+      "name": "matchWrongShake",
+      "target": ".match-item.wrong-match",
+      "keyframes": [
+        {
+          "transform": "translateX(0)"
+        },
+        {
+          "transform": "translateX(-6px)",
+          "offset": 0.25
+        },
+        {
+          "transform": "translateX(6px)",
+          "offset": 0.75
+        },
+        {
+          "transform": "translateX(0)"
+        }
+      ],
+      "duration": "400ms",
+      "easing": "ease-in-out",
+      "soundOnTrigger": "playError",
+      "pages": [
+        3
+      ]
+    },
+    {
+      "name": "sopStepPop",
+      "target": ".sop-step",
+      "keyframes": [
+        {
+          "transform": "scale(0.9)",
+          "opacity": 0
+        },
+        {
+          "transform": "scale(1.05)",
+          "opacity": 1,
+          "offset": 0.7
+        },
+        {
+          "transform": "scale(1)",
+          "opacity": 1
+        }
+      ],
+      "duration": "400ms",
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "pages": [
+        10,
+        12
+      ],
+      "stagger": "120ms"
+    },
+    {
+      "name": "mnemonicFlip",
+      "target": ".mnemonic-card.flipped .mnemonic-card-inner",
+      "keyframes": [
+        {
+          "transform": "rotateY(0deg)"
+        },
+        {
+          "transform": "rotateY(180deg)"
+        }
+      ],
+      "duration": "500ms",
+      "easing": "ease-in-out",
+      "pages": [
+        10,
+        12
+      ],
+      "soundOnTrigger": "playPageTurn"
+    },
+    {
+      "name": "cohesionHighlight",
+      "target": ".stats-card[style*=\"FFD700\"]",
+      "keyframes": [
+        {
+          "transform": "scale(1)"
+        },
+        {
+          "transform": "scale(1.08)"
+        }
+      ],
+      "duration": "250ms",
+      "easing": "ease-out",
+      "soundOnTrigger": "playCorrect",
+      "pages": [
+        11
+      ]
+    },
+    {
+      "name": "whSortPlaceIn",
+      "target": ".pos-word.placed",
+      "keyframes": [
+        {
+          "transform": "scale(0)",
+          "opacity": 0
+        },
+        {
+          "transform": "scale(1.2)",
+          "opacity": 1,
+          "offset": 0.5
+        },
+        {
+          "transform": "scale(1)",
+          "opacity": 1
+        }
+      ],
+      "duration": "350ms",
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "pages": [
+        13
+      ],
+      "soundOnActivate": "playCorrect"
+    },
+    {
+      "name": "dragSlotFill",
+      "target": ".drag-slot.correct",
+      "keyframes": [
+        {
+          "transform": "scale(1)"
+        },
+        {
+          "transform": "scale(1.15)",
+          "offset": 0.5
+        },
+        {
+          "transform": "scale(1)"
+        }
+      ],
+      "duration": "300ms",
+      "soundOnActivate": "playCorrect",
+      "pages": [
+        16
+      ]
+    },
+    {
+      "name": "errorTypeFlip",
+      "target": ".error-type-card.flipped",
+      "keyframes": [
+        {
+          "transform": "rotateY(0deg)"
+        },
+        {
+          "transform": "rotateY(180deg)"
+        }
+      ],
+      "duration": "500ms",
+      "easing": "ease-in-out",
+      "pages": [
+        19,
+        24
+      ],
+      "soundOnTrigger": "playPageTurn"
+    },
+    {
+      "name": "locateHighlight",
+      "target": ".reading-passage p[style*=\"FFD700\"]",
+      "keyframes": [
+        {
+          "background-color": "transparent"
+        },
+        {
+          "background-color": "rgba(255,215,0,.2)"
+        }
+      ],
+      "duration": "200ms",
+      "soundOnTrigger": "playPageTurn",
+      "pages": [
+        20
+      ]
+    },
+    {
+      "name": "completionBounce",
+      "target": ".completion-badge",
+      "keyframes": [
+        {
+          "transform": "scale(0)",
+          "opacity": 0
+        },
+        {
+          "transform": "scale(1.2)",
+          "opacity": 1,
+          "offset": 0.6
+        },
+        {
+          "transform": "scale(1)",
+          "opacity": 1
+        }
+      ],
+      "duration": "600ms",
+      "easing": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+      "pages": [
+        25
+      ],
+      "soundOnActivate": "playCorrect"
+    }
+  ],
+  "transitions": [
+    {
+      "name": "pageTransition",
+      "property": "opacity, transform",
+      "duration": "300ms",
+      "easing": "ease-in-out",
+      "description": "页面切换淡入淡出"
+    },
+    {
+      "name": "nodeHover",
+      "property": "transform, box-shadow",
+      "duration": "200ms",
+      "easing": "ease-out",
+      "description": "节点悬停效果"
+    },
+    {
+      "name": "buttonHover",
+      "property": "background-color, transform",
+      "duration": "150ms",
+      "easing": "ease-out",
+      "description": "按钮悬停效果"
+    },
+    {
+      "name": "optionSelect",
+      "property": "background-color, border-color, transform",
+      "duration": "200ms",
+      "easing": "ease-out",
+      "description": "选择题选项选中"
+    }
+  ],
+  "layoutSpecs": {
+    "pageAspectRatio": "21 / 9",
+    "navHeight": "54px",
+    "pagePadding": "25px 45px 50px",
+    "maxContentWidth": "1500px",
+    "scrollBehavior": {
+      "overflowY": "auto",
+      "scrollResetOnPageChange": true,
+      "scrollbarStyle": "thin"
+    },
+    "pageTurnZones": {
+      "leftZone": "0% - 50% width",
+      "rightZone": "50% - 100% width",
+      "excludedSelectors": [
+        ".answer-mask",
+        ".q-opt",
+        ".interact-btn",
+        ".flip-card",
+        ".nav-item",
+        "input",
+        "button",
+        ".vocab-card",
+        ".mnemonic-card",
+        ".match-item",
+        ".drag-word",
+        ".drag-slot",
+        ".pos-word",
+        ".pos-box",
+        ".modal-content",
+        ".fill-check-btn",
+        ".cover-nav-item",
+        ".exam-type-card",
+        ".error-type-card",
+        ".stats-card",
+        ".q-nav-item"
+      ]
+    }
+  },
+  "responsiveSpecs": {
+    "targetResolution": "1920x1080+",
+    "minScale": "0.7",
+    "transformOrigin": "center center"
+  },
+  "interactionConfigs": {
+    "creative1_dialogMatch": {
+      "page": 3,
+      "functions": [
+        "pickDialogLeft(i,el)",
+        "pickDialogRight(j,el)"
+      ],
+      "trigger": "click on .match-item",
+      "behavior": "左列问句高亮，右列答句匹配；正确 → matched+绿，错误 → wrong-match+抖+0.5s 恢复",
+      "stopPropagation": true
+    },
+    "creative2_lightCohesion": {
+      "page": 11,
+      "function": "lightCohesion(i,el)",
+      "trigger": "click on .stats-card in #cohesionBoard",
+      "behavior": "点击 6 张衔接词卡，背景金色高亮+边框金色+显示功能分类反馈（顺序/转折/因果/递进）",
+      "stopPropagation": true,
+      "sound": "playCorrect"
+    },
+    "creative3_whSort": {
+      "page": 13,
+      "functions": [
+        "pickWh(i,el)",
+        "whBoxClick(box,el)"
+      ],
+      "trigger": "click on #whBoard .stats-card then click on .pos-box",
+      "behavior": "两步操作——先点疑问词卡（border 金色），再点 5 个归类箱；正确 → 词放入箱+卡变灰；错误 → 抖错反馈",
+      "stopPropagation": true
+    },
+    "creative4_dragBlank": {
+      "page": 16,
+      "functions": [
+        "pickDragWord(i,el)",
+        "dragSlotClick(slotIdx,el)"
+      ],
+      "trigger": "click on .drag-word then click on .drag-slot",
+      "behavior": "点击句子卡+空位两步操作；正确 → 显示字母+绿；错误 → 显示字母+红+0.8s 恢复",
+      "stopPropagation": true
+    },
+    "creative5_excludeStep": {
+      "page": 19,
+      "function": "excludeStep(i,el)",
+      "trigger": "click on .error-type-card",
+      "behavior": "4 张卡片点击翻面，显示 4 个选项的思考过程（3 个 ✅ 主题正确，1 个 ⚠️ 排除）",
+      "stopPropagation": false
+    },
+    "creative6_locateLine": {
+      "page": 20,
+      "functions": [
+        "locateLine(i,el)",
+        "checkLocate(qNum,kw1,kw2,e)"
+      ],
+      "trigger": "click on .reading-passage p",
+      "behavior": "点击段落高亮金色背景+左侧金色边线；输入答案后 checkLocate 检查关键词（支持撇号变体）",
+      "stopPropagation": true
+    },
+    "generic_t1g": {
+      "page": 7,
+      "function": "checkT1G(qNum,selectedOpt,el)",
+      "trigger": "click on .quiz-opt",
+      "behavior": "选对 playCorrect+绿，选错 playError+正确项标绿+解析展开",
+      "stopPropagation": true
+    },
+    "generic_t2a": {
+      "page": 8,
+      "function": "checkT2A(qNum,selectedOpt,el)",
+      "trigger": "click on .quiz-opt",
+      "behavior": "选对绿，选错红+正确项标绿",
+      "stopPropagation": true
+    },
+    "generic_formPractice": {
+      "page": 9,
+      "function": "checkFormPractice(qNum,answer,e)",
+      "trigger": "click on .fill-check-btn",
+      "behavior": "输入+检查答案，匹配 playCorrect+绿，否则 playError+红+显示答案",
+      "stopPropagation": true
+    },
+    "generic_read54Test": {
+      "page": 18,
+      "functions": [
+        "goRead54Q(q,el)",
+        "checkRead54Test(qNum,selectedOpt,el)"
+      ],
+      "trigger": "click on .q-nav-item or .quiz-opt",
+      "behavior": "q-nav 切换题目，quiz-opt 答题，选对绿选错红",
+      "stopPropagation": true
+    },
+    "generic_translate": {
+      "page": 21,
+      "function": "checkTranslate(qNum,keyword,e)",
+      "trigger": "click on .fill-check-btn",
+      "behavior": "包含关键词 playCorrect+绿，否则 playError+红+显示答案",
+      "stopPropagation": true
+    },
+    "generic_miniTask": {
+      "page": 15,
+      "function": "recordMiniTask(e)",
+      "trigger": "click on .fill-check-btn",
+      "behavior": "记录口头表达关键词",
+      "stopPropagation": true
+    },
+    "generic_exit": {
+      "page": 25,
+      "functions": [
+        "checkExit",
+        "checkExitSentence",
+        "recordExit"
+      ],
+      "trigger": "click on quiz-opt or fill-check-btn",
+      "behavior": "2 选择 + 1 翻译 + 1 表达，2 选择正确后徽章弹跳",
+      "stopPropagation": true
+    }
+  },
+  "webAudioSpecs": {
+    "audioContextInit": "首次用户交互时创建 AudioContext",
+    "sampleRate": "44100",
+    "masterGain": 0.2,
+    "sounds": {
+      "playCorrect": {
+        "type": "oscillator-sequence",
+        "frequencies": [
+          523.25,
+          659.25,
+          783.99
+        ],
+        "waveType": "triangle",
+        "noteDuration": 0.1,
+        "gap": 0.02
+      },
+      "playError": {
+        "type": "oscillator-sequence",
+        "frequencies": [
+          392.0,
+          261.63
+        ],
+        "waveType": "square",
+        "noteDuration": 0.2,
+        "gap": 0.05
+      },
+      "playPageTurn": {
+        "type": "oscillator-single",
+        "frequency": 800,
+        "waveType": "sine",
+        "duration": 0.08,
+        "noiseOverlay": true
+      }
+    }
+  },
+  "_versionNote": "重做版 v2 · 解耦框架课件 | gen_l23_v2.py + courseware_core.py | 2026-07-31"
+}

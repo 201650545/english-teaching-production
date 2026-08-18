@@ -1,0 +1,235 @@
+{
+  "lesson": "L09",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A/B/C 各 3 无选项 + 2 有选项（默认 3+2，无需 2+3 弹性标注）",
+  "vocab_pool": [
+    "shining",
+    "display",
+    "share",
+    "machine",
+    "fresh",
+    "station",
+    "direction",
+    "gallery",
+    "history",
+    "special",
+    "choice",
+    "favorite",
+    "travel",
+    "traffic",
+    "culture",
+    "art",
+    "national",
+    "science",
+    "future",
+    "world"
+  ],
+  "grammar_cap": "G22-G24；禁止 will/比较级/最高级/完成时/被动；不引入 whose/which/whom、either...or/neither...nor、across/through/along",
+  "A篇_A_Guide_to_the_National_Science_Museum": {
+    "RA-01": {
+      "question": "How many floors does the museum have?",
+      "type": "fill",
+      "openness": "数字细节·原文直接提取",
+      "canonical_answer": "three",
+      "minimum_acceptable_answer": "three",
+      "accepted_answers": [
+        "three",
+        "3",
+        "three floors",
+        "it has three floors",
+        "the museum has three floors"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（数词，前期已学）"
+    },
+    "RA-02": {
+      "question": "What can you see on the first floor?",
+      "type": "fill",
+      "openness": "地点+细节·原文直接提取",
+      "canonical_answer": "old machines",
+      "minimum_acceptable_answer": "old machines",
+      "accepted_answers": [
+        "old machines",
+        "the history of machines",
+        "a display of old machines",
+        "old machine displays"
+      ],
+      "required_vocab": [
+        "machine"
+      ],
+      "required_grammar": "无（名词短语）"
+    },
+    "RA-03": {
+      "question": "When does the museum open?",
+      "type": "fill",
+      "openness": "时间细节·原文直接提取",
+      "canonical_answer": "9:00 a.m.",
+      "minimum_acceptable_answer": "9:00 a.m.",
+      "accepted_answers": [
+        "9:00 a.m.",
+        "9:00 am",
+        "9:00",
+        "9 a.m.",
+        "9 am",
+        "9:00am",
+        "9am",
+        "nine",
+        "at 9:00 a.m.",
+        "at 9:00 am"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（时间表达，前期已学）"
+    },
+    "RA-04": {
+      "question": "The passage is mainly about ____.",
+      "type": "opt",
+      "openness": "主旨概括·开放度高→有选项",
+      "correct": "B",
+      "note": "原文指南文体（应用文），主旨无唯一措辞"
+    },
+    "RA-05": {
+      "question": "What can we infer (推断) from the last paragraph?",
+      "type": "opt",
+      "openness": "推断·开放度高→有选项（新增题）",
+      "correct": "B",
+      "note": "末段 by bus or on foot → 交通方便"
+    }
+  },
+  "B篇_At_the_National_Science_Museum": {
+    "RB-01": {
+      "question": "How did the class travel to the museum?",
+      "type": "fill",
+      "openness": "交通方式细节·原文直接提取",
+      "canonical_answer": "by bus",
+      "minimum_acceptable_answer": "by bus",
+      "accepted_answers": [
+        "by bus",
+        "they traveled by bus",
+        "we traveled by bus",
+        "travel by bus",
+        "they went by bus"
+      ],
+      "required_vocab": [],
+      "required_grammar": "G24 by+交通工具（本课考点）"
+    },
+    "RB-02": {
+      "question": "What was special about the train on the second floor?",
+      "type": "fill",
+      "openness": "特征细节·原文直接提取",
+      "canonical_answer": "from 1804",
+      "minimum_acceptable_answer": "from 1804",
+      "accepted_answers": [
+        "from 1804",
+        "it was from 1804",
+        "the train was from 1804",
+        "it came from 1804",
+        "1804"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（年份短语，原文摘录）"
+    },
+    "RB-03": {
+      "question": "The underlined word \"shared\" in Paragraph 3 means ____.",
+      "type": "opt",
+      "openness": "开放性词义判断→有选项",
+      "correct": "B",
+      "note": "词义题，释义措辞开放"
+    },
+    "RB-04": {
+      "question": "What can we infer (推断) from the last paragraph?",
+      "type": "opt",
+      "openness": "推断·开放度高→有选项",
+      "correct": "B",
+      "note": "I want to go back again → 想再去"
+    },
+    "RB-05": {
+      "question": "第4题推断\"作者想再去\"的原文依据是第几段？",
+      "type": "fill",
+      "openness": "原文定位细节（段号）·原文直接提取（原证据填空改造入轮转，placeholder 泄漏已修）",
+      "canonical_answer": "最后一段",
+      "minimum_acceptable_answer": "最后一段",
+      "accepted_answers": [
+        "最后一段",
+        "第四段",
+        "4",
+        "the last paragraph",
+        "last paragraph",
+        "the fourth paragraph",
+        "fourth paragraph",
+        "paragraph 4",
+        "para 4"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（中文/数字/短语均可作答）"
+    }
+  },
+  "C篇_How_Museums_Change_Our_Lives": {
+    "RC-01": {
+      "question": "According to the passage, museums help us ____.",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "understand the world",
+      "minimum_acceptable_answer": "understand the world",
+      "accepted_answers": [
+        "understand the world",
+        "to understand the world",
+        "they help us understand the world",
+        "museums help us understand the world"
+      ],
+      "required_vocab": [
+        "world"
+      ],
+      "required_grammar": "无（动词短语）"
+    },
+    "RC-02": {
+      "question": "What can we learn about in a science museum?",
+      "type": "fill",
+      "openness": "列举细节·原文直接提取（最低答案取前半项）",
+      "canonical_answer": "the history of machines",
+      "minimum_acceptable_answer": "the history of machines",
+      "accepted_answers": [
+        "the history of machines",
+        "history of machines",
+        "the history of machines and the future of technology",
+        "the history of machines and future technology",
+        "the future of technology"
+      ],
+      "required_vocab": [
+        "history",
+        "machine"
+      ],
+      "required_grammar": "无（名词短语）"
+    },
+    "RC-03": {
+      "question": "The word \"fresh\" in Paragraph 4 means ____.",
+      "type": "opt",
+      "openness": "开放性词义判断→有选项",
+      "correct": "B",
+      "note": "词义题，fresh = new and different"
+    },
+    "RC-04": {
+      "question": "What is the main idea of the passage?",
+      "type": "opt",
+      "openness": "主旨概括·开放度高→有选项",
+      "correct": "B",
+      "note": "全文讲博物馆如何改变生活"
+    },
+    "RC-05": {
+      "question": "What can museums help us make for our world in the future?",
+      "type": "fill",
+      "openness": "未来作用细节·原文直接提取（新增题）",
+      "canonical_answer": "good choices",
+      "minimum_acceptable_answer": "good choices",
+      "accepted_answers": [
+        "good choices",
+        "make good choices",
+        "good choices for our world",
+        "some good choices"
+      ],
+      "required_vocab": [
+        "choice"
+      ],
+      "required_grammar": "无（名词短语；in the future 本课搭配，无 will）"
+    }
+  }
+}

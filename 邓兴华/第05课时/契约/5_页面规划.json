@@ -1,0 +1,129 @@
+{
+  "course": "第05课 · 祈使句基础、What 问句与 like 动词",
+  "stage": "Stage 2",
+  "lesson": "L05",
+  "duration": "90min",
+  "totalPages": 28,
+  "brand": "#27AE60",
+  "accent": "#E67E22",
+  "bgGradient": "#F4F9F4 → #E8F5E9",
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": [
+        {
+          "page": 0,
+          "type": "cover",
+          "title": "第05课 · 祈使句基础、What 问句与 like 动词",
+          "subtitle": "Stage 2 · 运动·喜好表达 | 90分钟课程",
+          "objectives": ["掌握20个运动与喜好核心词汇", "理解祈使句/What问句/like搭配", "完成字母表Uu-Zz拼读收官"],
+          "meta": [{"label": "核心场景", "value": "运动喜好"}, {"label": "新词", "value": "20 Words"}, {"label": "时长", "value": "90 min"}, {"label": "语法", "value": "G13/G14/G15"}]
+        }
+      ]
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 3,
+      "pages": [
+        {
+          "page": 1,
+          "type": "review-grammar",
+          "title": "L4 语法回顾",
+          "content": ["G10 名词复数口诀", "G11 形容词口诀", "G12 方位介词口诀"],
+          "interactions": ["formula-box × 3"]
+        },
+        {
+          "page": 2,
+          "type": "review-vocab",
+          "title": "L4 词汇快闪 + 句型复习",
+          "content": ["L4 20词分类速览", "3句口头翻译"],
+          "interactions": ["answer-mask × 3"]
+        },
+        {
+          "page": 3,
+          "type": "objectives",
+          "title": "学习目标 · Today's Goals",
+          "content": ["G13/G14/G15 三考点预览", "20词分类预览", "Uu-Zz 六音素预览"],
+          "interactions": ["formula-box × 3", "word-chips"]
+        }
+      ]
+    },
+    {
+      "name": "新词20",
+      "start": 4,
+      "end": 10,
+      "pages": [
+        {"page": 4, "type": "vocab-group", "title": "运动球类 A组 (1-5)", "words": ["sport", "basketball", "soccer", "volleyball", "tennis"], "layout": "item-board 2col"},
+        {"page": 5, "type": "vocab-group", "title": "运动球类 B组 (6-7)", "words": ["ping-pong", "bat"], "layout": "item-board 2col"},
+        {"page": 6, "type": "vocab-group", "title": "动作与其他 (8-10)", "words": ["ball", "play", "watch"], "layout": "item-board 2col"},
+        {"page": 7, "type": "vocab-group", "title": "评价形容词 A组 (11-15)", "words": ["sound", "good", "interesting", "fun", "relaxing"], "layout": "item-board 2col"},
+        {"page": 8, "type": "vocab-group", "title": "评价形容词 B组 (16-17)", "words": ["boring", "difficult"], "layout": "item-board 2col"},
+        {"page": 9, "type": "vocab-group", "title": "其他 (18-20)", "words": ["easy", "TV", "team"], "layout": "item-board 2col"},
+        {"page": 10, "type": "vocab-matrix", "title": "20词分类矩阵 + 快闪复习", "content": ["分类表格", "mini-flash 20词", "检查清单"], "interactions": ["gtab", "mini-flash-grid"]}
+      ]
+    },
+    {
+      "name": "语法3考点",
+      "start": 11,
+      "end": 19,
+      "pages": [
+        {"page": 11, "type": "grammar", "title": "G13 Do/Don't 祈使句基础结构", "content": ["口诀", "公式矩阵", "实例对照表", "防越级约束"], "grammarTag": "G13"},
+        {"page": 12, "type": "grammar-examples", "title": "G13 例句精讲 + 易错点", "content": ["3条例句", "4条易错点", "中考辨析"], "grammarTag": "G13"},
+        {"page": 13, "type": "interactive-1", "title": "运动指令指挥棒", "component": "coach-scene", "buttons": ["Play!", "Don't watch!", "Pass!"], "animations": ["bounceIn", "shakeX", "slideInLeft"]},
+        {"page": 14, "type": "grammar", "title": "G14 What 引导的特殊疑问句", "content": ["口诀", "公式矩阵", "实例对照表", "防越级约束"], "grammarTag": "G14"},
+        {"page": 15, "type": "grammar-examples", "title": "G14 例句精讲 + 易错点", "content": ["3条例句", "4条易错点", "中考辨析"], "grammarTag": "G14"},
+        {"page": 16, "type": "grammar", "title": "G15 实义动词 like 搭配", "content": ["口诀", "公式矩阵", "螺旋上升路径", "防越级约束"], "grammarTag": "G15"},
+        {"page": 17, "type": "grammar-examples", "title": "G15 例句精讲 + 易错点", "content": ["4条例句", "4条易错点", "中考辨析"], "grammarTag": "G15"},
+        {"page": 18, "type": "interactive-2", "title": "喜好调查仪表盘", "component": "survey-scene", "icons": ["🏀", "⚽", "🏐", "🎾", "🏓", "⚾"], "subjectSwitch": ["I", "We", "They"]},
+        {"page": 19, "type": "grammar-compare", "title": "语法综合对比表", "content": ["G13/G14/G15横向对比"]}
+      ]
+    },
+    {
+      "name": "随堂演练",
+      "start": 20,
+      "end": 21,
+      "pages": [
+        {"page": 20, "type": "quiz", "title": "随堂演练 上 (G13+G14)", "questions": 4, "interactions": ["checkQuiz × 4"]},
+        {"page": 21, "type": "quiz", "title": "随堂演练 下 (G15+综合)", "questions": 4, "interactions": ["checkQuiz × 4"]}
+      ]
+    },
+    {
+      "name": "阅读理解",
+      "start": 22,
+      "end": 24,
+      "pages": [
+        {"page": 22, "type": "reading", "title": "阅读A篇 — Sports in Our School", "wordCount": 86, "questions": 5},
+        {"page": 23, "type": "reading", "title": "阅读B篇 — My Favorite Sports After Class (上)", "wordCount": 107, "questions": 3},
+        {"page": 24, "type": "reading", "title": "阅读B篇 (下) + 五选四", "wordCount": 106, "questions": 5}
+      ]
+    },
+    {
+      "name": "句子练习",
+      "start": 25,
+      "end": 27,
+      "pages": [
+        {"page": 25, "type": "translation", "title": "汉译英 5句", "interactions": ["answer-mask × 5"]},
+        {"page": 26, "type": "sentence-building", "title": "造句练习 5句", "interactions": ["answer-mask × 5"]},
+        {"page": 27, "type": "error-correction", "title": "改错练习 5句", "interactions": ["answer-mask × 5"]}
+      ]
+    }
+  ],
+  "phonicsSection": {
+    "note": "自然拼读6页在句子练习之后、课堂总结之前",
+    "pages": [
+      {"type": "phonics-learning", "title": "Uu-Zz 六音素学习", "letters": ["Uu", "Vv", "Ww", "Xx", "Yy", "Zz"]},
+      {"type": "phonics-exercise-1", "title": "拆拼朗读词汇表", "wordCount": 24},
+      {"type": "phonics-exercise-2", "title": "听音选词", "questions": 4},
+      {"type": "phonics-exercise-3-4", "title": "看词归音 + 最小对立对", "questions": 8}
+    ]
+  },
+  "summary": {
+    "page": "last",
+    "type": "summary",
+    "title": "第05课 · 核心总结",
+    "content": ["summary-grid 三卡片", "20词 mini-flash", "super-mn 口诀汇总"]
+  }
+}

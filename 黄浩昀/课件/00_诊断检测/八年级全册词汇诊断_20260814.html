@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八年级全册词汇诊断 · 培优起点检测</title>
+<style>
+:root{
+  --brand:#2563EB; --brand-dark:#1E40AF; --brand-light:#EFF6FF;
+  --success:#16A34A; --error:#DC2626; --warn:#D97706;
+  --text-primary:#1F2937; --text-light:#6B7280;
+  --bg:#F8FAFC; --card:#FFFFFF; --border:#E5E7EB;
+  --radius:12px; --radius-sm:8px; --shadow:0 2px 8px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:var(--bg);color:var(--text-primary);line-height:1.7}
+.page{display:none;max-width:860px;margin:0 auto;padding:32px 24px 60px}
+.page.active{display:block;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.cover{text-align:center;padding:70px 24px}
+.cover .badge{display:inline-block;background:var(--brand-light);color:var(--brand-dark);padding:6px 16px;border-radius:20px;font-size:14px;font-weight:600;margin-bottom:24px}
+.cover h1{font-size:36px;margin-bottom:12px;color:var(--brand-dark)}
+.cover .sub{font-size:18px;color:var(--text-light);margin-bottom:40px}
+.cover .info-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 32px;max-width:520px;margin:0 auto;text-align:left}
+.cover .info-card h3{font-size:16px;margin-bottom:16px;color:var(--brand-dark)}
+.cover .info-card li{margin:10px 0;font-size:15px;list-style:none;padding-left:22px;position:relative}
+.cover .info-card li:before{content:"✓";position:absolute;left:0;color:var(--success);font-weight:700}
+.btn{display:inline-block;background:var(--brand);color:#fff;border:none;padding:14px 42px;border-radius:var(--radius);font-size:17px;font-weight:600;cursor:pointer;transition:all .2s;margin-top:32px}
+.btn:hover{background:var(--brand-dark);transform:translateY(-1px)}
+.btn.secondary{background:var(--text-light)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.section-title{font-size:22px;color:var(--brand-dark);margin:32px 0 4px;padding-bottom:10px;border-bottom:2px solid var(--brand-light);display:flex;align-items:center;gap:10px}
+.section-title .num{background:var(--brand);color:#fff;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.section-desc{font-size:14px;color:var(--text-light);margin-bottom:18px;padding-left:44px}
+.q-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 24px;margin:16px 0;border-left:4px solid var(--brand-light);transition:border-color .2s}
+.q-card.answered{border-left-color:var(--brand)}
+.q-card.correct{border-left-color:var(--success);background:#F0FDF4}
+.q-card.wrong{border-left-color:var(--error);background:#FEF2F2}
+.q-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:6px}
+.q-no{font-weight:700;color:var(--brand-dark);font-size:15px}
+.q-tag{font-size:12px;color:var(--text-light);background:var(--bg);padding:2px 10px;border-radius:12px;border:1px solid var(--border)}
+.q-text{font-size:17px;margin-bottom:14px;line-height:1.8}
+.q-text .blank{display:inline-block;min-width:70px;border-bottom:2px dashed var(--brand);text-align:center;padding:0 6px;color:var(--brand-dark);font-weight:600}
+.quiz-opt{display:block;width:100%;text-align:left;padding:12px 18px;border-radius:var(--radius-sm);border:2px solid var(--border);background:#FAFAFA;cursor:pointer;transition:all .15s;font-size:16px;margin:8px 0;font-family:inherit}
+.quiz-opt:hover{border-color:var(--brand);background:var(--brand-light)}
+.quiz-opt.selected{border-color:var(--brand);background:var(--brand-light);font-weight:600}
+.quiz-opt.correct{background:#E7F6EF;border-color:var(--success);color:#14532D}
+.quiz-opt.wrong{background:#FEE2E2;border-color:var(--error);color:#7F1D1D}
+.quiz-opt .opt-label{display:inline-block;width:26px;height:26px;line-height:26px;text-align:center;border-radius:50%;background:#E5E7EB;margin-right:10px;font-size:13px;font-weight:700;color:var(--text-primary)}
+.quiz-opt.selected .opt-label{background:var(--brand);color:#fff}
+.quiz-opt.correct .opt-label{background:var(--success);color:#fff}
+.quiz-opt.wrong .opt-label{background:var(--error);color:#fff}
+.explain{display:none;margin-top:10px;padding:10px 14px;border-radius:var(--radius-sm);background:var(--brand-light);font-size:14px;color:var(--text-primary)}
+.explain.show{display:block}
+.explain b{color:var(--brand-dark)}
+.progress-bar{position:fixed;top:0;left:0;height:4px;background:var(--brand);transition:width .3s;z-index:100}
+.topbar{position:fixed;top:8px;right:16px;z-index:99;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:13px;color:var(--text-light);box-shadow:var(--shadow)}
+.result-hero{text-align:center;padding:48px 24px 20px}
+.result-score{font-size:64px;font-weight:800;color:var(--brand-dark)}
+.result-label{font-size:18px;color:var(--text-light);margin-top:8px}
+.result-rank{margin-top:16px;font-size:17px;padding:10px 24px;border-radius:24px;display:inline-block;font-weight:600}
+.rank-A{background:#DCFCE7;color:#166534}
+.rank-B{background:#FEF9C3;color:#854D0E}
+.rank-C{background:#FFEDD5;color:#9A3412}
+.rank-D{background:#FEE2E2;color:#991B1B}
+table.analysis{width:100%;border-collapse:collapse;margin:24px 0;background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+table.analysis th,table.analysis td{padding:12px 16px;text-align:center;border-bottom:1px solid var(--border);font-size:14px}
+table.analysis th{background:var(--brand-dark);color:#fff;font-weight:600}
+table.analysis tr:nth-child(even){background:var(--bg)}
+.pill{display:inline-block;padding:2px 12px;border-radius:12px;font-size:13px;font-weight:600}
+.pill.strong{background:#DCFCE7;color:#166534}
+.pill.mid{background:#FEF9C3;color:#854D0E}
+.pill.weak{background:#FEE2E2;color:#991B1B}
+.export-box{margin:28px 0;padding:20px 24px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:2px dashed var(--brand-light)}
+.export-box h3{margin-bottom:12px;font-size:16px;color:var(--brand-dark)}
+.suggest{margin:24px 0;padding:20px 24px;background:var(--brand-light);border-radius:var(--radius);border-left:4px solid var(--brand)}
+.suggest h3{font-size:16px;color:var(--brand-dark);margin-bottom:10px}
+.suggest li{margin:6px 0;font-size:15px}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<div class="topbar" id="topbar" style="display:none">已完成 <b id="doneCount">0</b>/50</div>
+
+<!-- ======== 封面 ======== -->
+<div class="page active" id="cover">
+  <div class="cover">
+    <div class="badge">培优起点检测 · 初二升初三</div>
+    <h1>八年级全册词汇诊断</h1>
+    <div class="sub">人教版新教材 · 10 大主题词汇 · 50 题</div>
+    <div class="info-card">
+      <h3>📌 检测说明</h3>
+      <ul>
+        <li>覆盖八年级上、下册核心词汇（词义辨析 / 词形变化 / 词汇运用）</li>
+        <li>共 50 题，按主题分类，每题选择最合适的一项</li>
+        <li>答完自动分析词汇薄弱板块</li>
+        <li>完成后可一键导出成绩数据（CSV）</li>
+      </ul>
+      <center>
+        <button class="btn" onclick="startTest()">开始检测 →</button>
+      </center>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="quiz"></div>
+<div class="page" id="result"></div>
+
+<script>
+/* ================= 词汇题库：10 主题 × 5 题 = 50 题 ================= */
+const POINTS = [
+  {id:"w01", name:"学校生活与学习", unit:"八上 U1-U2"},
+  {id:"w02", name:"人物与性格", unit:"八上 U3"},
+  {id:"w03", name:"自然与环境", unit:"八上 U4"},
+  {id:"w04", name:"饮食与健康", unit:"八上 U5 · 八下 U2"},
+  {id:"w05", name:"兴趣与计划", unit:"八上 U6"},
+  {id:"w06", name:"将来与沟通", unit:"八上 U7-U8"},
+  {id:"w07", name:"假期与休闲", unit:"八下 U1"},
+  {id:"w08", name:"成长与责任", unit:"八下 U3"},
+  {id:"w09", name:"阅读与学习", unit:"八下 U7"},
+  {id:"w10", name:"行动与改变", unit:"八下 U8"}
+];
+
+const QUESTIONS = [
+  /* ---- 学校生活 ---- */
+  {pt:"w01", q:"I have to ___ for the English test tomorrow.", opts:["prepare","preparing","prepared","preparation"], ans:0, ex:"have to + 动词原形 → prepare。"},
+  {pt:"w01", q:"Reading ___ is a good way to improve English.", opts:["aloud","loudly","loud","alouder"], ans:0, ex:"read aloud 大声朗读。"},
+  {pt:"w01", q:"The ___ of the class are from the same town.", opts:["most","more","much","many"], ans:0, ex:"the most of 大部分（此处语法为 the majority of，最接近 most）。"},
+  {pt:"w01", q:"She works hard and ___ her English every day.", opts:["practices","practice","practicing","practiced"], ans:0, ex:"works 并列 → practices。"},
+  {pt:"w01", q:"We should ___ notes in class.", opts:["take","taking","took","takes"], ans:0, ex:"take notes 记笔记。"},
+  /* ---- 人物性格 ---- */
+  {pt:"w02", q:"My best friend is very ___ and always tells the truth.", opts:["honest","dishonest","rude","lazy"], ans:0, ex:"tells the truth → honest 诚实。"},
+  {pt:"w02", q:"She is ___ about everything and asks many questions.", opts:["curious","quiet","shy","strict"], ans:0, ex:"asks many questions → curious 好奇。"},
+  {pt:"w02", q:"Tom is ___ than his brother at sports.", opts:["better","good","best","well"], ans:0, ex:"than + 比较级 → better。"},
+  {pt:"w02", q:"The teacher is very ___ with us, but we like her.", opts:["strict","funny","kind","friendly"], ans:0, ex:"be strict with 对...严格。"},
+  {pt:"w02", q:"He is a ___ boy who always helps others.", opts:["helpful","careless","selfish","lazy"], ans:0, ex:"helps others → helpful 乐于助人。"},
+  /* ---- 自然与环境 ---- */
+  {pt:"w03", q:"The ___ is the largest animal on Earth.", opts:["whale","whales","whaled","whaling"], ans:0, ex:"the + 单数可数表类指 → whale。"},
+  {pt:"w03", q:"Trees can ___ the air clean.", opts:["keep","keep to","keeping","keeps"], ans:0, ex:"can + 动词原形 → keep。"},
+  {pt:"w03", q:"There are many ___ animals in the world.", opts:["wild","wildly","wilder","wildest"], ans:0, ex:"wild animals 野生动物。"},
+  {pt:"w03", q:"We should protect the ___ to save the earth.", opts:["environment","environmental","environments","environmentally"], ans:0, ex:"protect the environment 保护环境。"},
+  {pt:"w03", q:"The panda is ___ of bamboo.", opts:["in danger","danger","dangerous","dangerously"], ans:0, ex:"be in danger 处于危险中。"},
+  /* ---- 饮食健康 ---- */
+  {pt:"w04", q:"You should eat more ___ food.", opts:["healthy","health","healthily","healthful"], ans:0, ex:"healthy food 健康食物。"},
+  {pt:"w04", q:"There is ___ sugar in the coffee.", opts:["too much","too many","much too","many too"], ans:0, ex:"sugar 不可数 → too much。"},
+  {pt:"w04", q:"She has a ___ diet, with lots of vegetables.", opts:["balanced","balance","balancing","balances"], ans:0, ex:"a balanced diet 均衡饮食。"},
+  {pt:"w04", q:"You look tired. You'd better ___ more rest.", opts:["get","getting","got","gets"], ans:0, ex:"had better + 动词原形 → get。"},
+  {pt:"w04", q:"Too much fast food is ___ for your health.", opts:["bad","good","well","better"], ans:0, ex:"be bad for 对...有害。"},
+  /* ---- 兴趣计划 ---- */
+  {pt:"w05", q:"My hobby is ___ stamps.", opts:["collecting","collect","collected","collects"], ans:0, ex:"is + 动名词表爱好 → collecting。"},
+  {pt:"w05", q:"I'm going to ___ a basketball team.", opts:["join","joining","joined","joins"], ans:0, ex:"be going to + 原形 → join。"},
+  {pt:"w05", q:"She dreams of ___ a famous singer.", opts:["becoming","become","became","becomes"], ans:0, ex:"dream of + 动名词 → becoming。"},
+  {pt:"w05", q:"What are you ___ to do this weekend?", opts:["planning","plan","planned","plans"], ans:0, ex:"plan to do 计划做。"},
+  {pt:"w05", q:"His ___ is to become a doctor.", opts:["goal","goals","goal's","goalist"], ans:0, ex:"his goal 他的目标。"},
+  /* ---- 将来沟通 ---- */
+  {pt:"w06", q:"In the future, robots will ___ housework.", opts:["do","doing","did","does"], ans:0, ex:"will + 原形 → do。"},
+  {pt:"w06", q:"There will ___ more trees in our city.", opts:["be","is","are","being"], ans:0, ex:"there will be 表将来存在。"},
+  {pt:"w06", q:"We should ___ on time every day.", opts:["communicate","communication","communicating","communicated"], ans:0, ex:"should + 原形 → communicate。"},
+  {pt:"w06", q:"It's important to ___ clearly with others.", opts:["talk","talking","talked","talks"], ans:0, ex:"to + 原形 → talk。"},
+  {pt:"w06", q:"If you ___ me, I'll help you.", opts:["call","calling","called","calls"], ans:0, ex:"if 条件句主将从现 → call。"},
+  /* ---- 假期休闲 ---- */
+  {pt:"w07", q:"During the summer ___, I went to the beach.", opts:["vacation","vacations","vacationing","vacational"], ans:0, ex:"summer vacation 暑假。"},
+  {pt:"w07", q:"We had a ___ time at the party.", opts:["wonderful","wonderfully","wonder","wondered"], ans:0, ex:"have a wonderful time 玩得开心。"},
+  {pt:"w07", q:"She likes to ___ in her free time.", opts:["relax","relaxing","relaxed","relaxes"], ans:0, ex:"like to + 原形 → relax。"},
+  {pt:"w07", q:"The museum is ___ visiting.", opts:["worth","worthing","worthy","worts"], ans:0, ex:"be worth doing 值得做。"},
+  {pt:"w07", q:"He spent the whole day ___ TV.", opts:["watching","watch","watched","watches"], ans:0, ex:"spend time doing → watching。"},
+  /* ---- 成长责任 ---- */
+  {pt:"w08", q:"Children should learn to ___ on their own.", opts:["grow up","grow","growing up","grew up"], ans:0, ex:"grow up 成长。"},
+  {pt:"w08", q:"It's your ___ to keep the room clean.", opts:["duty","duties","duty's","dutiful"], ans:0, ex:"it's one's duty 某人的责任。"},
+  {pt:"w08", q:"Parents should give children more ___ to decide.", opts:["chances","chance","chancing","chanced"], ans:0, ex:"give sb chances 给机会。"},
+  {pt:"w08", q:"We must ___ our promises.", opts:["keep","keeping","kept","keeps"], ans:0, ex:"keep one's promise 遵守承诺。"},
+  {pt:"w08", q:"She is ___ enough to solve the problem alone.", opts:["old","older","oldest","elder"], ans:0, ex:"old enough 够大了。"},
+  /* ---- 阅读学习 ---- */
+  {pt:"w09", q:"Reading ___ helps me learn new words.", opts:["widely","wide","wider","widest"], ans:0, ex:"read widely 广泛阅读。"},
+  {pt:"w09", q:"This book is too ___ for beginners.", opts:["difficult","difficulty","difficultly","difficulting"], ans:0, ex:"too difficult 太难。"},
+  {pt:"w09", q:"I have already ___ this novel twice.", opts:["read","reading","reads","readed"], ans:0, ex:"have + 过去分词 read。"},
+  {pt:"w09", q:"The ___ of the story is very interesting.", opts:["plot","plots","plotting","plotted"], ans:0, ex:"the plot 故事情节。"},
+  {pt:"w09", q:"She bought a ___ book for me.", opts:["useful","usefully","use","used"], ans:0, ex:"a useful book 有用的书。"},
+  /* ---- 行动改变 ---- */
+  {pt:"w10", q:"We should ___ a difference in the world.", opts:["make","making","made","makes"], ans:0, ex:"make a difference 产生影响。"},
+  {pt:"w10", q:"Volunteers help ___ the streets clean.", opts:["keep","keeping","kept","keeps"], ans:0, ex:"help (to) do → keep。"},
+  {pt:"w10", q:"She ___ up her mind to study abroad.", opts:["made","make","making","makes"], ans:0, ex:"make up one's mind 下定决心。"},
+  {pt:"w10", q:"Small actions can ___ big changes.", opts:["bring","bringing","brought","brings"], ans:0, ex:"can + 原形 → bring。"},
+  {pt:"w10", q:"We are working hard to ___ our goals.", opts:["achieve","achieving","achieved","achieves"], ans:0, ex:"work hard to achieve 实现目标。"}
+];
+
+/* ================= 状态 ================= */
+let answers = {};
+let results = [];
+let startTime = null;
+
+function startTest(){
+  document.getElementById("cover").classList.remove("active");
+  document.getElementById("quiz").classList.add("active");
+  document.getElementById("topbar").style.display="block";
+  startTime = new Date().getTime();
+  renderQuiz();
+}
+
+function renderQuiz(){
+  const quiz = document.getElementById("quiz");
+  let html = "";
+  let shown = {};
+  QUESTIONS.forEach((qt,i)=>{
+    if(!shown[qt.pt]){
+      shown[qt.pt]=true;
+      const p = POINTS.find(p=>p.id===qt.pt);
+      html += `<div class="section-title"><span class="num">${String(i+1)}</span>${p.name}</div><div class="section-desc">${p.unit}</div>`;
+    }
+    html += renderQ(i, qt);
+  });
+  html += `<div style="text-align:center;margin-top:36px">
+    <button class="btn" onclick="submitTest()" id="submitBtn" disabled>交卷并分析</button>
+    <div style="font-size:13px;color:var(--text-light);margin-top:10px">交卷后无法修改，请确认所有题目已完成</div>
+  </div>`;
+  quiz.innerHTML = html;
+}
+
+function renderQ(i, qt){
+  const qn = i+1;
+  const opts = qt.opts.map((o,j)=>`<button class="quiz-opt" data-q="${i}" data-o="${j}" onclick="pick(${i},${j})"><span class="opt-label">${"ABCD"[j]}</span>${o}</button>`).join("");
+  return `<div class="q-card" id="qc-${i}">
+    <div class="q-head"><span class="q-no">第 ${qn} 题</span><span class="q-tag">${POINTS.find(p=>p.id===qt.pt).name}</span></div>
+    <div class="q-text">${qt.q}</div>
+    ${opts}
+    <div class="explain" id="ex-${i}">${qt.ex}</div>
+  </div>`;
+}
+
+function pick(i,j){
+  answers[String(i)] = j;
+  const card = document.getElementById("qc-"+i);
+  card.querySelectorAll(".quiz-opt").forEach(b=>{
+    b.classList.remove("selected");
+    if(parseInt(b.dataset.o)===j) b.classList.add("selected");
+  });
+  card.classList.add("answered");
+  updateProgress();
+}
+
+function updateProgress(){
+  const done = Object.keys(answers).length;
+  document.getElementById("doneCount").textContent = done;
+  document.getElementById("progressBar").style.width = (done/QUESTIONS.length*100)+"%";
+  if(done===QUESTIONS.length) document.getElementById("submitBtn").disabled = false;
+}
+
+function submitTest(){
+  if(Object.keys(answers).length < QUESTIONS.length){
+    alert("还有 "+(QUESTIONS.length-Object.keys(answers).length)+" 题未完成。");
+    return;
+  }
+  results = QUESTIONS.map((qt,i)=>({
+    no:i+1, pt:qt.pt, q:qt.q, your:answers[String(i)], ans:qt.ans, correct:answers[String(i)]===qt.ans, ex:qt.ex
+  }));
+  results.forEach(r=>{
+    const card = document.getElementById("qc-"+(r.no-1));
+    card.classList.remove("answered","correct","wrong");
+    card.classList.add(r.correct?"correct":"wrong");
+    card.querySelectorAll(".quiz-opt").forEach(b=>{
+      const o=parseInt(b.dataset.o);
+      b.classList.remove("selected");
+      if(o===r.ans) b.classList.add("correct");
+      else if(o===r.your && !r.correct) b.classList.add("wrong");
+    });
+    document.getElementById("ex-"+(r.no-1)).classList.add("show");
+  });
+  document.getElementById("quiz").classList.remove("active");
+  document.getElementById("result").classList.add("active");
+  document.getElementById("topbar").style.display="none";
+  renderResult();
+  try{ saveToIndexedDB(); }catch(e){}
+}
+
+function renderResult(){
+  const total = results.length;
+  const correct = results.filter(r=>r.correct).length;
+  const score = correct/total*100;
+  let rankCls="rank-C", rankTxt="";
+  if(score>=85){rankCls="rank-A";rankTxt="优秀 · 词汇量大，可进入初三词汇拔高";}
+  else if(score>=70){rankCls="rank-B";rankTxt="良好 · 大部分主题词汇已掌握";}
+  else if(score>=55){rankCls="rank-C";rankTxt="中等 · 有明显词汇薄弱板块";}
+  else {rankCls="rank-D";rankTxt="偏弱 · 建议系统扩充核心词汇";}
+
+  const byPoint = {};
+  POINTS.forEach(p=>byPoint[p.id]={name:p.name,unit:p.unit,total:0,correct:0});
+  results.forEach(r=>{byPoint[r.pt].total++; if(r.correct)byPoint[r.pt].correct++;});
+  const rows = Object.values(byPoint).map(p=>({
+    ...p, rate:Math.round(p.correct/p.total*100),
+    level:p.correct/p.total>=0.5?"强":(p.correct/p.total>=0.25?"中":"弱")
+  }));
+
+  let table=`<table class="analysis"><tr><th>词汇主题</th><th>来源</th><th>得分</th><th>掌握</th></tr>`;
+  rows.forEach(r=>{
+    const pill=r.level==="强"?"strong":(r.level==="中"?"mid":"weak");
+    table+=`<tr><td style="text-align:left">${r.name}</td><td>${r.unit}</td><td>${r.correct}/${r.total}（${r.rate}%）</td><td><span class="pill ${pill}">${r.level}</span></td></tr>`;
+  });
+  table+="</table>";
+
+  const weak=rows.filter(r=>r.level==="弱").map(r=>r.name);
+  const mid=rows.filter(r=>r.level==="中").map(r=>r.name);
+  let suggest=`<div class="suggest"><h3>📋 针对性建议</h3><ul>`;
+  if(weak.length) suggest+=`<li><b>重点补强：</b>${weak.join("、")}</li>`;
+  if(mid.length) suggest+=`<li><b>巩固提升：</b>${mid.join("、")}</li>`;
+  if(!weak.length&&!mid.length) suggest+=`<li>各主题词汇掌握良好，可进入初三词汇拓展</li>`;
+  suggest+="</ul></div>";
+
+  const exportBox=`<div class="export-box"><h3>📤 导出成绩数据</h3>
+    <p style="font-size:14px;color:var(--text-light);margin-bottom:12px">导出 CSV 后用 Excel/WPS 打开，记录学生词汇水平档案。</p>
+    <button class="btn secondary" onclick="exportCSV()">⬇ 导出词汇 CSV</button>
+    <button class="btn secondary" style="margin-left:12px" onclick="window.location.reload()">↻ 重新检测</button></div>`;
+
+  document.getElementById("result").innerHTML=`
+    <div class="result-hero">
+      <div class="badge">八年级全册词汇诊断 · 检测报告</div>
+      <div class="result-score">${Math.round(score)}<span style="font-size:28px">分</span></div>
+      <div class="result-label">答对 ${correct}/${total} 题 · 覆盖 10 个词汇主题</div>
+      <div class="result-rank ${rankCls}">${rankTxt}</div>
+    </div>
+    ${table}${suggest}${exportBox}`;
+}
+
+function exportCSV(){
+  const esc=s=>'"'+String(s||"").replace(/"/g,'""')+'"';
+  let rows=[["题号","词汇主题","来源","题目","你的答案","正确答案","是否答对"]];
+  results.forEach(r=>{
+    const pt=POINTS.find(p=>p.id===r.pt);
+    rows.push([r.no,pt.name,pt.unit,r.q,"ABCD"[r.your],"ABCD"[r.ans],r.correct?"对":"错"]);
+  });
+  rows.push([]);
+  rows.push(["词汇主题","来源","得分率","掌握","错题数"]);
+  const byPoint={};
+  POINTS.forEach(p=>byPoint[p.id]={total:0,correct:0});
+  results.forEach(r=>{byPoint[r.pt].total++;if(r.correct)byPoint[r.pt].correct++;});
+  POINTS.forEach(p=>{rows.push([p.name,p.unit,Math.round(byPoint[p.id].correct/byPoint[p.id].total*100)+"%",byPoint[p.id].correct/byPoint[p.id].total>=0.5?"强":"弱",byPoint[p.id].total-byPoint[p.id].correct]);});
+  const csv="﻿"+rows.map(r=>r.map(esc).join(",")).join("\r\n");
+  const blob=new Blob([csv],{type:"text/csv;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="八年级词汇诊断_"+new Date().toISOString().slice(0,10)+".csv";
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function saveToIndexedDB(){
+  return new Promise((resolve)=>{
+    try{
+      const req=indexedDB.open("english-teaching",1);
+      req.onupgradeneeded=e=>{
+        const db=e.target.result;
+        if(!db.objectStoreNames.contains("vocab_diag")) db.createObjectStore("vocab_diag",{keyPath:"id"});
+      };
+      req.onsuccess=e=>{
+        const db=e.target.result;
+        const tx=db.transaction("vocab_diag","readwrite");
+        const store=tx.objectStore("vocab_diag");
+        results.forEach(r=>{store.put({id:Date.now()+"-"+r.no,student:"八年级新生-优生",type:"vocab",no:r.no,point:r.pt,correct:r.correct,ts:new Date().toISOString()});});
+        tx.oncomplete=()=>resolve();
+      };
+      req.onerror=()=>resolve();
+    }catch(e){resolve();}
+  });
+}
+</script>
+</body>
+</html>

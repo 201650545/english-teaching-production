@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第6课时 · 三餐与饮食习惯</title>
+<style>
+
+/* ==================== 全局变量与重置 ==================== */
+:root{
+  --brand:#E63946;--accent:#FFD700;--brand-light:#FF6B6B;--accent-light:#FFE66D;
+  --bg-start:#FFF8F0;--bg-end:#FFE8D6;--text-primary:#1A1A2E;--text-secondary:#555555;
+  --correct:#06A77D;--error:#E63946;--gray-node:#C0C0C0;--gray-border:#999999;
+  --card-bg:#FFFFFF;--table-header-bg:#E63946;--table-header-text:#FFFFFF;
+  --table-highlight-bg:#FFF8E1;--mnemonic-border:#FFD700;--mnemonic-text:#E63946;
+  --error-row-bg:#FFEBEE;--correct-row-bg:#E8F5E9;--page-shadow:0 4px 20px rgba(230,57,70,.15);
+  --card-shadow:0 2px 12px rgba(0,0,0,.08);
+  --sop-blue:#3B82F6;--sop-green:#10B981;--sop-purple:#8B5CF6;--sop-orange:#F59E0B;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;height:100%;overflow:hidden;font-family:'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif;
+  background:linear-gradient(135deg,var(--bg-start),var(--bg-end));color:var(--text-primary);}
+button{cursor:pointer;font-family:inherit;border:none;outline:none;background:none;}
+input{font-family:inherit;outline:none;}
+
+/* ==================== 导航栏 ==================== */
+.nav-bar{position:fixed;top:0;left:0;width:100%;height:54px;background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);box-shadow:0 2px 10px rgba(0,0,0,.1);z-index:1000;
+  display:flex;align-items:center;justify-content:center;gap:0;padding:0 20px;}
+.nav-item{display:flex;align-items:center;gap:6px;padding:8px 12px;font-size:14px;font-weight:500;
+  color:var(--text-secondary);cursor:pointer;transition:all .2s;border-radius:8px;white-space:nowrap;}
+.nav-item:hover{background:rgba(230,57,70,.08);color:var(--brand);}
+.nav-item.active{background:var(--brand);color:#fff;font-weight:600;}
+.nav-item .nav-num{font-size:13px;opacity:.7;}
+.nav-separator{width:16px;height:2px;background:var(--accent);border-radius:1px;opacity:.4;}
+
+/* ==================== 阶段徽章 ==================== */
+.stage-badge{position:fixed;top:10px;right:20px;z-index:1001;background:linear-gradient(135deg,var(--brand),var(--brand-light));
+  color:#fff;padding:6px 16px;border-radius:20px;font-size:14px;font-weight:600;box-shadow:0 2px 8px rgba(230,57,70,.3);
+  letter-spacing:.5px;}
+
+/* ==================== 数据同步状态 ==================== */
+.sync-status{position:fixed;top:10px;left:20px;z-index:1001;background:rgba(255,255,255,.9);
+  padding:4px 12px;border-radius:12px;font-size:12px;font-weight:600;color:var(--text-secondary);
+  box-shadow:0 2px 6px rgba(0,0,0,.08);display:flex;align-items:center;gap:6px;}
+.sync-dot{width:8px;height:8px;border-radius:50%;background:var(--correct);animation:pulse 2s infinite;}
+.sync-dot.pending{background:var(--sop-orange);}
+.sync-dot.failed{background:var(--error);}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+
+/* ==================== 页面容器 ==================== */
+.pages-container{position:absolute;top:54px;left:0;width:100%;height:calc(100% - 54px);overflow:hidden;aspect-ratio:21/9;}
+.page{position:absolute;top:0;left:0;width:100%;height:100%;display:none;overflow-y:auto;
+  padding:25px 45px 50px;background:linear-gradient(135deg,var(--bg-start),var(--bg-end));aspect-ratio:21/9;}
+.page.active{display:block;animation:pageFadeIn .4s ease-out;}
+@keyframes pageFadeIn{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:translateX(0);}}
+.page::-webkit-scrollbar{width:6px;}
+.page::-webkit-scrollbar-track{background:rgba(0,0,0,.05);}
+.page::-webkit-scrollbar-thumb{background:var(--brand-light);border-radius:3px;}
+
+/* ==================== 通用排版 ==================== */
+.page-title{font-size:36px;font-weight:700;color:var(--brand);margin-bottom:6px;text-align:center;
+  text-shadow:0 2px 4px rgba(230,57,70,.1);}
+.page-subtitle{font-size:20px;font-weight:400;color:var(--text-secondary);text-align:center;margin-bottom:18px;}
+.page-content{max-width:1500px;margin:0 auto;}
+.body-text{font-size:22px;line-height:1.6;color:var(--text-primary);}
+.highlight{color:var(--brand);font-weight:600;}
+.highlight-gold{color:#B8860B;font-weight:700;}
+.highlight-bold{font-weight:700;}
+.tag-review{display:inline-block;background:#e0e0e0;color:#666;padding:2px 10px;border-radius:10px;font-size:14px;font-weight:600;margin-left:8px;vertical-align:middle;}
+.tag-new{display:inline-block;background:var(--accent);color:#333;padding:2px 10px;border-radius:10px;font-size:14px;font-weight:700;margin-left:8px;vertical-align:middle;}
+.tag-sop{display:inline-block;background:var(--sop-blue);color:#fff;padding:2px 10px;border-radius:10px;font-size:14px;font-weight:600;margin-left:8px;}
+
+/* ==================== 统计面板 ==================== */
+.stats-panel{display:flex;gap:12px;justify-content:center;margin:12px 0;}
+.stats-card{background:#fff;border-radius:10px;padding:10px 20px;text-align:center;box-shadow:var(--card-shadow);min-width:110px;}
+.stats-card .stats-num{font-size:32px;font-weight:700;color:var(--brand);}
+.stats-card .stats-label{font-size:14px;color:var(--text-secondary);margin-top:2px;}
+.stats-card.gold .stats-num{color:#B8860B;}
+.stats-card.blue .stats-num{color:var(--sop-blue);}
+.stats-card.green .stats-num{color:var(--sop-green);}
+
+/* ==================== 表格样式 ==================== */
+.content-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:18px;
+  box-shadow:var(--card-shadow);border-radius:10px;overflow:hidden;}
+.content-table thead{background:var(--table-header-bg);color:var(--table-header-text);}
+.content-table th{padding:10px 12px;font-size:18px;font-weight:600;text-align:center;}
+.content-table td{padding:8px 10px;text-align:center;border-bottom:1px solid #f0e0d0;font-size:17px;line-height:1.5;}
+.content-table tbody tr:nth-child(even){background:rgba(255,248,225,.5);}
+.content-table tbody tr:hover{background:var(--table-highlight-bg);}
+.content-table .hl-gold{background:rgba(255,215,0,.12);font-weight:600;}
+.content-table .hl-red{background:rgba(230,57,70,.08);font-weight:600;color:var(--brand);}
+.content-table .hl-blue{background:rgba(59,130,246,.08);font-weight:600;color:var(--sop-blue);}
+
+/* ==================== 词汇卡片 ==================== */
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0;}
+.vocab-card{background:#fff;border-radius:10px;padding:12px 16px;box-shadow:var(--card-shadow);
+  border-left:4px solid var(--brand);transition:all .2s;cursor:pointer;}
+.vocab-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.12);}
+.vocab-card:nth-child(even){border-left-color:var(--accent);}
+.vocab-head{display:flex;align-items:center;gap:8px;margin-bottom:4px;}
+.vocab-word{font-size:22px;font-weight:700;color:var(--brand);}
+.vocab-card:nth-child(even) .vocab-word{color:#B8860B;}
+.vocab-phonetic{font-size:15px;color:var(--text-secondary);font-style:italic;}
+.vocab-pos{font-size:13px;background:var(--brand);color:#fff;padding:1px 8px;border-radius:8px;}
+.vocab-card:nth-child(even) .vocab-pos{background:var(--accent);color:#333;}
+.vocab-cn{font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:2px;}
+.vocab-collocation{font-size:14px;color:var(--text-secondary);margin-bottom:2px;}
+.vocab-example{font-size:14px;color:var(--text-primary);font-style:italic;line-height:1.4;}
+.vocab-memory{font-size:13px;color:var(--sop-purple);margin-top:2px;}
+
+/* ==================== 口诀卡片 ==================== */
+.mnemonic-card{background:linear-gradient(135deg,#FFFBF0,#FFF8E1);border:2px solid var(--mnemonic-border);
+  border-radius:14px;padding:16px 24px;margin:12px 0;box-shadow:0 4px 16px rgba(255,215,0,.2);
+  cursor:pointer;perspective:1000px;min-height:70px;}
+.mnemonic-card-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;}
+.mnemonic-card.flipped .mnemonic-card-inner{transform:rotateY(180deg);}
+.mnemonic-front,.mnemonic-back{position:absolute;width:100%;backface-visibility:hidden;}
+.mnemonic-back{transform:rotateY(180deg);}
+.mnemonic-text{font-size:32px;font-weight:600;color:var(--mnemonic-text);line-height:1.6;text-align:center;font-style:italic;}
+.mnemonic-label{font-size:15px;color:var(--text-secondary);text-align:center;margin-bottom:6px;}
+.mnemonic-back .mnemonic-text{font-size:18px;color:var(--text-secondary);font-style:normal;text-align:left;line-height:1.6;}
+
+/* ==================== SOP流程图 ==================== */
+.sop-flowchart{display:flex;align-items:center;justify-content:center;gap:0;margin:16px 0;flex-wrap:wrap;}
+.sop-step{background:#fff;border-radius:12px;padding:16px 20px;text-align:center;box-shadow:var(--card-shadow);
+  min-width:140px;max-width:200px;border-top:4px solid var(--brand);position:relative;}
+.sop-step:nth-child(odd){border-top-color:var(--brand);}
+.sop-step:nth-child(even){border-top-color:var(--accent);}
+.sop-step-num{width:36px;height:36px;line-height:36px;text-align:center;background:var(--brand);color:#fff;
+  border-radius:50%;font-size:18px;font-weight:700;margin:0 auto 8px;}
+.sop-step:nth-child(even) .sop-step-num{background:var(--accent);color:#333;}
+.sop-step-title{font-size:18px;font-weight:700;color:var(--brand);margin-bottom:4px;}
+.sop-step:nth-child(even) .sop-step-title{color:#B8860B;}
+.sop-step-desc{font-size:14px;color:var(--text-secondary);line-height:1.4;}
+.sop-arrow{display:flex;align-items:center;color:var(--accent);font-size:28px;font-weight:700;padding:0 6px;}
+
+/* ==================== 答题区 ==================== */
+.quiz-question{background:#fff;border-radius:10px;padding:14px 18px;margin:10px 0;box-shadow:var(--card-shadow);}
+.quiz-q-text{font-size:19px;font-weight:600;margin-bottom:8px;color:var(--text-primary);}
+.quiz-q-text .q-num{display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;background:var(--brand);color:#fff;border-radius:50%;font-size:14px;margin-right:8px;}
+.quiz-opts{display:flex;flex-direction:column;gap:6px;}
+.quiz-opt{padding:8px 14px;border:2px solid #ddd;border-radius:8px;font-size:17px;cursor:pointer;transition:all .2s;background:#fff;}
+.quiz-opt:hover{border-color:var(--brand-light);background:rgba(230,57,70,.03);}
+.quiz-opt.correct{border-color:var(--correct);background:var(--correct-row-bg);color:var(--correct);font-weight:600;}
+.quiz-opt.wrong{border-color:var(--error);background:var(--error-row-bg);color:var(--error);}
+.quiz-opt.disabled{pointer-events:none;opacity:.7;}
+.quiz-explain{display:none;margin-top:8px;padding:8px 12px;background:var(--table-highlight-bg);border-radius:6px;font-size:15px;color:var(--text-secondary);}
+.quiz-explain.show{display:block;animation:fadeIn .3s ease-out;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+.fill-input{width:160px;padding:6px 12px;border:2px solid #ddd;border-radius:6px;font-size:18px;margin:0 6px;}
+.fill-input:focus{border-color:var(--brand);}
+.fill-input.correct{border-color:var(--correct);background:var(--correct-row-bg);}
+.fill-input.wrong{border-color:var(--error);background:var(--error-row-bg);}
+.fill-check-btn{padding:6px 16px;background:var(--accent);color:#333;border:none;border-radius:6px;font-size:16px;font-weight:600;cursor:pointer;margin-left:6px;}
+.fill-check-btn:hover{background:var(--accent-light);}
+.fill-answer{display:none;font-size:16px;color:var(--correct);font-weight:600;margin-top:4px;}
+.fill-answer.show{display:block;}
+
+/* 连线题 */
+.match-container{display:flex;gap:30px;justify-content:center;margin:14px 0;}
+.match-column{display:flex;flex-direction:column;gap:10px;min-width:260px;}
+.match-item{padding:10px 16px;background:#fff;border:2px solid #ddd;border-radius:8px;font-size:16px;cursor:pointer;transition:all .2s;text-align:center;}
+.match-item:hover{border-color:var(--brand-light);}
+.match-item.selected{border-color:var(--accent);background:rgba(255,215,0,.1);}
+.match-item.matched{border-color:var(--correct);background:var(--correct-row-bg);pointer-events:none;}
+.match-item.wrong-match{border-color:var(--error);background:var(--error-row-bg);animation:shake .4s;}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+
+/* 拖拽排序 */
+.drag-container{background:#fff;border-radius:10px;padding:14px;margin:10px 0;box-shadow:var(--card-shadow);}
+.drag-words{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;min-height:50px;padding:8px;background:var(--table-highlight-bg);border-radius:8px;}
+.drag-word{padding:8px 16px;background:var(--brand);color:#fff;border-radius:8px;font-size:16px;cursor:grab;user-select:none;transition:all .15s;}
+.drag-word:hover{background:var(--brand-light);transform:translateY(-2px);}
+.drag-word.dragging{opacity:.5;}
+.drag-word.placed{background:var(--correct);}
+.drag-slot{display:inline-block;min-width:80px;height:38px;border:2px dashed #ccc;border-radius:6px;margin:0 4px;vertical-align:middle;}
+.drag-slot.filled{border-color:var(--correct);border-style:solid;}
+.drag-submit{padding:8px 20px;background:var(--accent);color:#333;border:none;border-radius:8px;font-size:17px;font-weight:600;cursor:pointer;margin-top:8px;}
+.drag-submit:hover{background:var(--accent-light);}
+.drag-result{margin-top:8px;font-size:17px;font-weight:600;}
+.drag-result.show{display:block;color:var(--brand);}
+.drag-word.selected{background:var(--accent);color:#333;transform:translateY(-3px);box-shadow:0 4px 12px rgba(255,215,0,.4);}
+.drag-word.used{opacity:.35;cursor:default;pointer-events:none;}
+.drag-slot.correct{border-color:var(--correct);border-style:solid;background:rgba(76,175,80,.1);}
+.drag-slot.wrong{border-color:var(--error);border-style:solid;background:rgba(244,67,54,.1);}
+
+/* 进度条 */
+.progress-bar{width:100%;height:8px;background:#e0e0e0;border-radius:4px;margin:10px 0;overflow:hidden;}
+.progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:4px;transition:width .3s;width:0%;}
+.score-display{text-align:center;font-size:24px;font-weight:700;color:var(--brand);margin-top:10px;display:none;}
+.score-display.show{display:block;}
+
+/* ==================== 翻转卡 ==================== */
+.flip-card{perspective:1000px;height:130px;cursor:pointer;}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
+.flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;
+  border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--card-shadow);}
+.flip-card-front{background:#fff;border-left:4px solid var(--error);}
+.flip-card-back{background:var(--correct-row-bg);border-left:4px solid var(--correct);transform:rotateY(180deg);}
+.flip-card-front .flip-wrong{font-size:17px;color:var(--error);text-decoration:line-through;margin-bottom:4px;}
+.flip-card-front .flip-hint{font-size:14px;color:var(--text-secondary);}
+.flip-card-back .flip-right{font-size:17px;color:var(--correct);font-weight:600;margin-bottom:4px;}
+.flip-card-back .flip-explain{font-size:14px;color:var(--text-secondary);}
+
+/* ==================== 题型导图 ==================== */
+.exam-type-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0;}
+.exam-type-card{background:#fff;border-radius:12px;padding:14px;text-align:center;box-shadow:var(--card-shadow);
+  border-top:4px solid var(--brand);transition:all .2s;cursor:pointer;}
+.exam-type-card:hover{transform:translateY(-4px);box-shadow:0 6px 20px rgba(0,0,0,.12);}
+.exam-type-card:nth-child(1){border-top-color:var(--brand);}
+.exam-type-card:nth-child(2){border-top-color:var(--sop-blue);}
+.exam-type-card:nth-child(3){border-top-color:var(--sop-green);}
+.exam-type-card:nth-child(4){border-top-color:var(--sop-purple);}
+.exam-type-card:nth-child(5){border-top-color:var(--sop-orange);}
+.exam-type-icon{font-size:32px;margin-bottom:6px;}
+.exam-type-name{font-size:16px;font-weight:700;margin-bottom:4px;}
+.exam-type-score{font-size:24px;font-weight:700;color:var(--brand);}
+.exam-type-card:nth-child(2) .exam-type-score{color:var(--sop-blue);}
+.exam-type-card:nth-child(3) .exam-type-score{color:var(--sop-green);}
+.exam-type-card:nth-child(4) .exam-type-score{color:var(--sop-purple);}
+.exam-type-card:nth-child(5) .exam-type-score{color:var(--sop-orange);}
+.exam-type-focus{font-size:12px;color:var(--text-secondary);margin-top:4px;}
+
+/* ==================== 路线图 ==================== */
+.roadmap{display:flex;align-items:stretch;gap:0;margin:16px 0;}
+.roadmap-step{flex:1;background:#fff;border-radius:10px;padding:12px;text-align:center;
+  box-shadow:var(--card-shadow);position:relative;border-top:4px solid var(--brand);}
+.roadmap-step:nth-child(even){border-top-color:var(--accent);}
+.roadmap-step .step-num{font-size:26px;font-weight:700;color:var(--brand);}
+.roadmap-step .step-title{font-size:15px;font-weight:600;margin:4px 0;}
+.roadmap-step .step-time{font-size:12px;color:var(--text-secondary);}
+.roadmap-arrow{display:flex;align-items:center;color:var(--accent);font-size:22px;padding:0 4px;}
+
+/* ==================== 词性标注区 ==================== */
+.pos-sort-area{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0;}
+.pos-box{background:#fff;border-radius:10px;padding:10px;min-height:120px;box-shadow:var(--card-shadow);border-top:4px solid;}
+.pos-box.noun{border-top-color:var(--brand);}
+.pos-box.verb{border-top-color:var(--sop-blue);}
+.pos-box.adj{border-top-color:var(--sop-green);}
+.pos-box.adv{border-top-color:var(--sop-purple);}
+.pos-box.pron{border-top-color:var(--sop-orange);}
+.pos-box-title{font-size:15px;font-weight:700;text-align:center;margin-bottom:8px;}
+.pos-box.noun .pos-box-title{color:var(--brand);}
+.pos-box.verb .pos-box-title{color:var(--sop-blue);}
+.pos-box.adj .pos-box-title{color:var(--sop-green);}
+.pos-box.adv .pos-box-title{color:var(--sop-purple);}
+.pos-box.pron .pos-box-title{color:var(--sop-orange);}
+.pos-word{display:inline-block;padding:4px 10px;margin:3px;border-radius:6px;font-size:14px;font-weight:600;cursor:grab;transition:all .15s;}
+.pos-word.noun{background:rgba(230,57,70,.1);color:var(--brand);}
+.pos-word.verb{background:rgba(59,130,246,.1);color:var(--sop-blue);}
+.pos-word.adj{background:rgba(16,185,129,.1);color:var(--sop-green);}
+.pos-word.adv{background:rgba(139,92,246,.1);color:var(--sop-purple);}
+.pos-word.pron{background:rgba(245,158,11,.1);color:var(--sop-orange);}
+.pos-word:hover{transform:scale(1.08);}
+.pos-word.placed{opacity:.3;pointer-events:none;}
+
+/* ==================== 封面 ==================== */
+.cover-container{text-align:center;padding:20px 0;}
+.cover-title{font-size:44px;font-weight:700;color:var(--brand);text-shadow:0 3px 6px rgba(230,57,70,.15);margin-bottom:10px;}
+.cover-subtitle{font-size:22px;color:var(--text-secondary);margin-bottom:20px;}
+.cover-info{display:flex;gap:16px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;}
+.cover-info-item{background:#fff;padding:12px 26px;border-radius:12px;box-shadow:var(--card-shadow);border-top:3px solid var(--accent);text-align:center;}
+.cover-info-num{font-size:30px;font-weight:700;color:var(--brand);}
+.cover-info-label{font-size:13px;color:var(--text-secondary);}
+.cover-nav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+.cover-nav-item{display:flex;flex-direction:column;align-items:center;padding:10px 16px;background:#fff;
+  border-radius:10px;box-shadow:var(--card-shadow);cursor:pointer;transition:all .3s;min-width:90px;border-top:3px solid transparent;}
+.cover-nav-item:hover{transform:translateY(-5px);box-shadow:0 6px 16px rgba(0,0,0,.12);border-top-color:var(--brand);}
+.cover-nav-icon{font-size:26px;margin-bottom:4px;}
+.cover-nav-label{font-size:13px;font-weight:600;color:var(--text);}
+
+/* ==================== 阅读语篇 ==================== */
+.reading-passage{background:#fff;border-radius:10px;padding:18px 24px;margin:12px 0;box-shadow:var(--card-shadow);
+  font-size:19px;line-height:1.8;color:var(--text-primary);}
+.reading-passage .blank{display:inline-block;min-width:60px;border-bottom:2px solid var(--brand);text-align:center;
+  margin:0 4px;font-weight:700;color:var(--brand);}
+.reading-passage .blank.filled{color:var(--correct);border-color:var(--correct);}
+.reading-passage .blank.wrong{color:var(--error);border-color:var(--error);}
+
+/* ==================== 题号导航 ==================== */
+.q-nav{display:flex;gap:6px;justify-content:center;margin:10px 0;flex-wrap:wrap;}
+.q-nav-item{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;background:#fff;border:2px solid #ddd;color:var(--text-secondary);}
+.q-nav-item:hover{border-color:var(--brand);color:var(--brand);}
+.q-nav-item.correct{background:var(--correct);color:#fff;border-color:var(--correct);}
+.q-nav-item.wrong{background:var(--error);color:#fff;border-color:var(--error);}
+.q-nav-item.current{background:var(--brand);color:#fff;border-color:var(--brand);transform:scale(1.15);}
+.q-nav-item.unanswered{background:#fff;color:var(--text-secondary);}
+
+/* ==================== 词汇游戏通用 ==================== */
+.vocab-game{background:linear-gradient(135deg,#FFFBF0,#FFF8E1);border:2px solid var(--accent);border-radius:14px;padding:18px;margin:10px 0;}
+.game-prompt{background:var(--brand);color:#fff;padding:8px 16px;border-radius:8px;font-size:16px;font-weight:600;margin-bottom:12px;text-align:center;}
+.game-option{padding:10px 16px;border:2px solid #ddd;border-radius:8px;font-size:17px;cursor:pointer;transition:all .2s;background:#fff;margin:4px 0;}
+.game-option:hover{border-color:var(--brand-light);background:rgba(230,57,70,.03);}
+.game-option.correct{border-color:var(--correct);background:var(--correct-row-bg);color:var(--correct);font-weight:600;}
+.game-option.wrong{border-color:var(--error);background:var(--error-row-bg);color:var(--error);}
+.game-feedback{margin-top:10px;padding:10px;border-radius:8px;font-size:16px;text-align:center;display:none;}
+.game-feedback.show{display:block;}
+.game-feedback.correct{background:var(--correct-row-bg);color:var(--correct);}
+.game-feedback.wrong{background:var(--error-row-bg);color:var(--error);}
+.game-progress{display:flex;gap:4px;justify-content:center;margin:8px 0;}
+.game-progress-dot{width:12px;height:12px;border-radius:50%;background:#ddd;transition:all .2s;}
+.game-progress-dot.correct{background:var(--correct);}
+.game-progress-dot.wrong{background:var(--error);}
+.game-progress-dot.current{background:var(--brand);transform:scale(1.3);}
+.context-box{background:#fff;border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:10px 14px;margin:8px 0;font-size:18px;line-height:1.6;}
+.dialogue-line{padding:8px 14px;margin:4px 0;border-radius:8px;font-size:17px;line-height:1.5;}
+.dialogue-line.speaker-a{background:rgba(230,57,70,.06);border-left:3px solid var(--brand);}
+.dialogue-line.speaker-b{background:rgba(255,215,0,.1);border-left:3px solid var(--accent);margin-left:30px;}
+
+/* ==================== 自评卡片 ==================== */
+.eval-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0;}
+.eval-card{background:#fff;border-radius:10px;padding:14px;text-align:center;box-shadow:var(--card-shadow);cursor:pointer;transition:all .2s;border-top:4px solid;}
+.eval-card:nth-child(1){border-top-color:var(--correct);}
+.eval-card:nth-child(2){border-top-color:var(--accent);}
+.eval-card:nth-child(3){border-top-color:var(--brand);}
+.eval-card:nth-child(4){border-top-color:var(--error);}
+.eval-card:hover{transform:translateY(-3px);}
+.eval-grade{font-size:28px;font-weight:700;margin-bottom:4px;}
+.eval-card:nth-child(1) .eval-grade{color:var(--correct);}
+.eval-card:nth-child(2) .eval-grade{color:#B8860B;}
+.eval-card:nth-child(3) .eval-grade{color:var(--brand);}
+.eval-card:nth-child(4) .eval-grade{color:var(--error);}
+.eval-desc{font-size:13px;color:var(--text-secondary);line-height:1.5;}
+
+/* ==================== 完成徽章 ==================== */
+.completion-badge{display:flex;flex-direction:column;align-items:center;margin:16px 0;}
+.completion-circle{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-light));
+  display:flex;align-items:center;justify-content:center;font-size:36px;box-shadow:0 0 30px rgba(255,215,0,.5);
+  animation:badgeBounce .6s cubic-bezier(0.68,-0.55,0.265,1.55);}
+@keyframes badgeBounce{0%{transform:scale(0);opacity:0;}60%{transform:scale(1.2);opacity:1;}100%{transform:scale(1);opacity:1;}}
+.completion-text{font-size:20px;font-weight:700;color:var(--brand);margin-top:10px;}
+.completion-sub{font-size:15px;color:var(--text-secondary);margin-top:4px;}
+
+/* ==================== 知识图谱 ==================== */
+.graph-wrapper{position:relative;width:100%;height:480px;overflow:hidden;border-radius:12px;background:#fff;box-shadow:var(--card-shadow);}
+.graph-node{position:absolute;width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;text-align:center;cursor:pointer;transition:all .2s;border:3px solid;z-index:5;}
+.graph-node:hover{transform:scale(1.2);z-index:10;}
+.graph-center{width:110px;height:110px;background:radial-gradient(circle,var(--brand),var(--brand-light));color:#fff;border-color:var(--brand);
+  font-size:15px;box-shadow:0 0 20px rgba(230,57,70,.4);}
+.graph-line{position:absolute;z-index:1;pointer-events:none;}
+
+/* ==================== 防越级提醒 ==================== */
+.warning-box{background:rgba(230,57,70,.05);border:2px solid var(--brand);border-radius:10px;padding:10px 16px;margin:10px 0;}
+.warning-box .warning-title{font-size:17px;font-weight:700;color:var(--brand);margin-bottom:4px;}
+.warning-box .warning-text{font-size:16px;color:var(--text-primary);}
+
+/* ==================== 页码 ==================== */
+.page-counter{position:fixed;bottom:15px;right:20px;background:rgba(255,255,255,.9);padding:4px 14px;border-radius:15px;
+  font-size:15px;font-weight:600;color:var(--brand);z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+
+/* ==================== 弹窗 ==================== */
+.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);z-index:2000;
+  align-items:center;justify-content:center;}
+.modal-overlay.show{display:flex;}
+.modal-content{background:#fff;border-radius:16px;padding:24px 32px;max-width:500px;box-shadow:0 8px 40px rgba(0,0,0,.2);
+  text-align:center;animation:modalPop .3s ease-out;}
+@keyframes modalPop{from{transform:scale(.8);opacity:0;}to{transform:scale(1);opacity:1;}}
+.modal-title{font-size:22px;font-weight:700;color:var(--brand);margin-bottom:10px;}
+.modal-body{font-size:17px;color:var(--text-primary);line-height:1.6;}
+.modal-close{margin-top:14px;padding:8px 24px;background:var(--brand);color:#fff;border:none;border-radius:8px;font-size:15px;cursor:pointer;}
+
+/* ==================== 金色彩带 ==================== */
+.confetti-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:3000;overflow:hidden;}
+.confetti-particle{position:absolute;width:10px;height:10px;background:var(--accent);border-radius:50%;
+  animation:confettiFall 1s ease-out forwards;}
+@keyframes confettiFall{from{transform:translate(0,0) scale(1);opacity:1;}to{transform:translate(var(--tx),var(--ty)) scale(0);opacity:0;}}
+
+/* ==================== 导出按钮 ==================== */
+.export-btn{position:fixed;bottom:15px;left:20px;background:var(--sop-blue);color:#fff;padding:6px 16px;
+  border-radius:15px;font-size:13px;font-weight:600;cursor:pointer;z-index:1000;box-shadow:0 2px 8px rgba(59,130,246,.3);
+  transition:all .2s;}
+.export-btn:hover{background:#2563EB;transform:translateY(-2px);}
+
+/* ==================== Mini Task ==================== */
+.mini-task-box{background:linear-gradient(135deg,#F0F9FF,#E0F2FE);border:2px solid var(--sop-blue);border-radius:14px;padding:18px;margin:12px 0;}
+.mini-task-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.mini-task-icon{font-size:28px;}
+.mini-task-title{font-size:20px;font-weight:700;color:var(--sop-blue);}
+.mini-task-section{margin:8px 0;}
+.mini-task-label{font-size:15px;font-weight:700;color:var(--sop-blue);margin-bottom:4px;}
+.mini-task-content{font-size:16px;color:var(--text-primary);line-height:1.6;}
+.mini-task-words{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+.mini-task-word-tag{background:rgba(59,130,246,.1);color:var(--sop-blue);padding:3px 10px;border-radius:8px;font-size:14px;font-weight:600;}
+
+/* ==================== 错因分析 ==================== */
+.error-analysis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
+.error-type-card{background:#fff;border-radius:10px;padding:14px;box-shadow:var(--card-shadow);cursor:pointer;transition:all .2s;
+  border-left:4px solid var(--error);perspective:1000px;min-height:100px;}
+.error-type-card:hover{transform:translateY(-3px);}
+.error-type-card.flipped{border-left-color:var(--correct);}
+.error-type-front{font-size:16px;font-weight:700;color:var(--error);}
+.error-type-back{display:none;font-size:14px;color:var(--correct);line-height:1.5;}
+.error-type-card.flipped .error-type-front{display:none;}
+.error-type-card.flipped .error-type-back{display:block;}
+
+
+
+/* 显眼小标题 */
+.section-head{display:flex;align-items:center;gap:12px;margin:18px 0 14px;}
+.sh-num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;
+  background:var(--brand);color:#fff;font-size:18px;font-weight:700;flex:0 0 auto;box-shadow:0 2px 8px rgba(230,57,70,.3);}
+.sh-title{font-size:23px;font-weight:700;color:var(--brand);}
+/* 胶囊小标题 */
+.sub-label{display:inline-block;padding:6px 16px;margin:14px 0 10px;border-radius:20px;
+  background:linear-gradient(135deg,#FF8A5B,#E63946);color:#fff;font-size:16px;font-weight:600;box-shadow:0 2px 8px rgba(230,57,70,.2);}
+/* 要点 2 列 */
+.kp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0;}
+.kp-item{display:flex;align-items:flex-start;gap:10px;background:#fff;border-left:5px solid var(--brand);
+  border-radius:12px;padding:12px 16px;box-shadow:0 2px 9px rgba(0,0,0,.06);}
+.kp-item-full{grid-column:1/-1;}
+.kp-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:6px;flex:0 0 auto;}
+.kp-key{font-weight:700;color:var(--brand);}
+.kp-desc{color:var(--text-secondary);line-height:1.7;}
+/* 易错 2 列 */
+.error-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0;}
+.error-card{background:#fff5f5;border:2px solid var(--brand);border-radius:12px;padding:12px 14px;}
+.error-card-full{grid-column:1/-1;}
+.err-wrong{color:#c0392b;text-decoration:line-through;font-weight:700;font-size:17px;}
+.err-arrow{color:var(--brand);font-weight:700;margin:4px 0;}
+.err-right{color:var(--correct);font-weight:700;font-size:17px;}
+/* 例句 2 列 */
+.eg-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0;}
+.eg-card{background:#f8fbff;border:2px solid var(--accent);border-radius:12px;padding:12px 16px;}
+.eg-card-full{grid-column:1/-1;}
+.eg-en{font-size:18px;font-weight:700;color:var(--text-primary);line-height:1.6;}
+.eg-note{display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:var(--accent-light);color:#7a5b00;font-size:14px;}
+/* 语法要点色卡 6 色 */
+.rule-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.rule-card{border-radius:14px;padding:14px 16px;color:#fff;box-shadow:0 3px 10px rgba(0,0,0,.12);}
+.rc-zhug{background:#3B82F6;} .rc-bin{background:#06A77D;} .rc-xing{background:#F59E0B;}
+.rc-ming{background:#8B5CF6;} .rc-warn{background:#E63946;} .rc-qita{background:#14B8A6;}
+.rc-cat{font-size:14px;opacity:.85;font-weight:600;}
+.rc-text{font-size:17px;font-weight:700;margin-top:4px;line-height:1.5;}
+/* 翻牌自检 */
+.recall-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:12px 0;}
+.recall-card{height:120px;perspective:800px;cursor:pointer;}
+.recall-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;}
+.recall-card.flipped .recall-inner{transform:rotateY(180deg);}
+.recall-front,.recall-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:14px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,.1);}
+.recall-front{background:#fff;border:2px dashed var(--brand);}
+.recall-back{background:var(--brand);color:#fff;transform:rotateY(180deg);}
+.recall-q{font-size:16px;font-weight:700;color:var(--brand);}
+.recall-hint{font-size:13px;color:var(--text-secondary);margin-top:6px;}
+.recall-a{font-size:17px;font-weight:700;line-height:1.5;}
+/* 阅读分段 */
+.reading-passage{padding:14px 18px;background:#f8fbff;border:2px solid var(--accent);border-radius:14px;font-size:18px;line-height:1.9;margin:10px 0;}
+.reading-passage p{margin:0 0 10px;}
+.reading-passage p:last-child{margin-bottom:0;}
+/* 选择题 */
+.quiz-q{background:#fff;border:1px solid #ffe0d0;border-radius:12px;padding:14px 16px;margin:12px 0;box-shadow:0 2px 9px rgba(230,57,70,.07);}
+.quiz-q .qq-text{font-size:17px;font-weight:600;margin-bottom:10px;}
+.quiz-opt{display:block;width:100%;text-align:left;padding:9px 14px;margin:6px 0;border:2px solid #eee;border-radius:10px;
+  font-size:16px;background:#fafafa;transition:all .15s;}
+.quiz-opt:hover{border-color:var(--brand);}
+.quiz-opt.opt-correct{background:var(--correct-row-bg);border-color:var(--correct);color:var(--correct);font-weight:700;}
+.quiz-opt.opt-wrong{background:var(--error-row-bg);border-color:var(--error);color:var(--error);font-weight:700;}
+/* 奶油底笔记面板 */
+.body-text{background:#fffaf2;border:1px solid #ffe0b0;border-left:5px solid var(--accent);border-radius:12px;
+  padding:14px 18px;color:var(--text-secondary);line-height:1.8;margin:10px 0;font-size:16px;}
+.note-panel{background:#fffaf2;border:2px solid var(--accent);border-radius:14px;padding:14px 18px;margin:10px 0;line-height:1.8;}
+.note-panel .np-title{font-weight:700;color:var(--brand);margin-bottom:6px;}
+/* 自然拼读卡 */
+.phonics-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:12px 0;}
+.phonics-card{background:#fff;border:2px solid var(--sop-blue);border-radius:14px;padding:14px 10px;text-align:center;box-shadow:0 2px 9px rgba(59,130,246,.12);}
+.phonics-card .pc-letter{font-size:30px;font-weight:800;color:var(--sop-blue);}
+.phonics-card .pc-word{font-size:17px;font-weight:700;margin-top:6px;}
+.phonics-card .pc-cn{font-size:14px;color:var(--text-secondary);margin-top:4px;}
+/* 知识图谱 */
+.kmap{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;}
+.kmap-node{background:#fff;border:2px solid var(--sop-purple);border-radius:14px;padding:12px 14px;}
+.kmap-node .kn-title{font-weight:700;color:var(--sop-purple);}
+.kmap-node .kn-body{color:var(--text-secondary);font-size:15px;line-height:1.6;margin-top:4px;}
+/* 人称代词彩色矩阵 */
+.pm-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:16px;}
+.pm-table th,.pm-table td{border:1px solid #ffd0c0;padding:9px 8px;text-align:center;}
+.pm-table th{background:#fff0e6;font-weight:700;color:var(--brand);}
+.pm-table .pm-num{background:#fde2d8;}
+.pm-table .pm-zhug{color:#3B82F6;font-weight:700;background:#fafdff;}
+.pm-table .pm-bin{color:#06A77D;font-weight:700;background:#fafdff;}
+.pm-table .pm-xing{color:#F59E0B;font-weight:700;background:#fafdff;}
+.pm-table .pm-ming{color:#8B5CF6;font-weight:700;background:#fafdff;}
+/* 封面 */
+.cover-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;}
+.cover-title{font-size:46px;font-weight:800;color:var(--brand);text-shadow:0 3px 12px rgba(230,57,70,.2);}
+.cover-sub{font-size:22px;color:var(--text-secondary);margin-top:10px;}
+.cover-info{margin-top:24px;display:flex;gap:18px;flex-wrap:wrap;justify-content:center;}
+.cover-info-num{background:#fff;border:2px solid var(--brand);border-radius:16px;padding:12px 22px;box-shadow:0 3px 12px rgba(230,57,70,.12);}
+.cover-info-num .ci-label{font-size:14px;color:var(--text-secondary);}
+.cover-info-num .ci-val{font-size:26px;font-weight:800;color:var(--brand);}
+
+/* ================= 设计系统 v2（字号 1.2x + 玻璃 + 动效） ================= */
+:root{
+  --fs-h1:44px; --fs-h2:24px; --fs-body:20px; --fs-card:21px; --fs-note:20px;
+  --grad-brand:linear-gradient(135deg,#E63946,#FF7A45);
+  --grad-gold:linear-gradient(135deg,#FFD700,#FF9F1C);
+  --glass:rgba(255,255,255,.62); --glass-line:rgba(255,255,255,.75);
+}
+html,body{font-size:19px;}
+.page{background:
+  radial-gradient(1200px 600px at 85% -10%,rgba(255,215,0,.20),transparent 60%),
+  radial-gradient(900px 500px at -10% 110%,rgba(230,57,70,.14),transparent 55%),
+  linear-gradient(135deg,#FFF4E6 0%,#FFE8D6 45%,#FFD9E8 100%);
+  padding:24px 40px 48px;}
+.page-title:empty,.page-subtitle:empty{display:none;}
+/* ---- 主/副/正文三级层级 ---- */
+.page-title{font-size:var(--fs-h1);font-weight:900;background:var(--grad-brand);
+  -webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:2px;
+  margin-bottom:10px;text-shadow:none;}
+.page-subtitle{font-size:var(--fs-h2);color:#6b5b3e;font-weight:600;margin-bottom:16px;
+  background:rgba(255,255,255,.5);display:inline-block;padding:5px 18px;border-radius:30px;}
+.section-head .sh-num{width:40px;height:40px;font-size:22px;}
+.section-head .sh-title{font-size:28px;}
+.sub-label{font-size:20px;padding:8px 20px;border-radius:30px;}
+/* ---- 正文与卡片 ---- */
+.body-text{font-size:var(--fs-body);padding:16px 22px;background:var(--glass);
+  backdrop-filter:blur(8px);border:2px solid var(--glass-line);border-left:6px solid var(--accent);
+  border-radius:16px;line-height:1.7;}
+.note-panel{font-size:var(--fs-note);padding:14px 20px;background:var(--glass);
+  backdrop-filter:blur(8px);border:2px solid var(--glass-line);border-radius:18px;line-height:1.7;}
+.note-panel .np-title{font-size:var(--fs-note);}
+.kp-item{border-left:6px solid var(--brand);padding:14px 18px;border-radius:14px;}
+.kp-key{font-size:20px;} .kp-desc{font-size:20px;line-height:1.55;}
+.eg-en{font-size:22px;} .eg-note{font-size:17px;padding:3px 12px;}
+.rule-card{padding:14px 16px;border-radius:16px;box-shadow:0 5px 14px rgba(0,0,0,.15);}
+.rc-cat{font-size:17px;} .rc-text{font-size:20px;line-height:1.5;}
+.error-card{padding:13px 15px;border-radius:14px;}
+.err-wrong{font-size:20px;} .err-arrow{font-size:17px;} .err-right{font-size:20px;}
+/* ---- 词汇卡 ---- */
+.vocab-card{padding:16px 20px;border-radius:16px;border-left:6px solid var(--brand);
+  box-shadow:0 6px 18px rgba(0,0,0,.08);}
+.vocab-word{font-size:27px;} .vocab-phonetic{font-size:18px;} .vocab-pos{font-size:16px;}
+.vocab-cn{font-size:22px;} .vocab-collocation,.vocab-example{font-size:17px;}
+.vocab-memory{font-size:16px;}
+/* ---- 选择题：题目两列流（第1题左/第2题右，往下第3题左/第4题右）---- */
+.quiz-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;align-items:start;margin:8px 0;}
+.quiz-q{padding:12px 14px;border-radius:12px;box-shadow:0 4px 12px rgba(230,57,70,.08);}
+.quiz-q .qq-text{font-size:20px;margin-bottom:8px;}
+.quiz-opt{font-size:19px;padding:9px 13px;border-radius:10px;margin:6px 0;}
+/* ---- 表格 ---- */
+.content-table,.pm-table{font-size:22px;}
+.content-table th{font-size:22px;padding:12px;} .content-table td{font-size:20px;padding:10px;}
+.pm-table th,.pm-table td{font-size:20px;padding:10px;}
+/* ---- 阅读 ---- */
+.reading-passage{font-size:22px;line-height:1.85;padding:18px 24px;}
+/* ---- 拼读 ---- */
+.phonics-card{border-radius:16px;padding:14px 10px;}
+.phonics-card .pc-letter{font-size:36px;} .phonics-card .pc-word{font-size:20px;}
+.phonics-card .pc-cn{font-size:17px;}
+/* ---- 知识图谱 ---- */
+.kmap-node{border-radius:16px;padding:13px 15px;}
+.kmap-node .kn-title{font-size:20px;} .kmap-node .kn-body{font-size:18px;}
+/* ---- 封面（玻璃渐变 + 光斑 + 徽章） ---- */
+.cover-wrap{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  height:100%;text-align:center;overflow:hidden;border-radius:30px;padding:20px;}
+.cover-wrap::before,.cover-wrap::after{content:'';position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;z-index:0;}
+.cover-wrap::before{width:460px;height:460px;background:radial-gradient(circle,#FFD700,#FF7A45);top:-130px;right:-50px;
+  animation:coverFloat 6s ease-in-out infinite;}
+.cover-wrap::after{width:420px;height:420px;background:radial-gradient(circle,#E63946,#FF7A45);bottom:-150px;left:-40px;
+  animation:coverFloat 7s ease-in-out infinite reverse;}
+@keyframes coverFloat{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-18px) scale(1.06);}}
+.cover-badge{position:relative;z-index:2;font-size:22px;font-weight:800;color:#fff;background:var(--grad-brand);
+  padding:9px 28px;border-radius:50px;box-shadow:0 8px 22px rgba(230,57,70,.4);letter-spacing:2px;}
+.cover-title{position:relative;z-index:2;font-size:64px;font-weight:900;background:var(--grad-brand);
+  -webkit-background-clip:text;background-clip:text;color:transparent;margin-top:20px;letter-spacing:4px;}
+.cover-sub{position:relative;z-index:2;font-size:30px;color:#5d4f33;margin-top:14px;font-weight:600;}
+.cover-tagline{position:relative;z-index:2;font-size:20px;color:#8a7a58;margin-top:8px;}
+.cover-info{position:relative;z-index:2;display:flex;gap:18px;margin-top:26px;flex-wrap:wrap;justify-content:center;}
+.cover-info-num{background:var(--glass);backdrop-filter:blur(10px);border:2px solid var(--glass-line);
+  border-radius:20px;padding:14px 28px;box-shadow:0 10px 26px rgba(0,0,0,.12);}
+.cover-info-num .ci-label{font-size:18px;color:#7a6a4a;}
+.cover-info-num .ci-val{font-size:42px;font-weight:900;background:var(--grad-brand);
+  -webkit-background-clip:text;background-clip:text;color:transparent;}
+.cover-emoji{position:relative;z-index:2;font-size:50px;margin-top:20px;animation:coverBounce 2.4s ease-in-out infinite;}
+@keyframes coverBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+/* ---- 大号翻牌卡 ---- */
+.recall-grid{grid-template-columns:repeat(3,1fr);gap:16px;}
+.flash-card{height:180px;perspective:1000px;cursor:pointer;}
+.flash-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flash-card.flipped .flash-inner{transform:rotateY(180deg);}
+.flash-front,.flash-back{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;text-align:center;
+  box-shadow:0 8px 22px rgba(0,0,0,.12);}
+.flash-front{background:linear-gradient(135deg,#fff,#FFF3E0);border:3px dashed var(--brand);}
+.flash-back{background:var(--grad-brand);color:#fff;transform:rotateY(180deg);}
+.flash-q{font-size:30px;font-weight:800;color:var(--brand);line-height:1.35;}
+.flash-back .flash-a{font-size:30px;font-weight:800;line-height:1.35;}
+.flash-hint{font-size:18px;color:var(--text-secondary);margin-top:8px;}
+/* ---- 游戏面板（深色闯关） ---- */
+.game-board{background:linear-gradient(140deg,#3A0D2C,#6B1533);border-radius:22px;padding:22px;color:#fff;
+  box-shadow:0 12px 34px rgba(58,13,44,.45);margin:12px 0;}
+.game-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;gap:12px;}
+.game-title{font-size:26px;font-weight:800;display:flex;align-items:center;gap:10px;}
+.game-title .gt-icon{font-size:30px;}
+.game-tag{font-size:18px;background:rgba(255,255,255,.16);padding:5px 16px;border-radius:30px;color:#FFE9A8;}
+.game-rule{font-size:20px;color:#FFD9D9;margin-bottom:12px;line-height:1.5;}
+.game-board .quiz-q{background:transparent;border:none;box-shadow:none;padding:0;}
+.game-board .qq-text{color:#fff;font-size:24px;}
+.game-board .quiz-opt{background:rgba(255,255,255,.10);color:#fff;border:2px solid rgba(255,255,255,.28);
+  font-size:20px;padding:10px 14px;}
+.game-board .quiz-opt:hover{background:rgba(255,255,255,.22);border-color:#FFD700;}
+.game-board .quiz-opt.opt-correct{background:rgba(16,185,129,.4);border-color:#34D399;color:#B9F6CA;}
+.game-board .quiz-opt.opt-wrong{background:rgba(239,68,68,.42);border-color:#F87171;color:#FFD9D9;}
+/* ---- 拓展知识卡 ---- */
+.ext-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0;}
+.ext-card{position:relative;background:#fff;border-radius:18px;padding:16px 20px;
+  box-shadow:0 6px 20px rgba(0,0,0,.09);overflow:hidden;transition:transform .2s;}
+.ext-card:hover{transform:translateY(-4px);}
+.ext-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:8px;background:var(--grad-brand);}
+.ext-card.blue::before{background:linear-gradient(135deg,#3B82F6,#60A5FA);}
+.ext-card.green::before{background:linear-gradient(135deg,#10B981,#34D399);}
+.ext-card.gold::before{background:var(--grad-gold);}
+.ext-card.purple::before{background:linear-gradient(135deg,#8B5CF6,#A78BFA);}
+.ext-cat{font-size:23px;font-weight:800;color:var(--brand);display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.ext-card.blue .ext-cat{color:var(--sop-blue);}
+.ext-card.green .ext-cat{color:var(--sop-green);}
+.ext-card.gold .ext-cat{color:#B8860B;}
+.ext-card.purple .ext-cat{color:var(--sop-purple);}
+.ext-body{font-size:24px;color:var(--text-primary);line-height:1.6;}
+.ext-body b,.ext-high{color:var(--brand);background:rgba(230,57,70,.10);border-radius:8px;padding:1px 8px;font-weight:800;}
+.ext-card.gold .ext-body b,.ext-card.gold .ext-high{color:#B8860B;background:rgba(255,215,0,.18);}
+.ext-body .ext-key{color:var(--sop-blue);font-weight:800;}
+.ext-body .ext-en{color:var(--brand);font-weight:800;}
+/* ---- 语法流程图（祈使句） ---- */
+.grammar-flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;margin:16px 0;}
+.gf-step{background:#fff;border-radius:18px;padding:14px 18px;text-align:center;
+  box-shadow:0 6px 20px rgba(0,0,0,.12);border-top:6px solid var(--brand);min-width:190px;}
+.gf-step:nth-child(3){border-top-color:var(--accent);}
+.gf-step:nth-child(5){border-top-color:var(--sop-green);}
+.gf-label{font-size:20px;color:var(--text-secondary);font-weight:700;}
+.gf-main{font-size:30px;font-weight:900;color:var(--brand);margin-top:6px;}
+.gf-ex{font-size:23px;color:var(--text-primary);margin-top:6px;line-height:1.4;}
+.gf-arrow{font-size:32px;color:var(--accent);font-weight:900;}
+/* ---- 结构公式框（What 问句） ---- */
+.formula-box{background:linear-gradient(140deg,#0F2A43,#1E4976);border-radius:20px;padding:22px;color:#fff;
+  box-shadow:0 10px 28px rgba(30,73,118,.4);margin:14px 0;text-align:center;}
+.formula-label{font-size:20px;color:#BFDBFE;font-weight:700;margin-bottom:8px;}
+.formula-main{font-size:32px;font-weight:900;color:#93C5FD;line-height:1.5;}
+.formula-ex{font-size:24px;color:#fff;margin-top:12px;line-height:1.5;}
+/* ---- like 结构图 ---- */
+.like-diagram{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:14px 0;}
+.ld-item{background:#fff;border-radius:18px;padding:16px;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.1);border-top:6px solid;}
+.ld-item:nth-child(1){border-top-color:var(--brand);}
+.ld-item:nth-child(2){border-top-color:var(--sop-blue);}
+.ld-item:nth-child(3){border-top-color:var(--sop-green);}
+.ld-f{font-size:26px;font-weight:900;color:var(--brand);}
+.ld-item:nth-child(2) .ld-f{color:var(--sop-blue);}
+.ld-item:nth-child(3) .ld-f{color:var(--sop-green);}
+.ld-e{font-size:22px;color:var(--text-primary);margin-top:8px;line-height:1.4;}
+/* ---- 交互改错 ---- */
+.err-zone{background:#fff;border:3px solid var(--brand);border-radius:18px;padding:16px;
+  box-shadow:0 6px 20px rgba(230,57,70,.1);margin:12px 0;}
+.err-zone-title{font-size:23px;font-weight:800;color:var(--brand);margin-bottom:6px;display:flex;gap:10px;align-items:center;}
+.err-zone .body-text{font-size:21px;padding:12px 16px;}
+/* ---- 一览表 ---- */
+.glance-table{border-collapse:separate;border-spacing:0;width:100%;font-size:22px;margin:12px 0;overflow:hidden;border-radius:16px;}
+.glance-table th{background:var(--grad-brand);color:#fff;font-size:22px;padding:13px;font-weight:800;}
+.glance-table td{padding:13px;border-bottom:1px solid #f3e0d0;background:rgba(255,255,255,.75);text-align:center;font-size:21px;}
+.glance-table tr:nth-child(even) td{background:rgba(255,248,225,.7);}
+.glance-table .gt-key{font-weight:900;color:var(--brand);font-size:24px;}
+.glance-table .gt-en{color:var(--sop-blue);font-weight:700;}
+/* ---- 动画：彩带粒子 / 晃动 ---- */
+.burst-p{position:fixed;width:14px;height:14px;border-radius:50%;z-index:4000;pointer-events:none;
+  animation:burstFly .6s ease-out forwards;}
+@keyframes burstFly{from{transform:translate(0,0) scale(1);opacity:1;}
+  to{transform:translate(var(--dx),var(--dy)) scale(.2);opacity:0;}}
+@keyframes shake{0%,100%{transform:translateX(0);}20%{transform:translateX(-10px);}40%{transform:translateX(10px);}
+  60%{transform:translateX(-6px);}80%{transform:translateX(6px);}}
+/* ---- 游戏目标 chips ---- */
+.chip-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:12px 0;}
+.chip{background:#fff;border:3px solid var(--brand);border-radius:40px;padding:9px 20px;font-size:22px;
+  font-weight:700;color:var(--brand);box-shadow:0 5px 14px rgba(230,57,70,.12);display:flex;align-items:center;gap:8px;}
+.chip .chip-icon{font-size:26px;}
+/* ---- 思维导图（中心辐射式 + 底部交互面板） ---- */
+.mm-wrap{position:relative;height:520px;margin:8px 0;}
+.mm-center{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);z-index:3;
+  width:160px;height:160px;border-radius:50%;background:linear-gradient(140deg,#E63946,#FF7A45);
+  color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 14px 36px rgba(230,57,70,.45);border:6px solid #fff;text-align:center;}
+.mm-c-emoji{font-size:28px;margin-bottom:2px;}
+.mm-c-en{font-size:30px;font-weight:900;letter-spacing:1px;}
+.mm-c-cn{font-size:20px;margin-top:4px;opacity:.95;}
+.mm-lines{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;}
+.mm-lines line{stroke:rgba(230,57,70,.4);stroke-width:.6;stroke-dasharray:1.2 1;fill:none;}
+.mm-branch{position:absolute;transform:translate(-50%,-50%);z-index:2;}
+.mm-b1{left:67%;top:26%;} .mm-b2{left:83%;top:38%;} .mm-b3{left:67%;top:52%;}
+.mm-b4{left:33%;top:52%;} .mm-b5{left:17%;top:38%;} .mm-b6{left:33%;top:26%;}
+.mm-node{display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:40px;color:#fff;
+  font-size:23px;font-weight:800;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.18);
+  border:3px solid #fff;transition:transform .15s,box-shadow .15s;white-space:nowrap;}
+.mm-node:hover{transform:scale(1.08);}
+.mm-icon{font-size:26px;}
+.mm-red .mm-node{background:linear-gradient(140deg,#E63946,#FF7A45);}
+.mm-blue .mm-node{background:linear-gradient(140deg,#3B82F6,#60A5FA);}
+.mm-green .mm-node{background:linear-gradient(140deg,#10B981,#34D399);}
+.mm-purple .mm-node{background:linear-gradient(140deg,#8B5CF6,#A78BFA);}
+.mm-gold .mm-node{background:linear-gradient(140deg,#F59E0B,#FBBF24);}
+.mm-teal .mm-node{background:linear-gradient(140deg,#14B8A6,#2DD4BF);}
+.mm-branch.active .mm-node{transform:scale(1.14);box-shadow:0 0 0 6px rgba(255,255,255,.95),0 14px 32px rgba(0,0,0,.3);}
+.mm-panel{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:88%;background:#fff;
+  border-radius:18px;padding:14px 20px;box-shadow:0 10px 28px rgba(0,0,0,.16);border-top:6px solid #E63946;
+  z-index:4;min-height:118px;transition:border-color .2s;}
+.mm-panel.mm-red{border-top-color:#E63946;} .mm-panel.mm-blue{border-top-color:#3B82F6;}
+.mm-panel.mm-green{border-top-color:#10B981;} .mm-panel.mm-purple{border-top-color:#8B5CF6;}
+.mm-panel.mm-gold{border-top-color:#F59E0B;} .mm-panel.mm-teal{border-top-color:#14B8A6;}
+.mm-panel-title{font-size:24px;font-weight:800;color:var(--brand);display:flex;gap:10px;align-items:center;margin-bottom:8px;}
+.mm-panel-chips{display:flex;flex-wrap:wrap;gap:10px;}
+.mm-chip{font-size:20px;padding:8px 14px;border-radius:12px;background:rgba(230,57,70,.06);
+  border:1px solid rgba(230,57,70,.18);line-height:1.45;}
+.mm-chip b{color:var(--brand);}
+/* 思维导图变体：卡片簇 / 横向树状（形式按本课内容选择，非写死） */
+.mm-head{text-align:center;font-size:36px;font-weight:900;background:var(--grad-brand);
+  -webkit-background-clip:text;background-clip:text;color:transparent;margin:6px 0;letter-spacing:2px;}
+.mm-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:12px 0;}
+.mm-cards .ext-card{padding:13px 15px;}
+.mm-cards .ext-cat{font-size:21px;margin-bottom:6px;}
+.mm-cards .mm-chip{font-size:17px;padding:6px 10px;margin:4px 0;}
+.ext-card.teal::before{background:linear-gradient(135deg,#14B8A6,#2DD4BF);}
+.mm-tree{display:grid;grid-template-columns:auto 1fr;gap:14px 22px;align-items:start;margin:14px auto;max-width:1400px;}
+.mm-tn{background:linear-gradient(140deg,#E63946,#FF7A45);color:#fff;padding:10px 18px;border-radius:40px;
+  font-size:23px;font-weight:800;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.15);border:3px solid #fff;}
+.mm-tn.mm-blue{background:linear-gradient(140deg,#3B82F6,#60A5FA);}
+.mm-tn.mm-green{background:linear-gradient(140deg,#10B981,#34D399);}
+.mm-tn.mm-purple{background:linear-gradient(140deg,#8B5CF6,#A78BFA);}
+.mm-tn.mm-gold{background:linear-gradient(140deg,#F59E0B,#FBBF24);}
+.mm-tn.mm-teal{background:linear-gradient(140deg,#14B8A6,#2DD4BF);}
+.mm-tchips{display:flex;flex-wrap:wrap;gap:8px;}
+.mm-tchips .mm-chip{font-size:18px;padding:7px 12px;}
+/* ---- 思维导图 · 完整内容组件（§3.9「必须呈现完整内容」） ---- */
+.mm-panel{max-height:200px;overflow:auto;}
+.mm-panel-chips{display:block;}
+.mm-words{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+.mm-w{background:#fff7f3;border:1px solid rgba(230,57,70,.16);border-radius:10px;padding:5px 8px;
+  display:flex;align-items:center;justify-content:space-between;gap:6px;}
+.mw-en{font-size:18px;font-weight:800;color:#2D2A32;}
+.mw-cn{font-size:16px;color:#6B7280;}
+.mm-gram{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.mm-gram-card{border-radius:12px;padding:8px 10px;border:1px solid;font-size:15px;}
+.mmg-red{background:#FFF1F0;border-color:#FFA39E;} .mmg-blue{background:#E6F4FF;border-color:#91CAFF;}
+.mmg-green{background:#F0FFF4;border-color:#95DEAC;} .mmg-gold{background:#FFFBE6;border-color:#FFE58F;}
+.mg-t{font-size:17px;font-weight:900;margin-bottom:4px;color:#2D2A32;}
+.mg-f{line-height:1.5;color:#374151;}
+.mg-f b{color:#E63946;}
+.mg-e{margin-top:5px;font-size:14px;color:#6B7280;border-top:1px dashed rgba(0,0,0,.08);padding-top:4px;line-height:1.4;}
+.mm-rd{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+.mm-rd-card{border-radius:12px;padding:8px 10px;background:#F0F9FF;border:1px solid #BAE6FD;font-size:15px;line-height:1.5;color:#374151;}
+.mm-rd-card .mg-t{color:#0369A1;}
+.mm-err{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.mm-err-line{display:flex;gap:8px;align-items:flex-start;font-size:16px;line-height:1.5;color:#374151;
+  background:#FFFAF0;border:1px solid #FFD591;border-radius:10px;padding:6px 10px;}
+.mm-err-line b{color:#E63946;}
+.mm-room{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+.mm-room-tile{font-size:15px;padding:4px 8px;border-radius:8px;background:rgba(245,158,11,.08);
+  border:1px solid rgba(245,158,11,.25);color:#92400E;}
+.mm-room-tile b{color:#B45309;}
+/* 思维导图 · 完整内容页（词汇全表 / 语法全表 / 复习全表） */
+.mm-full-words{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+.mmf-w{border-radius:12px;background:#fff;border:1px solid rgba(230,57,70,.16);box-shadow:0 4px 12px rgba(0,0,0,.06);
+  padding:8px 10px;display:flex;flex-direction:column;gap:2px;}
+.mmf-en{font-size:19px;font-weight:900;color:#2D2A32;}
+.mmf-ph{font-size:14px;color:#9CA3AF;}
+.mmf-pos{font-size:13px;color:#E63946;font-weight:700;}
+.mmf-cn{font-size:16px;color:#6B7280;}
+.mm-full-gram{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:8px 0;}
+.mm-full-gram .mm-gram-card{padding:12px 14px;}
+.mm-full-gram .mg-t{font-size:20px;}
+.mm-full-gram .mg-f{font-size:17px;}
+.mm-full-gram .mg-e{font-size:15px;}
+/* ---- 阅读理解 · 左文右题双栏（Split Screen：左侧原文 / 右侧题目框，题目框内可独立上下滚动） ---- */
+.read-split{display:grid;grid-template-columns:55% 45%;gap:18px;align-items:start;}
+.read-left{display:flex;flex-direction:column;gap:10px;min-width:0;}
+.read-right{position:sticky;top:8px;align-self:start;display:flex;flex-direction:column;min-width:0;
+  height:min(540px, calc(100vh - 150px));min-height:300px;
+  border:3px solid rgba(230,57,70,.32);border-radius:16px;background:rgba(255,255,255,.74);
+  box-shadow:0 10px 26px rgba(0,0,0,.12);overflow:hidden;}
+.read-right-head{flex-shrink:0;padding:9px 14px;background:linear-gradient(135deg,#E63946,#FF7A45);color:#fff;
+  font-size:19px;font-weight:800;letter-spacing:1px;display:flex;align-items:center;gap:6px;}
+.read-qs-scroll{flex:1 1 auto;overflow-y:auto;padding:10px 14px;min-height:0;
+  scrollbar-width:thin;scrollbar-color:#E63946 #FFE3D0;}
+.read-qs-scroll::-webkit-scrollbar{width:8px;}
+.read-qs-scroll::-webkit-scrollbar-thumb{background:#E63946;border-radius:4px;}
+.read-qs-scroll::-webkit-scrollbar-track{background:#FFE3D0;}
+.read-right .quiz-q{margin-bottom:12px;}
+.read-right .quiz-q .qq-text{font-size:20px;line-height:1.4;}
+.read-right .quiz-opt{font-size:17px;padding:7px 12px;margin:4px 0;}
+.read-split .reading-passage{font-size:20px;line-height:1.75;}
+.read-split .note-panel{padding:8px 12px;}
+/* 五选四 · 右侧选项紧凑横排 */
+.w5-opts{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 12px;}
+.w5-opts .quiz-opt{flex:1 1 46%;min-width:0;margin:0;font-size:15px;padding:6px 9px;line-height:1.4;}
+/* VIS-616: 五选四容器补 quiz-q 类以满足采集结构校验；补偿规则保持原紧凑外观（不被全局 .quiz-q 卡片样式覆盖） */
+.read-right .w5-opts.quiz-q{background:transparent;border:none;border-radius:0;box-shadow:none;padding:0;margin:4px 0 12px;}
+.read-qs-scroll .w5-qq{font-size:20px;font-weight:800;color:#2D2A32;margin:6px 0 2px;}
+/* 阅读优先级徽标（CORE / EXTEND / HOME，仅标注不删篇） */
+.pri-row{display:flex;gap:8px;align-items:center;margin-bottom:8px;}
+.pri-badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:16px;font-weight:800;color:#fff;letter-spacing:1px;}
+.pri-core{background:linear-gradient(135deg,#E63946,#FF7A45);box-shadow:0 4px 12px rgba(230,57,70,.3);}
+.pri-extend{background:linear-gradient(135deg,#F59E0B,#FBBF24);box-shadow:0 4px 12px rgba(245,158,11,.3);}
+.pri-home{background:linear-gradient(135deg,#10B981,#34D399);box-shadow:0 4px 12px rgba(16,185,129,.3);}
+.pri-note{font-size:15px;color:#6B7280;font-weight:600;}
+/* §3.8.2 答错双击撤销：已答锁定态 + 撤销提示小字 */
+.quiz-opt.locked{opacity:.55;cursor:default;}
+.quiz-opt.locked.opt-correct,.quiz-opt.locked.opt-wrong{opacity:1;cursor:pointer;}
+.et-undo-hint{font-size:11px;color:#8B7D6B;opacity:.75;margin-top:4px;cursor:pointer;}
+
+.component.hint-ladder .hl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;}
+.hl-word{background:#fff;border:1px solid rgba(230,57,70,.18);border-radius:12px;padding:12px;text-align:center;}
+.hl-cn{font-size:22px;font-weight:700;color:var(--brand);margin-bottom:8px;}
+.hl-box{font-size:24px;letter-spacing:2px;color:var(--text-primary);min-height:34px;margin-bottom:10px;}
+.hl-box.hl-done{color:var(--correct);font-weight:700;}
+.hl-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:6px;}
+.hl-btns button{background:#FFF3E0;color:#8B5E3C;border:1px solid #F5C6AA;border-radius:8px;padding:7px 12px;font-size:15px;}
+.hl-btns button:hover{background:#FFE0B2;}
+.hl-note{font-size:12px;color:var(--text-secondary);min-height:16px;margin-bottom:4px;}
+.hl-reset{font-size:13px;color:#9C1F1F;background:none;border:1px dashed #D98B8B;border-radius:8px;padding:4px 12px;cursor:pointer;}
+.hl-tip{font-size:13px;color:var(--text-secondary);margin-top:10px;}
+.component.sentence-doctor .sd-list{display:flex;flex-direction:column;gap:16px;}
+.sd-unit{background:#fff;border:1px solid rgba(230,57,70,.18);border-radius:12px;padding:14px;}
+.sd-sentence{font-size:20px;line-height:1.7;margin-bottom:6px;}
+.sd-w{display:inline-block;padding:0 2px;border-radius:4px;cursor:pointer;}
+.sd-w.sd-picked{background:#FFE0B2;box-shadow:0 0 0 2px #FF9800;}
+.sd-fix{display:none;background:#FFF8F0;border:1px dashed #E0B08A;border-radius:8px;padding:10px;margin:8px 0;}
+.sd-q{font-size:15px;color:#8B5E3C;margin-bottom:6px;}
+.sd-opt{display:inline-block;margin:4px 6px 0 0;background:#FFF3E0;color:#7B4A2B;border:1px solid #F5C6AA;border-radius:8px;padding:8px 14px;font-size:16px;}
+.sd-opt.sd-ok{background:rgba(16,185,129,.18);border-color:#34D399;color:#0B7A5A;}
+.sd-opt.sd-no{background:rgba(239,68,68,.15);border-color:#F87171;color:#C0392B;}
+.component.evidence-connect .ec-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.ec-left,.ec-right{display:flex;flex-direction:column;gap:10px;}
+.ec-q,.ec-ev{background:#fff;border:1px solid rgba(230,57,70,.18);border-radius:10px;padding:10px 12px;font-size:16px;cursor:pointer;}
+.ec-q:hover,.ec-ev:hover{border-color:#FF9800;}
+.ec-q.ec-sel{background:#FFF3E0;box-shadow:0 0 0 2px #FF9800;}
+.ec-q.ec-ok,.ec-ev.ec-ok{background:rgba(16,185,129,.15);border-color:#34D399;color:#0B7A5A;}
+.ec-q.ec-no,.ec-ev.ec-no{background:rgba(239,68,68,.15);border-color:#F87171;}
+.ec-ev.ec-warn{background:#FFE0B2;border-color:#FF9800;}
+.ec-status{font-size:16px;font-weight:700;color:var(--correct);margin-top:12px;min-height:22px;}
+@media(max-width:768px){.component.evidence-connect .ec-grid{grid-template-columns:1fr;}}
+
+.vg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin:10px 0}
+.ext-word{font-size:26px;font-weight:800;color:var(--brand);margin-bottom:2px}
+.ext-ph{font-size:14px;color:var(--text-secondary)}
+.ext-cn{font-size:20px;font-weight:700;color:var(--text-primary);margin:4px 0}
+.ext-coll{font-size:14px;color:var(--text-secondary)}
+.ext-ex{font-size:14px;margin-top:6px;color:var(--text-primary);line-height:1.6}
+.ext-hook{font-size:13px;margin-top:6px;color:var(--sop-purple);background:var(--table-highlight-bg);border-left:3px solid var(--accent);padding:6px 8px;border-radius:6px}
+.gb{background:var(--card-bg);border-radius:12px;padding:18px;box-shadow:var(--card-shadow);border-top:4px solid var(--brand);margin:10px 0}
+.gb h3{margin:0 0 10px;color:var(--text-primary)}
+.gtp{font-size:14px;color:var(--text-primary);background:var(--bg-start);border-radius:8px;padding:10px 14px;margin:8px 0;border-left:4px solid var(--accent)}
+.ep{background:var(--error-row-bg);border-radius:8px;padding:12px 14px;margin:8px 0}
+.el{display:inline-block;font-weight:800;color:var(--error);margin-bottom:4px}
+.ec2{font-size:14px;color:var(--text-primary);line-height:1.7}
+
+/* ==================== 页面优先级徽标 ==================== */
+.page-priority-badge{position:absolute;top:8px;right:12px;z-index:5;padding:3px 12px;border-radius:16px;
+  font-size:12px;font-weight:800;color:#fff;letter-spacing:1px;text-transform:uppercase;
+  opacity:.85;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,.12);}
+.page-priority-badge.pri-core{background:linear-gradient(135deg,#06A77D,#10B981);}
+.page-priority-badge.pri-extend{background:linear-gradient(135deg,#F59E0B,#FBBF24);}
+.page-priority-badge.pri-home{background:linear-gradient(135deg,#3B82F6,#60A5FA);}
+
+/* ==================== 视觉细节打磨 v2 ==================== */
+
+/* 1. 卡片 hover 阴影增强 */
+.vocab-card,.exam-type-card,.ext-card,.kp-item,.eg-card,.rule-card,.error-card,
+.phonics-card,.kmap-node,.glance-table td,.stats-card,.eval-card,
+.mm-cards .ext-card,.mmf-w,.gb,.quiz-q,.sop-step,.roadmap-step{
+  transition:box-shadow .25s ease,transform .25s ease;}
+.vocab-card:hover,.exam-type-card:hover,.ext-card:hover,.kp-item:hover,
+.phonics-card:hover,.kmap-node:hover,.eval-card:hover,
+.mm-cards .ext-card:hover,.mmf-w:hover{
+  box-shadow:0 4px 20px rgba(0,0,0,.15) !important;}
+
+/* 2. 词汇卡片渐变背景 */
+.vocab-card,.ext-card{
+  background:linear-gradient(160deg,#ffffff 0%,#fffaf5 60%,#fff5f0 100%) !important;}
+.vocab-card:nth-child(even),.ext-card:nth-child(even){
+  background:linear-gradient(160deg,#ffffff 0%,#fffef5 60%,#fffaf0 100%) !important;}
+
+/* 3. 翻页动画更平滑的 cubic-bezier */
+.page.active{animation:pageFadeIn .45s cubic-bezier(0.22,0.61,0.36,1) !important;}
+@keyframes pageFadeIn{from{opacity:0;transform:translateX(30px) scale(.98);}to{opacity:1;transform:translateX(0) scale(1);}}
+
+/* 4. 进度条脉冲动画 */
+.progress-bar-fill{
+  background:linear-gradient(90deg,var(--brand),var(--accent),var(--brand-light),var(--accent));
+  background-size:200% 100%;
+  animation:progressPulse 2s linear infinite;}
+@keyframes progressPulse{0%{background-position:0% 0;}100%{background-position:200% 0;}}
+
+/* 5. 按钮 focus-visible 无障碍样式 */
+button:focus-visible,.quiz-opt:focus-visible,.nav-item:focus-visible,
+.fill-check-btn:focus-visible,.drag-submit:focus-visible,
+.cover-nav-item:focus-visible,.export-btn:focus-visible,
+.game-option:focus-visible,.modal-close:focus-visible{
+  outline:3px solid var(--sop-blue);outline-offset:2px;}
+
+/* 6. 答题选项 hover 微妙缩放 */
+.quiz-opt:hover,.game-option:hover{
+  transform:scale(1.02);}
+.quiz-opt,.game-option{transition:transform .15s ease,border-color .15s ease,background .15s ease;}
+
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <div class="nav-item" data-segment="1" onclick="jumpToSegment(1)"><span class="nav-num">①</span>导入</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="2" onclick="jumpToSegment(2)"><span class="nav-num">②</span>新词20</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="3" onclick="jumpToSegment(3)"><span class="nav-num">③</span>语法精讲</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="4" onclick="jumpToSegment(4)"><span class="nav-num">④</span>随堂演练</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="5" onclick="jumpToSegment(5)"><span class="nav-num">⑤</span>阅读理解</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="6" onclick="jumpToSegment(6)"><span class="nav-num">⑥</span>自然拼读</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="7" onclick="jumpToSegment(7)"><span class="nav-num">⑦</span>综合提升</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="8" onclick="jumpToSegment(8)"><span class="nav-num">⑧</span>Exit Ticket</div>
+</div>
+<div class="stage-badge">中等 · Stage 2 · L6</div>
+<div class="sync-status"><div class="sync-dot" id="syncDot"></div><span id="syncText">本地已保存</span></div>
+<div class="export-btn" onclick="exportData(event)">导出答题数据</div>
+<div class="pages-container" id="pagesContainer">
+<div class="page active" id="page1">
+  <div class="page-content">
+    <h1 class="page-title"></h1>
+    <p class="page-subtitle"></p>
+<div class="cover-wrap"><div class="cover-badge">第 6 课时 · 邓兴华</div><div class="cover-title">三餐与饮食习惯</div><div class="cover-sub">一般现在时实义动词 · want/like 表达</div><div class="cover-tagline">中等 · 初二</div><div class="cover-info"><div class="cover-info-num"><div class="ci-label">新词</div><div class="ci-val">20</div></div><div class="cover-info-num"><div class="ci-label">语法考点</div><div class="ci-val">3</div></div><div class="cover-info-num"><div class="ci-label">页数</div><div class="ci-val">42</div></div></div><div class="cover-emoji">🍎🥛🍚</div></div>
+  </div>
+</div>
+
+<div class="page" id="page2">
+  <div class="page-content">
+    <h1 class="page-title">第6课时 · 学习目标</h1>
+    <p class="page-subtitle">四个模块一目了然</p>
+<div class="section-head"><span class="sh-num">标</span><span class="sh-title">本课学习目标</span></div><div class="chip-row"><div class="chip"><span class="chip-icon">🆕</span>20 个三餐与食物高频词</div><div class="chip"><span class="chip-icon">🧩</span>一般现在时 / 可数不可数 / want to do</div><div class="chip"><span class="chip-icon">📖</span>记叙 / 调查 / 说明阅读</div><div class="chip"><span class="chip-icon">🔤</span>26 字母总复习 + 5 组易混音对</div></div><div class="kmap"><div class="kmap-node"><div class="kn-title">词汇</div><div class="kn-body">20 个食物、三餐与动作词，滚动复现。</div></div><div class="kmap-node"><div class="kn-title">语法</div><div class="kn-body">非三单一般现在时、可数与不可数、want to do。</div></div><div class="kmap-node"><div class="kn-title">阅读</div><div class="kn-body">饮食习惯：莉莉 / 调查 / 健康饮食。</div></div><div class="kmap-node"><div class="kn-title">拼读</div><div class="kn-body">26 字母收官 + 5 组易混音对听辨。</div></div></div><div class="note-panel"><div class="np-title">闯关规则</div>先玩「上节课闯关」唤醒 L5 的祈使句/What/like，再进入本课新词与语法，全对即可通关。</div>
+  </div>
+</div>
+
+<div class="page" id="page3">
+  <div class="page-content">
+    <h1 class="page-title">上节课 · 语法闯关</h1>
+    <p class="page-subtitle">祈使句 · What 问句 · like</p>
+<div class="section-head"><span class="sh-num">复</span><span class="sh-title">上节课 · 语法快闪闯关</span></div><div class="body-text">还记得上节课的 <span class="highlight">祈使句 Do/Don&#39;t / What 问句 / like to do</span> 吗？点击作答，答对有彩带动画！</div><div class="game-board"><div class="game-top"><span class="game-title"><span class="gt-icon">⚡</span>祈使句 / What 问句 / like 用法</span><span class="game-tag">闯关</span></div><div class="game-rule">从上节课 3 个语法点各抽几题，快速唤醒记忆。</div><div class="quiz-cols"><div class="quiz-q" data-qid="Q001"><div class="qq-text">___ the door, please.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. Open</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. Opening</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. Opens</button></div><div class="quiz-q" data-qid="Q002"><div class="qq-text">Don't ___ in the classroom.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. runs</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. run</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. running</button></div><div class="quiz-q" data-qid="Q003"><div class="qq-text">___ sports do you like?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. How</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. Where</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. What</button></div><div class="quiz-q" data-qid="Q004"><div class="qq-text">Do you like tennis?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. do</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. am</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. does</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">D. Yes, I ___.</button></div><div class="quiz-q" data-qid="Q005"><div class="qq-text">I like ___ basketball.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. playing</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. to play</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. plays</button></div><div class="quiz-q" data-qid="Q006"><div class="qq-text">___ you like soccer?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. Are</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. Does</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. Do</button></div></div></div><div class="note-panel"><div class="np-title">闯关提示</div>祈使句动词原形开头，否定 Don&#39;t + 原形；What 问句看答语选疑问词；like 后接名词或 to do；一般疑问句答语用 do。</div>
+  </div>
+</div>
+
+<div class="page" id="page4">
+  <div class="page-content">
+    <h1 class="page-title">上节课 · 词汇闯关</h1>
+    <p class="page-subtitle">运动 20 词 · 翻牌自检</p>
+<div class="section-head"><span class="sh-num">复</span><span class="sh-title">上节课 · 词汇闯关</span></div><div class="body-text">上节课 20 个运动词还记得吗？先闯关再翻牌自检。</div><div class="game-board"><div class="game-top"><span class="game-title"><span class="gt-icon">🎮</span>运动词 8 连问</span><span class="game-tag">闯关</span></div><div class="game-rule">看中文，选英文，音形义一次叫醒。</div><div class="quiz-cols"><div class="quiz-q" data-qid="Q007"><div class="qq-text">篮球 是哪个词？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. basketball</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. soccer</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. volleyball</button></div><div class="quiz-q" data-qid="Q008"><div class="qq-text">有趣的 是哪个词？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. boring</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. interesting</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. easy</button></div><div class="quiz-q" data-qid="Q009"><div class="qq-text">球拍 是哪个词？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. ball</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. team</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. bat</button></div><div class="quiz-q" data-qid="Q010"><div class="qq-text">困难的 是哪个词？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. difficult</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. easy</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. fun</button></div><div class="quiz-q" data-qid="Q011"><div class="qq-text">观看 是哪个词？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. play</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. watch</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. sound</button></div><div class="quiz-q" data-qid="Q012"><div class="qq-text">放松的 是哪个词？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. interesting</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. boring</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. relaxing</button></div><div class="quiz-q" data-qid="Q013"><div class="qq-text">听起来 是哪个词？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. sound</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. play</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. watch</button></div><div class="quiz-q" data-qid="Q014"><div class="qq-text">队伍 是哪个词？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. sport</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. team</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. TV</button></div></div></div><div class="sub-label">翻牌自检 · 上节课 20 词（点击翻面）</div><div class="recall-grid">
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">篮球</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">basketball</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">足球</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">soccer</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">排球</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">volleyball</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">网球</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">tennis</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">乒乓球</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">ping-pong</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">球拍</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">bat</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">球</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">ball</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">电视</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">TV</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">队</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">team</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">运动</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">sport</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">好的</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">good</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">有趣的</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">interesting</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">有趣的</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">fun</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">放松的</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">relaxing</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">无聊的</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">boring</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">困难的</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">difficult</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">容易的</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">easy</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">玩；打</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">play</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">听起来</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">sound</div></div></div></div>
+<div class="flash-card" onclick="event.stopPropagation(); flipCard(this)"><div class="flash-inner"><div class="flash-front"><div class="flash-q">观看</div><div class="flash-hint">点击翻面</div></div><div class="flash-back"><div class="flash-a">watch</div></div></div></div>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page5">
+  <div class="page-content">
+    <h1 class="page-title">上节课 · 核心句型</h1>
+    <p class="page-subtitle">口头翻译 · 唤醒 to do</p>
+<div class="section-head"><span class="sh-num">复</span><span class="sh-title">上节课 · 核心句型口头演练</span></div><div class="body-text"><span class="highlight">快速口头翻译</span>（每人一句，看谁又快又准）</div><div class="kp-grid">
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">①</span><span class="kp-desc">What sports do you like?（你喜欢什么运动？）→ I like to play basketball.</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">②</span><span class="kp-desc">Let's play soccer after class.（下课后我们踢足球吧。）→ Good idea! / Sounds fun!</span></div>
+<div class="kp-item kp-item-full"><span class="kp-dot"></span><span class="kp-key">③</span><span class="kp-desc">Tennis is difficult, but it is interesting.（网球难，但有趣。）</span></div>
+</div><div class="note-panel"><div class="np-title">复习要点</div>What 问句 + like to do 是今天 want to do 的垫脚石：like to do → want to do 都是「动词 + to + 原形」。</div>
+  </div>
+</div>
+
+<div class="page" id="page6">
+  <div class="page-content">
+    <h1 class="page-title">新词 ①</h1>
+    <p class="page-subtitle">food/fruit/vegetable/apple/banana</p>
+<div class="section-head"><span class="sh-num">词</span><span class="sh-title">三餐与食物词 · 第一组</span></div><div class="body-text"><span class="highlight">食物总称与水果 1–5</span>音标 · 词性 · 中文 · 中考搭配 · 例句 · 记忆法，翻牌自检。</div><div class="vg"><div class="ext-card"><div class="ext-word">food</div><div class="ext-ph">/fuːd/ · n.</div><div class="ext-cn">食物</div><div class="ext-coll">搭配：healthy food / fast food</div><div class="ext-ex">例句：I like healthy food.</div><div class="ext-hook">💡 food 里两个 o 像两个鸡蛋</div></div><div class="ext-card"><div class="ext-word">fruit</div><div class="ext-ph">/fruːt/ · n.</div><div class="ext-cn">水果</div><div class="ext-coll">搭配：fresh fruit / fruit salad</div><div class="ext-ex">例句：I eat fruit every day.</div><div class="ext-hook">💡 fr-ui-t 音似福如它</div></div><div class="ext-card"><div class="ext-word">vegetable</div><div class="ext-ph">/ˈvedʒtəbl/ · n.</div><div class="ext-cn">蔬菜</div><div class="ext-coll">搭配：green vegetables</div><div class="ext-ex">例句：We should eat more vegetables.</div><div class="ext-hook">💡 veget(植物)+able(能)</div></div><div class="ext-card"><div class="ext-word">apple</div><div class="ext-ph">/ˈæpl/ · n.</div><div class="ext-cn">苹果</div><div class="ext-coll">搭配：an apple / apple juice</div><div class="ext-ex">例句：An apple a day keeps the doctor away.</div><div class="ext-hook">💡 a-pp-le 音似阿婆</div></div><div class="ext-card"><div class="ext-word">banana</div><div class="ext-ph">/bəˈnɑːnə/ · n.</div><div class="ext-cn">香蕉</div><div class="ext-coll">搭配：a banana / banana milk</div><div class="ext-ex">例句：I have a banana for breakfast.</div><div class="ext-hook">💡 ba-na-na 三根香蕉</div></div></div><div class="note-panel"><div class="np-title">跟读要点</div>先听老师范读两遍，再跟读三遍，最后捂住英文看中文说英文。</div>
+  </div>
+</div>
+
+<div class="page" id="page7">
+  <div class="page-content">
+    <h1 class="page-title">新词 ②</h1>
+    <p class="page-subtitle">orange/strawberry/tomato/potato/milk</p>
+<div class="section-head"><span class="sh-num">词</span><span class="sh-title">三餐与食物词 · 第二组</span></div><div class="body-text"><span class="highlight">水果续 · 6–10</span>音标 · 词性 · 中文 · 中考搭配 · 例句 · 记忆法，翻牌自检。</div><div class="vg"><div class="ext-card"><div class="ext-word">orange</div><div class="ext-ph">/ˈɒrɪndʒ/ · n.</div><div class="ext-cn">橙子</div><div class="ext-coll">搭配：an orange / orange juice</div><div class="ext-ex">例句：I drink orange juice every morning.</div><div class="ext-hook">💡 o-range 首字母像橙子</div></div><div class="ext-card"><div class="ext-word">strawberry</div><div class="ext-ph">/ˈstrɔːbəri/ · n.</div><div class="ext-cn">草莓</div><div class="ext-coll">搭配：strawberries</div><div class="ext-ex">例句：I like strawberries very much.</div><div class="ext-hook">💡 straw(稻草)+berry(浆果)</div></div><div class="ext-card"><div class="ext-word">tomato</div><div class="ext-ph">/təˈmɑːtəʊ/ · n.</div><div class="ext-cn">西红柿</div><div class="ext-coll">搭配：tomatoes</div><div class="ext-ex">例句：I don't like tomatoes.</div><div class="ext-hook">💡 to-ma-to 音似他码头</div></div><div class="ext-card"><div class="ext-word">potato</div><div class="ext-ph">/pəˈteɪtəʊ/ · n.</div><div class="ext-cn">土豆</div><div class="ext-coll">搭配：potatoes / potato chips</div><div class="ext-ex">例句：My father likes potatoes.</div><div class="ext-hook">💡 po-ta-to 音似剖它头</div></div><div class="ext-card"><div class="ext-word">milk</div><div class="ext-ph">/mɪlk/ · n.</div><div class="ext-cn">牛奶</div><div class="ext-coll">搭配：a glass of milk</div><div class="ext-ex">例句：I drink milk every morning.</div><div class="ext-hook">💡 mi-lk 牛奶加蜜更好喝</div></div></div><div class="note-panel"><div class="np-title">跟读要点</div>先听老师范读两遍，再跟读三遍，最后捂住英文看中文说英文。</div>
+  </div>
+</div>
+
+<div class="page" id="page8">
+  <div class="page-content">
+    <h1 class="page-title">新词 ③</h1>
+    <p class="page-subtitle">bread/chicken/rice/eggs/breakfast</p>
+<div class="section-head"><span class="sh-num">词</span><span class="sh-title">三餐与食物词 · 第三组</span></div><div class="body-text"><span class="highlight">主食与三餐 · 11–15</span>音标 · 词性 · 中文 · 中考搭配 · 例句 · 记忆法，翻牌自检。</div><div class="vg"><div class="ext-card"><div class="ext-word">bread</div><div class="ext-ph">/bred/ · n.</div><div class="ext-cn">面包</div><div class="ext-coll">搭配：a piece of bread</div><div class="ext-ex">例句：I have bread for breakfast.</div><div class="ext-hook">💡 bread 里藏 read(读)</div></div><div class="ext-card"><div class="ext-word">chicken</div><div class="ext-ph">/ˈtʃɪkɪn/ · n.</div><div class="ext-cn">鸡肉</div><div class="ext-coll">搭配：fried chicken</div><div class="ext-ex">例句：I like chicken but not fish.</div><div class="ext-hook">💡 chick(小鸡)+en</div></div><div class="ext-card"><div class="ext-word">rice</div><div class="ext-ph">/raɪs/ · n.</div><div class="ext-cn">米饭</div><div class="ext-coll">搭配：a bowl of rice</div><div class="ext-ex">例句：We eat rice for lunch.</div><div class="ext-hook">💡 rice 里藏 ice(冰)</div></div><div class="ext-card"><div class="ext-word">eggs</div><div class="ext-ph">/eɡz/ · n.</div><div class="ext-cn">鸡蛋</div><div class="ext-coll">搭配：boiled eggs / fry eggs</div><div class="ext-ex">例句：I eat two eggs every morning.</div><div class="ext-hook">💡 egg 加 s 变复数</div></div><div class="ext-card"><div class="ext-word">breakfast</div><div class="ext-ph">/ˈbrekfəst/ · n.</div><div class="ext-cn">早餐</div><div class="ext-coll">搭配：have breakfast</div><div class="ext-ex">例句：I have breakfast at 7:00.</div><div class="ext-hook">💡 break(打破)+fast(斋戒)</div></div></div><div class="note-panel"><div class="np-title">跟读要点</div>先听老师范读两遍，再跟读三遍，最后捂住英文看中文说英文。</div>
+  </div>
+</div>
+
+<div class="page" id="page9">
+  <div class="page-content">
+    <h1 class="page-title">新词 ④</h1>
+    <p class="page-subtitle">lunch/dinner/like/want/eat</p>
+<div class="section-head"><span class="sh-num">词</span><span class="sh-title">三餐与食物词 · 第四组</span></div><div class="body-text"><span class="highlight">三餐与动词 · 16–20</span>音标 · 词性 · 中文 · 中考搭配 · 例句 · 记忆法，翻牌自检。</div><div class="vg"><div class="ext-card"><div class="ext-word">lunch</div><div class="ext-ph">/lʌntʃ/ · n.</div><div class="ext-cn">午餐</div><div class="ext-coll">搭配：have lunch</div><div class="ext-ex">例句：We have lunch at school.</div><div class="ext-hook">💡 lunch 音似浪吃</div></div><div class="ext-card"><div class="ext-word">dinner</div><div class="ext-ph">/ˈdɪnə(r)/ · n.</div><div class="ext-cn">晚餐</div><div class="ext-coll">搭配：have dinner</div><div class="ext-ex">例句：My family have dinner together.</div><div class="ext-hook">💡 din-ner 音似订呢</div></div><div class="ext-card"><div class="ext-word">like</div><div class="ext-ph">/laɪk/ · v.</div><div class="ext-cn">喜欢</div><div class="ext-coll">搭配：like sth. / like to do</div><div class="ext-ex">例句：I like apples and bananas.</div><div class="ext-hook">💡 like 音似赖客</div></div><div class="ext-card"><div class="ext-word">want</div><div class="ext-ph">/wɒnt/ · v.</div><div class="ext-cn">想要</div><div class="ext-coll">搭配：want sth. / want to do</div><div class="ext-ex">例句：I want to eat an apple.</div><div class="ext-hook">💡 want 里藏 ant(蚂蚁)</div></div><div class="ext-card"><div class="ext-word">eat</div><div class="ext-ph">/iːt/ · v.</div><div class="ext-cn">吃</div><div class="ext-coll">搭配：eat sth. / eat breakfast</div><div class="ext-ex">例句：I eat breakfast at home.</div><div class="ext-hook">💡 eat 音似亿特</div></div></div><div class="note-panel"><div class="np-title">跟读要点</div>先听老师范读两遍，再跟读三遍，最后捂住英文看中文说英文。</div>
+  </div>
+</div>
+
+<div class="page" id="page10">
+  <div class="page-content">
+    <h1 class="page-title">新词总览</h1>
+    <p class="page-subtitle">可数 / 不可数 / 动词 三区</p>
+<div class="section-head"><span class="sh-num">词</span><span class="sh-title">新词总览 · 20 词卡片墙</span></div><div class="body-text"><span class="highlight">全部 20 词</span> 按可数 / 不可数 / 动词分三区，建立本课词场全貌。</div><div class="sub-label">🍎 可数名词</div><div class="vg"><div class="ext-card"><div class="ext-word">vegetable</div><div class="ext-ph">/ˈvedʒtəbl/ · n.</div><div class="ext-cn">蔬菜</div><div class="ext-coll">搭配：green vegetables</div><div class="ext-ex">例句：We should eat more vegetables.</div><div class="ext-hook">💡 veget(植物)+able(能)</div></div><div class="ext-card"><div class="ext-word">apple</div><div class="ext-ph">/ˈæpl/ · n.</div><div class="ext-cn">苹果</div><div class="ext-coll">搭配：an apple / apple juice</div><div class="ext-ex">例句：An apple a day keeps the doctor away.</div><div class="ext-hook">💡 a-pp-le 音似阿婆</div></div><div class="ext-card"><div class="ext-word">banana</div><div class="ext-ph">/bəˈnɑːnə/ · n.</div><div class="ext-cn">香蕉</div><div class="ext-coll">搭配：a banana / banana milk</div><div class="ext-ex">例句：I have a banana for breakfast.</div><div class="ext-hook">💡 ba-na-na 三根香蕉</div></div><div class="ext-card"><div class="ext-word">orange</div><div class="ext-ph">/ˈɒrɪndʒ/ · n.</div><div class="ext-cn">橙子</div><div class="ext-coll">搭配：an orange / orange juice</div><div class="ext-ex">例句：I drink orange juice every morning.</div><div class="ext-hook">💡 o-range 首字母像橙子</div></div><div class="ext-card"><div class="ext-word">strawberry</div><div class="ext-ph">/ˈstrɔːbəri/ · n.</div><div class="ext-cn">草莓</div><div class="ext-coll">搭配：strawberries</div><div class="ext-ex">例句：I like strawberries very much.</div><div class="ext-hook">💡 straw(稻草)+berry(浆果)</div></div><div class="ext-card"><div class="ext-word">tomato</div><div class="ext-ph">/təˈmɑːtəʊ/ · n.</div><div class="ext-cn">西红柿</div><div class="ext-coll">搭配：tomatoes</div><div class="ext-ex">例句：I don't like tomatoes.</div><div class="ext-hook">💡 to-ma-to 音似他码头</div></div><div class="ext-card"><div class="ext-word">potato</div><div class="ext-ph">/pəˈteɪtəʊ/ · n.</div><div class="ext-cn">土豆</div><div class="ext-coll">搭配：potatoes / potato chips</div><div class="ext-ex">例句：My father likes potatoes.</div><div class="ext-hook">💡 po-ta-to 音似剖它头</div></div><div class="ext-card"><div class="ext-word">eggs</div><div class="ext-ph">/eɡz/ · n.</div><div class="ext-cn">鸡蛋</div><div class="ext-coll">搭配：boiled eggs / fry eggs</div><div class="ext-ex">例句：I eat two eggs every morning.</div><div class="ext-hook">💡 egg 加 s 变复数</div></div></div><div class="sub-label">🥛 不可数名词</div><div class="vg"><div class="ext-card"><div class="ext-word">food</div><div class="ext-ph">/fuːd/ · n.</div><div class="ext-cn">食物</div><div class="ext-coll">搭配：healthy food / fast food</div><div class="ext-ex">例句：I like healthy food.</div><div class="ext-hook">💡 food 里两个 o 像两个鸡蛋</div></div><div class="ext-card"><div class="ext-word">fruit</div><div class="ext-ph">/fruːt/ · n.</div><div class="ext-cn">水果</div><div class="ext-coll">搭配：fresh fruit / fruit salad</div><div class="ext-ex">例句：I eat fruit every day.</div><div class="ext-hook">💡 fr-ui-t 音似福如它</div></div><div class="ext-card"><div class="ext-word">milk</div><div class="ext-ph">/mɪlk/ · n.</div><div class="ext-cn">牛奶</div><div class="ext-coll">搭配：a glass of milk</div><div class="ext-ex">例句：I drink milk every morning.</div><div class="ext-hook">💡 mi-lk 牛奶加蜜更好喝</div></div><div class="ext-card"><div class="ext-word">bread</div><div class="ext-ph">/bred/ · n.</div><div class="ext-cn">面包</div><div class="ext-coll">搭配：a piece of bread</div><div class="ext-ex">例句：I have bread for breakfast.</div><div class="ext-hook">💡 bread 里藏 read(读)</div></div><div class="ext-card"><div class="ext-word">chicken</div><div class="ext-ph">/ˈtʃɪkɪn/ · n.</div><div class="ext-cn">鸡肉</div><div class="ext-coll">搭配：fried chicken</div><div class="ext-ex">例句：I like chicken but not fish.</div><div class="ext-hook">💡 chick(小鸡)+en</div></div><div class="ext-card"><div class="ext-word">rice</div><div class="ext-ph">/raɪs/ · n.</div><div class="ext-cn">米饭</div><div class="ext-coll">搭配：a bowl of rice</div><div class="ext-ex">例句：We eat rice for lunch.</div><div class="ext-hook">💡 rice 里藏 ice(冰)</div></div><div class="ext-card"><div class="ext-word">breakfast</div><div class="ext-ph">/ˈbrekfəst/ · n.</div><div class="ext-cn">早餐</div><div class="ext-coll">搭配：have breakfast</div><div class="ext-ex">例句：I have breakfast at 7:00.</div><div class="ext-hook">💡 break(打破)+fast(斋戒)</div></div><div class="ext-card"><div class="ext-word">lunch</div><div class="ext-ph">/lʌntʃ/ · n.</div><div class="ext-cn">午餐</div><div class="ext-coll">搭配：have lunch</div><div class="ext-ex">例句：We have lunch at school.</div><div class="ext-hook">💡 lunch 音似浪吃</div></div><div class="ext-card"><div class="ext-word">dinner</div><div class="ext-ph">/ˈdɪnə(r)/ · n.</div><div class="ext-cn">晚餐</div><div class="ext-coll">搭配：have dinner</div><div class="ext-ex">例句：My family have dinner together.</div><div class="ext-hook">💡 din-ner 音似订呢</div></div></div><div class="sub-label">✋ 动词</div><div class="vg"><div class="ext-card"><div class="ext-word">like</div><div class="ext-ph">/laɪk/ · v.</div><div class="ext-cn">喜欢</div><div class="ext-coll">搭配：like sth. / like to do</div><div class="ext-ex">例句：I like apples and bananas.</div><div class="ext-hook">💡 like 音似赖客</div></div><div class="ext-card"><div class="ext-word">want</div><div class="ext-ph">/wɒnt/ · v.</div><div class="ext-cn">想要</div><div class="ext-coll">搭配：want sth. / want to do</div><div class="ext-ex">例句：I want to eat an apple.</div><div class="ext-hook">💡 want 里藏 ant(蚂蚁)</div></div><div class="ext-card"><div class="ext-word">eat</div><div class="ext-ph">/iːt/ · v.</div><div class="ext-cn">吃</div><div class="ext-coll">搭配：eat sth. / eat breakfast</div><div class="ext-ex">例句：I eat breakfast at home.</div><div class="ext-hook">💡 eat 音似亿特</div></div></div>
+  </div>
+</div>
+
+<div class="page" id="page11">
+  <div class="page-content">
+    <h1 class="page-title">新词闯关</h1>
+    <p class="page-subtitle">20 词抽查</p>
+<div class="section-head"><span class="sh-num">词</span><span class="sh-title">新词闯关 · 看中文选英文</span></div><div class="body-text"><span class="highlight">8 连问</span> 抽查今天 20 词，答对才算过关。</div><div class="game-board"><div class="game-top"><span class="game-title"><span class="gt-icon">🍎</span>食物词 8 连问</span><span class="game-tag">闯关</span></div><div class="game-rule">看中文，选英文，检验记忆效果。</div><div class="quiz-cols"><div class="quiz-q" data-qid="Q015"><div class="qq-text">西红柿 是哪个词？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. tomato</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. potato</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. strawberry</button></div><div class="quiz-q" data-qid="Q016"><div class="qq-text">草莓 是哪个词？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. orange</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. strawberry</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. banana</button></div><div class="quiz-q" data-qid="Q017"><div class="qq-text">早餐 是哪个词？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. lunch</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. dinner</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. breakfast</button></div><div class="quiz-q" data-qid="Q018"><div class="qq-text">想要 是哪个词？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. want</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. like</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. eat</button></div><div class="quiz-q" data-qid="Q019"><div class="qq-text">米饭 是哪个词？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. bread</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. rice</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. chicken</button></div><div class="quiz-q" data-qid="Q020"><div class="qq-text">蔬菜 是哪个词？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. fruit</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. food</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. vegetable</button></div><div class="quiz-q" data-qid="Q021"><div class="qq-text">牛奶 是哪个词？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. milk</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. water</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. juice</button></div><div class="quiz-q" data-qid="Q022"><div class="qq-text">晚餐 是哪个词？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. lunch</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. dinner</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. breakfast</button></div></div></div>
+  </div>
+</div>
+
+<div class="page" id="page12">
+  <div class="page-content">
+    <h1 class="page-title">G16 · 构成与用法</h1>
+    <p class="page-subtitle">非三单 · 肯定/否定/疑问</p>
+<div class="section-head"><span class="sh-num">法</span><span class="sh-title">G16 · 一般现在时（非三单主语）构成与用法</span></div><div class="body-text"><span class="highlight">口诀：我你我们和他们，动词原形不变化；否定 don&#39;t 加原形，疑问 Do 开头加原形。</span></div><div class="formula-box"><div class="formula-label">结构公式（主语 = I / you / we / they / 复数名词）</div><div class="formula-main">肯定：主语 + 动词原形 + …</div><div class="formula-main">否定：主语 + don&#39;t + 动词原形 + …</div><div class="formula-main">疑问：Do + 主语 + 动词原形 + …?</div><div class="formula-ex">I eat an apple. ／ We like vegetables. ／ They don&#39;t drink milk. ／ Do you want breakfast?</div></div><div class="gtp"><strong>⚠️ 三单留到 L10：</strong>he / she / it / 单数名词作主语本课不涉及，动词也不加 -s。</div><div class="ep"><span class="el">中考辨析</span><div class="ec2">① don&#39;t = do not；② 否定和疑问句中动词必须用原形（I don&#39;t like... ✅ / I don&#39;t likes... ❌）；③ 实义动词否定不借 be 动词（I am not like... ❌）。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page13">
+  <div class="page-content">
+    <h1 class="page-title">G16 · 易错与色卡</h1>
+    <p class="page-subtitle">don't 后原形 · Do 后原形</p>
+<div class="section-head"><span class="sh-num">法</span><span class="sh-title">G16 · 易错专练</span></div><div class="body-text">找出<b>正确</b>的表达，并说出错因。</div><div class="quiz-cols"><div class="quiz-q" data-qid="Q023"><div class="qq-text">I ___ apples.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. don't like</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. don't likes</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. am not like</button></div><div class="quiz-q" data-qid="Q024"><div class="qq-text">Do you ___ rice for lunch?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. wants</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. want</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. wanting</button></div><div class="quiz-q" data-qid="Q025"><div class="qq-text">They ___ bread every morning.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. eats</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. eating</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. eat</button></div><div class="quiz-q" data-qid="Q026"><div class="qq-text">___ we eat fruit?</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. Do</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. Are</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. Does</button></div><div class="quiz-q" data-qid="Q027"><div class="qq-text">I not like milk. 的正确说法？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. I not like milk.</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. I don't like milk.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. I am not like milk.</button></div><div class="quiz-q" data-qid="Q028"><div class="qq-text">We ___ vegetables at school.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. eats</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. are eat</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. eat</button></div></div><div class="note-panel"><div class="np-title">改错思路</div>don&#39;t / Do 后接动词原形；非三单主语动词不加 -s；否定用 don&#39;t 不用 not 直接否定实义动词。</div>
+  </div>
+</div>
+
+<div class="page" id="page14">
+  <div class="page-content">
+    <h1 class="page-title">G17 · 构成与用法</h1>
+    <p class="page-subtitle">可数 / 不可数 分类</p>
+<div class="section-head"><span class="sh-num">法</span><span class="sh-title">G17 · 食物可数与不可数名词分类</span></div><div class="body-text"><span class="highlight">口诀：能数有复数（apples, eggs），不能数没复数（milk, rice, bread）。</span></div><div class="gb"><h3>本课 20 词分类</h3><table class="gt"><tr><th>类别</th><th>特点</th><th>本课词汇</th></tr><tr><td>可数</td><td>有复数，可加 a/an</td><td class="ec">apple/banana/orange/strawberry/tomato/potato/eggs/vegetable</td></tr><tr><td>不可数</td><td>无复数，不加 a/an</td><td class="ec">food/fruit/milk/bread/rice/chicken(鸡肉)/breakfast/lunch/dinner</td></tr></table></div><div class="gtp"><strong>复数变化：</strong>strawberry→strawberries（辅音+y 去 y 加 ies）；tomato→tomatoes / potato→potatoes（以 o 结尾加 -es）；其余直接加 -s。</div><div class="ep"><span class="el">中考辨析</span><div class="ec2">可数名词单数不能裸奔（an apple ✅ / apple ❌）；可数泛指用复数（I like apples）；不可数直接用它本身（I drink milk）。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page15">
+  <div class="page-content">
+    <h1 class="page-title">G17 · 易错与色卡</h1>
+    <p class="page-subtitle">tomatoes · strawberries · 不可数不加s</p>
+<div class="section-head"><span class="sh-num">法</span><span class="sh-title">G17 · 易错专练</span></div><div class="body-text">选择<b>正确</b>的表达，理解为什么。</div><div class="quiz-cols"><div class="quiz-q" data-qid="Q029"><div class="qq-text">I like ___.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. apples</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. apple</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. a apple</button></div><div class="quiz-q" data-qid="Q030"><div class="qq-text">I drink ___ every morning.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. milks</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. milk</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. a milk</button></div><div class="quiz-q" data-qid="Q031"><div class="qq-text">We eat ___ for lunch.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. rices</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. a rice</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. rice</button></div><div class="quiz-q" data-qid="Q032"><div class="qq-text">___ 是 strawberries 的正确来源。</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. strawberry</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. strawberrys</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. strawberies</button></div><div class="quiz-q" data-qid="Q033"><div class="qq-text">I like ___（西红柿）。</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. tomatos</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. tomatoes</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. tomato</button></div><div class="quiz-q" data-qid="Q034"><div class="qq-text">The doctor says ___ is good for us.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. fruits</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. a fruit</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. fruit</button></div></div><div class="note-panel"><div class="np-title">改错思路</div>可数泛指用复数；不可数不变复数、不加 a/an；o 结尾加 -es；辅音+y 去 y 加 ies。</div>
+  </div>
+</div>
+
+<div class="page" id="page16">
+  <div class="page-content">
+    <h1 class="page-title">G18 · 构成与用法</h1>
+    <p class="page-subtitle">want to do / want sth / want sb to do</p>
+<div class="section-head"><span class="sh-num">法</span><span class="sh-title">G18 · want to do sth. 结构</span></div><div class="body-text"><span class="highlight">口诀：want 后接 to do，想要做某事；想要某物直接接，want sth. 要记牢。</span></div><div class="formula-box"><div class="formula-label">结构公式</div><div class="formula-main">want to do sth.：I want to eat an apple.</div><div class="formula-main">want sth.：I want an apple.</div><div class="formula-main">want sb. to do sth.：I want you to eat breakfast.</div><div class="formula-main">否定：I don&#39;t want to eat rice.</div><div class="formula-main">疑问：Do you want to drink milk?</div></div><div class="gtp"><strong>螺旋链：</strong>L5 like to do → <b>L6 want to do</b> → L13 would like to do（三阶完成）。</div><div class="ep"><span class="el">中考辨析</span><div class="ec2">want 后必须接 to do（不定式），不能接 doing（I want to eat ✅ / I want eating ❌）；to 后用动词原形。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page17">
+  <div class="page-content">
+    <h1 class="page-title">G18 · 易错与色卡</h1>
+    <p class="page-subtitle">want to do · to 后原形</p>
+<div class="section-head"><span class="sh-num">法</span><span class="sh-title">G18 · 易错专练</span></div><div class="body-text">选择<b>正确</b>的 want 用法。</div><div class="quiz-cols"><div class="quiz-q" data-qid="Q035"><div class="qq-text">I ___ an apple.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. want</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. want to</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. wanting</button></div><div class="quiz-q" data-qid="Q036"><div class="qq-text">I want ___ a banana.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. eat</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. to eat</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. eating</button></div><div class="quiz-q" data-qid="Q037"><div class="qq-text">They don't want ___ fast food.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. eat</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. eating</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. to eat</button></div><div class="quiz-q" data-qid="Q038"><div class="qq-text">___ you want to drink milk?</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. Do</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. Are</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. Does</button></div><div class="quiz-q" data-qid="Q039"><div class="qq-text">I want ___ an orange（想要一个橙子）。</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. want to</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. want</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. wanting</button></div><div class="quiz-q" data-qid="Q040"><div class="qq-text">She wants to ___ healthy food.（三单留至 L10，此处仅认识）</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. eats</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. eating</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. eat</button></div></div><div class="note-panel"><div class="np-title">改错思路</div>want sth.（要某物）vs want to do（要做某事）；want 后不接 doing；to 后动词原形。</div>
+  </div>
+</div>
+
+<div class="page" id="page18">
+  <div class="page-content">
+    <h1 class="page-title">三大考点综合梳理</h1>
+    <p class="page-subtitle">一条主线 · 三个考点</p>
+<div class="section-head"><span class="sh-num">法</span><span class="sh-title">三大考点综合梳理</span></div><div class="rule-grid">
+<div class="rule-card rc-zhug"><div class="rc-cat">用法</div><div class="rc-text">一般现在时表经常性习惯；本课仅非三单主语</div></div>
+<div class="rule-card rc-bin"><div class="rc-cat">构成</div><div class="rc-text">主语 + 动词原形；否定 don&#39;t + 原形；疑问 Do 开头</div></div>
+<div class="rule-card rc-xing"><div class="rc-cat">易错</div><div class="rc-text">don&#39;t 后动词不加 -s；可数泛指用复数；不可数不加 s</div></div>
+<div class="rule-card rc-ming"><div class="rc-cat">例句</div><div class="rc-text">I eat an apple every day. ／ We don&#39;t drink cola.</div></div>
+<div class="rule-card rc-warn"><div class="rc-cat">注意</div><div class="rc-text">三单（he/she/it）留至 L10；量词表达留至 L12</div></div>
+<div class="rule-card rc-qita"><div class="rc-cat">口诀</div><div class="rc-text">原形走天下；否定 don&#39;t 加原形；Do 开头问一句</div></div>
+</div><div class="kp-grid">
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">G16 一般现在时</span><span class="kp-desc">非三单主语 + 动词原形；否定 don&#39;t + 原形；疑问 Do 开头。例句：I like milk. / They don&#39;t eat bread.</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">G17 可数不可数</span><span class="kp-desc">可数有复数可加 a/an；不可数无复数不加 a/an。例句：apples ✅ / milks ❌</span></div>
+<div class="kp-item kp-item-full"><span class="kp-dot"></span><span class="kp-key">G18 want to do</span><span class="kp-desc">want sth. 要某物；want to do 要做某事；to 后原形。例句：I want to eat an apple.</span></div>
+</div><div class="note-panel"><div class="np-title">三考点怎么连</div>三条都发生在「一般现在时 · 三餐饮食」这个主题里：用一般现在时说三餐（G16），用可数不可数聊食物（G17），用 want to do 表达想吃想喝（G18）。</div>
+  </div>
+</div>
+
+<div class="page" id="page19">
+  <div class="page-content">
+    <h1 class="page-title">中考真题体验</h1>
+    <p class="page-subtitle">完形 5 空 · 母本改编</p>
+<div class="section-head"><span class="sh-num">法</span><span class="sh-title">中考真题体验 · 完形填空</span></div><div class="body-text"><span class="highlight">2026 湖南中考结构改编 · 完形填空</span>（一般现在时 + 可数不可数 + want/like 综合）。选出最恰当的一项。</div><div class="game-board"><div class="game-top"><span class="game-title"><span class="gt-icon">📝</span>健康饮食完形</span><span class="game-tag">闯关</span></div><div class="game-rule">短文中动词时态与名词单复数混考，正是本课考点。</div><div class="quiz-cols"><div class="quiz-q" data-qid="Q041"><div class="qq-text">I ___ healthy food every day.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. like</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. likes</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. am</button></div><div class="quiz-q" data-qid="Q042"><div class="qq-text">I ___ milk and bread with my mum.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. has</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. have</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. drink</button></div><div class="quiz-q" data-qid="Q043"><div class="qq-text">I ___ like fast food.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. doesn't</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. am not</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. don't</button></div><div class="quiz-q" data-qid="Q044"><div class="qq-text">We eat rice and ___ for lunch.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. vegetables</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. vegetable</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. meats</button></div><div class="quiz-q" data-qid="Q045"><div class="qq-text">We ___ water, not cola or juice.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. drinks</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. drink</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. drinking</button></div></div></div><div class="note-panel"><div class="np-title">真题解析</div>① 主语 I 用原形 like；② I 用 have；③ I 否定用 don&#39;t；④ 泛指蔬菜用复数；⑤ we 用原形 drink。三单形式（likes/has/doesn&#39;t）本课先认识，L10 系统学。</div>
+  </div>
+</div>
+
+<div class="page" id="page20">
+  <div class="page-content">
+    <h1 class="page-title">语法综合填空</h1>
+    <p class="page-subtitle">三考点混考</p>
+<div class="section-head"><span class="sh-num">法</span><span class="sh-title">语法综合填空 · G16/G17/G18 混考</span></div><div class="body-text">本课三考点一次性混考，检测是否真正掌握。</div><div class="quiz-cols"><div class="quiz-q" data-qid="Q046"><div class="qq-text">I ___ two eggs every morning.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. eat</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. eats</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. eating</button></div><div class="quiz-q" data-qid="Q047"><div class="qq-text">___ your family have dinner together?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. Does</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. Do</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. Are</button></div><div class="quiz-q" data-qid="Q048"><div class="qq-text">I want to ___ an orange.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. eats</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. eating</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. eat</button></div><div class="quiz-q" data-qid="Q049"><div class="qq-text">My friends ___ milk.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. don't drink</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. don't drinks</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. doesn't drink</button></div><div class="quiz-q" data-qid="Q050"><div class="qq-text">We like ___（蔬菜）。</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. vegetable</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. vegetables</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. a vegetable</button></div><div class="quiz-q" data-qid="Q051"><div class="qq-text">They want ___ apples.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. eat</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. eating</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. to eat</button></div></div><div class="note-panel"><div class="np-title">自查</div>全对说明 G16/G17/G18 过关；错了回看对应「易错」页。</div>
+  </div>
+</div>
+
+<div class="page" id="page21">
+  <div class="page-content">
+    <h1 class="page-title">随堂演练 ①</h1>
+    <p class="page-subtitle">G16/G18 选择</p>
+<div class="section-head"><span class="sh-num">练</span><span class="sh-title">随堂演练 ① · 一般现在时与 want to do</span></div><div class="quiz-cols"><div class="quiz-q" data-qid="Q052"><div class="qq-text">I ___ milk every morning.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. drink</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. drinks</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. drinking</button></div><div class="quiz-q" data-qid="Q053"><div class="qq-text">We ___ fruit after dinner.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. eats</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. eat</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. eating</button></div><div class="quiz-q" data-qid="Q054"><div class="qq-text">___ you want rice?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. Are</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. Does</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. Do</button></div><div class="quiz-q" data-qid="Q055"><div class="qq-text">They don't ___ bread.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. like</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. likes</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. liking</button></div><div class="quiz-q" data-qid="Q056"><div class="qq-text">I want ___ an apple.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. eat</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. to eat</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. eating</button></div><div class="quiz-q" data-qid="Q057"><div class="qq-text">My friends ___ vegetables.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. likes</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. liking</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. like</button></div></div><div class="note-panel"><div class="np-title">演练要点</div>主语是非三单（I/we/they/复数）时，动词原形；don&#39;t / Do 后也原形。</div>
+  </div>
+</div>
+
+<div class="page" id="page22">
+  <div class="page-content">
+    <h1 class="page-title">随堂演练 ②</h1>
+    <p class="page-subtitle">G17 选择</p>
+<div class="section-head"><span class="sh-num">练</span><span class="sh-title">随堂演练 ② · 可数与不可数</span></div><div class="quiz-cols"><div class="quiz-q" data-qid="Q058"><div class="qq-text">I like ___（草莓）。</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. strawberries</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. strawberrys</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. strawberies</button></div><div class="quiz-q" data-qid="Q059"><div class="qq-text">I drink a glass of ___ every day.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. milks</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. milk</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. milkies</button></div><div class="quiz-q" data-qid="Q060"><div class="qq-text">We eat ___（土豆）for lunch.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. potatos</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. potato</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. potatoes</button></div><div class="quiz-q" data-qid="Q061"><div class="qq-text">___（西红柿）are good for us.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. Tomatoes</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. Tomatos</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. Tomato</button></div><div class="quiz-q" data-qid="Q062"><div class="qq-text">The doctor says ___ is healthy.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. fruits</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. fruit</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. a fruit</button></div><div class="quiz-q" data-qid="Q063"><div class="qq-text">I eat two ___（鸡蛋）every morning.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. egg</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. egges</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. eggs</button></div></div><div class="note-panel"><div class="np-title">演练要点</div>可数名词单复数变化（o 结尾加 -es、辅音+y 加 -ies）；不可数名词不变。</div>
+  </div>
+</div>
+
+<div class="page" id="page23">
+  <div class="page-content">
+    <h1 class="page-title">随堂演练 ③</h1>
+    <p class="page-subtitle">综合诊断</p>
+<div class="section-head"><span class="sh-num">练</span><span class="sh-title">随堂演练 ③ · 综合诊断</span></div><div class="quiz-cols"><div class="quiz-q" data-qid="Q064"><div class="qq-text">Lily ___ breakfast at 7:00.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. has</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. have</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. having</button></div><div class="quiz-q" data-qid="Q065"><div class="qq-text">We ___ rice and chicken for lunch.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. eats</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. eat</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. eating</button></div><div class="quiz-q" data-qid="Q066"><div class="qq-text">Do they ___ bananas?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. wants</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. wanting</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. want</button></div><div class="quiz-q" data-qid="Q067"><div class="qq-text">I don't ___ fast food.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. like</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. likes</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. liking</button></div><div class="quiz-q" data-qid="Q068"><div class="qq-text">Tom wants ___ a basketball team.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. join</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. to join</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. joining</button></div><div class="quiz-q" data-qid="Q069"><div class="qq-text">___ we eat fruit after meals?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. Are</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. Does</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. Should</button></div></div><div class="note-panel"><div class="np-title">诊断说明</div>题 1/5 是认识性的三单/want to do 表达，本课以认识为主，L10 系统学习。</div>
+  </div>
+</div>
+
+<div class="page" id="page24">
+  <div class="page-content">
+    <h1 class="page-title">句型操练</h1>
+    <p class="page-subtitle">中译英 · 翻牌自检</p>
+<div class="section-head"><span class="sh-num">练</span><span class="sh-title">句型操练 · 中译英</span></div><div class="body-text"><span class="highlight">把中文翻成英文</span>（口头或笔头），再对照参考译文自检。</div><div class="kp-grid">
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">①</span><span class="kp-desc">我每天吃一个苹果。→ I eat an apple every day.</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">②</span><span class="kp-desc">他们不喜欢快餐。→ They don't like fast food.</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">③</span><span class="kp-desc">你想喝牛奶吗？→ Do you want to drink milk?</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">④</span><span class="kp-desc">我晚饭想吃米饭和鸡肉。→ I want to eat rice and chicken for dinner.</span></div>
+<div class="kp-item kp-item-full"><span class="kp-dot"></span><span class="kp-key">⑤</span><span class="kp-desc">我们早餐吃鸡蛋和面包。→ We eat eggs and bread for breakfast.</span></div>
+</div><div class="note-panel"><div class="np-title">翻译要点</div>非三单主语动词原形；否定 don&#39;t；疑问 Do 开头；want to do 表想吃想喝。</div>
+  </div>
+</div>
+
+<div class="page" id="page25">
+  <div class="page-content">
+    <h1 class="page-title">改错专练</h1>
+    <p class="page-subtitle">选出正确句子 · 理解错因</p>
+<div class="section-head"><span class="sh-num">练</span><span class="sh-title">改错专练 · 选一选</span></div><div class="body-text">五组易错句，选择<b>正确</b>版本，理解为什么错。</div><div class="quiz-cols"><div class="quiz-q" data-qid="Q070"><div class="qq-text">I don't likes milk. 的正确写法？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. I don't like milk.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. I don't likes milk.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. I am not like milk.</button></div><div class="quiz-q" data-qid="Q071"><div class="qq-text">Do you wants rice? 的正确写法？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. Do you wants rice?</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. Do you want rice?</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. Are you want rice?</button></div><div class="quiz-q" data-qid="Q072"><div class="qq-text">I drink milks. 的正确写法？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. I drink milks.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. I drink a milk.</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. I drink milk.</button></div><div class="quiz-q" data-qid="Q073"><div class="qq-text">I like tomato. 的正确写法？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. I like tomatoes.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. I like tomato.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. I like tomatos.</button></div><div class="quiz-q" data-qid="Q074"><div class="qq-text">I want eat an apple. 的正确写法？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. I want eat an apple.</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. I want to eat an apple.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. I want eating an apple.</button></div></div><div class="note-panel"><div class="np-title">改错思路</div>don&#39;t/Do 后原形；不可数不加 s；可数泛指复数；want 后接 to do。</div>
+  </div>
+</div>
+
+<div class="page" id="page26">
+  <div class="page-content">
+    <h1 class="page-title">阅读 A · 篇章＋理解题</h1>
+    <p class="page-subtitle">左文右题 · 边读边选</p>
+<div class="section-head"><span class="sh-num">读</span><span class="sh-title">阅读 A · Healthy Eating Habits（左文右题）</span></div><div class="pri-row"><span class="pri-badge pri-core">CORE · 课堂必做</span><span class="pri-note">课堂精读 · 三篇都读，A 是课上必须完成</span></div><div class="read-split"><div class="read-left"><div class="reading-passage"><p>Hello! I am Lily.</p><p>I have good eating habits every day.</p><p>For breakfast, I have milk and bread at home.</p><p>For lunch at school, I eat rice, vegetables and chicken with my friends.</p><p>For dinner, my family eat apples, bananas and oranges together.</p><p>I like healthy food very much.</p><p>I do not like fast food because it is not good.</p><p>I drink water every day after meals.</p><p>Fruit and milk help me grow tall and strong.</p><p>I feel happy and healthy all the time!.</p></div><div class="note-panel"><div class="np-title">中文大意</div>莉莉每天有良好饮食习惯：早餐在家喝牛奶吃面包，午餐在学校和同学吃米饭、蔬菜和鸡肉，晚餐和家人吃水果。她喜欢健康食物，不喜欢快餐。</div><div class="note-panel"><div class="np-title">长难句拆解</div>① She has good eating habits. —— 三单 has（本课认识，L10 学）。<br>② Fruit and milk help her grow tall and strong. —— help sb. do sth.</div></div><div class="read-right"><div class="read-right-head">📝 理解题 · 边读边选</div><div class="read-qs-scroll"><div class="quiz-q" data-qid="Q075"><div class="qq-text">1. What does Lily have for breakfast?</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. milk and bread</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. rice and chicken</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. apples and oranges</button></div><div class="quiz-q" data-qid="Q076"><div class="qq-text">2. Where does Lily have lunch?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. at home</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. at school</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. in a restaurant</button></div><div class="quiz-q" data-qid="Q077"><div class="qq-text">3. What fruit does her family eat for dinner?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. strawberries</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. tomatoes</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. apples, bananas, oranges</button></div><div class="quiz-q" data-qid="Q078"><div class="qq-text">4. Which food does Lily NOT like?</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. fast food</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. healthy food</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. vegetables</button></div><div class="quiz-q" data-qid="Q079"><div class="qq-text">5. What is the main idea?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. My School</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. Healthy Eating Habits</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. Favorite Fruit</button></div></div></div></div><div class="note-panel"><div class="np-title">答案解析</div>题1 For breakfast, I have milk and bread；题2 For lunch at school；题3 my family eat apples, bananas and oranges；题4 I do not like fast food；题5 主旨为健康饮食习惯。</div>
+  </div>
+</div>
+
+<div class="page" id="page27">
+  <div class="page-content">
+    <h1 class="page-title">阅读 B · 篇章＋理解题</h1>
+    <p class="page-subtitle">左文右题 · 调查文</p>
+<div class="section-head"><span class="sh-num">读</span><span class="sh-title">阅读 B · A Survey on Eating Habits（左文右题）</span></div><div class="pri-row"><span class="pri-badge pri-extend">EXTEND · 时间充足时做</span><span class="pri-note">调查报告 · 训练数字与对比信息</span></div><div class="read-split"><div class="read-left"><div class="reading-passage"><p>Here is a survey about students' eating habits in our school.</p><p>We ask fifty students.</p><p>Thirty-two students eat breakfast every day.</p><p>They have eggs, bread and milk for breakfast.</p><p>Eighteen students don't eat breakfast.</p><p>They are often late for school.</p><p>For lunch, most students eat rice, vegetables and chicken at school.</p><p>After class, many students eat fruit.</p><p>They want to be healthy.</p><p>But some students like fast food.</p><p>Fast food is delicious, but it is not good for our bodies.</p><p>Good eating habits help students grow tall and strong.</p><p>Do you have good eating habits?.</p></div><div class="note-panel"><div class="np-title">中文大意</div>一项关于学生饮食习惯的调查：50 名学生中 32 人每天吃早餐，18 人不吃；午餐大多在学校吃米饭蔬菜鸡肉；有些学生喜欢快餐，但快餐对身体不好。</div><div class="note-panel"><div class="np-title">长难句拆解</div>① They want to be healthy. —— want to do 本课核心结构。<br>② Good eating habits help students grow tall. —— help sb. do sth.</div></div><div class="read-right"><div class="read-right-head">📝 理解题 · 边读边选</div><div class="read-qs-scroll"><div class="quiz-q" data-qid="Q080"><div class="qq-text">1. How many students eat breakfast every day?</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. thirty-two</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. eighteen</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. fifty</button></div><div class="quiz-q" data-qid="Q081"><div class="qq-text">2. What do these students have for breakfast?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. rice and chicken</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. eggs, bread and milk</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. fruit and juice</button></div><div class="quiz-q" data-qid="Q082"><div class="qq-text">3. What do most students eat for lunch?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. fast food</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. eggs and bread</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. rice, vegetables and chicken</button></div><div class="quiz-q" data-qid="Q083"><div class="qq-text">4. What does the word "delicious" mean?</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. very tasty</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. very healthy</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. very cheap</button></div><div class="quiz-q" data-qid="Q084"><div class="qq-text">5. What is the best title?</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. My Favorite Food</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. A Survey on Eating Habits</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. Fast Food</button></div></div></div></div><div class="note-panel"><div class="np-title">答案解析</div>题1 数字定位 Thirty-two students；题2 eggs, bread and milk；题3 rice, vegetables and chicken；题4 delicious=非常美味（词义题）；题5 全文围绕饮食习惯调查。</div>
+  </div>
+</div>
+
+<div class="page" id="page28">
+  <div class="page-content">
+    <h1 class="page-title">阅读 C · 篇章＋五选四</h1>
+    <p class="page-subtitle">左文右题 · 逻辑衔接</p>
+<div class="section-head"><span class="sh-num">读</span><span class="sh-title">阅读 C · 五选四（左文右题）</span></div><div class="pri-row"><span class="pri-badge pri-home">HOME · 课后完成</span><span class="pri-note">逻辑衔接专练 · 课后自测</span></div><div class="read-split"><div class="read-left"><div class="reading-passage"><p>Eating healthy food is important for every student at school</p><p>Good food is the fuel for your body and your brain</p><p>A good breakfast helps you listen and learn in class with a clear mind</p><p>__(11)__ We should eat fruit every day after our three meals because fruit gives us vitamins</p><p>__(12)__ Fresh vegetables help our body grow tall and stay strong, so eat them often</p><p>__(13)__ Drink milk for strong bones and white teeth every morning before school</p><p>__(14)__ A good diet keeps us happy and full of energy for the whole day</p></div><div class="note-panel"><div class="np-title">中文大意</div>健康饮食对学生很重要。好早餐帮助专心听讲；每天吃水果补维生素；多吃蔬菜长得高；早餐前喝牛奶强健骨骼；健康饮食让人整天有活力。</div></div><div class="read-right"><div class="read-right-head">📝 五选四 · 逻辑衔接</div><div class="read-qs-scroll"><div class="sub-label">从 A–E 中选最佳句填入空白（E 为多余项）</div><div class="w5-qq">__（11）__ 应填：</div><div class="w5-opts quiz-q"><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. Fruit gives us vitamins.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. We also need water every day.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. Candy is bad for our teeth.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">D. Exercise is good for us, too.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">E. Cola is a good drink for health.</button></div><div class="w5-qq">__（12）__ 应填：</div><div class="w5-opts quiz-q"><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. Fruit gives us vitamins.</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. We also need water every day.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. Candy is bad for our teeth.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">D. Exercise is good for us, too.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">E. Cola is a good drink for health.</button></div><div class="w5-qq">__（13）__ 应填：</div><div class="w5-opts quiz-q"><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. Fruit gives us vitamins.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. We also need water every day.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. Candy is bad for our teeth.</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">D. Exercise is good for us, too.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">E. Cola is a good drink for health.</button></div><div class="w5-qq">__（14）__ 应填：</div><div class="w5-opts quiz-q"><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. Fruit gives us vitamins.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. We also need water every day.</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. Candy is bad for our teeth.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">D. Exercise is good for us, too.</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">E. Cola is a good drink for health.</button></div></div></div></div><div class="note-panel"><div class="np-title">答案解析</div>11→A（fruit 与 vitamins 呼应）；12→B（water 与 drink 呼应）；13→D（exercise 与 body 呼应）；14→C（candy 与 teeth 呼应）；E 为多余项，五选四。</div>
+  </div>
+</div>
+
+<div class="page" id="page29">
+  <div class="page-content">
+    <h1 class="page-title">阅读解题 SOP</h1>
+    <p class="page-subtitle">六步法</p>
+<div class="section-head"><span class="sh-num">读</span><span class="sh-title">阅读解题 SOP</span></div><div class="kp-grid">
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">① 先题后文</span><span class="kp-desc">先读题干圈关键词，再回原文定位。</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">② 细节题</span><span class="kp-desc">题干词多在原文原词复现，直接比对。</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">③ 词义题</span><span class="kp-desc">回该词所在句，用上下文（近义/反义/举例）猜词。</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">④ 推断题</span><span class="kp-desc">选「文中能推出」的，不选「文中没有说」的。</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">⑤ 主旨题</span><span class="kp-desc">看首尾段 + 每段首句，找反复出现的中心词。</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">⑥ 五选四</span><span class="kp-desc">先看空格前后句，找指代/逻辑连接词（because/so/but）。</span></div>
+</div><div class="note-panel"><div class="np-title">本课阅读怎么练</div>A 篇课堂精读，B 篇同桌讨论，C 篇课后自测。做完回原文划出答案依据。</div>
+  </div>
+</div>
+
+<div class="page" id="page30">
+  <div class="page-content">
+    <h1 class="page-title">26 字母总复习</h1>
+    <p class="page-subtitle">Aa–Zz 音素全表</p>
+<div class="section-head"><span class="sh-num">拼</span><span class="sh-title">L6 拼读收官 · 26 字母总复习</span></div><div class="body-text"><span class="highlight">Aa–Zz 全部 26 个字母</span>，本课不学新字母，把 L1–L5 学的音素整体回顾一遍。</div><div class="vg"><div class="ext-card"><div class="ext-word">Aa</div><div class="ext-cn">/æ/</div></div><div class="ext-card"><div class="ext-word">Bb</div><div class="ext-cn">/b/</div></div><div class="ext-card"><div class="ext-word">Cc</div><div class="ext-cn">/k/</div></div><div class="ext-card"><div class="ext-word">Dd</div><div class="ext-cn">/d/</div></div><div class="ext-card"><div class="ext-word">Ee</div><div class="ext-cn">/e/</div></div><div class="ext-card"><div class="ext-word">Ff</div><div class="ext-cn">/f/</div></div><div class="ext-card"><div class="ext-word">Gg</div><div class="ext-cn">/ɡ/</div></div><div class="ext-card"><div class="ext-word">Hh</div><div class="ext-cn">/h/</div></div><div class="ext-card"><div class="ext-word">Ii</div><div class="ext-cn">/ɪ/</div></div><div class="ext-card"><div class="ext-word">Jj</div><div class="ext-cn">/dʒ/</div></div><div class="ext-card"><div class="ext-word">Kk</div><div class="ext-cn">/k/</div></div><div class="ext-card"><div class="ext-word">Ll</div><div class="ext-cn">/l/</div></div><div class="ext-card"><div class="ext-word">Mm</div><div class="ext-cn">/m/</div></div><div class="ext-card"><div class="ext-word">Nn</div><div class="ext-cn">/n/</div></div><div class="ext-card"><div class="ext-word">Oo</div><div class="ext-cn">/ɒ/</div></div><div class="ext-card"><div class="ext-word">Pp</div><div class="ext-cn">/p/</div></div><div class="ext-card"><div class="ext-word">Qq</div><div class="ext-cn">/kw/</div></div><div class="ext-card"><div class="ext-word">Rr</div><div class="ext-cn">/r/</div></div><div class="ext-card"><div class="ext-word">Ss</div><div class="ext-cn">/s/</div></div><div class="ext-card"><div class="ext-word">Tt</div><div class="ext-cn">/t/</div></div><div class="ext-card"><div class="ext-word">Uu</div><div class="ext-cn">/ʌ/</div></div><div class="ext-card"><div class="ext-word">Vv</div><div class="ext-cn">/v/</div></div><div class="ext-card"><div class="ext-word">Ww</div><div class="ext-cn">/w/</div></div><div class="ext-card"><div class="ext-word">Xx</div><div class="ext-cn">/ks/</div></div><div class="ext-card"><div class="ext-word">Yy</div><div class="ext-cn">/j/</div></div><div class="ext-card"><div class="ext-word">Zz</div><div class="ext-cn">/z/</div></div></div><div class="note-panel"><div class="np-title">读法提示</div>26 个字母的「音素音」（不是字母名）是拼读的地基，逐个带读两遍，重点盯 5 组易混音对。</div>
+  </div>
+</div>
+
+<div class="page" id="page31">
+  <div class="page-content">
+    <h1 class="page-title">易混音对 · 朗读词汇表</h1>
+    <p class="page-subtitle">5 对 × 4 = 20 词</p>
+<div class="section-head"><span class="sh-num">拼</span><span class="sh-title">易混音对 · 5 组最小对立对（朗读词汇表）</span></div><div class="body-text"><span class="highlight">20 个最小对立对词</span>：只差一个音、意思不同的词对，是辨音最好的练习。教师范读，学生跟读，体会发音部位差异。</div><div class="vg"><div class="ext-card"><div class="ext-word">b / d</div><div class="ext-ph">/b/ vs /d/</div><div class="ext-cn">bad/dad · big/dig</div><div class="ext-hook">b 双唇闭合；d 舌尖抵上齿龈</div></div><div class="ext-card"><div class="ext-word">p / q</div><div class="ext-ph">/p/ vs /kw/</div><div class="ext-cn">pig/quick · pen/queen</div><div class="ext-hook">p 双唇送气；q 是 k+w 双音</div></div><div class="ext-card"><div class="ext-word">m / n</div><div class="ext-ph">/m/ vs /n/</div><div class="ext-cn">map/nap · man/Nan</div><div class="ext-hook">m 双唇鼻音；n 齿龈鼻音</div></div><div class="ext-card"><div class="ext-word">f / v</div><div class="ext-ph">/f/ vs /v/</div><div class="ext-cn">fan/van · fat/vat</div><div class="ext-hook">f 清音不振动；v 浊音振动声带</div></div><div class="ext-card"><div class="ext-word">e / i</div><div class="ext-ph">/e/ vs /ɪ/</div><div class="ext-cn">ten/tin · set/sit</div><div class="ext-hook">/e/ 嘴张较大；/ɪ/ 嘴张较小</div></div></div><div class="note-panel"><div class="np-title">发音要领</div>b / d：b 双唇闭合；d 舌尖抵上齿龈；p / q：p 双唇送气；q 是 k+w 双音；m / n：m 双唇鼻音；n 齿龈鼻音；f / v：f 清音不振动；v 浊音振动声带；e / i：/e/ 嘴张较大；/ɪ/ 嘴张较小。</div>
+  </div>
+</div>
+
+<div class="page" id="page32">
+  <div class="page-content">
+    <h1 class="page-title">看词归音</h1>
+    <p class="page-subtitle">5 题辨音</p>
+<div class="section-head"><span class="sh-num">拼</span><span class="sh-title">看词辨音 · 选出发音不同的词</span></div><div class="quiz-cols"><div class="quiz-q" data-qid="Q085"><div class="qq-text">下列哪组含 /b/？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. big</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. pig</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. quick</button></div><div class="quiz-q" data-qid="Q086"><div class="qq-text">哪组含 /kw/？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. pen</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. queen</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. map</button></div><div class="quiz-q" data-qid="Q087"><div class="qq-text">哪组含 /n/？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. map</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. man</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. nap</button></div><div class="quiz-q" data-qid="Q088"><div class="qq-text">哪组含 /f/（清音）？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. fan</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. van</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. vat</button></div><div class="quiz-q" data-qid="Q089"><div class="qq-text">哪组含 /ɪ/？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. set</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. sit</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. ten</button></div></div><div class="note-panel"><div class="np-title">辨音口诀</div>b/d 看双唇还是齿龈；p/q 看是单音还是双音；m/n 看鼻音出口；f/v 摸喉咙看振动；e/i 看嘴张开大小。</div>
+  </div>
+</div>
+
+<div class="page" id="page33">
+  <div class="page-content">
+    <h1 class="page-title">最小对立对听辨</h1>
+    <p class="page-subtitle">5 题口试</p>
+<div class="section-head"><span class="sh-num">拼</span><span class="sh-title">最小对立对听辨 · 教师读词选一</span></div><div class="body-text"><span class="highlight">听老师读，选你听到的词</span>（口试练习，选后自行核对）。</div><div class="quiz-cols"><div class="quiz-q" data-qid="Q090"><div class="qq-text">bad 还是 dad？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. bad</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. dad</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. bed</button></div><div class="quiz-q" data-qid="Q091"><div class="qq-text">pig 还是 quick？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. pig</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. quick</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. pen</button></div><div class="quiz-q" data-qid="Q092"><div class="qq-text">map 还是 nap？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. map</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. man</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. nap</button></div><div class="quiz-q" data-qid="Q093"><div class="qq-text">fan 还是 van？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. van</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. fan</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. fat</button></div><div class="quiz-q" data-qid="Q094"><div class="qq-text">ten 还是 tin？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. tin</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. ten</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. tan</button></div></div><div class="note-panel"><div class="np-title">口试说明</div>此题为口试练习：教师朗读，学生指认；课后可让家长读词抽查。</div>
+  </div>
+</div>
+
+<div class="page" id="page34">
+  <div class="page-content">
+    <h1 class="page-title">拼读综合闯关</h1>
+    <p class="page-subtitle">26 字母收官验收</p>
+<div class="section-head"><span class="sh-num">拼</span><span class="sh-title">拼读综合闯关</span></div><div class="quiz-cols"><div class="quiz-q" data-qid="Q095"><div class="qq-text">哪个词以 /d/ 开头？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. dad</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. map</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. nap</button></div><div class="quiz-q" data-qid="Q096"><div class="qq-text">哪个词以 /v/ 开头？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. fan</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. van</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. fat</button></div><div class="quiz-q" data-qid="Q097"><div class="qq-text">哪个词含 /e/？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. sit</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. pig</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. set</button></div><div class="quiz-q" data-qid="Q098"><div class="qq-text">哪个词含 /kw/？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. queen</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. quick</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. pen</button></div><div class="quiz-q" data-qid="Q099"><div class="qq-text">哪个词以 /m/ 开头？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. nap</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. map</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. Nan</button></div><div class="quiz-q" data-qid="Q100"><div class="qq-text">哪个词是含 /b/ 的三字母词？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. dig</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. pig</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. big</button></div></div><div class="note-panel"><div class="np-title">收官标准</div>26 字母音素全认 + 5 组易混音对能辨清，拼读 Stage 1 即通关，下阶段进入字母组合。</div>
+  </div>
+</div>
+
+<div class="page" id="page35">
+  <div class="page-content">
+    <h1 class="page-title">课堂游戏 ①</h1>
+    <p class="page-subtitle">跨课词汇快选</p>
+<div class="section-head"><span class="sh-num">戏</span><span class="sh-title">课堂游戏 ① · 跨课词汇快选</span></div><div class="body-text"><span class="highlight">上节课（运动）VS 本课（食物）</span>：看中文，在两组词里快速选对——检验会不会「串台」。</div><div class="game-board"><div class="game-top"><span class="game-title"><span class="gt-icon">🎮</span>运动 or 食物？</span><span class="game-tag">闯关</span></div><div class="game-rule">听到/看到中文，快速点对应的英文词。</div><div class="quiz-cols"><div class="quiz-q" data-qid="Q101"><div class="qq-text">篮球（上节课）</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. basketball</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. banana</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. bread</button></div><div class="quiz-q" data-qid="Q102"><div class="qq-text">牛奶（本课）</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. team</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. milk</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. tennis</button></div><div class="quiz-q" data-qid="Q103"><div class="qq-text">足球（上节课）</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. rice</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. strawberry</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. soccer</button></div><div class="quiz-q" data-qid="Q104"><div class="qq-text">早餐（本课）</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. breakfast</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. bat</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. ball</button></div><div class="quiz-q" data-qid="Q105"><div class="qq-text">排球（上节课）</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. tomato</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. volleyball</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. potato</button></div><div class="quiz-q" data-qid="Q106"><div class="qq-text">苹果（本课）</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. sport</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. sound</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. apple</button></div></div></div><div class="note-panel"><div class="np-title">设计意图</div>跨课词汇混排，强化新旧词边界，防止遗忘或混淆。</div>
+  </div>
+</div>
+
+<div class="page" id="page36">
+  <div class="page-content">
+    <h1 class="page-title">课堂游戏 ②</h1>
+    <p class="page-subtitle">听音选词 · 易混音对</p>
+<div class="section-head"><span class="sh-num">戏</span><span class="sh-title">课堂游戏 ② · 听音选词</span></div><div class="body-text"><span class="highlight">教师读一个词，学生抢答选出</span>；也可以分两组对抗，比速度比准确。</div><div class="game-board"><div class="game-top"><span class="game-title"><span class="gt-icon">👂</span>听音抢答</span><span class="game-tag">闯关</span></div><div class="game-rule">读音 → 看词 → 判断发音，巩固 5 组易混音对。</div><div class="quiz-cols"><div class="quiz-q" data-qid="Q107"><div class="qq-text">听到 /d/ 开头的词？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. dad</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. bad</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. map</button></div><div class="quiz-q" data-qid="Q108"><div class="qq-text">听到 /v/ 开头的词？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. fan</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. van</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. fat</button></div><div class="quiz-q" data-qid="Q109"><div class="qq-text">听到 /n/ 结尾的词？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. map</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. man</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. nap</button></div><div class="quiz-q" data-qid="Q110"><div class="qq-text">听到 /e/ 的词？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. set</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. sit</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. pig</button></div><div class="quiz-q" data-qid="Q111"><div class="qq-text">听到 /kw/ 的词？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. pen</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. queen</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. queen</button></div></div></div><div class="note-panel"><div class="np-title">口令</div>起立抢答 · 答对得一分 · 答错给对方加一分。</div>
+  </div>
+</div>
+
+<div class="page" id="page37">
+  <div class="page-content">
+    <h1 class="page-title">Exit Ticket</h1>
+    <p class="page-subtitle">2 词汇 + 2 语法 + 1 迁移</p>
+<div class="section-head"><span class="sh-num">检</span><span class="sh-title">Exit Ticket · 退出检测</span></div><div class="body-text"><span class="highlight">5 题形成性检测</span>：2 词汇主动提取 ＋ 2 核心语法 ＋ 1 真题迁移。<b>课堂自查，不计入正式练习卷</b>。</div><div class="quiz-cols"><div class="quiz-q" data-qid="Q112"><div class="qq-text">「鸡肉」的英文是？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. chicken</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. breakfast</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. orange</button></div><div class="quiz-q" data-qid="Q113"><div class="qq-text">「土豆」的英文是？</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. tomato</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. potato</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. bread</button></div><div class="quiz-q" data-qid="Q114"><div class="qq-text">I ___ (don't like / doesn't like) fast food.</div><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. doesn't like</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. am not like</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. don't like</button></div><div class="quiz-q" data-qid="Q115"><div class="qq-text">___ (milk / milks) is good for us.</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. milk</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. milks</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. a milk</button></div></div><div class="quiz-q"><div class="qq-text">真题迁移 · 开放作答</div><div class="body-text" style="margin:6px 0">用 <b>want to do</b> 写一句「你晚饭想吃什么、喝什么」，再口头自测 G16 否定句。</div><details class="et-ref" onclick="event.stopPropagation()"><summary style="cursor:pointer;color:#8b1e1e;font-weight:700">点击查看参考思路</summary><div class="note-panel" style="margin-top:8px"><div class="np-title">参考思路（形成性自查 · 不批改）</div>I want to eat rice and chicken for dinner. ／ I want to drink milk. ／ I don&#39;t like cola.</div></details></div><div class="quiz-q" data-qid="Q116"><div class="qq-text">自我评估：今天的内容掌握得怎么样？</div><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">我已掌握本课词汇（食物/动词）</button><button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">我已掌握 want to do 与三单否定</button><button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">我还需要复习一下</button></div><div class="note-panel"><div class="np-title">Exit Ticket 说明</div>答错当场回看对应语法/词汇页，全部弄懂才算过关。</div>
+  </div>
+</div>
+
+<div class="page" id="page38">
+  <div class="page-content">
+    <h1 class="page-title">课堂总结</h1>
+    <p class="page-subtitle">知识图谱</p>
+<div class="section-head"><span class="sh-num">结</span><span class="sh-title">课堂总结 · 知识图谱</span></div><div class="body-text"><span class="highlight">今天 20 词 + 3 语法 + 拼读收官</span>，一图收拢。</div><div class="kp-grid">
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">🍎 20 词</span><span class="kp-desc">食物/水果/三餐/动词，按可数与不可数分类记。例句：tomatoes ✅ / milks ❌</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">🧩 G16</span><span class="kp-desc">非三单主语 + 动词原形；don't + 原形；Do 开头。例句：I don't like fast food.</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">🧩 G17</span><span class="kp-desc">可数有复数，不可数不加 s。例句：an apple ✅ / a milk ❌</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">🧩 G18</span><span class="kp-desc">want sth. / want to do，to 后原形。例句：I want to eat an apple.</span></div>
+<div class="kp-item kp-item-full"><span class="kp-dot"></span><span class="kp-key">🔤 拼读</span><span class="kp-desc">26 字母收官，5 组易混音对能辨清。b/d · p/q · m/n · f/v · e/i</span></div>
+</div><div class="note-panel"><div class="np-title">下课口令</div>「今天你吃了什么？」用一般现在时回答：I eat ... for breakfast/lunch/dinner.</div>
+  </div>
+</div>
+
+<div class="page" id="page39">
+  <div class="page-content">
+    <h1 class="page-title">下节课预告</h1>
+    <p class="page-subtitle">L7 阶段测试Ⅰ</p>
+<div class="section-head"><span class="sh-num">预</span><span class="sh-title">下节课预告 · 阶段测试Ⅰ</span></div><div class="body-text"><span class="highlight">L7 是阶段测试Ⅰ</span>：G01–G18 全部考点 + 140 词大诊断，本课 G16/G17/G18 是最后三块新拼图。</div><div class="note-panel"><div class="np-title">课前准备</div>① 复习本课 20 词（家长抽背）；② 用 want to do 各造 2 句；③ 把 L1–L6 三个错最多的考点记下来，测试前集中攻。</div><div class="note-panel"><div class="np-title">今晚任务</div>① 默写 20 词（家长签字）；② 完成阅读 C 五选四；③ 朗读 20 个最小对立对词。</div>
+  </div>
+</div>
+
+<div class="page" id="page40">
+  <div class="page-content">
+    <h1 class="page-title">课堂思维导图</h1>
+    <p class="page-subtitle">本课全貌 · 含 L5 复习</p>
+<div class="section-head"><span class="sh-num">图</span><span class="sh-title">课堂思维导图 · 本课全貌</span></div><div class="body-text"><span class="highlight">六块拼图</span>：词汇 · 语法 ×3 · 阅读 · 拼读 · 复习(L5)。收尾用这张图复述一遍。</div><div class="mm-cards"><div class="ext-card "><div class="ext-cat">🍎 词汇 20</div><div class="ext-body"><div style="margin:2px 0">· 可数：apple/strawberry/tomato</div><div style="margin:2px 0">· 不可数：milk/rice/bread</div><div style="margin:2px 0">· 三餐：breakfast/lunch/dinner</div><div style="margin:2px 0">· 动词：like/want/eat</div></div></div><div class="ext-card blue"><div class="ext-cat">🧩 G16 一般现在时</div><div class="ext-body"><div style="margin:2px 0">· 非三单 + 原形</div><div style="margin:2px 0">· 否定 don't + 原形</div><div style="margin:2px 0">· 疑问 Do 开头</div><div style="margin:2px 0">· I don't like fast food.</div></div></div><div class="ext-card blue"><div class="ext-cat">🧩 G17 可数不可数</div><div class="ext-body"><div style="margin:2px 0">· 可数有复数</div><div style="margin:2px 0">· 不可数不加 s</div><div style="margin:2px 0">· tomatoes/strawberries</div><div style="margin:2px 0">· a glass of milk</div></div></div><div class="ext-card blue"><div class="ext-cat">🧩 G18 want to do</div><div class="ext-body"><div style="margin:2px 0">· want sth. 要某物</div><div style="margin:2px 0">· want to do 要做</div><div style="margin:2px 0">· to 后动词原形</div><div style="margin:2px 0">· I want to eat an apple.</div></div></div><div class="ext-card green"><div class="ext-cat">📖 阅读</div><div class="ext-body"><div style="margin:2px 0">· A 莉莉三餐（母本改编）</div><div style="margin:2px 0">· B 饮食习惯调查（原创）</div><div style="margin:2px 0">· C 五选四（母本改编）</div><div style="margin:2px 0">· 先题后文 · 回原文定位</div></div></div><div class="ext-card purple"><div class="ext-cat">🔤 拼读收官</div><div class="ext-body"><div style="margin:2px 0">· 26 字母音素全表</div><div style="margin:2px 0">· 5 组易混音对</div><div style="margin:2px 0">· 20 个最小对立对</div><div style="margin:2px 0">· b/d · p/q · m/n · f/v · e/i</div></div></div><div class="ext-card gold"><div class="ext-cat">🔁 复习 L5</div><div class="ext-body"><div style="margin:2px 0">· 祈使句 Do/Don't</div><div style="margin:2px 0">· What 问句</div><div style="margin:2px 0">· like to do</div><div style="margin:2px 0">· 运动 20 词</div></div></div></div>
+  </div>
+</div>
+
+<div class="page" id="page41">
+  <div class="page-content">
+    <h1 class="page-title">思维导图 · 完整内容</h1>
+    <p class="page-subtitle">词汇全表 · 语法全表 · 复习全表</p>
+<div class="section-head"><span class="sh-num">图</span><span class="sh-title">思维导图 · 完整内容页</span></div><div class="body-text"><span class="highlight">词汇全表 · 语法全表 · 复习全表</span> 逐项铺开，对照自测。</div><div class="sub-label">本课 20 词</div><div class="vg"><div class="ext-card"><div class="ext-word">food</div><div class="ext-ph">/fuːd/ · n.</div><div class="ext-cn">食物</div><div class="ext-coll">搭配：healthy food / fast food</div><div class="ext-ex">例句：I like healthy food.</div><div class="ext-hook">💡 food 里两个 o 像两个鸡蛋</div></div><div class="ext-card"><div class="ext-word">fruit</div><div class="ext-ph">/fruːt/ · n.</div><div class="ext-cn">水果</div><div class="ext-coll">搭配：fresh fruit / fruit salad</div><div class="ext-ex">例句：I eat fruit every day.</div><div class="ext-hook">💡 fr-ui-t 音似福如它</div></div><div class="ext-card"><div class="ext-word">vegetable</div><div class="ext-ph">/ˈvedʒtəbl/ · n.</div><div class="ext-cn">蔬菜</div><div class="ext-coll">搭配：green vegetables</div><div class="ext-ex">例句：We should eat more vegetables.</div><div class="ext-hook">💡 veget(植物)+able(能)</div></div><div class="ext-card"><div class="ext-word">apple</div><div class="ext-ph">/ˈæpl/ · n.</div><div class="ext-cn">苹果</div><div class="ext-coll">搭配：an apple / apple juice</div><div class="ext-ex">例句：An apple a day keeps the doctor away.</div><div class="ext-hook">💡 a-pp-le 音似阿婆</div></div><div class="ext-card"><div class="ext-word">banana</div><div class="ext-ph">/bəˈnɑːnə/ · n.</div><div class="ext-cn">香蕉</div><div class="ext-coll">搭配：a banana / banana milk</div><div class="ext-ex">例句：I have a banana for breakfast.</div><div class="ext-hook">💡 ba-na-na 三根香蕉</div></div><div class="ext-card"><div class="ext-word">orange</div><div class="ext-ph">/ˈɒrɪndʒ/ · n.</div><div class="ext-cn">橙子</div><div class="ext-coll">搭配：an orange / orange juice</div><div class="ext-ex">例句：I drink orange juice every morning.</div><div class="ext-hook">💡 o-range 首字母像橙子</div></div><div class="ext-card"><div class="ext-word">strawberry</div><div class="ext-ph">/ˈstrɔːbəri/ · n.</div><div class="ext-cn">草莓</div><div class="ext-coll">搭配：strawberries</div><div class="ext-ex">例句：I like strawberries very much.</div><div class="ext-hook">💡 straw(稻草)+berry(浆果)</div></div><div class="ext-card"><div class="ext-word">tomato</div><div class="ext-ph">/təˈmɑːtəʊ/ · n.</div><div class="ext-cn">西红柿</div><div class="ext-coll">搭配：tomatoes</div><div class="ext-ex">例句：I don't like tomatoes.</div><div class="ext-hook">💡 to-ma-to 音似他码头</div></div><div class="ext-card"><div class="ext-word">potato</div><div class="ext-ph">/pəˈteɪtəʊ/ · n.</div><div class="ext-cn">土豆</div><div class="ext-coll">搭配：potatoes / potato chips</div><div class="ext-ex">例句：My father likes potatoes.</div><div class="ext-hook">💡 po-ta-to 音似剖它头</div></div><div class="ext-card"><div class="ext-word">milk</div><div class="ext-ph">/mɪlk/ · n.</div><div class="ext-cn">牛奶</div><div class="ext-coll">搭配：a glass of milk</div><div class="ext-ex">例句：I drink milk every morning.</div><div class="ext-hook">💡 mi-lk 牛奶加蜜更好喝</div></div><div class="ext-card"><div class="ext-word">bread</div><div class="ext-ph">/bred/ · n.</div><div class="ext-cn">面包</div><div class="ext-coll">搭配：a piece of bread</div><div class="ext-ex">例句：I have bread for breakfast.</div><div class="ext-hook">💡 bread 里藏 read(读)</div></div><div class="ext-card"><div class="ext-word">chicken</div><div class="ext-ph">/ˈtʃɪkɪn/ · n.</div><div class="ext-cn">鸡肉</div><div class="ext-coll">搭配：fried chicken</div><div class="ext-ex">例句：I like chicken but not fish.</div><div class="ext-hook">💡 chick(小鸡)+en</div></div><div class="ext-card"><div class="ext-word">rice</div><div class="ext-ph">/raɪs/ · n.</div><div class="ext-cn">米饭</div><div class="ext-coll">搭配：a bowl of rice</div><div class="ext-ex">例句：We eat rice for lunch.</div><div class="ext-hook">💡 rice 里藏 ice(冰)</div></div><div class="ext-card"><div class="ext-word">eggs</div><div class="ext-ph">/eɡz/ · n.</div><div class="ext-cn">鸡蛋</div><div class="ext-coll">搭配：boiled eggs / fry eggs</div><div class="ext-ex">例句：I eat two eggs every morning.</div><div class="ext-hook">💡 egg 加 s 变复数</div></div><div class="ext-card"><div class="ext-word">breakfast</div><div class="ext-ph">/ˈbrekfəst/ · n.</div><div class="ext-cn">早餐</div><div class="ext-coll">搭配：have breakfast</div><div class="ext-ex">例句：I have breakfast at 7:00.</div><div class="ext-hook">💡 break(打破)+fast(斋戒)</div></div><div class="ext-card"><div class="ext-word">lunch</div><div class="ext-ph">/lʌntʃ/ · n.</div><div class="ext-cn">午餐</div><div class="ext-coll">搭配：have lunch</div><div class="ext-ex">例句：We have lunch at school.</div><div class="ext-hook">💡 lunch 音似浪吃</div></div><div class="ext-card"><div class="ext-word">dinner</div><div class="ext-ph">/ˈdɪnə(r)/ · n.</div><div class="ext-cn">晚餐</div><div class="ext-coll">搭配：have dinner</div><div class="ext-ex">例句：My family have dinner together.</div><div class="ext-hook">💡 din-ner 音似订呢</div></div><div class="ext-card"><div class="ext-word">like</div><div class="ext-ph">/laɪk/ · v.</div><div class="ext-cn">喜欢</div><div class="ext-coll">搭配：like sth. / like to do</div><div class="ext-ex">例句：I like apples and bananas.</div><div class="ext-hook">💡 like 音似赖客</div></div><div class="ext-card"><div class="ext-word">want</div><div class="ext-ph">/wɒnt/ · v.</div><div class="ext-cn">想要</div><div class="ext-coll">搭配：want sth. / want to do</div><div class="ext-ex">例句：I want to eat an apple.</div><div class="ext-hook">💡 want 里藏 ant(蚂蚁)</div></div><div class="ext-card"><div class="ext-word">eat</div><div class="ext-ph">/iːt/ · v.</div><div class="ext-cn">吃</div><div class="ext-coll">搭配：eat sth. / eat breakfast</div><div class="ext-ex">例句：I eat breakfast at home.</div><div class="ext-hook">💡 eat 音似亿特</div></div></div><div class="sub-label">语法速查</div><div class="kp-grid">
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">G16</span><span class="kp-desc">非三单：I/you/we/they/复数 + 原形；don't + 原形；Do 开头。例句：I eat / They don't eat / Do you eat?</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">G17</span><span class="kp-desc">可数有复数（an apple/apples）；不可数无复数（milk/rice）。例句：I like apples. / I drink milk.</span></div>
+<div class="kp-item kp-item-full"><span class="kp-dot"></span><span class="kp-key">G18</span><span class="kp-desc">want sth. / want to do / to 后原形。例句：I want to eat an apple.</span></div>
+</div><div class="sub-label">上节课（L5）复习</div><div class="kp-grid">
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">G13</span><span class="kp-desc">祈使句：V原形 / Don't + V原形 / Please + V原形。例句：Open the door. / Don't run.</span></div>
+<div class="kp-item"><span class="kp-dot"></span><span class="kp-key">G14</span><span class="kp-desc">What 问句：What + do + 主语 + V原形…? 例句：What sports do you like?</span></div>
+<div class="kp-item kp-item-full"><span class="kp-dot"></span><span class="kp-key">G15</span><span class="kp-desc">like sth. / like to do。例句：I like to play basketball.</span></div>
+</div><div class="note-panel"><div class="np-title">课后复盘</div>看着全表逐项自测：能否读出每个词、讲清每条语法、说出上节课三个语法点？卡住处标记为 L7 测试前重点。</div>
+  </div>
+</div>
+
+</div>
+<div class="page-counter" id="pageCounter">1 / 41</div>
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)"><div class="modal-content" id="modalContent"></div></div>
+<script>
+/* ==================== Web Audio API ==================== */
+var audioCtx = null;
+function initAudio(){
+  if(!audioCtx){
+    try{ audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }catch(e){ console.log('Audio not supported'); }
+  }
+  if(audioCtx && audioCtx.state === 'suspended'){ audioCtx.resume(); }
+}
+function playCorrect(){
+  initAudio();
+  if(!audioCtx) return;
+  var freqs = [523.25, 659.25, 783.99];
+  freqs.forEach(function(f, i){
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.value = f;
+    gain.gain.setValueAtTime(0, audioCtx.currentTime + i * 0.12);
+    gain.gain.linearRampToValueAtTime(0.2, audioCtx.currentTime + i * 0.12 + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.12 + 0.1);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(audioCtx.currentTime + i * 0.12);
+    osc.stop(audioCtx.currentTime + i * 0.12 + 0.1);
+  });
+}
+function playError(){
+  initAudio();
+  if(!audioCtx) return;
+  var freqs = [392.0, 261.63];
+  freqs.forEach(function(f, i){
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
+    osc.type = 'square';
+    osc.frequency.value = f;
+    gain.gain.setValueAtTime(0, audioCtx.currentTime + i * 0.25);
+    gain.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + i * 0.25 + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.25 + 0.2);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(audioCtx.currentTime + i * 0.25);
+    osc.stop(audioCtx.currentTime + i * 0.25 + 0.2);
+  });
+}
+function playPageTurn(){
+  initAudio();
+  if(!audioCtx) return;
+  var osc = audioCtx.createOscillator();
+  var gain = audioCtx.createGain();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(400, audioCtx.currentTime + 0.08);
+  gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.08);
+}
+
+
+/* ==================== IndexedDB 数据采集 ==================== */
+var db = null;
+var DB_NAME = 'EnglishCoursewareDB';
+var DB_VERSION = 1;
+var STORE_NAME = 'answerRecords';
+var studentId = 'stu_xyj';
+var sessionId = 'L06_' + new Date().toISOString().slice(0,10).replace(/-/g,'');
+var answerRecords = [];
+
+function initDB(){
+  if(!window.indexedDB){ console.log('IndexedDB not supported'); return; }
+  var request = indexedDB.open(DB_NAME, DB_VERSION);
+  request.onerror = function(e){ console.log('DB error:', e); };
+  request.onsuccess = function(e){ db = e.target.result; loadExistingRecords(); };
+  request.onupgradeneeded = function(e){
+    db = e.target.result;
+    if(!db.objectStoreNames.contains(STORE_NAME)){
+      var store = db.createObjectStore(STORE_NAME, {keyPath: 'event_id'});
+      store.createIndex('student_id', 'student_id', {unique: false});
+      store.createIndex('question_id', 'question_id', {unique: false});
+      store.createIndex('session_id', 'session_id', {unique: false});
+    }
+  };
+}
+function loadExistingRecords(){
+  if(!db) return;
+  var tx = db.transaction([STORE_NAME], 'readonly');
+  var store = tx.objectStore(STORE_NAME);
+  var idx = store.index('session_id');
+  var req = idx.getAll(sessionId);
+  req.onsuccess = function(e){
+    answerRecords = e.target.result || [];
+    updateSyncStatus();
+  };
+}
+function saveAnswer(questionId, studentAnswer, correctAnswer, isCorrect, attemptNo, timeUsed, hintUsed){
+  if(!db) return;
+  var event_id = studentId + '_' + sessionId + '_' + questionId + '_' + (attemptNo || 1);
+  var record = {
+    event_id: event_id,
+    student_id: studentId,
+    session_id: sessionId,
+    question_id: questionId,
+    attempt_no: attemptNo || 1,
+    student_answer: studentAnswer,
+    correct_answer: correctAnswer,
+    is_correct: isCorrect,
+    time_used: timeUsed || 0,
+    hint_used: hintUsed || false,
+    timestamp: new Date().toISOString(),
+    synced: 'pending'
+  };
+  var tx = db.transaction([STORE_NAME], 'readwrite');
+  var store = tx.objectStore(STORE_NAME);
+  store.put(record);
+  answerRecords.push(record);
+  updateSyncStatus();
+}
+function updateSyncStatus(){
+  var pending = answerRecords.filter(function(r){ return r.synced === 'pending'; }).length;
+  var dot = document.getElementById('syncDot');
+  var text = document.getElementById('syncText');
+  if(!dot) return;
+  if(pending === 0){
+    dot.className = 'sync-dot';
+    text.textContent = '本地已保存 (' + answerRecords.length + '条)';
+  } else {
+    dot.className = 'sync-dot pending';
+    text.textContent = '待同步 (' + pending + '/' + answerRecords.length + ')';
+  }
+}
+function exportData(e){
+  if(e) e.stopPropagation();
+  if(answerRecords.length === 0){
+    alert('暂无答题数据可导出');
+    return;
+  }
+  var json = JSON.stringify(answerRecords, null, 2);
+  var csv = convertToCSV(answerRecords);
+  var jsonBlob = new Blob([json], {type: 'application/json'});
+  var csvBlob = new Blob(['\uFEFF' + csv], {type: 'text/csv'});
+  var jsonLink = document.createElement('a');
+  jsonLink.href = URL.createObjectURL(jsonBlob);
+  jsonLink.download = 'L06_answers.json';
+  jsonLink.click();
+  setTimeout(function(){
+    var csvLink = document.createElement('a');
+    csvLink.href = URL.createObjectURL(csvBlob);
+    csvLink.download = 'L06_answers.csv';
+    csvLink.click();
+  }, 300);
+}
+function convertToCSV(records){
+  var headers = ['event_id','student_id','session_id','question_id','attempt_no','student_answer','correct_answer','is_correct','time_used','hint_used','timestamp'];
+  var csv = headers.join(',') + '\n';
+  records.forEach(function(r){
+    var row = headers.map(function(h){
+      var val = r[h] !== undefined ? String(r[h]) : '';
+      if(val.indexOf(',') !== -1 || val.indexOf('"') !== -1){ val = '"' + val.replace(/"/g, '""') + '"'; }
+      return val;
+    });
+    csv += row.join(',') + '\n';
+  });
+  return csv;
+}
+
+
+/* ==================== 页面导航系统 ==================== */
+var currentPage = 1;
+var totalPages = 41;
+var segmentPages = {"1": [1, 5], "2": [6, 11], "3": [12, 20], "4": [21, 25], "5": [26, 29], "6": [30, 34], "7": [35, 36], "8": [37, 41]};
+
+function goToPage(pageNum){
+  if(pageNum < 1 || pageNum > totalPages) return;
+  initAudio();
+  var oldPage = document.getElementById('page' + currentPage);
+  var newPage = document.getElementById('page' + pageNum);
+  if(oldPage){ oldPage.classList.remove('active'); oldPage.scrollTop = 0; }
+  if(newPage){ newPage.classList.add('active'); newPage.scrollTop = 0; }
+  currentPage = pageNum;
+  updateNav();
+  updateCounter();
+  playPageTurn();
+}
+function nextPage(){ if(currentPage < totalPages) goToPage(currentPage + 1); }
+function prevPage(){ if(currentPage > 1) goToPage(currentPage - 1); }
+function jumpToSegment(seg){
+  var pages = segmentPages[seg];
+  if(pages) goToPage(pages[0]);
+}
+function updateNav(){
+  var items = document.querySelectorAll('.nav-item');
+  items.forEach(function(item){
+    var seg = parseInt(item.dataset.segment);
+    var pages = segmentPages[seg];
+    if(currentPage >= pages[0] && currentPage <= pages[1]){
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
+function updateCounter(){
+  document.getElementById('pageCounter').textContent = currentPage + ' / ' + totalPages;
+}
+
+
+/* ==================== 翻页区域 ==================== */
+document.addEventListener('click', function(e){
+  if(e.target.closest('.quiz-opt') || e.target.closest('.game-option') ||
+     e.target.closest('.fill-check-btn') || e.target.closest('.fill-input') ||
+     e.target.closest('.nav-item') || e.target.closest('.vocab-card') ||
+     e.target.closest('.flip-card') || e.target.closest('.mnemonic-card') ||
+     e.target.closest('.error-type-card') || e.target.closest('.exam-type-card') ||
+     e.target.closest('.eval-card') || e.target.closest('.cover-nav-item') ||
+     e.target.closest('.modal-content') || e.target.closest('.export-btn') ||
+     e.target.closest('.drag-word') || e.target.closest('.drag-submit') ||
+     e.target.closest('.match-item') || e.target.closest('.pos-word') ||
+     e.target.closest('button') || e.target.closest('input') ||
+     e.target.closest('.game-progress-dot') || e.target.closest('.q-nav-item')){
+    return;
+  }
+  var container = document.getElementById('pagesContainer');
+  var rect = container.getBoundingClientRect();
+  var x = e.clientX - rect.left;
+  if(x < rect.width / 2){ prevPage(); }
+  else { nextPage(); }
+});
+
+
+/* ==================== 键盘导航 ==================== */
+document.addEventListener('keydown', function(e){
+  if(e.target.tagName === 'INPUT') return;
+  if(e.key === 'ArrowLeft' || e.key === 'ArrowUp'){ prevPage(); }
+  else if(e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' '){ e.preventDefault(); nextPage(); }
+  else if(e.key === 'f' || e.key === 'F'){
+    if(!document.fullscreenElement){ document.documentElement.requestFullscreen(); }
+    else { document.exitFullscreen(); }
+  }
+});
+
+
+/* ==================== 弹窗 ==================== */
+function closeModal(e){
+  if(e && e.target !== document.getElementById('modalOverlay')) return;
+  document.getElementById('modalOverlay').classList.remove('show');
+}
+
+
+var studentId='stu_dxh';
+
+var totalPages = 41;
+var segmentPages = {"1": [1, 5], "2": [6, 11], "3": [12, 20], "4": [21, 25], "5": [26, 29], "6": [30, 34], "7": [35, 36], "8": [37, 41]};
+var PAGE_META = {"1": {"p": "CORE", "m": 5}, "2": {"p": "CORE", "m": 5}, "3": {"p": "CORE", "m": 5}, "4": {"p": "CORE", "m": 5}, "5": {"p": "CORE", "m": 5}, "6": {"p": "CORE", "m": 5}, "7": {"p": "CORE", "m": 5}, "8": {"p": "CORE", "m": 5}, "9": {"p": "CORE", "m": 5}, "10": {"p": "CORE", "m": 5}, "11": {"p": "CORE", "m": 5}, "12": {"p": "CORE", "m": 5}, "13": {"p": "CORE", "m": 5}, "14": {"p": "CORE", "m": 5}, "15": {"p": "CORE", "m": 5}, "16": {"p": "CORE", "m": 5}, "17": {"p": "CORE", "m": 5}, "18": {"p": "CORE", "m": 5}, "19": {"p": "CORE", "m": 5}, "20": {"p": "CORE", "m": 5}, "21": {"p": "CORE", "m": 5}, "22": {"p": "EXTEND", "m": 5}, "23": {"p": "EXTEND", "m": 5}, "24": {"p": "EXTEND", "m": 5}, "25": {"p": "CORE", "m": 5}, "26": {"p": "CORE", "m": 8}, "27": {"p": "EXTEND", "m": 6}, "28": {"p": "HOME", "m": 6}, "29": {"p": "CORE", "m": 5}, "30": {"p": "CORE", "m": 5}, "31": {"p": "CORE", "m": 5}, "32": {"p": "CORE", "m": 5}, "33": {"p": "CORE", "m": 5}, "34": {"p": "CORE", "m": 5}, "35": {"p": "EXTEND", "m": 5}, "36": {"p": "EXTEND", "m": 5}, "37": {"p": "CORE", "m": 5}, "38": {"p": "CORE", "m": 5}, "39": {"p": "CORE", "m": 5}, "40": {"p": "CORE", "m": 5}, "41": {"p": "HOME", "m": 10}};
+function flipCard(el){ el.classList.toggle('flipped'); }
+function burst(el){
+  var r=el.getBoundingClientRect(), cx=r.left+r.width/2, cy=r.top+r.height/2;
+  for(var i=0;i<14;i++){
+    var p=document.createElement('div'); p.className='burst-p';
+    var a=Math.random()*6.283, d=50+Math.random()*70;
+    p.style.left=cx+'px'; p.style.top=cy+'px';
+    p.style.setProperty('--dx',(Math.cos(a)*d)+'px'); p.style.setProperty('--dy',(Math.sin(a)*d)+'px');
+    p.style.background=(Math.random()<0.5?'#FFD700':'#E63946');
+    document.body.appendChild(p);
+    (function(x){ setTimeout(function(){ x.remove(); },700); })(p);
+  }
+}
+function shake(el){ el.style.animation='none'; void el.offsetWidth; el.style.animation='shake .4s'; }
+function checkOpt(btn){
+  var q=btn.parentNode; if(q.dataset.done) return; q.dataset.done='1';
+  var opts=q.querySelectorAll('.quiz-opt');
+  // 不再 disabled（disabled 会吞掉 dblclick 事件），改用 locked 视觉锁定 + dataset 防重答
+  for(var i=0;i<opts.length;i++){ opts[i].classList.add('locked'); }
+  var ok=btn.dataset.correct==='1';
+  // 先保存再反馈（08 规范：先入库后反馈）；缺 qid 的旧结构题（如五选四 .w5-opts）跳过
+  if(typeof saveAnswer==='function' && q.dataset.qid){
+    var qid=q.dataset.qid, ca='';
+    for(var j=0;j<opts.length;j++){ if(opts[j].dataset.correct==='1'){ ca=opts[j].textContent.replace(/^[A-E]\.\s*/,'').trim(); } }
+    saveAnswer(qid, btn.textContent.replace(/^[A-E]\.\s*/,'').trim(), ca, ok,
+               parseInt(q.dataset.attempt||'1',10), 0, false);
+  }
+  if(ok){ btn.classList.add('opt-correct'); playCorrect(); burst(btn); }
+  else{ q.dataset.wrong='1'; btn.classList.add('opt-wrong'); playError(); shake(btn);
+    for(var i=0;i<opts.length;i++){ if(opts[i].dataset.correct==='1'){ opts[i].classList.add('opt-correct'); } }
+    var h=q.querySelector('.et-undo-hint');
+    if(!h){ h=document.createElement('div'); h.className='et-undo-hint'; h.onclick=function(ev){ ev.stopPropagation(); }; q.appendChild(h); }
+    h.textContent='答错后双击可撤销回答';
+  }
+}
+function undoQuiz(q){
+  var opts=q.querySelectorAll('.quiz-opt');
+  for(var i=0;i<opts.length;i++){ opts[i].classList.remove('opt-correct','opt-wrong','locked'); }
+  delete q.dataset.done; delete q.dataset.wrong;
+  q.dataset.attempt=String(parseInt(q.dataset.attempt||'1',10)+1); // 重答新增尝试，首次答案不覆盖（§3.8）
+  var h=q.querySelector('.et-undo-hint');
+  if(h){ h.textContent='已撤销，请重答'; setTimeout(function(){ if(h.parentNode) h.parentNode.removeChild(h); }, 3000); }
+}
+// §3.8.2 答错后双击撤销（容错交互）：双击错题选项（或小字提示）立即复原重答
+document.addEventListener('dblclick', function(e){
+  var q=e.target.closest('.quiz-q');
+  if(q && q.dataset.done==='1' && q.dataset.wrong==='1') undoQuiz(q);
+});
+function mmToggle(node){
+  var br=node.parentNode;
+  var all=document.querySelectorAll('.mm-branch.active');
+  for(var i=0;i<all.length;i++){ all[i].classList.remove('active'); }
+  br.classList.add('active');
+  var panel=document.getElementById('mmPanel');
+  document.getElementById('mmPanelChips').innerHTML = br.querySelector('.mm-chips').innerHTML;
+  document.getElementById('mmPanelTitle').innerHTML = node.querySelector('.mm-icon').textContent + ' ' + node.querySelector('.mm-label').textContent;
+  panel.className = 'mm-panel ' + br.getAttribute('data-color');
+}
+// 启动 IndexedDB（§3.8 数据采集）；脚本在 body 末尾，DOM 已就绪，initDB 由 CORE_JS 定义
+initDB();
+
+/* ==================== PAGE_META 优先级徽标 ==================== */
+(function initPriorityBadges(){
+  var meta = PAGE_META || {};
+  var pages = document.querySelectorAll('.page');
+  pages.forEach(function(pg){
+    var pid = pg.id.replace('page','');
+    var m = meta[pid];
+    if(!m) return;
+    pg.setAttribute('data-priority', m.p);
+    pg.setAttribute('data-estimated-minutes', m.m);
+    var badge = document.createElement('div');
+    badge.className = 'page-priority-badge pri-' + m.p.toLowerCase();
+    badge.textContent = m.p;
+    badge.title = '运行优先级: ' + m.p + ' · 预估时长: ' + m.m + ' 分钟';
+    pg.appendChild(badge);
+  });
+})();
+
+/* ===== GM-V02 主动提取提示梯 ===== */
+function hlHint(btn, level){
+  var unit=btn.closest('.hl-word'), box=unit.querySelector('.hl-box');
+  var en=box.getAttribute('data-en'), chunk=box.getAttribute('data-chunk');
+  var used=Math.max(parseInt(unit.getAttribute('data-hint')||'0',10), level);
+  unit.setAttribute('data-hint', used);
+  if(level>=1) box.textContent=en.charAt(0)+'___';
+  if(level>=2) box.textContent=(chunk ? chunk : en.charAt(0)+en.charAt(1)+'___');
+  var note=unit.querySelector('.hl-note'); note.textContent='已用 '+used+' 级提示';
+}
+function hlReveal(btn){
+  var unit=btn.closest('.hl-word'), box=unit.querySelector('.hl-box');
+  if(box.getAttribute('data-revealed')) return;
+  var en=box.getAttribute('data-en');
+  box.setAttribute('data-revealed','1'); box.textContent=en; box.classList.add('hl-done');
+  var used=parseInt(unit.getAttribute('data-hint')||'0',10);
+  unit.querySelector('.hl-note').textContent='答案 '+en+'（提示 '+used+' 级）';
+  if(typeof saveAnswer==='function') saveAnswer('CMP_V02_'+en,'reveal',en,true,1,0,used>0);
+}
+function hlReset(btn){
+  var unit=btn.closest('.hl-word'), box=unit.querySelector('.hl-box'), note=unit.querySelector('.hl-note');
+  box.textContent='______'; box.classList.remove('hl-done'); box.removeAttribute('data-revealed');
+  unit.removeAttribute('data-hint'); if(note) note.textContent='';
+}
+/* ===== GM-G03 错句医生 ===== */
+function sdPick(span){
+  var unit=span.closest('.sd-unit'); if(unit.getAttribute('data-picked')) return;
+  unit.setAttribute('data-picked', span.getAttribute('data-w')||span.textContent.trim());
+  span.classList.add('sd-picked');
+  var fix=unit.querySelector('.sd-fix'); if(fix) fix.style.display='block';
+}
+function sdFix(btn){
+  var unit=btn.closest('.sd-unit'); if(unit.getAttribute('data-fixed')) return;
+  unit.setAttribute('data-fixed','1');
+  var ok=btn.getAttribute('data-correct')==='1';
+  var opts=unit.querySelectorAll('.sd-opt');
+  for(var i=0;i<opts.length;i++){ opts[i].disabled=true; }
+  if(ok){ btn.classList.add('sd-ok'); if(typeof playCorrect==='function') playCorrect(); }
+  else{
+    btn.classList.add('sd-no'); if(typeof playError==='function') playError();
+    for(var i=0;i<opts.length;i++){ if(opts[i].getAttribute('data-correct')==='1') opts[i].classList.add('sd-ok'); }
+  }
+  if(typeof saveAnswer==='function') saveAnswer('CMP_G03_'+unit.getAttribute('data-picked'),
+    btn.textContent.trim(), unit.getAttribute('data-ans'), ok, 1, 0, false);
+}
+function sdReset(btn){
+  var unit=btn.closest('.sd-unit');
+  unit.removeAttribute('data-picked'); unit.removeAttribute('data-fixed');
+  var w=unit.querySelectorAll('.sd-w'); for(var i=0;i<w.length;i++) w[i].classList.remove('sd-picked');
+  var o=unit.querySelectorAll('.sd-opt'); for(var i=0;i<o.length;i++){ o[i].disabled=false; o[i].classList.remove('sd-ok','sd-no'); }
+  var f=unit.querySelector('.sd-fix'); if(f) f.style.display='none';
+}
+/* ===== GM-R06 证据连线 ===== */
+var ecSel=null;
+function ecClick(el){
+  var box=el.closest('.evidence-connect'); if(box.getAttribute('data-done')) return;
+  if(el.classList.contains('ec-q')){
+    if(ecSel) ecSel.classList.remove('ec-sel');
+    ecSel=el; el.classList.add('ec-sel');
+  } else if(el.classList.contains('ec-ev')){
+    if(!ecSel){ el.classList.add('ec-warn'); setTimeout(function(){ el.classList.remove('ec-warn'); },500); return; }
+    var q=ecSel; ecSel=null; q.classList.remove('ec-sel');
+    var evId=el.getAttribute('data-id');
+    if(q.getAttribute('data-ev')===evId){
+      q.classList.add('ec-ok'); el.classList.add('ec-ok');
+      if(typeof playCorrect==='function') playCorrect();
+      var label=q.textContent.replace(/\s+/g,' ').trim().slice(0,18);
+      if(typeof saveAnswer==='function') saveAnswer('CMP_R06_'+label, evId, evId, true, 1, 0, false);
+    } else {
+      q.classList.add('ec-no'); el.classList.add('ec-no');
+      setTimeout(function(){ q.classList.remove('ec-no'); el.classList.remove('ec-no'); }, 600);
+      if(typeof playError==='function') playError();
+    }
+    var qs=box.querySelectorAll('.ec-q'), done=true;
+    for(var i=0;i<qs.length;i++){ if(!qs[i].classList.contains('ec-ok')) done=false; }
+    if(done){ box.setAttribute('data-done','1'); var st=box.querySelector('.ec-status'); if(st) st.textContent='全部连线正确 ✓'; }
+  }
+}
+function ecReset(btn){
+  var box=btn.closest('.evidence-connect');
+  var qs=box.querySelectorAll('.ec-q'), evs=box.querySelectorAll('.ec-ev');
+  for(var i=0;i<qs.length;i++){ qs[i].classList.remove('ec-ok','ec-no','ec-sel'); }
+  for(var i=0;i<evs.length;i++){ evs[i].classList.remove('ec-ok','ec-no'); }
+  box.removeAttribute('data-done'); ecSel=null;
+  var st=box.querySelector('.ec-status'); if(st) st.textContent='';
+}
+
+</script>
+</body>
+</html>

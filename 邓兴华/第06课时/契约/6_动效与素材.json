@@ -1,0 +1,99 @@
+{
+  "course": "第06课",
+  "animations": {
+    "css": [
+      {"name": "fadeSlideUp", "definition": "from {opacity:0; transform:translateY(30px)} to {opacity:1; transform:translateY(0)}", "usage": "页面进入、内容块出现"},
+      {"name": "scaleUp", "definition": "from {opacity:0; transform:scale(0.85)} to {opacity:1; transform:scale(1)}", "usage": "卡片缩放出现"},
+      {"name": "bounceIn", "definition": "0%{opacity:0;transform:scale(0.3)} 50%{transform:scale(1.08)} 70%{transform:scale(0.95)} 100%{opacity:1;transform:scale(1)}", "usage": "食物图标弹入、正确反馈"},
+      {"name": "bpSwing", "definition": "0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)}", "usage": "swing-tag 摇摆"},
+      {"name": "pulse", "definition": "0%,100%{transform:scale(1)} 50%{transform:scale(1.05)}", "usage": "stage-badge 脉动"},
+      {"name": "slideInLeft", "definition": "from {opacity:0; transform:translateX(-40px)} to {opacity:1; transform:translateX(0)}", "usage": "句子行进入"},
+      {"name": "floatY", "definition": "0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)}", "usage": "emoji 浮动"},
+      {"name": "shimmer", "definition": "0%{background-position:-200% center} 100%{background-position:200% center}", "usage": "进度条闪光"}
+    ],
+    "additional": [
+      {"name": "shakeX", "definition": "0%,100%{transform:translateX(0)} 10%,30%,50%,70%,90%{transform:translateX(-4px)} 20%,40%,60%,80%{transform:translateX(4px)}", "usage": "错误反馈抖动"},
+      {"name": "cardFlyIn", "definition": "0%{opacity:0;transform:translateY(-30px) scale(0.5) rotate(-10deg)} 60%{transform:translateY(5px) scale(1.1) rotate(2deg)} 100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}", "usage": "食物词卡飞入槽位"},
+      {"name": "cardFlyOut", "definition": "0%{opacity:1;transform:scale(1)} 100%{opacity:0;transform:translateY(20px) scale(0.5)}", "usage": "词卡飞出"},
+      {"name": "dropIn", "definition": "0%{opacity:0;transform:translateY(-40px) rotate(180deg)} 60%{transform:translateY(5px) rotate(-10deg)} 100%{opacity:1;transform:translateY(0) rotate(0)}", "usage": "食物掉入餐盘动画"}
+    ]
+  },
+  "interactions": {
+    "navigation": {
+      "halfScreenClick": true,
+      "keyboardArrows": true,
+      "navPills": true,
+      "progressBarClick": true
+    },
+    "quiz": {
+      "type": "checkQuiz",
+      "feedback": {"correct": "绿色✅ + bounceIn动画 + 正确音效", "wrong": "红色❌ + bpSwing动画 + 错误音效"},
+      "disableAfterAnswer": true,
+      "showCorrectAnswer": true
+    },
+    "phonics": {
+      "type": "checkPhonics",
+      "feedback": "同quiz"
+    },
+    "answerMask": {
+      "type": "toggleMask",
+      "initial": "绿色遮罩显示'🔍 点击揭晓'",
+      "revealed": "浅绿色背景显示答案 + 正确音效"
+    }
+  },
+  "interactiveComponents": {
+    "component1": {
+      "name": "餐盘分类挑战",
+      "page": 11,
+      "grammarTag": "G16",
+      "elements": {
+        "scene": ".plate-scene",
+        "plate": "🍽️ emoji (font-size: 80px)",
+        "foodIcons": ["🍎", "🍌", "🍞", "🥛", "🍚", "🥚", "🍗", "🥗", "🍅", "🥔"]
+      },
+      "buttons": [
+        {"label": "I like!", "action": "食物移到喜欢区域 + bounceIn", "sentence": "I like apples.", "animation": "bounceIn"},
+        {"label": "I don't like!", "action": "食物移到不喜欢区域 + shakeX", "sentence": "I don't like chicken.", "animation": "shakeX"}
+      ],
+      "subjectSwitch": ["I", "We", "They"],
+      "sentenceUpdate": "底部例句区 fadeSlideUp 动画"
+    },
+    "component2": {
+      "name": "食谱设计工坊",
+      "page": 16,
+      "grammarTag": "G18",
+      "elements": {
+        "scene": ".recipe-scene",
+        "title": "What do you want to eat?",
+        "foodIcons": [
+          {"emoji": "🍎", "name": "apple"},
+          {"emoji": "🍌", "name": "banana"},
+          {"emoji": "🍞", "name": "bread"},
+          {"emoji": "🥛", "name": "milk"},
+          {"emoji": "🍚", "name": "rice"},
+          {"emoji": "🥚", "name": "eggs"},
+          {"emoji": "🍗", "name": "chicken"},
+          {"emoji": "🥗", "name": "vegetable"}
+        ],
+        "subjectSwitch": ["I", "We", "They"],
+        "clearButton": true
+      },
+      "logic": {
+        "toggleFood": "点击食物图标→toggle选中状态(高亮/取消)",
+        "generateSentence": "实时生成: [主语] want to eat [已选食物].",
+        "switchSubject": "切换主语→句子变化",
+        "noSelection": "显示 What do you want to eat?"
+      }
+    }
+  },
+  "audio": {
+    "correct": {"freq": [880, 1100], "duration": [0.15, 0.2], "type": "sine"},
+    "error": {"freq": 220, "duration": 0.3, "type": "sawtooth"},
+    "pageTurn": {"freq": 440, "duration": 0.1, "type": "triangle"}
+  },
+  "assets": {
+    "emojis": ["🍽️", "🍎", "🍌", "🍞", "🥛", "🍚", "🥚", "🍗", "🥗", "🍅", "🥔", "🍇", "🥬", "🍊", "🍓", "❤️", "🤗", "😋", "🌅", "☀️", "🌙", "✅", "❌"],
+    "images": "none (all CSS/emoji based)",
+    "externalLibs": "none (vanilla JS)"
+  }
+}

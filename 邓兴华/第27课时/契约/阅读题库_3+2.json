@@ -1,0 +1,264 @@
+{
+  "lesson": "L27",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A/B/C 篇各 7 题：4 无选项 + 3 有选项（讲评页题量 7·按 3:2 比例混合）；五选四（§3.16）不纳入 3+2",
+  "vocab_pool": [
+    "already",
+    "yet",
+    "just",
+    "ever",
+    "once",
+    "before",
+    "nowadays",
+    "previously",
+    "for",
+    "experience",
+    "voyage",
+    "overseas",
+    "foreign",
+    "country",
+    "tradition",
+    "language",
+    "communicate",
+    "exchange",
+    "program",
+    "destination"
+  ],
+  "grammar_cap": "G64 现在完成时（have/has+过去分词；标志词 already/yet/just/ever/before/once；have been to）——答案均为完成时原文摘录，不越级",
+  "skip_pages": [
+    "阅读五选四页（§3.16 空格选答原型，不动）",
+    "阅读策略页（策略题，保留选择）"
+  ],
+  "A篇_My_Experience_as_an_Exchange_Student": {
+    "Q065": {
+      "question": "作者去了哪个国家？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "canada",
+      "minimum_acceptable_answer": "canada",
+      "accepted_answers": [
+        "canada",
+        "to canada",
+        "he has been to canada"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q066": {
+      "question": "作者已经学会了什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "communicate in English",
+      "minimum_acceptable_answer": "english",
+      "accepted_answers": [
+        "communicate in english",
+        "to communicate in english",
+        "learned to communicate in english",
+        "i have learned to communicate in english",
+        "english"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "communicate 为池内词；结构为完成时原文摘录"
+    },
+    "Q067": {
+      "question": "'have visited' 用的是？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q068": {
+      "question": "'have never forgotten' 表？",
+      "type": "opt",
+      "correct": "B",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q069": {
+      "question": "我已经交了很多朋友。I have ____ (make) many friends. 检查",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "made",
+      "minimum_acceptable_answer": "made",
+      "accepted_answers": [
+        "made"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "G64 过去分词 made（本课考点）"
+    },
+    "Q070": {
+      "question": "作者去过哪里当交换生？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "canada",
+      "minimum_acceptable_answer": "canada",
+      "accepted_answers": [
+        "canada",
+        "to canada",
+        "he has been to canada"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q071": {
+      "question": "'have tried' 用的是？",
+      "type": "opt",
+      "correct": "B",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    }
+  },
+  "B篇_Have_You_Ever": {
+    "Q072": {
+      "question": "Lily 去过海边几次？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "once",
+      "minimum_acceptable_answer": "once",
+      "accepted_answers": [
+        "once",
+        "one time",
+        "only once",
+        "she has been there once"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "once 为池内词；数字/频次短语"
+    },
+    "Q073": {
+      "question": "Tom 尝试过什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "surfing",
+      "minimum_acceptable_answer": "surfing",
+      "accepted_answers": [
+        "surfing",
+        "he has just tried surfing",
+        "he has tried surfing",
+        "just tried surfing",
+        "he tried surfing"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q074": {
+      "question": "'haven't tried' 用的是？",
+      "type": "opt",
+      "correct": "B",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q075": {
+      "question": "'have you ever' 表？",
+      "type": "opt",
+      "correct": "C",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q076": {
+      "question": "你曾经去过海边吗？Have you ever ____ (be) to the sea? 检查",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "been",
+      "minimum_acceptable_answer": "been",
+      "accepted_answers": [
+        "been"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "G64 过去分词 been（本课考点）"
+    },
+    "Q077": {
+      "question": "Tom 已经计划了什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "a trip",
+      "minimum_acceptable_answer": "trip",
+      "accepted_answers": [
+        "a trip",
+        "trip",
+        "he has planned a trip",
+        "planned a trip"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q078": {
+      "question": "Lily 从没做过什么？",
+      "type": "opt",
+      "correct": "C",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    }
+  },
+  "C篇_A_Visit_to_London": {
+    "Q079": {
+      "question": "作者去了哪个城市？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "london",
+      "minimum_acceptable_answer": "london",
+      "accepted_answers": [
+        "london",
+        "to london",
+        "he has been to london",
+        "he came back from london"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q080": {
+      "question": "作者参观了什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "the Big Ben and the London Eye",
+      "minimum_acceptable_answer": "big ben",
+      "accepted_answers": [
+        "the big ben and the london eye",
+        "big ben and the london eye",
+        "the big ben",
+        "the london eye",
+        "big ben"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q081": {
+      "question": "'have tasted' 用的是？",
+      "type": "opt",
+      "correct": "C",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q082": {
+      "question": "'have never been' 表？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q083": {
+      "question": "我已经拍了照片。I have ____ (take) many photos. 检查",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "taken",
+      "minimum_acceptable_answer": "taken",
+      "accepted_answers": [
+        "taken"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "G64 过去分词 taken（本课考点）"
+    },
+    "Q084": {
+      "question": "作者尝试了什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "British food",
+      "minimum_acceptable_answer": "british food",
+      "accepted_answers": [
+        "british food",
+        "british food and enjoyed it",
+        "he has tasted british food",
+        "tasted british food"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q085": {
+      "question": "'have visited' 用的是？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    }
+  }
+}

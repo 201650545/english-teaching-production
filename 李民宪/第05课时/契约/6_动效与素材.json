@@ -1,0 +1,32 @@
+{
+  "lesson_id": "第05课",
+  "animation_engine": "GSAP Core",
+  "page_animations": [
+    {"page_index": 1, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".quiz-question", "delay_ms": 80, "effect": "fade_in 0.3s"}]},
+    {"page_index": 2, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".sentence-card", "delay_ms": 100, "effect": "scale_up 0.3s"}]},
+    {"page_index": 3, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".flip", "delay_ms": 100, "effect": "scale_up 0.3s"}]},
+    {"page_index": 4, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".flip", "delay_ms": 100, "effect": "scale_up 0.3s"}]},
+    {"page_index": 5, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".colloc-card", "delay_ms": 100, "effect": "slide_left 0.3s"}]},
+    {"page_index": 6, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".example-line", "delay_ms": 80, "effect": "fade_in 0.3s"}]},
+    {"page_index": 7, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".game-option", "delay_ms": 60, "effect": "scale_up 0.25s"}]},
+    {"page_index": 8, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".dialogue-line", "delay_ms": 80, "effect": "fade_in 0.3s"}]},
+    {"page_index": 9, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".formula-card", "delay_ms": 100, "effect": "scale_up 0.3s"}]},
+    {"page_index": 10, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".quiz-question", "delay_ms": 80, "effect": "fade_in 0.3s"}]},
+    {"page_index": 11, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".formula-card", "delay_ms": 100, "effect": "scale_up 0.3s"}]},
+    {"page_index": 12, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".quiz-question", "delay_ms": 80, "effect": "fade_in 0.3s"}]},
+    {"page_index": 13, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".formula-card", "delay_ms": 100, "effect": "scale_up 0.3s"}]},
+    {"page_index": 14, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".quiz-question", "delay_ms": 80, "effect": "fade_in 0.3s"}]},
+    {"page_index": 15, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".sentence-starter", "delay_ms": 100, "effect": "slide_left 0.3s"}]},
+    {"page_index": 16, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".quiz-question", "delay_ms": 80, "effect": "fade_in 0.3s"}]},
+    {"page_index": 17, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".reading-passage", "delay_ms": 120, "effect": "fade_in 0.4s"}]},
+    {"page_index": 18, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".quiz-question", "delay_ms": 80, "effect": "fade_in 0.3s"}]},
+    {"page_index": 19, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".quiz-question", "delay_ms": 80, "effect": "fade_in 0.3s"}]},
+    {"page_index": 20, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".fill-question", "delay_ms": 80, "effect": "fade_in 0.3s"}]},
+    {"page_index": 21, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".fill-question", "delay_ms": 80, "effect": "fade_in 0.3s"}]},
+    {"page_index": 22, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".translate-question", "delay_ms": 100, "effect": "fade_in 0.3s"}]},
+    {"page_index": 23, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".formula-card", "delay_ms": 100, "effect": "scale_up 0.3s"}]},
+    {"page_index": 24, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".sort-word", "delay_ms": 60, "effect": "scale_up 0.25s"}]},
+    {"page_index": 25, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".quiz-question", "delay_ms": 80, "effect": "fade_in 0.3s"}]},
+    {"page_index": 26, "transition_in": "fade_slide_up 0.5s ease-out", "stagger_elements": [{"selector": ".quiz-question", "delay_ms": 80, "effect": "fade_in 0.3s"}]}
+  ]
+}

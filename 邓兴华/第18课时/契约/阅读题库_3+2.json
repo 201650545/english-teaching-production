@@ -1,0 +1,154 @@
+{
+  "lesson": "L18",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A/B 各 3 无选项 + 2 有选项（默认 3+2）；第三篇（HTML page27 五选四 · What Are You Doing?）为 b5 选句填空（b5-hole/b5-opts，5 空 5 句），无 quiz-opt 阅读交互题，不纳入 3+2（五选四 §3.16 单独统计）",
+  "vocab_pool": [
+    "housework",
+    "sweep",
+    "wash",
+    "cook",
+    "scan",
+    "read",
+    "write",
+    "draw",
+    "sing",
+    "dance",
+    "study",
+    "sleep",
+    "talk",
+    "speak",
+    "hear",
+    "rest",
+    "look",
+    "chat",
+    "notice",
+    "moment"
+  ],
+  "grammar_cap": "G46-G48（现在进行时 be+V-ing / V-ing 变化规则 / now, look!, listen!, at the moment 标志词）；契约防越级禁过去时；B篇原文为过去时记叙（Last Saturday...was cooking），题干与答案中的 was/were + V-ing 属原文摘录（§3.18.4.4），不新增语法教学点",
+  "A篇_Our_Housework_Chart": {
+    "RA-Q1": {
+      "question": "What is Mom doing in the kitchen?",
+      "type": "fill",
+      "openness": "动作细节·原文直接提取（第一段）",
+      "canonical_answer": "cooking dinner and washing vegetables",
+      "minimum_acceptable_answer": "cooking dinner",
+      "accepted_answers": [
+        "cooking dinner and washing vegetables",
+        "cooking dinner and washing some vegetables",
+        "cooking dinner",
+        "she is cooking dinner and washing vegetables"
+      ],
+      "required_vocab": [
+        "cook",
+        "wash"
+      ],
+      "required_grammar": "现在进行时 be+V-ing（G46）：canonical 为现在分词短语省略 be，完整句变体 she is cooking...（G46）；cook→cooking、wash→washing 直接加 ing（G47）"
+    },
+    "RA-Q2": {
+      "question": "Who is studying in his room?",
+      "type": "fill",
+      "openness": "人物细节·原文直接提取",
+      "canonical_answer": "My brother",
+      "minimum_acceptable_answer": "my brother",
+      "accepted_answers": [
+        "my brother",
+        "the brother",
+        "his brother",
+        "my brother is studying in his room"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（名词短语，brother 为原文词）；完整句变体 my brother is studying 含现在进行时（G46），study→studying 直接加 ing（G47）"
+    },
+    "RA-Q3": {
+      "question": "What is the cat doing?",
+      "type": "fill",
+      "openness": "动作细节·原文直接提取",
+      "canonical_answer": "Sleeping on the sofa",
+      "minimum_acceptable_answer": "sleeping",
+      "accepted_answers": [
+        "sleeping on the sofa",
+        "it is sleeping on the sofa",
+        "the cat is sleeping on the sofa",
+        "sleeping"
+      ],
+      "required_vocab": [
+        "sleep"
+      ],
+      "required_grammar": "现在进行时 be+V-ing（G46）；sleep→sleeping 直接加 ing（G47）；it/the cat is sleeping 变体含主语+is（G46）"
+    },
+    "RA-Q4": {
+      "question": "How does the family feel about housework?",
+      "type": "opt",
+      "openness": "推断概括·开放度高→有选项",
+      "correct": "C",
+      "note": "选项 C：Willing and happy to share。解析：\"Housework is everyone's duty. We share it every weekend.\" 推断出愿意分担。"
+    },
+    "RA-Q5": {
+      "question": "What is the best title for this passage?",
+      "type": "opt",
+      "openness": "主旨概括·开放度高→有选项",
+      "correct": "A",
+      "note": "选项 A：Our Housework Chart。解析：全文围绕家务分工看板展开。"
+    }
+  },
+  "B篇_A_Busy_Saturday_Morning": {
+    "RB-Q1": {
+      "question": "What was Mom doing at eight o'clock?",
+      "type": "fill",
+      "openness": "时间点动作细节·原文直接提取",
+      "canonical_answer": "cooking breakfast",
+      "minimum_acceptable_answer": "cooking breakfast",
+      "accepted_answers": [
+        "cooking breakfast",
+        "cooking breakfast in the kitchen",
+        "she was cooking breakfast"
+      ],
+      "required_vocab": [
+        "cook"
+      ],
+      "required_grammar": "原文摘录（§3.18.4.4）：canonical 为现在分词短语；变体 she was cooking breakfast 含 was+V-ing，为原文既有结构（原文 At eight o'clock, Mom was cooking breakfast in the kitchen），不作新授语法点；cook→cooking 直接加 ing（G47）"
+    },
+    "RB-Q2": {
+      "question": "What was the little brother doing?",
+      "type": "fill",
+      "openness": "人物动作细节·原文直接提取",
+      "canonical_answer": "drawing a picture",
+      "minimum_acceptable_answer": "drawing a picture",
+      "accepted_answers": [
+        "drawing a picture",
+        "he was drawing a picture",
+        "drawing a picture at the table"
+      ],
+      "required_vocab": [
+        "draw"
+      ],
+      "required_grammar": "原文摘录（§3.18.4.4）：was drawing 为原文既有过去进行时结构，不新增语法点；draw→drawing 直接加 ing（G47）"
+    },
+    "RB-Q3": {
+      "question": "Where was the cat sleeping?",
+      "type": "fill",
+      "openness": "地点细节·原文直接提取",
+      "canonical_answer": "On the windowsill",
+      "minimum_acceptable_answer": "on the windowsill",
+      "accepted_answers": [
+        "on the windowsill"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（地点名词短语，windowsill 为原文词，原文摘录 §3.18.4.4）"
+    },
+    "RB-Q4": {
+      "question": "What does \"complaining\" mean in the last paragraph?",
+      "type": "opt",
+      "openness": "词义判断·开放度高→有选项",
+      "correct": "B",
+      "note": "选项 B：Saying you are unhappy。解析：\"not complaining\" = 没有抱怨，complain = 抱怨。"
+    },
+    "RB-Q5": {
+      "question": "How did the writer feel about the morning?",
+      "type": "opt",
+      "openness": "态度推断·开放度高→有选项",
+      "correct": "B",
+      "note": "选项 B：Busy but happy。解析：末句 \"It was a busy but happy morning.\" 直接点明。"
+    }
+  }
+}

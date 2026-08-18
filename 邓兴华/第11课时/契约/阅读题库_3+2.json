@@ -1,0 +1,362 @@
+{
+  "lesson": "L11",
+  "reform": "3+2",
+  "grammar_cap": "G28 情态动词 / G29 不规则复数 / G30 时间介词（不引入 will 主动产出/比较级/最高级/完成时/被动）",
+  "note": "minimum_acceptable_answer 词汇 ⊆ L11 20 词池+前课词；允许原文摘录（didn't/will 完整句均为照抄原文，最低答案不含超纲结构）",
+  "questions": [
+    {
+      "source": "courseware",
+      "page": 29,
+      "qid": "Q11R_29_0",
+      "passage": "A",
+      "question": "What time must students arrive at school?",
+      "canonical_answer": "before 8:00",
+      "minimum_acceptable_answer": "before 8:00",
+      "accepted_answers": [
+        "before 8:00",
+        "before 8:00 a.m.",
+        "before 8 am",
+        "before 8:00am",
+        "before eight"
+      ],
+      "required_vocab": [
+        "arrive(本课)",
+        "school(前课)"
+      ],
+      "required_grammar": "G30 时间表达（数字时刻）; 上限内"
+    },
+    {
+      "source": "courseware",
+      "page": 29,
+      "qid": "Q11R_29_1",
+      "passage": "A",
+      "question": "What must students wear every day?",
+      "canonical_answer": "school uniform",
+      "minimum_acceptable_answer": "school uniform",
+      "accepted_answers": [
+        "school uniform",
+        "a school uniform",
+        "the school uniform",
+        "uniform",
+        "their school uniform"
+      ],
+      "required_vocab": [
+        "uniform(本课)",
+        "wear(本课)"
+      ],
+      "required_grammar": "无（名词短语作答）; 上限内"
+    },
+    {
+      "source": "courseware",
+      "page": 29,
+      "qid": "Q11R_29_2",
+      "passage": "A",
+      "question": "What happens if you fight with classmates?",
+      "canonical_answer": "a warning",
+      "minimum_acceptable_answer": "a warning",
+      "accepted_answers": [
+        "a warning",
+        "get a warning",
+        "the teacher gives you a warning"
+      ],
+      "required_vocab": [
+        "warning(本课)",
+        "fight(本课)"
+      ],
+      "required_grammar": "G28 情态动词；完整句 will 为原文照抄（原文摘录），最低答案 a warning 不含 will; 上限内（data-answers 已剔除 will 变体，2026-08-11 复核修正）"
+    },
+    {
+      "source": "courseware",
+      "page": 30,
+      "qid": "Q11R_30_0",
+      "passage": "B",
+      "question": "Why was Tom nervous on his first day?",
+      "canonical_answer": "didn't know the rules",
+      "minimum_acceptable_answer": "didn't know the rules",
+      "accepted_answers": [
+        "didn't know the rules",
+        "he didn't know the rules",
+        "did not know the rules",
+        "he did not know the rules"
+      ],
+      "required_vocab": [
+        "rule(本课)",
+        "know(前课)"
+      ],
+      "required_grammar": "didn't 为原文照抄（原文摘录），不要求主动产出过去时; 上限内"
+    },
+    {
+      "source": "courseware",
+      "page": 30,
+      "qid": "Q11R_30_1",
+      "passage": "B",
+      "question": "What time did Tom arrive on his first day?",
+      "canonical_answer": "8:15",
+      "minimum_acceptable_answer": "8:15",
+      "accepted_answers": [
+        "8:15",
+        "at 8:15",
+        "8:15 a.m.",
+        "8:15 am",
+        "at 8:15 a.m.",
+        "at 8:15 am",
+        "eight fifteen"
+      ],
+      "required_vocab": [
+        "arrive(本课)"
+      ],
+      "required_grammar": "G30 时间表达; 上限内"
+    },
+    {
+      "source": "courseware",
+      "page": 30,
+      "qid": "Q11R_30_3",
+      "passage": "B",
+      "question": "How did Tom feel by Friday?",
+      "canonical_answer": "happy",
+      "minimum_acceptable_answer": "happy",
+      "accepted_answers": [
+        "happy",
+        "very happy",
+        "so happy",
+        "he was happy",
+        "he felt happy"
+      ],
+      "required_vocab": [
+        "happy(前课)"
+      ],
+      "required_grammar": "无（形容词作答）; 上限内"
+    },
+    {
+      "source": "courseware",
+      "page": 31,
+      "qid": "Q11R_31_0",
+      "passage": "C",
+      "question": "What do students do in the hallway?",
+      "canonical_answer": "walk, not run",
+      "minimum_acceptable_answer": "walk",
+      "accepted_answers": [
+        "walk",
+        "they walk",
+        "walk, not run",
+        "they walk, not run"
+      ],
+      "required_vocab": [
+        "walk(前课)",
+        "run(前课)",
+        "hallway(本课)"
+      ],
+      "required_grammar": "无（动词原形作答）; 上限内"
+    },
+    {
+      "source": "courseware",
+      "page": 31,
+      "qid": "Q11R_31_1",
+      "passage": "C",
+      "question": "How do rules make school fair?",
+      "canonical_answer": "every student wears a uniform",
+      "minimum_acceptable_answer": "a uniform",
+      "accepted_answers": [
+        "every student wears a uniform",
+        "everyone wears a uniform",
+        "students wear uniforms",
+        "every student wears uniforms",
+        "a uniform",
+        "uniform",
+        "wears a uniform"
+      ],
+      "required_vocab": [
+        "uniform(本课)",
+        "wear(本课)",
+        "student(前课)"
+      ],
+      "required_grammar": "G25 三单 -s（L10 前课）; 上限内"
+    },
+    {
+      "source": "courseware",
+      "page": 31,
+      "qid": "Q11R_31_2",
+      "passage": "C",
+      "question": "How can students understand the lesson?",
+      "canonical_answer": "listen to the teacher and keep quiet",
+      "minimum_acceptable_answer": "listen to the teacher",
+      "accepted_answers": [
+        "listen to the teacher and keep quiet",
+        "listen to the teacher",
+        "they listen to the teacher and keep quiet",
+        "they listen to the teacher",
+        "keep quiet and listen to the teacher"
+      ],
+      "required_vocab": [
+        "listen(本课)",
+        "teacher(前课)",
+        "quiet(本课)"
+      ],
+      "required_grammar": "G28 can（问句情态动词）; 上限内"
+    },
+    {
+      "source": "practice_docx",
+      "passage": "A",
+      "docx_no": 1,
+      "question": "What must the students of Class 7 wear at school?",
+      "canonical_answer": "school uniforms",
+      "minimum_acceptable_answer": "school uniforms",
+      "accepted_answers": [
+        "school uniforms",
+        "uniforms",
+        "their school uniforms",
+        "a school uniform"
+      ],
+      "required_vocab": [
+        "uniform(本课)",
+        "wear(本课)"
+      ],
+      "required_grammar": "无（名词短语作答）; 上限内"
+    },
+    {
+      "source": "practice_docx",
+      "passage": "A",
+      "docx_no": 2,
+      "question": "What must the students do in the hallway?",
+      "canonical_answer": "keep quiet",
+      "minimum_acceptable_answer": "keep quiet",
+      "accepted_answers": [
+        "keep quiet",
+        "be quiet",
+        "they keep quiet"
+      ],
+      "required_vocab": [
+        "quiet(本课)"
+      ],
+      "required_grammar": "无（动词短语作答）; 上限内"
+    },
+    {
+      "source": "practice_docx",
+      "passage": "A",
+      "docx_no": 4,
+      "question": "When must the students arrive at school?",
+      "canonical_answer": "on time",
+      "minimum_acceptable_answer": "on time",
+      "accepted_answers": [
+        "on time",
+        "arrive on time"
+      ],
+      "required_vocab": [
+        "arrive(本课)",
+        "time(前课)"
+      ],
+      "required_grammar": "G30 时间表达; 上限内"
+    },
+    {
+      "source": "practice_docx",
+      "passage": "B",
+      "docx_no": 6,
+      "question": "When does Li Wei arrive at school on his first day?",
+      "canonical_answer": "early",
+      "minimum_acceptable_answer": "early",
+      "accepted_answers": [
+        "early",
+        "very early",
+        "he arrives early"
+      ],
+      "required_vocab": [
+        "arrive(本课)",
+        "early(前课)"
+      ],
+      "required_grammar": "无（副词作答）; 上限内"
+    },
+    {
+      "source": "practice_docx",
+      "passage": "B",
+      "docx_no": 7,
+      "question": "What does Miss Zhang tell the class?",
+      "canonical_answer": "the school rules",
+      "minimum_acceptable_answer": "the rules",
+      "accepted_answers": [
+        "the school rules",
+        "the rules",
+        "school rules"
+      ],
+      "required_vocab": [
+        "rule(本课)"
+      ],
+      "required_grammar": "无（名词短语作答）; 上限内"
+    },
+    {
+      "source": "practice_docx",
+      "passage": "B",
+      "docx_no": 9,
+      "question": "Why do Li Wei's classmates like him?",
+      "canonical_answer": "he follows the rules",
+      "minimum_acceptable_answer": "follows the rules",
+      "accepted_answers": [
+        "he follows the rules",
+        "follows the rules",
+        "because he follows the rules"
+      ],
+      "required_vocab": [
+        "follow(本课)",
+        "rule(本课)"
+      ],
+      "required_grammar": "G25 三单 -s（L10 前课）; 上限内"
+    },
+    {
+      "source": "practice_docx",
+      "passage": "C",
+      "docx_no": 11,
+      "question": "When must the students arrive at school?",
+      "canonical_answer": "at eight o'clock",
+      "minimum_acceptable_answer": "eight o'clock",
+      "accepted_answers": [
+        "at eight o'clock",
+        "eight o'clock",
+        "8:00",
+        "at 8:00",
+        "at 8 o'clock"
+      ],
+      "required_vocab": [
+        "arrive(本课)",
+        "eight(前课)"
+      ],
+      "required_grammar": "G30 时间介词 at（本课）; 上限内"
+    },
+    {
+      "source": "practice_docx",
+      "passage": "C",
+      "docx_no": 12,
+      "question": "What can't the students do in the hallway?",
+      "canonical_answer": "run",
+      "minimum_acceptable_answer": "run",
+      "accepted_answers": [
+        "run",
+        "run or make noise",
+        "make noise",
+        "they can't run"
+      ],
+      "required_vocab": [
+        "run(前课)",
+        "noise(本课)"
+      ],
+      "required_grammar": "G28 can't（本课）; 上限内"
+    },
+    {
+      "source": "practice_docx",
+      "passage": "C",
+      "docx_no": 13,
+      "question": "What does the school do if a student breaks a rule?",
+      "canonical_answer": "punishes him",
+      "minimum_acceptable_answer": "punishes him",
+      "accepted_answers": [
+        "punishes him",
+        "it punishes him",
+        "the school punishes him"
+      ],
+      "required_vocab": [
+        "punish(本课)",
+        "break(本课)",
+        "rule(本课)"
+      ],
+      "required_grammar": "G25 三单 -s（L10 前课）; 上限内"
+    }
+  ]
+}

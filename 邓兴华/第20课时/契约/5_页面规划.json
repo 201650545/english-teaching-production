@@ -1,0 +1,137 @@
+{
+  "course": "第20课 · 语法终点·旅行综合",
+  "stage": "Stage 5",
+  "lesson": "L20",
+  "duration": "90min",
+  "totalPages": 42,
+  "brand": "#065F46",
+  "accent": "#D97706",
+  "bgGradient": "#F0FDF4 → #DCFCE7",
+  "pageIdContract": true,
+  "pageIdRange": "74-83",
+  "style": "S04 自然/森林, travel-journey-timeline",
+  "grammarEndpoint": true,
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "realtime",
+    "exportFormats": ["json", "csv"],
+    "sessionIdRule": "L20_{studentId}_{YYYYMMDD}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  },
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": [
+        {
+          "page": 0,
+          "type": "cover",
+          "title": "第20课 · 语法终点·旅行综合",
+          "subtitle": "Stage 5 · 旅行综合 | 90分钟课程 | G54 语法终点",
+          "objectives": ["掌握20个旅行综合词汇", "掌握G52过去时全套/G53不定代词过去时/G54频度副词跨时态", "完成tion/ture对比拼读"],
+          "meta": [
+            {"label": "核心场景", "value": "旅行综合"},
+            {"label": "新词", "value": "20 Words"},
+            {"label": "时长", "value": "90 min"},
+            {"label": "语法", "value": "G52/G53/G54(终点)"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 2,
+      "pages": [
+        {
+          "page": 1,
+          "type": "review-grammar",
+          "title": "L19 语法回顾",
+          "content": ["G49 复合不定代词分类", "G50 形容词后置", "G51 主谓一致"],
+          "interactions": ["formula-box × 3"]
+        },
+        {
+          "page": 2,
+          "type": "review-vocab",
+          "title": "L19 词汇快闪 + 导入",
+          "content": ["L19 20词分类速览", "3句口头翻译", "导入：Did you go anywhere? Was the journey enjoyable?"],
+          "interactions": ["answer-mask × 3"]
+        }
+      ]
+    },
+    {
+      "name": "新词20",
+      "start": 3,
+      "end": 8,
+      "pages": [
+        {"page": 3, "type": "vocab-group", "title": "旅行场景类 (1-5)", "words": ["building", "trader", "distance", "top", "umbrella"], "layout": "item-board 2col"},
+        {"page": 4, "type": "vocab-group", "title": "天气与感受类 (6-10)", "words": ["foggy", "dislike", "hungry", "hill", "duck"], "layout": "item-board 2col"},
+        {"page": 5, "type": "vocab-group", "title": "动作与认知类 (11-15)", "words": ["enough", "realize", "imagine", "below", "bicycle"], "layout": "item-board 2col"},
+        {"page": 6, "type": "vocab-group", "title": "状态与总结类 (16-20)", "words": ["remain", "memory", "sentence", "entire", "journey"], "layout": "item-board 2col"},
+        {"page": 7, "type": "vocab-matrix", "title": "20词分类矩阵 + 快闪复习", "content": ["语义场分类表格", "mini-flash 20词"], "interactions": ["gtab", "mini-flash-grid"]},
+        {"page": 8, "type": "vocab-preview", "title": "过去时全套预览", "content": ["was/were & did思维导图"]}
+      ]
+    },
+    {
+      "name": "语法3考点",
+      "start": 9,
+      "end": 19,
+      "pages": [
+        {"page": 9, "type": "grammar", "title": "G52 一般过去时全套综合", "content": ["口诀", "全套公式矩阵", "was/were选择规则", "过去时间状语"], "grammarTag": "G52"},
+        {"page": 10, "type": "grammar-examples", "title": "G52 例句精讲 + 混淆项排除", "content": ["6条例句", "5条混淆项排除", "中考辨析didn't+V原形"], "grammarTag": "G52"},
+        {"page": 11, "type": "interactive-1", "title": "旅行时态转换器", "component": "travel-tense", "tenses": ["present", "past"]},
+        {"page": 12, "type": "grammar", "title": "G53 复合不定代词+过去时综合", "content": ["口诀", "公式矩阵", "例句"], "grammarTag": "G53"},
+        {"page": 13, "type": "grammar-examples", "title": "G53 例句精讲 + 易错点", "content": ["5条例句", "3条易错点", "中考辨析不定代词主语→过去时也单数"], "grammarTag": "G53"},
+        {"page": 14, "type": "grammar", "title": "G54 频度副词跨时态对照", "content": ["口诀", "跨时态对照矩阵", "对照例句"], "grammarTag": "G54"},
+        {"page": 15, "type": "grammar-examples", "title": "G54 例句精讲 + 易错点", "content": ["6条对照例句", "3条易错点", "中考辨析跨时态识别"], "grammarTag": "G54"},
+        {"page": 16, "type": "interactive-2", "title": "频度副词时空对照器", "component": "freq-time-machine", "adverbs": ["always", "usually", "often", "sometimes", "hardly", "never"]},
+        {"page": 17, "type": "grammar-compare", "title": "G52/G53/G54 综合对比 + 语法终点", "content": ["三考点横向对比", "过去时→不定代词→频度副词流程图", "G54语法终点标注"], "grammarTag": "G52-G54"},
+        {"page": 18, "type": "quiz", "title": "随堂演练 上（G52+G53）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]},
+        {"page": 19, "type": "quiz", "title": "随堂演练 下（G54+综合）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]}
+      ]
+    },
+    {
+      "name": "阅读理解",
+      "start": 20,
+      "end": 22,
+      "pages": [
+        {"page": 20, "type": "reading", "title": "阅读A篇 A Guide to Green Hill Park", "content": ["161词", "5选择题"]},
+        {"page": 21, "type": "reading", "title": "阅读B篇 An Unforgettable Journey", "content": ["183词", "3选择题"]},
+        {"page": 22, "type": "reading", "title": "阅读B篇（下）+ C篇导入", "content": ["2选择题", "阅读回答问题"]}
+      ]
+    },
+    {
+      "name": "句子练习",
+      "start": 25,
+      "end": 27,
+      "pages": [
+        {"page": 25, "type": "translation", "title": "汉译英 5句", "content": ["过去时2句", "不定代词+过去时2句", "频度副词跨时态1句"], "interactions": ["answer-mask × 5"]},
+        {"page": 26, "type": "sentence-build", "title": "造句练习 5句", "content": ["G52/G53/G54造句"], "interactions": ["answer-mask × 5"]},
+        {"page": 27, "type": "error-correction", "title": "改错练习 5句", "content": ["G52/G53/G54易错点"], "interactions": ["answer-mask × 5"]}
+      ]
+    },
+    {
+      "name": "自然拼读",
+      "start": 28,
+      "end": 33,
+      "pages": [
+        {"page": 28, "type": "phonics", "title": "tion/ʃən/ 与 ture/tʃə/ 对比音素学习", "content": ["tion /ʃən/", "ture /tʃə/"], "grammarTag": "PH"},
+        {"page": 29, "type": "phonics-read", "title": "练习1 朗读词汇表", "content": ["tion × 6词", "ture × 6词"]},
+        {"page": 30, "type": "phonics-exercise", "title": "练习2 听音选词", "content": ["4题听音选词"]},
+        {"page": 31, "type": "phonics-exercise", "title": "练习3 看词归音", "content": ["4题看词归音"]},
+        {"page": 32, "type": "phonics-exercise", "title": "练习4 最小对立对辨析", "content": ["4题最小对立对"]},
+        {"page": 33, "type": "phonics-summary", "title": "拼读总结 + L19-L20联动", "content": ["mini-flash拼读总结", "L19-L20拼读联动回顾"]}
+      ]
+    },
+    {
+      "name": "课堂总结",
+      "start": 34,
+      "end": 34,
+      "pages": [
+        {"page": 34, "type": "summary", "title": "核心总结 + 语法终点标注", "content": ["G52/G53/G54三卡片", "20词快闪", "口诀汇总", "过去时全套综合思维导图", "G54语法终点标注：七上+七下+八上语法授课完成"]}
+      ]
+    }
+  ]
+}

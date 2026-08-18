@@ -1,0 +1,130 @@
+{
+  "course": "第06课 · 一般现在时实义动词与 want/like 表达",
+  "stage": "Stage 2",
+  "lesson": "L06",
+  "duration": "90min",
+  "totalPages": 28,
+  "brand": "#27AE60",
+  "accent": "#E67E22",
+  "bgGradient": "#F4F9F4 → #E8F5E9",
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "realtime",
+    "exportFormats": ["json", "csv"],
+    "sessionIdRule": "L06_{studentId}_{YYYYMMDD}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  },
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": [
+        {
+          "page": 0,
+          "type": "cover",
+          "title": "第06课 · 一般现在时实义动词与 want/like 表达",
+          "subtitle": "Stage 2 · 食物·健康饮食 | 90分钟课程",
+          "objectives": ["掌握20个食物与饮食核心词汇", "理解一般现在时非三单/可数不可数/want to do", "完成26字母总复习+易混音辨析"],
+          "meta": [{"label": "核心场景", "value": "食物饮食"}, {"label": "新词", "value": "20 Words"}, {"label": "时长", "value": "90 min"}, {"label": "语法", "value": "G16/G17/G18"}]
+        }
+      ]
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 3,
+      "pages": [
+        {
+          "page": 1,
+          "type": "review-grammar",
+          "title": "L5 语法回顾",
+          "content": ["G13 祈使句口诀", "G14 What问句口诀", "G15 like搭配口诀"],
+          "interactions": ["formula-box × 3"]
+        },
+        {
+          "page": 2,
+          "type": "review-vocab",
+          "title": "L5 词汇快闪 + 句型复习",
+          "content": ["L5 20词分类速览", "3句口头翻译"],
+          "interactions": ["answer-mask × 3"]
+        }
+      ]
+    },
+    {
+      "name": "新词20",
+      "start": 4,
+      "end": 9,
+      "pages": [
+        {"page": 3, "type": "vocab-group", "title": "食物名词 A组 (1-5)", "words": ["food", "fruit", "vegetable", "apple", "banana"], "layout": "item-board 2col"},
+        {"page": 4, "type": "vocab-group", "title": "食物名词 B组 (6-10)", "words": ["orange", "strawberry", "tomato", "potato", "milk"], "layout": "item-board 2col"},
+        {"page": 5, "type": "vocab-group", "title": "食物名词 C组 + 动词 (11-15)", "words": ["bread", "chicken", "rice", "eggs", "breakfast"], "layout": "item-board 2col"},
+        {"page": 6, "type": "vocab-group", "title": "三餐 + 动词 (16-20)", "words": ["lunch", "dinner", "like", "want", "eat"], "layout": "item-board 2col"},
+        {"page": 7, "type": "vocab-matrix", "title": "20词分类矩阵 + 快闪复习", "content": ["可数/不可数分类表格", "mini-flash 20词", "检查清单"], "interactions": ["gtab", "mini-flash-grid"]},
+        {"page": 8, "type": "vocab-preview", "title": "可数/不可数分类预览", "content": ["可数 vs 不可数对照表", "20词分类预览"], "interactions": ["sort-preview"]}
+      ]
+    },
+    {
+      "name": "语法3考点",
+      "start": 10,
+      "end": 18,
+      "pages": [
+        {"page": 9, "type": "grammar", "title": "G16 一般现在时非三单肯定与don't否定", "content": ["口诀", "公式矩阵", "实例对照表", "防越级约束"], "grammarTag": "G16"},
+        {"page": 10, "type": "grammar-examples", "title": "G16 例句精讲 + 易错点", "content": ["4条例句", "4条易错点", "中考辨析"], "grammarTag": "G16"},
+        {"page": 11, "type": "interactive-1", "title": "餐盘分类挑战", "component": "plate-scene", "buttons": ["I like!", "I don't like!"], "animations": ["bounceIn", "shakeX", "slideInLeft"]},
+        {"page": 12, "type": "grammar", "title": "G17 可数与不可数名词分类", "content": ["口诀", "公式矩阵", "20词分类对照表", "防越级约束"], "grammarTag": "G17"},
+        {"page": 13, "type": "grammar-examples", "title": "G17 例句精讲 + 易错点", "content": ["4条例句", "5条易错点", "中考辨析"], "grammarTag": "G17"},
+        {"page": 14, "type": "grammar", "title": "G18 want to do sth. 结构", "content": ["口诀", "公式矩阵", "螺旋递进路径", "防越级约束"], "grammarTag": "G18"},
+        {"page": 15, "type": "grammar-examples", "title": "G18 例句精讲 + 易错点", "content": ["4条例句", "4条易错点", "中考辨析"], "grammarTag": "G18"},
+        {"page": 16, "type": "interactive-2", "title": "食谱设计工坊", "component": "recipe-scene", "icons": ["🍎", "🍌", "🍞", "🥛", "🍚", "🥚", "🍗", "🥗"], "subjectSwitch": ["I", "We", "They"]},
+        {"page": 17, "type": "grammar-compare", "title": "语法综合对比表", "content": ["G16/G17/G18横向对比"]}
+      ]
+    },
+    {
+      "name": "随堂演练",
+      "start": 18,
+      "end": 19,
+      "pages": [
+        {"page": 18, "type": "quiz", "title": "随堂演练 上 (G16+G17)", "questions": 4, "interactions": ["checkQuiz × 4"]},
+        {"page": 19, "type": "quiz", "title": "随堂演练 下 (G18+综合)", "questions": 4, "interactions": ["checkQuiz × 4"]}
+      ]
+    },
+    {
+      "name": "阅读理解",
+      "start": 20,
+      "end": 22,
+      "pages": [
+        {"page": 20, "type": "reading", "title": "阅读A篇 — Healthy Eating Habits", "wordCount": 86, "questions": 5},
+        {"page": 21, "type": "reading", "title": "阅读B篇 — A Survey on Students' Eating Habits (上)", "wordCount": 107, "questions": 3},
+        {"page": 22, "type": "reading", "title": "阅读B篇 (下) + 五选四", "wordCount": 106, "questions": 5}
+      ]
+    },
+    {
+      "name": "句子练习",
+      "start": 23,
+      "end": 25,
+      "pages": [
+        {"page": 23, "type": "translation", "title": "汉译英 5句", "interactions": ["answer-mask × 5"]},
+        {"page": 24, "type": "sentence-building", "title": "造句练习 5句", "interactions": ["answer-mask × 5"]},
+        {"page": 25, "type": "error-correction", "title": "改错练习 5句", "interactions": ["answer-mask × 5"]}
+      ]
+    }
+  ],
+  "phonicsSection": {
+    "note": "自然拼读6页在句子练习之后、课堂总结之前",
+    "type": "26字母总复习+易混音对",
+    "pages": [
+      {"type": "phonics-review", "title": "26字母总复习 + 5组易混音对", "letters": "Aa-Zz", "pairs": ["b/d", "p/q", "m/n", "f/v", "e/i"]},
+      {"type": "phonics-exercise-1", "title": "易混音对朗读词汇表", "wordCount": 20},
+      {"type": "phonics-exercise-2", "title": "听音辨对", "questions": 4},
+      {"type": "phonics-exercise-3-4", "title": "看词归音 + 最小对立对听辨", "questions": 8}
+    ]
+  },
+  "summary": {
+    "page": "last",
+    "type": "summary",
+    "title": "第06课 · 核心总结",
+    "content": ["summary-grid 三卡片", "20词 mini-flash", "super-mn 口诀汇总"]
+  }
+}

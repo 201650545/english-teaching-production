@@ -1,0 +1,264 @@
+{
+  "lesson": "L28",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A/B/C 篇各 7 题：4 无选项 + 3 有选项（讲评页题量 7·按 3:2 比例混合）；五选四（§3.16）不纳入 3+2",
+  "vocab_pool": [
+    "development",
+    "modernization",
+    "urban",
+    "rural",
+    "reform",
+    "economy",
+    "society",
+    "scientific",
+    "innovation",
+    "environment",
+    "pollution",
+    "protection",
+    "education",
+    "medicine",
+    "transportation",
+    "network",
+    "agriculture",
+    "business",
+    "criterion",
+    "quality"
+  ],
+  "grammar_cap": "G64 since+时间点 / for+时间段 / been to / gone to / been in——答案均为 since/for+完成时原文摘录，不越级",
+  "skip_pages": [
+    "阅读五选四页（§3.16 空格选答原型，不动）",
+    "阅读策略页（策略题，保留选择）"
+  ],
+  "A篇_The_Changes_in_My_Hometown": {
+    "Q067": {
+      "question": "家乡自哪一年起变化很大？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "2010",
+      "minimum_acceptable_answer": "2010",
+      "accepted_answers": [
+        "2010",
+        "since 2010",
+        "from 2010"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q068": {
+      "question": "经济发生了什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "it has grown quickly",
+      "minimum_acceptable_answer": "quickly",
+      "accepted_answers": [
+        "it has grown quickly",
+        "the economy has grown quickly",
+        "grown quickly",
+        "has grown quickly",
+        "quickly"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q069": {
+      "question": "'has changed' 用的是？",
+      "type": "opt",
+      "correct": "C",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q070": {
+      "question": "'since 2010' 中 since 后接？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q071": {
+      "question": "我在这里住了二十年。I have lived here ____ twenty years. 检查",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "for",
+      "minimum_acceptable_answer": "for",
+      "accepted_answers": [
+        "for"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "G64 for+时间段（本课考点）"
+    },
+    "Q072": {
+      "question": "作者在这里住了多久？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "for twenty years",
+      "minimum_acceptable_answer": "20 years",
+      "accepted_answers": [
+        "for twenty years",
+        "twenty years",
+        "20 years",
+        "for 20 years",
+        "he has lived here for twenty years"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q073": {
+      "question": "'has grown' 用的是？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    }
+  },
+  "B篇_Since_I_Was_Born": {
+    "Q074": {
+      "question": "小镇发生了什么变化？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "it has built new schools and hospitals",
+      "minimum_acceptable_answer": "new schools and hospitals",
+      "accepted_answers": [
+        "new schools and hospitals",
+        "it has built new schools and hospitals",
+        "built new schools and hospitals",
+        "the town has built new schools and hospitals"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q075": {
+      "question": "作者多久去一次大城市？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "many times",
+      "minimum_acceptable_answer": "many times",
+      "accepted_answers": [
+        "many times",
+        "he has been to the big city many times",
+        "to the big city many times"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q076": {
+      "question": "'has built' 用的是？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q077": {
+      "question": "堂弟去了城市，？",
+      "type": "opt",
+      "correct": "B",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q078": {
+      "question": "我的家人住了十五年。My family ____ (live) here for fifteen years. 检查",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "has lived",
+      "minimum_acceptable_answer": "has lived",
+      "accepted_answers": [
+        "has lived"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "G64 现在完成时 has lived（本课考点）"
+    },
+    "Q079": {
+      "question": "农民们种了什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "more trees",
+      "minimum_acceptable_answer": "trees",
+      "accepted_answers": [
+        "more trees",
+        "planted more trees",
+        "the farmers have planted more trees",
+        "trees"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q080": {
+      "question": "'has gone to' 表？",
+      "type": "opt",
+      "correct": "B",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    }
+  },
+  "C篇_A_Modern_Farm": {
+    "Q081": {
+      "question": "农场用了什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "new technology",
+      "minimum_acceptable_answer": "technology",
+      "accepted_answers": [
+        "new technology",
+        "technology",
+        "the farm has used new technology",
+        "new technology to grow crops"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q082": {
+      "question": "产品质量发生了什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "it has improved a lot",
+      "minimum_acceptable_answer": "improved a lot",
+      "accepted_answers": [
+        "it has improved",
+        "it has improved a lot",
+        "improved a lot",
+        "has improved a lot",
+        "the quality of the products has improved a lot"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q083": {
+      "question": "'has used' 用的是？",
+      "type": "opt",
+      "correct": "B",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q084": {
+      "question": "'has been in business' 表？",
+      "type": "opt",
+      "correct": "C",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q085": {
+      "question": "我参观了农场几次。I ____ (visit) the farm several times. 检查",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "have visited",
+      "minimum_acceptable_answer": "have visited",
+      "accepted_answers": [
+        "have visited"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "G64 现在完成时 have visited（本课考点）"
+    },
+    "Q086": {
+      "question": "农场向城市供应了什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "vegetables",
+      "minimum_acceptable_answer": "vegetables",
+      "accepted_answers": [
+        "vegetables",
+        "vegetables to the city",
+        "the farm has supplied vegetables",
+        "vegetables to cities"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q087": {
+      "question": "'has helped' 用的是？",
+      "type": "opt",
+      "correct": "C",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    }
+  }
+}

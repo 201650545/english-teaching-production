@@ -1,0 +1,906 @@
+
+  <div class="page-content">
+    <h1 class="page-title">课堂总结</h1>
+    <p class="page-subtitle"></p>
+
+  <span class="section-badge summary">课堂总结 · Summary</span>
+  <h1 class="slide-title">第15课 · 核心总结</h1>
+  <p class="slide-subtitle">G40 · G41 · G42 · 20词 · oo/ew 拼读</p>
+  <div class="scroll-area">
+    <div class="summary-grid">
+      <div class="summary-card sc-g40 anim-scaleUp">
+        <span class="sc-tag">G40</span>
+        <div class="sc-title">天气表达句型</div>
+        <div class="sc-mn">How's the weather? = What's the weather like? / It's sunny. / The temperature is 25 degrees.</div>
+      </div>
+      <div class="summary-card sc-g41 anim-scaleUp" style="animation-delay:.1s">
+        <span class="sc-tag">G41</span>
+        <div class="sc-title">Could/Would you please 礼貌请求</div>
+        <div class="sc-mn">Could you please + 原形 / Would you please + 原形 / Could I + 原形 / Would you like + 名词</div>
+      </div>
+      <div class="summary-card sc-g42 anim-scaleUp" style="animation-delay:.2s">
+        <span class="sc-tag">G42</span>
+        <div class="sc-title">非人称代词 It</div>
+        <div class="sc-mn">It's sunny（天气）/ It's seven（时间）/ It's far（距离）/ It's time to do / It's time for sth.</div>
+      </div>
+    </div>
+    <div class="super-mn">
+      <div class="smn-title">三大口诀汇总</div>
+      <div class="smn-line"><span class="smn-tag" style="background:var(--brand)">G40</span>"How's the weather 问天气，What's the weather like 也可以；It's sunny/rainy 来回答，温度用 degrees"</div>
+      <div class="smn-line"><span class="smn-tag" style="background:var(--accent)">G41</span>"Could you please 礼貌求，Would you please 委婉问；please 后接动词原形，回答 Sure/Certainly 最相称"</div>
+      <div class="smn-line"><span class="smn-tag" style="background:var(--blue-info)">G42</span>"It 不只是代词，天气时间距离它；It's sunny 说天气，It's seven 说时间；It's far 说距离"</div>
+    </div>
+    <div class="mini-flash-grid" style="grid-template-columns:repeat(5,1fr)">
+      <div class="mini-flash-item"><div class="mf-word">weather</div></div>
+      <div class="mini-flash-item"><div class="mf-word">sunny</div></div>
+      <div class="mini-flash-item"><div class="mf-word">rainy</div></div>
+      <div class="mini-flash-item"><div class="mf-word">cloudy</div></div>
+      <div class="mini-flash-item"><div class="mf-word">windy</div></div>
+      <div class="mini-flash-item"><div class="mf-word">snowy</div></div>
+      <div class="mini-flash-item"><div class="mf-word">warm</div></div>
+      <div class="mini-flash-item"><div class="mf-word">cold</div></div>
+      <div class="mini-flash-item"><div class="mf-word">cool</div></div>
+      <div class="mini-flash-item"><div class="mf-word">hot</div></div>
+      <div class="mini-flash-item"><div class="mf-word">dry</div></div>
+      <div class="mini-flash-item"><div class="mf-word">wet</div></div>
+      <div class="mini-flash-item"><div class="mf-word">season</div></div>
+      <div class="mini-flash-item"><div class="mf-word">spring</div></div>
+      <div class="mini-flash-item"><div class="mf-word">summer</div></div>
+      <div class="mini-flash-item"><div class="mf-word">autumn</div></div>
+      <div class="mini-flash-item"><div class="mf-word">winter</div></div>
+      <div class="mini-flash-item"><div class="mf-word">vacation</div></div>
+      <div class="mini-flash-item"><div class="mf-word">trip</div></div>
+      <div class="mini-flash-item"><div class="mf-word">degree</div></div>
+    </div>
+    <div class="ok-box mt-12" style="text-align:center">
+      <span class="ok-title">课程完成</span>
+      <span style="font-size:16px">恭喜完成第15课学习！你已经掌握了20个天气与度假词汇、3个语法考点和oo/ew拼读！</span>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+</div>
+<div class="page-counter" id="pageCounter">1 / 45</div>
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)"><div class="modal-content" id="modalContent"></div></div>
+<script>
+/* ==================== Web Audio API ==================== */
+var audioCtx = null;
+function initAudio(){
+  if(!audioCtx){
+    try{ audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }catch(e){ console.log('Audio not supported'); }
+  }
+  if(audioCtx && audioCtx.state === 'suspended'){ audioCtx.resume(); }
+}
+function playCorrect(){
+  initAudio();
+  if(!audioCtx) return;
+  var freqs = [523.25, 659.25, 783.99];
+  freqs.forEach(function(f, i){
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.value = f;
+    gain.gain.setValueAtTime(0, audioCtx.currentTime + i * 0.12);
+    gain.gain.linearRampToValueAtTime(0.2, audioCtx.currentTime + i * 0.12 + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.12 + 0.1);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(audioCtx.currentTime + i * 0.12);
+    osc.stop(audioCtx.currentTime + i * 0.12 + 0.1);
+  });
+}
+function playError(){
+  initAudio();
+  if(!audioCtx) return;
+  var freqs = [392.0, 261.63];
+  freqs.forEach(function(f, i){
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
+    osc.type = 'square';
+    osc.frequency.value = f;
+    gain.gain.setValueAtTime(0, audioCtx.currentTime + i * 0.25);
+    gain.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + i * 0.25 + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.25 + 0.2);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(audioCtx.currentTime + i * 0.25);
+    osc.stop(audioCtx.currentTime + i * 0.25 + 0.2);
+  });
+}
+function playPageTurn(){
+  initAudio();
+  if(!audioCtx) return;
+  var osc = audioCtx.createOscillator();
+  var gain = audioCtx.createGain();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(400, audioCtx.currentTime + 0.08);
+  gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.08);
+}
+
+
+/* ==================== IndexedDB 数据采集 ==================== */
+var db = null;
+var DB_NAME = 'EnglishCoursewareDB';
+var DB_VERSION = 1;
+var STORE_NAME = 'answerRecords';
+var studentId = 'stu_xyj';
+var sessionId = 'L15_' + new Date().toISOString().slice(0,10).replace(/-/g,'');
+var answerRecords = [];
+
+function initDB(){
+  if(!window.indexedDB){ console.log('IndexedDB not supported'); return; }
+  var request = indexedDB.open(DB_NAME, DB_VERSION);
+  request.onerror = function(e){ console.log('DB error:', e); };
+  request.onsuccess = function(e){ db = e.target.result; loadExistingRecords(); };
+  request.onupgradeneeded = function(e){
+    db = e.target.result;
+    if(!db.objectStoreNames.contains(STORE_NAME)){
+      var store = db.createObjectStore(STORE_NAME, {keyPath: 'event_id'});
+      store.createIndex('student_id', 'student_id', {unique: false});
+      store.createIndex('question_id', 'question_id', {unique: false});
+      store.createIndex('session_id', 'session_id', {unique: false});
+    }
+  };
+}
+function loadExistingRecords(){
+  if(!db) return;
+  var tx = db.transaction([STORE_NAME], 'readonly');
+  var store = tx.objectStore(STORE_NAME);
+  var idx = store.index('session_id');
+  var req = idx.getAll(sessionId);
+  req.onsuccess = function(e){
+    answerRecords = e.target.result || [];
+    updateSyncStatus();
+  };
+}
+function saveAnswer(questionId, studentAnswer, correctAnswer, isCorrect, attemptNo, timeUsed, hintUsed){
+  if(!db) return;
+  var event_id = studentId + '_' + sessionId + '_' + questionId + '_' + (attemptNo || 1);
+  var record = {
+    event_id: event_id,
+    student_id: studentId,
+    session_id: sessionId,
+    question_id: questionId,
+    attempt_no: attemptNo || 1,
+    student_answer: studentAnswer,
+    correct_answer: correctAnswer,
+    is_correct: isCorrect,
+    time_used: timeUsed || 0,
+    hint_used: hintUsed || false,
+    timestamp: new Date().toISOString(),
+    synced: 'pending'
+  };
+  var tx = db.transaction([STORE_NAME], 'readwrite');
+  var store = tx.objectStore(STORE_NAME);
+  store.put(record);
+  answerRecords.push(record);
+  updateSyncStatus();
+}
+function updateSyncStatus(){
+  var pending = answerRecords.filter(function(r){ return r.synced === 'pending'; }).length;
+  var dot = document.getElementById('syncDot');
+  var text = document.getElementById('syncText');
+  if(!dot) return;
+  if(pending === 0){
+    dot.className = 'sync-dot';
+    text.textContent = '本地已保存 (' + answerRecords.length + '条)';
+  } else {
+    dot.className = 'sync-dot pending';
+    text.textContent = '待同步 (' + pending + '/' + answerRecords.length + ')';
+  }
+}
+function exportData(e){
+  if(e) e.stopPropagation();
+  if(answerRecords.length === 0){
+    alert('暂无答题数据可导出');
+    return;
+  }
+  var json = JSON.stringify(answerRecords, null, 2);
+  var csv = convertToCSV(answerRecords);
+  var jsonBlob = new Blob([json], {type: 'application/json'});
+  var csvBlob = new Blob(['\uFEFF' + csv], {type: 'text/csv'});
+  var jsonLink = document.createElement('a');
+  jsonLink.href = URL.createObjectURL(jsonBlob);
+  jsonLink.download = 'L15_answers.json';
+  jsonLink.click();
+  setTimeout(function(){
+    var csvLink = document.createElement('a');
+    csvLink.href = URL.createObjectURL(csvBlob);
+    csvLink.download = 'L15_answers.csv';
+    csvLink.click();
+  }, 300);
+}
+function convertToCSV(records){
+  var headers = ['event_id','student_id','session_id','question_id','attempt_no','student_answer','correct_answer','is_correct','time_used','hint_used','timestamp'];
+  var csv = headers.join(',') + '\n';
+  records.forEach(function(r){
+    var row = headers.map(function(h){
+      var val = r[h] !== undefined ? String(r[h]) : '';
+      if(val.indexOf(',') !== -1 || val.indexOf('"') !== -1){ val = '"' + val.replace(/"/g, '""') + '"'; }
+      return val;
+    });
+    csv += row.join(',') + '\n';
+  });
+  return csv;
+}
+
+
+/* ==================== 页面导航系统 ==================== */
+var currentPage = 1;
+var totalPages = 25;
+var segmentPages = {1:[2,3], 2:[4,9], 3:[10,14], 4:[15,16], 5:[17,19], 6:[20,21], 7:[22,24], 8:[25,25]};
+
+function goToPage(pageNum){
+  if(pageNum < 1 || pageNum > totalPages) return;
+  initAudio();
+  var oldPage = document.getElementById('page' + currentPage);
+  var newPage = document.getElementById('page' + pageNum);
+  if(oldPage){ oldPage.classList.remove('active'); oldPage.scrollTop = 0; }
+  if(newPage){ newPage.classList.add('active'); newPage.scrollTop = 0; }
+  currentPage = pageNum;
+  updateNav();
+  updateCounter();
+  playPageTurn();
+}
+function nextPage(){ if(currentPage < totalPages) goToPage(currentPage + 1); }
+function prevPage(){ if(currentPage > 1) goToPage(currentPage - 1); }
+function jumpToSegment(seg){
+  var pages = segmentPages[seg];
+  if(pages) goToPage(pages[0]);
+}
+function updateNav(){
+  var items = document.querySelectorAll('.nav-item');
+  items.forEach(function(item){
+    var seg = parseInt(item.dataset.segment);
+    var pages = segmentPages[seg];
+    if(currentPage >= pages[0] && currentPage <= pages[1]){
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
+function updateCounter(){
+  document.getElementById('pageCounter').textContent = currentPage + ' / ' + totalPages;
+}
+
+
+/* ==================== 翻页区域 ==================== */
+document.addEventListener('click', function(e){
+  if(e.target.closest('.quiz-opt') || e.target.closest('.game-option') ||
+     e.target.closest('.fill-check-btn') || e.target.closest('.fill-input') ||
+     e.target.closest('.nav-item') || e.target.closest('.vocab-card') ||
+     e.target.closest('.flip-card') || e.target.closest('.mnemonic-card') ||
+     e.target.closest('.error-type-card') || e.target.closest('.exam-type-card') ||
+     e.target.closest('.eval-card') || e.target.closest('.cover-nav-item') ||
+     e.target.closest('.modal-content') || e.target.closest('.export-btn') ||
+     e.target.closest('.drag-word') || e.target.closest('.drag-submit') ||
+     e.target.closest('.drag-container') || e.target.closest('.link-container') ||
+     e.target.closest('.order-container') ||
+     e.target.closest('.match-item') || e.target.closest('.pos-word') ||
+     e.target.closest('button') || e.target.closest('input') ||
+     e.target.closest('.game-progress-dot') || e.target.closest('.q-nav-item') ||
+     e.target.closest('.game-item') || e.target.closest('.answer-mask') ||
+     e.target.closest('.ci-box') || e.target.closest('.quiz-option') ||
+     e.target.closest('.arena-opt') || e.target.closest('[onclick^="selectFiveFour"]')){
+    return;
+  }
+  var container = document.getElementById('pagesContainer');
+  var rect = container.getBoundingClientRect();
+  var x = e.clientX - rect.left;
+  if(x < rect.width / 2){ prevPage(); }
+  else { nextPage(); }
+});
+
+
+/* ==================== 键盘导航 ==================== */
+document.addEventListener('keydown', function(e){
+  if(e.target.tagName === 'INPUT') return;
+  if(e.key === 'ArrowLeft' || e.key === 'ArrowUp'){ prevPage(); }
+  else if(e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' '){ e.preventDefault(); nextPage(); }
+  else if(e.key === 'f' || e.key === 'F'){
+    if(!document.fullscreenElement){ document.documentElement.requestFullscreen(); }
+    else { document.exitFullscreen(); }
+  }
+});
+
+
+/* ==================== 弹窗 ==================== */
+function closeModal(e){
+  if(e && e.target !== document.getElementById('modalOverlay')) return;
+  document.getElementById('modalOverlay').classList.remove('show');
+}
+
+
+var studentId='stu_dxh';
+
+var totalPages = 45;
+var segmentPages = {"0": [1, 1], "1": [2, 2], "2": [3, 4], "3": [5, 10], "4": [11, 20], "5": [21, 38], "6": [39, 41], "7": [42, 44], "8": [45, 45]};
+var PAGE_META = {"1": {"p": "CORE", "m": 5}, "2": {"p": "CORE", "m": 5}, "3": {"p": "CORE", "m": 5}, "4": {"p": "CORE", "m": 5}, "5": {"p": "CORE", "m": 5}, "6": {"p": "CORE", "m": 5}, "7": {"p": "CORE", "m": 5}, "8": {"p": "CORE", "m": 5}, "9": {"p": "CORE", "m": 5}, "10": {"p": "CORE", "m": 5}, "11": {"p": "CORE", "m": 5}, "12": {"p": "CORE", "m": 5}, "13": {"p": "CORE", "m": 5}, "14": {"p": "CORE", "m": 5}, "15": {"p": "CORE", "m": 5}, "16": {"p": "CORE", "m": 5}, "17": {"p": "CORE", "m": 5}, "18": {"p": "CORE", "m": 5}, "19": {"p": "CORE", "m": 5}, "20": {"p": "CORE", "m": 5}, "21": {"p": "CORE", "m": 5}, "22": {"p": "CORE", "m": 5}, "23": {"p": "CORE", "m": 5}, "24": {"p": "CORE", "m": 5}, "25": {"p": "CORE", "m": 5}, "26": {"p": "CORE", "m": 5}, "27": {"p": "CORE", "m": 5}, "28": {"p": "CORE", "m": 5}, "29": {"p": "CORE", "m": 5}, "30": {"p": "CORE", "m": 5}, "31": {"p": "CORE", "m": 5}, "32": {"p": "CORE", "m": 5}, "33": {"p": "CORE", "m": 5}, "34": {"p": "CORE", "m": 5}, "35": {"p": "CORE", "m": 5}, "36": {"p": "CORE", "m": 5}, "37": {"p": "CORE", "m": 5}, "38": {"p": "CORE", "m": 5}, "39": {"p": "CORE", "m": 5}, "40": {"p": "CORE", "m": 5}, "41": {"p": "CORE", "m": 5}, "42": {"p": "CORE", "m": 5}, "43": {"p": "CORE", "m": 5}, "44": {"p": "CORE", "m": 5}, "45": {"p": "CORE", "m": 5}};
+function flipCard(el){ el.classList.toggle('flipped'); }
+function burst(el){
+  var r=el.getBoundingClientRect(), cx=r.left+r.width/2, cy=r.top+r.height/2;
+  for(var i=0;i<14;i++){
+    var p=document.createElement('div'); p.className='burst-p';
+    var a=Math.random()*6.283, d=50+Math.random()*70;
+    p.style.left=cx+'px'; p.style.top=cy+'px';
+    p.style.setProperty('--dx',(Math.cos(a)*d)+'px'); p.style.setProperty('--dy',(Math.sin(a)*d)+'px');
+    p.style.background=(Math.random()<0.5?'#FFD700':'#E63946');
+    document.body.appendChild(p);
+    (function(x){ setTimeout(function(){ x.remove(); },700); })(p);
+  }
+}
+function shake(el){ el.style.animation='none'; void el.offsetWidth; el.style.animation='shake .4s'; }
+function checkOpt(btn){
+  // 兼容旧调用：若传入的事件对象（checkOpt(event)），用 currentTarget 取回绑定的按钮元素
+  if(btn && btn.currentTarget && btn.currentTarget.classList && btn.currentTarget.classList.contains('quiz-opt')){
+    btn = btn.currentTarget;
+  }
+  var q=btn.closest('.quiz-container')||btn.closest('.quiz-q')||btn.parentNode; if(q.dataset.done) return; q.dataset.done='1';
+  var opts=q.querySelectorAll('.quiz-opt');
+  // 不再 disabled（disabled 会吞掉 dblclick 事件），改用 locked 视觉锁定 + dataset 防重答
+  for(var i=0;i<opts.length;i++){ opts[i].classList.add('locked'); }
+  var ok=btn.dataset.correct==='1';
+  // 先保存再反馈（08 规范：先入库后反馈）；缺 qid 的旧结构题（如五选四 .w5-opts）跳过
+  if(typeof saveAnswer==='function' && q.dataset.qid){
+    var qid=q.dataset.qid, ca='';
+    for(var j=0;j<opts.length;j++){ if(opts[j].dataset.correct==='1'){ ca=opts[j].textContent.replace(/^[A-E]\.\s*/,'').trim(); } }
+    saveAnswer(qid, btn.textContent.replace(/^[A-E]\.\s*/,'').trim(), ca, ok,
+               parseInt(q.dataset.attempt||'1',10), 0, false);
+  }
+  if(ok){ btn.classList.add('opt-correct'); playCorrect(); burst(btn); }
+  else{ q.dataset.wrong='1'; btn.classList.add('opt-wrong'); playError(); shake(btn);
+    for(var i=0;i<opts.length;i++){ if(opts[i].dataset.correct==='1'){ opts[i].classList.add('opt-correct'); } }
+    var h=q.querySelector('.et-undo-hint');
+    if(!h){ h=document.createElement('div'); h.className='et-undo-hint'; h.onclick=function(ev){ ev.stopPropagation(); }; q.appendChild(h); }
+    h.textContent='答错后双击可撤销回答';
+  }
+}
+function undoQuiz(q){
+  var opts=q.querySelectorAll('.quiz-opt');
+  for(var i=0;i<opts.length;i++){ opts[i].classList.remove('opt-correct','opt-wrong','locked'); }
+  delete q.dataset.done; delete q.dataset.wrong;
+  q.dataset.attempt=String(parseInt(q.dataset.attempt||'1',10)+1); // 重答新增尝试，首次答案不覆盖（§3.8）
+  var h=q.querySelector('.et-undo-hint');
+  if(h){ h.textContent='已撤销，请重答'; setTimeout(function(){ if(h.parentNode) h.parentNode.removeChild(h); }, 3000); }
+}
+// §3.8.2 答错后双击撤销（容错交互）：双击错题选项（或小字提示）立即复原重答
+document.addEventListener('dblclick', function(e){
+  var q=e.target.closest('.quiz-q');
+  if(q && q.dataset.done==='1' && q.dataset.wrong==='1') undoQuiz(q);
+});
+
+/* ==================== L15 交互补全（9 函数修复） ==================== */
+/* --- toggleMask：answer-mask 点击揭晓答案；双击撤销（不触发翻页） --- */
+function toggleMask(el){
+  el.classList.toggle('revealed');
+}
+document.addEventListener('dblclick', function(e){
+  var m=e.target.closest('.answer-mask');
+  if(m && m.classList.contains('revealed')){ m.classList.remove('revealed'); }
+});
+/* --- toggleCheck：勾选清单（page3 词汇备选清单） --- */
+function toggleCheck(box){
+  box.classList.toggle('checked');
+}
+/* --- matchGame：英中配对消消乐（page3 #t1Board） --- */
+var t1Selected=null;
+function matchGame(el, key){
+  if(el.classList.contains('matched')) return;
+  if(el.classList.contains('selected')){ el.classList.remove('selected'); t1Selected=null; return; }
+  if(!t1Selected){ t1Selected=el; el.classList.add('selected'); return; }
+  var a=t1Selected, b=el; t1Selected=null;
+  var tries=document.getElementById('t1Tries');
+  if(tries){ tries.textContent=String(parseInt(tries.textContent||'0',10)+1); }
+  if(a!==b && a.dataset.pair===b.dataset.pair){
+    a.classList.add('matched'); b.classList.add('matched');
+    a.classList.remove('selected'); b.classList.remove('selected');
+    var sc=document.getElementById('t1Score');
+    if(sc){ sc.textContent=String(parseInt(sc.textContent||'0',10)+1); }
+    var mt=document.getElementById('t1Matched');
+    if(mt){ mt.textContent=String(parseInt(mt.textContent||'0',10)+1); }
+    if(typeof playCorrect==='function') playCorrect();
+  } else {
+    a.classList.add('mismatch'); b.classList.add('mismatch');
+    a.classList.remove('selected'); b.classList.remove('selected');
+    if(typeof playError==='function') playError();
+    var ra=a, rb=b;
+    setTimeout(function(){ ra.classList.remove('mismatch'); rb.classList.remove('mismatch'); }, 460);
+  }
+}
+/* --- startT2：词汇竞技场（page4）看英文选中文，5条命 --- */
+var T2_WORDS=[
+  {e:'height',z:'身高'},{e:'weight',z:'体重'},{e:'medium',z:'中等的'},{e:'thin',z:'瘦的'},
+  {e:'heavy',z:'重的'},{e:'tall',z:'高的'},{e:'short',z:'矮的'},{e:'straight',z:'直的'},
+  {e:'curly',z:'卷曲的'},{e:'hair',z:'头发'},{e:'eye',z:'眼睛'},{e:'face',z:'脸'},
+  {e:'glass',z:'眼镜'},{e:'actor',z:'男演员'},{e:'actress',z:'女演员'},{e:'singer',z:'歌手'},
+  {e:'artist',z:'艺术家'},{e:'describe',z:'描述'},{e:'person',z:'人'},{e:'appearance',z:'外貌'}
+];
+function t2Shuffle(arr){
+  for(var i=arr.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=arr[i]; arr[i]=arr[j]; arr[j]=t; }
+  return arr;
+}
+var t2State={order:[],idx:0,lives:5,score:0,answered:0,correct:0};
+function startT2(){
+  var order=[]; for(var i=0;i<T2_WORDS.length;i++){ order.push(i); }
+  t2State.order=t2Shuffle(order); t2State.idx=0; t2State.lives=5; t2State.score=0; t2State.answered=0; t2State.correct=0;
+  var sb=document.querySelector('#t2QArea .rq-btn'); if(sb){ sb.style.display='none'; }
+  t2Render();
+}
+function t2Render(){
+  var livesEl=document.getElementById('t2Lives');
+  if(livesEl){ livesEl.innerHTML=''; for(var i=0;i<t2State.lives;i++){ var s=document.createElement('span'); s.className='life'; s.textContent='❤️'; livesEl.appendChild(s); } }
+  var sc=document.getElementById('t2Score'); if(sc){ sc.textContent=t2State.score; }
+  var an=document.getElementById('t2Answered'); if(an){ an.textContent=t2State.answered; }
+  var co=document.getElementById('t2Correct'); if(co){ co.textContent=t2State.correct; }
+  var rt=document.getElementById('t2Rate'); if(rt){ rt.textContent=Math.round(t2State.correct/Math.max(1,t2State.answered)*100)+'%'; }
+  var st=document.getElementById('t2Stats'); if(st){ st.style.display='block'; }
+  var round=document.getElementById('t2Round'); var word=document.getElementById('t2Word'); var box=document.getElementById('t2Options');
+  if(t2State.idx>=t2State.order.length || t2State.lives<=0){
+    var over=(t2State.lives<=0);
+    if(word){ word.textContent=over?'💀 命尽结束':'🏆 通关！'; }
+    if(round){ round.textContent=over?'Game Over':'完成'; }
+    if(box){ box.innerHTML=''; }
+    var sb=document.querySelector('#t2QArea .rq-btn'); if(sb){ sb.style.display='inline-block'; sb.textContent='🔄 再来一局'; }
+    return;
+  }
+  var wi=t2State.order[t2State.idx];
+  if(round){ round.textContent=(t2State.idx+1); }
+  if(word){ word.style.display='block'; word.textContent=T2_WORDS[wi].e; }
+  var opts=[T2_WORDS[wi].z]; var pool=[];
+  for(var i=0;i<T2_WORDS.length;i++){ if(i!==wi){ pool.push(i); } }
+  t2Shuffle(pool);
+  for(var i=0;i<3 && i<pool.length;i++){ opts.push(T2_WORDS[pool[i]].z); }
+  t2Shuffle(opts);
+  if(box){
+    box.innerHTML='';
+    opts.forEach(function(z){
+      var b=document.createElement('button'); b.className='arena-opt'; b.textContent=z;
+      b.onclick=function(){ t2Pick(wi,z); };
+      box.appendChild(b);
+    });
+  }
+}
+function t2Pick(wi,z){
+  if(t2State.lives<=0) return;
+  t2State.answered++;
+  var ok=(z===T2_WORDS[wi].z);
+  if(ok){ t2State.correct++; t2State.score+=10; if(typeof playCorrect==='function') playCorrect(); }
+  else { t2State.lives--; if(typeof playError==='function') playError(); }
+  t2State.idx++;
+  t2Render();
+}
+/* --- weatherScene：天气场景互动台（page6） --- */
+var WSCENE={
+  sunny:{emoji:'☀️',text:"It's sunny today. 今天晴朗。 — It's + sunny"},
+  rainy:{emoji:'🌧️',text:"It's rainy today. 今天下雨。 — It's + rainy"},
+  cloudy:{emoji:'☁️',text:"It's cloudy today. 今天多云。 — It's + cloudy"},
+  windy:{emoji:'💨',text:"It's windy today. 今天刮风。 — It's + windy"},
+  snowy:{emoji:'❄️',text:"It's snowy today. 今天下雪。 — It's + snowy"}
+};
+function weatherScene(k){
+  if(!WSCENE[k]) return;
+  var em=document.getElementById('wEmoji'); if(em){ em.textContent=WSCENE[k].emoji; }
+  var tx=document.getElementById('wSentenceText'); if(tx){ tx.textContent=WSCENE[k].text; }
+  if(typeof playCorrect==='function') playCorrect();
+}
+/* --- requestScene：礼貌请求互动台（page8） --- */
+var RQSCENE={
+  could:{mood:'请求别人',text:"Could you please close the window? 请你关窗好吗？"},
+  would:{mood:'更委婉',text:"Would you please help me? 请你帮我好吗？"},
+  couldi:{mood:'请求许可',text:"Could I go on vacation this summer? 我能今年夏天去度假吗？"},
+  wouldlike:{mood:'邀请',text:"Would you like to go on a trip? 你想去旅行吗？"}
+};
+function requestScene(k){
+  if(!RQSCENE[k]) return;
+  var tx=document.getElementById('rqSentenceText'); if(tx){ tx.textContent=RQSCENE[k].text; }
+  var tg=document.getElementById('rqMoodTag'); if(tg){ tg.textContent=RQSCENE[k].mood; }
+  if(typeof playCorrect==='function') playCorrect();
+}
+/* --- itScene：非人称 It 互动台（page10） --- */
+var ITSCENE={
+  weather:{text:"It's sunny today. — It 指天气 sunny。"},
+  time:{text:"It's seven o'clock. — It 指时间。"},
+  distance:{text:"It's far from here. — It 指距离。"}
+};
+function itScene(k){
+  if(!ITSCENE[k]) return;
+  var tx=document.getElementById('itSentenceText'); if(tx){ tx.textContent=ITSCENE[k].text; }
+  if(typeof playCorrect==='function') playCorrect();
+}
+/* --- checkQuiz：通用判题（quiz-option，新引擎：closest容器 + IndexedDB采集 + 双击撤销） --- */
+function checkQuiz(btn){
+  if(btn && btn.currentTarget && btn.currentTarget.classList && btn.currentTarget.classList.contains('quiz-option')){ btn=btn.currentTarget; }
+  var q=btn.closest('.quiz-container')||btn.closest('.quiz-q')||btn.closest('.ph-exercise')||btn.parentNode;
+  if(q.dataset.done) return; q.dataset.done='1';
+  var opts=q.querySelectorAll('.quiz-option');
+  for(var i=0;i<opts.length;i++){ opts[i].classList.add('disabled'); }
+  var ok=btn.dataset.correct==='true';
+  if(typeof saveAnswer==='function' && q.dataset.qid){
+    var qid=q.dataset.qid, ca='';
+    for(var j=0;j<opts.length;j++){ if(opts[j].dataset.correct==='true'){ ca=opts[j].textContent.replace(/^[A-E]\.\s*/,'').trim(); } }
+    saveAnswer(qid, btn.textContent.replace(/^[A-E]\.\s*/,'').trim(), ca, ok, parseInt(q.dataset.attempt||'1',10), 0, false);
+  }
+  if(ok){ btn.classList.add('correct'); if(typeof playCorrect==='function') playCorrect(); }
+  else {
+    q.dataset.wrong='1'; btn.classList.add('wrong');
+    if(typeof playError==='function') playError();
+    if(typeof shake==='function') shake(btn);
+    for(var i=0;i<opts.length;i++){ if(opts[i].dataset.correct==='true'){ opts[i].classList.add('correct'); } }
+    var h=q.querySelector('.et-undo-hint');
+    if(!h){ h=document.createElement('div'); h.className='et-undo-hint'; h.onclick=function(ev){ ev.stopPropagation(); }; q.appendChild(h); }
+    h.textContent='答错后双击可撤销回答';
+  }
+  var exp=q.querySelector('.quiz-explanation');
+  if(exp){ exp.classList.add('show'); }
+}
+function undoCheckQuiz(q){
+  var opts=q.querySelectorAll('.quiz-option');
+  for(var i=0;i<opts.length;i++){ opts[i].classList.remove('correct','wrong','disabled'); }
+  delete q.dataset.done; delete q.dataset.wrong;
+  q.dataset.attempt=String(parseInt(q.dataset.attempt||'1',10)+1);
+  var exp=q.querySelector('.quiz-explanation'); if(exp){ exp.classList.remove('show'); }
+  var h=q.querySelector('.et-undo-hint'); if(h && h.parentNode){ h.parentNode.removeChild(h); }
+}
+document.addEventListener('dblclick', function(e){
+  var q=e.target.closest('.ph-exercise')||e.target.closest('.quiz-container');
+  if(q && q.dataset.done==='1' && q.dataset.wrong==='1') undoCheckQuiz(q);
+});
+/* --- selectFiveFour：五选四（page36）按序填空 ①B ②E ③D ④A，C 为干扰项 --- */
+var FFTEXT={1:'A. People need warm clothes.',2:'B. Flowers bloom and trees are green.',3:'C. We can see many games on TV.',4:'D. The leaves turn yellow and red.',5:"E. It's good for swimming."};
+function selectFiveFour(btn, num){
+  if(!btn || btn.classList.contains('done')) return;
+  var passage=document.querySelector('.reading-passage .rp-body');
+  if(!passage) return;
+  var us=passage.querySelectorAll('u');
+  var idx=-1;
+  for(var i=0;i<us.length;i++){ if(!us[i].getAttribute('data-filled')){ idx=i; break; } }
+  if(idx===-1){ return; }
+  if(num===3){
+    btn.classList.add('wrong'); btn.classList.add('done');
+    btn.style.background='#FADBD8'; btn.style.color='#B91C1C'; btn.style.border='2px solid #DC2626';
+    if(typeof playError==='function') playError();
+    if(typeof shake==='function') shake(btn);
+    return;
+  }
+  var target={1:2,2:5,3:4,4:1}[idx+1];
+  if(num===target){
+    us[idx].setAttribute('data-filled','1');
+    var span=document.createElement('span');
+    span.className='b5-filled';
+    span.style.cssText='color:#16A34A;font-weight:700;margin-left:4px';
+    span.textContent=FFTEXT[num];
+    us[idx].parentNode.insertBefore(span, us[idx].nextSibling);
+    btn.classList.add('correct'); btn.classList.add('done');
+    btn.style.background='#D5F5E3'; btn.style.color='#15803D'; btn.style.border='2px solid #16A34A';
+    if(typeof playCorrect==='function') playCorrect();
+  } else {
+    btn.classList.add('wrong'); btn.classList.add('done');
+    btn.style.background='#FADBD8'; btn.style.color='#B91C1C'; btn.style.border='2px solid #DC2626';
+    if(typeof playError==='function') playError();
+    if(typeof shake==='function') shake(btn);
+  }
+}
+
+function mmToggle(node){
+  var br=node.parentNode;
+  var all=document.querySelectorAll('.mm-branch.active');
+  for(var i=0;i<all.length;i++){ all[i].classList.remove('active'); }
+  br.classList.add('active');
+  var panel=document.getElementById('mmPanel');
+  document.getElementById('mmPanelChips').innerHTML = br.querySelector('.mm-chips').innerHTML;
+  document.getElementById('mmPanelTitle').innerHTML = node.querySelector('.mm-icon').textContent + ' ' + node.querySelector('.mm-label').textContent;
+  panel.className = 'mm-panel ' + br.getAttribute('data-color');
+}
+// 启动 IndexedDB（§3.8 数据采集）；脚本在 body 末尾，DOM 已就绪，initDB 由 CORE_JS 定义
+initDB();
+
+/* ===== GM-V02 主动提取提示梯（08 规范 §13.3 正式版） =====
+ * 状态机：initial(无提示首次提取) → hint0 → hint1/2/3(三级提示) → revealed(显示答案)
+ *         → 遮盖后再次提取(hl-retry) → 迁移题(hl-transfer) → done
+ * 判定：independent_correct(无提示独立) vs hinted_correct(提示后) vs revealed_then_correct(显示答案后遮盖重拼)
+ * 提示后答对不直接升级；显示答案后答对只算即时修正，不算跨日掌握。 */
+function hlNorm(s){ return (s||'').trim().toLowerCase().replace(/[^a-z]/g,''); }
+function hlOk(input, target){ return hlNorm(input)===hlNorm(target); }
+function hlElapsed(unit){ return unit._startTime ? (Date.now()-unit._startTime) : 0; }
+
+function hlHint(btn){
+  var unit=btn.closest('.hl-word'), state=unit.getAttribute('data-state');
+  if(state==='done'||state==='initial') return;
+  var h=parseInt(unit.getAttribute('data-hint'),10), box=unit.querySelector('.hl-box');
+  var en=unit.getAttribute('data-en'), note=unit.querySelector('.hl-note');
+  if(h<1){ // 一级：语义/语境（不直接给字母）
+    unit.setAttribute('data-hint','1'); unit.setAttribute('data-state','hint1');
+    var sem=unit.getAttribute('data-semantic');
+    box.textContent='提示1：'+(sem||'想想它的语义和常用搭配。');
+    note.textContent='提示1（语义）——方向对了吗？现在再回忆完整单词。';
+  } else if(h<2){ // 二级：首字母+长度
+    unit.setAttribute('data-hint','2'); unit.setAttribute('data-state','hint2');
+    box.textContent='提示2：首字母 '+en.charAt(0)+'，共 '+en.length+' 个字母。';
+    note.textContent='提示2（首字母+长度）——已经有首字母线索，请尽量自己完成。';
+  } else if(h<3){ // 三级：词块/部分形式
+    unit.setAttribute('data-hint','3'); unit.setAttribute('data-state','hint3');
+    var chunk=unit.getAttribute('data-chunk');
+    box.textContent='提示3：'+(chunk||(en.charAt(0)+en.charAt(1)+'___'));
+    note.textContent='提示3（词块/部分形式）已用。请尽量自己完成。';
+  }
+}
+function hlCheck(btn){
+  var unit=btn.closest('.hl-word'), input=unit.querySelector('.hl-input');
+  var en=unit.getAttribute('data-en'), val=input.value, state=unit.getAttribute('data-state');
+  if(!val.trim()){ unit.querySelector('.hl-note').textContent='请先输入英文。'; return; }
+  if(state==='hint0'){ unit.querySelector('.hl-note').textContent='先点①提示获得线索，再输入。'; return; }
+  if(state==='initial'){
+    unit._firstAnswer=val; unit._firstCorrect=hlOk(val,en); unit._attempt=1;
+    if(unit._firstCorrect){
+      unit._independent=true; unit.setAttribute('data-state','done');
+      input.classList.add('correct');
+      unit.querySelector('.hl-box').textContent=en; unit.querySelector('.hl-box').classList.add('hl-done');
+      unit.querySelector('.hl-note').textContent='提取正确！把它放进新句子试一次。';
+      if(typeof playCorrect==='function') playCorrect();
+      hlShowTransfer(unit);
+    } else {
+      unit._independent=false; input.classList.add('wrong');
+      unit.querySelector('.hl-note').textContent='还没提取出来。看一个提示，再试一次。';
+      if(typeof playError==='function') playError();
+      unit.setAttribute('data-state','hint0');
+    }
+    hlLogEvent(unit); return;
+  }
+  if(state==='hint1'||state==='hint2'||state==='hint3'){
+    unit._finalAnswer=val; unit._finalCorrect=hlOk(val,en);
+    if(unit._finalCorrect){
+      unit.setAttribute('data-state','done'); input.classList.add('correct');
+      unit.querySelector('.hl-box').textContent=en; unit.querySelector('.hl-box').classList.add('hl-done');
+      unit.querySelector('.hl-note').textContent=(state==='hint1')
+        ? '方向对了吗？现在再回忆完整单词。'
+        : '这次已经修正。它会在后面再次出现，确认是否真正记住。';
+      if(typeof playCorrect==='function') playCorrect();
+      hlShowTransfer(unit);
+    } else {
+      unit._finalCorrect=false;
+      unit.querySelector('.hl-note').textContent='还没有。再走一步提示，或直接看答案。';
+      if(typeof playError==='function') playError();
+      var h=parseInt(unit.getAttribute('data-hint'),10);
+      if(h>=3){ hlRevealFromHint(unit); }
+      else { unit.setAttribute('data-state','hint'+(h+1)); }
+    }
+    hlLogEvent(unit);
+  }
+}
+function hlReveal(btn){
+  var unit=btn.closest('.hl-word'); hlRevealFromHint(unit);
+}
+function hlRevealFromHint(unit){
+  if(unit.getAttribute('data-revealed')==='1') return;
+  unit.setAttribute('data-revealed','1'); unit.setAttribute('data-state','revealed');
+  var en=unit.getAttribute('data-en'), box=unit.querySelector('.hl-box');
+  box.textContent=en+'  '+(unit.getAttribute('data-chunk')||'');
+  box.classList.add('hl-done');
+  unit.querySelector('.hl-note').textContent='先看清词形。稍后答案会隐藏，你需要重新拼写。';
+  unit._revealed=true;
+  setTimeout(function(){ // 3.5 秒后遮盖，进入遮盖再提取
+    box.textContent='______'; box.classList.remove('hl-done');
+    var retry=unit.querySelector('.hl-retry');
+    if(retry){ retry.style.display='block'; unit.querySelector('.hl-note').textContent='答案已隐藏，请凭记忆重新拼写。'; }
+    var ri=unit.querySelector('.hl-retry-input'); if(ri) ri.focus();
+  }, 3500);
+  hlLogEvent(unit);
+}
+function hlRetryCheck(btn){
+  var unit=btn.closest('.hl-word'), en=unit.getAttribute('data-en');
+  var val=unit.querySelector('.hl-retry-input').value;
+  if(!val.trim()) return;
+  if(hlOk(val,en)){
+    unit._postRetrieval='correct';
+    unit.querySelector('.hl-note').textContent='这次已经修正。它会在后面再次出现，确认是否真正记住。';
+    if(typeof playCorrect==='function') playCorrect();
+    unit.querySelector('.hl-retry').style.display='none';
+    hlShowTransfer(unit);
+  } else {
+    unit._postRetrieval='wrong';
+    unit.querySelector('.hl-note').textContent='遮盖后仍没拼对。这个词已加入复习池，稍后重点复习。';
+    if(typeof playError==='function') playError();
+    unit.querySelector('.hl-box').textContent=en; unit.querySelector('.hl-box').classList.add('hl-done');
+  }
+  hlLogEvent(unit);
+}
+function hlShowTransfer(unit){
+  var tr=unit.querySelector('.hl-transfer');
+  if(!tr) return;
+  unit.setAttribute('data-state','transfer');
+  tr.style.display='block';
+  var ti=unit.querySelector('.hl-transfer-input'); if(ti) ti.focus();
+}
+function hlTransferCheck(btn){
+  var unit=btn.closest('.hl-word'), en=unit.getAttribute('data-en');
+  var val=unit.querySelector('.hl-transfer-input').value;
+  if(!val.trim()) return;
+  unit.setAttribute('data-state','done');
+  if(hlOk(val,en)){
+    unit._transfer='correct';
+    unit.querySelector('.hl-note').textContent='迁移正确！这个词已掌握。';
+    if(typeof playCorrect==='function') playCorrect();
+  } else {
+    unit._transfer='wrong';
+    unit.querySelector('.hl-note').textContent='词形记住了，但新语境还不稳定。已加入复习池。';
+    if(typeof playError==='function') playError();
+  }
+  hlLogEvent(unit);
+}
+function hlReset(btn){
+  var unit=btn.closest('.hl-word');
+  unit.setAttribute('data-state','initial'); unit.setAttribute('data-hint','0'); unit.setAttribute('data-revealed','0');
+  delete unit._firstAnswer; delete unit._firstCorrect; delete unit._finalAnswer; delete unit._finalCorrect;
+  delete unit._independent; delete unit._revealed; delete unit._postRetrieval; delete unit._transfer; delete unit._attempt; delete unit._startTime;
+  var box=unit.querySelector('.hl-box'); box.textContent='______'; box.classList.remove('hl-done');
+  var note=unit.querySelector('.hl-note'); if(note) note.textContent='';
+  var inputs=unit.querySelectorAll('.hl-input'); for(var i=0;i<inputs.length;i++){ inputs[i].value=''; inputs[i].classList.remove('correct','wrong'); }
+  var retry=unit.querySelector('.hl-retry'); if(retry) retry.style.display='none';
+  var tr=unit.querySelector('.hl-transfer'); if(tr) tr.style.display='none';
+}
+/* GM-V02 事件记录：完整事件统一写入 EnglishCoursewareDB/answerRecords（P0-2 取消 GMEventsDB），同时调用底座 saveAnswer 存基础记录 */
+/* P0-2 统一存储：完整事件写入底座库 answerRecords，不再另建互不导出的 GMEventsDB。
+   若底座 db 尚未就绪，则自行打开同一库（结构定义与底座一致）兜底写入。 */
+function writeFullEvent(ev){
+  if(!window.indexedDB) return;
+  if(window.db && db.objectStoreNames.contains(STORE_NAME)){
+    var tx=db.transaction([STORE_NAME],'readwrite'); tx.objectStore(STORE_NAME).put(ev);
+    return;
+  }
+  var req=indexedDB.open(DB_NAME, DB_VERSION);
+  req.onupgradeneeded=function(e){ var d=e.target.result; if(!d.objectStoreNames.contains(STORE_NAME)){ var st=d.createObjectStore(STORE_NAME,{keyPath:'event_id'}); st.createIndex('student_id','student_id',{unique:false}); st.createIndex('question_id','question_id',{unique:false}); st.createIndex('session_id','session_id',{unique:false}); } };
+  req.onsuccess=function(e){ var d=e.target.result; var tx=d.transaction([STORE_NAME],'readwrite'); tx.objectStore(STORE_NAME).put(ev); };
+}
+function hlLogEvent(unit){
+  var en=unit.getAttribute('data-en');
+  var sid=(typeof studentId!=='undefined')?studentId:'stu';
+  var sess=(typeof sessionId!=='undefined')?sessionId:'SESSION';
+  var ev={
+    event_id: sid+'_'+sess+'_CMP_V02_'+en+'_'+(unit._attempt||1),
+    student_id: sid, session_id: sess, question_id: 'CMP_V02_'+en, knowledge_id: 'VOC_'+en,
+    first_answer: unit._firstAnswer||'', final_answer: unit._finalAnswer||unit._firstAnswer||'',
+    is_first_correct: !!unit._firstCorrect, is_final_correct: !!unit._finalCorrect,
+    independent_correct: !!unit._independent, attempt_no: unit._attempt||1,
+    hint_used: (parseInt(unit.getAttribute('data-hint'),10)||0)>0,
+    max_hint_level: parseInt(unit.getAttribute('data-hint'),10)||0,
+    answer_revealed: unit.getAttribute('data-revealed')==='1',
+    post_reveal_retrieval: unit._postRetrieval||'', response_time_ms: hlElapsed(unit),
+    transfer_correct: unit._transfer||'', sync_status:'pending', timestamp:new Date().toISOString()
+  };
+  writeFullEvent(ev);
+  if(typeof saveAnswer==='function'){
+    saveAnswer(ev.question_id, ev.final_answer||ev.first_answer, en,
+               ev.is_final_correct||ev.is_first_correct, ev.attempt_no, 0, ev.hint_used);
+  }
+  var log=document.querySelector('.hl-log');
+  if(log){ log.style.display='block'; log.textContent=JSON.stringify(ev); }
+}
+/* ===== GM-G03 错句医生 ===== */
+function sdPick(span){
+  var unit=span.closest('.sd-unit'); if(unit.getAttribute('data-picked')) return;
+  unit.setAttribute('data-picked', span.getAttribute('data-w')||span.textContent.trim());
+  span.classList.add('sd-picked');
+  var fix=unit.querySelector('.sd-fix'); if(fix) fix.style.display='block';
+}
+function sdFix(btn){
+  var unit=btn.closest('.sd-unit'); if(unit.getAttribute('data-fixed')) return;
+  unit.setAttribute('data-fixed','1');
+  var ok=btn.getAttribute('data-correct')==='1';
+  var opts=unit.querySelectorAll('.sd-opt');
+  for(var i=0;i<opts.length;i++){ opts[i].disabled=true; }
+  if(ok){ btn.classList.add('sd-ok'); if(typeof playCorrect==='function') playCorrect(); }
+  else{
+    btn.classList.add('sd-no'); if(typeof playError==='function') playError();
+    for(var i=0;i<opts.length;i++){ if(opts[i].getAttribute('data-correct')==='1') opts[i].classList.add('sd-ok'); }
+  }
+  if(typeof saveAnswer==='function') saveAnswer('CMP_G03_'+unit.getAttribute('data-picked'),
+    btn.textContent.trim(), unit.getAttribute('data-ans'), ok, 1, 0, false);
+}
+function sdReset(btn){
+  var unit=btn.closest('.sd-unit');
+  unit.removeAttribute('data-picked'); unit.removeAttribute('data-fixed');
+  var w=unit.querySelectorAll('.sd-w'); for(var i=0;i<w.length;i++) w[i].classList.remove('sd-picked');
+  var o=unit.querySelectorAll('.sd-opt'); for(var i=0;i<o.length;i++){ o[i].disabled=false; o[i].classList.remove('sd-ok','sd-no'); }
+  var f=unit.querySelector('.sd-fix'); if(f) f.style.display='none';
+}
+/* ===== GM-R06 证据连线 ===== */
+var ecSel=null;
+function ecClick(el){
+  var box=el.closest('.evidence-connect'); if(box.getAttribute('data-done')) return;
+  if(el.classList.contains('ec-q')){
+    if(ecSel) ecSel.classList.remove('ec-sel');
+    ecSel=el; el.classList.add('ec-sel');
+  } else if(el.classList.contains('ec-ev')){
+    if(!ecSel){ el.classList.add('ec-warn'); setTimeout(function(){ el.classList.remove('ec-warn'); },500); return; }
+    var q=ecSel; ecSel=null; q.classList.remove('ec-sel');
+    var evId=el.getAttribute('data-id');
+    if(q.getAttribute('data-ev')===evId){
+      q.classList.add('ec-ok'); el.classList.add('ec-ok');
+      if(typeof playCorrect==='function') playCorrect();
+      var label=q.textContent.replace(/\s+/g,' ').trim().slice(0,18);
+      if(typeof saveAnswer==='function') saveAnswer('CMP_R06_'+label, evId, evId, true, 1, 0, false);
+    } else {
+      q.classList.add('ec-no'); el.classList.add('ec-no');
+      setTimeout(function(){ q.classList.remove('ec-no'); el.classList.remove('ec-no'); }, 600);
+      if(typeof playError==='function') playError();
+    }
+    var qs=box.querySelectorAll('.ec-q'), done=true;
+    for(var i=0;i<qs.length;i++){ if(!qs[i].classList.contains('ec-ok')) done=false; }
+    if(done){ box.setAttribute('data-done','1'); var st=box.querySelector('.ec-status'); if(st) st.textContent='全部连线正确 ✓'; }
+  }
+}
+function ecReset(btn){
+  var box=btn.closest('.evidence-connect');
+  var qs=box.querySelectorAll('.ec-q'), evs=box.querySelectorAll('.ec-ev');
+  for(var i=0;i<qs.length;i++){ qs[i].classList.remove('ec-ok','ec-no','ec-sel'); }
+  for(var i=0;i<evs.length;i++){ evs[i].classList.remove('ec-ok','ec-no'); }
+  box.removeAttribute('data-done'); ecSel=null;
+  var st=box.querySelector('.ec-status'); if(st) st.textContent='';
+}
+
+(function(){
+  function x26PauseHidden(){
+    var pages=document.querySelectorAll('.page,.slide');
+    for(var i=0;i<pages.length;i++){
+      var p=pages[i];
+      if(p.classList.contains('active')){ continue; }
+      if(!p.getAnimations){ continue; }
+      var run=p.getAnimations({subtree:true}).filter(function(a){ return a.playState==='running'; });
+      for(var j=0;j<run.length;j++){ run[j].pause(); }
+    }
+  }
+  var c=document.getElementById('pagesContainer');
+  if(c && 'MutationObserver' in window){
+    new MutationObserver(function(){ x26PauseHidden(); })
+      .observe(c,{subtree:true,attributes:true,attributeFilter:['class']});
+  }
+})();
+
+/* ===== P0-2 数据同步字段统一（2026-08-03）=====
+   规范字段：sync_status（唯一真源）；旧字段 synced（CORE_JS 写入）仅作向后兼容，不删除。
+   实现：不修改 CORE_JS，通过 js_extra 包装 saveAnswer 补写 sync_status，并重写 CSV 导出纳入该列。
+*/
+(function(){
+  if(typeof saveAnswer!=='function') return;
+  var _origSave = saveAnswer;
+  window.saveAnswer = function(questionId, studentAnswer, correctAnswer, isCorrect, attemptNo, timeUsed, hintUsed){
+    var before = answerRecords.length;
+    _origSave(questionId, studentAnswer, correctAnswer, isCorrect, attemptNo, timeUsed, hintUsed);
+    if(answerRecords.length <= before) return; /* db 未就绪未写入，跳过 */
+    var rec = answerRecords[answerRecords.length-1];
+    if(rec){
+      rec.sync_status = rec.synced || 'pending';
+      if(window.db && rec.event_id){
+        var tx = db.transaction([STORE_NAME], 'readwrite');
+        tx.objectStore(STORE_NAME).put(rec);
+      }
+    }
+  };
+  /* CSV 导出纳入 sync_status 规范列（旧字段 synced 兜底） */
+  window.convertToCSV = function(records){
+    var headers = ['event_id','student_id','session_id','question_id','attempt_no','student_answer','correct_answer','is_correct','time_used','hint_used','sync_status','timestamp'];
+    var csv = headers.join(',') + '\n';
+    records.forEach(function(r){
+      var row = headers.map(function(h){
+        var val = (h==='sync_status') ? (r.sync_status || r.synced || 'pending') : (r[h]!==undefined ? String(r[h]) : '');
+        if(val.indexOf(',')!==-1 || val.indexOf('"')!==-1){ val = '"' + val.replace(/"/g,'""') + '"'; }
+        return val;
+      });
+      csv += row.join(',') + '\n';
+    });
+    return csv;
+  };
+})();
+
+</script>
+</body>
+</html>

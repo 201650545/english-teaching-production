@@ -1,0 +1,136 @@
+{
+  "course": "第18课 · 现在进行时·家务",
+  "stage": "Stage 5",
+  "lesson": "L18",
+  "duration": "90min",
+  "totalPages": 42,
+  "brand": "#C2410C",
+  "accent": "#0EA5E9",
+  "bgGradient": "#FFF7ED → #FFEDD5",
+  "pageIdContract": true,
+  "pageIdRange": "54-63",
+  "style": "S06 校园活力, household-chore-board",
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "realtime",
+    "exportFormats": ["json", "csv"],
+    "sessionIdRule": "L18_{studentId}_{YYYYMMDD}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  },
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": [
+        {
+          "page": 0,
+          "type": "cover",
+          "title": "第18课 · 现在进行时·家务",
+          "subtitle": "Stage 5 · 家务动作 | 90分钟课程",
+          "objectives": ["掌握20个家务·动作词汇", "掌握G46进行时结构/G47 V-ing规则/G48标志词", "完成le/l/拼读学习"],
+          "meta": [
+            {"label": "核心场景", "value": "家务动作"},
+            {"label": "新词", "value": "20 Words"},
+            {"label": "时长", "value": "90 min"},
+            {"label": "语法", "value": "G46/G47/G48"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 2,
+      "pages": [
+        {
+          "page": 1,
+          "type": "review-grammar",
+          "title": "L17 语法回顾",
+          "content": ["G43 频度副词", "G44 How often", "G45 百分比与习惯短语"],
+          "interactions": ["formula-box × 3"]
+        },
+        {
+          "page": 2,
+          "type": "review-vocab",
+          "title": "L17 词汇快闪 + 导入",
+          "content": ["L17 20词分类速览", "3句口头翻译", "导入：What are you doing now?"],
+          "interactions": ["answer-mask × 3"]
+        }
+      ]
+    },
+    {
+      "name": "新词20",
+      "start": 3,
+      "end": 8,
+      "pages": [
+        {"page": 3, "type": "vocab-group", "title": "家务动词类 (1-5)", "words": ["housework", "sweep", "wash", "cook", "scan"], "layout": "item-board 2col"},
+        {"page": 4, "type": "vocab-group", "title": "学习与艺术类 (6-10)", "words": ["read", "write", "draw", "sing", "dance"], "layout": "item-board 2col"},
+        {"page": 5, "type": "vocab-group", "title": "学习与交流类 (11-15)", "words": ["study", "sleep", "talk", "speak", "hear"], "layout": "item-board 2col"},
+        {"page": 6, "type": "vocab-group", "title": "动作与时间类 (16-20)", "words": ["rest", "look", "chat", "notice", "moment"], "layout": "item-board 2col"},
+        {"page": 7, "type": "vocab-matrix", "title": "20词分类矩阵 + 快闪复习", "content": ["语义场分类表格", "mini-flash 20词"], "interactions": ["gtab", "mini-flash-grid"]},
+        {"page": 8, "type": "vocab-preview", "title": "现在进行时结构预览", "content": ["be + V-ing思维导图"]}
+      ]
+    },
+    {
+      "name": "语法3考点",
+      "start": 9,
+      "end": 19,
+      "pages": [
+        {"page": 9, "type": "grammar", "title": "G46 现在进行时结构", "content": ["口诀", "be动词选择规则", "肯定/否定公式", "例句"], "grammarTag": "G46"},
+        {"page": 10, "type": "grammar-examples", "title": "G46 例句精讲 + 易错点", "content": ["5条例句", "4条易错点", "中考辨析进行时vs一般现在时"], "grammarTag": "G46"},
+        {"page": 11, "type": "interactive-1", "title": "家务动作演示板", "component": "chore-demo", "members": ["mom", "dad", "brother", "sister", "I"], "actions": ["cook", "wash", "sweep", "read"]},
+        {"page": 12, "type": "grammar", "title": "G47 V-ing变化规则", "content": ["口诀", "三规则矩阵", "本课动词V-ing总表", "中考高频双写动词"], "grammarTag": "G47"},
+        {"page": 13, "type": "grammar-examples", "title": "G47 例句精讲 + 易错点", "content": ["V-ing变化易错点", "中考辨析双写条件"], "grammarTag": "G47"},
+        {"page": 14, "type": "grammar", "title": "G48 标志词识别", "content": ["口诀", "标志词速查表", "例句"], "grammarTag": "G48"},
+        {"page": 15, "type": "grammar-examples", "title": "G48 例句精讲 + 易错点", "content": ["5条例句", "3条易错点", "中考辨析有标志词vs无标志词"], "grammarTag": "G48"},
+        {"page": 16, "type": "interactive-2", "title": "标志词探测仪", "component": "marker-detector", "markers": ["now", "look!", "listen!", "at the moment", "right now"]},
+        {"page": 17, "type": "grammar-compare", "title": "G46/G47/G48 综合对比", "content": ["三考点横向对比", "结构→变化→标志词流程图"]},
+        {"page": 18, "type": "quiz", "title": "随堂演练 上（G46+G47）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]},
+        {"page": 19, "type": "quiz", "title": "随堂演练 下（G48+综合）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]}
+      ]
+    },
+    {
+      "name": "阅读理解",
+      "start": 20,
+      "end": 22,
+      "pages": [
+        {"page": 20, "type": "reading", "title": "阅读A篇 Our Housework Chart", "content": ["161词", "5选择题"]},
+        {"page": 21, "type": "reading", "title": "阅读B篇 A Busy Saturday Morning", "content": ["183词", "3选择题"]},
+        {"page": 22, "type": "reading", "title": "阅读B篇（下）+ C篇导入", "content": ["2选择题", "阅读回答问题"]}
+      ]
+    },
+    {
+      "name": "句子练习",
+      "start": 25,
+      "end": 27,
+      "pages": [
+        {"page": 25, "type": "translation", "title": "汉译英 5句", "content": ["进行时翻译2句", "V-ing变化2句", "标志词1句"], "interactions": ["answer-mask × 5"]},
+        {"page": 26, "type": "sentence-build", "title": "造句练习 5句", "content": ["G46/G47/G48造句"], "interactions": ["answer-mask × 5"]},
+        {"page": 27, "type": "error-correction", "title": "改错练习 5句", "content": ["G46/G47/G48易错点"], "interactions": ["answer-mask × 5"]}
+      ]
+    },
+    {
+      "name": "自然拼读",
+      "start": 28,
+      "end": 33,
+      "pages": [
+        {"page": 28, "type": "phonics", "title": "le /l/ 音素学习", "content": ["le /l/：词尾le发/l/"], "grammarTag": "PH"},
+        {"page": 29, "type": "phonics-read", "title": "练习1 朗读词汇表", "content": ["le × 6词", "对比 × 6词"]},
+        {"page": 30, "type": "phonics-exercise", "title": "练习2 听音选词", "content": ["4题听音选词"]},
+        {"page": 31, "type": "phonics-exercise", "title": "练习3 看词归音", "content": ["4题看词归音"]},
+        {"page": 32, "type": "phonics-exercise", "title": "练习4 最小对立对辨析", "content": ["4题最小对立对"]},
+        {"page": 33, "type": "phonics-summary", "title": "拼读总结", "content": ["mini-flash拼读总结"]}
+      ]
+    },
+    {
+      "name": "课堂总结",
+      "start": 34,
+      "end": 34,
+      "pages": [
+        {"page": 34, "type": "summary", "title": "核心总结", "content": ["G46/G47/G48三卡片", "20词快闪", "口诀汇总", "现在进行时三位一体思维导图"]}
+      ]
+    }
+  ]
+}

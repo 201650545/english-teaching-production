@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八年级新生 · 水平分析报告</title>
+<style>
+:root{
+  --brand:#2563EB; --brand-dark:#1E40AF; --brand-light:#EFF6FF;
+  --success:#16A34A; --error:#DC2626; --warn:#D97706;
+  --text-primary:#1F2937; --text-light:#6B7280;
+  --bg:#F8FAFC; --card:#FFFFFF; --border:#E5E7EB;
+  --radius:12px; --radius-sm:8px; --shadow:0 2px 8px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:var(--bg);color:var(--text-primary);line-height:1.7;padding:32px 20px}
+.container{max-width:880px;margin:0 auto}
+h1{font-size:26px;color:var(--brand-dark);text-align:center;margin-bottom:8px}
+.subtitle{text-align:center;color:var(--text-light);margin-bottom:32px}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin:16px 0}
+.card h2{font-size:18px;color:var(--brand-dark);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--brand-light)}
+textarea{width:100%;height:180px;border:2px solid var(--border);border-radius:var(--radius-sm);padding:14px;font-size:14px;font-family:Consolas,monospace;resize:vertical}
+textarea:focus{outline:none;border-color:var(--brand)}
+.btn{background:var(--brand);color:#fff;border:none;padding:12px 32px;border-radius:var(--radius);font-size:15px;font-weight:600;cursor:pointer;margin-top:12px}
+.btn:hover{background:var(--brand-dark)}
+.btn.secondary{background:var(--text-light)}
+.score-big{font-size:48px;font-weight:800;color:var(--brand-dark);text-align:center}
+.score-label{text-align:center;color:var(--text-light);margin-bottom:8px}
+.rank{text-align:center;font-size:16px;padding:10px 28px;border-radius:24px;display:inline-block;font-weight:600}
+.rank-A{background:#DCFCE7;color:#166534}
+.rank-B{background:#FEF9C3;color:#854D0E}
+.rank-C{background:#FFEDD5;color:#9A3412}
+.rank-D{background:#FEE2E2;color:#991B1B}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+th,td{padding:10px 14px;text-align:center;border-bottom:1px solid var(--border);font-size:14px}
+th{background:var(--brand-dark);color:#fff}
+tr:nth-child(even){background:var(--bg)}
+.pill{display:inline-block;padding:2px 12px;border-radius:12px;font-size:13px;font-weight:600}
+.pill.strong{background:#DCFCE7;color:#166534}
+.pill.mid{background:#FEF9C3;color:#854D0E}
+.pill.weak{background:#FEE2E2;color:#991B1B}
+.suggest{background:var(--brand-light);border-radius:var(--radius);padding:20px;margin:16px 0;border-left:4px solid var(--brand)}
+.suggest h3{color:var(--brand-dark);margin-bottom:10px}
+.suggest li{margin:6px 0}
+.hidden{display:none}
+.nav{display:flex;gap:10px;justify-content:center;margin:20px 0}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>📊 八年级新生 · 水平分析报告</h1>
+  <div class="subtitle">初二升初三培优起点 · 自动生成</div>
+
+  <!-- 输入区 -->
+  <div class="card" id="inputCard">
+    <h2>📥 粘贴检测数据</h2>
+    <p style="font-size:14px;color:var(--text-light);margin-bottom:8px">
+      从语法诊断课件和词汇诊断课件各点一次「导出成绩 CSV」，把两个文件的内容分别粘贴到下面。点「生成分析报告」。
+    </p>
+    <div style="margin:12px 0">
+      <label style="font-weight:600;font-size:14px">1. 语法诊断 CSV 内容：</label>
+      <textarea id="grammarCSV" placeholder="粘贴 八年级语法诊断_xxxx.csv 的内容"></textarea>
+    </div>
+    <div style="margin:12px 0">
+      <label style="font-weight:600;font-size:14px">2. 词汇诊断 CSV 内容：</label>
+      <textarea id="vocabCSV" placeholder="粘贴 八年级词汇诊断_xxxx.csv 的内容"></textarea>
+    </div>
+    <center><button class="btn" onclick="analyze()">生成分析报告 →</button></center>
+  </div>
+
+  <!-- 结果区 -->
+  <div id="result" class="hidden"></div>
+</div>
+
+<script>
+function parseCSV(text){
+  // 处理 UTF-8 BOM
+  text = text.replace(/^﻿/,"").replace(/\r/g,"");
+  const lines = text.split("\n").filter(l=>l.trim()!=="");
+  return lines.map(l=>{
+    // 简单 CSV 解析（处理引号）
+    const out=[]; let cur="", inQ=false;
+    for(let i=0;i<l.length;i++){
+      const c=l[i];
+      if(inQ){ if(c==='"'){ if(l[i+1]==='"'){cur+='"';i++;}else{inQ=false;} } else cur+=c; }
+      else if(c==='"'){ inQ=true; }
+      else if(c===','){ out.push(cur); cur=""; }
+      else { cur+=c; }
+    }
+    out.push(cur);
+    return out;
+  });
+}
+
+function analyze(){
+  const g = document.getElementById("grammarCSV").value.trim();
+  const v = document.getElementById("vocabCSV").value.trim();
+  if(!g || !v){ alert("请先粘贴两份 CSV 内容。"); return; }
+
+  // 语法点统计（从 CSV 聚合部分读取：第 N 行后是 ["语法点","单元","得分率"...]）
+  const gRows = parseCSV(g);
+  const vRows = parseCSV(v);
+
+  // 解析逐题数据 + 聚合数据
+  function collect(rows){
+    const items = []; // 逐题
+    const agg = [];   // 聚合
+    let inAgg = false;
+    rows.forEach(r=>{
+      if(r[0]==="语法点"||r[0]==="词汇主题"){ inAgg=true; return; }
+      if(inAgg){ agg.push(r); }
+      else if(r.length>=7 && /^\d+$/.test(r[0])){ items.push(r); }
+    });
+    return {items, agg};
+  }
+  const gd = collect(gRows), vd = collect(vRows);
+
+  const gTotal = gd.items.length, gCorrect = gd.items.filter(r=>r[6]==="对").length;
+  const vTotal = vd.items.length, vCorrect = vd.items.filter(r=>r[6]==="对").length;
+  const gScore = gTotal? Math.round(gCorrect/gTotal*100):0;
+  const vScore = vTotal? Math.round(vCorrect/vTotal*100):0;
+  const overall = Math.round((gCorrect+vCorrect)/(gTotal+vTotal)*100);
+
+  // 排名
+  function rankOf(s){
+    if(s>=85) return {cls:"rank-A", txt:s>=90?"优秀 · 基础扎实，可直接进入初三拔高":"优秀 · 大部分已掌握，个别点巩固"};
+    if(s>=70) return {cls:"rank-B", txt:"良好 · 有明显提升空间，针对薄弱点补强"};
+    if(s>=55) return {cls:"rank-C", txt:"中等 · 需系统复习八年级语法词汇"};
+    return {cls:"rank-D", txt:"偏弱 · 建议从基础重新梳理"};
+  }
+  const gr = rankOf(gScore), vr = rankOf(vScore), ork = rankOf(overall);
+
+  // 薄弱点（聚合表第3列=得分率%，第4列=掌握）
+  function weakPoints(agg, nameIdx){
+    return agg.filter(r=>{ const lv=r[3]; return lv==="弱"||(lv==="中"&&parseInt(r[2])<40); }).map(r=>r[nameIdx]);
+  }
+  const gWeak = weakPoints(gd.agg,0), vWeak = weakPoints(vd.agg,0);
+
+  // 生成报告
+  const res = document.getElementById("result");
+  let html = `
+    <div class="card">
+      <div style="text-align:center">
+        <div class="badge" style="display:inline-block;background:var(--brand-light);color:var(--brand-dark);padding:6px 16px;border-radius:20px;font-size:14px;font-weight:600;margin-bottom:12px">综合水平分析</div>
+      </div>
+      <div class="score-big">${overall}<span style="font-size:24px">分</span></div>
+      <div class="score-label">综合得分（语法 ${gScore} + 词汇 ${vScore}）</div>
+      <center><div class="rank ${ork.cls}">${ork.txt}</div></center>
+    </div>
+
+    <div class="card">
+      <h2>📈 分项得分</h2>
+      <table>
+        <tr><th>检测项</th><th>得分</th><th>题数</th><th>答对</th><th>评价</th></tr>
+        <tr><td style="text-align:left">📐 语法诊断</td><td><b>${gScore} 分</b></td><td>${gTotal}</td><td>${gCorrect}</td><td><span class="pill ${gScore>=70?"strong":(gScore>=55?"mid":"weak")}">${gr.txt.slice(0,8)}</span></td></tr>
+        <tr><td style="text-align:left">🔤 词汇诊断</td><td><b>${vScore} 分</b></td><td>${vTotal}</td><td>${vCorrect}</td><td><span class="pill ${vScore>=70?"strong":(vScore>=55?"mid":"weak")}">${vr.txt.slice(0,8)}</span></td></tr>
+      </table>
+    </div>`;
+
+  // 薄弱板块表
+  html += `<div class="card"><h2>🎯 薄弱板块</h2>`;
+  if(gWeak.length||vWeak.length){
+    html += `<table><tr><th>类型</th><th>薄弱板块</th><th>建议</th></tr>`;
+    gWeak.forEach(w=>{ html += `<tr><td>语法</td><td style="text-align:left">${w}</td><td style="text-align:left">专项补课 + 同类题巩固</td></tr>`; });
+    vWeak.forEach(w=>{ html += `<tr><td>词汇</td><td style="text-align:left">${w}</td><td style="text-align:left">主题词串记忆 + 语境应用</td></tr>`; });
+    html += `</table>`;
+  }else{
+    html += `<p style="color:var(--success);font-weight:600">✅ 无显著薄弱板块，可进入初三综合提升与拔高训练。</p>`;
+  }
+  html += `</div>`;
+
+  // 建议
+  html += `<div class="suggest"><h3>📋 教学建议</h3><ul>`;
+  if(gWeak.length) html += `<li><b>语法补强：</b>${gWeak.join("、")}</li>`;
+  if(vWeak.length) html += `<li><b>词汇补强：</b>${vWeak.join("、")}</li>`;
+  html += `<li><b>能力定位：</b>${ork.txt}</li>`;
+  html += `<li><b>下阶段重点：</b>时文阅读 3+2 题型训练 + 中考真题精练 + 书面表达输出</li>`;
+  html += `</ul></div>`;
+
+  html += `<div class="card" style="text-align:center">
+    <button class="btn secondary" onclick="window.print()">🖨 打印报告</button>
+    <button class="btn" onclick="resetAll()" style="margin-left:12px">↻ 重新分析</button>
+  </div>`;
+
+  res.innerHTML = html;
+  document.getElementById("inputCard").classList.add("hidden");
+  res.classList.remove("hidden");
+  res.scrollIntoView();
+}
+
+function resetAll(){
+  document.getElementById("inputCard").classList.remove("hidden");
+  document.getElementById("result").classList.add("hidden");
+  document.getElementById("result").innerHTML="";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "examples": [
+    {
+      "source": "This is not my pen. ___ is blue. A. Mine B. They C. Them D. Their",
+      "lossless": true,
+      "conversions": [
+        {
+          "template_id": "G-WRITE-FORM",
+          "prompt": "This is not my pen. ______ is blue.",
+          "answer": "Mine"
+        },
+        {
+          "template_id": "G-DRAG-CLASSIFY",
+          "note": "先归类mine/my/me，再无提示填空"
+        }
+      ]
+    },
+    {
+      "source": "I like ___. It's very sweet and red. A. strawberry B. tomato C. potato D. milk",
+      "lossless_without_extra_clue": false,
+      "conversions": [
+        {
+          "template_id": "V-WRITE-RECALL",
+          "note": "增加草莓图片后输入strawberry"
+        },
+        {
+          "template_id": "V-ORDER-SPELLING",
+          "chunks": [
+            "straw",
+            "berry"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "— ____ is the museum? — It's on Center Street. A. What B. Where C. How",
+      "lossless": true,
+      "conversions": [
+        {
+          "template_id": "G-WRITE-FORM",
+          "answer": "Where"
+        },
+        {
+          "template_id": "G-LINK-RELATION",
+          "pairs": [
+            [
+              "Where",
+              "on Center Street"
+            ],
+            [
+              "How",
+              "by bus"
+            ],
+            [
+              "When",
+              "at nine"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "source": "— ____ you go to the museum yesterday? — By bus. A. What did B. How did C. Where did",
+      "lossless": true,
+      "conversions": [
+        {
+          "template_id": "G-ORDER-SENTENCE",
+          "chunks": [
+            "How",
+            "did",
+            "you",
+            "go",
+            "to the museum",
+            "yesterday"
+          ]
+        },
+        {
+          "template_id": "C-WRITE-SCENARIO",
+          "answer": [
+            "How",
+            "did"
+          ]
+        }
+      ]
+    }
+  ]
+}

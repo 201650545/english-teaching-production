@@ -1,0 +1,15 @@
+{
+  "lesson_id": "第01课",
+  "version": "V17.0",
+  "creative_id": "代词魔法转换器 (Pronoun Magic Transformer)",
+  "interaction": {
+    "navigation": "split-screen click (left=prev, right=next)",
+    "answer_priority": "highest, event.stopPropagation()",
+    "sub_page": "vertical scroll with fixed page index",
+    "pronoun_transformer": {
+      "trigger": "button click (I/You/He/She/It/We/They)",
+      "effects": ["四列高亮同步", "be动词切换", "例句实时更新"],
+      "stop_propagation": true
+    }
+  }
+}

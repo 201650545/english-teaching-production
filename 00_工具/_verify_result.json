@@ -1,0 +1,210 @@
+[
+  {
+    "lesson": 1,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第01课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212681B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1211/1211 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 2,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第02课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212609B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1211/1211 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 3,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第03课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212627B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1211/1211 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 4,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第04课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212317B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1212/1212 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 5,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第05课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212307B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1212/1212 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 6,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第06课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212541B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1211/1211 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 7,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第07课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212166B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1206/1206 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 8,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第08课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212456B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1209/1209 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 9,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第09课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212406B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1212/1212 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 10,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第10课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212656B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1209/1209 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 11,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第11课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212665B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1210/1210 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 12,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第12课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212498B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1210/1210 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 13,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第13课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212173B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1209/1209 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 14,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第14课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212193B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1208/1208 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 15,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第15课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212212B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1210/1210 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 16,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第16课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212175B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1206/1206 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 17,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第17课时_课件_基础.html  [契约:page-id] [页数:43]\n文件大小        : 233841B (≥153600) ✓ \n页数          : 43 (40-45) ✓ \ndiv平衡       : 1315/1315 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 73 题 ✓ \n答案分布        : {'A': 25, 'B': 24, 'C': 24} 最大占比34%(≤40%) ✓ \n题量          : 73 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 18,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第18课时_课件_基础.html  [契约:page-id] [页数:43]\n文件大小        : 234639B (≥153600) ✓ \n页数          : 43 (40-45) ✓ \ndiv平衡       : 1312/1312 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 75 题 ✓ \n答案分布        : {'A': 25, 'B': 25, 'C': 25} 最大占比33%(≤40%) ✓ \n题量          : 75 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 19,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第19课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212349B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1208/1208 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 20,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第20课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212419B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1206/1206 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 21,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第21课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212381B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1206/1206 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 22,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第22课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212268B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1212/1212 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 23,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第23课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212328B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1212/1212 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 24,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第24课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212310B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1212/1212 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 25,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第25课时_课件_基础.html  [契约:page-id] [页数:41]\n文件大小        : 212410B (≥153600) ✓ \n页数          : 41 (40-45) ✓ \ndiv平衡       : 1212/1212 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 63 题 ✓ \n答案分布        : {'A': 21, 'B': 21, 'C': 21} 最大占比33%(≤40%) ✓ \n题量          : 63 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       :"
+  },
+  {
+    "lesson": 26,
+    "PASS": true,
+    "size_kb": "?",
+    "pages": "?",
+    "div_balance": "?",
+    "output": "== verify_v2 校验 ==  第26课时_课件_基础.html  [契约:page-id] [页数:42]\n文件大小        : 202481B (≥153600) ✓ \n页数          : 42 (40-45) ✓ \ndiv平衡       : 873/873 ✓ \n残留框架        : {'L22_': 0, 'clozeTest': 0, 'wordMatch': 0, 'crossGame': 0, 'L22_answers': 0} ✓ \nJS检查        :  ✓ \n答案可判        : quiz-opt / 36 题 ✓ \n答案分布        : {'A': 12, 'B': 12, 'C': 12} 最大占比33%(≤40%) ✓ \n题量          : 36 个可判题\n六色卡         : 使用 6/6 色 ['rc-zhug', 'rc-bin', 'rc-xing', 'rc-ming', 'rc-warn', 'rc-qita'] ✓\n防越级         : 未命中 ✓\n性能软检查       : 无"
+  }
+]

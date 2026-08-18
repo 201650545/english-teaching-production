@@ -1,0 +1,46 @@
+{
+  "lesson_id": "L10",
+  "lesson_index": 10,
+  "level": "medium",
+  "items": [
+    {
+      "slot_id": "G22_01",
+      "section": "grammar",
+      "content_type": "question_word_function",
+      "knowledge_id": "G22"
+    },
+    {
+      "slot_id": "G22_02",
+      "section": "grammar",
+      "content_type": "question_order",
+      "knowledge_id": "G22"
+    },
+    {
+      "slot_id": "V31_01",
+      "section": "vocab",
+      "content_type": "meaning_recall",
+      "knowledge_id": "V31"
+    },
+    {
+      "slot_id": "V31_02",
+      "section": "vocab",
+      "content_type": "collocation",
+      "knowledge_id": "V31"
+    },
+    {
+      "slot_id": "D01",
+      "section": "drill",
+      "content_type": "reading_evidence",
+      "knowledge_id": "R10"
+    }
+  ],
+  "history": [
+    {
+      "lesson_id": "L09",
+      "lesson_index": 9,
+      "knowledge_id": "G22",
+      "template_id": "G-WRITE-FORM",
+      "action_type": "write"
+    }
+  ]
+}

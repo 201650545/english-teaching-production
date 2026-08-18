@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>邓兴华 L10-L15 阅读理解 3+2 题型改革 · 执行汇报 2026-08-11</title>
+<style>
+  :root{--brand:#1a5276;--brand-l:#5db0e2;--ok:#27ae60;--err:#e74c3c;--warn:#e67e22;--bg:#f5f7fa;--card:#fff;--line:#e3e8ef;--txt:#2c3e50;--muted:#7f8c8d}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--txt);line-height:1.65;padding:32px 16px}
+  .wrap{max-width:1080px;margin:0 auto}
+  header{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;border-radius:16px;padding:28px 32px;margin-bottom:24px}
+  header h1{font-size:25px;margin-bottom:8px}
+  header p{opacity:.9;font-size:14px}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+  .metric{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-align:center}
+  .metric .v{font-size:26px;font-weight:800;color:var(--brand)}
+  .metric .l{font-size:12px;color:var(--muted);margin-top:2px}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:20px}
+  h2{font-size:19px;color:var(--brand);margin-bottom:14px;border-left:4px solid var(--brand-l);padding-left:10px}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0}
+  th{background:#eef4fa;color:var(--brand);padding:7px 9px;text-align:left;border:1px solid var(--line);font-weight:700}
+  td{padding:6px 9px;border:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:#fafcfe}
+  ul{margin:8px 0 8px 22px;font-size:13.5px}
+  li{margin:4px 0}
+  .note{background:#fdf6ec;border-left:4px solid var(--warn);border-radius:8px;padding:10px 14px;font-size:13px;margin:10px 0}
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>邓兴华 L10–L15 阅读理解「3 无选项 + 2 有选项」题型改革 · 执行汇报</h1>
+  <p>2026-08-11 ｜ 依据《邓兴华L10-L15阅读理解3+2题型改革命令_20260811.md》与规范 §3.18 ｜ 集群模式：6 Worker + 主线改造验证</p>
+</header>
+
+<div class="metrics">
+  <div class="metric"><div class="v">17 篇</div><div class="l">A/B/C 全部 3+2 改造</div></div>
+  <div class="metric"><div class="v">6/6</div><div class="l">verify_v2 全 PASS</div></div>
+  <div class="metric"><div class="v">51 道</div><div class="l">无选项填空（data-answers）</div></div>
+  <div class="metric"><div class="v">34 道</div><div class="l">有选项选择保留</div></div>
+  <div class="metric"><div class="v">6 份</div><div class="l">阅读题库_3+2.json（六字段）</div></div>
+</div>
+
+<section>
+<h2>① 题型分配总览（17 篇全部默认 3+2）</h2>
+<table>
+<tr><th>课</th><th>A 篇</th><th>B 篇</th><th>C 篇</th><th>说明</th></tr>
+<tr><td>L10</td><td>3 填 2 选</td><td>3 填 2 选</td><td>—（契约 2 篇）</td><td>原全细节题，Q4/Q5 按开放度重铸（态度推断/主旨）</td></tr>
+<tr><td>L11</td><td>3 填 2 选</td><td>3 填 2 选</td><td>3 填 2 选</td><td>A 篇顺带修 placeholder 泄漏</td></tr>
+<tr><td>L12</td><td>3 填 2 选</td><td>3 填 2 选</td><td>3 填 2 选</td><td>时间/价格/因果开放度分配</td></tr>
+<tr><td>L13</td><td>3 填 2 选（补 2）</td><td>3 填 2 选（补 2）</td><td>3 填 2 选（补 3）</td><td>原 8 题补全至 15，补题 ID 对齐采集</td></tr>
+<tr><td>L14</td><td>3 填 2 选（补 3）</td><td>3 填 2 选（补 3）</td><td>3 填 2 选（补 4）</td><td>原 2+2+1 补全至 15；含 G38 because 填空</td></tr>
+<tr><td>L15</td><td>3 填 2 选</td><td>3 填 2 选</td><td>3 填 2 选</td><td>顺带补全空题面</td></tr>
+</table>
+<div class="note">配额原则：细节/人物/时间/明确因果/简单指代 → 无选项；主旨/意图/推断/开放性词义/概括 → 有选项；推断默认有选项（§3.18.2）。</div>
+</section>
+
+<section>
+<h2>② data-answers 与六字段</h2>
+<ul>
+<li>全部 51 道无选项题：<b>data-answers JSON 数组</b>（覆盖大小写/冠词/同义变体）+ data-correct 锚点；六字段存档于各课 <b>契约\阅读题库_3+2.json</b>（L10/L11 另在课件内嵌同源双份）</li>
+<li>判分：规范化（大小写/空格/句末标点）+ 全串精确匹配，<b>禁关键词硬判</b>（L10 实测含关键词错句仍判错）</li>
+<li>答错显示参考答案 + 双击撤销（§3.8.2），撤销重答判对实测通过</li>
+<li>防越级：minimum_acceptable_answer 词汇 ⊆ 词汇池、语法 ≤ 上限；个别原文摘录豁免已注明</li>
+</ul>
+</section>
+
+<section>
+<h2>③ placeholder 核查（0 新增泄漏）</h2>
+<table>
+<tr><th>课</th><th>新增 fill-input</th><th>placeholder</th><th>结果</th></tr>
+<tr><td>L10</td><td>6</td><td>「输入答案」</td><td class="ok">✅ 0 泄漏</td></tr>
+<tr><td>L11</td><td>9</td><td>「输入答案」</td><td class="ok">✅ 0 泄漏（顺带清 Exit/拼读 5 处既有）</td></tr>
+<tr><td>L12</td><td>9</td><td>「输入答案」</td><td class="ok">✅ 0 泄漏</td></tr>
+<tr><td>L13</td><td>9</td><td>「输入答案」</td><td class="ok">✅ 0 泄漏</td></tr>
+<tr><td>L14</td><td>9</td><td>「输入答案」</td><td class="ok">✅ 0 泄漏（顺带中性化 Exit 4 处既有）</td></tr>
+<tr><td>L15</td><td>9</td><td>「输入答案」</td><td class="ok">✅ 0 泄漏</td></tr>
+</table>
+</section>
+
+<section>
+<h2>④ verify_v2 输出（6/6 PASS）</h2>
+<table>
+<tr><th>课时</th><th>页数</th><th>div平衡</th><th>JS</th><th>答案分布</th><th>可判题</th></tr>
+<tr><td>L10</td><td>42 ✓</td><td>993/993 ✓</td><td>✓</td><td>0%*</td><td>19</td></tr>
+<tr><td>L11</td><td>45 ✓</td><td>1149/1149 ✓</td><td>✓</td><td>0%*</td><td>49</td></tr>
+<tr><td>L12</td><td>44 ✓</td><td>1101/1101 ✓</td><td>✓</td><td>0%*</td><td>42</td></tr>
+<tr><td>L13</td><td>45 ✓</td><td>884/884 ✓</td><td>✓</td><td>40% ✓</td><td>22</td></tr>
+<tr><td>L14</td><td>45 ✓</td><td>673/673 ✓</td><td>✓</td><td>36% ✓</td><td>25</td></tr>
+<tr><td>L15</td><td>43 ✓</td><td>903/903 ✓</td><td>✓</td><td>36% ✓</td><td>14</td></tr>
+</table>
+<p style="font-size:12px;color:var(--muted)">*L10-12 旧代 data-correct 索引式（验证器口径限制）。L11 will 软警告 6→3 净改善。</p>
+<h3>浏览器实测</h3>
+<ul>
+<li>L10：28 项 PASS（含禁关键词硬判负面测试、五选四、IndexedDB）</li>
+<li>L11：83 项 PASS（填空/选择/撤销/五选四/T3-B/分类游戏回归，0 错误）</li>
+<li>L12/L13/L15（主线抽测）：变体判对、错判→参考答案→双击撤销→重答判对、多答案变体判对、选择保留，0 错误</li>
+<li>L14：27 项 PASS（含填空与选择撤销、IndexedDB 采集）</li>
+</ul>
+</section>
+
+<section>
+<h2>⑤ 配套练习</h2>
+<table>
+<tr><th>课</th><th>判定</th><th>处置</th></tr>
+<tr><td>L10</td><td>仿真型</td><td>不改（标注）</td></tr>
+<tr><td>L11</td><td>训练型</td><td>班规版_3+2.docx 已同步（A/B/C 各 3 填 2 选，主题无回退）</td></tr>
+<tr><td>L12/L13/L15</td><td>已同步</td><td>_3+2.docx（各篇 3 填 2 选 + 参考答案同步）</td></tr>
+<tr><td>L14</td><td>仿真型</td><td>不改（标注）</td></tr>
+</table>
+</section>
+
+<section>
+<h2>⑥ 已知偏差</h2>
+<ul>
+<li>L10/L12/L13/L15 初始 Worker 因 LLM 超时失败（基础设施），分别由重派 Worker/主线接手完成；L11/L14 由原 Worker 完成</li>
+<li>L13 原阅读 8 题、L14 原 2+2+1 题：已补全至每篇 5 题（补题基于本课语篇，不越级）</li>
+<li>L15 阅读题面原为空（生成器遗漏），改造时已补全</li>
+<li>既有非阅读 placeholder 含语法类别提示（「填入 some 或 any」等，历史遗留非本轮新增）</li>
+<li>L11 配套练习总分 80→88（新增 4 题，页头已标注）；L11 C 篇 Q13 措辞微调（去不符原文的 again）</li>
+<li>六课既有 data-qid 属性引号畸形（预存在，浏览器容错正常）</li>
+</ul>
+</section>
+
+<footer>邓兴华线 Agent（集群模式）· 2026-08-11 ｜ 配套 Markdown：邓兴华L10-L15阅读理解3+2题型改革_执行汇报_20260811.md（同目录）</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "lesson": "L15",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A/B/C 各 3 无选项 + 2 有选项（默认 3+2，无需 2+3 弹性标注）",
+  "vocab_pool": ["weather","sunny","rainy","cloudy","windy","snowy","warm","cold","cool","hot","dry","wet","season","spring","summer","autumn","winter","vacation","trip","degree"],
+  "grammar_cap": "G40 天气表达句型 / G41 Could-Would you please / G42 非人称 It；禁止 will/比较级/最高级/完成时/被动",
+  "note": "minimum_acceptable_answer 词汇 ⊆ L15 20词池+前课词；允许原文摘录；A03 题干沿用课件既有 should（G28 情态动词属前课 L11），最低答案 an umbrella 为名词短语不涉 should，语法上限内",
+  "A篇_Weather_Report_and_Vacation_Plans": {
+    "L15A01": {"question": "What's the weather like on Monday and Tuesday?", "qid": "Q009", "type": "fill", "openness": "细节·原文直接提取", "canonical_answer": "sunny and warm", "minimum_acceptable_answer": "sunny and warm", "accepted_answers": ["sunny and warm", "it is sunny and warm", "it's sunny and warm", "sunny and warm weather"], "required_vocab": ["sunny(本课)", "warm(本课)"], "required_grammar": "G40 天气表达句型; 上限内"},
+    "L15A02": {"question": "What is the temperature on Monday and Tuesday?", "qid": "Q010", "type": "fill", "openness": "数字细节·原文直接提取", "canonical_answer": "22 degrees", "minimum_acceptable_answer": "22 degrees", "accepted_answers": ["22 degrees", "twenty-two degrees", "22", "about 22 degrees"], "required_vocab": ["degree(本课)"], "required_grammar": "无（数字+名词短语）; 上限内"},
+    "L15A03": {"question": "What should you bring on Thursday?", "qid": "Q011", "type": "fill", "openness": "细节+简单推断·原文提取", "canonical_answer": "an umbrella", "minimum_acceptable_answer": "an umbrella", "accepted_answers": ["an umbrella", "umbrella", "bring an umbrella", "you should bring an umbrella"], "required_vocab": ["umbrella(原文拓展词，原文摘录)"], "required_grammar": "题干 should 属 G28 情态动词（前课 L11）；最低答案 an umbrella 为名词短语，不涉超纲结构; 上限内"},
+    "L15A04": {"question": "What does the word \"forecast\" mean in this passage?", "qid": "Q012", "type": "opt", "openness": "开放性词义判断→有选项", "correct": "C"},
+    "L15A05": {"question": "Which season is the best for a vacation?", "qid": "Q013", "type": "opt", "openness": "细节判断·原文提取但含 best 判断→有选项", "correct": "A"}
+  },
+  "B篇_Planning_a_Summer_Trip": {
+    "L15B01": {"question": "What do Tom and Lily want to do this summer vacation?", "qid": "Q014", "type": "fill", "openness": "细节·原文直接提取", "canonical_answer": "go on a trip", "minimum_acceptable_answer": "go on a trip", "accepted_answers": ["go on a trip", "they want to go on a trip", "to go on a trip", "a trip"], "required_vocab": ["trip(本课)", "vacation(本课)"], "required_grammar": "无（动词短语作答）; 上限内"},
+    "L15B02": {"question": "How's the weather in Sanya?", "qid": "Q015", "type": "fill", "openness": "细节·原文直接提取", "canonical_answer": "sunny and warm", "minimum_acceptable_answer": "sunny and warm", "accepted_answers": ["sunny and warm", "it is sunny and warm", "it's sunny and warm", "sunny and warm weather"], "required_vocab": ["sunny(本课)", "warm(本课)"], "required_grammar": "G40 天气表达句型; 上限内"},
+    "L15B03": {"question": "What does \"Certainly!\" mean here?", "qid": "Q016", "type": "opt", "openness": "开放性词义判断→有选项", "correct": "A"},
+    "L15B04": {"question": "What day do they plan to go?", "qid": "Q017", "type": "fill", "openness": "时间细节·原文直接提取", "canonical_answer": "Monday", "minimum_acceptable_answer": "Monday", "accepted_answers": ["Monday", "on Monday", "go on Monday"], "required_vocab": ["Monday(前课星期词)"], "required_grammar": "无（时间名词）; 上限内"},
+    "L15B05": {"question": "How do Tom and Lily feel about the trip?", "qid": "Q018", "type": "opt", "openness": "态度推断·开放度高→有选项", "correct": "C"}
+  },
+  "C篇_The_Four_Seasons_Around_the_World": {
+    "L15C01": {"question": "What are the four seasons in a year?", "qid": "Q021", "type": "fill", "openness": "细节·原文直接提取", "canonical_answer": "spring, summer, autumn and winter", "minimum_acceptable_answer": "spring, summer, autumn and winter", "accepted_answers": ["spring, summer, autumn and winter", "spring, summer, autumn, and winter", "spring summer autumn and winter", "spring summer autumn winter"], "required_vocab": ["season(本课)", "spring(本课)", "summer(本课)", "autumn(本课)", "winter(本课)"], "required_grammar": "无（名词并列）; 上限内"},
+    "L15C02": {"question": "What's the weather like in autumn?", "qid": "Q022", "type": "fill", "openness": "细节·原文直接提取", "canonical_answer": "cool and dry", "minimum_acceptable_answer": "cool and dry", "accepted_answers": ["cool and dry", "it is cool and dry", "it's cool and dry", "cool and dry weather"], "required_vocab": ["cool(本课)", "dry(本课)"], "required_grammar": "G40 天气表达句型; 上限内"},
+    "L15C03": {"question": "What's the weather like in winter in many places?", "qid": "Q023", "type": "fill", "openness": "细节·原文直接提取", "canonical_answer": "cold and snowy", "minimum_acceptable_answer": "cold and snowy", "accepted_answers": ["cold and snowy", "it is cold and snowy", "it's cold and snowy", "cold and snowy weather"], "required_vocab": ["cold(本课)", "snowy(本课)"], "required_grammar": "G40 天气表达句型; 上限内"},
+    "L15C04": {"question": "What is the main idea of the passage?", "qid": "Q019", "type": "opt", "openness": "主旨概括·开放度高→有选项", "correct": "A"},
+    "L15C05": {"question": "What does the word \"hemisphere\" mean in the passage?", "qid": "Q020", "type": "opt", "openness": "开放性词义判断→有选项", "correct": "B"}

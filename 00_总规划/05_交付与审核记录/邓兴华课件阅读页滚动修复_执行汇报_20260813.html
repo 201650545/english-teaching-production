@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>邓兴华课件阅读页滚动修复 · 执行汇报 2026-08-13</title>
+<style>
+  :root{--brand:#1a5276;--brand-l:#5db0e2;--ok:#27ae60;--err:#e74c3c;--warn:#e67e22;--bg:#f5f7fa;--card:#fff;--line:#e3e8ef;--txt:#2c3e50;--muted:#7f8c8d}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--txt);line-height:1.65;padding:32px 16px}
+  .wrap{max-width:960px;margin:0 auto}
+  header{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;border-radius:16px;padding:26px 30px;margin-bottom:22px}
+  header h1{font-size:24px;margin-bottom:8px}
+  header p{opacity:.9;font-size:14px}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:18px}
+  h2{font-size:18px;color:var(--brand);margin-bottom:12px;border-left:4px solid var(--brand-l);padding-left:10px}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0}
+  th{background:#eef4fa;color:var(--brand);padding:7px 9px;text-align:left;border:1px solid var(--line)}
+  td{padding:6px 9px;border:1px solid var(--line)}
+  pre{background:#f4f6f9;border-radius:8px;padding:12px;font-size:12px;overflow-x:auto;margin:10px 0}
+  .ok{color:var(--ok);font-weight:700}
+  ul{margin:8px 0 8px 22px;font-size:13.5px}
+  li{margin:4px 0}
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>邓兴华课件阅读页滚动修复 · 执行汇报</h1>
+  <p>2026-08-13 ｜ 用户反馈：阅读 A/B/C 篇第 4 题之后无法显示、不能滑到底、第 5 题不可见</p>
+</header>
+
+<section>
+<h2>① 问题定位与根因</h2>
+<p><b>受影响：L11 阅读 A/B/C 篇页（page29/30/31）</b>。其余五课阅读页批量诊断均为原生滚动、第 4/5 题可达。</p>
+<table>
+<tr><th>组件</th><th>原 CSS</th><th>影响</th></tr>
+<tr><td>.rl-reel-viewport</td><td>overflow:hidden; touch-action:none</td><td>视口裁剪 + 禁用原生/触摸滚动</td></tr>
+<tr><td>.rl-reel-track</td><td>position:absolute + transform 翻卡</td><td>内容靠 JS transform 平移</td></tr>
+<tr><td>翻卡交互</td><td>仅按钮 + 触摸拖拽</td><td>桌面滚轮无监听 → 第 5 题位于文档 4308-4377px，可滚动范围仅 1035px，不可达</td></tr>
+</table>
+</section>
+
+<section>
+<h2>② 修复（CSS 覆盖，零内容改动）</h2>
+<pre>.rl-reel-viewport{overflow-y:auto !important;overflow-x:hidden !important;touch-action:auto !important;-webkit-overflow-scrolling:touch}
+.rl-reel-track{position:static !important;transform:none !important;transition:none !important}
+.rl-reel-nav,.rl-reel-dots,.rl-reel-count{display:none !important}</pre>
+<p style="font-size:13px">视口改原生纵向滚动（滚轮/触摸/滚动条均可用），内容 4893px 全量可达；track 静态化后卡片正常文档流排列；按钮/圆点 UI 隐藏。</p>
+</section>
+
+<section>
+<h2>③ 验证</h2>
+<table>
+<tr><th>项</th><th>page29</th><th>page30</th><th>page31</th></tr>
+<tr><td>滚动到底（0→4194）</td><td class="ok">✅</td><td class="ok">✅</td><td class="ok">✅</td></tr>
+<tr><td>第 5 题完整可见</td><td class="ok">✅</td><td class="ok">✅</td><td class="ok">✅</td></tr>
+<tr><td>第 5 题作答判对</td><td class="ok">✅</td><td class="ok">✅</td><td class="ok">✅</td></tr>
+<tr><td>滚轮滚动生效</td><td class="ok">✅</td><td class="ok">✅</td><td class="ok">✅</td></tr>
+</table>
+<ul>
+<li>verify_v2 --force：PASS（div 1149/1149、JS 检查通过，CSS 注入无破坏）</li>
+<li>console/pageerror：0</li>
+<li>其余五课阅读页回归：正常，未改动</li>
+</ul>
+</section>
+
+<footer>邓兴华线 Agent · 2026-08-13 ｜ 修改文件：第11课时_课件_中等.html（仅追加 CSS 覆盖）</footer>
+<section>
+<h2>④ 补充修复与全课终检（第二轮）</h2>
+<p style="font-size:13.5px"><b>续检发现</b>：L12 的 rl-reel 语篇小窗（page28/29/30）视口仅 40px 高、308px 内容、overflow:hidden——滚轮同样不可达。已注入与 L11 相同 CSS 覆盖，verify PASS。</p>
+<table>
+<tr><th>课</th><th>阅读页</th><th>滚动</th><th>第 4 题</th><th>第 5 题</th></tr>
+<tr><td>L10</td><td>page27/28</td><td class="ok">原生 ✅</td><td class="ok">可答 ✅</td><td class="ok">可见 ✅</td></tr>
+<tr><td>L11</td><td>page29/30/31</td><td class="ok">修复后 4194 ✅</td><td class="ok">可答 ✅</td><td class="ok">可见可答 ✅</td></tr>
+<tr><td>L12</td><td>page28/29/30</td><td class="ok">修复后 2240 ✅</td><td class="ok">可答 ✅</td><td class="ok">可见可答 ✅</td></tr>
+<tr><td>L13/L15</td><td>每页 1-3 题</td><td class="ok">无需滚动 ✅</td><td>—</td><td class="ok">可见 ✅</td></tr>
+<tr><td>L14</td><td>page31 等</td><td class="ok">原生 262 ✅</td><td class="ok">可答 ✅</td><td class="ok">可见 ✅</td></tr>
+</table>
+<p style="font-size:13px;color:var(--muted)">console 全 0；L11/L12 verify_v2 PASS；修改文件：第11/12课时_课件_中等.html（仅 CSS 覆盖）。</p>
+</section></div>
+</body>
+</html>

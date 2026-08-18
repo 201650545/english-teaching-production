@@ -1,0 +1,45 @@
+{
+  "generated": "2026-08-04T17:40:32.969223",
+  "files": {
+    "00_工具\\verify_v2.py": {
+      "size": 10150,
+      "mtime": "2026-08-04T07:01:24.975707",
+      "sha256": "f9dd585e027f9fe985c6b094fa905d70cf516d8b004f803326beb0e26ee3f5ca",
+      "backup": "06_回滚文件\\00_工具\\verify_v2.py"
+    },
+    "00_工具\\courseware_engine.py": {
+      "size": 130054,
+      "mtime": "2026-08-04T07:01:24.976715",
+      "sha256": "491fed37fef79fdf347659fbfd4965bbb1f9def8f8cd812b5c246401d4b68c55",
+      "backup": "06_回滚文件\\00_工具\\courseware_engine.py"
+    },
+    "00_格式规范\\更新记录.md": {
+      "size": 87078,
+      "mtime": "2026-08-04T08:51:15.879827",
+      "sha256": "4cf8c99c76fa61a0403dde9a9a83453d52e95669be505c4b795cab6d2fe08160",
+      "backup": "06_回滚文件\\00_格式规范\\更新记录.md"
+    }
+  },
+  "samples": {
+    "许颖嘉\\第26课时\\课件成品_网页PPT\\第26课时_课件_基础.html": {
+      "size": 200443,
+      "sha256": "ef2d6a5d2c6702977cf2e0bbc5153a7255507fbf83fdc4b0cd876a35171372d0"
+    },
+    "许颖嘉\\第17课时\\课件成品_网页PPT\\第17课时_课件_基础.html": {
+      "size": 233841,
+      "sha256": "b187706ff389b1ed9fdb538eaf3d9dcf26be8c97290cc4d5aa3f5c0afc5abcd6"
+    },
+    "许颖嘉\\第18课时\\课件成品_网页PPT\\第18课时_课件_基础.html": {
+      "size": 236989,
+      "sha256": "defb0c4da746dd134ec6e0726c79ac8a4776614b8d3308af9f5e9107a082a0ee"
+    },
+    "邓兴华\\第05课时\\课件成品_网页PPT\\第05课时_课件.html": {
+      "size": 130497,
+      "sha256": "095a0814d792385350687b5c1425eefebc11eb113fc8623292d9f00f415134d6"
+    },
+    "邓兴华\\第06课时\\课件成品_网页PPT\\第06课时_课件.html": {
+      "size": 203687,
+      "sha256": "e039570b91bff4fda2f6d2de9d7e7660b2b8f0784eec3b82770f7dc71a0c7309"
+    }
+  }
+}

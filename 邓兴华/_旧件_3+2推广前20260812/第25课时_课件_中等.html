@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第25课时 · 动名词与不定式综合运用</title>
+<style>
+
+/* ==================== 全局变量与重置 ==================== */
+:root{
+  --brand:#E63946;--accent:#FFD700;--brand-light:#FF6B6B;--accent-light:#FFE66D;
+  --bg-start:#FFF8F0;--bg-end:#FFE8D6;--text-primary:#1A1A2E;--text-secondary:#555555;
+  --correct:#06A77D;--error:#E63946;--gray-node:#C0C0C0;--gray-border:#999999;
+  --card-bg:#FFFFFF;--table-header-bg:#E63946;--table-header-text:#FFFFFF;
+  --table-highlight-bg:#FFF8E1;--mnemonic-border:#FFD700;--mnemonic-text:#E63946;
+  --error-row-bg:#FFEBEE;--correct-row-bg:#E8F5E9;--page-shadow:0 4px 20px rgba(230,57,70,.15);
+  --card-shadow:0 2px 12px rgba(0,0,0,.08);
+  --sop-blue:#3B82F6;--sop-green:#10B981;--sop-purple:#8B5CF6;--sop-orange:#F59E0B;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;height:100%;overflow:hidden;font-family:'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif;
+  background:linear-gradient(135deg,var(--bg-start),var(--bg-end));color:var(--text-primary);}
+button{cursor:pointer;font-family:inherit;border:none;outline:none;background:none;}
+input{font-family:inherit;outline:none;}
+
+/* ==================== 导航栏 ==================== */
+.nav-bar{position:fixed;top:0;left:0;width:100%;height:54px;background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);box-shadow:0 2px 10px rgba(0,0,0,.1);z-index:1000;
+  display:flex;align-items:center;justify-content:center;gap:0;padding:0 20px;}
+.nav-item{display:flex;align-items:center;gap:6px;padding:8px 12px;font-size:14px;font-weight:500;
+  color:var(--text-secondary);cursor:pointer;transition:all .2s;border-radius:8px;white-space:nowrap;}
+.nav-item:hover{background:rgba(230,57,70,.08);color:var(--brand);}
+.nav-item.active{background:var(--brand);color:#fff;font-weight:600;}
+.nav-item .nav-num{font-size:13px;opacity:.7;}
+.nav-separator{width:16px;height:2px;background:var(--accent);border-radius:1px;opacity:.4;}
+
+/* ==================== 阶段徽章 ==================== */
+.stage-badge{position:fixed;top:10px;right:20px;z-index:1001;background:linear-gradient(135deg,var(--brand),var(--brand-light));
+  color:#fff;padding:6px 16px;border-radius:20px;font-size:14px;font-weight:600;box-shadow:0 2px 8px rgba(230,57,70,.3);
+  letter-spacing:.5px;}
+
+/* ==================== 数据同步状态 ==================== */
+.sync-status{position:fixed;top:10px;left:20px;z-index:1001;background:rgba(255,255,255,.9);
+  padding:4px 12px;border-radius:12px;font-size:12px;font-weight:600;color:var(--text-secondary);
+  box-shadow:0 2px 6px rgba(0,0,0,.08);display:flex;align-items:center;gap:6px;}
+.sync-dot{width:8px;height:8px;border-radius:50%;background:var(--correct);animation:pulse 2s infinite;}
+.sync-dot.pending{background:var(--sop-orange);}
+.sync-dot.failed{background:var(--error);}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+
+/* ==================== 页面容器 ==================== */
+.pages-container{position:absolute;top:54px;left:0;width:100%;height:calc(100% - 54px);overflow:hidden;aspect-ratio:21/9;}
+.page{position:absolute;top:0;left:0;width:100%;height:100%;display:none;overflow-y:auto;
+  padding:25px 45px 50px;background:linear-gradient(135deg,var(--bg-start),var(--bg-end));aspect-ratio:21/9;}
+.page.active{display:block;animation:pageFadeIn .4s ease-out;}
+@keyframes pageFadeIn{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:translateX(0);}}
+.page::-webkit-scrollbar{width:6px;}
+.page::-webkit-scrollbar-track{background:rgba(0,0,0,.05);}
+.page::-webkit-scrollbar-thumb{background:var(--brand-light);border-radius:3px;}
+
+/* ==================== 通用排版 ==================== */
+.page-title{font-size:36px;font-weight:700;color:var(--brand);margin-bottom:6px;text-align:center;
+  text-shadow:0 2px 4px rgba(230,57,70,.1);}
+.page-subtitle{font-size:20px;font-weight:400;color:var(--text-secondary);text-align:center;margin-bottom:18px;}
+.page-content{max-width:1500px;margin:0 auto;}
+.body-text{font-size:22px;line-height:1.6;color:var(--text-primary);}
+.highlight{color:var(--brand);font-weight:600;}
+.highlight-gold{color:#B8860B;font-weight:700;}
+.highlight-bold{font-weight:700;}
+.tag-review{display:inline-block;background:#e0e0e0;color:#666;padding:2px 10px;border-radius:10px;font-size:14px;font-weight:600;margin-left:8px;vertical-align:middle;}
+.tag-new{display:inline-block;background:var(--accent);color:#333;padding:2px 10px;border-radius:10px;font-size:14px;font-weight:700;margin-left:8px;vertical-align:middle;}
+.tag-sop{display:inline-block;background:var(--sop-blue);color:#fff;padding:2px 10px;border-radius:10px;font-size:14px;font-weight:600;margin-left:8px;}
+
+/* ==================== 统计面板 ==================== */
+.stats-panel{display:flex;gap:12px;justify-content:center;margin:12px 0;}
+.stats-card{background:#fff;border-radius:10px;padding:10px 20px;text-align:center;box-shadow:var(--card-shadow);min-width:110px;}
+.stats-card .stats-num{font-size:32px;font-weight:700;color:var(--brand);}
+.stats-card .stats-label{font-size:14px;color:var(--text-secondary);margin-top:2px;}
+.stats-card.gold .stats-num{color:#B8860B;}
+.stats-card.blue .stats-num{color:var(--sop-blue);}
+.stats-card.green .stats-num{color:var(--sop-green);}
+
+/* ==================== 表格样式 ==================== */
+.content-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:18px;
+  box-shadow:var(--card-shadow);border-radius:10px;overflow:hidden;}
+.content-table thead{background:var(--table-header-bg);color:var(--table-header-text);}
+.content-table th{padding:10px 12px;font-size:18px;font-weight:600;text-align:center;}
+.content-table td{padding:8px 10px;text-align:center;border-bottom:1px solid #f0e0d0;font-size:17px;line-height:1.5;}
+.content-table tbody tr:nth-child(even){background:rgba(255,248,225,.5);}
+.content-table tbody tr:hover{background:var(--table-highlight-bg);}
+.content-table .hl-gold{background:rgba(255,215,0,.12);font-weight:600;}
+.content-table .hl-red{background:rgba(230,57,70,.08);font-weight:600;color:var(--brand);}
+.content-table .hl-blue{background:rgba(59,130,246,.08);font-weight:600;color:var(--sop-blue);}
+
+/* ==================== 词汇卡片 ==================== */
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0;}
+.vocab-card{background:#fff;border-radius:10px;padding:12px 16px;box-shadow:var(--card-shadow);
+  border-left:4px solid var(--brand);transition:all .2s;cursor:pointer;}
+.vocab-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.12);}
+.vocab-card:nth-child(even){border-left-color:var(--accent);}
+.vocab-head{display:flex;align-items:center;gap:8px;margin-bottom:4px;}
+.vocab-word{font-size:22px;font-weight:700;color:var(--brand);}
+.vocab-card:nth-child(even) .vocab-word{color:#B8860B;}
+.vocab-phonetic{font-size:15px;color:var(--text-secondary);font-style:italic;}
+.vocab-pos{font-size:13px;background:var(--brand);color:#fff;padding:1px 8px;border-radius:8px;}
+.vocab-card:nth-child(even) .vocab-pos{background:var(--accent);color:#333;}
+.vocab-cn{font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:2px;}
+.vocab-collocation{font-size:14px;color:var(--text-secondary);margin-bottom:2px;}
+.vocab-example{font-size:14px;color:var(--text-primary);font-style:italic;line-height:1.4;}
+.vocab-memory{font-size:13px;color:var(--sop-purple);margin-top:2px;}
+
+/* ==================== 口诀卡片 ==================== */
+.mnemonic-card{background:linear-gradient(135deg,#FFFBF0,#FFF8E1);border:2px solid var(--mnemonic-border);
+  border-radius:14px;padding:16px 24px;margin:12px 0;box-shadow:0 4px 16px rgba(255,215,0,.2);
+  cursor:pointer;perspective:1000px;min-height:70px;}
+.mnemonic-card-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;}
+.mnemonic-card.flipped .mnemonic-card-inner{transform:rotateY(180deg);}
+.mnemonic-front,.mnemonic-back{position:absolute;width:100%;backface-visibility:hidden;}
+.mnemonic-back{transform:rotateY(180deg);}
+.mnemonic-text{font-size:32px;font-weight:600;color:var(--mnemonic-text);line-height:1.6;text-align:center;font-style:italic;}
+.mnemonic-label{font-size:15px;color:var(--text-secondary);text-align:center;margin-bottom:6px;}
+.mnemonic-back .mnemonic-text{font-size:18px;color:var(--text-secondary);font-style:normal;text-align:left;line-height:1.6;}
+
+/* ==================== SOP流程图 ==================== */
+.sop-flowchart{display:flex;align-items:center;justify-content:center;gap:0;margin:16px 0;flex-wrap:wrap;}
+.sop-step{background:#fff;border-radius:12px;padding:16px 20px;text-align:center;box-shadow:var(--card-shadow);
+  min-width:140px;max-width:200px;border-top:4px solid var(--brand);position:relative;}
+.sop-step:nth-child(odd){border-top-color:var(--brand);}
+.sop-step:nth-child(even){border-top-color:var(--accent);}
+.sop-step-num{width:36px;height:36px;line-height:36px;text-align:center;background:var(--brand);color:#fff;
+  border-radius:50%;font-size:18px;font-weight:700;margin:0 auto 8px;}
+.sop-step:nth-child(even) .sop-step-num{background:var(--accent);color:#333;}
+.sop-step-title{font-size:18px;font-weight:700;color:var(--brand);margin-bottom:4px;}
+.sop-step:nth-child(even) .sop-step-title{color:#B8860B;}
+.sop-step-desc{font-size:14px;color:var(--text-secondary);line-height:1.4;}
+.sop-arrow{display:flex;align-items:center;color:var(--accent);font-size:28px;font-weight:700;padding:0 6px;}
+
+/* ==================== 答题区 ==================== */
+.quiz-question{background:#fff;border-radius:10px;padding:14px 18px;margin:10px 0;box-shadow:var(--card-shadow);}
+.quiz-q-text{font-size:19px;font-weight:600;margin-bottom:8px;color:var(--text-primary);}
+.quiz-q-text .q-num{display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;background:var(--brand);color:#fff;border-radius:50%;font-size:14px;margin-right:8px;}
+.quiz-opts{display:flex;flex-direction:column;gap:6px;}
+.quiz-opt{padding:8px 14px;border:2px solid #ddd;border-radius:8px;font-size:17px;cursor:pointer;transition:all .2s;background:#fff;}
+.quiz-opt:hover{border-color:var(--brand-light);background:rgba(230,57,70,.03);}
+.quiz-opt.correct{border-color:var(--correct);background:var(--correct-row-bg);color:var(--correct);font-weight:600;}
+.quiz-opt.wrong{border-color:var(--error);background:var(--error-row-bg);color:var(--error);}
+.quiz-opt.disabled{pointer-events:none;opacity:.7;}
+.quiz-explain{display:none;margin-top:8px;padding:8px 12px;background:var(--table-highlight-bg);border-radius:6px;font-size:15px;color:var(--text-secondary);}
+.quiz-explain.show{display:block;animation:fadeIn .3s ease-out;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+.fill-input{width:160px;padding:6px 12px;border:2px solid #ddd;border-radius:6px;font-size:18px;margin:0 6px;}
+.fill-input:focus{border-color:var(--brand);}
+.fill-input.correct{border-color:var(--correct);background:var(--correct-row-bg);}
+.fill-input.wrong{border-color:var(--error);background:var(--error-row-bg);}
+.fill-check-btn{padding:6px 16px;background:var(--accent);color:#333;border:none;border-radius:6px;font-size:16px;font-weight:600;cursor:pointer;margin-left:6px;}
+.fill-check-btn:hover{background:var(--accent-light);}
+.fill-answer{display:none;font-size:16px;color:var(--correct);font-weight:600;margin-top:4px;}
+.fill-answer.show{display:block;}
+
+/* 连线题 */
+.match-container{display:flex;gap:30px;justify-content:center;margin:14px 0;}
+.match-column{display:flex;flex-direction:column;gap:10px;min-width:260px;}
+.match-item{padding:10px 16px;background:#fff;border:2px solid #ddd;border-radius:8px;font-size:16px;cursor:pointer;transition:all .2s;text-align:center;}
+.match-item:hover{border-color:var(--brand-light);}
+.match-item.selected{border-color:var(--accent);background:rgba(255,215,0,.1);}
+.match-item.matched{border-color:var(--correct);background:var(--correct-row-bg);pointer-events:none;}
+.match-item.wrong-match{border-color:var(--error);background:var(--error-row-bg);animation:shake .4s;}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+
+/* 拖拽排序 */
+.drag-container{background:#fff;border-radius:10px;padding:14px;margin:10px 0;box-shadow:var(--card-shadow);}
+.drag-words{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;min-height:50px;padding:8px;background:var(--table-highlight-bg);border-radius:8px;}
+.drag-word{padding:8px 16px;background:var(--brand);color:#fff;border-radius:8px;font-size:16px;cursor:grab;user-select:none;transition:all .15s;}
+.drag-word:hover{background:var(--brand-light);transform:translateY(-2px);}
+.drag-word.dragging{opacity:.5;}
+.drag-word.placed{background:var(--correct);}
+.drag-slot{display:inline-block;min-width:80px;height:38px;border:2px dashed #ccc;border-radius:6px;margin:0 4px;vertical-align:middle;}
+.drag-slot.filled{border-color:var(--correct);border-style:solid;}
+.drag-submit{padding:8px 20px;background:var(--accent);color:#333;border:none;border-radius:8px;font-size:17px;font-weight:600;cursor:pointer;margin-top:8px;}
+.drag-submit:hover{background:var(--accent-light);}
+.drag-result{margin-top:8px;font-size:17px;font-weight:600;}
+.drag-result.show{display:block;color:var(--brand);}
+.drag-word.selected{background:var(--accent);color:#333;transform:translateY(-3px);box-shadow:0 4px 12px rgba(255,215,0,.4);}
+.drag-word.used{opacity:.35;cursor:default;pointer-events:none;}
+.drag-slot.correct{border-color:var(--correct);border-style:solid;background:rgba(76,175,80,.1);}
+.drag-slot.wrong{border-color:var(--error);border-style:solid;background:rgba(244,67,54,.1);}
+
+/* 进度条 */
+.progress-bar{width:100%;height:8px;background:#e0e0e0;border-radius:4px;margin:10px 0;overflow:hidden;}
+.progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:4px;transition:width .3s;width:0%;}
+.score-display{text-align:center;font-size:24px;font-weight:700;color:var(--brand);margin-top:10px;display:none;}
+.score-display.show{display:block;}
+
+/* ==================== 翻转卡 ==================== */
+.flip-card{perspective:1000px;height:130px;cursor:pointer;}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
+.flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;
+  border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--card-shadow);}
+.flip-card-front{background:#fff;border-left:4px solid var(--error);}
+.flip-card-back{background:var(--correct-row-bg);border-left:4px solid var(--correct);transform:rotateY(180deg);}
+.flip-card-front .flip-wrong{font-size:17px;color:var(--error);text-decoration:line-through;margin-bottom:4px;}
+.flip-card-front .flip-hint{font-size:14px;color:var(--text-secondary);}
+.flip-card-back .flip-right{font-size:17px;color:var(--correct);font-weight:600;margin-bottom:4px;}
+.flip-card-back .flip-explain{font-size:14px;color:var(--text-secondary);}
+
+/* ==================== 题型导图 ==================== */
+.exam-type-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0;}
+.exam-type-card{background:#fff;border-radius:12px;padding:14px;text-align:center;box-shadow:var(--card-shadow);
+  border-top:4px solid var(--brand);transition:all .2s;cursor:pointer;}
+.exam-type-card:hover{transform:translateY(-4px);box-shadow:0 6px 20px rgba(0,0,0,.12);}
+.exam-type-card:nth-child(1){border-top-color:var(--brand);}
+.exam-type-card:nth-child(2){border-top-color:var(--sop-blue);}
+.exam-type-card:nth-child(3){border-top-color:var(--sop-green);}
+.exam-type-card:nth-child(4){border-top-color:var(--sop-purple);}
+.exam-type-card:nth-child(5){border-top-color:var(--sop-orange);}
+.exam-type-icon{font-size:32px;margin-bottom:6px;}
+.exam-type-name{font-size:16px;font-weight:700;margin-bottom:4px;}
+.exam-type-score{font-size:24px;font-weight:700;color:var(--brand);}
+.exam-type-card:nth-child(2) .exam-type-score{color:var(--sop-blue);}
+.exam-type-card:nth-child(3) .exam-type-score{color:var(--sop-green);}
+.exam-type-card:nth-child(4) .exam-type-score{color:var(--sop-purple);}
+.exam-type-card:nth-child(5) .exam-type-score{color:var(--sop-orange);}
+.exam-type-focus{font-size:12px;color:var(--text-secondary);margin-top:4px;}
+
+/* ==================== 路线图 ==================== */
+.roadmap{display:flex;align-items:stretch;gap:0;margin:16px 0;}
+.roadmap-step{flex:1;background:#fff;border-radius:10px;padding:12px;text-align:center;
+  box-shadow:var(--card-shadow);position:relative;border-top:4px solid var(--brand);}
+.roadmap-step:nth-child(even){border-top-color:var(--accent);}
+.roadmap-step .step-num{font-size:26px;font-weight:700;color:var(--brand);}
+.roadmap-step .step-title{font-size:15px;font-weight:600;margin:4px 0;}
+.roadmap-step .step-time{font-size:12px;color:var(--text-secondary);}
+.roadmap-arrow{display:flex;align-items:center;color:var(--accent);font-size:22px;padding:0 4px;}
+
+/* ==================== 词性标注区 ==================== */
+.pos-sort-area{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0;}
+.pos-box{background:#fff;border-radius:10px;padding:10px;min-height:120px;box-shadow:var(--card-shadow);border-top:4px solid;}
+.pos-box.noun{border-top-color:var(--brand);}
+.pos-box.verb{border-top-color:var(--sop-blue);}
+.pos-box.adj{border-top-color:var(--sop-green);}
+.pos-box.adv{border-top-color:var(--sop-purple);}
+.pos-box.pron{border-top-color:var(--sop-orange);}
+.pos-box-title{font-size:15px;font-weight:700;text-align:center;margin-bottom:8px;}
+.pos-box.noun .pos-box-title{color:var(--brand);}
+.pos-box.verb .pos-box-title{color:var(--sop-blue);}
+.pos-box.adj .pos-box-title{color:var(--sop-green);}
+.pos-box.adv .pos-box-title{color:var(--sop-purple);}
+.pos-box.pron .pos-box-title{color:var(--sop-orange);}
+.pos-word{display:inline-block;padding:4px 10px;margin:3px;border-radius:6px;font-size:14px;font-weight:600;cursor:grab;transition:all .15s;}
+.pos-word.noun{background:rgba(230,57,70,.1);color:var(--brand);}
+.pos-word.verb{background:rgba(59,130,246,.1);color:var(--sop-blue);}
+.pos-word.adj{background:rgba(16,185,129,.1);color:var(--sop-green);}
+.pos-word.adv{background:rgba(139,92,246,.1);color:var(--sop-purple);}
+.pos-word.pron{background:rgba(245,158,11,.1);color:var(--sop-orange);}
+.pos-word:hover{transform:scale(1.08);}
+.pos-word.placed{opacity:.3;pointer-events:none;}
+
+/* ==================== 封面 ==================== */
+.cover-container{text-align:center;padding:20px 0;}
+.cover-title{font-size:44px;font-weight:700;color:var(--brand);text-shadow:0 3px 6px rgba(230,57,70,.15);margin-bottom:10px;}
+.cover-subtitle{font-size:22px;color:var(--text-secondary);margin-bottom:20px;}
+.cover-info{display:flex;gap:16px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;}
+.cover-info-item{background:#fff;padding:12px 26px;border-radius:12px;box-shadow:var(--card-shadow);border-top:3px solid var(--accent);text-align:center;}
+.cover-info-num{font-size:30px;font-weight:700;color:var(--brand);}
+.cover-info-label{font-size:13px;color:var(--text-secondary);}
+.cover-nav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+.cover-nav-item{display:flex;flex-direction:column;align-items:center;padding:10px 16px;background:#fff;
+  border-radius:10px;box-shadow:var(--card-shadow);cursor:pointer;transition:all .3s;min-width:90px;border-top:3px solid transparent;}
+.cover-nav-item:hover{transform:translateY(-5px);box-shadow:0 6px 16px rgba(0,0,0,.12);border-top-color:var(--brand);}
+.cover-nav-icon{font-size:26px;margin-bottom:4px;}
+.cover-nav-label{font-size:13px;font-weight:600;color:var(--text);}
+
+/* ==================== 阅读语篇 ==================== */
+.reading-passage{background:#fff;border-radius:10px;padding:18px 24px;margin:12px 0;box-shadow:var(--card-shadow);
+  font-size:19px;line-height:1.8;color:var(--text-primary);}
+.reading-passage .blank{display:inline-block;min-width:60px;border-bottom:2px solid var(--brand);text-align:center;
+  margin:0 4px;font-weight:700;color:var(--brand);}
+.reading-passage .blank.filled{color:var(--correct);border-color:var(--correct);}
+.reading-passage .blank.wrong{color:var(--error);border-color:var(--error);}
+
+/* ==================== 题号导航 ==================== */
+.q-nav{display:flex;gap:6px;justify-content:center;margin:10px 0;flex-wrap:wrap;}
+.q-nav-item{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;background:#fff;border:2px solid #ddd;color:var(--text-secondary);}
+.q-nav-item:hover{border-color:var(--brand);color:var(--brand);}
+.q-nav-item.correct{background:var(--correct);color:#fff;border-color:var(--correct);}
+.q-nav-item.wrong{background:var(--error);color:#fff;border-color:var(--error);}
+.q-nav-item.current{background:var(--brand);color:#fff;border-color:var(--brand);transform:scale(1.15);}
+.q-nav-item.unanswered{background:#fff;color:var(--text-secondary);}
+
+/* ==================== 词汇游戏通用 ==================== */
+.vocab-game{background:linear-gradient(135deg,#FFFBF0,#FFF8E1);border:2px solid var(--accent);border-radius:14px;padding:18px;margin:10px 0;}
+.game-prompt{background:var(--brand);color:#fff;padding:8px 16px;border-radius:8px;font-size:16px;font-weight:600;margin-bottom:12px;text-align:center;}
+.game-option{padding:10px 16px;border:2px solid #ddd;border-radius:8px;font-size:17px;cursor:pointer;transition:all .2s;background:#fff;margin:4px 0;}
+.game-option:hover{border-color:var(--brand-light);background:rgba(230,57,70,.03);}
+.game-option.correct{border-color:var(--correct);background:var(--correct-row-bg);color:var(--correct);font-weight:600;}
+.game-option.wrong{border-color:var(--error);background:var(--error-row-bg);color:var(--error);}
+.game-feedback{margin-top:10px;padding:10px;border-radius:8px;font-size:16px;text-align:center;display:none;}
+.game-feedback.show{display:block;}
+.game-feedback.correct{background:var(--correct-row-bg);color:var(--correct);}
+.game-feedback.wrong{background:var(--error-row-bg);color:var(--error);}
+.game-progress{display:flex;gap:4px;justify-content:center;margin:8px 0;}
+.game-progress-dot{width:12px;height:12px;border-radius:50%;background:#ddd;transition:all .2s;}
+.game-progress-dot.correct{background:var(--correct);}
+.game-progress-dot.wrong{background:var(--error);}
+.game-progress-dot.current{background:var(--brand);transform:scale(1.3);}
+.context-box{background:#fff;border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:10px 14px;margin:8px 0;font-size:18px;line-height:1.6;}
+.dialogue-line{padding:8px 14px;margin:4px 0;border-radius:8px;font-size:17px;line-height:1.5;}
+.dialogue-line.speaker-a{background:rgba(230,57,70,.06);border-left:3px solid var(--brand);}
+.dialogue-line.speaker-b{background:rgba(255,215,0,.1);border-left:3px solid var(--accent);margin-left:30px;}
+
+/* ==================== 自评卡片 ==================== */
+.eval-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0;}
+.eval-card{background:#fff;border-radius:10px;padding:14px;text-align:center;box-shadow:var(--card-shadow);cursor:pointer;transition:all .2s;border-top:4px solid;}
+.eval-card:nth-child(1){border-top-color:var(--correct);}
+.eval-card:nth-child(2){border-top-color:var(--accent);}
+.eval-card:nth-child(3){border-top-color:var(--brand);}
+.eval-card:nth-child(4){border-top-color:var(--error);}
+.eval-card:hover{transform:translateY(-3px);}
+.eval-grade{font-size:28px;font-weight:700;margin-bottom:4px;}
+.eval-card:nth-child(1) .eval-grade{color:var(--correct);}
+.eval-card:nth-child(2) .eval-grade{color:#B8860B;}
+.eval-card:nth-child(3) .eval-grade{color:var(--brand);}
+.eval-card:nth-child(4) .eval-grade{color:var(--error);}
+.eval-desc{font-size:13px;color:var(--text-secondary);line-height:1.5;}
+
+/* ==================== 完成徽章 ==================== */
+.completion-badge{display:flex;flex-direction:column;align-items:center;margin:16px 0;}
+.completion-circle{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-light));
+  display:flex;align-items:center;justify-content:center;font-size:36px;box-shadow:0 0 30px rgba(255,215,0,.5);
+  animation:badgeBounce .6s cubic-bezier(0.68,-0.55,0.265,1.55);}
+@keyframes badgeBounce{0%{transform:scale(0);opacity:0;}60%{transform:scale(1.2);opacity:1;}100%{transform:scale(1);opacity:1;}}
+.completion-text{font-size:20px;font-weight:700;color:var(--brand);margin-top:10px;}
+.completion-sub{font-size:15px;color:var(--text-secondary);margin-top:4px;}
+
+/* ==================== 知识图谱 ==================== */
+.graph-wrapper{position:relative;width:100%;height:480px;overflow:hidden;border-radius:12px;background:#fff;box-shadow:var(--card-shadow);}
+.graph-node{position:absolute;width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;text-align:center;cursor:pointer;transition:all .2s;border:3px solid;z-index:5;}
+.graph-node:hover{transform:scale(1.2);z-index:10;}
+.graph-center{width:110px;height:110px;background:radial-gradient(circle,var(--brand),var(--brand-light));color:#fff;border-color:var(--brand);
+  font-size:15px;box-shadow:0 0 20px rgba(230,57,70,.4);}
+.graph-line{position:absolute;z-index:1;pointer-events:none;}
+
+/* ==================== 防越级提醒 ==================== */
+.warning-box{background:rgba(230,57,70,.05);border:2px solid var(--brand);border-radius:10px;padding:10px 16px;margin:10px 0;}
+.warning-box .warning-title{font-size:17px;font-weight:700;color:var(--brand);margin-bottom:4px;}
+.warning-box .warning-text{font-size:16px;color:var(--text-primary);}
+
+/* ==================== 页码 ==================== */
+.page-counter{position:fixed;bottom:15px;right:20px;background:rgba(255,255,255,.9);padding:4px 14px;border-radius:15px;
+  font-size:15px;font-weight:600;color:var(--brand);z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+
+/* ==================== 弹窗 ==================== */
+.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);z-index:2000;
+  align-items:center;justify-content:center;}
+.modal-overlay.show{display:flex;}
+.modal-content{background:#fff;border-radius:16px;padding:24px 32px;max-width:500px;box-shadow:0 8px 40px rgba(0,0,0,.2);
+  text-align:center;animation:modalPop .3s ease-out;}
+@keyframes modalPop{from{transform:scale(.8);opacity:0;}to{transform:scale(1);opacity:1;}}
+.modal-title{font-size:22px;font-weight:700;color:var(--brand);margin-bottom:10px;}
+.modal-body{font-size:17px;color:var(--text-primary);line-height:1.6;}
+.modal-close{margin-top:14px;padding:8px 24px;background:var(--brand);color:#fff;border:none;border-radius:8px;font-size:15px;cursor:pointer;}
+
+/* ==================== 金色彩带 ==================== */
+.confetti-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:3000;overflow:hidden;}
+.confetti-particle{position:absolute;width:10px;height:10px;background:var(--accent);border-radius:50%;
+  animation:confettiFall 1s ease-out forwards;}
+@keyframes confettiFall{from{transform:translate(0,0) scale(1);opacity:1;}to{transform:translate(var(--tx),var(--ty)) scale(0);opacity:0;}}
+
+/* ==================== 导出按钮 ==================== */
+.export-btn{position:fixed;top:56px;right:20px;background:var(--sop-blue);color:#fff;padding:6px 16px;
+  border-radius:15px;font-size:13px;font-weight:600;cursor:pointer;z-index:1000;box-shadow:0 2px 8px rgba(59,130,246,.3);
+  transition:all .2s;}
+.export-btn:hover{background:#2563EB;transform:translateY(-2px);}
+
+/* ==================== Mini Task ==================== */
+.mini-task-box{background:linear-gradient(135deg,#F0F9FF,#E0F2FE);border:2px solid var(--sop-blue);border-radius:14px;padding:18px;margin:12px 0;}
+.mini-task-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.mini-task-icon{font-size:28px;}
+.mini-task-title{font-size:20px;font-weight:700;color:var(--sop-blue);}
+.mini-task-section{margin:8px 0;}
+.mini-task-label{font-size:15px;font-weight:700;color:var(--sop-blue);margin-bottom:4px;}
+.mini-task-content{font-size:16px;color:var(--text-primary);line-height:1.6;}
+.mini-task-words{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+.mini-task-word-tag{background:rgba(59,130,246,.1);color:var(--sop-blue);padding:3px 10px;border-radius:8px;font-size:14px;font-weight:600;}
+
+/* ==================== 错因分析 ==================== */
+.error-analysis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
+.error-type-card{background:#fff;border-radius:10px;padding:14px;box-shadow:var(--card-shadow);cursor:pointer;transition:all .2s;
+  border-left:4px solid var(--error);perspective:1000px;min-height:100px;}
+.error-type-card:hover{transform:translateY(-3px);}
+.error-type-card.flipped{border-left-color:var(--correct);}
+.error-type-front{font-size:16px;font-weight:700;color:var(--error);}
+.error-type-back{display:none;font-size:14px;color:var(--correct);line-height:1.5;}
+.error-type-card.flipped .error-type-front{display:none;}
+.error-type-card.flipped .error-type-back{display:block;}
+
+
+
+/* <CW-CSS-EXTRA */
+/* <CW-SECTION name="components"> */
+/* THEME: dengxinghua-L21-25 teaching (red-gold · warm cream) */
+/* ==================== 新建线设计层（L21-25） ==================== */
+/* 六色卡约束：rule-card rc-zhug / rc-bin / rc-xing / rc-ming / rc-warn / rc-qita */
+.rule-card{padding:14px 18px;border-radius:12px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.rule-card.rc-zhug{background:#E8F0FE;border-left:5px solid #1A73E8;}
+.rule-card.rc-bin{background:#E6F4EA;border-left:5px solid #188038;}
+.rule-card.rc-xing{background:#FEF7E0;border-left:5px solid #F9AB00;}
+.rule-card.rc-ming{background:#FCE8E6;border-left:5px solid #E5252B;}
+.rule-card.rc-warn{background:#F3E8FD;border-left:5px solid #9334E6;}
+.rule-card.rc-qita{background:#E0F7FA;border-left:5px solid #12B2B8;}
+.rule-card .rc-title{font-size:20px;font-weight:700;margin-bottom:6px;}
+.rule-card .rc-body{font-size:18px;line-height:1.7;}
+
+.section-head{display:flex;align-items:center;gap:10px;margin:6px 0 14px;}
+.section-head .sh-icon{width:40px;height:40px;border-radius:10px;background:#E63946;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.section-head .sh-num{font-size:15px;font-weight:700;color:#E63946;background:rgba(230,57,70,.08);border:1px solid #E63946;border-radius:8px;padding:1px 8px;}
+.section-head .sh-title{font-size:28px;font-weight:700;color:#1A1A2E;}
+.section-head .sh-tag{font-size:14px;background:#FFD700;color:#333;padding:2px 10px;border-radius:10px;}
+
+.sub-label{font-size:15px;color:#666;margin:6px 0 10px;}
+
+/* 正文段落 / 高亮 / 笔记面板 / 双列选择 */
+.body-text{font-size:18px;line-height:1.8;color:#333;background:#FFF8F0;border-left:4px solid #E63946;padding:12px 16px;border-radius:8px;margin:10px 0;}
+.highlight{background:#FFF3CD;color:#856404;padding:2px 8px;border-radius:6px;font-weight:600;}
+.note-panel{background:#FFF8E1;border-left:5px solid #F9AB00;border-radius:10px;padding:14px 18px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.note-panel .np-title{font-size:19px;font-weight:700;color:#B8860B;margin-bottom:6px;}
+.note-panel .np-body{font-size:17px;line-height:1.7;color:#555;}
+.quiz-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.flash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0;}
+
+/* 随堂演练 / 选择 */
+.quiz-q{background:#fff;border-radius:10px;padding:14px 18px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.qq-text{font-size:19px;font-weight:600;margin-bottom:8px;}
+.quiz-opt{display:block;width:100%;text-align:left;padding:9px 14px;border:2px solid #ddd;border-radius:8px;font-size:17px;margin:5px 0;cursor:pointer;background:#fff;transition:all .2s;}
+.quiz-opt:hover{border-color:#E63946;background:rgba(230,57,70,.04);}
+.quiz-opt.locked{pointer-events:none;}
+.quiz-opt.opt-correct{border-color:#06A77D;background:#E8F5E9;color:#06A77D;font-weight:700;}
+.quiz-opt.opt-wrong{border-color:#E63946;background:#FFEBEE;color:#E63946;}
+.quiz-feedback{display:none;margin-top:8px;padding:8px 12px;background:#FFF8E1;border-radius:6px;font-size:15px;color:#B8860B;}
+.quiz-feedback.show{display:block;}
+.et-undo-hint{font-size:11px;color:#8B7D6B;opacity:.75;margin:4px 0;cursor:pointer;text-align:right;}
+
+/* 填空 */
+.fill-q{background:#fff;border-radius:10px;padding:14px 18px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.fill-input{width:160px;padding:6px 12px;border:2px solid #ddd;border-radius:6px;font-size:18px;margin:0 6px;}
+.fill-input:focus{border-color:#E63946;}
+.fill-input.correct{border-color:#06A77D;background:#E8F5E9;}
+.fill-input.wrong{border-color:#E63946;background:#FFEBEE;}
+.fill-check-btn{padding:6px 16px;background:#FFD700;color:#333;border:none;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;margin-left:6px;}
+.fill-answer{display:none;font-size:16px;color:#06A77D;font-weight:600;margin-top:4px;}
+.fill-answer.show{display:block;}
+
+/* 拖拽填空 */
+.drag-container{background:#fff;border-radius:10px;padding:14px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.drag-words{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;min-height:44px;padding:8px;background:#FFF8E1;border-radius:8px;}
+.drag-word{padding:8px 16px;background:#E63946;color:#fff;border-radius:8px;font-size:16px;cursor:pointer;user-select:none;transition:all .15s;}
+.drag-word:hover{background:#FF6B6B;}
+.drag-word.used{opacity:.35;cursor:default;pointer-events:none;}
+.drag-slot{display:inline-block;min-width:80px;height:36px;border:2px dashed #ccc;border-radius:6px;margin:0 4px;vertical-align:middle;text-align:center;line-height:32px;font-size:16px;}
+.drag-slot.correct{border-color:#06A77D;border-style:solid;background:rgba(76,175,80,.1);}
+.drag-slot.wrong{border-color:#E63946;border-style:solid;background:rgba(244,67,54,.1);}
+.drag-submit{padding:8px 20px;background:#FFD700;color:#333;border:none;border-radius:8px;font-size:17px;font-weight:700;cursor:pointer;margin-top:8px;}
+.drag-submit:hover{background:#FFE66D;}
+
+/* 排序 */
+.order-container{background:#fff;border-radius:10px;padding:14px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.order-list{list-style:none;padding:0;}
+.order-item{display:flex;align-items:center;gap:8px;background:#FFF8E1;border:2px solid #f0e0d0;border-radius:8px;padding:8px 12px;margin:6px 0;}
+.order-item .o-text{flex:1;font-size:17px;}
+.order-item.ok{border-color:#06A77D;background:#E8F5E9;}
+.order-item button{padding:4px 10px;background:#E63946;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;}
+.order-check{padding:8px 20px;background:#FFD700;color:#333;border:none;border-radius:8px;font-size:17px;font-weight:700;cursor:pointer;margin-top:8px;}
+.order-ans{display:none;font-size:16px;color:#06A77D;font-weight:600;margin-top:6px;}
+.order-container.show-ans .order-ans{display:block;}
+
+/* 连线 */
+.match-container{background:#fff;border-radius:10px;padding:14px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;gap:30px;justify-content:center;}
+.match-column{display:flex;flex-direction:column;gap:10px;min-width:240px;}
+.match-item{padding:10px 16px;background:#fff;border:2px solid #ddd;border-radius:8px;font-size:16px;cursor:pointer;transition:all .2s;text-align:center;}
+.match-item:hover{border-color:#E63946;}
+.match-item.selected{border-color:#FFD700;background:rgba(255,215,0,.15);}
+.match-item.matched{border-color:#06A77D;background:#E8F5E9;pointer-events:none;}
+
+/* 翻牌卡 */
+.flip-card{perspective:1000px;height:120px;cursor:pointer;}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
+.flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:10px;padding:12px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.08);}
+.flip-card-front{background:#fff;border-left:5px solid #E63946;font-size:20px;font-weight:700;}
+.flip-card-back{background:#E8F5E9;border-left:5px solid #06A77D;transform:rotateY(180deg);font-size:18px;text-align:center;}
+.flip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0;}
+
+/* 词汇卡片 */
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0;}
+.vocab-card{background:#fff;border-radius:10px;padding:12px 16px;box-shadow:0 2px 10px rgba(0,0,0,.06);border-left:4px solid #E63946;}
+.vocab-card:nth-child(even){border-left-color:#FFD700;}
+.vocab-head{display:flex;align-items:center;gap:8px;margin-bottom:4px;}
+.vocab-word{font-size:22px;font-weight:700;color:#E63946;}
+.vocab-phonetic{font-size:15px;color:#666;font-style:italic;}
+.vocab-pos{font-size:13px;background:#E63946;color:#fff;padding:1px 8px;border-radius:8px;}
+.vocab-cn{font-size:18px;font-weight:600;margin-bottom:2px;}
+.vocab-collocation{font-size:14px;color:#666;}
+.vocab-example{font-size:14px;color:#333;font-style:italic;}
+
+/* 思维导图 */
+.mm-wrap{background:#fff;border-radius:14px;padding:18px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.mm-head{font-size:24px;font-weight:700;color:#E63946;text-align:center;margin-bottom:14px;}
+.mm-branches{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.mm-branch{border-radius:10px;padding:12px;cursor:pointer;border-top:4px solid #E63946;background:#FFF8F0;}
+.mm-branch:nth-child(2){border-top-color:#1A73E8;}
+.mm-branch:nth-child(3){border-top-color:#188038;}
+.mm-branch:nth-child(4){border-top-color:#F9AB00;}
+.mm-branch:nth-child(5){border-top-color:#9334E6;}
+.mm-branch:nth-child(6){border-top-color:#12B2B8;}
+.mm-branch-title{font-size:18px;font-weight:700;margin-bottom:6px;}
+.mm-branch .mm-items{font-size:15px;color:#555;line-height:1.6;}
+
+/* 关键词地图 kmap（考点关键词分级） */
+.kmap{background:#fff;border-radius:14px;padding:18px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);border-top:5px solid #1A73E8;}
+.kmap .kmap-title{font-size:20px;font-weight:700;color:#1A73E8;margin-bottom:12px;text-align:center;}
+.kmap-nodes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.kmap-node{border-radius:10px;padding:12px;text-align:center;border-top:4px solid #E63946;background:#FFF8F0;}
+.kmap-node:nth-child(2){border-top-color:#188038;}
+.kmap-node:nth-child(3){border-top-color:#F9AB00;}
+.kmap-node .kn-title{font-size:18px;font-weight:700;margin-bottom:6px;}
+.kmap-node .kn-body{font-size:15px;color:#555;line-height:1.5;}
+
+/* 拓展卡 ext-card */
+.ext-card{background:#fff;border-radius:12px;padding:14px 18px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);border-left:5px solid #12B2B8;}
+.ext-card .ext-cat{display:inline-block;background:#12B2B8;color:#fff;padding:2px 12px;border-radius:12px;font-size:14px;font-weight:700;margin-bottom:6px;}
+.ext-card .ext-body{font-size:17px;color:#333;line-height:1.7;}
+
+/* 游戏面板 */
+.game-board{background:#fff;border-radius:14px;padding:16px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.game-title{font-size:20px;font-weight:700;color:#E63946;margin-bottom:6px;}
+.game-rule{font-size:15px;color:#666;margin-bottom:10px;}
+
+/* 随堂演练 / 结果 */
+.stats-panel{display:flex;gap:12px;justify-content:center;margin:12px 0;}
+.stats-card{background:#fff;border-radius:10px;padding:10px 20px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.06);min-width:110px;}
+.stats-card .stats-num{font-size:32px;font-weight:700;color:#E63946;}
+.stats-card .stats-label{font-size:14px;color:#666;margin-top:2px;}
+
+/* 表 */
+.content-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:17px;}
+.content-table thead{background:#E63946;color:#fff;}
+.content-table th,.content-table td{padding:8px 10px;border-bottom:1px solid #f0e0d0;text-align:center;}
+
+/* 遮罩/进度 */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:2000;}
+.modal-overlay.show{display:flex;align-items:center;justify-content:center;}
+.modal-content{background:#fff;border-radius:12px;padding:20px;max-width:600px;width:90%;}
+.page-counter{position:fixed;bottom:12px;right:20px;z-index:1001;background:rgba(255,255,255,.9);padding:6px 14px;border-radius:12px;font-size:14px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+.export-btn{position:fixed;bottom:12px;left:20px;z-index:1001;background:#E63946;color:#fff;padding:6px 14px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);}
+
+/* 动画 */
+.opt-correct,.opt-wrong{animation:none;}
+.burst-p{position:fixed;width:10px;height:10px;border-radius:50%;pointer-events:none;z-index:3000;animation:burstFly .7s ease-out forwards;}
+@keyframes burstFly{0%{transform:translate(0,0) scale(1);opacity:1;}100%{transform:translate(var(--dx),var(--dy)) scale(.3);opacity:0;}}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+
+/* 防越级/无翻页过渡动画（翻页用淡入，无滑动偏移） */
+.page.active{animation:pageFade .35s ease-out;}
+@keyframes pageFade{from{opacity:0;}to{opacity:1;}}
+
+/* 封面（L21 讲评课） */
+.cover-wrap{text-align:center;padding:20px 0;}
+.cover-badge{display:inline-block;background:#E63946;color:#fff;padding:6px 20px;border-radius:20px;font-size:16px;font-weight:700;letter-spacing:1px;margin-bottom:18px;}
+.cover-title{font-size:44px;font-weight:700;color:#E63946;margin-bottom:10px;}
+.cover-sub{font-size:20px;color:#555;margin-bottom:20px;}
+.cover-tagline{display:inline-block;background:#FFD700;color:#333;padding:4px 18px;border-radius:16px;font-size:15px;font-weight:700;margin-bottom:18px;}
+.cover-info{display:flex;gap:16px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;}
+.cover-info-num{background:#fff;padding:12px 26px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.08);border-top:3px solid #FFD700;text-align:center;}
+.ci-label{font-size:13px;color:#666;}
+.ci-val{font-size:30px;font-weight:700;color:#E63946;}
+.cover-emoji{font-size:48px;margin-top:10px;}
+
+/* <CW-SECTION name="theme"> */
+/* 主题变量（红金暖色系 · 亮色） */
+/* </CW-CSS-EXTRA> */
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important;}
+}
+
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <div class="nav-item" data-segment="1" onclick="jumpToSegment(1)"><span class="nav-num">①</span>复习导入</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="2" onclick="jumpToSegment(2)"><span class="nav-num">②</span>新词20</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="3" onclick="jumpToSegment(3)"><span class="nav-num">③</span>动名词</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="4" onclick="jumpToSegment(4)"><span class="nav-num">④</span>不定式</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="5" onclick="jumpToSegment(5)"><span class="nav-num">⑤</span>辨析</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="6" onclick="jumpToSegment(6)"><span class="nav-num">⑥</span>随堂演练</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="7" onclick="jumpToSegment(7)"><span class="nav-num">⑦</span>阅读</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="8" onclick="jumpToSegment(8)"><span class="nav-num">⑧</span>总结</div>
+</div>
+<div class="stage-badge">Stage 6 · L25</div>
+<div class="sync-status"><div class="sync-dot" id="syncDot"></div><span id="syncText">本地已保存</span></div>
+<div class="export-btn" onclick="exportData(event)">导出答题数据</div>
+<div class="pages-container" id="pagesContainer">
+<div class="page active" id="page1">
+  <div class="page-content">
+    <h1 class="page-title">L25 动名词不定式</h1>
+    <p class="page-subtitle">八上动词非谓语主线</p>
+<!-- CW-VISUAL-CONTRACT:1 -->
+<!-- CW-INTERACTION-CONTRACT:1 -->
+<div class="cover-wrap"><div class="cover-badge">Stage 6 · 八上主线</div><div class="cover-title">动名词 · 不定式综合运用</div><div class="cover-sub">G62 V-ing 作主语/宾语 + G63 to do 作宾语/目的</div><div class="cover-tagline">授课课 · 八段式</div><div class="cover-info"><div class="cover-info-num"><div class="ci-label">新词</div><div class="ci-val">20</div></div><div class="cover-info-num"><div class="ci-label">考点</div><div class="ci-val">3</div></div><div class="cover-info-num"><div class="ci-label">词号</div><div class="ci-val">481–500</div></div><div class="cover-info-num"><div class="ci-label">时长</div><div class="ci-val">90分</div></div></div><div class="cover-emoji">🎯</div></div>
+  </div>
+</div>
+
+<div class="page" id="page2">
+  <div class="page-content">
+    <h1 class="page-title">复习导入</h1>
+    <p class="page-subtitle">L24 衔接</p>
+<div class="section-head"><div class="sh-icon">复</div><div class="sh-title">上一课状语从句回顾</div><span class="sh-tag">L24 衔接</span></div><div class="rule-card rc-zhug"><div class="rc-title">L24 考点</div><div class="rc-body">原因 because/since/as、让步 although/though、结果 so、目的 so that。</div></div>
+<div class="rule-card rc-bin"><div class="rc-title">本课衔接</div><div class="rc-body">L24 讲连词，L25 转到动词后接 doing 与 to do 的用法。</div></div><div class="quiz-q" data-qid="Q001"><div class="qq-text">because 表？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 原因</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 结果</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 让步</button>
+</div>
+<div class="quiz-q" data-qid="Q002"><div class="qq-text">so that 表？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 原因</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 目的</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 让步</button>
+</div><div class="note-panel"><div class="np-title">L25 起点</div><div class="np-body">今天学动词后面接什么：有的跟 doing，有的跟 to do。这是初中非谓语的核心。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page3">
+  <div class="page-content">
+    <h1 class="page-title">前瞻</h1>
+    <p class="page-subtitle">动词接续概念</p>
+<div class="section-head"><div class="sh-icon">复</div><div class="sh-title">动词后接 · 前瞻</div><span class="sh-tag">新旧衔接</span></div><div class="rule-card rc-warn"><div class="rc-title">两类动词</div><div class="rc-body">enjoy/finish/mind 等后接 doing；want/decide/hope 等后接 to do。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">避免混用</div><div class="rc-body">enjoy to read 是错的，应为 enjoy reading；decided doing 是错的，应为 decided to do。</div></div><div class="quiz-q" data-qid="Q003"><div class="qq-text">enjoy 后接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to do</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 原形</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. doing</button>
+</div>
+<div class="quiz-q" data-qid="Q004"><div class="qq-text">want 后接？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. to do</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. doing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 原形</button>
+</div><div class="sub-label">今天把 doing 与 to do 两条线一次梳理</div>
+  </div>
+</div>
+
+<div class="page" id="page4">
+  <div class="page-content">
+    <h1 class="page-title">学习目标</h1>
+    <p class="page-subtitle">目标导航</p>
+<div class="section-head"><div class="sh-icon">复</div><div class="sh-title">本课学习目标</div><span class="sh-tag">目标导航</span></div><div class="note-panel"><div class="np-title">本课 3 大考点</div><div class="np-body">① G62 动名词 V-ing 作主语与宾语 ② G63 不定式 to do 作宾语与目的状语 ③ stop/remember doing vs to do 辨析。</div></div><div class="rule-card rc-qita"><div class="rc-title">学习动作</div><div class="rc-body">看规则 → 填空自检 → 拖拽分类 → 阅读应用 → 口诀收尾。</div></div>
+<div class="rule-card rc-ming"><div class="rc-title">防越级</div><div class="rc-body">不引入分词作状语（如 Seeing from the hill）。</div></div><div class="quiz-q" data-qid="Q005"><div class="qq-text">本课语法主线是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 定语从句</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 动名词与不定式</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 被动语态</button>
+</div><div class="ext-card"><span class="ext-cat">前后衔接</span><div class="ext-body">L24 状语从句收尾，L25 动词非谓语新开；L26 起继续深入。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page5">
+  <div class="page-content">
+    <h1 class="page-title">新词① 爱好动名词</h1>
+    <p class="page-subtitle">词 481–485</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词① · 爱好动名词</div><span class="sh-tag">词 481–485</span></div><div class="vocab-grid"><div class="vocab-card"><div class="vocab-head"><span class="vocab-word">enjoy</span><span class="vocab-phonetic">/ɪnˈdʒɔɪ/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">享受；喜欢</div><div class="vocab-collocation">搭配：enjoy doing</div><div class="vocab-example">I enjoy reading books.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">finish</span><span class="vocab-phonetic">/ˈfɪnɪʃ/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">完成</div><div class="vocab-collocation">搭配：finish doing</div><div class="vocab-example">I finished writing the letter.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">mind</span><span class="vocab-phonetic">/maɪnd/</span><span class="vocab-pos">v./n.</span></div><div class="vocab-cn">介意；心思</div><div class="vocab-collocation">搭配：mind doing / never mind</div><div class="vocab-example">Do you mind opening the door?</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">practice</span><span class="vocab-phonetic">/ˈpræktɪs/</span><span class="vocab-pos">v./n.</span></div><div class="vocab-cn">练习</div><div class="vocab-collocation">搭配：practice doing</div><div class="vocab-example">He practices playing the piano.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">suggest</span><span class="vocab-phonetic">/səˈdʒest/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">建议</div><div class="vocab-collocation">搭配：suggest doing</div><div class="vocab-example">I suggest going early.</div></div></div>
+  </div>
+</div>
+
+<div class="page" id="page6">
+  <div class="page-content">
+    <h1 class="page-title">新词② 动名词类</h1>
+    <p class="page-subtitle">词 486–490</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词② · 动名词类</div><span class="sh-tag">词 486–490</span></div><div class="vocab-grid"><div class="vocab-card"><div class="vocab-head"><span class="vocab-word">avoid</span><span class="vocab-phonetic">/əˈvɔɪd/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">避免</div><div class="vocab-collocation">搭配：avoid doing</div><div class="vocab-example">Avoid making the same mistake.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">consider</span><span class="vocab-phonetic">/kənˈsɪdə(r)/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">考虑</div><div class="vocab-collocation">搭配：consider doing</div><div class="vocab-example">Consider joining the club.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">imagine</span><span class="vocab-phonetic">/ɪˈmædʒɪn/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">想象</div><div class="vocab-collocation">搭配：imagine doing</div><div class="vocab-example">Imagine flying in the sky.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">decide</span><span class="vocab-phonetic">/dɪˈsaɪd/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">决定</div><div class="vocab-collocation">搭配：decide to do</div><div class="vocab-example">I decided to study harder.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">hope</span><span class="vocab-phonetic">/həʊp/</span><span class="vocab-pos">v./n.</span></div><div class="vocab-cn">希望</div><div class="vocab-collocation">搭配：hope to do / hope that</div><div class="vocab-example">I hope to see you again.</div></div></div>
+  </div>
+</div>
+
+<div class="page" id="page7">
+  <div class="page-content">
+    <h1 class="page-title">新词③ 计划不定式</h1>
+    <p class="page-subtitle">词 491–495</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词③ · 计划不定式</div><span class="sh-tag">词 491–495</span></div><div class="vocab-grid"><div class="vocab-card"><div class="vocab-head"><span class="vocab-word">plan</span><span class="vocab-phonetic">/plæn/</span><span class="vocab-pos">v./n.</span></div><div class="vocab-cn">计划</div><div class="vocab-collocation">搭配：plan to do</div><div class="vocab-example">We plan to travel.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">want</span><span class="vocab-phonetic">/wɒnt/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">想要</div><div class="vocab-collocation">搭配：want to do / want sth.</div><div class="vocab-example">I want to learn English.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">need</span><span class="vocab-phonetic">/niːd/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">需要</div><div class="vocab-collocation">搭配：need to do / need doing</div><div class="vocab-example">You need to rest.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">agree</span><span class="vocab-phonetic">/əˈɡriː/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">同意</div><div class="vocab-collocation">搭配：agree to do / agree with</div><div class="vocab-example">He agreed to help me.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">refuse</span><span class="vocab-phonetic">/rɪˈfjuːz/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">拒绝</div><div class="vocab-collocation">搭配：refuse to do</div><div class="vocab-example">She refused to go.</div></div></div>
+  </div>
+</div>
+
+<div class="page" id="page8">
+  <div class="page-content">
+    <h1 class="page-title">新词④ 承诺不定式</h1>
+    <p class="page-subtitle">词 496–500</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词④ · 承诺不定式</div><span class="sh-tag">词 496–500</span></div><div class="vocab-grid"><div class="vocab-card"><div class="vocab-head"><span class="vocab-word">promise</span><span class="vocab-phonetic">/ˈprɒmɪs/</span><span class="vocab-pos">v./n.</span></div><div class="vocab-cn">承诺</div><div class="vocab-collocation">搭配：promise to do / make a promise</div><div class="vocab-example">He promised to come.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">manage</span><span class="vocab-phonetic">/ˈmænɪdʒ/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">设法做成</div><div class="vocab-collocation">搭配：manage to do</div><div class="vocab-example">She managed to finish it.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">afford</span><span class="vocab-phonetic">/əˈfɔːd/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">负担得起</div><div class="vocab-collocation">搭配：afford to do</div><div class="vocab-example">I can&#x27;t afford to buy it.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">offer</span><span class="vocab-phonetic">/ˈɒfə(r)/</span><span class="vocab-pos">v./n.</span></div><div class="vocab-cn">提供</div><div class="vocab-collocation">搭配：offer to do / offer sth.</div><div class="vocab-example">He offered to help.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">fail</span><span class="vocab-phonetic">/feɪl/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">失败</div><div class="vocab-collocation">搭配：fail to do / fail a test</div><div class="vocab-example">Don&#x27;t fail to call me.</div></div></div><div class="note-panel"><div class="np-title">记忆小贴士</div><div class="np-body">后接 to do 的动词常表'打算/希望/承诺/拒绝'：plan/want/hope/decide/agree/refuse/promise。</div></div><div class="ext-card"><span class="ext-cat">培优搭配</span><div class="ext-body">manage to do（设法做成）、afford to do（负担得起）、offer to do（主动提供做）。</div></div><div class="quiz-q" data-qid="Q006"><div class="qq-text">manage 后接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. doing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 原形</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. to do</button>
+</div>
+<div class="quiz-q" data-qid="Q007"><div class="qq-text">afford to do 意思是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 负担得起做某事</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 拒绝做某事</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 忘记做某事</button>
+</div>
+<div class="quiz-q" data-qid="Q008"><div class="qq-text">offer to do 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 被迫做</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 主动提供做</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 犹豫做</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page9">
+  <div class="page-content">
+    <h1 class="page-title">词汇游戏①</h1>
+    <p class="page-subtitle">翻牌自检</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词游戏① · 词义翻牌</div><span class="sh-tag">翻牌自检</span></div><div class="sub-label">点击翻牌，看英文想中文，再翻回核对</div><div class="flip-grid"><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">enjoy</div><div class="flip-card-back">享受</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">finish</div><div class="flip-card-back">完成</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">mind</div><div class="flip-card-back">介意</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">suggest</div><div class="flip-card-back">建议</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">avoid</div><div class="flip-card-back">避免</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">consider</div><div class="flip-card-back">考虑</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">imagine</div><div class="flip-card-back">想象</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">decide</div><div class="flip-card-back">决定</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">hope</div><div class="flip-card-back">希望</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">refuse</div><div class="flip-card-back">拒绝</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">promise</div><div class="flip-card-back">承诺</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">manage</div><div class="flip-card-back">设法</div></div></div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q009"><div class="qq-text">suggest 后接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to do</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 原形</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. doing</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page10">
+  <div class="page-content">
+    <h1 class="page-title">词汇游戏②</h1>
+    <p class="page-subtitle">拖拽归位</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词游戏② · 拖拽归位</div><span class="sh-tag">拖拽</span></div><div class="sub-label">把词块拖到正确的解释前面</div><div class="drag-container quiz-q" data-qid="Q010"><div class="drag-words"><span class="drag-word" onclick="pickWord(this)">enjoy</span><span class="drag-word" onclick="pickWord(this)">finish</span><span class="drag-word" onclick="pickWord(this)">refuse</span></div><div class="qq-text">享受 →  <span class="drag-slot" data-expect="enjoy"></span> 完成 →  <span class="drag-slot" data-expect="finish"></span> 拒绝 →  <span class="drag-slot" data-expect="refuse"></span> </div><button class="drag-submit" onclick="dragSubmit(this)">提交</button><div class="sub-label">（先点上方词块填入，再点提交）</div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q011"><div class="qq-text">'manage to do' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 放弃做</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 设法做成</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 忘记做</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page11">
+  <div class="page-content">
+    <h1 class="page-title">词汇游戏③</h1>
+    <p class="page-subtitle">连线配对</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词游戏③ · 连线配对</div><span class="sh-tag">连线</span></div><div class="sub-label">把英文词与正确释义连起来</div><div class="match-container" data-qid="Q012"><div class="match-column mcol-l"><div class="match-item" data-match="enjoy" onclick="matchPick(this)">享受</div><div class="match-item" data-match="refuse" onclick="matchPick(this)">拒绝</div><div class="match-item" data-match="promise" onclick="matchPick(this)">承诺</div></div><div class="match-column mcol-r"><div class="match-item" data-match="享受" onclick="matchPick(this)">enjoy</div><div class="match-item" data-match="拒绝" onclick="matchPick(this)">refuse</div><div class="match-item" data-match="承诺" onclick="matchPick(this)">promise</div></div></div><div class="sub-label">左右两列点击配对</div>
+  </div>
+</div>
+
+<div class="page" id="page12">
+  <div class="page-content">
+    <h1 class="page-title">词汇游戏④</h1>
+    <p class="page-subtitle">选择演练</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词游戏④ · 选择演练</div><span class="sh-tag">选择</span></div><div class="sub-label">20 词综合选择</div><div class="quiz-q" data-qid="Q013"><div class="qq-text">'完成' 是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. finish</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. mind</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. enjoy</button>
+</div>
+<div class="quiz-q" data-qid="Q014"><div class="qq-text">'避免' 是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. refuse</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. avoid</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. offer</button>
+</div>
+<div class="quiz-q" data-qid="Q015"><div class="qq-text">'考虑' 是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. imagine</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. promise</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. consider</button>
+</div>
+<div class="quiz-q" data-qid="Q016"><div class="qq-text">'负担得起' 是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. afford</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. manage</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. fail</button>
+</div>
+<div class="quiz-q" data-qid="Q017"><div class="qq-text">'设法做成' 是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. offer</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. manage</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. refuse</button>
+</div>
+<div class="quiz-q" data-qid="Q018"><div class="qq-text">'放弃做' 用哪个？（反义）</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. enjoy</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. promise</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. avoid</button>
+</div><div class="ext-card"><span class="ext-cat">词汇记忆</span><div class="ext-body">动名词动词：enjoy/finish/mind/practice/suggest/avoid/consider/imagine；不定式动词：decide/hope/plan/want/need/agree/refuse/promise/manage/afford/offer/fail。</div></div><div class="quiz-q" data-qid="Q019"><div class="qq-text">哪些词后接 doing？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. enjoy/finish/mind</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. want/decide/hope</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. plan/agree/refuse</button>
+</div>
+<div class="quiz-q" data-qid="Q020"><div class="qq-text">'希望' 的英文是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. offer</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. hope</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. fail</button>
+</div>
+<div class="quiz-q" data-qid="Q021"><div class="qq-text">后接 to do 的动词常表？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 爱好/习惯</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 动作持续的</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 打算/希望/承诺</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page13">
+  <div class="page-content">
+    <h1 class="page-title">动名词作主语</h1>
+    <p class="page-subtitle">G62 规则</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">动名词 V-ing 作主语</div><span class="sh-tag">G62 规则</span></div><div class="rule-card rc-zhug"><div class="rc-title">作主语谓语单数</div><div class="rc-body">V-ing 开头作主语，谓语动词用单数：Reading is fun.。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">例句</div><div class="rc-body">Reading books is good for us.（读书对我们有好处。）谓语 is 用单数。</div></div>
+<div class="rule-card rc-warn"><div class="rc-title">易错</div><div class="rc-body">❌ Reading are fun → ✅ Reading is fun（动名词作主语谓语单数）。</div></div><div class="quiz-q" data-qid="Q022"><div class="qq-text">动名词作主语谓语用？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 单数</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 复数</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 原形</button>
+</div>
+<div class="quiz-q" data-qid="Q023"><div class="qq-text">'Reading ____ fun.' 填？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. are</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. is</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. am</button>
+</div>
+<div class="quiz-q" data-qid="Q024"><div class="qq-text">动名词由什么构成？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 动词加 ed</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 动词原形</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 动词加 ing</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page14">
+  <div class="page-content">
+    <h1 class="page-title">doing 宾语</h1>
+    <p class="page-subtitle">G62 宾语</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">enjoy/finish/mind + doing</div><span class="sh-tag">G62 宾语</span></div><div class="rule-card rc-zhug"><div class="rc-title">后接 doing</div><div class="rc-body">enjoy/finish/mind/practice/suggest/avoid/consider/imagine + doing。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">例句</div><div class="rc-body">I enjoy reading. / He finished writing. / Do you mind opening the door?</div></div><div class="quiz-q" data-qid="Q025"><div class="qq-text">enjoy 后接？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. doing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. to do</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 原形</button>
+</div>
+<div class="quiz-q" data-qid="Q026"><div class="qq-text">mind 后接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to do</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. doing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 原形</button>
+</div>
+<div class="quiz-q" data-qid="Q027"><div class="qq-text">suggest + ____.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to do</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 原形</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. doing</button>
+</div>
+<div class="quiz-q" data-qid="Q028"><div class="qq-text">consider + ____.</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. doing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. to do</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 原形</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page15">
+  <div class="page-content">
+    <h1 class="page-title">动名词填空</h1>
+    <p class="page-subtitle">G62 练习</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">动名词 · 补全填空</div><span class="sh-tag">G62 练习</span></div><div class="fill-q quiz-q" data-qid="Q029"><div class="qq-text">I enjoy ____ (read) books. <input class="fill-input" data-answer="reading"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：reading</div></div><div class="fill-q quiz-q" data-qid="Q030"><div class="qq-text">He finished ____ (write) the letter. <input class="fill-input" data-answer="writing"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：writing</div></div><div class="fill-q quiz-q" data-qid="Q031"><div class="qq-text">Do you mind ____ (open) the door? <input class="fill-input" data-answer="opening"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：opening</div></div><div class="sub-label">点击检查，enjoy/finish/mind 后接 doing</div><div class="note-panel"><div class="np-title">填空一步到位</div><div class="np-body">看到 enjoy/finish/mind/practice/suggest/avoid 等动词，后面直接接 doing。动词加 ing 时注意拼写：write→writing（去 e）、run→running（双写）。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page16">
+  <div class="page-content">
+    <h1 class="page-title">动名词成句</h1>
+    <p class="page-subtitle">G62 应用</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">动名词 · 拖拽成句</div><span class="sh-tag">G62 应用</span></div><div class="sub-label">把词块按正确顺序拖入组成动名词句</div><div class="drag-container quiz-q" data-qid="Q032"><div class="drag-words"><span class="drag-word" onclick="pickWord(this)">reading</span><span class="drag-word" onclick="pickWord(this)">writing</span></div><div class="qq-text">I enjoy  <span class="drag-slot" data-expect="reading"></span>  books.He finished  <span class="drag-slot" data-expect="writing"></span>  the letter.</div><button class="drag-submit" onclick="dragSubmit(this)">提交</button><div class="sub-label">（先点上方词块填入，再点提交）</div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q033"><div class="qq-text">'喜欢游泳' 用 enjoy 应接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to swim</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. swim</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. swimming</button>
+</div>
+<div class="quiz-q" data-qid="Q034"><div class="qq-text">'读完书' 用 finish 应接？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. reading</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. to read</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. read</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page17">
+  <div class="page-content">
+    <h1 class="page-title">动名词地图</h1>
+    <p class="page-subtitle">关键词</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">动名词 · 关键词地图</div><span class="sh-tag">考点梳理</span></div><div class="kmap"><div class="kmap-title">动名词三大关键词</div><div class="kmap-nodes"><div class="kmap-node"><div class="kn-title">作主语</div><div class="kn-body">V-ing 谓语单数</div></div><div class="kmap-node"><div class="kn-title">后接 doing</div><div class="kn-body">enjoy/finish/mind 等</div></div><div class="kmap-node"><div class="kn-title">拼写</div><div class="kn-body">去 e / 双写 ing</div></div></div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q035"><div class="qq-text">动名词作主语谓语用单数，对吗？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 错</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 对</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 不一定</button>
+</div>
+<div class="quiz-q" data-qid="Q036"><div class="qq-text">run 的动名词是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. runing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. run</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. running</button>
+</div>
+<div class="quiz-q" data-qid="Q037"><div class="qq-text">write 的动名词是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. writing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. writeing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. writting</button>
+</div><div class="ext-card"><span class="ext-cat">螺旋递进</span><div class="ext-body">G47（L18）已学 V-ing 变化规则，G62 本课首次用于作主语/宾语。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page18">
+  <div class="page-content">
+    <h1 class="page-title">不定式宾语</h1>
+    <p class="page-subtitle">G63 规则</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">不定式 to do 作宾语</div><span class="sh-tag">G63 规则</span></div><div class="rule-card rc-zhug"><div class="rc-title">后接 to do</div><div class="rc-body">want/decide/hope/plan/agree/refuse/promise/manage/afford/offer/fail/need + to do。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">例句</div><div class="rc-body">I want to learn English. / He decided to study harder. / She managed to finish it.</div></div>
+<div class="rule-card rc-warn"><div class="rc-title">易错</div><div class="rc-body">❌ I decided doing → ✅ I decided to do（decide 后接 to do）。</div></div><div class="quiz-q" data-qid="Q038"><div class="qq-text">want 后接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. doing</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. to do</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 原形</button>
+</div>
+<div class="quiz-q" data-qid="Q039"><div class="qq-text">decide 后接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. doing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 原形</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. to do</button>
+</div>
+<div class="quiz-q" data-qid="Q040"><div class="qq-text">hope 后接？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. to do</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. doing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 原形</button>
+</div>
+<div class="quiz-q" data-qid="Q041"><div class="qq-text">promise 后接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. doing</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. to do</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 原形</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page19">
+  <div class="page-content">
+    <h1 class="page-title">不定式目的</h1>
+    <p class="page-subtitle">G63 目的</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">不定式 to do 作目的状语</div><span class="sh-tag">G63 目的</span></div><div class="rule-card rc-zhug"><div class="rc-title">表目的</div><div class="rc-body">to do 表目的，译'为了'：He came to help me.。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">例句</div><div class="rc-body">She got up early to catch the bus.（她早起为了赶公交。）</div></div>
+<div class="rule-card rc-warn"><div class="rc-title">注意</div><div class="rc-body">目的状语用 to do，不用 doing。</div></div><div class="quiz-q" data-qid="Q042"><div class="qq-text">'为了' 用？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. doing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 原形</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. to do</button>
+</div>
+<div class="quiz-q" data-qid="Q043"><div class="qq-text">He came ____ help me.</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. to</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. ing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. for doing</button>
+</div>
+<div class="quiz-q" data-qid="Q044"><div class="qq-text">目的状语用 to do 还是 doing？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. doing</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. to do</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 两者皆可</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page20">
+  <div class="page-content">
+    <h1 class="page-title">不定式填空</h1>
+    <p class="page-subtitle">G63 练习</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">不定式 · 补全填空</div><span class="sh-tag">G63 练习</span></div><div class="fill-q quiz-q" data-qid="Q045"><div class="qq-text">I want ____ (learn) English. <input class="fill-input" data-answer="to learn"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：to learn</div></div><div class="fill-q quiz-q" data-qid="Q046"><div class="qq-text">He decided ____ (study) harder. <input class="fill-input" data-answer="to study"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：to study</div></div><div class="fill-q quiz-q" data-qid="Q047"><div class="qq-text">She got up early ____ (catch) the bus. <input class="fill-input" data-answer="to catch"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：to catch</div></div><div class="sub-label">点击检查，want/decide 后接 to do，目的用 to do</div><div class="note-panel"><div class="np-title">填空一步到位</div><div class="np-body">看到 want/decide/hope/plan/agree/refuse 等动词后接 to do。表目的也写 to do。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page21">
+  <div class="page-content">
+    <h1 class="page-title">不定式排序</h1>
+    <p class="page-subtitle">G63 应用</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">不定式 · 排序成句</div><span class="sh-tag">G63 应用</span></div><div class="order-container" data-qid="Q048" data-key="I|want|to learn|English"><div class="qq-text">把词块排成正确的不定式句子</div><ul class="order-list"><li class="order-item" data-val="I"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">主语</span></li><li class="order-item" data-val="want"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">动词</span></li><li class="order-item" data-val="to learn"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">to do</span></li><li class="order-item" data-val="English"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">宾语</span></li></ul><button class="order-check" onclick="orderCheck(this)">检查顺序</button><div class="order-ans">正确顺序：I → want → to learn → English</div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q049"><div class="qq-text">'他设法完成了' 用 manage 应接？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. to finish</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. finishing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. finish</button>
+</div>
+<div class="quiz-q" data-qid="Q050"><div class="qq-text">'我希望再见你' 用 hope 应接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. seeing</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. to see</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. see</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page22">
+  <div class="page-content">
+    <h1 class="page-title">不定式地图</h1>
+    <p class="page-subtitle">关键词</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">不定式 · 关键词地图</div><span class="sh-tag">考点梳理</span></div><div class="kmap"><div class="kmap-title">不定式三大关键词</div><div class="kmap-nodes"><div class="kmap-node"><div class="kn-title">后接 to do</div><div class="kn-body">want/decide/hope 等</div></div><div class="kmap-node"><div class="kn-title">表目的</div><div class="kn-body">to do 译'为了'</div></div><div class="kmap-node"><div class="kn-title">四阶链</div><div class="kn-body">G15→G18→G34→G63</div></div></div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q051"><div class="qq-text">不定式的基本形式是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 动词+ing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 动词+ed</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. to + 动词原形</button>
+</div>
+<div class="quiz-q" data-qid="Q052"><div class="qq-text">'agree to do' 意思是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 同意做</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 拒绝做</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 考虑做</button>
+</div><div class="ext-card"><span class="ext-cat">螺旋递进</span><div class="ext-body">to do 四阶链终点：G15（L5）like to do → G18（L6）want to do → G34（L13）would like to do → G63（L25）系统归纳。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page23">
+  <div class="page-content">
+    <h1 class="page-title">stop辨析</h1>
+    <p class="page-subtitle">G63 扩展</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">stop doing vs. stop to do</div><span class="sh-tag">G63 辨析</span></div><div class="rule-card rc-zhug"><div class="rc-title">stop doing</div><div class="rc-body">停止正在做的事：He stopped talking.（他停止说话。）</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">stop to do</div><div class="rc-body">停下来去做另一件事：He stopped to rest.（他停下来休息。）</div></div>
+<div class="rule-card rc-warn"><div class="rc-title">易错</div><div class="rc-body">❌ stop to talk 误用（stop talking 才是停止说话）。</div></div><div class="quiz-q" data-qid="Q053"><div class="qq-text">'He stopped talking.' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 他停下来去说话</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 他停止说话</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 他一直在说话</button>
+</div>
+<div class="quiz-q" data-qid="Q054"><div class="qq-text">'stop to rest' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 停止休息</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 继续休息</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 停下来休息</button>
+</div>
+<div class="quiz-q" data-qid="Q055"><div class="qq-text">stop 后接 doing 表？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 停止某事</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 开始某事</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 去做某事</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page24">
+  <div class="page-content">
+    <h1 class="page-title">remember辨析</h1>
+    <p class="page-subtitle">G63 扩展</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">remember doing vs. remember to do</div><span class="sh-tag">G63 辨析</span></div><div class="rule-card rc-zhug"><div class="rc-title">remember doing</div><div class="rc-body">记得做过：I remember seeing him.（我记得见过他。）</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">remember to do</div><div class="rc-body">记得要去做：Remember to lock the door.（记得锁门。）</div></div>
+<div class="rule-card rc-warn"><div class="rc-title">易错</div><div class="rc-body">❌ remember to do 误用（remember to do 是记得将要做）。</div></div><div class="quiz-q" data-qid="Q056"><div class="qq-text">'remember to do' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 记得做过</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 记得要做</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 忘记做</button>
+</div>
+<div class="quiz-q" data-qid="Q057"><div class="qq-text">'remember doing' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 记得要做</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 不想做</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 记得做过</button>
+</div>
+<div class="quiz-q" data-qid="Q058"><div class="qq-text">Remember ____ the door. 填？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. to lock</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. locking</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. lock</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page25">
+  <div class="page-content">
+    <h1 class="page-title">辨析连线</h1>
+    <p class="page-subtitle">G63 连线</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">doing/to do · 连线互换</div><span class="sh-tag">G63 连线</span></div><div class="match-container" data-qid="Q059"><div class="match-column mcol-l"><div class="match-item" data-match="stop doing" onclick="matchPick(this)">停止某事</div><div class="match-item" data-match="stop to do" onclick="matchPick(this)">停下来去做</div><div class="match-item" data-match="remember doing" onclick="matchPick(this)">记得做过</div><div class="match-item" data-match="remember to do" onclick="matchPick(this)">记得要做</div></div><div class="match-column mcol-r"><div class="match-item" data-match="停止某事" onclick="matchPick(this)">stop doing</div><div class="match-item" data-match="停下来去做" onclick="matchPick(this)">stop to do</div><div class="match-item" data-match="记得做过" onclick="matchPick(this)">remember doing</div><div class="match-item" data-match="记得要做" onclick="matchPick(this)">remember to do</div></div></div><div class="sub-label">左右两列点击配对</div>
+  </div>
+</div>
+
+<div class="page" id="page26">
+  <div class="page-content">
+    <h1 class="page-title">辨析双列</h1>
+    <p class="page-subtitle">G63 辨析</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">doing/to do · 双列选择</div><span class="sh-tag">G63 辨析</span></div><div class="quiz-q" data-qid="Q060"><div class="qq-text">I enjoy ____ (read) books.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to read</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. read</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. reading</button>
+</div>
+<div class="quiz-q" data-qid="Q061"><div class="qq-text">I want ____ (learn) English.</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. to learn</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. learning</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. learn</button>
+</div>
+<div class="quiz-q" data-qid="Q062"><div class="qq-text">He stopped ____ (smoke).</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to smoke</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. smoking</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. smoke</button>
+</div>
+<div class="quiz-q" data-qid="Q063"><div class="qq-text">Remember ____ (call) me later.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. calling</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. call</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. to call</button>
+</div><div class="ext-card"><span class="ext-cat">辨析</span><div class="ext-body">enjoy/finish/mind 后 doing；want/decide/hope 后 to do；stop/remember 后 doing 与 to do 意思不同。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page27">
+  <div class="page-content">
+    <h1 class="page-title">随堂演练</h1>
+    <p class="page-subtitle">选择</p>
+<div class="section-head"><div class="sh-icon">练</div><div class="sh-title">动词接续 · 选择演练</div><span class="sh-tag">单选</span></div><div class="quiz-q" data-qid="Q064"><div class="qq-text">I enjoy ____ basketball.</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. playing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. to play</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. play</button>
+</div>
+<div class="quiz-q" data-qid="Q065"><div class="qq-text">He decided ____ harder.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. studying</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. to study</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. study</button>
+</div>
+<div class="quiz-q" data-qid="Q066"><div class="qq-text">She practices ____ the piano.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to play</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. play</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. playing</button>
+</div>
+<div class="quiz-q" data-qid="Q067"><div class="qq-text">We plan ____ next week.</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. to travel</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. traveling</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. travel</button>
+</div><div class="note-panel"><div class="np-title">解题步骤</div><div class="np-body">①看动词 ②判断后接 doing 还是 to do ③按规则选。enjoy/practice 后 doing，decide/plan 后 to do。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page28">
+  <div class="page-content">
+    <h1 class="page-title">随堂演练</h1>
+    <p class="page-subtitle">填空</p>
+<div class="section-head"><div class="sh-icon">练</div><div class="sh-title">动词接续 · 填空演练</div><span class="sh-tag">填空</span></div><div class="fill-q quiz-q" data-qid="Q068"><div class="qq-text">I want ____ (be) a doctor. <input class="fill-input" data-answer="to be"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：to be</div></div><div class="fill-q quiz-q" data-qid="Q069"><div class="qq-text">He finished ____ (do) his homework. <input class="fill-input" data-answer="doing"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：doing</div></div><div class="fill-q quiz-q" data-qid="Q070"><div class="qq-text">She enjoys ____ (sing). <input class="fill-input" data-answer="singing"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：singing</div></div><div class="sub-label">点击检查</div>
+  </div>
+</div>
+
+<div class="page" id="page29">
+  <div class="page-content">
+    <h1 class="page-title">随堂演练</h1>
+    <p class="page-subtitle">拖拽</p>
+<div class="section-head"><div class="sh-icon">练</div><div class="sh-title">动词接续 · 拖拽分类</div><span class="sh-tag">拖拽</span></div><div class="sub-label">把动词拖到正确的接续规则下（doing / to do）</div><div class="drag-container quiz-q" data-qid="Q071"><div class="drag-words"><span class="drag-word" onclick="pickWord(this)">enjoy</span><span class="drag-word" onclick="pickWord(this)">finish</span><span class="drag-word" onclick="pickWord(this)">decide</span><span class="drag-word" onclick="pickWord(this)">hope</span></div><div class="qq-text">后接 doing： <span class="drag-slot" data-expect="enjoy"></span> 后接 to do： <span class="drag-slot" data-expect="decide"></span>  <span class="drag-slot" data-expect="finish"></span>  <span class="drag-slot" data-expect="hope"></span> </div><button class="drag-submit" onclick="dragSubmit(this)">提交</button><div class="sub-label">（先点上方词块填入，再点提交）</div></div><div class="sub-label">点击检查，enjoy/finish 后 doing，decide/hope 后 to do</div>
+  </div>
+</div>
+
+<div class="page" id="page30">
+  <div class="page-content">
+    <h1 class="page-title">随堂演练</h1>
+    <p class="page-subtitle">综合</p>
+<div class="section-head"><div class="sh-icon">练</div><div class="sh-title">动词接续 · 综合混练</div><span class="sh-tag">综合</span></div><div class="quiz-q" data-qid="Q072"><div class="qq-text">I enjoy ____ (read) at night.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to read</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. read</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. reading</button>
+</div>
+<div class="quiz-q" data-qid="Q073"><div class="qq-text">He wants ____ (go) to the park.</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. to go</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. going</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. go</button>
+</div>
+<div class="quiz-q" data-qid="Q074"><div class="qq-text">She finished ____ (clean) the room.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to clean</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. cleaning</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. clean</button>
+</div>
+<div class="quiz-q" data-qid="Q075"><div class="qq-text">They decided ____ (leave) early.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. leaving</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. leave</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. to leave</button>
+</div><div class="sub-label">点击作答，四题全对才算掌握</div><div class="note-panel"><div class="np-title">综合审题三步</div><div class="np-body">①找动词 ②判断接 doing 还是 to do ③判断时态与拼写。把四题连起来读一遍，验证通顺。</div></div><div class="body-text">本课综合运用：enjoy/finish/mind 后 doing，want/decide/hope 后 to do。做题时先找到动词，再套接续规则，特别留意 stop/remember 后的 doing 与 to do 意思不同。</div>
+  </div>
+</div>
+
+<div class="page" id="page31">
+  <div class="page-content">
+    <h1 class="page-title">阅读 A 篇</h1>
+    <p class="page-subtitle">爱好计划</p>
+<div class="section-head"><div class="sh-icon">读</div><div class="sh-title">阅读 A 篇 · My Hobbies and Future Plans</div><span class="sh-tag">说明文</span></div><div class="sub-label">说明文：我的爱好与未来计划（约 194 词）</div><div class="body-text">I enjoy reading and playing chess. Reading helps me learn new things, and playing chess trains my mind. I often practice playing the piano after school. I want to be a musician in the future. My parents suggest practicing every day. I decide to make a plan to improve my skills. I hope to join a music club next term. I promise to work hard and never give up. I also plan to learn another language. In short, I enjoy learning and I want to grow every day.</div><div class="rule-card rc-bin"><div class="rc-title">主旨</div><div class="rc-body">作者介绍爱好（阅读/象棋/钢琴）与未来计划（当音乐家）。</div></div><div class="quiz-q" data-qid="Q076"><div class="qq-text">作者喜欢做什么？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 阅读和下棋</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 游泳和跑步</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 画画和唱歌</button>
+</div>
+<div class="quiz-q" data-qid="Q077"><div class="qq-text">作者想成为什么？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 医生</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 音乐家</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 老师</button>
+</div>
+<div class="quiz-q" data-qid="Q078"><div class="qq-text">enjoy 后接什么？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to do</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 原形</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. doing</button>
+</div>
+<div class="quiz-q" data-qid="Q079"><div class="qq-text">'I hope to join' 中 to join 表？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 希望做</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 已经做</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 正在做</button>
+</div><div class="note-panel"><div class="np-title">说明文信息定位</div><div class="np-body">说明文按爱好→计划展开。逐题回原文找 enjoy/practice/want/hope/plan 等动词，判断接 doing 还是 to do。</div></div><div class="fill-q quiz-q" data-qid="Q080"><div class="qq-text">我想成为一名音乐家。I want ____ (be) a musician. <input class="fill-input" data-answer="to be"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：to be</div></div><div class="quiz-q" data-qid="Q081"><div class="qq-text">'I promise to work hard' 中 promise to do 表？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 拒绝做</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 忘记做</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 承诺做</button>
+</div>
+<div class="quiz-q" data-qid="Q082"><div class="qq-text">作者还计划做什么？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 学另一门语言</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 换一个爱好</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 放弃钢琴</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page32">
+  <div class="page-content">
+    <h1 class="page-title">阅读 B 篇</h1>
+    <p class="page-subtitle">承诺</p>
+<div class="section-head"><div class="sh-icon">读</div><div class="sh-title">阅读 B 篇 · A Promise to My Friend</div><span class="sh-tag">记叙文</span></div><div class="sub-label">记叙文：给朋友的一个承诺（约 215 词）</div><div class="body-text">My friend Tom and I agreed to run a race together. We promised to train every day. At first, I wanted to give up because it was hard. But Tom suggested keeping on running. He said, 'Remember to rest well before the race.' I decided to trust him and keep trying. We managed to finish the race together. I felt happy and I learned never to refuse a challenge. Now I remember doing my best every time. This experience taught me the value of promise.</div><div class="rule-card rc-bin"><div class="rc-title">人物</div><div class="rc-body">作者与朋友 Tom 约定赛跑，通过坚持最终完成。</div></div><div class="quiz-q" data-qid="Q083"><div class="qq-text">作者与朋友约定做什么？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 游泳</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 赛跑</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 画画</button>
+</div>
+<div class="quiz-q" data-qid="Q084"><div class="qq-text">Tom 建议作者？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 放弃</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 换人</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 继续跑</button>
+</div>
+<div class="quiz-q" data-qid="Q085"><div class="qq-text">'Remember to rest' 意思是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 记得休息</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 记得休息过</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 别休息</button>
+</div>
+<div class="quiz-q" data-qid="Q086"><div class="qq-text">'managed to finish' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 拒绝完成</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 设法完成</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 忘记完成</button>
+</div><div class="fill-q quiz-q" data-qid="Q087"><div class="qq-text">我决定信任他。I decided ____ (trust) him. <input class="fill-input" data-answer="to trust"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：to trust</div></div><div class="sub-label">点击检查</div><div class="note-panel"><div class="np-title">记叙文信息定位</div><div class="np-body">记叙文按事件推进。逐题回原文找 agree/promise/want/suggest/decide/manage 等动词与人物情感。</div></div><div class="quiz-q" data-qid="Q088"><div class="qq-text">'I remember doing my best' 意思是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 记得努力过</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 记得要努力</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 不想努力</button>
+</div>
+<div class="quiz-q" data-qid="Q089"><div class="qq-text">作者从这次经历学到？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 赛跑的技巧</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 承诺的价值</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 跑步的速度</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page33">
+  <div class="page-content">
+    <h1 class="page-title">阅读 C 篇</h1>
+    <p class="page-subtitle">运动</p>
+<div class="section-head"><div class="sh-icon">读</div><div class="sh-title">阅读 C 篇 · Why I Love Doing Sports</div><span class="sh-tag">说明文</span></div><div class="sub-label">说明文：为什么我爱运动（约 215 词）</div><div class="body-text">I love doing sports because it makes me strong and happy. I enjoy playing football with my friends every weekend. We practice kicking and passing the ball. My coach suggests doing warm-up exercises first. He tells me to drink enough water and to rest well. I want to be on the school team. I hope to win a game one day. I need to train hard to achieve my dream. I promise to keep going even when it is hard. Doing sports teaches me to work with others.</div><div class="rule-card rc-xing"><div class="rc-title">主旨</div><div class="rc-body">作者爱运动，享受足球，希望进入校队并坚持训练。</div></div><div class="quiz-q" data-qid="Q090"><div class="qq-text">作者为什么爱运动？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 变忙碌</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 变紧张</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 变强壮且快乐</button>
+</div>
+<div class="quiz-q" data-qid="Q091"><div class="qq-text">教练建议先做什么？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 热身运动</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 直接比赛</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 休息一天</button>
+</div>
+<div class="quiz-q" data-qid="Q092"><div class="qq-text">'I want to be on the team' 中 to be 表？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 已经是</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 想要成为</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 曾经是</button>
+</div>
+<div class="quiz-q" data-qid="Q093"><div class="qq-text">作者需要做什么来实现梦想？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 放弃</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 休息</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 努力训练</button>
+</div><div class="note-panel"><div class="np-title">原因结构</div><div class="np-body">说明文用 because 说明原因，用 to do 表目的。找 because 定位原因，找 to do 定位目的。</div></div><div class="fill-q quiz-q" data-qid="Q094"><div class="qq-text">我需要努力训练以实现梦想。I need ____ (train) hard to achieve my dream. <input class="fill-input" data-answer="to train"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：to train</div></div><div class="quiz-q" data-qid="Q095"><div class="qq-text">'Doing sports teaches me' 中 Doing sports 作？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 宾语</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 主语</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 谓语</button>
+</div>
+<div class="quiz-q" data-qid="Q096"><div class="qq-text">运动教会作者？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 独自行动</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 放弃</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 与人合作</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page34">
+  <div class="page-content">
+    <h1 class="page-title">阅读五选四</h1>
+    <p class="page-subtitle">语篇填空</p>
+<div class="section-head"><div class="sh-icon">读</div><div class="sh-title">阅读 · 五选四</div><span class="sh-tag">语篇填空</span></div><div class="sub-label">Planning for the Future 语篇填空（5 空 4 选）</div><div class="rule-card rc-bin"><div class="rc-title">提示</div><div class="rc-body">根据上下文逻辑选择正确的句子，注意 to do 表目的、doing 表爱好。</div></div><div class="order-container" data-qid="Q097" data-key="First|Then|Finally"><div class="qq-text">把计划步骤按正确顺序排列</div><ul class="order-list"><li class="order-item" data-val="First"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">首先</span></li><li class="order-item" data-val="Then"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">然后</span></li><li class="order-item" data-val="Finally"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">最后</span></li></ul><button class="order-check" onclick="orderCheck(this)">检查顺序</button><div class="order-ans">正确顺序：First → Then → Finally</div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q098"><div class="qq-text">五选四中 'to do' 常表示？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 并列</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 目的/打算</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 让步</button>
+</div><div class="ext-card"><span class="ext-cat">衔接词</span><div class="ext-body">计划类：first/then/finally；因果：because/so；目的：to do/so that。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page35">
+  <div class="page-content">
+    <h1 class="page-title">阅读策略</h1>
+    <p class="page-subtitle">动词定位</p>
+<div class="section-head"><div class="sh-icon">读</div><div class="sh-title">阅读策略 · 动词接续定位</div><span class="sh-tag">策略</span></div><div class="kmap"><div class="kmap-title">动词接续阅读三步法</div><div class="kmap-nodes"><div class="kmap-node"><div class="kn-title">划动词</div><div class="kn-body">找出 enjoy/want/decide 等</div></div><div class="kmap-node"><div class="kn-title">判接续</div><div class="kn-body">doing 还是 to do</div></div><div class="kmap-node"><div class="kn-title">定位</div><div class="kn-body">回原文找对应句子</div></div></div></div><div class="body-text">阅读动词接续类文章时，先划动词，再判断后接 doing 还是 to do，最后回原文定位。</div><div class="quiz-q" data-qid="Q099"><div class="qq-text">enjoy 引导的是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 后接 to do</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 后接原形</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 后接 doing</button>
+</div>
+<div class="quiz-q" data-qid="Q100"><div class="qq-text">want 引导的是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 后接 to do</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 后接 doing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 后接原形</button>
+</div><div class="note-panel"><div class="np-title">常见设问</div><div class="np-body">What does sb. enjoy doing?（找 enjoy+doing）/ What does sb. want to do?（找 want+to do）。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page36">
+  <div class="page-content">
+    <h1 class="page-title">造句enjoy</h1>
+    <p class="page-subtitle">句子练习</p>
+<div class="section-head"><div class="sh-icon">句</div><div class="sh-title">造句 · enjoy doing</div><span class="sh-tag">句子练习</span></div><div class="rule-card rc-zhug"><div class="rc-title">句型</div><div class="rc-body">主语 + enjoy + doing。</div></div><div class="fill-q quiz-q" data-qid="Q101"><div class="qq-text">我喜欢读书。I enjoy ____ (read) books. <input class="fill-input" data-answer="reading"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：reading</div></div><div class="sub-label">点击检查，enjoy 后接 doing</div><div class="body-text">参考：<b>I enjoy reading books.</b>（我喜欢读书。）技巧：enjoy 后动词加 ing 构成动名词。若动词以 e 结尾去 e 加 ing（write→writing），重读闭音节双写（run→running）。</div><div class="quiz-q" data-qid="Q102"><div class="qq-text">'享受游泳' 用 enjoy 应接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to swim</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. swim</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. swimming</button>
+</div>
+<div class="quiz-q" data-qid="Q103"><div class="qq-text">'完成作业' 用 finish 应接？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. doing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. to do</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. do</button>
+</div>
+<div class="quiz-q" data-qid="Q104"><div class="qq-text">'介意开门吗' 用 mind 应接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to open</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. opening</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. open</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page37">
+  <div class="page-content">
+    <h1 class="page-title">汉译英want</h1>
+    <p class="page-subtitle">句子练习</p>
+<div class="section-head"><div class="sh-icon">句</div><div class="sh-title">汉译英 · want to do</div><span class="sh-tag">句子练习</span></div><div class="rule-card rc-zhug"><div class="rc-title">句型</div><div class="rc-body">主语 + want + to do。</div></div><div class="fill-q quiz-q" data-qid="Q105"><div class="qq-text">我想学英语。I want ____ (learn) English. <input class="fill-input" data-answer="to learn"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：to learn</div></div><div class="sub-label">点击检查，want 后接 to do</div><div class="body-text">参考：<b>I want to learn English.</b>（我想学英语。）技巧：want/decide/hope/plan 后接 to do 表'打算/希望'。注意 want 后若接名词则不加 to：want a book（想要一本书）。</div><div class="quiz-q" data-qid="Q106"><div class="qq-text">'决定更努力学习' 用 decide 应接？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. to study</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. studying</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. study</button>
+</div>
+<div class="quiz-q" data-qid="Q107"><div class="qq-text">'希望赢' 用 hope 应接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. winning</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. to win</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. win</button>
+</div>
+<div class="quiz-q" data-qid="Q108"><div class="qq-text">want 后接名词时加 to 吗？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 加</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 看情况</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 不加</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page38">
+  <div class="page-content">
+    <h1 class="page-title">汉译英remember</h1>
+    <p class="page-subtitle">句子练习</p>
+<div class="section-head"><div class="sh-icon">句</div><div class="sh-title">汉译英 · remember to do</div><span class="sh-tag">句子练习</span></div><div class="rule-card rc-zhug"><div class="rc-title">句型</div><div class="rc-body">remember to do（记得要做）/ remember doing（记得做过）。</div></div><div class="fill-q quiz-q" data-qid="Q109"><div class="qq-text">记得锁门。Remember ____ (lock) the door. <input class="fill-input" data-answer="to lock"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：to lock</div></div><div class="sub-label">点击检查，remember to do 表记得将要做</div><div class="body-text">参考：<b>Remember to lock the door.</b>（记得锁门。）区别：remember to do 记得要做（未做）；remember doing 记得做过（已做）。I remember locking the door.（我记得锁过门。）</div><div class="quiz-q" data-qid="Q110"><div class="qq-text">'Remember ____ the light'（记得关灯，未关）填？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. turning off</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. to turn off</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. turn off</button>
+</div>
+<div class="quiz-q" data-qid="Q111"><div class="qq-text">'我记得见过他' 用 remember ____ him.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to see</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. see</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. seeing</button>
+</div>
+<div class="quiz-q" data-qid="Q112"><div class="qq-text">remember doing 表？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 记得做过</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 记得要做</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 忘记做</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page39">
+  <div class="page-content">
+    <h1 class="page-title">拼读音素</h1>
+    <p class="page-subtitle">-ing</p>
+<div class="section-head"><div class="sh-icon">拼</div><div class="sh-title">音素 · 动名词词尾 -ing</div><span class="sh-tag">音素</span></div><div class="rule-card rc-zhug"><div class="rc-title">/ɪŋ/</div><div class="rc-body">动名词词尾：enjoying/finishing/practicing；鼻音 /ŋ/。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">对比 -ink</div><div class="rc-body">-ink 发 /ɪŋk/：think/drink/link；-ing 不发 k。</div></div><div class="quiz-q" data-qid="Q113"><div class="qq-text">-ing 发？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. /ɪŋk/</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. /ɪŋ/</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. /ɪn/</button>
+</div>
+<div class="quiz-q" data-qid="Q114"><div class="qq-text">think 发？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. /ɪŋ/</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. /iːŋ/</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. /ɪŋk/</button>
+</div>
+<div class="quiz-q" data-qid="Q115"><div class="qq-text">sing 发？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. /ɪŋ/</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. /ɪŋk/</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. /sɪŋk/</button>
+</div><div class="note-panel"><div class="np-title">发音要点</div><div class="np-body">/ɪŋ/ 鼻音收尾，声带振动；/ɪŋk/ 在鼻音后加清塞音 k。读 enjoying 时 ing 收鼻音。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page40">
+  <div class="page-content">
+    <h1 class="page-title">拼读归音</h1>
+    <p class="page-subtitle">-ing vs -ink</p>
+<div class="section-head"><div class="sh-icon">拼</div><div class="sh-title">看词归音 · -ing 还是 -ink</div><span class="sh-tag">归音</span></div><div class="order-container" data-qid="Q116" data-key="singing|practicing|think"><div class="qq-text">把含 /ɪŋ/ 的词挑出来（排序成一列）</div><ul class="order-list"><li class="order-item" data-val="singing"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">鼻音</span></li><li class="order-item" data-val="practicing"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">鼻音</span></li><li class="order-item" data-val="think"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">加k</span></li></ul><button class="order-check" onclick="orderCheck(this)">检查顺序</button><div class="order-ans">正确顺序：singing → practicing → think</div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q117"><div class="qq-text">drink 发？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. /ɪŋ/</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. /iːnk/</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. /ɪŋk/</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page41">
+  <div class="page-content">
+    <h1 class="page-title">拼读听音</h1>
+    <p class="page-subtitle">听音选词</p>
+<div class="section-head"><div class="sh-icon">拼</div><div class="sh-title">听音选词 · 含 /ɪŋ/</div><span class="sh-tag">听音</span></div><div class="quiz-q" data-qid="Q118"><div class="qq-text">选出含 /ɪŋ/ 的词</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. singing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. think</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. drink</button>
+</div>
+<div class="quiz-q" data-qid="Q119"><div class="qq-text">选出含 /ɪŋk/ 的词</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. singing</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. blink</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. practicing</button>
+</div>
+<div class="quiz-q" data-qid="Q120"><div class="qq-text">enjoying 中 ing 发？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. /ɪŋk/</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. /eɪŋ/</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. /ɪŋ/</button>
+</div><div class="sub-label">点击作答，听音辨形</div><div class="note-panel"><div class="np-title">听辨提示</div><div class="np-body">-ing 收鼻音 /ɪŋ/，-ink 在鼻音后爆破 k。读快了容易混淆，注意听尾巴。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page42">
+  <div class="page-content">
+    <h1 class="page-title">拼读对立</h1>
+    <p class="page-subtitle">最小对立对</p>
+<div class="section-head"><div class="sh-icon">拼</div><div class="sh-title">最小对立对 · think vs thing</div><span class="sh-tag">对立</span></div><div class="rule-card rc-ming"><div class="rc-title">最小对立</div><div class="rc-body">think（思考）/thing（事物）；sink（下沉）/sing（唱歌）——注意尾音 k 的有无。</div></div><div class="match-container" data-qid="Q121"><div class="match-column mcol-l"><div class="match-item" data-match="think" onclick="matchPick(this)">/θɪŋk/</div><div class="match-item" data-match="thing" onclick="matchPick(this)">/θɪŋ/</div><div class="match-item" data-match="sink" onclick="matchPick(this)">/sɪŋk/</div><div class="match-item" data-match="sing" onclick="matchPick(this)">/sɪŋ/</div></div><div class="match-column mcol-r"><div class="match-item" data-match="/θɪŋk/" onclick="matchPick(this)">think</div><div class="match-item" data-match="/θɪŋ/" onclick="matchPick(this)">thing</div><div class="match-item" data-match="/sɪŋk/" onclick="matchPick(this)">sink</div><div class="match-item" data-match="/sɪŋ/" onclick="matchPick(this)">sing</div></div></div><div class="sub-label">左右两列点击配对</div>
+  </div>
+</div>
+
+<div class="page" id="page43">
+  <div class="page-content">
+    <h1 class="page-title">核心口诀</h1>
+    <p class="page-subtitle">一页速览</p>
+<div class="section-head"><div class="sh-icon">结</div><div class="sh-title">核心口诀总览</div><span class="sh-tag">一页速览</span></div><div class="rule-card rc-zhug"><div class="rc-title">doing</div><div class="rc-body">enjoy/finish/mind/practice/suggest/avoid/consider/imagine + doing；作主语谓语单数。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">to do</div><div class="rc-body">want/decide/hope/plan/agree/refuse/promise/manage/afford/offer/fail + to do；表目的。</div></div>
+<div class="rule-card rc-bin"><div class="rc-title">辨析</div><div class="rc-body">stop doing 停止；stop to do 停下来做；remember doing 记得做过；remember to do 记得要做。</div></div><div class="quiz-q" data-qid="Q122"><div class="qq-text">enjoy 后接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. to do</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. doing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 原形</button>
+</div>
+<div class="quiz-q" data-qid="Q123"><div class="qq-text">want 后接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. doing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 原形</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. to do</button>
+</div>
+<div class="quiz-q" data-qid="Q124"><div class="qq-text">remember to do 表？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 记得要做</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 记得做过</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 忘记做</button>
+</div><div class="body-text">口诀背诵：<b>enjoy/finish 后 doing，want/decide 后 to do。</b>stop doing 停此事，stop to do 去做它；remember doing 记做过，remember to do 记得做。把口诀读两遍，再用本课 20 词各造一句，本课核心就掌握了大半。</div><div class="quiz-q" data-qid="Q125"><div class="qq-text">'后接 to do' 的动词常表？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 爱好/习惯</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 打算/希望/承诺</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 动作持续</button>
+</div>
+<div class="quiz-q" data-qid="Q126"><div class="qq-text">本课口诀的核心是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 越多越难</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 越精确越好</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. doing 与 to do 各司其职</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page44">
+  <div class="page-content">
+    <h1 class="page-title">思维导图</h1>
+    <p class="page-subtitle">全课收尾</p>
+<div class="section-head"><div class="sh-icon">结</div><div class="sh-title">课堂思维导图</div><span class="sh-tag">全课收尾</span></div><div class="mm-wrap"><div class="mm-head">L25 · 动名词与不定式综合运用 · 思维导图</div><div class="mm-branches"><div class="mm-branch"><div class="mm-branch-title">doing</div><div class="mm-items">enjoy/finish/mind + V-ing</div></div><div class="mm-branch"><div class="mm-branch-title">to do</div><div class="mm-items">want/decide/hope + to do</div></div><div class="mm-branch"><div class="mm-branch-title">目的</div><div class="mm-items">to do 表'为了'</div></div><div class="mm-branch"><div class="mm-branch-title">辨析</div><div class="mm-items">stop/remember doing·to do</div></div><div class="mm-branch"><div class="mm-branch-title">防越级</div><div class="mm-items">不引入分词状语</div></div><div class="mm-branch"><div class="mm-branch-title">应用</div><div class="mm-items">阅读定位动词 / 造句 / 拼读</div></div></div></div><div class="sub-label">本课 3 考点：G62 动名词 · G63 不定式 · 辨析</div><div class="note-panel"><div class="np-title">一句话收口</div><div class="np-body">enjoy 后 doing、want 后 to do、stop/remember 后看意思。三句口诀一次带走。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page45">
+  <div class="page-content">
+    <h1 class="page-title">课后任务</h1>
+    <p class="page-subtitle">巩固清单</p>
+<div class="section-head"><div class="sh-icon">结</div><div class="sh-title">课后任务 · 巩固清单</div><span class="sh-tag">任务</span></div><div class="rule-card rc-qita"><div class="rc-title">任务一</div><div class="rc-body">抄写 20 个动词接续相关词，各配一句 doing 或 to do 句型。</div></div>
+<div class="rule-card rc-bin"><div class="rc-title">任务二</div><div class="rc-body">完成配套练习卷（阅读30/语言25/综合25/语法诊断20）。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">任务三</div><div class="rc-body">用 enjoy/finish/want/decide/remember 各造 2 句。</div></div><div class="quiz-q" data-qid="Q127"><div class="qq-text">本课核心考点有几个？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 3 个</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 2 个</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 5 个</button>
+</div>
+<div class="quiz-q" data-qid="Q128"><div class="qq-text">remember doing 表记得做过，对吗？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 错</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 对</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 看情况</button>
+</div><div class="ext-card"><span class="ext-cat">展望</span><div class="ext-body">L26 将延续动词接续，预习其他动词的 doing/to do 用法。</div></div>
+  </div>
+</div>
+
+</div>
+<div class="page-counter" id="pageCounter">1 / 45</div>
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)"><div class="modal-content" id="modalContent"></div></div>
+<script>
+/* ==================== Web Audio API ==================== */
+var audioCtx = null;
+function initAudio(){
+  if(!audioCtx){
+    try{ audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }catch(e){ console.log('Audio not supported'); }
+  }
+  if(audioCtx && audioCtx.state === 'suspended'){ audioCtx.resume(); }
+}
+function playCorrect(){
+  initAudio();
+  if(!audioCtx) return;
+  var freqs = [523.25, 659.25, 783.99];
+  freqs.forEach(function(f, i){
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.value = f;
+    gain.gain.setValueAtTime(0, audioCtx.currentTime + i * 0.12);
+    gain.gain.linearRampToValueAtTime(0.2, audioCtx.currentTime + i * 0.12 + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.12 + 0.1);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(audioCtx.currentTime + i * 0.12);
+    osc.stop(audioCtx.currentTime + i * 0.12 + 0.1);
+  });
+}
+function playError(){
+  initAudio();
+  if(!audioCtx) return;
+  var freqs = [392.0, 261.63];
+  freqs.forEach(function(f, i){
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
+    osc.type = 'square';
+    osc.frequency.value = f;
+    gain.gain.setValueAtTime(0, audioCtx.currentTime + i * 0.25);
+    gain.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + i * 0.25 + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.25 + 0.2);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(audioCtx.currentTime + i * 0.25);
+    osc.stop(audioCtx.currentTime + i * 0.25 + 0.2);
+  });
+}
+function playPageTurn(){
+  initAudio();
+  if(!audioCtx) return;
+  var osc = audioCtx.createOscillator();
+  var gain = audioCtx.createGain();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(400, audioCtx.currentTime + 0.08);
+  gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.08);
+}
+
+
+/* ==================== IndexedDB 数据采集 ==================== */
+var db = null;
+var DB_NAME = 'EnglishCoursewareDB';
+var DB_VERSION = 1;
+var STORE_NAME = 'answerRecords';
+var studentId = 'stu_xyj';
+var sessionId = 'D25_' + new Date().toISOString().slice(0,10).replace(/-/g,'');
+var answerRecords = [];
+
+function initDB(){
+  if(!window.indexedDB){ console.log('IndexedDB not supported'); return; }
+  var request = indexedDB.open(DB_NAME, DB_VERSION);
+  request.onerror = function(e){ console.log('DB error:', e); };
+  request.onsuccess = function(e){ db = e.target.result; loadExistingRecords(); };
+  request.onupgradeneeded = function(e){
+    db = e.target.result;
+    if(!db.objectStoreNames.contains(STORE_NAME)){
+      var store = db.createObjectStore(STORE_NAME, {keyPath: 'event_id'});
+      store.createIndex('student_id', 'student_id', {unique: false});
+      store.createIndex('question_id', 'question_id', {unique: false});
+      store.createIndex('session_id', 'session_id', {unique: false});
+    }
+  };
+}
+function loadExistingRecords(){
+  if(!db) return;
+  var tx = db.transaction([STORE_NAME], 'readonly');
+  var store = tx.objectStore(STORE_NAME);
+  var idx = store.index('session_id');
+  var req = idx.getAll(sessionId);
+  req.onsuccess = function(e){
+    answerRecords = e.target.result || [];
+    updateSyncStatus();
+  };
+}
+function saveAnswer(questionId, studentAnswer, correctAnswer, isCorrect, attemptNo, timeUsed, hintUsed){
+  if(!db) return;
+  var event_id = studentId + '_' + sessionId + '_' + questionId + '_' + (attemptNo || 1);
+  var record = {
+    event_id: event_id,
+    student_id: studentId,
+    session_id: sessionId,
+    question_id: questionId,
+    attempt_no: attemptNo || 1,
+    student_answer: studentAnswer,
+    correct_answer: correctAnswer,
+    is_correct: isCorrect,
+    time_used: timeUsed || 0,
+    hint_used: hintUsed || false,
+    timestamp: new Date().toISOString(),
+    synced: 'pending'
+  };
+  var tx = db.transaction([STORE_NAME], 'readwrite');
+  var store = tx.objectStore(STORE_NAME);
+  store.put(record);
+  answerRecords.push(record);
+  updateSyncStatus();
+}
+function updateSyncStatus(){
+  var pending = answerRecords.filter(function(r){ return r.synced === 'pending'; }).length;
+  var dot = document.getElementById('syncDot');
+  var text = document.getElementById('syncText');
+  if(!dot) return;
+  if(pending === 0){
+    dot.className = 'sync-dot';
+    text.textContent = '本地已保存 (' + answerRecords.length + '条)';
+  } else {
+    dot.className = 'sync-dot pending';
+    text.textContent = '待同步 (' + pending + '/' + answerRecords.length + ')';
+  }
+}
+function exportData(e){
+  if(e) e.stopPropagation();
+  if(answerRecords.length === 0){
+    alert('暂无答题数据可导出');
+    return;
+  }
+  var json = JSON.stringify(answerRecords, null, 2);
+  var csv = convertToCSV(answerRecords);
+  var jsonBlob = new Blob([json], {type: 'application/json'});
+  var csvBlob = new Blob(['\uFEFF' + csv], {type: 'text/csv'});
+  var jsonLink = document.createElement('a');
+  jsonLink.href = URL.createObjectURL(jsonBlob);
+  jsonLink.download = 'D25_answers.json';
+  jsonLink.click();
+  setTimeout(function(){
+    var csvLink = document.createElement('a');
+    csvLink.href = URL.createObjectURL(csvBlob);
+    csvLink.download = 'D25_answers.csv';
+    csvLink.click();
+  }, 300);
+}
+function convertToCSV(records){
+  var headers = ['event_id','student_id','session_id','question_id','attempt_no','student_answer','correct_answer','is_correct','time_used','hint_used','timestamp'];
+  var csv = headers.join(',') + '\n';
+  records.forEach(function(r){
+    var row = headers.map(function(h){
+      var val = r[h] !== undefined ? String(r[h]) : '';
+      if(val.indexOf(',') !== -1 || val.indexOf('"') !== -1){ val = '"' + val.replace(/"/g, '""') + '"'; }
+      return val;
+    });
+    csv += row.join(',') + '\n';
+  });
+  return csv;
+}
+
+
+/* ==================== 页面导航系统 ==================== */
+var currentPage = 1;
+var totalPages = 25;
+var segmentPages = {1:[2,3], 2:[4,9], 3:[10,14], 4:[15,16], 5:[17,19], 6:[20,21], 7:[22,24], 8:[25,25]};
+
+function goToPage(pageNum){
+  if(pageNum < 1 || pageNum > totalPages) return;
+  initAudio();
+  var oldPage = document.getElementById('page' + currentPage);
+  var newPage = document.getElementById('page' + pageNum);
+  if(oldPage){ oldPage.classList.remove('active'); oldPage.scrollTop = 0; }
+  if(newPage){ newPage.classList.add('active'); newPage.scrollTop = 0; }
+  currentPage = pageNum;
+  updateNav();
+  updateCounter();
+  playPageTurn();
+}
+function nextPage(){ if(currentPage < totalPages) goToPage(currentPage + 1); }
+function prevPage(){ if(currentPage > 1) goToPage(currentPage - 1); }
+function jumpToSegment(seg){
+  var pages = segmentPages[seg];
+  if(pages) goToPage(pages[0]);
+}
+function updateNav(){
+  var items = document.querySelectorAll('.nav-item');
+  items.forEach(function(item){
+    var seg = parseInt(item.dataset.segment);
+    var pages = segmentPages[seg];
+    if(currentPage >= pages[0] && currentPage <= pages[1]){
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
+function updateCounter(){
+  document.getElementById('pageCounter').textContent = currentPage + ' / ' + totalPages;
+}
+
+
+/* ==================== 翻页区域 ==================== */
+document.addEventListener('click', function(e){
+  if(e.target.closest('.quiz-opt') || e.target.closest('.game-option') ||
+     e.target.closest('.fill-check-btn') || e.target.closest('.fill-input') ||
+     e.target.closest('.nav-item') || e.target.closest('.vocab-card') ||
+     e.target.closest('.flip-card') || e.target.closest('.mnemonic-card') ||
+     e.target.closest('.error-type-card') || e.target.closest('.exam-type-card') ||
+     e.target.closest('.eval-card') || e.target.closest('.cover-nav-item') ||
+     e.target.closest('.modal-content') || e.target.closest('.export-btn') ||
+     e.target.closest('.drag-word') || e.target.closest('.drag-submit') ||
+     e.target.closest('.drag-container') || e.target.closest('.link-container') ||
+     e.target.closest('.order-container') ||
+     e.target.closest('.match-item') || e.target.closest('.pos-word') ||
+     e.target.closest('button') || e.target.closest('input') ||
+     e.target.closest('.game-progress-dot') || e.target.closest('.q-nav-item')){
+    return;
+  }
+  var container = document.getElementById('pagesContainer');
+  var rect = container.getBoundingClientRect();
+  var x = e.clientX - rect.left;
+  if(x < rect.width / 2){ prevPage(); }
+  else { nextPage(); }
+});
+
+
+/* ==================== 键盘导航 ==================== */
+document.addEventListener('keydown', function(e){
+  if(e.target.tagName === 'INPUT') return;
+  if(e.key === 'ArrowLeft' || e.key === 'ArrowUp'){ prevPage(); }
+  else if(e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' '){ e.preventDefault(); nextPage(); }
+  else if(e.key === 'f' || e.key === 'F'){
+    if(!document.fullscreenElement){ document.documentElement.requestFullscreen(); }
+    else { document.exitFullscreen(); }
+  }
+});
+
+
+/* ==================== 弹窗 ==================== */
+function closeModal(e){
+  if(e && e.target !== document.getElementById('modalOverlay')) return;
+  document.getElementById('modalOverlay').classList.remove('show');
+}
+
+
+
+/* ==================== 交互增强（L21-25 新建线） ==================== */
+var totalPages = 45;
+var segmentPages = {"1": [1, 4], "2": [5, 12], "3": [13, 17], "4": [18, 22], "5": [23, 26], "6": [27, 30], "7": [31, 42], "8": [43, 45]};
+var PAGE_META = {"1": {"p": "CORE", "m": 2}, "2": {"p": "CORE", "m": 2}, "3": {"p": "CORE", "m": 2}, "4": {"p": "CORE", "m": 2}, "5": {"p": "CORE", "m": 2}, "6": {"p": "CORE", "m": 2}, "7": {"p": "CORE", "m": 2}, "8": {"p": "CORE", "m": 2}, "9": {"p": "CORE", "m": 2}, "10": {"p": "CORE", "m": 2}, "11": {"p": "CORE", "m": 2}, "12": {"p": "CORE", "m": 2}, "13": {"p": "CORE", "m": 2}, "14": {"p": "CORE", "m": 2}, "15": {"p": "CORE", "m": 2}, "16": {"p": "CORE", "m": 2}, "17": {"p": "CORE", "m": 2}, "18": {"p": "CORE", "m": 2}, "19": {"p": "CORE", "m": 2}, "20": {"p": "CORE", "m": 2}, "21": {"p": "CORE", "m": 2}, "22": {"p": "CORE", "m": 2}, "23": {"p": "CORE", "m": 2}, "24": {"p": "CORE", "m": 2}, "25": {"p": "CORE", "m": 2}, "26": {"p": "CORE", "m": 2}, "27": {"p": "CORE", "m": 2}, "28": {"p": "CORE", "m": 2}, "29": {"p": "CORE", "m": 2}, "30": {"p": "CORE", "m": 2}, "31": {"p": "CORE", "m": 2}, "32": {"p": "CORE", "m": 2}, "33": {"p": "CORE", "m": 2}, "34": {"p": "CORE", "m": 2}, "35": {"p": "CORE", "m": 2}, "36": {"p": "CORE", "m": 2}, "37": {"p": "CORE", "m": 2}, "38": {"p": "CORE", "m": 2}, "39": {"p": "CORE", "m": 2}, "40": {"p": "CORE", "m": 2}, "41": {"p": "CORE", "m": 2}, "42": {"p": "CORE", "m": 2}, "43": {"p": "CORE", "m": 2}, "44": {"p": "CORE", "m": 2}, "45": {"p": "CORE", "m": 2}};
+
+/* 初始化 IndexedDB（页面加载即建立连接，答题实时落库） */
+if(typeof initDB === 'function'){ initDB(); }
+
+function flipCard(el){
+  el.classList.toggle('flipped');
+}
+
+/* 彩带动画 */
+function burst(el){
+  var r=el.getBoundingClientRect(), cx=r.left+r.width/2, cy=r.top+r.height/2;
+  for(var i=0;i<12;i++){
+    var p=document.createElement('div'); p.className='burst-p';
+    var a=Math.random()*6.283, d=40+Math.random()*60;
+    p.style.left=cx+'px'; p.style.top=cy+'px';
+    p.style.setProperty('--dx',(Math.cos(a)*d)+'px'); p.style.setProperty('--dy',(Math.sin(a)*d)+'px');
+    p.style.background=(Math.random()<0.5?'#FFD700':'#E63946');
+    document.body.appendChild(p);
+    (function(x){ setTimeout(function(){ x.remove(); },700); })(p);
+  }
+}
+function shake(el){ if(!el) return; el.style.animation='none'; void el.offsetWidth; el.style.animation='shake .4s'; }
+
+/* 值域：单选（checkOpt 已在 CORE_JS 之外由本模块提供？不，CORE_JS 无 checkOpt，故在此定义） */
+var _LAST_KEY = null;
+function checkOpt(btn){
+  if(btn && btn.currentTarget && btn.currentTarget.classList && btn.currentTarget.classList.contains('quiz-opt')){
+    btn = btn.currentTarget;
+  }
+  if(!btn || !btn.classList) return;
+  var q=btn.parentNode; if(!q) return;
+  if(q.dataset.done) return; q.dataset.done='1';
+  var opts=q.querySelectorAll('.quiz-opt');
+  for(var i=0;i<opts.length;i++){ opts[i].classList.add('locked'); }
+  var ok=btn.dataset.correct==='1';
+  if(typeof saveAnswer==='function' && q.dataset.qid){
+    var qid=q.dataset.qid, ca='';
+    for(var j=0;j<opts.length;j++){ if(opts[j].dataset.correct==='1'){ ca=opts[j].textContent.replace(/^[A-E]\.?\s*/,'').trim(); } }
+    saveAnswer(qid, btn.textContent.replace(/^[A-E]\.?\s*/,'').trim(), ca, ok);
+  }
+  if(ok){ btn.classList.add('opt-correct'); playCorrect(); burst(btn); }
+  else{
+    btn.classList.add('opt-wrong'); playError();
+    for(var k=0;k<opts.length;k++){
+      if(opts[k].dataset.correct==='1'){ opts[k].classList.add('opt-correct'); }
+    }
+    var h=q.querySelector('.et-undo-hint');
+    if(!h){ h=document.createElement('div'); h.className='et-undo-hint';
+            h.onclick=function(ev){ ev.stopPropagation(); }; q.appendChild(h); }
+  }
+  var fb=q.querySelector('.quiz-feedback');
+  if(fb) fb.classList.add('show');
+}
+
+/* 双击撤销（答错后可撤回重答） */
+function undoQuiz(q){
+  if(!q) return;
+  q.dataset.done='0';
+  var opts=q.querySelectorAll('.quiz-opt');
+  for(var i=0;i<opts.length;i++){ opts[i].classList.remove('opt-correct','opt-wrong','locked'); }
+  var fb=q.querySelector('.quiz-feedback'); if(fb) fb.classList.remove('show');
+  var h=q.querySelector('.et-undo-hint'); if(h) h.remove();
+  playPageTurn();
+}
+document.addEventListener('dblclick', function(e){
+  var q=e.target.closest ? e.target.closest('.quiz-q,.quiz-question,.fill-q,.drag-q') : null;
+  if(q && q.dataset.done==='1'){ undoQuiz(q); }
+});
+document.addEventListener('touchstart', function(e){
+  var q=e.target.closest ? e.target.closest('.quiz-q,.quiz-question') : null;
+  if(q && q.dataset.done==='1'){ undoQuiz(q); }
+});
+
+/* 填空判题 */
+function fillCheck(btn){
+  var q=btn.parentNode; if(!q) return; if(q.dataset.done) return; q.dataset.done='1';
+  var inp=q.querySelector('.fill-input'); if(!inp){ q.dataset.done='0'; return; }
+  var ans=inp.getAttribute('data-answer')||'';
+  var val=inp.value.replace(/^\s+|\s+$/g,'');
+  var ok=(val.toLowerCase()===ans.toLowerCase());
+  if(typeof saveAnswer==='function' && q.dataset.qid){ saveAnswer(q.dataset.qid, val, ans, ok); }
+  if(ok){ inp.classList.add('correct'); playCorrect(); burst(inp); }
+  else{ inp.classList.add('wrong'); playError(); q.querySelector('.fill-answer').classList.add('show'); }
+}
+
+/* 拖拽填空 */
+function pickWord(word){
+  var w=word.target||word.currentTarget||word;
+  if(w.classList.contains('fill-check-btn')) return;
+  if(w.classList.contains('drag-word')){
+    if(w.classList.contains('used')) return;
+    var slots=document.querySelectorAll('.drag-slot');
+    for(var i=0;i<slots.length;i++){
+      if(!slots[i].getAttribute('data-filled')){
+        slots[i].textContent=w.textContent;
+        slots[i].setAttribute('data-filled','1');
+        slots[i].setAttribute('data-word',w.textContent);
+        w.classList.add('used');
+        return;
+      }
+    }
+  }
+}
+function dragSubmit(btn){
+  var cont=btn.getAttribute('data-target')?document.getElementById(btn.getAttribute('data-target')):btn.parentNode;
+  if(!cont) cont=btn.parentNode;
+  var slots=cont.querySelectorAll('.drag-slot');
+  var ok=true;
+  var all=true;
+  slots.forEach(function(s){
+    s.classList.remove('correct','wrong');
+    if(!s.getAttribute('data-filled')){ all=false; return; }
+    var expect=s.getAttribute('data-expect');
+    var got=s.getAttribute('data-word');
+    if(expect && got && got.trim().toLowerCase()===expect.trim().toLowerCase()){ s.classList.add('correct'); }
+    else{ s.classList.add('wrong'); ok=false; }
+  });
+  if(!all){ alert('请先把所有空格填满'); return; }
+  if(typeof saveAnswer==='function' && cont.getAttribute('data-qid')){ saveAnswer(cont.getAttribute('data-qid'), ok?'全部正确':'有误','全部正确',ok); }
+  if(ok){ playCorrect(); burst(btn); cont.classList.add('solved'); }
+  else{ playError(); shake(cont); }
+}
+
+/* 排序判题 */
+function moveUp(btn){
+  var li=btn.parentNode.parentNode; var ul=li.parentNode;
+  if(li.previousElementSibling) ul.insertBefore(li, li.previousElementSibling);
+}
+function moveDown(btn){
+  var li=btn.parentNode.parentNode; var ul=li.parentNode;
+  if(li.nextElementSibling) ul.insertBefore(li, li.nextElementSibling);
+}
+function orderCheck(btn){
+  var cont=btn.parentNode.parentNode;
+  var items=cont.querySelectorAll('.order-item');
+  var key=cont.getAttribute('data-key')||'';
+  var seq=[]; items.forEach(function(it){ seq.push(it.getAttribute('data-val')); });
+  var ok=(seq.join('|')===key);
+  if(typeof saveAnswer==='function' && cont.getAttribute('data-qid')){ saveAnswer(cont.getAttribute('data-qid'), seq.join(','), key.replace(/\|/g,','), ok); }
+  if(ok){ playCorrect(); burst(btn); cont.classList.add('solved');
+    items.forEach(function(it){ it.classList.add('ok'); });
+  } else { playError(); shake(cont); cont.classList.add('show-ans'); }
+}
+
+/* 连线题：点击左右列配对 */
+function matchPick(btn){
+  var m=btn.getAttribute('data-match'); if(!m) return;
+  var col=btn.parentNode;
+  var sel=col.querySelector('.selected');
+  if(sel){ sel.classList.remove('selected'); if(sel===btn){ return; } }
+  btn.classList.add('selected');
+  var cont=btn.parentNode.parentNode;
+  var left=cont.querySelector('.mcol-l'), right=cont.querySelector('.mcol-r');
+  var lsel=left.querySelector('.selected'), rsel=right.querySelector('.selected');
+  if(lsel && rsel){
+    var ok=(lsel.getAttribute('data-match')===rsel.getAttribute('data-match'));
+    if(typeof saveAnswer==='function' && cont.getAttribute('data-qid')){
+      saveAnswer(cont.getAttribute('data-qid'), lsel.textContent+'→'+rsel.textContent, lsel.getAttribute('data-match'), ok);
+    }
+    if(ok){ lsel.classList.add('matched'); rsel.classList.add('matched'); lsel.classList.remove('selected'); rsel.classList.remove('selected');
+            playCorrect(); burst(lsel); }
+    else{ lsel.classList.remove('selected'); rsel.classList.remove('selected'); playError(); shake(lsel); }
+  }
+}
+
+/* 翻牌卡（词汇自检） */
+function flipCard2(el){ el.classList.toggle('flipped'); }
+
+/* 思维导图分支展开 */
+document.addEventListener('click', function(e){
+  var mm=e.target.closest ? e.target.closest('.mm-branch') : null;
+  if(mm){ mm.classList.toggle('open'); }
+});
+
+/* 音效按钮（无音频文件，用 Web Audio 提示音） */
+function playHint(){ playPageTurn(); }
+
+</script>
+</body>
+</html>

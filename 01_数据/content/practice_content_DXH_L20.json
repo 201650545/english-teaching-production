@@ -1,0 +1,175 @@
+{
+ "_doc": "邓兴华 L20 配套练习内容（中等）· 2026-08-08。主题：语法终点·旅行综合。语法：G52 一般过去时全套综合 / G53 复合不定代词过去时综合 / G54 频度副词跨时态对照。难度：中等。结构对齐 exam_spec v2026.2（阅读30/语言25/综合25/语法诊断20）。L20 为 Stage 5 唯一可含过去时的练习卷（本课考点）。source_id=DXH2026_L20_*。",
+ "reading_a": {
+  "id": "DXH2026_L20_reading_a",
+  "genre": "应用文（公园旅行指南）",
+  "difficulty": "中",
+  "word_count": 161,
+  "provenance": "真题母本改编 + 原创（教师授权 2026-08-08）",
+  "绑定": "G52 过去时 / G54 频度副词跨时态 / 旅行词汇",
+  "paragraphs": [
+   "Welcome to Green Hill Park! Here is a guide for your visit. The park is open from eight in the morning to six in the evening.",
+   "At the top of the hill, there is a tall building with a great view. You can walk up the hill or ride a bicycle. It takes about twenty minutes to reach the top.",
+   "The park is famous for its ducks. Last year, many visitors came here to feed them. Some people brought umbrellas because it was often foggy in the morning.",
+   "Please stay on the path and keep the park clean. A happy journey begins with a good plan. Enjoy your visit!"
+  ],
+  "questions": [
+   {"num": 1, "q": "What time does the park open?", "opts": [["A", "At eight in the morning."], ["B", "At six in the morning."], ["C", "At ten in the morning."]], "answer": "A"},
+   {"num": 2, "q": "How can you reach the top of the hill?", "opts": [["A", "Walk or ride a bicycle."], ["B", "Take a bus."], ["C", "Swim."]], "answer": "A"},
+   {"num": 3, "q": "Why did some visitors bring umbrellas last year?", "opts": [["A", "Because it was often foggy in the morning."], ["B", "Because it rained at night."], ["C", "Because it was hot."]], "answer": "A"},
+   {"num": 4, "q": "What is the park famous for?", "opts": [["A", "Its ducks."], ["B", "Its tall building."], ["C", "Its bicycles."]], "answer": "A"},
+   {"num": 5, "q": "What is the passage mainly about?", "opts": [["A", "A guide for visiting a park."], ["B", "How to ride a bicycle."], ["C", "How to feed ducks."]], "answer": "A"}
+  ]
+ },
+ "reading_b": {
+  "id": "DXH2026_L20_reading_b",
+  "genre": "记叙文（难忘旅行）",
+  "difficulty": "中",
+  "word_count": 183,
+  "provenance": "真题母本改编 + 原创（教师授权 2026-08-08）",
+  "绑定": "G52 过去时 / G53 不定代词过去时 / 旅行词汇",
+  "paragraphs": [
+   "Last summer, my family took a journey to the mountains. It was an unforgettable trip.",
+   "We left home early in the morning. The weather was foggy, so my mother took an umbrella. We climbed a small hill and walked a long distance. Everyone was a little tired but happy.",
+   "On the way, we saw a trader selling food. We were hungry, so we bought some bread and fruit. Near a small lake, we saw some ducks. I imagined how much fun it was to feed them.",
+   "At the end of the day, we realized how enjoyable the journey was. We took many pictures and wrote our memories in a diary. Nothing was boring about that trip."
+  ],
+  "questions": [
+   {"num": 1, "q": "Where did the family go last summer?", "opts": [["A", "To the mountains."], ["B", "To the city."], ["C", "To the sea."]], "answer": "A"},
+   {"num": 2, "q": "Why did the mother take an umbrella?", "opts": [["A", "Because the weather was foggy."], ["B", "Because it was hot."], ["C", "Because it rained a lot."]], "answer": "A"},
+   {"num": 3, "q": "What did the family buy from the trader?", "opts": [["A", "Bread and fruit."], ["B", "Umbrellas."], ["C", "Ducks."]], "answer": "A"},
+   {"num": 4, "q": "What does the underlined word \"journey\" mean?", "opts": [["A", "旅行"], ["B", "作业"], ["C", "房子"]], "answer": "A"},
+   {"num": 5, "q": "How did the family feel about the trip?", "opts": [["A", "It was enjoyable."], ["B", "It was boring."], ["C", "It was difficult."]], "answer": "A"}
+  ]
+ },
+ "reading_c": {
+  "id": "DXH2026_L20_reading_c",
+  "genre": "说明文（旅行对成长的影响）",
+  "difficulty": "中",
+  "word_count": 183,
+  "provenance": "真题母本改编 + 原创（教师授权 2026-08-08）",
+  "绑定": "G52 过去时 / G54 频度副词跨时态 / 旅行词汇",
+  "paragraphs": [
+   "Travel is important for teenagers. It helps them learn about the world and grow up.",
+   "When you travel, you see new places and meet new people. You realize that the world is big and full of different cultures. Each journey teaches you something new.",
+   "Last year, a group of students went abroad for a study trip. They visited many famous buildings and talked with traders. They were excited about the entire journey. Before the trip, they had never been so far from home.",
+   "Now they often share their memories with others. Travel makes their lives richer. It is a good idea to travel and learn at the same time."
+  ],
+  "questions": [
+   {"num": 1, "q": "Why is travel important for teenagers?", "opts": [["A", "It helps them learn about the world."], ["B", "It makes them tired."], ["C", "It is expensive."]], "answer": "A"},
+   {"num": 2, "q": "What did the students do last year?", "opts": [["A", "They went abroad for a study trip."], ["B", "They stayed at home."], ["C", "They bought umbrellas."]], "answer": "A"},
+   {"num": 3, "q": "How had the students felt before the trip?", "opts": [["A", "They had never been so far from home."], ["B", "They were bored."], ["C", "They were angry."]], "answer": "A"},
+   {"num": 4, "q": "What do the students often do now?", "opts": [["A", "Share their memories with others."], ["B", "Forget their trip."], ["C", "Stop traveling."]], "answer": "A"},
+   {"num": 5, "q": "What is the passage mainly about?", "opts": [["A", "Why travel is good for teenagers."], ["B", "How to pack a bag."], ["C", "Where to buy food."]], "answer": "A"}
+  ]
+ },
+ "w5": {
+  "id": "DXH2026_L20_w5",
+  "title": "根据短文内容，从方框中选出最佳句子填入文中空白处，使短文通顺连贯（有一项为多余选项）",
+  "绑定": "旅行日记 / 过去时 / 不定代词",
+  "paragraphs": [
+   "My Travel Diary",
+   "Last week, I went on a journey to the countryside. I wrote everything in my diary.",
+   "In the morning, I climbed a small hill. ___1___ The view from the top was beautiful.",
+   "At noon, I ate lunch by a lake. ___2___ I fed some bread to them.",
+   "In the afternoon, it was foggy, so I took out my umbrella. ___3___",
+   "When I got home, I realized how enjoyable the whole day was. ___4___"
+  ],
+  "candidates": [
+   ["A", "I was hungry, so I bought some food and a drink."],
+   ["B", "Nothing was more fun than that journey."],
+   ["C", "It took me about twenty minutes to reach the top."],
+   ["D", "I saw some ducks swimming in the water."],
+   ["E", "I forgot to bring my notebook."]
+  ],
+  "answers": {"1": "C", "2": "D", "3": "A", "4": "B"}
+ },
+ "cloze": {
+  "id": "DXH2026_L20_cloze",
+  "title": "完形填空",
+  "绑定": "G52 过去时 / G53 不定代词过去时 / 旅行词汇",
+  "paragraphs": [
+   "Last weekend, my family ___1___ a journey to the sea.",
+   "We ___2___ early in the morning. The weather ___3___ sunny and warm.",
+   "At the beach, I ___4___ a sandcastle. My brother ___5___ some fish in the water.",
+   "We ___6___ tired but very happy. Everyone ___7___ a good time.",
+   "I ___8___ this trip in my diary. Nothing ___9___ boring about that day.",
+   "We ___10___ to go there again next year."
+  ],
+  "items": [
+   {"num": 1, "opts": [["A", "took"], ["B", "take"], ["C", "takes"]], "answer": "A"},
+   {"num": 2, "opts": [["A", "left"], ["B", "leave"], ["C", "leaves"]], "answer": "A"},
+   {"num": 3, "opts": [["A", "was"], ["B", "is"], ["C", "am"]], "answer": "A"},
+   {"num": 4, "opts": [["A", "made"], ["B", "make"], ["C", "makes"]], "answer": "A"},
+   {"num": 5, "opts": [["A", "saw"], ["B", "see"], ["C", "sees"]], "answer": "A"},
+   {"num": 6, "opts": [["A", "were"], ["B", "are"], ["C", "am"]], "answer": "A"},
+   {"num": 7, "opts": [["A", "had"], ["B", "have"], ["C", "has"]], "answer": "A"},
+   {"num": 8, "opts": [["A", "wrote"], ["B", "write"], ["C", "writes"]], "answer": "A"},
+   {"num": 9, "opts": [["A", "was"], ["B", "is"], ["C", "are"]], "answer": "A"},
+   {"num": 10, "opts": [["A", "planned"], ["B", "plan"], ["C", "plans"]], "answer": "A"}
+  ]
+ },
+ "grammar_fill": {
+  "id": "DXH2026_L20_grammar_fill",
+  "title": "从方框内选择适当的词并用其正确形式填空，使短文通顺完整（每空限填一词，每词限用一次）",
+  "绑定": "G52 过去时 / G53 不定代词过去时 / 旅行词汇",
+  "word_bank": ["journey", "climb", "foggy", "duck", "hungry", "realize", "imagine", "memory", "below", "enjoyable", "extra11", "extra12"],
+  "paragraphs": [
+   "Last month, we ___1___ a small mountain near our town.",
+   "The weather was ___2___, so we could not see far below. On the way, I was ___3___, so I ate a sandwich.",
+   "Near a lake, we saw some ___4___. I ___5___ how fun it was to feed them.",
+   "Now I often write my ___6___ in a diary. The whole ___7___ was very ___8___."
+  ],
+  "answers": ["climbed", "foggy", "hungry", "ducks", "imagined", "memories", "journey", "enjoyable"]
+ },
+ "sa": {
+  "id": "DXH2026_L20_sa",
+  "title": "阅读表达",
+  "passage_title": "An Unforgettable Journey",
+  "绑定": "过去时 / 旅行场景",
+  "paragraphs": [
+   "An Unforgettable Journey",
+   "Last summer, my family went to the mountains for a journey. It was an unforgettable trip.",
+   "We left home early in the morning. The weather was sunny and warm. We climbed a small hill and walked a long distance. Everyone was tired but happy.",
+   "At noon, we were hungry, so we bought some bread and fruit from a trader. Near a lake, we saw some ducks swimming. I wanted to feed them, but I did not have any bread left.",
+   "When we got home, I wrote everything in my diary. I realized how enjoyable the journey was. Nothing was boring about that day."
+  ],
+  "questions": [
+   {"num": 1, "q": "When did the family go to the mountains?", "answer": "Last summer.", "type": "简答"},
+   {"num": 2, "q": "What did the family buy from the trader?", "answer": "Some bread and fruit.", "type": "简答"},
+   {"num": 3, "q": "What did the writer see near the lake?", "answer": "Some ducks swimming.", "type": "简答"},
+   {"num": 4, "q": "请把文中画线句子翻译成汉语（Nothing was boring about that day.）", "answer": "那一天没有什么是无聊的。", "type": "翻译"}
+  ]
+ },
+ "writing": {
+  "id": "DXH2026_L20_writing",
+  "title": "书面表达",
+  "prompt": "假如你是李华，请你用英语写一篇90词左右的短文，介绍你一次难忘的旅行经历。内容包括：\n1. 你去了哪里、和谁一起去（用过去时）；\n2. 你看到了什么、做了什么（用 journey/mountain/lake/duck 等旅行词汇）；\n3. 你的感受是什么（用 enjoyable/unforgettable 等）。",
+  "sample": [
+   "An Unforgettable Trip",
+   "Last month, I went on a journey to the countryside with my family. It was an unforgettable trip.",
+   "We left home early in the morning. The weather was sunny and warm. We climbed a small hill and saw many beautiful flowers. Near a lake, we saw some ducks swimming in the water.",
+   "We were hungry, so we bought some bread and fruit from a trader. Everyone was tired but happy. When we got home, I wrote my memories in a diary.",
+   "I realized how enjoyable the journey was. I hope we can go there again next year."
+  ],
+  "requirements": "1. 词数约 90 词；2. 用过去时描写旅行经历；3. 语句通顺，意思连贯，语法正确；4. 可适当发挥。",
+  "绑定": "难忘旅行·过去时"
+ },
+ "grammar_diag": {
+  "id": "DXH2026_L20_grammar_diag",
+  "mc": [
+   {"num": 1, "q": "I ____ a movie with my friends last night.", "opts": [["A", "watched"], ["B", "watch"], ["C", "watching"]], "answer": "A", "绑定": "G52"},
+   {"num": 2, "q": "There ____ many people at the park yesterday.", "opts": [["A", "were"], ["B", "was"], ["C", "is"]], "answer": "A", "绑定": "G52"},
+   {"num": 3, "q": "Everyone ____ happy at the party last week.", "opts": [["A", "was"], ["B", "were"], ["C", "are"]], "answer": "A", "绑定": "G53"},
+   {"num": 4, "q": "I ____ my homework last night, so I feel relaxed now.", "opts": [["A", "finished"], ["B", "finish"], ["C", "finishes"]], "answer": "A", "绑定": "G52"},
+   {"num": 5, "q": "She usually ____ to school by bus, but yesterday she walked.", "opts": [["A", "goes"], ["B", "went"], ["C", "go"]], "answer": "A", "绑定": "G54"}
+  ],
+  "fill": [
+   {"num": 1, "q": "We ____ (have) a good time at the beach last summer.", "answer": "had", "绑定": "G52"},
+   {"num": 2, "q": "Nothing ____ (be) boring about the trip.", "answer": "was", "绑定": "G53"},
+   {"num": 3, "q": "He always ____ (get) up early, and he got up early yesterday too.", "answer": "gets", "绑定": "G54"},
+   {"num": 4, "q": "I ____ (not/listen) to music last night.", "answer": "did not listen", "绑定": "G52"},
+   {"num": 5, "q": "Someone ____ (leave) a message on the desk yesterday.", "answer": "left", "绑定": "G53"}
+  ]
+ }
+}

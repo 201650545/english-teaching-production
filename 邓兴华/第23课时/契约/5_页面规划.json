@@ -1,0 +1,293 @@
+{
+  "course": "第23课 · 条件状语从句(if/unless)与祈使句综合",
+  "stage": "Stage 6",
+  "lesson": "L23",
+  "duration": "90min",
+  "totalPages": 44,
+  "brand": "#E63946",
+  "accent": "#FFD700",
+  "bgGradient": "#FFF8F0 → #FFE8D6",
+  "pageIdContract": true,
+  "pageIdRange": "1-44",
+  "style": "八段式授课（复习导入/新词20/语法3考点/随堂演练/阅读理解/句子练习/自然拼读/课堂总结）",
+  "grammarEndpoint": false,
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "realtime",
+    "exportFormats": [
+      "json",
+      "csv"
+    ],
+    "sessionIdRule": "L23_{studentId}_{YYYYMMDD}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  },
+  "sections": [
+    {
+      "name": "复习导入",
+      "start": 0,
+      "end": 2,
+      "pages": [
+        {
+          "page": 0,
+          "type": "content",
+          "title": "复习导入",
+          "segment": "S1"
+        },
+        {
+          "page": 1,
+          "type": "content",
+          "title": "复习导入",
+          "segment": "S1"
+        },
+        {
+          "page": 2,
+          "type": "content",
+          "title": "复习导入",
+          "segment": "S1"
+        }
+      ]
+    },
+    {
+      "name": "新词20",
+      "start": 3,
+      "end": 8,
+      "pages": [
+        {
+          "page": 3,
+          "type": "content",
+          "title": "新词20",
+          "segment": "S2"
+        },
+        {
+          "page": 4,
+          "type": "content",
+          "title": "新词20",
+          "segment": "S2"
+        },
+        {
+          "page": 5,
+          "type": "content",
+          "title": "新词20",
+          "segment": "S2"
+        },
+        {
+          "page": 6,
+          "type": "content",
+          "title": "新词20",
+          "segment": "S2"
+        },
+        {
+          "page": 7,
+          "type": "content",
+          "title": "新词20",
+          "segment": "S2"
+        },
+        {
+          "page": 8,
+          "type": "content",
+          "title": "新词20",
+          "segment": "S2"
+        }
+      ]
+    },
+    {
+      "name": "语法3考点",
+      "start": 9,
+      "end": 18,
+      "pages": [
+        {
+          "page": 9,
+          "type": "content",
+          "title": "语法3考点",
+          "segment": "S3"
+        },
+        {
+          "page": 10,
+          "type": "content",
+          "title": "语法3考点",
+          "segment": "S3"
+        },
+        {
+          "page": 11,
+          "type": "content",
+          "title": "语法3考点",
+          "segment": "S3"
+        },
+        {
+          "page": 12,
+          "type": "content",
+          "title": "语法3考点",
+          "segment": "S3"
+        },
+        {
+          "page": 13,
+          "type": "content",
+          "title": "语法3考点",
+          "segment": "S3"
+        },
+        {
+          "page": 14,
+          "type": "content",
+          "title": "语法3考点",
+          "segment": "S3"
+        },
+        {
+          "page": 15,
+          "type": "content",
+          "title": "语法3考点",
+          "segment": "S3"
+        },
+        {
+          "page": 16,
+          "type": "content",
+          "title": "语法3考点",
+          "segment": "S3"
+        },
+        {
+          "page": 17,
+          "type": "content",
+          "title": "语法3考点",
+          "segment": "S3"
+        },
+        {
+          "page": 18,
+          "type": "content",
+          "title": "语法3考点",
+          "segment": "S3"
+        }
+      ]
+    },
+    {
+      "name": "随堂演练",
+      "start": 19,
+      "end": 21,
+      "pages": [
+        {
+          "page": 19,
+          "type": "content",
+          "title": "随堂演练",
+          "segment": "S4"
+        },
+        {
+          "page": 20,
+          "type": "content",
+          "title": "随堂演练",
+          "segment": "S4"
+        },
+        {
+          "page": 21,
+          "type": "content",
+          "title": "随堂演练",
+          "segment": "S4"
+        }
+      ]
+    },
+    {
+      "name": "阅读理解",
+      "start": 22,
+      "end": 24,
+      "pages": [
+        {
+          "page": 22,
+          "type": "content",
+          "title": "阅读理解",
+          "segment": "S5"
+        },
+        {
+          "page": 23,
+          "type": "content",
+          "title": "阅读理解",
+          "segment": "S5"
+        },
+        {
+          "page": 24,
+          "type": "content",
+          "title": "阅读理解",
+          "segment": "S5"
+        }
+      ]
+    },
+    {
+      "name": "句子练习",
+      "start": 25,
+      "end": 28,
+      "pages": [
+        {
+          "page": 25,
+          "type": "content",
+          "title": "句子练习",
+          "segment": "S6"
+        },
+        {
+          "page": 26,
+          "type": "content",
+          "title": "句子练习",
+          "segment": "S6"
+        },
+        {
+          "page": 27,
+          "type": "content",
+          "title": "句子练习",
+          "segment": "S6"
+        },
+        {
+          "page": 28,
+          "type": "content",
+          "title": "句子练习",
+          "segment": "S6"
+        }
+      ]
+    },
+    {
+      "name": "自然拼读",
+      "start": 29,
+      "end": 32,
+      "pages": [
+        {
+          "page": 29,
+          "type": "content",
+          "title": "自然拼读",
+          "segment": "S7"
+        },
+        {
+          "page": 30,
+          "type": "content",
+          "title": "自然拼读",
+          "segment": "S7"
+        },
+        {
+          "page": 31,
+          "type": "content",
+          "title": "自然拼读",
+          "segment": "S7"
+        },
+        {
+          "page": 32,
+          "type": "content",
+          "title": "自然拼读",
+          "segment": "S7"
+        }
+      ]
+    },
+    {
+      "name": "课堂总结",
+      "start": 33,
+      "end": 34,
+      "pages": [
+        {
+          "page": 33,
+          "type": "content",
+          "title": "课堂总结",
+          "segment": "S8"
+        },
+        {
+          "page": 34,
+          "type": "content",
+          "title": "课堂总结",
+          "segment": "S8"
+        }
+      ]
+    }
+  ]
+}

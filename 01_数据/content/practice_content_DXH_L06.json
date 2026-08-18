@@ -1,0 +1,408 @@
+{
+ "_doc": "邓兴华 L06 配套练习内容（中等）· 2026-08-02 重设计。阅读A/五选四/完形取 passage_questions.json + passage_bank.json；本文件存阅读B/C、选词、简答翻译、书面表达、语法诊断（均含答案）。难度：中等。",
+ "reading_b": {
+  "id": "DXH2026_L06_reading_b",
+  "genre": "记叙文",
+  "difficulty": "中",
+  "word_count": 105,
+  "provenance": "教师授权原创（2026-08-02）",
+  "text": "My name is Tom. I am a student at Sunshine Middle School. I have lunch at school every day with my friends. On Monday, we have rice, chicken and tomatoes. I like them very much. On Tuesday, we have noodles and eggs. My friend Jack doesn't like eggs, so he gives me his egg. I don't want to eat too much, but I want to try some bread and milk, too. On Friday, the school gives us fruit — apples and bananas. We think school lunch is healthy and nice. We always eat well and study well.",
+  "questions": [
+   {
+    "num": 1,
+    "q": "Where does Tom have lunch?",
+    "opts": [
+     [
+      "A",
+      "at school"
+     ],
+     [
+      "B",
+      "at home"
+     ],
+     [
+      "C",
+      "in a restaurant"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "What do they have on Monday?",
+    "opts": [
+     [
+      "A",
+      "noodles and eggs"
+     ],
+     [
+      "B",
+      "rice, chicken and tomatoes"
+     ],
+     [
+      "C",
+      "apples and bananas"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What does Tom think of school lunch?",
+    "opts": [
+     [
+      "A",
+      "healthy and nice"
+     ],
+     [
+      "B",
+      "not good"
+     ],
+     [
+      "C",
+      "too expensive"
+     ]
+    ],
+    "answer": "A"
+   }
+  ]
+ },
+ "reading_c": {
+  "id": "DXH2026_L06_reading_c",
+  "genre": "说明文",
+  "difficulty": "中",
+  "word_count": 108,
+  "provenance": "教师授权原创（2026-08-02）",
+  "text": "Breakfast is the first meal of the day. It is very important for students. Different people eat different breakfasts. In China, many people have rice porridge and eggs. Some like noodles or bread with milk. In England, people often eat eggs, bread and a cup of tea. In America, children like cereal with milk, and some drink orange juice. Fruit is a good start for everyone. Eating a good breakfast helps you listen and learn in class. So don't skip it! Do you want to have breakfast with your family today?",
+  "questions": [
+   {
+    "num": 1,
+    "q": "What do many people in China have for breakfast?",
+    "opts": [
+     [
+      "A",
+      "cereal with milk"
+     ],
+     [
+      "B",
+      "rice porridge and eggs"
+     ],
+     [
+      "C",
+      "tea and bread"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 2,
+    "q": "What do children in America like?",
+    "opts": [
+     [
+      "A",
+      "rice and fish"
+     ],
+     [
+      "B",
+      "noodles"
+     ],
+     [
+      "C",
+      "cereal with milk"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 3,
+    "q": "What is the passage mainly about?",
+    "opts": [
+     [
+      "A",
+      "breakfasts around the world"
+     ],
+     [
+      "B",
+      "how to cook breakfast"
+     ],
+     [
+      "C",
+      "why breakfast is boring"
+     ]
+    ],
+    "answer": "A"
+   }
+  ]
+ },
+ "wordbank": {
+  "id": "DXH2026_L06_wordbank",
+  "title": "用方框中所给词的适当形式填空（每词限用一次）",
+  "passage": "Lily and her mother are at home. It is time for breakfast. \"What do you want ___1___ breakfast?\" asks Mum. \"I want some bread and ___2___,\" says Lily. \"Do you ___3___ eggs?\" \"Yes, I ___4___. I ___5___ like them too much, but I eat one every morning.\" \"Good. Do you want to ___6___ some fruit?\" \"Yes, I want an ___7___, please.\" After breakfast, Mum says, \"We have rice and ___8___ for ___9___.\" \"Great! I want to ___10___ lunch at school with my friends. We always eat well and study well.\"",
+  "word_bank": [
+   "for",
+   "milk",
+   "like",
+   "do",
+   "don't",
+   "eat",
+   "apple",
+   "chicken",
+   "lunch",
+   "have",
+   "breakfast",
+   "drink"
+  ],
+  "answers": [
+   "for",
+   "milk",
+   "like",
+   "do",
+   "don't",
+   "eat",
+   "apple",
+   "chicken",
+   "lunch",
+   "have"
+  ]
+ },
+ "sa": {
+  "id": "DXH2026_L06_sa",
+  "title": "阅读短文，回答问题或按要求完成句子",
+  "text": "I like healthy food. For breakfast, I eat bread and eggs, and I drink milk. For lunch, I eat rice, chicken and vegetables at school. For dinner, I have rice and fish at home. I like apples and bananas. I want to eat fruit every day. My mother says, \"Don't eat too much fast food!\" I don't want to eat hamburgers often. I think good food makes us strong. Do you want to be healthy? Eat well and play sports!",
+  "questions": [
+   {
+    "num": 1,
+    "q": "What do I eat for breakfast?",
+    "type": "简答",
+    "answer": "Bread and eggs. (I eat bread and eggs.)"
+   },
+   {
+    "num": 2,
+    "q": "Where do I have lunch?",
+    "type": "简答",
+    "answer": "At school."
+   },
+   {
+    "num": 3,
+    "q": "What does my mother say?",
+    "type": "简答",
+    "answer": "\"Don't eat too much fast food!\""
+   },
+   {
+    "num": 4,
+    "q": "将文中划线部分（want to eat fruit every day）译成英文提示句：我想每天吃水果。",
+    "type": "翻译",
+    "answer": "I want to eat fruit every day."
+   },
+   {
+    "num": 5,
+    "q": "将句子 “Good food makes us strong.” 译成中文。",
+    "type": "翻译",
+    "answer": "好的食物使我们强壮。"
+   }
+  ]
+ },
+ "writing": {
+  "id": "DXH2026_L06_writing",
+  "title": "书面表达（15 分）",
+  "prompt": "你叫 Mike，请用英语写一篇短文，介绍你和家人今天的三餐吃什么，你喜欢和不喜欢什么食物，以及你想吃什么。",
+  "requirements": "1. 使用本课词汇与句型（一般现在时、want to do、食物可数与不可数）；2. 60–80 词；3. 条理清楚，语句通顺。",
+  "sample": "My name is Mike. I have three meals every day. For breakfast, I eat bread and eggs, and I drink milk. I don't like milk very much, but my mother says it is good for me. For lunch, I eat rice, chicken and vegetables at school. I like vegetables, but I don't like tomatoes. For dinner, I have rice and fish at home with my parents. I want to eat an apple every day. Fruit makes us strong. We eat well and we are happy."
+ },
+ "grammar_diag": {
+  "id": "DXH2026_L06_grammar",
+  "title": "单项选择（语法复盘：G16 一般现在时非三单 / G17 可数不可数 / G18 want to do）",
+  "questions": [
+   {
+    "num": 1,
+    "q": "I ___ like apples.",
+    "opts": [
+     [
+      "A",
+      "am not"
+     ],
+     [
+      "B",
+      "don't"
+     ],
+     [
+      "C",
+      "doesn't"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 2,
+    "q": "Do you ___ rice?",
+    "opts": [
+     [
+      "A",
+      "want"
+     ],
+     [
+      "B",
+      "wants"
+     ],
+     [
+      "C",
+      "wanting"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 3,
+    "q": "They ___ eat bread for breakfast.",
+    "opts": [
+     [
+      "A",
+      "doesn't"
+     ],
+     [
+      "B",
+      "aren't"
+     ],
+     [
+      "C",
+      "don't"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "I like ___.",
+    "opts": [
+     [
+      "A",
+      "apples"
+     ],
+     [
+      "B",
+      "apple"
+     ],
+     [
+      "C",
+      "an apple"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "I drink ___ every morning.",
+    "opts": [
+     [
+      "A",
+      "milks"
+     ],
+     [
+      "B",
+      "a milk"
+     ],
+     [
+      "C",
+      "milk"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 6,
+    "q": "We eat ___ for lunch.",
+    "opts": [
+     [
+      "A",
+      "rice"
+     ],
+     [
+      "B",
+      "rices"
+     ],
+     [
+      "C",
+      "a rice"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 7,
+    "q": "I want ___ an apple.",
+    "opts": [
+     [
+      "A",
+      "to eat"
+     ],
+     [
+      "B",
+      "eat"
+     ],
+     [
+      "C",
+      "eating"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 8,
+    "q": "Do you want to ___ milk?",
+    "opts": [
+     [
+      "A",
+      "drinks"
+     ],
+     [
+      "B",
+      "drink"
+     ],
+     [
+      "C",
+      "drinking"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 9,
+    "q": "I like ___ and potatoes.",
+    "opts": [
+     [
+      "A",
+      "tomatos"
+     ],
+     [
+      "B",
+      "tomato"
+     ],
+     [
+      "C",
+      "tomatoes"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 10,
+    "q": "My parents ___ want to eat fast food.",
+    "opts": [
+     [
+      "A",
+      "not"
+     ],
+     [
+      "B",
+      "don't"
+     ],
+     [
+      "C",
+      "doesn't"
+     ]
+    ],
+    "answer": "B"
+   }
+  ]
+ }
+}

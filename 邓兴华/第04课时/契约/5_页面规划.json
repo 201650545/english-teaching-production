@@ -1,0 +1,289 @@
+{
+  "course": "第04课",
+  "title": "名词单复数、tidy形容词与房间介词",
+  "stage": "Stage 2 L04",
+  "duration": "90min",
+  "total_pages": 27,
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": 1
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 2,
+      "pages": 2
+    },
+    {
+      "name": "新词20",
+      "start": 3,
+      "end": 8,
+      "pages": 6
+    },
+    {
+      "name": "语法3考点",
+      "start": 9,
+      "end": 14,
+      "pages": 6
+    },
+    {
+      "name": "随堂演练",
+      "start": 15,
+      "end": 16,
+      "pages": 2
+    },
+    {
+      "name": "阅读理解",
+      "start": 17,
+      "end": 19,
+      "pages": 3
+    },
+    {
+      "name": "句子练习",
+      "start": 20,
+      "end": 22,
+      "pages": 3
+    },
+    {
+      "name": "自然拼读",
+      "start": 23,
+      "end": 26,
+      "pages": 4
+    },
+    {
+      "name": "课堂总结",
+      "start": 26,
+      "end": 26,
+      "pages": 1
+    }
+  ],
+  "page_details": [
+    {
+      "page": 0,
+      "type": "cover",
+      "title": "封面 · 小小室内设计师"
+    },
+    {
+      "page": 1,
+      "type": "review",
+      "title": "L1-L3 语法九考点快闪"
+    },
+    {
+      "page": 2,
+      "type": "review",
+      "title": "L1-L3 词汇60词速览 + 句型翻译"
+    },
+    {
+      "page": 3,
+      "type": "vocab",
+      "title": "新词 1-5 房间家具组"
+    },
+    {
+      "page": 4,
+      "type": "vocab",
+      "title": "新词 6-10 家具与方位组"
+    },
+    {
+      "page": 5,
+      "type": "vocab",
+      "title": "新词 11-15 方位与描述组"
+    },
+    {
+      "page": 6,
+      "type": "vocab",
+      "title": "新词 16-20 习惯与动作组"
+    },
+    {
+      "page": 7,
+      "type": "vocab_summary",
+      "title": "20词分类矩阵"
+    },
+    {
+      "page": 8,
+      "type": "vocab_quiz",
+      "title": "词汇检测5题"
+    },
+    {
+      "page": 9,
+      "type": "grammar_matrix",
+      "title": "G10 可数名词规则复数变化"
+    },
+    {
+      "page": 10,
+      "type": "grammar_interactive",
+      "title": "G10 复数变化器 + 读音规则"
+    },
+    {
+      "page": 11,
+      "type": "grammar_formula",
+      "title": "G11 形容词作定语与作表语"
+    },
+    {
+      "page": 12,
+      "type": "grammar_errors",
+      "title": "G11 易错点与中考辨析"
+    },
+    {
+      "page": 13,
+      "type": "grammar_matrix",
+      "title": "G12 方位介词短语"
+    },
+    {
+      "page": 14,
+      "type": "grammar_interactive",
+      "title": "G12 房间布置器 + 例句精讲"
+    },
+    {
+      "page": 15,
+      "type": "quiz",
+      "title": "随堂演练 上 4题"
+    },
+    {
+      "page": 16,
+      "type": "quiz",
+      "title": "随堂演练 下 4题"
+    },
+    {
+      "page": 17,
+      "type": "reading_passage",
+      "title": "阅读A篇 应用文 A Clean and Tidy Room"
+    },
+    {
+      "page": 18,
+      "type": "reading_passage",
+      "title": "阅读B篇 记叙文 My Messy Brother's Room"
+    },
+    {
+      "page": 19,
+      "type": "reading_passage",
+      "title": "阅读C篇 说明文 How to Organize Your Room"
+    },
+    {
+      "page": 20,
+      "type": "sentence_practice",
+      "title": "汉译英练习 上"
+    },
+    {
+      "page": 21,
+      "type": "sentence_practice",
+      "title": "汉译英练习 中"
+    },
+    {
+      "page": 22,
+      "type": "sentence_practice",
+      "title": "汉译英练习 下"
+    },
+    {
+      "page": 23,
+      "type": "phonics",
+      "title": "Stage 1拼读 Pp-Tt 音素学习"
+    },
+    {
+      "page": 24,
+      "type": "phonics_practice",
+      "title": "拼读练习1 听音选词 4题"
+    },
+    {
+      "page": 25,
+      "type": "phonics_practice",
+      "title": "拼读练习2 看词归音 4题"
+    },
+    {
+      "page": 26,
+      "type": "summary",
+      "title": "拼读练习3 最小对立对 + 课堂总结"
+    }
+  ],
+  "interactive_components": {
+    "plural_builder": {
+      "page": 10,
+      "type": "visual_interactive",
+      "buttons": [
+        "room",
+        "box",
+        "family",
+        "boy"
+      ],
+      "displays": {
+        "room": {
+          "singular": "room",
+          "plural": "rooms",
+          "pronunciation": "/ruːmz/",
+          "sentence": "I have two rooms."
+        },
+        "box": {
+          "singular": "box",
+          "plural": "boxes",
+          "pronunciation": "/ˈbɒksɪz/",
+          "sentence": "There are three boxes on the table."
+        },
+        "family": {
+          "singular": "family",
+          "plural": "families",
+          "pronunciation": "/ˈfæmɪliz/",
+          "sentence": "She has two dictionaries."
+        },
+        "boy": {
+          "singular": "boy",
+          "plural": "boys",
+          "pronunciation": "/bɔɪz/",
+          "sentence": "The boys are in the room."
+        }
+      },
+      "animations": [
+        "bounceIn",
+        "scaleUp",
+        "fadeSlideUp"
+      ]
+    },
+    "room_arranger": {
+      "page": 14,
+      "type": "visual_interactive",
+      "buttons": [
+        "bed",
+        "desk",
+        "sofa",
+        "bookcase"
+      ],
+      "displays": {
+        "bed": {
+          "emoji": "🛏️",
+          "position": "next to the desk",
+          "sentence": "The bed is next to the desk."
+        },
+        "desk": {
+          "emoji": "📝",
+          "position": "under the window",
+          "sentence": "The desk is under the window."
+        },
+        "sofa": {
+          "emoji": "🛋️",
+          "position": "behind the door",
+          "sentence": "The sofa is behind the door."
+        },
+        "bookcase": {
+          "emoji": "📚",
+          "position": "between the bed and the wall",
+          "sentence": "The bookcase is between the bed and the wall."
+        }
+      },
+      "animations": [
+        "bounceIn",
+        "fadeSlideUp",
+        "slideInLeft"
+      ]
+    }
+  },
+  "quiz_count": {
+    "review": 6,
+    "vocab_quiz": 5,
+    "grammar_practice": 6,
+    "in_class": 8,
+    "reading": 15,
+    "phonics": 12,
+    "total": 52
+  }
+}

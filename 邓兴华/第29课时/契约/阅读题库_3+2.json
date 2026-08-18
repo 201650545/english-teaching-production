@@ -1,0 +1,261 @@
+{
+  "lesson": "L29",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A/B/C 篇各 7 题：4 无选项 + 3 有选项（讲评页题量 7·按 3:2 比例混合）；五选四（§3.16）不纳入 3+2",
+  "vocab_pool": [
+    "build",
+    "invent",
+    "discover",
+    "produce",
+    "make",
+    "grow",
+    "plant",
+    "design",
+    "create",
+    "promote",
+    "research",
+    "technology",
+    "equipment",
+    "factory",
+    "industry",
+    "product",
+    "material",
+    "process",
+    "manufacture",
+    "construct"
+  ],
+  "grammar_cap": "G65 被动语态（be+过去分词；一般现在/过去被动）——答案均为被动原文摘录，不越级",
+  "skip_pages": [
+    "阅读五选四页（§3.16 空格选答原型，不动）",
+    "阅读策略页（策略题，保留选择）"
+  ],
+  "A篇_How_Is_Tea_Made": {
+    "Q063": {
+      "question": "茶在什么时候被采摘？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "in spring",
+      "minimum_acceptable_answer": "spring",
+      "accepted_answers": [
+        "in spring",
+        "spring",
+        "in the spring",
+        "the tea leaves are picked in spring"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q064": {
+      "question": "茶叶被谁检查？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "workers",
+      "minimum_acceptable_answer": "workers",
+      "accepted_answers": [
+        "workers",
+        "by workers",
+        "the workers",
+        "it is checked by workers"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q065": {
+      "question": "'is grown' 用的是？",
+      "type": "opt",
+      "correct": "B",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q066": {
+      "question": "过去茶被怎样运输？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "by horses",
+      "minimum_acceptable_answer": "horses",
+      "accepted_answers": [
+        "by horses",
+        "horses",
+        "by horse",
+        "on horses",
+        "it was transported by horses"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q067": {
+      "question": "茶在中国被种植。Tea ____ (grow) in China. 检查",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "is grown",
+      "minimum_acceptable_answer": "is grown",
+      "accepted_answers": [
+        "is grown"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "G65 一般现在被动 is grown（本课考点）"
+    },
+    "Q068": {
+      "question": "茶被怎样运输？",
+      "type": "opt",
+      "correct": "B",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q069": {
+      "question": "'is loved' 用的是？",
+      "type": "opt",
+      "correct": "C",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    }
+  },
+  "B篇_How_Is_Chocolate_Made": {
+    "Q070": {
+      "question": "巧克力由什么制成？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "cocoa beans",
+      "minimum_acceptable_answer": "cocoa beans",
+      "accepted_answers": [
+        "cocoa beans",
+        "from cocoa beans",
+        "it is made from cocoa beans"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q071": {
+      "question": "可可豆被晒干和？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "roasted",
+      "minimum_acceptable_answer": "roasted",
+      "accepted_answers": [
+        "roasted",
+        "dried and roasted",
+        "they are dried and roasted"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q072": {
+      "question": "'is made from' 用的是？",
+      "type": "opt",
+      "correct": "C",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q073": {
+      "question": "过去巧克力被怎么做？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "by hand",
+      "minimum_acceptable_answer": "by hand",
+      "accepted_answers": [
+        "by hand",
+        "with hands",
+        "made by hand",
+        "it was made by hand"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q074": {
+      "question": "巧克力由可可豆制成。Chocolate ____ (make) from cocoa beans. 检查",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "is made",
+      "minimum_acceptable_answer": "is made",
+      "accepted_answers": [
+        "is made"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "G65 一般现在被动 is made（本课考点）"
+    },
+    "Q075": {
+      "question": "巧克力被什么冷却定型？",
+      "type": "opt",
+      "correct": "C",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q076": {
+      "question": "'is produced' 用的是？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    }
+  },
+  "C篇_A_Factory_Visit": {
+    "Q077": {
+      "question": "工厂建于哪一年？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "2015",
+      "minimum_acceptable_answer": "2015",
+      "accepted_answers": [
+        "2015",
+        "in 2015"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q078": {
+      "question": "玩具被谁设计？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "young artists",
+      "minimum_acceptable_answer": "artists",
+      "accepted_answers": [
+        "young artists",
+        "by young artists",
+        "artists",
+        "the toys are designed by young artists"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q079": {
+      "question": "'was built' 用的是？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q080": {
+      "question": "谁带我们参观？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "a guide",
+      "minimum_acceptable_answer": "guide",
+      "accepted_answers": [
+        "a guide",
+        "the guide",
+        "guide",
+        "by a guide",
+        "we were shown around the factory by a guide"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q081": {
+      "question": "工厂建于 2015 年。The factory ____ (build) in 2015. 检查",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "was built",
+      "minimum_acceptable_answer": "was built",
+      "accepted_answers": [
+        "was built"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "G65 一般过去被动 was built（本课考点）"
+    },
+    "Q082": {
+      "question": "玩具被怎样包装？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q083": {
+      "question": "'are made' 用的是？",
+      "type": "opt",
+      "correct": "B",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    }
+  }
+}

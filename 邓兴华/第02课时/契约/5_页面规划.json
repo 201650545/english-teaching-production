@@ -1,0 +1,286 @@
+{
+  "course": "第02课",
+  "title": "指示代词、be动词否定疑问与Who疑问句",
+  "stage": "Stage 1 L02",
+  "total_pages": 34,
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": 1
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 3,
+      "pages": 3
+    },
+    {
+      "name": "新词20",
+      "start": 4,
+      "end": 9,
+      "pages": 6
+    },
+    {
+      "name": "语法3考点",
+      "start": 10,
+      "end": 18,
+      "pages": 9
+    },
+    {
+      "name": "随堂演练",
+      "start": 19,
+      "end": 20,
+      "pages": 2
+    },
+    {
+      "name": "阅读理解",
+      "start": 21,
+      "end": 23,
+      "pages": 3
+    },
+    {
+      "name": "句子练习",
+      "start": 24,
+      "end": 26,
+      "pages": 3
+    },
+    {
+      "name": "自然拼读",
+      "start": 27,
+      "end": 32,
+      "pages": 6
+    },
+    {
+      "name": "课堂总结",
+      "start": 33,
+      "end": 33,
+      "pages": 1
+    }
+  ],
+  "page_details": [
+    {
+      "page": 0,
+      "type": "cover",
+      "title": "封面"
+    },
+    {
+      "page": 1,
+      "type": "review",
+      "title": "复习L1语法"
+    },
+    {
+      "page": 2,
+      "type": "diagnostic",
+      "title": "学情诊断10题"
+    },
+    {
+      "page": 3,
+      "type": "objectives",
+      "title": "学习目标"
+    },
+    {
+      "page": 4,
+      "type": "vocab",
+      "title": "新词 1-5 指示代词组"
+    },
+    {
+      "page": 5,
+      "type": "vocab",
+      "title": "新词 6-10 家庭核心组"
+    },
+    {
+      "page": 6,
+      "type": "vocab",
+      "title": "新词 11-15 家庭扩展组"
+    },
+    {
+      "page": 7,
+      "type": "vocab",
+      "title": "新词 16-20 身份动作组"
+    },
+    {
+      "page": 8,
+      "type": "vocab_summary",
+      "title": "词汇分类汇总"
+    },
+    {
+      "page": 9,
+      "type": "vocab_quiz",
+      "title": "词汇检测5题"
+    },
+    {
+      "page": 10,
+      "type": "grammar_matrix",
+      "title": "G04 指示代词矩阵"
+    },
+    {
+      "page": 11,
+      "type": "grammar_interactive",
+      "title": "G04 家庭照片相册器"
+    },
+    {
+      "page": 12,
+      "type": "grammar_errors",
+      "title": "G04 易错点"
+    },
+    {
+      "page": 13,
+      "type": "grammar_formula",
+      "title": "G05 公式矩阵"
+    },
+    {
+      "page": 14,
+      "type": "grammar_practice",
+      "title": "G05 转换练习"
+    },
+    {
+      "page": 15,
+      "type": "grammar_errors",
+      "title": "G05 易错点"
+    },
+    {
+      "page": 16,
+      "type": "grammar_matrix",
+      "title": "G06 句型矩阵"
+    },
+    {
+      "page": 17,
+      "type": "grammar_practice",
+      "title": "G06 例句练习"
+    },
+    {
+      "page": 18,
+      "type": "grammar_errors",
+      "title": "G06 易错点与防越级"
+    },
+    {
+      "page": 19,
+      "type": "quiz",
+      "title": "随堂演练 上 4题"
+    },
+    {
+      "page": 20,
+      "type": "quiz",
+      "title": "随堂演练 下 4题"
+    },
+    {
+      "page": 21,
+      "type": "reading_passage",
+      "title": "阅读A篇 My Family Photo Album"
+    },
+    {
+      "page": 22,
+      "type": "reading_quiz",
+      "title": "阅读A篇题目解析上 3题"
+    },
+    {
+      "page": 23,
+      "type": "reading_quiz",
+      "title": "阅读A篇题目解析下 2题"
+    },
+    {
+      "page": 24,
+      "type": "sentence_practice",
+      "title": "造句练习"
+    },
+    {
+      "page": 25,
+      "type": "sentence_practice",
+      "title": "汉译英"
+    },
+    {
+      "page": 26,
+      "type": "sentence_practice",
+      "title": "改错与转换"
+    },
+    {
+      "page": 27,
+      "type": "phonics",
+      "title": "音素学习 Ff/Gg/Hh"
+    },
+    {
+      "page": 28,
+      "type": "phonics",
+      "title": "音素学习 Ii/Jj"
+    },
+    {
+      "page": 29,
+      "type": "phonics_practice",
+      "title": "练习1 单词拆拼朗读"
+    },
+    {
+      "page": 30,
+      "type": "phonics_practice",
+      "title": "练习2 听音选词 4题"
+    },
+    {
+      "page": 31,
+      "type": "phonics_practice",
+      "title": "练习3 看词归音 4题"
+    },
+    {
+      "page": 32,
+      "type": "phonics_practice",
+      "title": "练习4 最小对立对 4题"
+    },
+    {
+      "page": 33,
+      "type": "summary",
+      "title": "课堂总结"
+    }
+  ],
+  "interactive_components": {
+    "family_album": {
+      "page": 11,
+      "type": "visual_interactive",
+      "buttons": [
+        "this",
+        "that",
+        "these",
+        "those"
+      ],
+      "displays": {
+        "this": {
+          "emoji": "👨",
+          "size": "large",
+          "sentence": "This is my father.",
+          "answer": "Yes, it is."
+        },
+        "that": {
+          "emoji": "👤",
+          "size": "small",
+          "sentence": "That is my mother.",
+          "answer": "Yes, it is."
+        },
+        "these": {
+          "emoji": "👨👩👦",
+          "size": "large",
+          "sentence": "These are my brothers.",
+          "answer": "Yes, they are."
+        },
+        "those": {
+          "emoji": "👥👥",
+          "size": "small",
+          "sentence": "Those are my sisters.",
+          "answer": "Yes, they are."
+        }
+      },
+      "animations": [
+        "bounceIn",
+        "scaleUp",
+        "fadeSlideUp"
+      ]
+    }
+  },
+  "quiz_count": {
+    "diagnostic": 10,
+    "vocab_quiz": 5,
+    "grammar_practice": 9,
+    "in_class": 8,
+    "reading": 5,
+    "phonics": 12,
+    "total": 49
+  }
+}

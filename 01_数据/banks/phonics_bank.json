@@ -1,0 +1,213 @@
+{
+  "短元音 a/e/i/o/u": {
+    "组合": "短元音 a/e/i/o/u",
+    "发音": "/æ/ /e/ /ɪ/ /ɒ/ /ʌ/",
+    "词族": [
+      "cat",
+      "bed",
+      "pig",
+      "dog",
+      "bus"
+    ],
+    "儿歌": "短元音 a/e/i/o/u 拼读儿歌（待补充）",
+    "lesson": 1
+  },
+  "th/sh/ch/wh/ph": {
+    "组合": "th/sh/ch/wh/ph",
+    "发音": "/θ/ /ʃ/ /tʃ/ /w/ /f/",
+    "词族": [
+      "think",
+      "ship",
+      "chair",
+      "what",
+      "photo"
+    ],
+    "儿歌": "th/sh/ch/wh/ph 拼读儿歌（待补充）",
+    "lesson": 2
+  },
+  "th/wh/ph/ng/nk": {
+    "组合": "th/wh/ph/ng/nk",
+    "发音": "/θ/ /w/ /f/ /ŋ/ /ŋk/",
+    "词族": [
+      "three",
+      "white",
+      "phone",
+      "sing",
+      "bank"
+    ],
+    "儿歌": "th/wh/ph/ng/nk 拼读儿歌（待补充）",
+    "lesson": 3
+  },
+  "br/cr/dr/fr/tr/gr": {
+    "组合": "br/cr/dr/fr/tr/gr",
+    "发音": "/br/ /kr/ /dr/ /fr/ /tr/ /gr/",
+    "词族": [
+      "bread",
+      "cry",
+      "dress",
+      "friend",
+      "tree",
+      "green"
+    ],
+    "儿歌": "br/cr/dr/fr/tr/gr 拼读儿歌（待补充）",
+    "lesson": 4
+  },
+  "bl/cl/fl/gl/pl/sl": {
+    "组合": "bl/cl/fl/gl/pl/sl",
+    "发音": "/bl/ /kl/ /fl/ /gl/ /pl/ /sl/",
+    "词族": [
+      "blue",
+      "clock",
+      "flag",
+      "glass",
+      "play",
+      "slow"
+    ],
+    "儿歌": "bl/cl/fl/gl/pl/sl 拼读儿歌（待补充）",
+    "lesson": 5
+  },
+  "ar/or/ir/er/ur": {
+    "组合": "ar/or/ir/er/ur",
+    "发音": "/ɑː/ /ɔː/ /ɜː/ /ə/ /ɜː/",
+    "词族": [
+      "car",
+      "for",
+      "bird",
+      "teacher",
+      "nurse"
+    ],
+    "儿歌": "ar/or/ir/er/ur 拼读儿歌（待补充）",
+    "lesson": 6
+  },
+  "综合复习": {
+    "组合": "综合复习",
+    "发音": "综合",
+    "词族": [],
+    "儿歌": "综合复习 拼读儿歌（待补充）",
+    "lesson": 21
+  },
+  "-ed 发音 /t//d//ɪd/": {
+    "组合": "-ed 发音 /t//d//ɪd/",
+    "发音": "/t/ /d/ /ɪd/",
+    "词族": [
+      "worked",
+      "played",
+      "visited"
+    ],
+    "儿歌": "-ed 发音 /t//d//ɪd/ 拼读儿歌（待补充）",
+    "lesson": 8
+  },
+  "wh-问词家族": {
+    "组合": "wh-问词家族",
+    "发音": "/w/ /h/",
+    "词族": [
+      "what",
+      "where",
+      "when",
+      "why",
+      "who",
+      "how"
+    ],
+    "儿歌": "wh-问词家族 拼读儿歌（待补充）",
+    "lesson": 9
+  },
+  "三单-s/-es发音 /s//z//ɪz/": {
+    "组合": "三单-s/-es发音 /s//z//ɪz/",
+    "发音": "/s/ /z/ /ɪz/",
+    "词族": [
+      "likes",
+      "goes",
+      "watches"
+    ],
+    "儿歌": "三单-s/-es发音 /s//z//ɪz/ 拼读儿歌（待补充）",
+    "lesson": 10
+  },
+  "魔法e a_e/i_e/o_e/u_e": {
+    "组合": "魔法e a_e/i_e/o_e/u_e",
+    "发音": "/eɪ/ /aɪ/ /əʊ/ /juː/",
+    "词族": [
+      "cake",
+      "kite",
+      "home",
+      "cute"
+    ],
+    "儿歌": "魔法e a_e/i_e/o_e/u_e 拼读儿歌（待补充）",
+    "lesson": 11
+  },
+  "ai/ay/ea/ee": {
+    "组合": "ai/ay/ea/ee",
+    "发音": "/eɪ/ /eɪ/ /iː/ /iː/",
+    "词族": [
+      "rain",
+      "day",
+      "eat",
+      "see"
+    ],
+    "儿歌": "ai/ay/ea/ee 拼读儿歌（待补充）",
+    "lesson": 12
+  },
+  "oa/ow/oo": {
+    "组合": "oa/ow/oo",
+    "发音": "/əʊ/ /aʊ/ /uː/",
+    "词族": [
+      "boat",
+      "cow",
+      "moon"
+    ],
+    "儿歌": "oa/ow/oo 拼读儿歌（待补充）",
+    "lesson": 13
+  },
+  "er/or 后缀": {
+    "组合": "er/or 后缀",
+    "发音": "/ə/ /ə/",
+    "词族": [
+      "teacher",
+      "doctor"
+    ],
+    "儿歌": "er/or 后缀 拼读儿歌（待补充）",
+    "lesson": 14
+  },
+  "ow/ou/oi/oy": {
+    "组合": "ow/ou/oi/oy",
+    "发音": "/aʊ/ /aʊ/ /ɔɪ/ /ɔɪ/",
+    "词族": [
+      "cow",
+      "house",
+      "coin",
+      "boy"
+    ],
+    "儿歌": "ow/ou/oi/oy 拼读儿歌（待补充）",
+    "lesson": 15
+  },
+  "y结尾 /i/与/aɪ/": {
+    "组合": "y结尾 /i/与/aɪ/",
+    "发音": "/i/ /aɪ/",
+    "词族": [
+      "happy",
+      "my"
+    ],
+    "儿歌": "y结尾 /i/与/aɪ/ 拼读儿歌（待补充）",
+    "lesson": 17
+  },
+  "-ing 与双写规则": {
+    "组合": "-ing 与双写规则",
+    "发音": "/ɪŋ/",
+    "词族": [
+      "running",
+      "swimming",
+      "eating"
+    ],
+    "儿歌": "-ing 与双写规则 拼读儿歌（待补充）",
+    "lesson": 18
+  },
+  "复合词重音": {
+    "组合": "复合词重音",
+    "发音": "重音在前",
+    "词族": [
+      "blackboard",
+      "classroom"
+    ],
+    "儿歌": "复合词重音 拼读儿歌（待补充）",
+    "lesson": 19
+  }
+}

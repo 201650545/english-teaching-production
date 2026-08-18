@@ -1,0 +1,133 @@
+{
+ "21": {
+  "total_pages": 42,
+  "fn_types": {
+   "checkOpt": "function",
+   "closeModal": "function",
+   "dragSubmit": "function",
+   "exportData": "function",
+   "fillCheck": "function",
+   "jumpToSegment": "function",
+   "moveDown": "function",
+   "moveUp": "function",
+   "orderCheck": "function",
+   "pickWord": "function"
+  },
+  "missing_fn": [],
+  "console_errors": [],
+  "l21_nav_all_pages": true,
+  "l21_nav_bad": [],
+  "l21_db_exists_cnt_before": 0,
+  "l21_interact_click": "clicked",
+  "l21_db_cnt_after_click": 1,
+  "l21_db_recorded": true
+ },
+ "22": {
+  "total_pages": 45,
+  "fn_types": {
+   "checkOpt": "function",
+   "closeModal": "function",
+   "dragSubmit": "function",
+   "exportData": "function",
+   "fillCheck": "function",
+   "flipCard": "function",
+   "jumpToSegment": "function",
+   "matchPick": "function",
+   "moveDown": "function",
+   "moveUp": "function",
+   "orderCheck": "function",
+   "pickWord": "function"
+  },
+  "missing_fn": [],
+  "console_errors": [],
+  "interaction_found": {
+   "type": "drag",
+   "page": "page10"
+  },
+  "interact_act": "all-dragged-and-submitted",
+  "db_before": 0,
+  "db_after": 1,
+  "db_recorded": true
+ },
+ "23": {
+  "total_pages": 44,
+  "fn_types": {
+   "checkOpt": "function",
+   "closeModal": "function",
+   "dragSubmit": "function",
+   "exportData": "function",
+   "fillCheck": "function",
+   "flipCard": "function",
+   "jumpToSegment": "function",
+   "matchPick": "function",
+   "moveDown": "function",
+   "moveUp": "function",
+   "orderCheck": "function",
+   "pickWord": "function"
+  },
+  "missing_fn": [],
+  "console_errors": [],
+  "interaction_found": {
+   "type": "drag",
+   "page": "page10"
+  },
+  "interact_act": "all-dragged-and-submitted",
+  "db_before": 0,
+  "db_after": 1,
+  "db_recorded": true
+ },
+ "24": {
+  "total_pages": 44,
+  "fn_types": {
+   "checkOpt": "function",
+   "closeModal": "function",
+   "dragSubmit": "function",
+   "exportData": "function",
+   "fillCheck": "function",
+   "flipCard": "function",
+   "jumpToSegment": "function",
+   "matchPick": "function",
+   "moveDown": "function",
+   "moveUp": "function",
+   "orderCheck": "function",
+   "pickWord": "function"
+  },
+  "missing_fn": [],
+  "console_errors": [],
+  "interaction_found": {
+   "type": "drag",
+   "page": "page10"
+  },
+  "interact_act": "all-dragged-and-submitted",
+  "db_before": 0,
+  "db_after": 1,
+  "db_recorded": true
+ },
+ "25": {
+  "total_pages": 45,
+  "fn_types": {
+   "checkOpt": "function",
+   "closeModal": "function",
+   "dragSubmit": "function",
+   "exportData": "function",
+   "fillCheck": "function",
+   "flipCard": "function",
+   "jumpToSegment": "function",
+   "matchPick": "function",
+   "moveDown": "function",
+   "moveUp": "function",
+   "orderCheck": "function",
+   "pickWord": "function"
+  },
+  "missing_fn": [],
+  "console_errors": [],
+  "interaction_found": {
+   "type": "drag",
+   "page": "page10"
+  },
+  "interact_act": "all-dragged-and-submitted",
+  "db_before": 0,
+  "db_after": 1,
+  "db_recorded": true
+ }
+}

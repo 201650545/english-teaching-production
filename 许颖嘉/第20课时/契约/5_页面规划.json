@@ -1,0 +1,867 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LessonPagePlan",
+  "lesson_id": "第20课",
+  "courseInfo": {
+    "courseId": "L20",
+    "courseName": "语法终点·旅行综合（一般过去时全套综合）",
+    "courseType": "授课课",
+    "stage": "Stage 5",
+    "stageBadge": "Stage 5 · L20 语法终点",
+    "totalPages": 26,
+    "aspectRatio": "21:9",
+    "duration": "90分钟",
+    "teachingScope": {
+      "grammarPoints": "G52-G54",
+      "grammarCount": 3,
+      "vocabularyCount": 20,
+      "phonicsRule": "音节划分与综合拼读(VCV/VCCV)",
+      "milestone": "G54为全部语法授课最高终点"
+    }
+  },
+  "theme": {
+    "style": "Magazine Ink",
+    "primary_color": "#E63946",
+    "accent_color": "#FFD700",
+    "font_size_base": "26pt",
+    "bg_start": "#FFF8F0",
+    "bg_end": "#FFE8D6"
+  },
+  "colorScheme": {
+    "brand": "#E63946",
+    "accent": "#FFD700",
+    "bgStart": "#FFF8F0",
+    "bgEnd": "#FFE8D6",
+    "brandLight": "#FF6B6B",
+    "accentLight": "#FFE66D",
+    "textPrimary": "#1A1A2E",
+    "textSecondary": "#555555",
+    "correct": "#06A77D",
+    "error": "#E63946",
+    "grayNode": "#C0C0C0",
+    "grayBorder": "#999999",
+    "milestoneGold": "#FFD700",
+    "tensePresent": "#4A90D9",
+    "tenseProgressive": "#06A77D",
+    "tensePast": "#E63946"
+  },
+  "fontSpecs": {
+    "pageTitle": "40px / 700",
+    "subtitle": "26px / 600",
+    "body": "26px / 400",
+    "bodySmall": "22px / 400",
+    "tableHeader": "21px / 600",
+    "tableContent": "19px / 400",
+    "mnemonic": "38px / 700",
+    "mnemonicCard": "23px / 500",
+    "navItem": "15px / 500",
+    "pageNumber": "17px / 400",
+    "stageBadge": "15px / 600",
+    "caption": "18px / 400",
+    "buttonText": "20px / 500"
+  },
+  "segments": [
+    {
+      "segmentId": 1,
+      "segmentName": "复习导入",
+      "pageRange": "P1-P2",
+      "pageCount": 2,
+      "color": "#E63946"
+    },
+    {
+      "segmentId": 2,
+      "segmentName": "新词20",
+      "pageRange": "P3-P7",
+      "pageCount": 5,
+      "color": "#FFD700"
+    },
+    {
+      "segmentId": 3,
+      "segmentName": "语法3考点",
+      "pageRange": "P8-P14",
+      "pageCount": 7,
+      "color": "#E63946"
+    },
+    {
+      "segmentId": 4,
+      "segmentName": "随堂演练",
+      "pageRange": "P15-P17",
+      "pageCount": 3,
+      "color": "#FFD700"
+    },
+    {
+      "segmentId": 5,
+      "segmentName": "阅读理解",
+      "pageRange": "P18-P19",
+      "pageCount": 2,
+      "color": "#E63946"
+    },
+    {
+      "segmentId": 6,
+      "segmentName": "句子练习",
+      "pageRange": "P20-P22",
+      "pageCount": 3,
+      "color": "#FFD700"
+    },
+    {
+      "segmentId": 7,
+      "segmentName": "自然拼读",
+      "pageRange": "P23-P25",
+      "pageCount": 3,
+      "color": "#E63946"
+    },
+    {
+      "segmentId": 8,
+      "segmentName": "课堂总结",
+      "pageRange": "P26",
+      "pageCount": 1,
+      "color": "#FFD700"
+    }
+  ],
+  "total_pages": 26,
+  "pages": [
+    {
+      "page_index": 1,
+      "pageId": 1,
+      "pageNumber": "P1",
+      "section": "复习导入",
+      "segment": 1,
+      "title": "L19复合不定代词核心回顾",
+      "subtitle": "some/any/no/every四系列+形容词后置+主谓单数",
+      "layout_type": "Formula-Card",
+      "is_scrollable": true,
+      "interactionType": "卡片翻转回顾",
+      "creativeInteraction": null,
+      "contentSummary": "复合不定代词四系列全表、形容词后置规则、主谓单数、为G53铺垫",
+      "hasTable": true,
+      "hasMnemonic": false,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {
+          "type": "formula-box",
+          "data": {
+            "title": "复合不定代词四系列全表",
+            "content": "some/any/no/every × 事物/人/地点",
+            "highlight": ["something", "anything", "nothing", "everything"]
+          }
+        },
+        {
+          "type": "example-line",
+          "data": {
+            "text": "Everyone was happy. (谓语单数)",
+            "highlight": ["was"]
+          }
+        }
+      ]
+    },
+    {
+      "page_index": 2,
+      "pageId": 2,
+      "pageNumber": "P2",
+      "section": "复习导入",
+      "segment": 1,
+      "title": "旅行主题导入",
+      "subtitle": "What did you do on your journey?",
+      "layout_type": "Cover",
+      "is_scrollable": true,
+      "interactionType": "点击图片放大+句型发音",
+      "creativeInteraction": null,
+      "contentSummary": "旅行场景配图、核心句型激活过去时语境、3句口头翻译",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {
+          "type": "example-line",
+          "data": {
+            "text": "What did you do on your journey?",
+            "highlight": ["did"],
+            "note": "过去时核心句型"
+          }
+        }
+      ]
+    },
+    {
+      "page_index": 3,
+      "pageId": 3,
+      "pageNumber": "P3",
+      "section": "新词20",
+      "segment": 2,
+      "title": "旅行场景词（一）·地形建筑",
+      "subtitle": "building · top · hill · distance · below",
+      "layout_type": "Grid-4",
+      "is_scrollable": true,
+      "interactionType": "点击发音+翻转看记忆法",
+      "creativeInteraction": null,
+      "contentSummary": "5张词卡(building/top/hill/distance/below)+配图+过去时例句",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {"type": "word-card", "data": {"word": "building", "phonetic": "/ˈbɪldɪŋ/", "pos": "n.", "cn": "建筑物", "collocation": "tall building", "example": "We visited an old building on the journey."}},
+        {"type": "word-card", "data": {"word": "top", "phonetic": "/tɒp/", "pos": "n.", "cn": "顶部", "collocation": "at the top of", "example": "We reached the top of the hill at noon."}},
+        {"type": "word-card", "data": {"word": "hill", "phonetic": "/hɪl/", "pos": "n.", "cn": "小山", "collocation": "climb a hill", "example": "The children climbed the hill happily."}},
+        {"type": "word-card", "data": {"word": "distance", "phonetic": "/ˈdɪstəns/", "pos": "n.", "cn": "距离", "collocation": "a long distance", "example": "We walked a long distance to the top."}},
+        {"type": "word-card", "data": {"word": "below", "phonetic": "/bɪˈləʊ/", "pos": "prep./adv.", "cn": "在…下面", "collocation": "below the hill", "example": "The village was below the hill."}}
+      ]
+    },
+    {
+      "page_index": 4,
+      "pageId": 4,
+      "pageNumber": "P4",
+      "section": "新词20",
+      "segment": 2,
+      "title": "旅行场景词（二）·出行装备",
+      "subtitle": "umbrella · foggy · bicycle · duck · journey",
+      "layout_type": "Grid-4",
+      "is_scrollable": true,
+      "interactionType": "点击发音+翻转看记忆法",
+      "creativeInteraction": null,
+      "contentSummary": "5张词卡(umbrella/foggy/bicycle/duck/journey)+配图+过去时例句",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {"type": "word-card", "data": {"word": "umbrella", "phonetic": "/ʌmˈbrelə/", "pos": "n.", "cn": "雨伞", "collocation": "carry an umbrella", "example": "I forgot my umbrella and got wet."}},
+        {"type": "word-card", "data": {"word": "foggy", "phonetic": "/ˈfɒɡi/", "pos": "adj.", "cn": "有雾的", "collocation": "a foggy morning", "example": "It was foggy when we started our journey."}},
+        {"type": "word-card", "data": {"word": "bicycle", "phonetic": "/ˈbaɪsɪkl/", "pos": "n.", "cn": "自行车", "collocation": "ride a bicycle", "example": "He rode a bicycle to the top."}},
+        {"type": "word-card", "data": {"word": "duck", "phonetic": "/dʌk/", "pos": "n.", "cn": "鸭子", "collocation": "feed ducks", "example": "We saw many ducks by the lake."}},
+        {"type": "word-card", "data": {"word": "journey", "phonetic": "/ˈdʒɜːni/", "pos": "n.", "cn": "旅程", "collocation": "a long journey", "example": "Our journey was wonderful."}}
+      ]
+    },
+    {
+      "page_index": 5,
+      "pageId": 5,
+      "pageNumber": "P5",
+      "section": "新词20",
+      "segment": 2,
+      "title": "感受认知词·旅行中的感受与思考",
+      "subtitle": "hungry · dislike · realize · imagine · remain",
+      "layout_type": "Grid-4",
+      "is_scrollable": true,
+      "interactionType": "点击发音+翻转看记忆法",
+      "creativeInteraction": null,
+      "contentSummary": "5张词卡(hungry/dislike/realize/imagine/remain)+配图+过去时例句",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {"type": "word-card", "data": {"word": "hungry", "phonetic": "/ˈhʌŋɡri/", "pos": "adj.", "cn": "饥饿的", "collocation": "feel hungry", "example": "We were hungry after the long journey."}},
+        {"type": "word-card", "data": {"word": "dislike", "phonetic": "/dɪsˈlaɪk/", "pos": "v./n.", "cn": "不喜欢", "collocation": "dislike doing", "example": "She disliked the foggy weather."}},
+        {"type": "word-card", "data": {"word": "realize", "phonetic": "/ˈrɪəlaɪz/", "pos": "v.", "cn": "意识到", "collocation": "realize that", "example": "I realized that I forgot my umbrella."}},
+        {"type": "word-card", "data": {"word": "imagine", "phonetic": "/ɪˈmædʒɪn/", "pos": "v.", "cn": "想象", "collocation": "imagine doing", "example": "Can you imagine the entire journey?"}},
+        {"type": "word-card", "data": {"word": "remain", "phonetic": "/rɪˈmeɪn/", "pos": "v.", "cn": "保持", "collocation": "remain silent", "example": "We remained at the top for an hour."}}
+      ]
+    },
+    {
+      "page_index": 6,
+      "pageId": 6,
+      "pageNumber": "P6",
+      "section": "新词20",
+      "segment": 2,
+      "title": "抽象概念词·旅行中的概念表达",
+      "subtitle": "enough · memory · sentence · entire · trader",
+      "layout_type": "Grid-4",
+      "is_scrollable": true,
+      "interactionType": "点击发音+翻转看记忆法",
+      "creativeInteraction": null,
+      "contentSummary": "5张词卡(enough/memory/sentence/entire/trader)+配图+过去时例句",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {"type": "word-card", "data": {"word": "enough", "phonetic": "/ɪˈnʌf/", "pos": "adj./adv.", "cn": "足够的", "collocation": "enough food", "example": "We didn't bring enough water."}},
+        {"type": "word-card", "data": {"word": "memory", "phonetic": "/ˈmeməri/", "pos": "n.", "cn": "记忆", "collocation": "have a good memory", "example": "The trip left me a beautiful memory."}},
+        {"type": "word-card", "data": {"word": "sentence", "phonetic": "/ˈsentəns/", "pos": "n.", "cn": "句子", "collocation": "make a sentence", "example": "Can you write a sentence with journey?"}},
+        {"type": "word-card", "data": {"word": "entire", "phonetic": "/ɪnˈtaɪə(r)/", "pos": "adj.", "cn": "整个的", "collocation": "the entire journey", "example": "We spent the entire day on the trip."}},
+        {"type": "word-card", "data": {"word": "trader", "phonetic": "/ˈtreɪdə(r)/", "pos": "n.", "cn": "商人", "collocation": "a local trader", "example": "The trader sold us a beautiful umbrella."}}
+      ]
+    },
+    {
+      "page_index": 7,
+      "pageId": 7,
+      "pageNumber": "P7",
+      "section": "新词20",
+      "segment": 2,
+      "title": "词汇综合复习·旅行背包打包",
+      "subtitle": "将20词拖入对应旅行背包",
+      "layout_type": "Split-2",
+      "is_scrollable": true,
+      "interactionType": "拖拽分类",
+      "creativeInteraction": "交互①-旅行背包打包",
+      "contentSummary": "3个旅行背包(旅行装备/感受认知/抽象概念)+20词拖拽分类",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": true,
+      "hasAnimation": true,
+      "components": [
+        {
+          "type": "exercise-item",
+          "data": {
+            "exerciseType": "drag-classify",
+            "categories": ["旅行装备类", "感受认知类", "抽象概念类"],
+            "wordCount": 20,
+            "feedback": {"correct": "playCorrect+金色高亮", "error": "playError+红色抖动弹回"}
+          }
+        }
+      ]
+    },
+    {
+      "page_index": 8,
+      "pageId": 8,
+      "pageNumber": "P8",
+      "section": "语法3考点",
+      "segment": 3,
+      "title": "G52·一般过去时was/were&did全套综合",
+      "subtitle": "过去时态两套兵·was were配主语",
+      "layout_type": "Formula-Card",
+      "is_scrollable": true,
+      "interactionType": "口诀卡片翻转+表格行悬停",
+      "creativeInteraction": null,
+      "contentSummary": "be动词选择表+过去时结构对照表+口诀+5例句",
+      "hasTable": true,
+      "hasMnemonic": true,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {"type": "formula-box", "data": {"title": "was/were选择表", "content": "I/He/She/It/单数→was; We/You/They/复数→were"}},
+        {"type": "formula-box", "data": {"title": "过去时结构对照表", "content": "肯定:V-ed; 否定:didn't+原形; 疑问:Did+主语+原形"}},
+        {"type": "formula-box", "data": {"title": "口诀", "content": "过去时态两套兵，was were配主语；did助动问与否，否定didn't加原形", "isMnemonic": true}}
+      ]
+    },
+    {
+      "page_index": 9,
+      "pageId": 9,
+      "pageNumber": "P9",
+      "section": "语法3考点",
+      "segment": 3,
+      "title": "G52·was/were vs did混淆项排除",
+      "subtitle": "过去时三步判断法",
+      "layout_type": "Formula-Card",
+      "is_scrollable": true,
+      "interactionType": "点击错误项显示纠正+翻转卡",
+      "creativeInteraction": null,
+      "contentSummary": "混淆排除对照表(6行)+三步判断法+易错点正误对照",
+      "hasTable": true,
+      "hasMnemonic": false,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {"type": "formula-box", "data": {"title": "三步判断法", "content": "1.判断动词类型 2.be变was/were或用did 3.didn't+原形"}},
+        {"type": "example-line", "data": {"text": "❌ He didn't went → ✅ He didn't go", "highlight": ["didn't go"]}}
+      ]
+    },
+    {
+      "page_index": 10,
+      "pageId": 10,
+      "pageNumber": "P10",
+      "section": "语法3考点",
+      "segment": 3,
+      "title": "G52补充·不规则动词与时间词",
+      "subtitle": "eat→ate·drink→drank·时间词辨时态",
+      "layout_type": "Formula-Card",
+      "is_scrollable": true,
+      "interactionType": "点击动词展示变形动画+时间词分类器",
+      "creativeInteraction": null,
+      "contentSummary": "6个不规则动词(eat→ate等)+时间词(last month等)+否定疑问结构",
+      "hasTable": true,
+      "hasMnemonic": false,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {"type": "formula-box", "data": {"title": "不规则动词变化表", "content": "eat→ate, drink→drank, run→ran, swim→swam, sit→sat, stand→stood"}},
+        {"type": "formula-box", "data": {"title": "时间词与时态", "content": "last month/last weekend/in 2023/yesterday/...ago → 过去时"}},
+        {"type": "example-line", "data": {"text": "Did you run to the top last weekend?", "highlight": ["Did", "run"], "note": "课件教学专用，不在练习考查"}}
+      ]
+    },
+    {
+      "page_index": 11,
+      "pageId": 11,
+      "pageNumber": "P11",
+      "section": "语法3考点",
+      "segment": 3,
+      "title": "G53·复合不定代词在过去时中的综合运用",
+      "subtitle": "some/any/no/every·过去时语境",
+      "layout_type": "Formula-Card",
+      "is_scrollable": true,
+      "interactionType": "系列卡片悬停+句型切换器",
+      "creativeInteraction": null,
+      "contentSummary": "复合不定代词全表+some/any用法对照+过去时综合运用表+口诀+5例句",
+      "hasTable": true,
+      "hasMnemonic": true,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {"type": "formula-box", "data": {"title": "复合不定代词全表", "content": "some/any/no/every × 事物/人/地点"}},
+        {"type": "formula-box", "data": {"title": "口诀", "content": "复合不定some any no every，形容词后置跟在后；过去时中综合用", "isMnemonic": true}},
+        {"type": "example-line", "data": {"text": "Everyone realized the journey was wonderful.", "highlight": ["realized", "was"], "note": "谓语单数"}}
+      ]
+    },
+    {
+      "page_index": 12,
+      "pageId": 12,
+      "pageNumber": "P12",
+      "section": "语法3考点",
+      "segment": 3,
+      "title": "G53·形容词后置+过去时综合运用",
+      "subtitle": "something new·nothing interesting·anything special",
+      "layout_type": "Formula-Card",
+      "is_scrollable": true,
+      "interactionType": "翻转卡看错因+拖拽形容词练习",
+      "creativeInteraction": null,
+      "contentSummary": "形容词后置规则表(正误对照)+过去时运用+易错点",
+      "hasTable": true,
+      "hasMnemonic": false,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {"type": "formula-box", "data": {"title": "形容词后置规则", "content": "复合不定代词+形容词: something new ✅ / new something ❌"}},
+        {"type": "example-line", "data": {"text": "❌ We saw new something → ✅ We saw something new", "highlight": ["something new"]}}
+      ]
+    },
+    {
+      "page_index": 13,
+      "pageId": 13,
+      "pageNumber": "P13",
+      "section": "语法3考点",
+      "segment": 3,
+      "title": "G54·频度副词跨时态位置对照★",
+      "subtitle": "★语法授课最高终点·be后实前不变位",
+      "layout_type": "Split-2",
+      "is_scrollable": true,
+      "interactionType": "滑块拖动",
+      "creativeInteraction": "交互④-频度副词百分比滑块",
+      "milestone": true,
+      "milestoneLabel": "★ 语法授课最高终点 G54",
+      "contentSummary": "频度副词跨时态位置对照表+百分比滑块(0%-100%)+双时态例句对照",
+      "hasTable": true,
+      "hasMnemonic": true,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {"type": "formula-box", "data": {"title": "口诀", "content": "频度副词跨时态，现在过去位置同；be后实前不变位，时间词辨时态用", "isMnemonic": true, "milestone": true}},
+        {"type": "formula-box", "data": {"title": "跨时态位置对照", "content": "always: She is always happy ↔ She was always happy"}},
+        {
+          "type": "exercise-item",
+          "data": {
+            "exerciseType": "slider-compare",
+            "sliderRange": "0%-100%",
+            "sliderSteps": ["never", "hardly ever", "sometimes", "often", "usually", "always"],
+            "feedback": {"onStop": "playPageTurn"}
+          }
+        }
+      ]
+    },
+    {
+      "page_index": 14,
+      "pageId": 14,
+      "pageNumber": "P14",
+      "section": "语法3考点",
+      "segment": 3,
+      "title": "G54·时间词与时态识别",
+      "subtitle": "every day vs yesterday vs now·跨时态对照",
+      "layout_type": "Formula-Card",
+      "is_scrollable": true,
+      "interactionType": "时间词分类器+点击切换时态",
+      "creativeInteraction": null,
+      "contentSummary": "时间词与时态识别表+跨时态对照识别表+三步法+易错点",
+      "hasTable": true,
+      "hasMnemonic": false,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {"type": "formula-box", "data": {"title": "时间词与时态", "content": "every day→现在时; now→进行时; yesterday/last week→过去时"}},
+        {"type": "example-line", "data": {"text": "❌ She often play yesterday → ✅ She often played yesterday", "highlight": ["often played"]}}
+      ]
+    },
+    {
+      "page_index": 15,
+      "pageId": 15,
+      "pageNumber": "P15",
+      "section": "随堂演练",
+      "segment": 4,
+      "title": "随堂演练（一）·过去时was/were/did选择",
+      "subtitle": "遮罩点击答题·4题",
+      "layout_type": "Exercise-List",
+      "is_scrollable": true,
+      "interactionType": "选择答题即时反馈",
+      "creativeInteraction": null,
+      "contentSummary": "4道选择题(was/were/did/didn't填空)+遮罩答案+进度条",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": true,
+      "hasAnimation": true,
+      "components": [
+        {
+          "type": "exercise-item",
+          "data": {
+            "exerciseType": "multiple-choice",
+            "questionCount": 4,
+            "answerHidden": true,
+            "feedback": {"correct": "playCorrect+金色高亮", "error": "playError+红色抖动"}
+          }
+        }
+      ]
+    },
+    {
+      "page_index": 16,
+      "pageId": 16,
+      "pageNumber": "P16",
+      "section": "随堂演练",
+      "segment": 4,
+      "title": "随堂演练（二）·复合不定代词探秘箱",
+      "subtitle": "something/anything/nothing/everything",
+      "layout_type": "Grid-4",
+      "is_scrollable": true,
+      "interactionType": "盲盒点击",
+      "creativeInteraction": "交互③-复合不定代词探秘箱",
+      "contentSummary": "4个探秘箱+4题过去时语境填空+用法总结",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": true,
+      "hasAnimation": true,
+      "components": [
+        {
+          "type": "exercise-item",
+          "data": {
+            "exerciseType": "blind-box-click",
+            "boxCount": 4,
+            "boxLabels": ["something", "anything", "nothing", "everything"],
+            "questionCount": 4,
+            "answerHidden": true,
+            "feedback": {"correct": "playCorrect+箱子打开揭示图片", "error": "playError+箱子摇晃"}
+          }
+        }
+      ]
+    },
+    {
+      "page_index": 17,
+      "pageId": 17,
+      "pageNumber": "P17",
+      "section": "随堂演练",
+      "segment": 4,
+      "title": "随堂演练（三）·过去时态时光机",
+      "subtitle": "看时间词选时态·跨时态识别",
+      "layout_type": "Split-2",
+      "is_scrollable": true,
+      "interactionType": "点击切换",
+      "creativeInteraction": "交互②-过去时态时光机",
+      "contentSummary": "4题时态切换(时间词按钮+动词形式切换)+时态判断",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": true,
+      "hasAnimation": true,
+      "components": [
+        {
+          "type": "exercise-item",
+          "data": {
+            "exerciseType": "tense-switch",
+            "questionCount": 4,
+            "answerHidden": true,
+            "feedback": {"correct": "playCorrect", "error": "playError+提示", "onSwitch": "playPageTurn"}
+          }
+        }
+      ]
+    },
+    {
+      "page_index": 18,
+      "pageId": 18,
+      "pageNumber": "P18",
+      "section": "阅读理解",
+      "segment": 5,
+      "title": "阅读A篇·Welcome to Green Hill Town",
+      "subtitle": "旅行目的地介绍（应用文）",
+      "layout_type": "Reading-Passage",
+      "is_scrollable": true,
+      "interactionType": "点击关键词高亮+滚动阅读",
+      "creativeInteraction": null,
+      "contentSummary": "A篇短文(158词)+关键词高亮+旅行配图+五步法提示",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {
+          "type": "reading-passage",
+          "data": {
+            "title": "Welcome to Green Hill Town",
+            "wordCount": 158,
+            "tense": "一般现在时",
+            "embeddedWords": ["building", "top", "hill", "distance", "below", "duck", "umbrella", "foggy", "journey"]
+          }
+        }
+      ]
+    },
+    {
+      "page_index": 19,
+      "pageId": 19,
+      "pageNumber": "P19",
+      "section": "阅读理解",
+      "segment": 5,
+      "title": "阅读A篇·题目解析",
+      "subtitle": "细节题/推断题/主旨题",
+      "layout_type": "Exercise-List",
+      "is_scrollable": true,
+      "interactionType": "点击选项反馈+查看解析",
+      "creativeInteraction": null,
+      "contentSummary": "5道单选(细节3+推断1+主旨1)+答案隐藏+定位句高亮",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": true,
+      "hasAnimation": true,
+      "components": [
+        {
+          "type": "exercise-item",
+          "data": {
+            "exerciseType": "reading-comprehension",
+            "questionCount": 5,
+            "questionTypes": ["detail", "detail", "detail", "inference", "main-idea"],
+            "answerHidden": true,
+            "feedback": {"correct": "playCorrect", "error": "playError"}
+          }
+        }
+      ]
+    },
+    {
+      "page_index": 20,
+      "pageId": 20,
+      "pageNumber": "P20",
+      "section": "句子练习",
+      "segment": 6,
+      "title": "句子练习（一）·过去时汉译英",
+      "subtitle": "旅行主题·5句翻译",
+      "layout_type": "Exercise-List",
+      "is_scrollable": true,
+      "interactionType": "输入框答题+答案对照",
+      "creativeInteraction": null,
+      "contentSummary": "5句汉译英(过去时综合+旅行主题)+答案隐藏+解析",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": true,
+      "hasAnimation": true,
+      "components": [
+        {
+          "type": "exercise-item",
+          "data": {
+            "exerciseType": "translation",
+            "questionCount": 5,
+            "answerHidden": true,
+            "caseInsensitive": true,
+            "feedback": {"correct": "playCorrect", "error": "playError+显示正确答案"}
+          }
+        }
+      ]
+    },
+    {
+      "page_index": 21,
+      "pageId": 21,
+      "pageNumber": "P21",
+      "section": "句子练习",
+      "segment": 6,
+      "title": "句子练习（二）·复合不定代词造句",
+      "subtitle": "something/anything/nothing/everything·过去时",
+      "layout_type": "Exercise-List",
+      "is_scrollable": true,
+      "interactionType": "点击揭示参考答案",
+      "creativeInteraction": null,
+      "contentSummary": "3句造句(复合不定代词+形容词后置+过去时)+参考答案隐藏",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": true,
+      "hasAnimation": true,
+      "components": [
+        {
+          "type": "exercise-item",
+          "data": {
+            "exerciseType": "sentence-writing",
+            "questionCount": 3,
+            "answerHidden": true,
+            "focusPoints": ["something+形容词后置", "anything否定句", "everyone谓语单数"]
+          }
+        }
+      ]
+    },
+    {
+      "page_index": 22,
+      "pageId": 22,
+      "pageNumber": "P22",
+      "section": "句子练习",
+      "segment": 6,
+      "title": "句子练习（三）·频度副词+过去时综合造句",
+      "subtitle": "always/usually/never·be后实前",
+      "layout_type": "Exercise-List",
+      "is_scrollable": true,
+      "interactionType": "点击揭示参考答案+副词位置标注",
+      "creativeInteraction": null,
+      "contentSummary": "3句造句(频度副词+过去时)+副词位置动画标注",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": true,
+      "hasAnimation": true,
+      "components": [
+        {
+          "type": "exercise-item",
+          "data": {
+            "exerciseType": "sentence-writing",
+            "questionCount": 3,
+            "answerHidden": true,
+            "focusPoints": ["always+was(be后)", "usually+过去式(实前)", "never+过去式+last month"]
+          }
+        }
+      ]
+    },
+    {
+      "page_index": 23,
+      "pageId": 23,
+      "pageNumber": "P23",
+      "section": "自然拼读",
+      "segment": 7,
+      "title": "音节划分规则（一）·VCV vs VCCV",
+      "subtitle": "开音节元音长·闭音节元音短",
+      "layout_type": "Formula-Card",
+      "is_scrollable": true,
+      "interactionType": "点击单词展示拆分动画",
+      "creativeInteraction": null,
+      "contentSummary": "VCV开音节规则+VCCV闭音节规则+16词朗读表+口诀",
+      "hasTable": true,
+      "hasMnemonic": true,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {"type": "formula-box", "data": {"title": "VCV开音节", "content": "元音+辅音+元音，拆在辅音前，第一元音发长音(pa-per)"}},
+        {"type": "formula-box", "data": {"title": "VCCV闭音节", "content": "元音+辅音+辅音+元音，拆在两辅音间，第一元音发短音(rab-bit)"}},
+        {"type": "formula-box", "data": {"title": "口诀", "content": "VCV开音节元音长，VCCV闭音节元音短", "isMnemonic": true}}
+      ]
+    },
+    {
+      "page_index": 24,
+      "pageId": 24,
+      "pageNumber": "P24",
+      "section": "自然拼读",
+      "segment": 7,
+      "title": "音节划分规则（二）·多音节词拆分",
+      "subtitle": "从后往前拆分·标注重音·逐节拼读",
+      "layout_type": "Formula-Card",
+      "is_scrollable": true,
+      "interactionType": "点击单词展示逐层拆分+重音动画",
+      "creativeInteraction": null,
+      "contentSummary": "多音节拆分规则+13词朗读表+全阶段综合复习(连缀/二合/音节)",
+      "hasTable": true,
+      "hasMnemonic": true,
+      "hasExercise": false,
+      "hasAnimation": true,
+      "components": [
+        {"type": "formula-box", "data": {"title": "多音节拆分规则", "content": "从后往前找元音，按VCV/VCCV逐层拆分(um-brel-la/bi-cy-cle)"}},
+        {"type": "formula-box", "data": {"title": "口诀", "content": "多音节词拆开读，全阶段规则大复习", "isMnemonic": true}}
+      ]
+    },
+    {
+      "page_index": 25,
+      "pageId": 25,
+      "pageNumber": "P25",
+      "section": "自然拼读",
+      "segment": 7,
+      "title": "拼读练习·判断/拆分/辨析",
+      "subtitle": "判断VCV/VCCV·拆分多音节·全阶段辨析",
+      "layout_type": "Exercise-List",
+      "is_scrollable": true,
+      "interactionType": "点击/输入答题即时反馈",
+      "creativeInteraction": null,
+      "contentSummary": "12题(判断4+拆分4+辨析4)+答案隐藏+进度条",
+      "hasTable": false,
+      "hasMnemonic": false,
+      "hasExercise": true,
+      "hasAnimation": true,
+      "components": [
+        {
+          "type": "exercise-item",
+          "data": {
+            "exerciseType": "phonics-practice",
+            "questionCount": 12,
+            "subExercises": [
+              {"name": "练习2-音节划分判断", "count": 4},
+              {"name": "练习3-拼读应用拆分", "count": 4},
+              {"name": "练习4-综合辨析", "count": 4}
+            ],
+            "answerHidden": true,
+            "feedback": {"correct": "playCorrect+金色高亮", "error": "playError+红色抖动"}
+          }
+        }
+      ]
+    },
+    {
+      "page_index": 26,
+      "pageId": 26,
+      "pageNumber": "P26",
+      "section": "课堂总结",
+      "segment": 8,
+      "title": "课堂总结·语法终点里程碑",
+      "subtitle": "G52-G54核心口诀+★G01-G54语法授课全部完成",
+      "layout_type": "Formula-Card",
+      "is_scrollable": true,
+      "interactionType": "点击解锁",
+      "creativeInteraction": "交互⑤-语法终点里程碑奖章",
+      "milestone": true,
+      "milestoneLabel": "★ G01-G54 语法授课全部完成",
+      "contentSummary": "三段口诀总结(G52/G53/G54)+锁定奖章+3道回顾题+解锁里程碑文案",
+      "hasTable": false,
+      "hasMnemonic": true,
+      "hasExercise": true,
+      "hasAnimation": true,
+      "components": [
+        {"type": "formula-box", "data": {"title": "G52口诀", "content": "过去时态两套兵，was were配主语；否定didn't加原形", "isMnemonic": true}},
+        {"type": "formula-box", "data": {"title": "G53口诀", "content": "复合不定some any no every，形容词后置跟在后", "isMnemonic": true}},
+        {"type": "formula-box", "data": {"title": "G54口诀", "content": "频度副词跨时态，be后实前不变位", "isMnemonic": true, "milestone": true}},
+        {
+          "type": "exercise-item",
+          "data": {
+            "exerciseType": "milestone-unlock",
+            "reviewQuestionCount": 3,
+            "reviewTopics": ["G52", "G53", "G54"],
+            "answerHidden": true,
+            "unlockText": "G01-G54 语法授课全部完成",
+            "feedback": {"perCorrect": "playCorrect", "perError": "playError可重试", "allCorrect": "playCorrect+金色奖章动画"}
+          }
+        }
+      ]
+    }
+  ],
+  "soundEffects": {
+    "playCorrect": {
+      "description": "上行三音阶C-E-G",
+      "frequencies": [523.25, 659.25, 783.99],
+      "waveType": "triangle",
+      "duration": "100ms each",
+      "trigger": "答对题目、交互成功、奖章解锁、里程碑达成"
+    },
+    "playError": {
+      "description": "下行两音G-C",
+      "frequencies": [392.0, 261.63],
+      "waveType": "square",
+      "duration": "200ms each",
+      "trigger": "答错题目、交互失败"
+    },
+    "playPageTurn": {
+      "description": "短促翻页声",
+      "frequency": 800,
+      "waveType": "sine",
+      "duration": "80ms fadeout",
+      "trigger": "翻页、翻转卡片、时态切换、滑块停顿"
+    }
+  },
+  "navigationSpecs": {
+    "navTimelineHeight": "54px",
+    "navItems": ["①复习导入", "②新词20", "③语法3考点", "④随堂演练", "⑤阅读理解", "⑥句子练习", "⑦自然拼读", "⑧课堂总结"],
+    "pageTurn": "左右半屏点击（左=上一页，右=下一页）",
+    "answerStopPropagation": true,
+    "scrollReset": true,
+    "keyboardNav": true,
+    "fullscreenKey": "F"
+  }
+}

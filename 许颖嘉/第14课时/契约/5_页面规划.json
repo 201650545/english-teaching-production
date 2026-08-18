@@ -1,0 +1,202 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LessonPagePlan",
+  "lesson_id": "第14课",
+  "version": "V17.2",
+  "theme": {
+    "style": "Stage 4 Mirror-Purple Light 21:9",
+    "aspect_ratio": "21:9",
+    "primary_color": "#7C6BD6",
+    "accent_color": "#FF7A59",
+    "success_color": "#06D6A0",
+    "bg_gradient": "linear-gradient(160deg, #F6F4FD 0%, #ECE6F9 100%)",
+    "card_bg": "#FFFFFF",
+    "text_primary": "#2C3E50",
+    "font_size_base": "28pt"
+  },
+  "total_pages": 30,
+  "stage_badge": "Stage 4 · L14",
+  "review_pages": 3,
+  "pages": [
+    {
+      "page_index": 1,
+      "section": "封面",
+      "title": "封面 P1",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 2,
+      "section": "复习导入",
+      "title": "复习导入 P1",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 3,
+      "section": "复习导入",
+      "title": "复习导入 P2",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 4,
+      "section": "复习导入",
+      "title": "复习导入 P3",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 5,
+      "section": "新词20",
+      "title": "新词20 P1",
+      "is_scrollable": true
+    },
+    {
+      "page_index": 6,
+      "section": "新词20",
+      "title": "新词20 P2",
+      "is_scrollable": true
+    },
+    {
+      "page_index": 7,
+      "section": "新词20",
+      "title": "新词20 P3",
+      "is_scrollable": true
+    },
+    {
+      "page_index": 8,
+      "section": "新词20",
+      "title": "新词20 P4",
+      "is_scrollable": true
+    },
+    {
+      "page_index": 9,
+      "section": "新词20",
+      "title": "新词20 P5",
+      "is_scrollable": true
+    },
+    {
+      "page_index": 10,
+      "section": "语法3考点",
+      "title": "语法3考点 P1",
+      "is_scrollable": true
+    },
+    {
+      "page_index": 11,
+      "section": "语法3考点",
+      "title": "语法3考点 P2",
+      "is_scrollable": true
+    },
+    {
+      "page_index": 12,
+      "section": "语法3考点",
+      "title": "语法3考点 P3",
+      "is_scrollable": true
+    },
+    {
+      "page_index": 13,
+      "section": "语法3考点",
+      "title": "语法3考点 P4",
+      "is_scrollable": true
+    },
+    {
+      "page_index": 14,
+      "section": "语法3考点",
+      "title": "语法3考点 P5",
+      "is_scrollable": true
+    },
+    {
+      "page_index": 15,
+      "section": "语法3考点",
+      "title": "语法3考点 P6",
+      "is_scrollable": true
+    },
+    {
+      "page_index": 16,
+      "section": "随堂演练",
+      "title": "随堂演练 P1",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 17,
+      "section": "随堂演练",
+      "title": "随堂演练 P2",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 18,
+      "section": "随堂演练",
+      "title": "随堂演练 P3",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 19,
+      "section": "阅读理解",
+      "title": "阅读理解 P1",
+      "is_scrollable": true
+    },
+    {
+      "page_index": 20,
+      "section": "阅读理解",
+      "title": "阅读理解 P2",
+      "is_scrollable": true
+    },
+    {
+      "page_index": 21,
+      "section": "阅读理解",
+      "title": "阅读理解 P3",
+      "is_scrollable": true
+    },
+    {
+      "page_index": 22,
+      "section": "句子练习",
+      "title": "句子练习 P1",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 23,
+      "section": "句子练习",
+      "title": "句子练习 P2",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 24,
+      "section": "句子练习",
+      "title": "句子练习 P3",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 25,
+      "section": "自然拼读",
+      "title": "自然拼读 P1",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 26,
+      "section": "自然拼读",
+      "title": "自然拼读 P2",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 27,
+      "section": "自然拼读",
+      "title": "自然拼读 P3",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 28,
+      "section": "自然拼读",
+      "title": "自然拼读 P4",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 29,
+      "section": "自然拼读",
+      "title": "自然拼读 P5",
+      "is_scrollable": false
+    },
+    {
+      "page_index": 30,
+      "section": "课堂总结",
+      "title": "课堂总结 P1",
+      "is_scrollable": false
+    }
+  ]
+}

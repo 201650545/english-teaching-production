@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第16课时·阶段测试Ⅱ讲评 | 邓兴华英语</title>
+<!-- CW-INTERACTION-CONTRACT:1 -->
+<!-- CW-VISUAL-CONTRACT:1 -->
+<!-- style_manifest
+{
+  "course_id":"DXH_L16",
+  "lesson_number":16,
+  "style_family":"S08",
+  "layout_archetype":"stage-test-review",
+  "density_level":"comfortable",
+  "type_profile":"editorial",
+  "surface_profile":"card-elevated",
+  "palette_profile":"warm-red-gold",
+  "media_language":"emoji-icon",
+  "motion_profile":"minimal",
+  "feedback_profile":"bubble",
+  "difference_from_recent_lessons":"L15天蓝阳光主题切换为红金暖色系;L15八段式授课改为五段式讲评;L15有拼读训练本课无拼读;L15有新语法本课无新语法;L17频度副词深蓝主题与本课红金区分;本课为Stage4末课阶段测试讲评"
+}
+-->
+<style>
+:root{
+  --brand:#E63946;
+  --brand-dark:#C1121F;
+  --brand-light:#FFEDF0;
+  --accent:#FFD700;
+  --accent-light:#FFF8DC;
+  --accent-dark:#B8860B;
+  --success:#059669;
+  --error:#DC2626;
+  --warning:#D97706;
+  --bg-start:#FFF8F0;
+  --bg-end:#FFE8D6;
+  --card-bg:#FFFFFF;
+  --text-primary:#1A1A2E;
+  --text-secondary:#4A4A5A;
+  --text-light:#7A7A8A;
+  --nav-h:54px;
+  --nav-bottom-h:50px;
+  --page-pad:32px;
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 2px 12px rgba(230,57,70,0.08);
+  --shadow-lg:0 6px 24px rgba(230,57,70,0.12);
+  --rc-zhug:#E63946;
+  --rc-bin:#3A86FF;
+  --rc-xing:#FB8500;
+  --rc-ming:#8338EC;
+  --rc-warn:#FFB703;
+  --rc-qita:#2EC4B6;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;height:100%;overflow:hidden;font-family:"Segoe UI","Microsoft YaHei",sans-serif;}
+body{
+  background:linear-gradient(135deg,var(--bg-start),var(--bg-end));
+  color:var(--text-primary);
+  font-size:15px;
+  line-height:1.6;
+}
+.page{
+  display:none;
+  flex-direction:column;
+  position:absolute;
+  top:var(--nav-h);
+  bottom:var(--nav-bottom-h);
+  left:0;right:0;
+  padding:var(--page-pad);
+  overflow-y:auto;
+}
+.page.active{display:flex!important;}
+
+/* Navigation Top */
+.nav-top{
+  position:fixed;top:0;left:0;right:0;height:var(--nav-h);
+  background:linear-gradient(90deg,var(--brand-dark),var(--brand));
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 16px;z-index:100;
+  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+.nav-top .nav-brand{color:#fff;font-weight:700;font-size:14px;white-space:nowrap;}
+.nav-top .nav-pills{display:flex;gap:4px;flex:1;justify-content:center;overflow:hidden;}
+.nav-top .nav-pill{
+  padding:4px 12px;border-radius:20px;background:rgba(255,255,255,0.15);
+  color:rgba(255,255,255,0.7);font-size:12px;cursor:pointer;white-space:nowrap;
+  transition:all .2s;border:1px solid transparent;
+}
+.nav-top .nav-pill:hover{background:rgba(255,255,255,0.25);color:#fff;}
+.nav-top .nav-pill.active{background:var(--accent);color:var(--brand-dark);font-weight:600;}
+.nav-top .stage-badge{
+  background:var(--accent);color:var(--brand-dark);font-weight:700;font-size:11px;
+  padding:3px 10px;border-radius:12px;white-space:nowrap;
+}
+
+/* Navigation Bottom */
+.nav-bottom{
+  position:fixed;bottom:0;left:0;right:0;height:var(--nav-bottom-h);
+  background:#fff;display:flex;align-items:center;justify-content:space-between;
+  padding:0 16px;z-index:100;box-shadow:0 -2px 8px rgba(0,0,0,0.08);
+}
+.nav-bottom .progress-wrap{flex:1;display:flex;align-items:center;gap:8px;margin:0 12px;}
+.nav-bottom .progress-bar{flex:1;height:6px;background:#f0f0f0;border-radius:3px;overflow:hidden;}
+.nav-bottom .progress-fill{height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:3px;transition:width .3s;}
+.nav-bottom .page-info{font-size:12px;color:var(--text-secondary);white-space:nowrap;font-weight:600;}
+.nav-bottom .export-btn{
+  padding:4px 14px;background:var(--brand);color:#fff;border:none;border-radius:6px;
+  font-size:12px;cursor:pointer;white-space:nowrap;
+}
+.nav-bottom .export-btn:hover{background:var(--brand-dark);}
+
+/* Click Zones */
+.click-zone{position:fixed;top:var(--nav-h);bottom:var(--nav-bottom-h);width:50%;z-index:5;cursor:pointer;}
+.click-zone.left{left:0;}
+.click-zone.right{right:0;}
+
+/* Card */
+.card{
+  background:var(--card-bg);border-radius:var(--radius);padding:20px 24px;
+  box-shadow:var(--shadow);margin-bottom:16px;
+}
+.card-elevated{box-shadow:var(--shadow-lg);}
+.card-title{
+  font-size:18px;font-weight:700;color:var(--brand-dark);margin-bottom:12px;
+  display:flex;align-items:center;gap:8px;
+}
+.card-title .icon{font-size:22px;}
+
+/* Section Headers */
+.section-header{
+  display:flex;align-items:center;gap:10px;margin-bottom:16px;
+  padding-bottom:8px;border-bottom:2px solid var(--brand-light);
+}
+.section-header .sec-num{
+  background:var(--brand);color:#fff;width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;
+}
+.section-header .sec-title{font-size:20px;font-weight:700;color:var(--text-primary);}
+.section-header .sec-meta{margin-left:auto;font-size:12px;color:var(--text-light);}
+
+/* Cover Page */
+.cover-page{align-items:center;justify-content:center;text-align:center;}
+.cover-badge{
+  display:inline-block;background:var(--accent);color:var(--brand-dark);
+  font-weight:700;font-size:14px;padding:6px 20px;border-radius:20px;margin-bottom:20px;
+}
+.cover-title{font-size:42px;font-weight:800;color:var(--brand-dark);margin-bottom:8px;letter-spacing:2px;}
+.cover-subtitle{font-size:20px;color:var(--text-secondary);margin-bottom:30px;}
+.cover-route{
+  display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;
+  margin-bottom:30px;
+}
+.cover-route .stop{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding:8px 16px;background:var(--card-bg);border-radius:12px;
+  box-shadow:var(--shadow);min-width:80px;
+}
+.cover-route .stop .stop-num{font-size:11px;color:var(--accent-dark);font-weight:700;}
+.cover-route .stop .stop-name{font-size:13px;color:var(--text-primary);font-weight:600;}
+.cover-route .arrow{color:var(--brand);font-size:20px;font-weight:700;}
+.cover-objectives{
+  display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;
+}
+.cover-objectives .obj-item{
+  background:var(--card-bg);padding:10px 20px;border-radius:10px;
+  box-shadow:var(--shadow);font-size:14px;color:var(--text-secondary);
+}
+.cover-objectives .obj-item strong{color:var(--brand);}
+.cover-meta{font-size:12px;color:var(--text-light);margin-top:20px;}
+
+/* Bar Chart */
+.bar-chart{display:flex;align-items:flex-end;gap:12px;height:200px;padding:10px 0;}
+.bar-chart .bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.bar-chart .bar{
+  width:100%;max-width:60px;border-radius:6px 6px 0 0;
+  background:linear-gradient(180deg,var(--brand),var(--brand-light));
+  position:relative;min-height:4px;transition:height .5s;
+}
+.bar-chart .bar .bar-val{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:600;color:var(--text-primary);}
+.bar-chart .bar-label{font-size:11px;color:var(--text-secondary);text-align:center;line-height:1.3;}
+
+/* Radar Chart Canvas */
+.radar-wrap{display:flex;justify-content:center;align-items:center;padding:10px;}
+.radar-wrap canvas{max-width:100%;}
+
+/* Error List */
+.error-list{display:flex;flex-direction:column;gap:8px;}
+.error-item{
+  display:flex;align-items:center;gap:12px;padding:10px 16px;
+  background:var(--card-bg);border-radius:10px;box-shadow:var(--shadow);
+  border-left:4px solid var(--brand);cursor:pointer;transition:all .2s;
+}
+.error-item:hover{transform:translateX(4px);box-shadow:var(--shadow-lg);}
+.error-item .err-rank{
+  width:28px;height:28px;border-radius:50%;background:var(--brand);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0;
+}
+.error-item .err-info{flex:1;}
+.error-item .err-q{font-size:13px;font-weight:600;color:var(--text-primary);}
+.error-item .err-g{font-size:11px;color:var(--text-secondary);}
+.error-item .err-rate{
+  font-size:14px;font-weight:700;color:var(--error);
+}
+.error-item .err-jump{color:var(--brand);font-size:18px;}
+
+/* Grammar Group Card */
+.grammar-group{
+  background:var(--card-bg);border-radius:var(--radius);padding:18px 22px;
+  box-shadow:var(--shadow);margin-bottom:14px;border-top:3px solid var(--brand);
+}
+.grammar-group .gg-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.grammar-group .gg-tag{
+  background:var(--brand-light);color:var(--brand-dark);font-weight:700;font-size:11px;
+  padding:3px 10px;border-radius:10px;
+}
+.grammar-group .gg-title{font-size:16px;font-weight:700;color:var(--text-primary);}
+.grammar-group .gg-body{font-size:14px;color:var(--text-secondary);line-height:1.7;}
+.grammar-group .gg-body .keyword{color:var(--brand);font-weight:600;}
+.grammar-group .gg-body .formula{
+  display:inline-block;background:var(--accent-light);padding:2px 10px;
+  border-radius:6px;font-family:"Consolas",monospace;font-size:13px;color:var(--accent-dark);
+  margin:2px 0;
+}
+.grammar-group .gg-example{
+  margin-top:8px;padding:8px 12px;background:var(--bg-start);border-radius:8px;
+  font-size:13px;color:var(--text-primary);
+}
+.grammar-group .gg-example .ex-label{font-weight:700;color:var(--success);font-size:11px;}
+
+/* Diagnostic Table */
+.diag-table{width:100%;border-collapse:collapse;font-size:13px;}
+.diag-table th{
+  background:var(--brand);color:#fff;padding:8px 10px;text-align:left;font-weight:600;
+}
+.diag-table td{padding:8px 10px;border-bottom:1px solid #f0f0f0;}
+.diag-table tr:nth-child(even){background:var(--brand-light);}
+.diag-table .grade-a{color:var(--success);font-weight:700;}
+.diag-table .grade-b{color:var(--warning);font-weight:700;}
+.diag-table .grade-c{color:var(--error);font-weight:700;}
+.diag-table .grade-d{color:#9C27B0;font-weight:700;}
+
+/* Vocabulary Cards */
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;}
+.vocab-card{
+  background:var(--card-bg);border-radius:10px;padding:12px 14px;box-shadow:var(--shadow);
+  border-left:3px solid var(--accent);
+}
+.vocab-card .vc-en{font-size:15px;font-weight:700;color:var(--brand-dark);}
+.vocab-card .vc-cn{font-size:12px;color:var(--text-secondary);margin-top:2px;}
+.vocab-card .vc-pos{font-size:10px;color:var(--accent-dark);font-style:italic;}
+
+/* Quiz Components */
+.quiz-q{
+  background:var(--card-bg);border-radius:10px;padding:16px 18px;box-shadow:var(--shadow);
+  margin-bottom:12px;border:1px solid #f0f0f0;
+}
+.quiz-q .q-prompt{font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:10px;}
+.quiz-q .q-prompt .q-num{
+  display:inline-block;background:var(--brand);color:#fff;width:22px;height:22px;
+  border-radius:50%;text-align:center;line-height:22px;font-size:12px;margin-right:6px;
+}
+.quiz-options{display:flex;flex-direction:column;gap:6px;}
+.quiz-option{
+  padding:8px 14px;border:1.5px solid #e0e0e0;border-radius:8px;cursor:pointer;
+  font-size:14px;transition:all .2s;background:#fff;
+}
+.quiz-option:hover{border-color:var(--brand);background:var(--brand-light);}
+.quiz-option.selected{border-color:var(--brand);background:var(--brand-light);color:var(--brand-dark);font-weight:600;}
+.quiz-option.correct{border-color:var(--success);background:#E6F7F0;color:var(--success);font-weight:600;}
+.quiz-option.wrong{border-color:var(--error);background:#FFF0F0;color:var(--error);}
+.fill-input{
+  border:1.5px solid #e0e0e0;border-radius:6px;padding:6px 12px;font-size:14px;
+  width:100%;outline:none;transition:border-color .2s;
+}
+.fill-input:focus{border-color:var(--brand);}
+.fill-row{display:flex;gap:8px;align-items:center;margin-bottom:6px;}
+.fill-row .fill-label{font-size:14px;min-width:30px;color:var(--text-secondary);}
+
+/* Linking Game */
+.link-container{display:flex;gap:20px;align-items:flex-start;z-index:10;}
+.link-col{flex:1;display:flex;flex-direction:column;gap:8px;}
+.link-col .col-title{font-size:13px;font-weight:700;color:var(--brand-dark);text-align:center;margin-bottom:4px;}
+.link-item{
+  padding:10px 14px;border:2px solid #e0e0e0;border-radius:8px;cursor:pointer;
+  text-align:center;font-size:14px;background:#fff;transition:all .2s;
+}
+.link-item:hover{border-color:var(--brand);}
+.link-item.selected{border-color:var(--brand);background:var(--brand-light);font-weight:600;}
+.link-item.matched{border-color:var(--success);background:#E6F7F0;opacity:0.6;pointer-events:none;}
+
+/* Ordering Game */
+.order-container{display:flex;flex-direction:column;gap:8px;z-index:10;}
+.order-item{
+  padding:10px 14px;border:2px solid #e0e0e0;border-radius:8px;cursor:move;
+  font-size:14px;background:#fff;display:flex;align-items:center;gap:10px;
+}
+.order-item .order-num{
+  width:24px;height:24px;border-radius:50%;background:var(--brand);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;
+}
+.order-item.dragging{opacity:0.5;}
+
+/* Blank Pick */
+.blank-pick{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+.blank-chip{
+  padding:6px 16px;background:var(--accent-light);border:2px solid var(--accent);
+  border-radius:20px;cursor:pointer;font-size:13px;font-weight:600;color:var(--accent-dark);
+  transition:all .2s;
+}
+.blank-chip:hover{background:var(--accent);color:#fff;}
+.blank-chip.used{opacity:0.3;pointer-events:none;}
+.blank-sentence{font-size:14px;line-height:1.8;margin-bottom:6px;}
+.blank-slot{
+  display:inline-block;min-width:80px;padding:2px 10px;margin:0 4px;
+  border-bottom:2px solid var(--brand);font-weight:600;color:var(--brand-dark);
+}
+
+/* Feedback Bubble */
+.feedback-bubble{
+  position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+  background:#fff;border-radius:16px;padding:20px 32px;box-shadow:var(--shadow-lg);
+  z-index:200;display:none;text-align:center;font-size:16px;font-weight:600;
+}
+.feedback-bubble.show{display:block;animation:bubblePop .4s ease;}
+.feedback-bubble.correct{color:var(--success);border:2px solid var(--success);}
+.feedback-bubble.error{color:var(--error);border:2px solid var(--error);}
+@keyframes bubblePop{0%{transform:translate(-50%,-50%) scale(0.5);opacity:0;}80%{transform:translate(-50%,-50%) scale(1.1);}100%{transform:translate(-50%,-50%) scale(1);opacity:1;}}
+
+/* Six-color Cards */
+.rc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px;}
+.rc-card{padding:12px 14px;border-radius:10px;color:#fff;font-size:13px;}
+.rc-card .rc-label{font-size:11px;opacity:0.85;margin-bottom:4px;}
+.rc-card .rc-content{font-size:14px;font-weight:600;}
+.rc-zhug{background:var(--rc-zhug);}
+.rc-bin{background:var(--rc-bin);}
+.rc-xing{background:var(--rc-xing);}
+.rc-ming{background:var(--rc-ming);}
+.rc-warn{background:var(--rc-warn);color:#1A1A2E;}
+.rc-qita{background:var(--rc-qita);}
+
+/* Reading/Writing */
+.reading-passage{
+  background:#FFFBF5;border-left:4px solid var(--accent);padding:14px 18px;
+  border-radius:0 10px 10px 0;font-size:14px;line-height:1.8;margin-bottom:12px;
+}
+.reading-passage .highlight{background:var(--accent-light);padding:1px 4px;border-radius:3px;}
+.writing-score{
+  display:flex;gap:12px;margin-bottom:12px;
+}
+.writing-score .score-item{
+  flex:1;text-align:center;padding:10px;border-radius:10px;background:var(--card-bg);box-shadow:var(--shadow);
+}
+.writing-score .score-item .score-label{font-size:11px;color:var(--text-light);}
+.writing-score .score-item .score-val{font-size:24px;font-weight:800;color:var(--brand);}
+.writing-score .score-item .score-max{font-size:12px;color:var(--text-light);}
+
+/* Exit Ticket */
+.exit-ticket{display:flex;flex-direction:column;gap:12px;}
+.exit-field{display:flex;flex-direction:column;gap:4px;}
+.exit-field .ef-label{font-size:13px;font-weight:600;color:var(--brand-dark);}
+.exit-field textarea{
+  border:1.5px solid #e0e0e0;border-radius:8px;padding:10px 14px;font-size:14px;
+  resize:vertical;min-height:60px;outline:none;font-family:inherit;
+}
+.exit-field textarea:focus{border-color:var(--brand);}
+
+/* Quick Reference Card */
+.quick-ref{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:8px;
+}
+.quick-ref .qr-item{
+  padding:8px 12px;background:var(--card-bg);border-radius:8px;
+  box-shadow:var(--shadow);font-size:12px;
+}
+.quick-ref .qr-item .qr-g{font-weight:700;color:var(--brand);font-size:11px;}
+.quick-ref .qr-item .qr-formula{color:var(--text-secondary);font-size:12px;margin-top:2px;}
+
+/* Pinyin/Mnemonic */
+.mnemonic-box{
+  background:linear-gradient(135deg,var(--accent-light),var(--brand-light));
+  padding:14px 18px;border-radius:10px;margin:8px 0;
+  border:2px dashed var(--accent);
+}
+.mnemonic-box .mn-label{font-size:11px;font-weight:700;color:var(--accent-dark);text-transform:uppercase;letter-spacing:1px;}
+.mnemonic-box .mn-text{font-size:15px;color:var(--text-primary);font-weight:600;margin-top:4px;}
+
+/* Misc */
+.page-title{font-size:22px;font-weight:800;color:var(--brand-dark);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.page-title .pt-icon{font-size:26px;}
+.subtitle-row{font-size:13px;color:var(--text-secondary);margin-bottom:16px;}
+.info-tag{display:inline-block;padding:2px 10px;border-radius:10px;font-size:11px;font-weight:600;margin-right:4px;}
+.info-tag.red{background:var(--brand-light);color:var(--brand-dark);}
+.info-tag.gold{background:var(--accent-light);color:var(--accent-dark);}
+.info-tag.green{background:#E6F7F0;color:var(--success);}
+.warn-box{background:#FFF3CD;border:1px solid var(--warning);border-radius:8px;padding:10px 14px;font-size:13px;color:#856404;margin:8px 0;}
+.tip-box{background:#E6F7F0;border:1px solid var(--success);border-radius:8px;padding:10px 14px;font-size:13px;color:#065F46;margin:8px 0;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+</style>
+</head>
+<body>
+
+<!-- Navigation Top -->
+<div class="nav-top">
+  <div class="nav-brand">📖 邓兴华英语 · L16</div>
+  <div class="nav-pills" id="navPills">
+    <div class="nav-pill active" data-section="1" onclick="goSection(1)">测试概况</div>
+    <div class="nav-pill" data-section="2" onclick="goSection(2)">语法精讲</div>
+    <div class="nav-pill" data-section="3" onclick="goSection(3)">词汇精讲</div>
+    <div class="nav-pill" data-section="4" onclick="goSection(4)">阅读写作</div>
+    <div class="nav-pill" data-section="5" onclick="goSection(5)">总结提升</div>
+  </div>
+  <div class="stage-badge">Stage 4 · L16</div>
+</div>
+
+<!-- Click Zones -->
+<div class="click-zone left" onclick="prevPage()">
+<div class="click-zone right" onclick="nextPage()"></div>
+
+<!-- Feedback Bubble -->
+<div class="feedback-bubble" id="fbBubble"></div>
+
+<!-- ============ PAGE 1: Cover ============ -->
+<div class="page cover-page active" id="page1">
+  <div class="cover-badge">Stage 4 · L16</div>
+  <div class="cover-title">阶段测试Ⅱ</div>
+  <div class="cover-subtitle">七上 + 七下 · 跨阶诊断</div>
+  <div class="cover-route">
+    <div class="stop"><div class="stop-num">①</div><div class="stop-name">测试概况</div></div>
+    <div class="arrow">→</div>
+    <div class="stop"><div class="stop-num">②</div><div class="stop-name">语法精讲</div></div>
+    <div class="arrow">→</div>
+    <div class="stop"><div class="stop-num">③</div><div class="stop-name">词汇精讲</div></div>
+    <div class="arrow">→</div>
+    <div class="stop"><div class="stop-num">④</div><div class="stop-name">阅读写作</div></div>
+    <div class="arrow">→</div>
+    <div class="stop"><div class="stop-num">⑤</div><div class="stop-name">总结提升</div></div>
+  </div>
+  <div class="cover-objectives">
+    <div class="obj-item">⏱ <strong>90分钟</strong> 测试60+讲评30</div>
+    <div class="obj-item">🎯 <strong>42考点</strong> G01-G42全诊断</div>
+    <div class="obj-item">📚 <strong>300词</strong> 七上+七下综合</div>
+    <div class="obj-item">📋 <strong>五段式</strong> 讲评结构</div>
+  </div>
+  <div class="cover-meta">邓兴华英语 · 七年级Stage 4末课 · 诊断与提升</div>
+</div>
+
+<!-- ============ PAGE 2: Score Distribution ============ -->
+<div class="page" id="page2">
+  <div class="page-title"><span class="pt-icon">📊</span>全卷得分分布</div>
+  <div class="subtitle-row">全班均值 <strong style="color:var(--brand)">65分</strong> · 最高92分 · 最低38分 · 及格率72%</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📈</span>各题型得分率</div>
+    <div class="bar-chart">
+      <div class="bar-col"><div class="bar" style="height:78%"><span class="bar-val">78%</span></div><div class="bar-label">单选<br>G01-G42</div></div>
+      <div class="bar-col"><div class="bar" style="height:62%"><span class="bar-val">62%</span></div><div class="bar-label">完形<br>词汇运用</div></div>
+      <div class="bar-col"><div class="bar" style="height:55%"><span class="bar-val">55%</span></div><div class="bar-label">阅读A<br>应用文</div></div>
+      <div class="bar-col"><div class="bar" style="height:48%"><span class="bar-val">48%</span></div><div class="bar-label">阅读B<br>记叙文</div></div>
+      <div class="bar-col"><div class="bar" style="height:40%"><span class="bar-val">40%</span></div><div class="bar-label">五选四<br>句际逻辑</div></div>
+      <div class="bar-col"><div class="bar" style="height:58%"><span class="bar-val">58%</span></div><div class="bar-label">简答<br>翻译</div></div>
+      <div class="bar-col"><div class="bar" style="height:52%"><span class="bar-val">52%</span></div><div class="bar-label">写作<br>15分</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🕸️</span>G01-G42考点掌握度雷达图</div>
+    <div class="radar-wrap">
+      <canvas id="radarCanvas" width="420" height="360"></canvas>
+    </div>
+    <div style="font-size:12px;color:var(--text-light);text-align:center;margin-top:4px;">
+      🔴 红线=全班平均掌握度 · 🟢 绿线=目标掌握度(85%) · 8组语法考点
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 3: Top 10 Error Preview ============ -->
+<div class="page" id="page3">
+  <div class="page-title"><span class="pt-icon">⚠️</span>高频错题 Top 10</div>
+  <div class="subtitle-row">点击任意题目可跳转到对应精讲页面</div>
+  <div class="error-list">
+    <div class="error-item" onclick="goPage(7)">
+      <div class="err-rank">1</div>
+      <div class="err-info"><div class="err-q">第19题 · was/were过去时</div><div class="err-g">G19 · 过去时态</div></div>
+      <div class="err-rate">42%</div>
+      <div class="err-jump">→</div>
+    </div>
+    <div class="error-item" onclick="goPage(10)">
+      <div class="err-rank">2</div>
+      <div class="err-info"><div class="err-q">第34题 · would like句型</div><div class="err-g">G34 · 购物与点餐</div></div>
+      <div class="err-rate">38%</div>
+      <div class="err-jump">→</div>
+    </div>
+    <div class="error-item" onclick="goPage(9)">
+      <div class="err-rank">3</div>
+      <div class="err-info"><div class="err-q">第31题 · a/an/the冠词</div><div class="err-g">G31 · 冠词系统</div></div>
+      <div class="err-rate">36%</div>
+      <div class="err-jump">→</div>
+    </div>
+    <div class="error-item" onclick="goPage(12)">
+      <div class="err-rank">4</div>
+      <div class="err-info"><div class="err-q">第48题 · 五选四句际逻辑</div><div class="err-g">跨考点 · 阅读理解</div></div>
+      <div class="err-rate">35%</div>
+      <div class="err-jump">→</div>
+    </div>
+    <div class="error-item" onclick="goPage(6)">
+      <div class="err-rank">5</div>
+      <div class="err-info"><div class="err-q">第13题 · 祈使句肯定/否定</div><div class="err-g">G13 · 句型基础</div></div>
+      <div class="err-rate">33%</div>
+      <div class="err-jump">→</div>
+    </div>
+    <div class="error-item" onclick="goPage(8)">
+      <div class="err-rank">6</div>
+      <div class="err-info"><div class="err-q">第27题 · 三单变化规则</div><div class="err-g">G25 · 三单与规则</div></div>
+      <div class="err-rate">31%</div>
+      <div class="err-jump">→</div>
+    </div>
+    <div class="error-item" onclick="goPage(11)">
+      <div class="err-rank">7</div>
+      <div class="err-info"><div class="err-q">第40题 · 天气句型It's+adj</div><div class="err-g">G40 · 天气表达</div></div>
+      <div class="err-rate">30%</div>
+      <div class="err-jump">→</div>
+    </div>
+    <div class="error-item" onclick="goPage(5)">
+      <div class="err-rank">8</div>
+      <div class="err-info"><div class="err-q">第7题 · 名词所有格</div><div class="err-g">G07 · 名词与介词</div></div>
+      <div class="err-rate">28%</div>
+      <div class="err-jump">→</div>
+    </div>
+    <div class="error-item" onclick="goPage(10)">
+      <div class="err-rank">9</div>
+      <div class="err-info"><div class="err-q">第36题 · how much/many辨析</div><div class="err-g">G36 · 量词与价格</div></div>
+      <div class="err-rate">27%</div>
+      <div class="err-jump">→</div>
+    </div>
+    <div class="error-item" onclick="goPage(4)">
+      <div class="err-rank">10</div>
+      <div class="err-info"><div class="err-q">第3题 · 主格宾格物主代词</div><div class="err-g">G01-G03 · 代词系统</div></div>
+      <div class="err-rate">25%</div>
+      <div class="err-jump">→</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 4: Pronouns G01-G06 ============ -->
+<div class="page" id="page4">
+  <div class="page-title"><span class="pt-icon">📝</span>语法错题精讲 · 代词系统</div>
+  <div class="subtitle-row"><span class="info-tag red">G01-G06</span> 主格/宾格 + 物主代词 + 指示代词 + be动词 + Who疑问</div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G01-G03</span><span class="gg-title">主格·宾格·物主代词</span></div>
+    <div class="gg-body">
+      <span class="keyword">主格</span>做主语（I/you/he/she/it/we/they）<br>
+      <span class="keyword">宾格</span>做宾语（me/you/him/her/it/us/them）<br>
+      <span class="keyword">物主代词</span>表"谁的"（my/your/his/her/its/our/their）<br>
+      <div class="formula">主格 + V → 宾格放在V/介词后 → 形容词性物主 + 名词</div>
+      <div class="gg-example"><span class="ex-label">✅ 正确</span> <u>She</u> gave <u>me</u> <u>her</u> notebook. （她把她的笔记本给了我）<br>
+      <span class="ex-label">❌ 错误</span> Her gave my she notebook.（格混用）</div>
+    </div>
+  </div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G04-G05</span><span class="gg-title">指示代词 + be动词搭配</span></div>
+    <div class="gg-body">
+      <span class="keyword">this/these</span>（近）→ <span class="keyword">that/those</span>（远）<br>
+      be动词口诀：<div class="formula">I→am, you→are, he/she/it→is, 复数→are</div>
+      <div class="gg-example"><span class="ex-label">✅</span> <u>This is</u> my dictionary. / <u>These are</u> their textbooks.<br>
+      <span class="ex-label">❌</span> This are my dictionary.（单复数不匹配）</div>
+    </div>
+  </div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G06</span><span class="gg-title">Who引导的疑问句</span></div>
+    <div class="gg-body">
+      Who做主语：<div class="formula">Who + V(三单) + ...?</div>
+      Who做宾语：<div class="formula">Who + do/does + 主语 + V + ...?</div>
+      <div class="gg-example"><span class="ex-label">✅</span> <u>Who is</u> your English teacher? / <u>Who do</u> you play with after school?</div>
+    </div>
+  </div>
+  <div class="mnemonic-box">
+    <div class="mn-label">🎓 口诀</div>
+    <div class="mn-text">主格打头做主人，宾格跟在动介后；物主带名词不忘记，is/am/are看主语。</div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q4A" data-knowledge-id="G02" data-section="grammar" data-template-id="single-choice-001" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>选择正确答案：___ gave the assignment to ___ teacher?</div>
+    <div class="quiz-options">
+      <div class="quiz-option" onclick="handleChoice(this,'A',false)">A. Her / my</div>
+      <div class="quiz-option" onclick="handleChoice(this,'B',false)">B. She / my</div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',true)">C. She / her</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. Her / her</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q4B" data-knowledge-id="G05" data-section="grammar" data-template-id="fill-in-006" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="remember" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>用be动词的正确形式填空：I ______ a student. She ______ my friend. We ______ in the same class.</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第一空" id="fill4B1" onchange="handleFill(this,'am')"></div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第二空" id="fill4B2" onchange="handleFill(this,'is')"></div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第三空" id="fill4B3" onchange="handleFill(this,'are')"></div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q4C" data-knowledge-id="G06" data-section="grammar" data-template-id="single-choice-013" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="understand" data-scorable>
+    <div class="q-prompt"><span class="q-num">3</span>选择正确答案：— ______ is that girl over there? — She is my classmate, Lily.</div>
+    <div class="quiz-options">
+      <div class="quiz-option" onclick="handleChoice(this,'A',false)">A. What</div>
+      <div class="quiz-option" onclick="handleChoice(this,'B',false)">B. Where</div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',true)">C. Who</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. How</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 5: Nouns & Prepositions G07-G12 ============ -->
+<div class="page" id="page5">
+  <div class="page-title"><span class="pt-icon">📝</span>语法错题精讲 · 名词与介词</div>
+  <div class="subtitle-row"><span class="info-tag red">G07-G12</span> 所有格 + 基数词 + Where/There be + 复数 + 形容词 + 方位介词</div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G07</span><span class="gg-title">名词所有格</span></div>
+    <div class="gg-body">
+      单数加's：<div class="formula">Tom's book / my sister's notebook</div>
+      复数以s结尾加'：<div class="formula">the students' textbooks</div>
+      共同所有：Tom and Jerry's room（共有一个）<br>
+      分别所有：Tom's and Jerry's rooms（各有各的）
+    </div>
+  </div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G08-G09</span><span class="gg-title">基数词 + Where/There be</span></div>
+    <div class="gg-body">
+      Where引导地点疑问：<div class="formula">Where is/are + 主语?</div>
+      There be句型（"有"）：<div class="formula">There is + 单数/不可数 / There are + 复数</div>
+      <div class="gg-example"><span class="ex-label">✅</span> <u>Where is</u> the library? / <u>There are</u> two notebooks on the desk.<br>
+      <span class="ex-label">❌</span> Where the library is?（语序错误）</div>
+    </div>
+  </div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G10-G12</span><span class="gg-title">名词复数 + 形容词 + 方位介词</span></div>
+    <div class="gg-body">
+      规则复数：+s（books）, +es（boxes/watches）, y→ies（strawberry→strawberries）<br>
+      不规则：man→men, woman→women, child→children, foot→feet, tooth→teeth<br>
+      方位介词：<span class="keyword">in</span>（里）/<span class="keyword">on</span>（上）/<span class="keyword">under</span>（下）/<span class="keyword">behind</span>（后）/<span class="keyword">next to</span>（旁）/<span class="keyword">between</span>（之间）
+    </div>
+  </div>
+  <div class="rc-grid">
+    <div class="rc-card rc-zhug"><div class="rc-label">高频错误</div><div class="rc-content">所有格漏's</div></div>
+    <div class="rc-card rc-bin"><div class="rc-label">易混淆</div><div class="rc-content">There is/are</div></div>
+    <div class="rc-card rc-xing"><div class="rc-label">形近词</div><div class="rc-content">strawberry→strawberries</div></div>
+    <div class="rc-card rc-ming"><div class="rc-label">不规则</div><div class="rc-content">man→men</div></div>
+    <div class="rc-card rc-warn"><div class="rc-label">注意</div><div class="rc-content">between需两者</div></div>
+    <div class="rc-card rc-qita"><div class="rc-label">拓展</div><div class="rc-content">in front of 在前面</div></div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q5A" data-knowledge-id="G07" data-section="grammar" data-template-id="fill-in-001" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>填入正确形式：This is ______ (Tom and Jerry) bedroom.（他们共有一间卧室）</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="输入所有格形式" id="fill5A" onchange="handleFill(this,'Tom and Jerry\\'s')"></div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q5B" data-knowledge-id="G09" data-section="grammar" data-template-id="single-choice-014" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>选择正确答案：There ______ two notebooks and a dictionary on the desk.</div>
+    <div class="quiz-options">
+      <div class="quiz-option" onclick="handleChoice(this,'A',true)">A. are</div>
+      <div class="quiz-option" onclick="handleChoice(this,'B',false)">B. is</div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',false)">C. has</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. have</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q5C" data-knowledge-id="G10" data-section="grammar" data-template-id="blank-pick-002" data-interaction-type="blank_pick" data-action-type="select" data-cognitive-level="remember" data-scorable>
+    <div class="q-prompt"><span class="q-num">3</span>从词库中选择正确单词填空：</div>
+    <div class="blank-pick">
+      <div class="blank-chip" onclick="useChip(this,'strawberries')">strawberries</div>
+      <div class="blank-chip" onclick="useChip(this,'tomatoes')">tomatoes</div>
+      <div class="blank-chip" onclick="useChip(this,'children')">children</div>
+      <div class="blank-chip" onclick="useChip(this,'feet')">feet</div>
+    </div>
+    <div class="blank-sentence" id="bs5C">
+      1. I bought three <span class="blank-slot" id="slot5C-1" onclick="placeInSlot('5C-1')">______</span> at the market.<br>
+      2. The <span class="blank-slot" id="slot5C-2" onclick="placeInSlot('5C-2')">______</span> are playing in the park.<br>
+      3. My <span class="blank-slot" id="slot5C-3" onclick="placeInSlot('5C-3')">______</span> hurt after running.<br>
+      4. She added two <span class="blank-slot" id="slot5C-4" onclick="placeInSlot('5C-4')">______</span> to the salad.
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 6: Sentence Basics G13-G18 ============ -->
+<div class="page" id="page6">
+  <div class="page-title"><span class="pt-icon">📝</span>语法错题精讲 · 句型基础</div>
+  <div class="subtitle-row"><span class="info-tag red">G13-G18 + G55/G56</span> 祈使句 + What + like/want + 比较级最高级 + 一般现在时 + 可数不可数</div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G13</span><span class="gg-title">祈使句（肯定/否定）</span></div>
+    <div class="gg-body">
+      肯定：动词原形开头 <div class="formula">Open your textbook. / Please take notes.</div>
+      否定：Don't + 动词原形 <div class="formula">Don't be late. / Don't run in the hallway.</div>
+      <div class="gg-example"><span class="ex-label">考点</span> 祈使句主语you省略；否定加Don't不是doesn't</div>
+    </div>
+  </div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G14-G15</span><span class="gg-title">What感叹句 + like/want</span></div>
+    <div class="gg-body">
+      What引导感叹：<div class="formula">What + a/an + adj + 单数名词(+主谓)! / What + adj + 复数/不可数!</div>
+      like后接名词/动名词；want后接名词/to do<br>
+      <div class="gg-example"><span class="ex-label">✅</span> <u>What a</u> beautiful presentation! / I <u>like reading</u> articles. / She <u>wants to write</u> a composition.</div>
+    </div>
+  </div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G16-G18</span><span class="gg-title">比较级/最高级 + 一般现在时 + 可数/不可数</span></div>
+    <div class="gg-body">
+      比较级：adj+-er/more+adj + than <div class="formula">taller than / more expensive than</div>
+      最高级：the + adj+-est/most+adj <div class="formula">the tallest / the most delicious</div>
+      可数：a book/books · 不可数：water/bread/homework → 用some/any量<br>
+      一般现在时：主语三单 + V-s/es
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q6A" data-knowledge-id="G13" data-section="grammar" data-template-id="single-choice-002" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>选择正确答案：______ run in the hallway. It's dangerous.</div>
+    <div class="quiz-options">
+      <div class="quiz-option" onclick="handleChoice(this,'A',false)">A. Not</div>
+      <div class="quiz-option" onclick="handleChoice(this,'B',false)">B. Doesn't</div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',true)">C. Don't</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. No</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q6B" data-knowledge-id="G14" data-section="grammar" data-template-id="single-choice-003" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>选择正确答案：______ great project it is!</div>
+    <div class="quiz-options">
+      <div class="quiz-option" onclick="handleChoice(this,'A',false)">A. What a</div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',true)">C. What a</div>
+      <div class="quiz-option" onclick="handleChoice(this,'B',false)">B. What</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. How a</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q6C" data-knowledge-id="G16" data-section="grammar" data-template-id="fill-in-007" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">3</span>用比较级填空：Tom is ______ (tall) than Jerry. But Mike is the ______ (tall) of all.</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第一空（比较级）" id="fill6C1" onchange="handleFill(this,'taller')"></div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第二空（最高级）" id="fill6C2" onchange="handleFill(this,'tallest')"></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 7: Past Tense G19-G24 ============ -->
+<div class="page" id="page7">
+  <div class="page-title"><span class="pt-icon">📝</span>语法错题精讲 · 过去时与疑问句</div>
+  <div class="subtitle-row"><span class="info-tag red">G19-G24</span> was/were + did + 时间状语 + 六疑问词 + 选择疑问 + 交通介词</div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G19-G20</span><span class="gg-title">was/were + 一般过去时</span></div>
+    <div class="gg-body">
+      <span class="keyword">错误率42% · 全卷最高！</span><br>
+      was/were规则：<div class="formula">I/he/she/it → was | you/we/they → were</div>
+      一般过去时：动词加-ed，不规则需记 <div class="formula">play→played, go→went, have→had, do→did, spend→spent</div>
+      <div class="gg-example"><span class="ex-label">✅</span> I <u>was</u> at the museum yesterday. / She <u>spent</u> two hours on the project.<br>
+      <span class="ex-label">❌</span> I <u>were</u> at the museum.（主语I→was）</div>
+    </div>
+  </div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G21-G22</span><span class="gg-title">时间状语 + 六疑问词</span></div>
+    <div class="gg-body">
+      过去时时间标志：<span class="keyword">yesterday, last week, two days ago, in 2023</span><br>
+      六疑问词：<span class="keyword">What</span>（什么）/<span class="keyword">Where</span>（哪里）/<span class="keyword">When</span>（何时）/<span class="keyword">Who</span>（谁）/<span class="keyword">How</span>（怎样）/<span class="keyword">Why</span>（为什么）<br>
+      <div class="formula">疑问词 + did + 主语 + V原形?</div>
+      <div class="gg-example"><span class="ex-label">✅</span> <u>Where did</u> you go last weekend? / <u>What did</u> she buy at the store?</div>
+    </div>
+  </div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G23-G24</span><span class="gg-title">选择疑问句 + 交通介词</span></div>
+    <div class="gg-body">
+      选择疑问：A or B? <div class="formula">Is it a pen or a pencil?</div> 不用Yes/No回答<br>
+      交通介词：<span class="keyword">by</span> + 交通工具（by bus/by car）<br>
+      注意：<span class="keyword">on foot</span>（步行），不说 by foot<br>
+      <div class="gg-example"><span class="ex-label">✅</span> — Did you go <u>by bus</u> or <u>on foot</u>? — <u>On foot.</u></div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q7A" data-knowledge-id="G19" data-section="grammar" data-template-id="fill-in-002" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>用was/were填空：The students ______ at the museum yesterday. They ______ very excited.</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第一空" id="fill7A1" onchange="handleFill(this,'were')"></div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第二空" id="fill7A2" onchange="handleFill(this,'were')"></div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q7B" data-knowledge-id="G20" data-section="grammar" data-template-id="single-choice-015" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>选择正确答案：— What ______ you ______ last weekend? — I visited the museum.</div>
+    <div class="quiz-options">
+      <div class="quiz-option" onclick="handleChoice(this,'A',false)">A. do / do</div>
+      <div class="quiz-option" onclick="handleChoice(this,'B',false)">B. did / did</div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',true)">C. did / do</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. do / did</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q7C" data-knowledge-id="G23" data-section="grammar" data-template-id="single-choice-016" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="understand" data-scorable>
+    <div class="q-prompt"><span class="q-num">3</span>选择正确答案：— Did you go to school ______ bus? — No, I went ______ foot.</div>
+    <div class="quiz-options">
+      <div class="quiz-option" onclick="handleChoice(this,'A',true)">A. by / on</div>
+      <div class="quiz-option" onclick="handleChoice(this,'B',false)">B. on / by</div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',false)">C. by / by</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. on / on</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 8: Third Person & Rules G25-G30 ============ -->
+<div class="page" id="page8">
+  <div class="page-title"><span class="pt-icon">📝</span>语法错题精讲 · 三单与规则</div>
+  <div class="subtitle-row"><span class="info-tag red">G25-G30</span> 三单变化 + 否定疑问 + 学科短语 + 情态动词 + 不规则复数 + 介词</div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G25-G26</span><span class="gg-title">三单变化 + 否定/疑问句</span></div>
+    <div class="gg-body">
+      三单变化规则：<br>
+      ①一般加-s：likes, plays<br>
+      ②s/x/ch/sh/o结尾加-es：watches, goes, fixes<br>
+      ③辅音+y→ies：studies, flies<br>
+      否定句：<div class="formula">doesn't + V原形（三单主语）/ don't + V原形（非三单）</div>
+      疑问句：<div class="formula">Does + 三单主语 + V原形? / Do + 非三单主语 + V原形?</div>
+      <div class="gg-example"><span class="ex-label">✅</span> She <u>watches</u> TV every day. → <u>Does</u> she <u>watch</u> TV? → She <u>doesn't watch</u> TV.</div>
+    </div>
+  </div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G27-G30</span><span class="gg-title">学科短语 + 情态动词 + 不规则复数 + 介词</span></div>
+    <div class="gg-body">
+      情态动词：<span class="keyword">can/must/should/may</span> + V原形（无人称变化）<br>
+      不规则复数：foot→feet, tooth→teeth, mouse→mice, man→men, child→children<br>
+      介词搭配：<span class="keyword">good at</span>（擅长）/<span class="keyword">interested in</span>（对…感兴趣）/<span class="keyword">afraid of</span>（害怕）
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q8A" data-knowledge-id="G25" data-section="grammar" data-template-id="single-choice-004" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>选择正确形式：She ______ (study/studies/studys) for the quiz every evening.</div>
+    <div class="quiz-options">
+      <div class="quiz-option" onclick="handleChoice(this,'A',false)">A. study</div>
+      <div class="quiz-option" onclick="handleChoice(this,'B',true)">B. studies</div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',false)">C. studys</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. studying</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q8B" data-knowledge-id="G28" data-section="grammar" data-template-id="single-choice-005" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>选择正确答案：Can she ______ the presentation tomorrow?</div>
+    <div class="quiz-options">
+      <div class="quiz-option" onclick="handleChoice(this,'A',false)">A. give</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',true)">D. give</div>
+      <div class="quiz-option" onclick="handleChoice(this,'B',false)">B. gives</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. to give</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q8C" data-knowledge-id="G29" data-section="grammar" data-template-id="fill-in-008" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="remember" data-scorable>
+    <div class="q-prompt"><span class="q-num">3</span>写出下列单词的复数形式：foot→______ / child→______ / tooth→______ / man→______</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="foot的复数" id="fill8C1" onchange="handleFill(this,'feet')"></div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="child的复数" id="fill8C2" onchange="handleFill(this,'children')"></div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="tooth的复数" id="fill8C3" onchange="handleFill(this,'teeth')"></div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="man的复数" id="fill8C4" onchange="handleFill(this,'men')"></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 9: Articles & Pronouns G31-G33 ============ -->
+<div class="page" id="page9">
+  <div class="page-title"><span class="pt-icon">📝</span>语法错题精讲 · 冠词与代词</div>
+  <div class="subtitle-row"><span class="info-tag red">G31-G33</span> a/an/the + 量词 + some/any</div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G31</span><span class="gg-title">冠词 a / an / the</span></div>
+    <div class="gg-body">
+      <span class="keyword">a</span> + 辅音音素开头：a book, a university（u发/juː/）<br>
+      <span class="keyword">an</span> + 元音音素开头：an apple, an hour（h不发音）<br>
+      <span class="keyword">the</span> = 特指（双方都知道的、前文提过的）<br>
+      <div class="formula">a/an = 泛指（首次提到） → the = 特指（再次提到）</div>
+      <div class="gg-example"><span class="ex-label">✅</span> I read <u>an</u> article yesterday. <u>The</u> article was about a survey.<br>
+      <span class="ex-label">❌</span> I read <u>a</u> article.（article以元音开头→an article）</div>
+    </div>
+  </div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G32-G33</span><span class="gg-title">量词 + some/any</span></div>
+    <div class="gg-body">
+      可数：a few（几个, +复数）/ few（很少, 几乎没有）<br>
+      不可数：a little（一点）/ little（很少, 几乎没有）<br>
+      some/any规则：<div class="formula">some → 肯定句 / any → 否定句&疑问句</div>
+      注意：Would you like <span class="keyword">some</span>...?（委婉请求用some）<br>
+      <div class="gg-example"><span class="ex-label">✅</span> There is <u>some</u> milk in the fridge. / Is there <u>any</u> milk? / There isn't <u>any</u> milk.</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q9A" data-knowledge-id="G31" data-section="grammar" data-template-id="single-choice-006" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>选择正确答案：I found ___ umbrella in ___ hallway. ___ umbrella is red.</div>
+    <div class="quiz-options">
+      <div class="quiz-option" onclick="handleChoice(this,'A',true)">A. an / the / The</div>
+      <div class="quiz-option" onclick="handleChoice(this,'B',false)">B. a / the / A</div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',false)">C. an / a / The</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. a / a / A</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q9B" data-knowledge-id="G33" data-section="grammar" data-template-id="fill-in-003" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>用some或any填空：Would you like ______ pancakes for breakfast?</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="输入some或any" id="fill9B" onchange="handleFill(this,'some')"></div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q9C" data-knowledge-id="G32" data-section="grammar" data-template-id="FILL-IN-CONVERT" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">3</span>选择正确答案：There is ______ milk in the fridge, but there isn't ______ juice.</div>
+    <input type="text" class="fill-input" placeholder="输入答案..." onkeyup="checkFill(this)" style="padding:8px 12px;border:2px solid var(--brand);border-radius:8px;font-size:16px;width:80%;margin:8px 0">
+  </div>
+</div>
+
+<!-- ============ PAGE 10: Shopping & Appearance G34-G39 ============ -->
+<div class="page" id="page10">
+  <div class="page-title"><span class="pt-icon">📝</span>语法错题精讲 · 购物与外貌</div>
+  <div class="subtitle-row"><span class="info-tag red">G34-G39</span> would like + how much/many + 价格 + be vs have + why/because + 描述形容词</div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G34-G36</span><span class="gg-title">would like + how much/many + 价格表达</span></div>
+    <div class="gg-body">
+      would like = 想要（委婉）<div class="formula">主语 + would like + 名词/to do</div>
+      how much + 不可数名词（多少钱/多少）<br>
+      how many + 可数复数（多少）<br>
+      价格表达：<div class="formula">It's + 价格 + for + 数量</div>
+      <div class="gg-example"><span class="ex-label">✅</span> I <u>would like</u> a pancake. / <u>How much</u> is the dumpling? / It's 5 yuan <u>for</u> one.<br>
+      <span class="ex-label">❌</span> I want a pancake, please.（不够委婉→用would like）</div>
+    </div>
+  </div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G37-G39</span><span class="gg-title">be vs have + why/because + 描述形容词</span></div>
+    <div class="gg-body">
+      外貌描述：be + 形容词（tall/short/curly）vs have/has + 名词（hair/eyes）<br>
+      <div class="formula">She is tall. / She has curly hair. ✅ | She is curly hair. ❌</div>
+      why提问 → because回答<div class="formula">— Why do you like it? — Because it's delicious.</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q10A" data-knowledge-id="G37" data-section="grammar" data-template-id="FILL-IN-CONVERT" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>选择正确答案：My friend ______ tall and ______ curly hair.</div>
+    <input type="text" class="fill-input" placeholder="输入答案..." onkeyup="checkFill(this)" style="padding:8px 12px;border:2px solid var(--brand);border-radius:8px;font-size:16px;width:80%;margin:8px 0">
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q10B" data-knowledge-id="G36" data-section="grammar" data-template-id="FILL-IN-CONVERT" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>选择正确答案：— ______ apples do you need? — I need five.</div>
+    <input type="text" class="fill-input" placeholder="输入答案..." onkeyup="checkFill(this)" style="padding:8px 12px;border:2px solid var(--brand);border-radius:8px;font-size:16px;width:80%;margin:8px 0">
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q10C" data-knowledge-id="G38" data-section="grammar" data-template-id="fill-in-009" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">3</span>用because回答：— Why do you like English? — ______ it is interesting.</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="输入答案" id="fill10C" onchange="handleFill(this,'Because')"></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 11: Weather & Politeness G40-G42 ============ -->
+<div class="page" id="page11">
+  <div class="page-title"><span class="pt-icon">📝</span>语法错题精讲 · 天气与礼貌</div>
+  <div class="subtitle-row"><span class="info-tag red">G40-G42</span> 天气句型 + Could/Would礼貌请求 + It指代</div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G40</span><span class="gg-title">天气表达句型</span></div>
+    <div class="gg-body">
+      <span class="keyword">错误率30% · 高频错题第7名</span><br>
+      天气句型：<div class="formula">It's + adj (描述天气) / It + V (天气动作)</div>
+      <div class="gg-example"><span class="ex-label">✅</span> <u>It's</u> sunny today. / <u>It's</u> cloudy and windy.<br>
+      <span class="ex-label">❌</span> <u>The weather is</u> sun. / <u>Today is</u> rain.（中英结构混淆）</div>
+      常见天气词：sunny ☀️ / cloudy ☁️ / rainy 🌧️ / windy 💨 / snowy ❄️ / foggy 🌫️
+    </div>
+  </div>
+  <div class="grammar-group">
+    <div class="gg-header"><span class="gg-tag">G41-G42</span><span class="gg-title">Could/Would礼貌请求 + It指代</span></div>
+    <div class="gg-body">
+      Could委婉请求：<div class="formula">Could you + V原形? / Could I + V原形?</div>
+      Would委婉提议：<div class="formula">Would you like + 名词/to do?</div>
+      It指代：天气、时间、距离等无生命事物用It做主语<br>
+      <div class="gg-example"><span class="ex-label">✅</span> <u>Could</u> you help me with the survey? / <u>Would</u> you like some coffee?<br>
+      <u>It's</u> five kilometers from here.（指距离）</div>
+    </div>
+  </div>
+  <div class="mnemonic-box">
+    <div class="mn-label">🎓 口诀</div>
+    <div class="mn-text">天气用It不用The，Could Would最礼貌；It指时间与天气，还能表示远和近。</div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q11A" data-knowledge-id="G40" data-section="grammar" data-template-id="FILL-IN-CONVERT" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>选择正确答案：— How's the weather? — ______ sunny.</div>
+    <input type="text" class="fill-input" placeholder="输入答案..." onkeyup="checkFill(this)" style="padding:8px 12px;border:2px solid var(--brand);border-radius:8px;font-size:16px;width:80%;margin:8px 0">
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q11B" data-knowledge-id="G41" data-section="grammar" data-template-id="FILL-IN-CONVERT" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>选择正确答案：— ______ you help me with the survey? — Of course!</div>
+    <input type="text" class="fill-input" placeholder="输入答案..." onkeyup="checkFill(this)" style="padding:8px 12px;border:2px solid var(--brand);border-radius:8px;font-size:16px;width:80%;margin:8px 0">
+  </div>
+</div>
+
+<!-- ============ PAGE 12: Cross-Grammar Diagnosis 1 ============ -->
+<div class="page" id="page12">
+  <div class="page-title"><span class="pt-icon">🔧</span>综合错题精讲 · 跨考点诊断（一）</div>
+  <div class="subtitle-row">跨考点综合题56详解 · G01-G42口诀速查</div>
+  <div class="card card-elevated">
+    <div class="card-title"><span class="icon">🔍</span>诊断题 #48 · 五选四句际逻辑（错误率35%）</div>
+    <div class="reading-passage">
+      <strong>Our Group Survey</strong><br>
+      Last week, our class did a survey about favorite foods. ① ___ First, we made a list of questions. Then we asked our classmates. ② ___ After that, we counted the answers. ③ ___ The results were very interesting! ④ ___ Next time, we want to survey about hobbies.<br>
+      A. Finally, we wrote a report about the results.<br>
+      B. We worked in groups of four.<br>
+      C. Most students like dumplings best.<br>
+      D. It was a great experience!
+    </div>
+    <div class="tip-box">
+      <strong>解题思路：</strong>① 前句"did a survey"后应说明方式→选B（分组工作）<br>
+      ② 前句"asked classmates"后应是数据结果→选C（大多数喜欢饺子）<br>
+      ③ 前句"counted answers"后接总结→选A（写报告）<br>
+      ④ 结尾感受→选D（很棒的体验）<br>
+      <strong>正确答案：①B ②C ③A ④D</strong>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📋</span>句际逻辑四大线索</div>
+    <div class="rc-grid">
+      <div class="rc-card rc-zhug"><div class="rc-label">线索1</div><div class="rc-content">代词指代</div></div>
+      <div class="rc-card rc-bin"><div class="rc-label">线索2</div><div class="rc-content">转折but/however</div></div>
+      <div class="rc-card rc-xing"><div class="rc-label">线索3</div><div class="rc-content">因果because/so</div></div>
+      <div class="rc-card rc-ming"><div class="rc-label">线索4</div><div class="rc-content">并列and/also</div></div>
+      <div class="rc-card rc-warn"><div class="rc-label">注意</div><div class="rc-content">顺序词first/then/finally</div></div>
+      <div class="rc-card rc-qita"><div class="rc-label">技巧</div><div class="rc-content">首尾句定框架</div></div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q12A" data-knowledge-id="G42" data-section="reading" data-template-id="ordering-001" data-interaction-type="ordering" data-action-type="drag" data-cognitive-level="analyze" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>将以下句子按正确顺序排列（拖拽或点击编号）：</div>
+    <div class="order-container" id="orderContainer12A">
+      <div class="order-item" draggable="true" onclick="cycleOrder(this)"><span class="order-num">1</span> Finally, we presented our project to the class.</div>
+      <div class="order-item" draggable="true" onclick="cycleOrder(this)"><span class="order-num">2</span> First, our teacher gave us an assignment.</div>
+      <div class="order-item" draggable="true" onclick="cycleOrder(this)"><span class="order-num">3</span> Then, we worked in groups to research.</div>
+      <div class="order-item" draggable="true" onclick="cycleOrder(this)"><span class="order-num">4</span> After that, we wrote a composition about it.</div>
+    </div>
+    <button onclick="checkOrder12A()" style="margin-top:10px;padding:6px 16px;background:var(--brand);color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;">检查顺序</button>
+  </div>
+</div>
+
+<!-- ============ PAGE 13: G01-G42 Quick Reference ============ -->
+<div class="page" id="page13">
+  <div class="page-title"><span class="pt-icon">⚡</span>G01-G42 口诀速查表</div>
+  <div class="subtitle-row">一页速览全部42考点核心公式</div>
+  <div class="quick-ref">
+    <div class="qr-item"><div class="qr-g">G01-G03 代词</div><div class="qr-formula">主格做主语, 宾格跟动介, 物主+名词</div></div>
+    <div class="qr-item"><div class="qr-g">G04-G05 指示+be</div><div class="qr-formula">this/these近, that/those远; I→am you→are he/she/it→is</div></div>
+    <div class="qr-item"><div class="qr-g">G06 Who</div><div class="qr-formula">Who is...? / Who do/does...V?</div></div>
+    <div class="qr-item"><div class="qr-g">G07 所有格</div><div class="qr-formula">单数+'s, 复数s+', 共同's</div></div>
+    <div class="qr-item"><div class="qr-g">G08-G09 Where/There be</div><div class="qr-formula">Where is/are...? There is单/There are复</div></div>
+    <div class="qr-item"><div class="qr-g">G10-G12 复数/形/方位</div><div class="qr-formula">+s/+es/y→ies; in/on/under/behind/next to</div></div>
+    <div class="qr-item"><div class="qr-g">G13 祈使句</div><div class="qr-formula">V原形开头; 否定Don't+V原形</div></div>
+    <div class="qr-item"><div class="qr-g">G14-G15 What/like/want</div><div class="qr-formula">What a/an+adj+n!; like+n/V-ing; want+n/to do</div></div>
+    <div class="qr-item"><div class="qr-g">G16-G18 比较/现在时/可数</div><div class="qr-formula">-er than / the -est; 三单V-s/es; some/any</div></div>
+    <div class="qr-item"><div class="qr-g">G19-G20 过去时</div><div class="qr-formula">was/were; V-ed/不规则; did+主+V原?</div></div>
+    <div class="qr-item"><div class="qr-g">G21-G22 时间/疑问词</div><div class="qr-formula">yesterday/last/ago; What/Where/When/Who/How/Why</div></div>
+    <div class="qr-item"><div class="qr-g">G23-G24 选择疑问/交通</div><div class="qr-formula">A or B?; by bus/on foot</div></div>
+    <div class="qr-item"><div class="qr-g">G25-G26 三单/否定</div><div class="qr-formula">-s/-es/y→ies; doesn't+V原 / don't+V原</div></div>
+    <div class="qr-item"><div class="qr-g">G27-G30 学科/情态/复数/介词</div><div class="qr-formula">can/must/should+V原; foot→feet man→men</div></div>
+    <div class="qr-item"><div class="qr-g">G31-G33 冠词/量词</div><div class="qr-formula">a辅音/an元音/the特指; a few/few vs a little/little</div></div>
+    <div class="qr-item"><div class="qr-g">G34-G36 would like/much/many</div><div class="qr-formula">would like+n/to do; How much不可数/How many可数复</div></div>
+    <div class="qr-item"><div class="qr-g">G37-G39 be vs have/why</div><div class="qr-formula">be+adj; have/has+n; Why→Because</div></div>
+    <div class="qr-item"><div class="qr-g">G40-G42 天气/礼貌/It</div><div class="qr-formula">It's+天气adj; Could/Would+V原; It指天气/时间/距离</div></div>
+  </div>
+  <div class="mnemonic-box">
+    <div class="mn-label">🎓 总口诀</div>
+    <div class="mn-text">代词看格、名词看数、动词看时态、冠词看音素、介词看搭配、句型看结构——六大系统，42个考点，一张表全收！</div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q13A" data-knowledge-id="G-ALL" data-section="grammar" data-template-id="fill-in-016" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="remember" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>用some或any填空：</div>
+    <div class="fill-row">1. There is ______ milk in the fridge.</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第一空" id="fill13A1" onchange="handleFill(this,'some')"></div>
+    <div class="fill-row">2. Is there ______ juice left?</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第二空" id="fill13A2" onchange="handleFill(this,'any')"></div>
+    <div class="fill-row">3. Would you like ______ pancakes?</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第三空" id="fill13A3" onchange="handleFill(this,'some')"></div>
+    <div class="fill-row">4. I don't have ______ homework today.</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第四空" id="fill13A4" onchange="handleFill(this,'any')"></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 14: Error Comparison Table ============ -->
+<div class="page" id="page14">
+  <div class="page-title"><span class="pt-icon">🔍</span>易错点对照表</div>
+  <div class="subtitle-row">常见错误 vs 正确形式 · 一目了然</div>
+  <div class="card">
+    <table class="diag-table">
+      <thead><tr><th>考点</th><th>❌ 常见错误</th><th>✅ 正确形式</th><th>错误原因</th></tr></thead>
+      <tbody>
+        <tr><td>G02</td><td>Her gave my the book.</td><td>She gave me the book.</td><td>主格宾格混用</td></tr>
+        <tr><td>G07</td><td>Toms book</td><td>Tom's book</td><td>漏所有格's</td></tr>
+        <tr><td>G09</td><td>There has a book</td><td>There is a book</td><td>There be≠have</td></tr>
+        <tr><td>G10</td><td>three strawberry</td><td>three strawberries</td><td>复数漏-es</td></tr>
+        <tr><td>G13</td><td>Don't running</td><td>Don't run</td><td>祈使否定用V原</td></tr>
+        <tr><td>G14</td><td>What beautiful girl!</td><td>What a beautiful girl!</td><td>单数可数漏a</td></tr>
+        <tr><td>G19</td><td>I were happy</td><td>I was happy</td><td>I→was不是were</td></tr>
+        <tr><td>G20</td><td>Did she went?</td><td>Did she go?</td><td>did后用V原</td></tr>
+        <tr><td>G25</td><td>She studys</td><td>She studies</td><td>y前辅音→ies</td></tr>
+        <tr><td>G28</td><td>can plays</td><td>can play</td><td>情态+V原</td></tr>
+        <tr><td>G31</td><td>a hour</td><td>an hour</td><td>h不发音→元音</td></tr>
+        <tr><td>G33</td><td>any pancakes?</td><td>some pancakes? (Would like)</td><td>委婉请求用some</td></tr>
+        <tr><td>G37</td><td>She is curly hair</td><td>She has curly hair</td><td>have/has表拥有</td></tr>
+        <tr><td>G40</td><td>The weather is sun</td><td>It's sunny</td><td>天气用It's+adj</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q14A" data-knowledge-id="G-ALL" data-section="grammar" data-template-id="linking-003" data-interaction-type="linking" data-action-type="match" data-cognitive-level="remember" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>易错点配对：将错误形式与正确形式匹配</div>
+    <div class="link-container">
+      <div class="link-col">
+        <div class="col-title">❌ 错误</div>
+        <div class="link-item" onclick="selectLink(this,'left','I were')" data-val="I were">I were happy</div>
+        <div class="link-item" onclick="selectLink(this,'left','She studys')" data-val="She studys">She studys</div>
+        <div class="link-item" onclick="selectLink(this,'left','a hour')" data-val="a hour">a hour</div>
+        <div class="link-item" onclick="selectLink(this,'left','Did she went')" data-val="Did she went">Did she went</div>
+      </div>
+      <div class="link-col">
+        <div class="col-title">✅ 正确</div>
+        <div class="link-item" onclick="selectLink(this,'right','I was')" data-val="I was">I was happy</div>
+        <div class="link-item" onclick="selectLink(this,'right','She studies')" data-val="She studies">She studies</div>
+        <div class="link-item" onclick="selectLink(this,'right','an hour')" data-val="an hour">an hour</div>
+        <div class="link-item" onclick="selectLink(this,'right','Did she go')" data-val="Did she go">Did she go</div>
+      </div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q14B" data-knowledge-id="G19" data-section="grammar" data-template-id="fill-in-014" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>用动词过去式填空：Yesterday, I ______ (go) to the museum and ______ (see) a special exhibition. I ______ (spend) two hours there.</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第一空" id="fill14B1" onchange="handleFill(this,'went')"></div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第二空" id="fill14B2" onchange="handleFill(this,'saw')"></div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第三空" id="fill14B3" onchange="handleFill(this,'spent')"></div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q14C" data-knowledge-id="G13" data-section="grammar" data-template-id="ordering-003" data-interaction-type="ordering" data-action-type="drag" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">3</span>将以下单词排列成正确的祈使句（点击编号调整顺序）：</div>
+    <div class="order-container" id="orderContainer14C">
+      <div class="order-item" draggable="true" onclick="cycleOrder3(this)"><span class="order-num">1</span> your</div>
+      <div class="order-item" draggable="true" onclick="cycleOrder3(this)"><span class="order-num">2</span> Open</div>
+      <div class="order-item" draggable="true" onclick="cycleOrder3(this)"><span class="order-num">3</span> page 15</div>
+      <div class="order-item" draggable="true" onclick="cycleOrder3(this)"><span class="order-num">4</span> textbook to</div>
+    </div>
+    <button onclick="checkOrder14C()" style="margin-top:10px;padding:6px 16px;background:var(--brand);color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;">检查顺序</button>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q14D" data-knowledge-id="G40" data-section="grammar" data-template-id="blank-pick-005" data-interaction-type="blank_pick" data-action-type="select" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">4</span>从词库中选择正确的天气词填空：</div>
+    <div class="blank-pick">
+      <div class="blank-chip" onclick="useChip(this,'sunny')">sunny</div>
+      <div class="blank-chip" onclick="useChip(this,'cloudy')">cloudy</div>
+      <div class="blank-chip" onclick="useChip(this,'rainy')">rainy</div>
+      <div class="blank-chip" onclick="useChip(this,'windy')">windy</div>
+    </div>
+    <div class="blank-sentence" id="bs14D">
+      1. It's ______ today. Let's go to the park! <span class="blank-slot" id="slot14D-1" onclick="placeInSlot('14D-1')">______</span><br>
+      2. Take an umbrella! It's ______ outside. <span class="blank-slot" id="slot14D-2" onclick="placeInSlot('14D-2')">______</span><br>
+      3. It's very ______ . Hold your hat! <span class="blank-slot" id="slot14D-3" onclick="placeInSlot('14D-3')">______</span><br>
+      4. The sky is gray. It's ______ today. <span class="blank-slot" id="slot14D-4" onclick="placeInSlot('14D-4')">______</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 15: Diagnostic Conclusion ============ -->
+<div class="page" id="page15">
+  <div class="page-title"><span class="pt-icon">📊</span>诊断结论 · 分级清单</div>
+  <div class="subtitle-row">按掌握度分A/B/C/D四级 · 精准定位薄弱环节</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🅰️</span>A级 · 已掌握（掌握度≥85%）</div>
+    <div style="font-size:14px;color:var(--success);">G04指示代词 · G05 be动词 · G08 Where · G14 What感叹 · G24 交通介词 · G42 It指代</div>
+    <div style="font-size:12px;color:var(--text-light);margin-top:4px;">✅ 这些考点已基本掌握，保持练习即可。</div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🅱️</span>B级 · 基本掌握（70%-84%）</div>
+    <div style="font-size:14px;color:var(--warning);">G01-G03代词 · G06 Who · G10-G12名词方位 · G15 like/want · G21-G22时间疑问 · G25-G26三单 · G34 would like · G38 why/because</div>
+    <div style="font-size:12px;color:var(--text-light);margin-top:4px;">⚠️ 需要巩固练习，注意细节差异。</div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🅲️</span>C级 · 薄弱（55%-69%）</div>
+    <div style="font-size:14px;color:var(--error);">G07所有格 · G09 There be · G13祈使句 · G16-G18比较级/可数 · G27-G30情态/不规则 · G31冠词 · G36 how much/many · G37 be vs have · G39描述形容词 · G40天气</div>
+    <div style="font-size:12px;color:var(--text-light);margin-top:4px;">📚 重点关注，需专项练习+错题回顾。</div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🅳️</span>D级 · 急需加强（<55%）</div>
+    <div style="font-size:14px;color:#9C27B0;">G19-G20过去时(was/were+did) · G32-G33量词some/any · G35-G36价格表达</div>
+    <div style="font-size:12px;color:var(--text-light);margin-top:4px;">🚨 最高优先级！每天练10题，下阶段重点突破。</div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q15A" data-knowledge-id="G-ALL" data-section="grammar" data-template-id="fill-in-015" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>用正确的冠词(a/an/the/零冠词)填空：</div>
+    <div class="fill-row">1. I bought ______ umbrella from ______ store.</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第一空" id="fill15A1" onchange="handleFill(this,'an')"></div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第二空" id="fill15A2" onchange="handleFill(this,'the')"></div>
+    <div class="fill-row">2. She is ______ honest student. She always tells ______ truth.</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第三空" id="fill15A3" onchange="handleFill(this,'an')"></div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第四空" id="fill15A4" onchange="handleFill(this,'the')"></div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q15B" data-knowledge-id="G34" data-section="grammar" data-template-id="ordering-004" data-interaction-type="ordering" data-action-type="drag" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>将以下单词排列成正确的句子（点击编号调整顺序）：</div>
+    <div class="order-container" id="orderContainer15B">
+      <div class="order-item" draggable="true" onclick="cycleOrder4(this)"><span class="order-num">1</span> would</div>
+      <div class="order-item" draggable="true" onclick="cycleOrder4(this)"><span class="order-num">2</span> I</div>
+      <div class="order-item" draggable="true" onclick="cycleOrder4(this)"><span class="order-num">3</span> some pancakes</div>
+      <div class="order-item" draggable="true" onclick="cycleOrder4(this)"><span class="order-num">4</span> like</div>
+    </div>
+    <button onclick="checkOrder15B()" style="margin-top:10px;padding:6px 16px;background:var(--brand);color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;">检查顺序</button>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q15C" data-knowledge-id="G09" data-section="grammar" data-template-id="blank-pick-006" data-interaction-type="blank_pick" data-action-type="select" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">3</span>选择正确单词填入空白处：</div>
+    <div class="blank-pick">
+      <div class="blank-chip" onclick="useChip(this,'is')">is</div>
+      <div class="blank-chip" onclick="useChip(this,'are')">are</div>
+      <div class="blank-chip" onclick="useChip(this,'has')">has</div>
+      <div class="blank-chip" onclick="useChip(this,'have')">have</div>
+    </div>
+    <div class="blank-sentence" id="bs15C">
+      1. There ______ a notebook on the desk. <span class="blank-slot" id="slot15C-1" onclick="placeInSlot('15C-1')">______</span><br>
+      2. There ______ three students in the hallway. <span class="blank-slot" id="slot15C-2" onclick="placeInSlot('15C-2')">______</span><br>
+      3. She ______ curly hair. <span class="blank-slot" id="slot15C-3" onclick="placeInSlot('15C-3')">______</span><br>
+      4. They ______ two textbooks. <span class="blank-slot" id="slot15C-4" onclick="placeInSlot('15C-4')">______</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 16: Vocab L1-L6 ============ -->
+<div class="page" id="page16">
+  <div class="page-title"><span class="pt-icon">📚</span>词汇错题精讲 · L1-L6组</div>
+  <div class="subtitle-row">七上基础词 · 代词性物主 + 指示 + 学习用品 + 水果食物</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📖</span>高频错词</div>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="vc-en">theirs</div><div class="vc-pos">pron.</div><div class="vc-cn">他们的（东西）</div></div>
+      <div class="vocab-card"><div class="vc-en">yours</div><div class="vc-pos">pron.</div><div class="vc-cn">你的（东西）</div></div>
+      <div class="vocab-card"><div class="vc-en">these</div><div class="vc-pos">pron.</div><div class="vc-cn">这些</div></div>
+      <div class="vocab-card"><div class="vc-en">those</div><div class="vc-pos">pron.</div><div class="vc-cn">那些</div></div>
+      <div class="vocab-card"><div class="vc-en">dictionary</div><div class="vc-pos">n.</div><div class="vc-cn">词典</div></div>
+      <div class="vocab-card"><div class="vc-en">schoolbag</div><div class="vc-pos">n.</div><div class="vc-cn">书包</div></div>
+      <div class="vocab-card"><div class="vc-en">strawberry</div><div class="vc-pos">n.</div><div class="vc-cn">草莓 → strawberries</div></div>
+      <div class="vocab-card"><div class="vc-en">tomato</div><div class="vc-pos">n.</div><div class="vc-cn">西红柿 → tomatoes</div></div>
+      <div class="vocab-card"><div class="vc-en">notebook</div><div class="vc-pos">n.</div><div class="vc-cn">笔记本</div></div>
+      <div class="vocab-card"><div class="vc-en">textbook</div><div class="vc-pos">n.</div><div class="vc-cn">课本</div></div>
+    </div>
+  </div>
+  <div class="warn-box"><strong>易错提醒：</strong>theirs/yours是名词性物主代词，后面不加名词！对比：their books = theirs · your book = yours</div>
+  <div class="tip-box"><strong>记忆技巧：</strong>形容词性物主代词（my/your/his/her/our/their）= 必须带名词；名词性物主代词（mine/yours/his/hers/ours/theirs）= 自带名词功能，后面不加名词。<br>对比记忆：This is <u>my</u> notebook. = This notebook is <u>mine</u>.</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🔄</span>代词转换表</div>
+    <table class="diag-table">
+      <thead><tr><th>主格</th><th>宾格</th><th>形容词性物主</th><th>名词性物主</th></tr></thead>
+      <tbody>
+        <tr><td>I</td><td>me</td><td>my</td><td>mine</td></tr>
+        <tr><td>you</td><td>you</td><td>your</td><td>yours</td></tr>
+        <tr><td>he</td><td>him</td><td>his</td><td>his</td></tr>
+        <tr><td>she</td><td>her</td><td>her</td><td>hers</td></tr>
+        <tr><td>it</td><td>it</td><td>its</td><td>its</td></tr>
+        <tr><td>we</td><td>us</td><td>our</td><td>ours</td></tr>
+        <tr><td>they</td><td>them</td><td>their</td><td>theirs</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q16A" data-knowledge-id="V-L1" data-section="vocabulary" data-template-id="linking-001" data-interaction-type="linking" data-action-type="match" data-cognitive-level="remember" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>词汇配对：点击左右两侧进行匹配</div>
+    <div class="link-container">
+      <div class="link-col">
+        <div class="col-title">English</div>
+        <div class="link-item" onclick="selectLink(this,'left','strawberry')" data-val="strawberry">strawberry</div>
+        <div class="link-item" onclick="selectLink(this,'left','dictionary')" data-val="dictionary">dictionary</div>
+        <div class="link-item" onclick="selectLink(this,'left','theirs')" data-val="theirs">theirs</div>
+        <div class="link-item" onclick="selectLink(this,'left','schoolbag')" data-val="schoolbag">schoolbag</div>
+      </div>
+      <div class="link-col">
+        <div class="col-title">中文</div>
+        <div class="link-item" onclick="selectLink(this,'right','词典')" data-val="词典">词典</div>
+        <div class="link-item" onclick="selectLink(this,'right','草莓')" data-val="草莓">草莓</div>
+        <div class="link-item" onclick="selectLink(this,'right','书包')" data-val="书包">书包</div>
+        <div class="link-item" onclick="selectLink(this,'right','他们的')" data-val="他们的">他们的</div>
+      </div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q16B" data-knowledge-id="V-L1" data-section="vocabulary" data-template-id="fill-in-010" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="remember" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>用正确的代词填空：This is not my book. It is ______ (她的). And that one is ______ (他们的).</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第一空" id="fill16B1" onchange="handleFill(this,'hers')"></div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第二空" id="fill16B2" onchange="handleFill(this,'theirs')"></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 17: Vocab L8-L10 ============ -->
+<div class="page" id="page17">
+  <div class="page-title"><span class="pt-icon">📚</span>词汇错题精讲 · L8-L10组</div>
+  <div class="subtitle-row">七下基础词 · 过去式 + 描述词 + 活动</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📖</span>高频错词</div>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="vc-en">spent</div><div class="vc-pos">v. (spend的过去式)</div><div class="vc-cn">花费（时间/金钱）</div></div>
+      <div class="vocab-card"><div class="vc-en">delicious</div><div class="vc-pos">adj.</div><div class="vc-cn">美味的</div></div>
+      <div class="vocab-card"><div class="vc-en">expensive</div><div class="vc-pos">adj.</div><div class="vc-cn">昂贵的</div></div>
+      <div class="vocab-card"><div class="vc-en">museum</div><div class="vc-pos">n.</div><div class="vc-cn">博物馆</div></div>
+      <div class="vocab-card"><div class="vc-en">activity</div><div class="vc-pos">n.</div><div class="vc-cn">活动</div></div>
+      <div class="vocab-card"><div class="vc-en">special</div><div class="vc-pos">adj.</div><div class="vc-cn">特别的</div></div>
+      <div class="vocab-card"><div class="vc-en">favorite</div><div class="vc-pos">adj.</div><div class="vc-cn">最喜爱的</div></div>
+      <div class="vocab-card"><div class="vc-en">assignment</div><div class="vc-pos">n.</div><div class="vc-cn">作业/任务</div></div>
+    </div>
+  </div>
+  <div class="warn-box"><strong>易错提醒：</strong>spent是不规则过去式（spend→spent），不是spended！常考搭配：spend time on sth / spend money on sth</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📋</span>常见不规则动词过去式速查</div>
+    <div class="three-col">
+      <div style="font-size:13px;line-height:1.8;padding:8px;background:var(--bg-start);border-radius:6px;"><strong>go→went</strong><br>have→had<br>do→did<br>make→made<br>see→saw</div>
+      <div style="font-size:13px;line-height:1.8;padding:8px;background:var(--bg-start);border-radius:6px;"><strong>come→came</strong><br>take→took<br>give→gave<br>get→got<br>buy→bought</div>
+      <div style="font-size:13px;line-height:1.8;padding:8px;background:var(--bg-start);border-radius:6px;"><strong>spend→spent</strong><br>build→built<br>think→thought<br>write→wrote<br>read→read</div>
+    </div>
+  </div>
+  <div class="tip-box"><strong>记忆技巧：</strong>delicious和expensive是高频描述词。delicious = 美味的（形容食物），expensive = 昂贵的（形容价格）。反义词：cheap = 便宜的。special = 特别的，favorite = 最喜欢的。</div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q17A" data-knowledge-id="V-L8" data-section="vocabulary" data-template-id="single-choice-009" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="remember" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>选择正确形式：She ______ two hours on her homework yesterday.</div>
+    <div class="quiz-options">
+      <div class="quiz-option" onclick="handleChoice(this,'A',false)">A. spent</div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',true)">C. spent</div>
+      <div class="quiz-option" onclick="handleChoice(this,'B',false)">B. spend</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. spending</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q17B" data-knowledge-id="V-L9" data-section="vocabulary" data-template-id="blank-pick-003" data-interaction-type="blank_pick" data-action-type="select" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>从词库中选择正确的形容词填空：</div>
+    <div class="blank-pick">
+      <div class="blank-chip" onclick="useChip(this,'delicious')">delicious</div>
+      <div class="blank-chip" onclick="useChip(this,'expensive')">expensive</div>
+      <div class="blank-chip" onclick="useChip(this,'special')">special</div>
+      <div class="blank-chip" onclick="useChip(this,'favorite')">favorite</div>
+    </div>
+    <div class="blank-sentence" id="bs17B">
+      1. The pancakes at that restaurant are very <span class="blank-slot" id="slot17B-1" onclick="placeInSlot('17B-1')">______</span>.<br>
+      2. This watch is too <span class="blank-slot" id="slot17B-2" onclick="placeInSlot('17B-2')">______</span>. I can't buy it.<br>
+      3. Today is a <span class="blank-slot" id="slot17B-3" onclick="placeInSlot('17B-3')">______</span> day for me because it's my birthday.<br>
+      4. English is my <span class="blank-slot" id="slot17B-4" onclick="placeInSlot('17B-4')">______</span> subject.
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 18: Vocab L11-L12 ============ -->
+<div class="page" id="page18">
+  <div class="page-title"><span class="pt-icon">📚</span>词汇错题精讲 · L11-L12组</div>
+  <div class="subtitle-row">班规饮食词 · 校规 + 食物</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📖</span>高频错词</div>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="vc-en">uniform</div><div class="vc-pos">n.</div><div class="vc-cn">校服</div></div>
+      <div class="vocab-card"><div class="vc-en">hallway</div><div class="vc-pos">n.</div><div class="vc-cn">走廊</div></div>
+      <div class="vocab-card"><div class="vc-en">yogurt</div><div class="vc-pos">n.</div><div class="vc-cn">酸奶（不可数）</div></div>
+      <div class="vocab-card"><div class="vc-en">mutton</div><div class="vc-pos">n.</div><div class="vc-cn">羊肉（不可数）</div></div>
+      <div class="vocab-card"><div class="vc-en">cabbage</div><div class="vc-pos">n.</div><div class="vc-cn">卷心菜</div></div>
+      <div class="vocab-card"><div class="vc-en">pancake</div><div class="vc-pos">n.</div><div class="vc-cn">煎饼</div></div>
+      <div class="vocab-card"><div class="vc-en">dumpling</div><div class="vc-pos">n.</div><div class="vc-cn">饺子</div></div>
+    </div>
+  </div>
+  <div class="warn-box"><strong>不可数名词注意：</strong>yogurt和mutton是不可数名词，不能加s，不能加a！对比：a pancake ✅ / a yogurt ❌</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📊</span>可数 vs 不可数 速查表</div>
+    <table class="diag-table">
+      <thead><tr><th>可数名词 (+a/+s)</th><th>不可数名词 (不加a/s)</th></tr></thead>
+      <tbody>
+        <tr><td>pancake - pancakes</td><td>yogurt（酸奶）</td></tr>
+        <tr><td>dumpling - dumplings</td><td>mutton（羊肉）</td></tr>
+        <tr><td>cabbage - cabbages</td><td>homework（作业）</td></tr>
+        <tr><td>uniform - uniforms</td><td>bread（面包）</td></tr>
+        <tr><td>notebook - notebooks</td><td>water（水）</td></tr>
+        <tr><td>strawberry - strawberries</td><td>milk（牛奶）</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tip-box"><strong>班规常用句型：</strong>Don't run in the hallway.（走廊里不要跑）/ Wear your uniform.（穿校服）/ Don't eat in class.（课上不要吃东西）/ Keep your notebook clean.（保持笔记本整洁）</div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q18A" data-knowledge-id="V-L12" data-section="vocabulary" data-template-id="blank-pick-001" data-interaction-type="blank_pick" data-action-type="select" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>从词库中选择正确单词填入空白处：</div>
+    <div class="blank-pick">
+      <div class="blank-chip" onclick="useChip(this,'uniform')">uniform</div>
+      <div class="blank-chip" onclick="useChip(this,'yogurt')">yogurt</div>
+      <div class="blank-chip" onclick="useChip(this,'dumplings')">dumplings</div>
+      <div class="blank-chip" onclick="useChip(this,'hallway')">hallway</div>
+    </div>
+    <div class="blank-sentence" id="bs18A">
+      1. Don't run in the <span class="blank-slot" id="slot18A-1" onclick="placeInSlot('18A-1')">______</span>.<br>
+      2. Students must wear the school <span class="blank-slot" id="slot18A-2" onclick="placeInSlot('18A-2')">______</span>.<br>
+      3. I had some <span class="blank-slot" id="slot18A-3" onclick="placeInSlot('18A-3')">______</span> for breakfast.
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 19: Vocab L13-L15 ============ -->
+<div class="page" id="page19">
+  <div class="page-title"><span class="pt-icon">📚</span>词汇错题精讲 · L13-L15组</div>
+  <div class="subtitle-row">购物外貌天气词 · 食物 + 外貌 + 天气 + 假期</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📖</span>高频错词</div>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="vc-en">pancake</div><div class="vc-pos">n.</div><div class="vc-cn">煎饼</div></div>
+      <div class="vocab-card"><div class="vc-en">dumpling</div><div class="vc-pos">n.</div><div class="vc-cn">饺子</div></div>
+      <div class="vocab-card"><div class="vc-en">height</div><div class="vc-pos">n.</div><div class="vc-cn">身高</div></div>
+      <div class="vocab-card"><div class="vc-en">curly</div><div class="vc-pos">adj.</div><div class="vc-cn">卷曲的</div></div>
+      <div class="vocab-card"><div class="vc-en">sunny</div><div class="vc-pos">adj.</div><div class="vc-cn">晴朗的</div></div>
+      <div class="vocab-card"><div class="vc-en">cloudy</div><div class="vc-pos">adj.</div><div class="vc-cn">多云的</div></div>
+      <div class="vocab-card"><div class="vc-en">vacation</div><div class="vc-pos">n.</div><div class="vc-cn">假期</div></div>
+      <div class="vocab-card"><div class="vc-en">interview</div><div class="vc-pos">n./v.</div><div class="vc-cn">采访/面试</div></div>
+      <div class="vocab-card"><div class="vc-en">survey</div><div class="vc-pos">n./v.</div><div class="vc-cn">调查</div></div>
+    </div>
+  </div>
+  <div class="tip-box"><strong>记忆技巧：</strong>天气词 = 名词 + y → sunny(cloudy/windy/rainy/snowy)；外貌词：curly(卷) vs straight(直) · tall(高) vs short(矮) · thin(瘦) vs heavy(胖)</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🌡️</span>天气词汇拓展表</div>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="vc-en">sunny</div><div class="vc-cn">☀️ 晴朗的</div></div>
+      <div class="vocab-card"><div class="vc-en">cloudy</div><div class="vc-cn">☁️ 多云的</div></div>
+      <div class="vocab-card"><div class="vc-en">rainy</div><div class="vc-cn">🌧️ 下雨的</div></div>
+      <div class="vocab-card"><div class="vc-en">windy</div><div class="vc-cn">💨 有风的</div></div>
+      <div class="vocab-card"><div class="vc-en">snowy</div><div class="vc-cn">❄️ 下雪的</div></div>
+      <div class="vocab-card"><div class="vc-en">foggy</div><div class="vc-cn">🌫️ 有雾的</div></div>
+      <div class="vocab-card"><div class="vc-en">hot</div><div class="vc-cn">🥵 热的</div></div>
+      <div class="vocab-card"><div class="vc-en">cold</div><div class="vc-cn">🥶 冷的</div></div>
+      <div class="vocab-card"><div class="vc-en">warm</div><div class="vc-cn">😊 温暖的</div></div>
+      <div class="vocab-card"><div class="vc-en">cool</div><div class="vc-cn">😎 凉爽的</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">👤</span>外貌描述词速查</div>
+    <div class="three-col">
+      <div style="font-size:13px;line-height:1.8;padding:8px;background:var(--bg-start);border-radius:6px;"><strong>身高</strong><br>tall / short<br>medium height</div>
+      <div style="font-size:13px;line-height:1.8;padding:8px;background:var(--bg-start);border-radius:6px;"><strong>体型</strong><br>thin / heavy<br>medium build</div>
+      <div style="font-size:13px;line-height:1.8;padding:8px;background:var(--bg-start);border-radius:6px;"><strong>头发</strong><br>curly / straight<br>long / short hair</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q19A" data-knowledge-id="V-L14" data-section="vocabulary" data-template-id="fill-in-004" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>根据中文提示填空：She has ______ (卷曲的) hair and she is of medium ______ (身高).</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第一空" id="fill19A1" onchange="handleFill(this,'curly')"></div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="第二空" id="fill19A2" onchange="handleFill(this,'height')"></div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q19B" data-knowledge-id="V-L15" data-section="vocabulary" data-template-id="single-choice-020" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="remember" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>选择正确答案：It was ______ and warm during our ______ last summer.</div>
+    <div class="quiz-options">
+      <div class="quiz-option" onclick="handleChoice(this,'A',true)">A. sunny / vacation</div>
+      <div class="quiz-option" onclick="handleChoice(this,'B',false)">B. sun / vacation</div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',false)">C. sunny / vacancy</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. cloud / vacation</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 20: Test Vocab L16 ============ -->
+<div class="page" id="page20">
+  <div class="page-title"><span class="pt-icon">📚</span>L16测试词汇 · 20词专讲</div>
+  <div class="subtitle-row">本课测试语境核心词 · 测试/作业/文章/标记</div>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title"><span class="icon">📝</span>测试与作业</div>
+      <div class="vocab-grid" style="grid-template-columns:1fr;">
+        <div class="vocab-card"><div class="vc-en">test</div><div class="vc-cn">测试</div></div>
+        <div class="vocab-card"><div class="vc-en">quiz</div><div class="vc-cn">小测验</div></div>
+        <div class="vocab-card"><div class="vc-en">homework</div><div class="vc-cn">家庭作业（不可数）</div></div>
+        <div class="vocab-card"><div class="vc-en">assignment</div><div class="vc-cn">任务/作业</div></div>
+        <div class="vocab-card"><div class="vc-en">notebook</div><div class="vc-cn">笔记本</div></div>
+        <div class="vocab-card"><div class="vc-en">textbook</div><div class="vc-cn">课本</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">📄</span>文章与展示</div>
+      <div class="vocab-grid" style="grid-template-columns:1fr;">
+        <div class="vocab-card"><div class="vc-en">presentation</div><div class="vc-cn">展示/演讲</div></div>
+        <div class="vocab-card"><div class="vc-en">project</div><div class="vc-cn">项目</div></div>
+        <div class="vocab-card"><div class="vc-en">survey</div><div class="vc-cn">调查</div></div>
+        <div class="vocab-card"><div class="vc-en">interview</div><div class="vc-cn">采访</div></div>
+        <div class="vocab-card"><div class="vc-en">article</div><div class="vc-cn">文章</div></div>
+        <div class="vocab-card"><div class="vc-en">composition</div><div class="vc-cn">作文</div></div>
+        <div class="vocab-card"><div class="vc-en">passage</div><div class="vc-cn">段落/文章</div></div>
+        <div class="vocab-card"><div class="vc-en">paragraph</div><div class="vc-cn">段落</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">✏️</span>标记与格式</div>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="vc-en">heading</div><div class="vc-cn">标题</div></div>
+      <div class="vocab-card"><div class="vc-en">title</div><div class="vc-cn">题目/标题</div></div>
+      <div class="vocab-card"><div class="vc-en">underline</div><div class="vc-cn">下划线(v.)</div></div>
+      <div class="vocab-card"><div class="vc-en">circle</div><div class="vc-cn">圈出(v.)</div></div>
+      <div class="vocab-card"><div class="vc-en">blank</div><div class="vc-cn">空白处</div></div>
+      <div class="vocab-card"><div class="vc-en">bracket</div><div class="vc-cn">括号</div></div>
+    </div>
+  </div>
+  <div class="mnemonic-box">
+    <div class="mn-label">🎓 分类记忆</div>
+    <div class="mn-text">考试有test和quiz，作业assignment+homework；文章article和composition，段落paragraph在passage；标记underline画下线，circle圈出blank填空，bracket括号要分清！</div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q20A" data-knowledge-id="V-L16" data-section="vocabulary" data-template-id="FILL-IN" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="remember" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>选择正确答案：Please write your answer in the ______.</div>
+    <input type="text" class="fill-input" placeholder="输入答案..." onkeyup="checkFill(this)" data-correct="">
+</div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',false)">C. underline</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',true)">D. blank</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q20B" data-knowledge-id="V-L16" data-section="vocabulary" data-template-id="blank-pick-004" data-interaction-type="blank_pick" data-action-type="select" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>从词库中选择正确单词填空：</div>
+    <div class="blank-pick">
+      <div class="blank-chip" onclick="useChip(this,'composition')">composition</div>
+      <div class="blank-chip" onclick="useChip(this,'presentation')">presentation</div>
+      <div class="blank-chip" onclick="useChip(this,'assignment')">assignment</div>
+      <div class="blank-chip" onclick="useChip(this,'bracket')">bracket</div>
+    </div>
+    <div class="blank-sentence" id="bs20B">
+      1. Our teacher gave us a writing ______ today. <span class="blank-slot" id="slot20B-1" onclick="placeInSlot('20B-1')">______</span><br>
+      2. Please put your answer in the ______. <span class="blank-slot" id="slot20B-2" onclick="placeInSlot('20B-2')">______</span><br>
+      3. Tomorrow I plan to give a ______ about my survey. <span class="blank-slot" id="slot20B-3" onclick="placeInSlot('20B-3')">______</span><br>
+      4. I wrote a short ______ about my weekend. <span class="blank-slot" id="slot20B-4" onclick="placeInSlot('20B-4')">______</span>
+    </div>
+  </div>
+
+
+<!-- ============ PAGE 21: Vocab Linking Game ============ -->
+<div class="page" id="page21">
+  <div class="page-title"><span class="pt-icon">🎮</span>词汇连线复习游戏</div>
+  <div class="subtitle-row">L1-L16跨课词汇配对挑战 · 点击左右两侧进行匹配</div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q21A" data-knowledge-id="V-ALL" data-section="vocabulary" data-template-id="linking-002" data-interaction-type="linking" data-action-type="match" data-cognitive-level="remember" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>将英语单词与中文意思配对（8组词）</div>
+    <div class="link-container">
+      <div class="link-col">
+        <div class="col-title">English</div>
+        <div class="link-item" onclick="selectLink(this,'left','presentation')" data-val="presentation">presentation</div>
+        <div class="link-item" onclick="selectLink(this,'left','composition')" data-val="composition">composition</div>
+        <div class="link-item" onclick="selectLink(this,'left','survey')" data-val="survey">survey</div>
+        <div class="link-item" onclick="selectLink(this,'left','bracket')" data-val="bracket">bracket</div>
+        <div class="link-item" onclick="selectLink(this,'left','assignment')" data-val="assignment">assignment</div>
+        <div class="link-item" onclick="selectLink(this,'left','delicious')" data-val="delicious">delicious</div>
+        <div class="link-item" onclick="selectLink(this,'left','curly')" data-val="curly">curly</div>
+        <div class="link-item" onclick="selectLink(this,'left','vacation')" data-val="vacation">vacation</div>
+      </div>
+      <div class="link-col">
+        <div class="col-title">中文</div>
+        <div class="link-item" onclick="selectLink(this,'right','展示')" data-val="展示">展示/演讲</div>
+        <div class="link-item" onclick="selectLink(this,'right','作文')" data-val="作文">作文</div>
+        <div class="link-item" onclick="selectLink(this,'right','调查')" data-val="调查">调查</div>
+        <div class="link-item" onclick="selectLink(this,'right','括号')" data-val="括号">括号</div>
+        <div class="link-item" onclick="selectLink(this,'right','任务')" data-val="任务">任务/作业</div>
+        <div class="link-item" onclick="selectLink(this,'right','美味的')" data-val="美味的">美味的</div>
+        <div class="link-item" onclick="selectLink(this,'right','卷曲的')" data-val="卷曲的">卷曲的</div>
+        <div class="link-item" onclick="selectLink(this,'right','假期')" data-val="假期">假期</div>
+      </div>
+    </div>
+  </div>
+  <div id="linkResult21A" style="margin-top:10px;font-size:14px;font-weight:600;color:var(--brand-dark);"></div>
+</div>
+
+<!-- ============ PAGE 22: Reading A ============ -->
+<div class="page" id="page22">
+  <div class="page-title"><span class="pt-icon">📖</span>阅读A篇讲评 · 应用文</div>
+  <div class="subtitle-row"><span class="info-tag gold">得分率55%</span> 应用文信息定位法 · Test Preparation Guide</div>
+  <div class="reading-passage">
+    <strong>Test Preparation Guide</strong><br>
+    Welcome to our test preparation guide! Here are some tips for your English test:<br>
+    1. <u>Review your notebook</u> every day after class.<br>
+    2. <u>Read the textbook</u> passages and underline key sentences.<br>
+    3. <u>Write a short composition</u> about what you learned each week.<br>
+    4. <u>Circle</u> new words in the article and look them up.<br>
+    5. <u>Fill in the blanks</u> in brackets with correct answers.<br>
+    6. Do a <u>survey</u> of your classmates' study habits.<br>
+    Test time: 60 minutes. Bring your <u>assignment</u> book and a pen.
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🎯</span>应用文信息定位法</div>
+    <div style="font-size:14px;color:var(--text-secondary);line-height:1.8;">
+      <strong>三步定位法：</strong><br>
+      ① <strong>读题干</strong> → 圈出关键词（时间/地点/人物/数字）<br>
+      ② <strong>扫原文</strong> → 用关键词回原文定位对应段落<br>
+      ③ <strong>比选项</strong> → 排除与原文不符的选项
+    </div>
+  </div>
+  <div class="rc-grid">
+    <div class="rc-card rc-zhug"><div class="rc-label">题型<div class="rc-content">细节理解题</div></div>
+    <div class="rc-card rc-bin"><div class="rc-label">技巧</div><div class="rc-content">关键词回文定位</div></div>
+    <div class="rc-card rc-xing"><div class="rc-label">易错</div><div class="rc-content">混淆相似信息</div></div>
+    <div class="rc-card rc-ming"><div class="rc-label">注意</div><div class="rc-content">数字和时间要精确</div></div>
+    <div class="rc-card rc-warn"><div class="rc-label">陷阱</div><div class="rc-content">偷换主语</div></div>
+    <div class="rc-card rc-qita"><div class="rc-label">提示</div><div class="rc-content">应用文看标题和格式</div></div>
+  </div>
+  <div class=<div class="quiz-q" data-interaction-item data-question-id="Q22A" data-knowledge-id="R-A" data-section="reading" data-template-id="FILL-IN" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="understand" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>根据Test Preparation Guide，测试时间是多少分钟？</div>
+    <input type="text" class="fill-input" placeholder="输入答案..." onkeyup="checkFill(this)" data-correct="">
+  <div class="fill-row"><input type="text" class="fill-input" placeholder="输入答案" id="fill22B" onchange="handleFill(this,'assignment book and a pen')"></div>
+  </div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',true)">C. 60 minutes</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. 90 minutes</div>
+    </div>
+  </div>
+  "quiz-q" data-interaction-item data-question-id="Q22B" data-knowledge-id="R-A" data-section="reading" data-template-id="fill-in-011" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="understand" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>根据文段，学生应该带什么来参加测试？</div>
+
+  </div>
+
+
+<!-- ============ PAGE 23: Reading B ============ -->
+<div class="page" id="page23">
+  <div class="page-title"><span class="pt-icon">📖</span>阅读B篇讲评 · 记叙文</div>
+  <div class="subtitle-row"><span class="info-tag gold">得分率48%</span> 记叙文细节+词义题 · The Big Presentation</div>
+  <div class="reading-passage">
+    <strong>The Big Presentation</strong><br>
+    Last Friday, our class had a special activity. Each group had to give a <u>presentation</u> about their survey. My group was very nervous. We <u>spent</u> three days preparing for it.<br>
+    First, we wrote an <u>article</u> about our survey results. Then we made slides. Finally, it was our turn. I walked to the front of the classroom. My hands were shaking, but I took a deep breath and started.<br>
+    "Good morning, everyone. Today we want to share our <u>project</u> with you..."<br>
+    After the presentation, our teacher said, "Well done!" We were so happy. It was a <u>special</u> day for all of us.
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🔍</span>记叙文解题技巧</div>
+    <div style="font-size:14px;line-height:1.8;">
+      <strong>1. 细节题：</strong>找时间/地点/人物/事件 → 回文定位<br>
+      <strong>2. 词义题：</strong>看上下文语境 → 猜测词义 → 代入验证<br>
+      <strong>3. 推断题：</strong>找线索 → 合理推断（不选过度推断的选项）<br>
+      <strong>4. 主旨题：</strong>首段+末段 → 归纳大意
+    </div>
+  </div>
+  <div class="tip-box"><strong>词义题技巧：</strong>"presentation"出现在"give a presentation about their survey"中，结合上下文"走到讲台前""开始讲话"→ 可推断为"展示/演讲"。</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📖</span>记叙文阅读策略详解</div>
+    <div style="font-size:14px;line-height:1.8;">
+      <strong>记叙文六要素：</strong>时间(when) + 地点(where) + 人物(who) + 起因(why) + 经过(how) + 结果(result)<br>
+      <strong>阅读步骤：</strong><br>
+      1️⃣ 快速通读 → 把握六要素，了解大意<br>
+      2️⃣ 细读题目 → 带着问题回文定位<br>
+      3️⃣ 标记关键句 → 用下划线标记与题目相关的句子<br>
+      4️⃣ 推断词义 → 根据上下文语境猜测生词<br>
+      5️⃣ 检查答案 → 代回原文验证逻辑<br>
+    </div>
+  </div>
+  <div class="rc-grid">
+    <div class="rc-card rc-zhug"><div class="rc-label">细节题<div class="rc-content">回文定位法</div></div>
+    <div class="rc-card rc-bin"><div class="rc-label">词义题</div><div class="rc-content">上下文推断</div></div>
+    <div class="rc-card rc-xing"><div class="rc-label">推断题</div><div class="rc-content">合理推断不过度</div></div>
+    <div class="rc-card rc-ming"><div class="rc-label">主旨题</div><div class="rc-content">首段末段归纳</div></div>
+    <div class="rc-card rc-warn"><div class="rc-label">情感题</div><div class="rc-content">找形容词和动词</div></div>
+    <div class="rc-card rc-qita"><div class="rc-label">排序题</div><div class="rc-content">找时间标志词</div></div>
+  </div>
+  <div class="quiz-q" data-<div class="quiz-q" data-interaction-item data-question-id="Q23A" data-knowledge-id="R-B" data-section="reading" data-template-id="FILL-IN" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="understand" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>文中"presentation"最可能的意思是？</div>
+    <input type="text" class="fill-input" placeholder="输入答案..." onkeyup="checkFill(this)" data-correct="">
+</div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',false)">C. 考试</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. 文章</div>
+    </div>
+  </div>
+  intera<div class="quiz-q" data-interaction-item data-question-id="Q23B" data-knowledge-id="R-B" data-section="reading" data-template-id="FILL-IN" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="analyze" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>How did the narrator feel before the presentation?</div>
+    <input type="text" class="fill-input" placeholder="输入答案..." onkeyup="checkFill(this)" data-correct="">
+</div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',false)">C. Angry and upset</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. Bored and tired</div>
+    </div>
+  
+24: Five-Choice-Four ============ -->
+<div class="page" id="page24">
+  <div class="page-title"><span class="pt-icon">📖</span>五选四讲评 · 句际逻辑</div>
+  <div class="subtitle-row"><span class="info-tag gold">得分率40%</span> 全卷最低题型！句际逻辑：代词指代/转折/因果/并列</div>
+  <div class="card card-elevated">
+    <div class="card-title"><span class="icon">🧩</span>解题四步法</div>
+    <div style="font-size:14px;line-height:1.8;">
+      <strong>Step 1：</strong>读首句 → 确定文章主题和时态<br>
+      <strong>Step 2：</strong>读空格前后句 → 找逻辑线索（代词/连词/顺序词）<br>
+      <strong>Step 3：</strong>对比选项 → 排除不匹配的<br>
+      <strong>Step 4：</strong>代入验证 → 通读全文检查流畅度
+    </div>
+  </div>
+  <div class="rc-grid">
+    <div class="rc-card rc-zhug"><div class="rc-label">线索1<div class="rc-content">代词指代：he/she/it/they → 前文找对应名词</div></div>
+    <div class="rc-card rc-bin"><div class="rc-label">线索2</div><div class="rc-content">转折：but/however → 前后意思相反</div></div>
+    <div class="rc-card rc-xing"><div class="rc-label">线索3</div><div class="rc-content">因果：because/so → 前因后果或前果后因</div></div>
+    <div class="rc-card rc-ming"><div class="rc-label">线索4</div><div class="rc-content">并列：and/also → 前后内容一致</div></div>
+    <div class="rc-card rc-warn"><div class="rc-label">顺序词</div><div class="rc-content">first/then/after that/finally</div></div>
+    <div class="rc-card rc-qita"><div class="rc-label">技巧</div><div class="rc-content">排除法 + 代入法</div></div>
+  </div>
+  <div class="warn-box"><strong>全班共性错误：</strong>40%的同学只看空格前一句，忽略后一句线索。记住：空格前后都要看！</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🧩</span>五选四实战演练</div>
+    <div class="reading-passage">
+      <strong>My First Interview</strong><br>
+      Last month, our teacher asked us to do an interview. ① ___ I was very nervous because I had never talked to a stranger before.<br>
+      ② ___ She was very kind and answered all my questions. I asked her about her job and her daily routine.<br>
+      ③ ___ I wrote an article about the interview and gave it to my teacher.<br>
+      ④ ___ Now I am not afraid of interviews anymore!<br>
+      A. The woman I interviewed was a doctor.<br>
+      B. It was a great experience for me.<br>
+      C. After the interview, I felt very happy.<br>
+      D. I decided to interview a woman in our neighborhood.
+    </div>
+    <div class="tip-box"><strong>解题线索：</strong>① 前句"do an interview"→ 决定采访谁→选D ② 前句"nervous"→ 采访对象很友善→选A ③ 前句"answered questions"→ 采访后感受→选C ④ 结尾感受→选B<br><strong>正确答案：①D ②A ③C ④B</strong></div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-quest<div class="quiz-q" data-interaction-item data-question-id="Q24A" data-knowledge-id="R-C" data-section="reading" data-template-id="FILL-IN" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="analyze" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>空格后出现"but"，空格处的句子应该与后句是什么关系？</div>
+    <input type="text" class="fill-input" placeholder="输入答案..." onkeyup="checkFill(this)" data-correct="">
+  <div class="fill-row"><input type="text" class="fill-input" placeholder="输入答案" id="fill24B" onchange="handleFill(this,'原因')"></div>
+  </div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',false)">C. 并列关系</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. 递进关系</div>
+    </div>
+  </div>
+  ion-id="Q24B" data-knowledge-id="R-C" data-section="reading" data-template-id="fill-in-012" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="analyze" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>在五选四中，如果空格后出现"because"，空格处应该写什么？</div>
+
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q24C" data-knowledge-id="R-C" data-section="reading" data-template-id="ordering-002" data-interaction-type="ordering" data-action-type="drag" data-cognitive-level="analyze" data-scorable>
+    <div class="q-prompt"><span class="q-num">3</span>将五选四解题步骤按正确顺序排列（点击编号调整顺序）：</div>
+    <div class="order-container" id="orderContainer24C">
+      <div class="order-item" draggable="true" onclick="cycleOrder2(this)"><span class="order-num">1</span> 读首句确定主题和时态</div>
+      <div class="order-item" draggable="true" onclick="cycleOrder2(this)"><span class="order-num">2</span> 代入验证通读全文</div>
+      <div class="order-item" draggable="true" onclick="cycleOrder2(this)"><span class="order-num">3</span> 读空格前后句找逻辑线索</div>
+      <div class="order-item" draggable="true" onclick="cycleOrder2(this)"><span class="order-num">4</span> 对比选项排除不匹配的</div>
+    </div>
+    <button onclick="checkOrder24C()" style="margin-top:10px;padding:6px 16px;background:var(--brand);color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;">检查顺序</button>
+  </div>
+
+
+<!-- ============ PAGE 25: Short Answer & Translation ============ -->
+<div class="page" id="page25">
+  <div class="page-title"><span class="pt-icon">✏️</span>简答翻译讲评</div>
+  <div class="subtitle-row"><span class="info-tag gold">得分率58%</span> 疑问词选择 + 完整作答规范 + 英译中技巧</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📝</span>简答题常见问题</div>
+    <div style="font-size:14px;line-height:1.8;">
+      <strong>问题1：</strong>疑问词选错 → 先判断问什么（人/地/时/原因/方式）<br>
+      <strong>问题2：</strong>回答不完整 → Yes/No + 补充说明<br>
+      <strong>问题3：</strong>时态不一致 → 问句用什么时态，答句用同样时态<br>
+      <strong>问题4：</strong>拼写错误 → 检查动词形式和名词复数
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🔤</span>英译中技巧</div>
+    <div style="font-size:14px;line-height:1.8;">
+      <strong>三步翻译法：</strong><br>
+      ① 找主谓宾 → 确定句子骨架<br>
+      ② 翻修饰语 → 介词短语、形容词等<br>
+      ③ 调语序 → 按中文习惯排列<br>
+      <div class="gg-example"><span class="ex-label">例</span> She spent two hours on her composition.<br>
+      → 主谓宾：She(S) spent(V) two hours(O)<br>
+      → 修饰：on her composition（在她的作文上）<br>
+      → 中文：她花了两个小时在她的作文上。</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="Q25A" data-knowledge-id="R-D" data-section="reading" data-template-id="fill-in-005" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">1</span>将下列句子翻译成中文：He did a survey of his classmates' favorite foods.</div>
+    <div class="fill-row"><input type="text" class="fill-input" placeholder="输入中文翻译" id="fill25A" onchange="handleFill(this,'他调查了同学们最喜欢的食物')"></div>
+  </div>
+  <div class="quiz-q" data-interaction-item data-question-id="<div class="quiz-q" data-interaction-item data-question-id="Q25B" data-knowledge-id="R-D" data-section="reading" data-template-id="FILL-IN" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">2</span>选择正确的疑问词填空：— ______ did you spend on your composition? — Two hours.</div>
+    <input type="text" class="fill-input" placeholder="输入答案..." onkeyup="checkFill(this)" data-correct="">
+  <div class="fill-row"><input type="text" class="fill-input" placeholder="输入英文翻译" id="fill25C" onchange="handleFill(this,'She spent three hours writing that composition')"></div>
+  </div>
+      <div class="quiz-option" onclick="handleChoice(this,'C',true)">C. How much time</div>
+      <div class="quiz-option" onclick="handleChoice(this,'D',false)">D. Why</div>
+    </div>
+  </div>
+  Q25C" data-knowledge-id="R-D" data-section="reading" data-template-id="fill-in-013" data-interaction-type="fill_in" data-action-type="input" data-cognitive-level="apply" data-scorable>
+    <div class="q-prompt"><span class="q-num">3</span>将下列中文翻译成英文：她花了三个小时写那篇作文。
+
+  </div>
+
+
+<!-- ============ PAGE 26: Writing Sample ============ -->
+<div class="page" id="page26">
+  <div class="page-title"><span class="pt-icon">✍️</span>写作范文展示</div>
+  <div class="subtitle-row"><span class="info-tag gold">得分率52%</span> 高分范文 + 评分拆解</div>
+  <div class="writing-score">
+    <div class="score-item"><div class="score-label">内容<div class="score-val">9<div class="score-max">/10</div></div>
+    <div class="score-item"><div class="score-label">语言</div><div class="score-val">8</div><div class="score-max">/10</div></div>
+    <div class="score-item"><div class="score-label">结构</div><div class="score-val">4</div><div class="score-max">/5</div></div>
+    <div class="score-item"><div class="score-label">总分</div><div class="score-val" style="color:var(--success)">21</div><div class="score-max">/25</div></div>
+  </div>
+  <div class="reading-passage">
+    <strong>高分范文 · My English Learning Journey</strong><br>
+    English is my favorite subject. I started learning English three years ago. At first, it was difficult for me. <u>But I didn't give up.</u>（转折连词）<br><br>
+    Every day, I read my textbook and wrote new words in my notebook. I also did a survey of my classmates' English habits. <u>The results were very interesting.</u>（细节支撑） Most students like reading articles, but some prefer writing compositions.<br><br>
+    Now, I can give a presentation in English. <u>I think English opens a new world for me.</u>（总结升华） I want to write more articles and do more projects in the future.
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🏆</span>评分拆解</div>
+    <div style="font-size:14px;line-height:1.8;">
+      <strong>内容 9/10：</strong>涵盖学习经历+方法+成果+展望，内容充实<br>
+      <strong>语言 8/10：</strong>用词准确，有survey/composition/presentation等高级词汇；扣分：个别句子偏短<br>
+      <strong>结构 4/5：</strong>三段式（引入→主体→总结），有转折连词和过渡；扣分：结尾段可更丰富
+    </div>
+  </div>
+  <div class="tip-box"><strong>写作提分要点：</strong>①用高级词汇（survey/composition/presentation）②三段式结构 ③加转折/因果连词 ④首尾呼应</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">❌</span>常见写作错误</div>
+    <table class="diag-table">
+      <thead><tr><th>错误类型</th><th>❌ 错误示例</th><th>✅ 正确写法</th></tr></thead>
+      <tbody>
+        <tr><td>时态不一致</td><td>I go to the park and played football.</td><td>I went to the park and played football.</td></tr>
+        <tr><td>三单错误</td><td>She like reading articles.</td><td>She likes reading articles.</td></tr>
+        <tr><td>be/have混用</td><td>She is curly hair.</td><td>She has curly hair.</td></tr>
+        <tr><td>冠词遗漏</td><td>I read article yesterday.</td><td>I read an article yesterday.</td></tr>
+        <tr><td>拼写错误</td><td>I spended two hours.</td><td>I spent two hours.</td></tr>
+        <tr><td>中式英语</td><td>I very like English.</td><td>I like English very much.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mnemonic-box">
+    <div class="mn-label">🎓 写作检查清单</div>
+    <div class="mn-text">一查时态、二查三单、三查be/have、四查冠词、五查拼写、六查中式英语——六查到位，写作不丢分！</div>
+  </div>
+</div>
+
+<!-- ============ PAGE 27: Reading Strategy Card ============ -->
+<div class="page" id="page27">
+  <div class="page-title"><span class="pt-icon">🗂️</span>阅读解题五步法速查卡</div>
+  <div class="subtitle-row">一页掌握阅读理解通用策略</div>
+  <div class="card card-elevated">
+    <div style="font-size:15px;line-height:2;">
+      <strong>Step 1 · 通读全文（1分钟）</strong> 📖<br>
+      快速浏览，了解大意。不要在某一个词上停留太久。<br><br>
+      <strong>Step 2 · 读题干（30秒）</strong> 🎯<br>
+      划关键词：人名、地名、时间、数字、特殊名词。<br><br>
+      <strong>Step 3 · 回文定位（1分钟）</strong> 🔍<br>
+      用关键词回原文找对应段落，用下划线标记。<br><br>
+      <strong>Step 4 · 对比选项（1分钟）</strong> ⚖️<br>
+      排除法：①与原文不符 ②过度推断 ③偷换概念 ④无中生有<br><br>
+      <strong>Step 5 · 检查验证（30秒）</strong> ✅<br>
+      把选的答案代回原文，确认逻辑通顺。
+    </div>
+  </div>
+  <div class="rc-grid">
+    <div class="rc-card rc-zhug"><div class="rc-label">细节题</div><div class="rc-content">关键词定位法</div></div>
+    <div class="rc-card rc-bin"><div class="rc-label">词义题</div><div class="rc-content">上下文推断</div></div>
+    <div class="rc-card rc-xing"><div class="rc-label">推断题</div><div class="rc-content">找线索合理推断</div></div>
+    <div class="rc-card rc-ming"><div class="rc-label">主旨题</div><div class="rc-content">首段+末段归纳</div></div>
+    <div class="rc-card rc-warn"><div class="rc-label">五选四</div><div class="rc-content">逻辑线索法</div></div>
+    <div class="rc-card rc-qita"><div class="rc-label">翻译题</div><div class="rc-content">主谓宾+调语序</div></div>
+  </div>
+</div>
+
+<!-- ============ PAGE 28: Weak Points List ============ -->
+<div class="page" id="page28">
+  <div class="page-title"><span class="pt-icon">📋</span>薄弱考点清单</div>
+  <div class="subtitle-row">按诊断等级ABCD列出待巩固考点 · 制定个人提升计划</div>
+  <div class="card">
+    <div class="card-title"><span class="icon">🚨</span>D级 · 急需加强（本周必须突破）</div>
+    <div style="font-size:14px;line-height:1.8;">
+      <strong>G19-G20 过去时</strong> · was/were选择 + did疑问句 + 不规则动词<br>
+      → 练习任务：每天10道过去时选择题 + 5个不规则动词默写<br>
+      <strong>G32-G33 量词some/any</strong> · 肯定/否定/疑问句中some/any的选择<br>
+      → 练习任务：完成some/any专项练习20题<br>
+      <strong>G35-G36 价格表达</strong> · How much is...? / It's...for...<br>
+      → 练习任务：编写5组购物对话
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📚</span>C级 · 薄弱（两周内巩固）</div>
+    <div style="font-size:14px;line-height:1.8;">
+      <strong>G07 名词所有格</strong> · 's vs s' vs 共同所有<br>
+      <strong>G09 There be</strong> · is vs are（就近原则）<br>
+      <strong>G13 祈使句</strong> · Don't + V原形<br>
+      <strong>G31 冠词</strong> · a vs an（看音素不是字母）<br>
+      <strong>G37 be vs have</strong> · be+形容词 vs have+名词<br>
+      <strong>G40 天气句型</strong> · It's + adj
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">✏️</span>B级 · 巩固（持续练习）</div>
+    <div style="font-size:14px;line-height:1.8;">
+      <strong>G01-G03 代词</strong> · 主格/宾格/物主反复练<br>
+      <strong>G25-G26 三单</strong> · 否定疑问句型转换<br>
+      <strong>G34 would like</strong> · 委婉表达法
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 29: Core Formulas Overview ============ -->
+<div class="page" id="page29">
+  <div class="page-title"><span class="pt-icon">🔑</span>核心口诀总览</div>
+  <div class="subtitle-row">G01-G42关键口诀一页速览 · 背熟这些，考试不慌</div>
+  <div class="mnemonic-box">
+    <div class="mn-label">🎓 代词系统 G01-G06</div>
+    <div class="mn-text">主格做主语，宾格跟动介，物主带名词，be动词看主语，Who来提问。</div>
+  </div>
+  <div class="mnemonic-box">
+    <div class="mn-label">🎓 名词系统 G07-G12</div>
+    <div class="mn-text">所有格加's，There be看单复，复数加s/es/ies，方位on/in/under/behind。</div>
+  </div>
+  <div class="mnemonic-box">
+    <div class="mn-label">🎓 句型基础 G13-G18</div>
+    <div class="mn-text">祈使V原开头，否定Don't加；What a/an+形+名；比较加-er，最高加-est。</div>
+  </div>
+  <div class="mnemonic-box">
+    <div class="mn-label">🎓 过去时 G19-G24</div>
+    <div class="mn-text">I/he/she/it用was，you/we/they用were；did后动词回原形；by bus/on foot。</div>
+  </div>
+  <div class="mnemonic-box">
+    <div class="mn-label">🎓 三单与规则 G25-G30</div>
+    <div class="mn-text">三单V-s/es/ies，否定doesn't+V原，情态can/must+V原，foot→feet man→men。</div>
+  </div>
+  <div class="mnemonic-box">
+    <div class="mn-label">🎓 冠词与量词 G31-G33</div>
+    <div class="mn-text">辅音a元音an，特指the；some肯定any否定，Would like用some。</div>
+  </div>
+  <div class="mnemonic-box">
+    <div class="mn-label">🎓 购物与外貌 G34-G39</div>
+    <div class="mn-text">would like表想要，how much问价格，be+形容词 have+名词，Why问Because答。</div>
+  </div>
+  <div class="mnemonic-box">
+    <div class="mn-label">🎓 天气与礼貌 G40-G42</div>
+    <div class="mn-text">天气用It's加形容词，Could/Would最礼貌，It指天气时间和距离。</div>
+  </div>
+</div>
+
+<!-- ============ PAGE 30: Next Stage Preview ============ -->
+<div class="page" id="page30">
+  <div class="page-title"><span class="pt-icon">🚀</span>下阶段学习建议</div>
+  <div class="subtitle-row">Stage 5 (L17-L21) 预习重点 + 本阶段巩固任务</div>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title"><span class="icon">📖</span>Stage 5 预习重点</div>
+      <div style="font-size:14px;line-height:1.8;">
+        <strong>L17 · 频度表达</strong> always/usually/often/sometimes/never<br>
+        <strong>L18 · 进行时态</strong> 描述正在做的事<br>
+        <strong>L19 · 将来时态</strong> 表达将来的计划<br>
+        <strong>L20 · 情态动词深化</strong> must/mustn't/should/shouldn't<br>
+        <strong>L21 · 综合复习与写作</strong> 时态综合运用
+      </div>
+      <div class="warn-box" style="margin-top:10px;"><strong>注意：</strong>本阶段未涉及将来时态、进行时态、频度表达等高级语法，下阶段系统学习！</div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="icon">📌</span>本阶段巩固任务</div>
+      <div style="font-size:14px;line-height:1.8;">
+        <strong>本周任务：</strong><br>
+        ① G19-G20过去时专项练习30题<br>
+        ② 300词词汇表默写（重点D级词）<br>
+        ③ 阅读理解2篇（应用文+记叙文）<br>
+        ④ 写一篇短文（My Weekend，用过去时）<br>
+        <strong>两周任务：</strong><br>
+        ⑤ C级考点逐项突破（每天15分钟）<br>
+        ⑥ 错题本整理（按G编号分类）<br>
+        ⑦ 阶段测试卷订正完毕
+      </div>
+    </div>
+  </div>
+  <div class="tip-box"><strong>学习建议：</strong>过去时(was/were + did)是本阶段最大薄弱点，建议每天花15分钟专项练习。词汇方面，不可数名词(yogurt/mutton/homework)和复数变化(strawberries/tomatoes/children)是两个重点。</div>
+</div>
+
+<!-- ============ PAGE 31: Exit Ticket ============ -->
+<div class="page" id="page31">
+  <div class="page-title"><span class="pt-icon">🎫</span>Exit Ticket · 本课收获</div>
+  <div class="subtitle-row">离开教室前完成 · 写下你的收获和计划</div>
+  <div class="card card-elevated">
+    <div class="exit-ticket">
+      <div class="exit-field">
+        <div class="ef-label">🌟 本课最大收获是什么？</div>
+        <textarea placeholder="例如：我学会了was/were的用法，以前总是分不清..." id="exit1" oninput="saveExit()"></textarea>
+      </div>
+      <div class="exit-field">
+        <div class="ef-label">❓ 还有什么没解决的问题？</div>
+        <textarea placeholder="例如：some和any在疑问句中还是有点混淆..." id="exit2" oninput="saveExit()"></textarea>
+      </div>
+      <div class="exit-field">
+        <div class="ef-label">🎯 下阶段我最想提升的是？</div>
+        <textarea placeholder="例如：我想把过去时的正确率提升到85%以上..." id="exit3" oninput="saveExit()"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📊</span>本课数据统计</div>
+    <div style="font-size:14px;line-height:1.8;">
+      📝 全卷42考点诊断 · 🔍 高频错题Top10精讲 · 📚 300词综合检测<br>
+      📖 阅读四题型讲评 · ✍️ 写作评分拆解<br>
+      <strong>你的诊断等级：</strong>
+      <span class="info-tag red">A级 6个</span>
+      <span class="info-tag gold">B级 8个</span>
+      <span class="info-tag green">C级 10个</span>
+      <span style="color:#9C27B0;font-weight:600;">D级 3个（需重点突破）</span>
+    </div>
+  </div>
+  <div class="mnemonic-box">
+    <div class="mn-label">🎓 课程总结</div>
+    <div class="mn-text">42考点全覆盖，300词大检阅；过去时是短板，冠词量词要细看；阅读五步法记牢，写作三段式出采；下阶段继续努力，Stage 5更精彩！</div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="icon">📈</span>本课学习成果追踪</div>
+    <table class="diag-table">
+      <thead><tr><th>模块</th><th>讲评内容</th><th>掌握等级</th><th>下一步行动</th></tr></thead>
+      <tbody>
+        <tr><td>语法系统</td><td>G01-G42诊断+8组精讲</td><td class="grade-c">C级(待提升)</td><td>D级考点每天练10题</td></tr>
+        <tr><td>词汇综合</td><td>300词+20测试词</td><td class="grade-b">B级(基本掌握)</td><td>不可数名词+复数专项</td></tr>
+        <tr><td>阅读理解</td><td>应用文+记叙文+五选四</td><td class="grade-c">C级(待提升)</td><td>五选四逻辑线索练习</td></tr>
+        <tr><td>写作表达</td><td>范文学习+错误分析</td><td class="grade-b">B级(基本掌握)</td><td>每周写1篇+自查清单</td></tr>
+        <tr><td>综合诊断</td><td>42考点全扫描</td><td class="grade-b">B级(65/100)</td><td>两周内C级→B级</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tip-box"><strong>下节课预告：</strong>Stage 5 L17——频度表达(always/usually/often/sometimes/never)！学习如何描述日常活动的频率，让英语表达更精准！</div>
+</div>
+
+<!-- ============ Navigation Bottom ============ -->
+<div class="nav-bottom">
+  <div class="page-info" id="pageInfo">1 / 31</div>
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:3.2%"></div></div>
+  </div>
+  <button class="export-btn" onclick="exportData()">📊 导出数据</button>
+</div>
+
+<script>
+/* ==================== State ==================== */
+var currentPage = 1;
+var totalPages = 31;
+var sectionPages = {1:[1,2,3], 2:[4,5,6,7,8,9,10,11,12,13,14,15], 3:[16,17,18,19,20,21], 4:[22,23,24,25,26,27], 5:[28,29,30,31]};
+
+function cycleOrder4(el){
+  var container = el.closest('.order-container');
+  if(!container) return;
+  var items = Array.from(container.querySelectorAll('.order-item'));
+  var idx = items.indexOf(el);
+  if(idx === items.length - 1) return;
+  container.insertBefore(items[idx+1], el);
+  renumberOrder(container);
+}
+function checkOrder15B(){
+  var container = document.getElementById('orderContainer15B');
+  if(!container) return;
+  var items = container.querySelectorAll('.order-item');
+  var correct = ['I','would','like','some pancakes'];
+  var allCorrect = true;
+  items.forEach(function(item, i){
+    var text = item.textContent.replace(/^\d+/, '').trim();
+    if(text === correct[i]){
+      item.style.borderColor = 'var(--success)';
+      item.style.background = '#E6F7F0';
+    } else {
+      item.style.borderColor = 'var(--error)';
+      item.style.background = '#FFF0F0';
+      allCorrect = false;
+    }
+  });
+  if(allCorrect) showBubble('✅ 正确！I would like some pancakes.', true);
+  else showBubble('❌ 部分顺序不对', false);
+}
+
+/* ==================== Audio ==================== */
+var audioCtx = null;
+function initAudio(){ if(!audioCtx){ try{ audioCtx = new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} } }
+function playCorrect(){
+  initAudio();
+  if(!audioCtx) return;
+  var o = audioCtx.createOscillator();
+  var g = audioCtx.createGain();
+  o.connect(g); g.connect(audioCtx.destination);
+  o.frequency.setValueAtTime(523.25, audioCtx.currentTime);
+  o.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1);
+  o.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.2);
+  g.gain.setValueAtTime(0.15, audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.4);
+  o.start(audioCtx.currentTime);
+  o.stop(audioCtx.currentTime + 0.4);
+}
+function playError(){
+  initAudio();
+  if(!audioCtx) return;
+  var o = audioCtx.createOscillator();
+  var g = audioCtx.createGain();
+  o.connect(g); g.connect(audioCtx.destination);
+  o.type = 'sawtooth';
+  o.frequency.setValueAtTime(200, audioCtx.currentTime);
+  o.frequency.setValueAtTime(150, audioCtx.currentTime + 0.15);
+  g.gain.setValueAtTime(0.1, audioCtx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
+  o.start(audioCtx.currentTime);
+  o.stop(audioCtx.currentTime + 0.3);
+}
+function showBubble(text, isCorrect){
+  var b = document.getElementById('fbBubble');
+  b.textContent = text;
+  b.className = 'feedback-bubble show ' + (isCorrect ? 'correct' : 'error');
+  if(isCorrect) playCorrect(); else playError();
+  setTimeout(function(){ b.className = 'feedback-bubble'; }, 1800);
+}
+
+/* ==================== Navigation ==================== */
+function goPage(n){
+  if(n < 1 || n > totalPages) return;
+  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
+  var target = document.getElementById('page' + n);
+  if(target){ target.classList.add('active'); }
+  currentPage = n;
+  updateNav();
+}
+function nextPage(){ goPage(currentPage + 1); }
+function prevPage(){ goPage(currentPage - 1); }
+function goSection(s){
+  var pages = sectionPages[s];
+  if(pages && pages.length) goPage(pages[0]);
+}
+function updateNav(){
+  document.getElementById('pageInfo').textContent = currentPage + ' / ' + totalPages;
+  document.getElementById('progressFill').style.width = (currentPage / totalPages * 100) + '%';
+  document.querySelectorAll('.nav-pill').forEach(function(p){
+    var s = parseInt(p.dataset.section);
+    var pages = sectionPages[s];
+    p.classList.toggle('active', pages && pages.indexOf(currentPage) >= 0);
+  });
+}
+
+/* Click zone override for interactive elements */
+document.addEventListener('click', function(e){
+  if(e.target.closest('.quiz-q') || e.target.closest('.link-container') || e.target.closest('.order-container') || e.target.closest('.blank-pick') || e.target.closest('.error-item') || e.target.closest('.nav-pill') || e.target.closest('.export-btn') || e.target.closest('.nav-top') || e.target.closest('.nav-bottom') || e.target.closest('button') || e.target.closest('input') || e.target.closest('textarea') || e.target.closest('.link-item') || e.target.closest('.blank-chip') || e.target.closest('.blank-slot') || e.target.closest('.quiz-option')){
+    e.stopPropagation();
+  }
+}, true);
+
+function cycleOrder3(el){
+  var container = el.closest('.order-container');
+  if(!container) return;
+  var items = Array.from(container.querySelectorAll('.order-item'));
+  var idx = items.indexOf(el);
+  if(idx === items.length - 1) return;
+  container.insertBefore(items[idx+1], el);
+  renumberOrder(container);
+}
+function checkOrder14C(){
+  var container = document.getElementById('orderContainer14C');
+  if(!container) return;
+  var items = container.querySelectorAll('.order-item');
+  var correct = ['Open','your','textbook to','page 15'];
+  var allCorrect = true;
+  items.forEach(function(item, i){
+    var text = item.textContent.replace(/^\d+/, '').trim();
+    if(text === correct[i]){
+      item.style.borderColor = 'var(--success)';
+      item.style.background = '#E6F7F0';
+    } else {
+      item.style.borderColor = 'var(--error)';
+      item.style.background = '#FFF0F0';
+      allCorrect = false;
+    }
+  });
+  if(allCorrect) showBubble('✅ 顺序正确！Open your textbook to page 15.', true);
+  else showBubble('❌ 部分顺序不对', false);
+}
+
+/* ==================== Double-click undo ==================== */
+var lastAction = null;
+function saveUndo(action){ lastAction = action; }
+document.addEventListener('dblclick', function(e){
+  if(e.target.closest('.quiz-option')){
+    var q = e.target.closest('.quiz-q');
+    if(q){
+      q.querySelectorAll('.quiz-option').forEach(function(o){ o.classList.remove('selected','correct','wrong'); });
+      showBubble('已重置', true);
+    }
+  }
+});
+
+/* ==================== Quiz Handlers ==================== */
+function handleChoice(el, label, isCorrect){
+  var q = el.closest('.quiz-q');
+  q.querySelectorAll('.quiz-option').forEach(function(o){ o.classList.remove('selected','correct','wrong'); });
+  el.classList.add('selected');
+  if(isCorrect){
+    el.classList.add('correct');
+    showBubble('✅ 正确！' + label, true);
+  } else {
+    el.classList.add('wrong');
+    var correctOpt = q.querySelector('.quiz-option:nth-child(' + (isCorrect ? 0 : 0) + ')');
+    q.querySelectorAll('.quiz-option').forEach(function(o){
+      if(o.onclick && o.onclick.toString().indexOf('true') >= 0) o.classList.add('correct');
+    });
+    showBubble('❌ 再试试', false);
+  }
+  saveAnswer(q, label, isCorrect);
+}
+function handleFill(el, answer){
+  var val = el.value.trim().toLowerCase();
+  var ans = answer.toLowerCase();
+  var q = el.closest('.quiz-q');
+  if(val === ans){
+    el.style.borderColor = 'var(--success)';
+    el.style.background = '#E6F7F0';
+    showBubble('✅ 正确！', true);
+    saveAnswer(q, val, true);
+  } else {
+    el.style.borderColor = 'var(--error)';
+    el.style.background = '#FFF0F0';
+    showBubble('❌ 答案是: ' + answer, false);
+    saveAnswer(q, val, false);
+  }
+}
+
+/* ==================== Linking Game ==================== */
+var linkSelection = {side:null, val:null, el:null};
+function selectLink(el, side, val){
+  var container = el.closest('.link-container');
+  container.querySelectorAll('.link-item.selected').forEach(function(i){
+    if(i !== el) i.classList.remove('selected');
+  });
+  if(linkSelection.side && linkSelection.side !== side){
+    if(checkMatch(linkSelection.val, val)){
+      linkSelection.el.classList.add('matched');
+      el.classList.add('matched');
+      linkSelection.el.classList.remove('selected');
+      showBubble('✅ 匹配成功！', true);
+      checkLinkComplete(container);
+    } else {
+      el.classList.add('selected');
+      showBubble('❌ 不匹配', false);
+      setTimeout(function(){ el.classList.remove('selected'); }, 800);
+    }
+    linkSelection = {side:null, val:null, el:null};
+  } else {
+    el.classList.add('selected');
+    linkSelection = {side:side, val:val, el:el};
+  }
+}
+function checkMatch(v1, v2){
+  var pairs = {
+    'strawberry':'草莓','dictionary':'词典','theirs':'他们的','schoolbag':'书包',
+    'presentation':'展示','composition':'作文','survey':'调查','bracket':'括号',
+    'assignment':'任务','delicious':'美味的','curly':'卷曲的','vacation':'假期'
+  };
+  return pairs[v1] === v2 || pairs[v2] === v1;
+}
+function checkLinkComplete(container){
+  var remaining = container.querySelectorAll('.link-item:not(.matched)').length;
+  if(remaining === 0){
+    showBubble('🎉 全部匹配完成！', true);
+  }
+}
+
+/* ==================== Ordering Game ==================== */
+var orderState = {};
+function cycleOrder(el){
+  var container = document.getElementById('orderContainer12A');
+  if(!container) return;
+  var items = Array.from(container.querySelectorAll('.order-item'));
+  var idx = items.indexOf(el);
+  if(idx === items.length - 1) return;
+  container.insertBefore(items[idx+1], el);
+  renumberOrder(container);
+}
+function renumberOrder(container){
+  container.querySelectorAll('.order-item').forEach(function(item, i){
+    item.querySelector('.order-num').textContent = i + 1;
+  });
+}
+function checkOrder12A(){
+  var container = document.getElementById('orderContainer12A');
+  var items = container.querySelectorAll('.order-item');
+  var correctOrder = ['First, our teacher gave us an assignment.','Then, we worked in groups to research.','After that, we wrote a composition about it.','Finally, we presented our project to the class.'];
+  var allCorrect = true;
+  items.forEach(function(item, i){
+    var text = item.textContent.replace(/^\d+/, '').trim();
+    if(text === correctOrder[i]){
+      item.style.borderColor = 'var(--success)';
+      item.style.background = '#E6F7F0';
+    } else {
+      item.style.borderColor = 'var(--error)';
+      item.style.background = '#FFF0F0';
+      allCorrect = false;
+    }
+  });
+  if(allCorrect) showBubble('✅ 顺序正确！', true);
+  else showBubble('❌ 部分顺序不对', false);
+}
+
+/* ==================== Blank Pick ==================== */
+var currentChip = null;
+var slotMap = {};
+function useChip(el, word){
+  if(currentChip){ currentChip.style.opacity = '1'; }
+  currentChip = el;
+  el.style.opacity = '0.5';
+  slotMap.pending = word;
+  showBubble('选择 ' + word + '，点击空白处填入', true);
+}
+function placeInSlot(slotId){
+  if(!slotMap.pending){ showBubble('请先点击上方词库', false); return; }
+  var slot = document.getElementById(slotId);
+  slot.textContent = slotMap.pending;
+  slot.style.color = 'var(--brand)';
+  var chip = document.querySelector('.blank-chip[onclick*="' + slotMap.pending + '"]');
+  if(chip) chip.classList.add('used');
+  slotMap.pending = null;
+}
+
+function checkOrder24C(){
+  var container = document.getElementById('orderContainer24C');
+  if(!container) return;
+  var items = container.querySelectorAll('.order-item');
+  var correctOrder = ['读首句确定主题和时态','读空格前后句找逻辑线索','对比选项排除不匹配的','代入验证通读全文'];
+  var allCorrect = true;
+  items.forEach(function(item, i){
+    var text = item.textContent.replace(/^\d+/, '').trim();
+    if(text === correctOrder[i]){
+      item.style.borderColor = 'var(--success)';
+      item.style.background = '#E6F7F0';
+    } else {
+      item.style.borderColor = 'var(--error)';
+      item.style.background = '#FFF0F0';
+      allCorrect = false;
+    }
+  });
+  if(allCorrect) showBubble('✅ 顺序正确！', true);
+  else showBubble('❌ 部分顺序不对', false);
+}
+function cycleOrder2(el){
+  var container = el.closest('.order-container');
+  if(!container) return;
+  var items = Array.from(container.querySelectorAll('.order-item'));
+  var idx = items.indexOf(el);
+  if(idx === items.length - 1) return;
+  container.insertBefore(items[idx+1], el);
+  renumberOrder(container);
+}
+
+/* ==================== IndexedDB ==================== */
+var DB_NAME = 'EnglishCourseDB';
+var STORE = 'lesson_data';
+function openDB(){
+  return new Promise(function(resolve, reject){
+    var req = indexedDB.open(DB_NAME, 1);
+    req.onupgradeneeded = function(e){
+      var db = e.target.result;
+      if(!db.objectStoreNames.contains(STORE)){
+        db.createObjectStore(STORE, {keyPath:'id', autoIncrement:true});
+      }
+    };
+    req.onsuccess = function(e){ resolve(e.target.result); };
+    req.onerror = function(e){ reject(e); };
+  });
+}
+function saveAnswer(qEl, answer, isCorrect){
+  var data = {
+    lesson:'L16',
+    question_id: qEl ? qEl.dataset.questionId : 'unknown',
+    knowledge_id: qEl ? qEl.dataset.knowledgeId : 'unknown',
+    section: qEl ? qEl.dataset.section : 'unknown',
+    template_id: qEl ? qEl.dataset.templateId : 'unknown',
+    interaction_type: qEl ? qEl.dataset.interactionType : 'unknown',
+    action_type: qEl ? qEl.dataset.actionType : 'unknown',
+    cognitive_level: qEl ? qEl.dataset.cognitiveLevel : 'unknown',
+    answer: answer,
+    correct: isCorrect,
+    timestamp: new Date().toISOString()
+  };
+  openDB().then(function(db){
+    var tx = db.transaction(STORE, 'readwrite');
+    tx.objectStore(STORE).add(data);
+  }).catch(function(){});
+}
+
+/* ==================== Exit Ticket Save ==================== */
+function saveExit(){
+  var data = {
+    lesson:'L16',
+    exit1: document.getElementById('exit1') ? document.getElementById('exit1').value : '',
+    exit2: document.getElementById('exit2') ? document.getElementById('exit2').value : '',
+    exit3: document.getElementById('exit3') ? document.getElementById('exit3').value : '',
+    timestamp: new Date().toISOString()
+  };
+  openDB().then(function(db){
+    var tx = db.transaction(STORE, 'readwrite');
+    tx.objectStore(STORE).put(Object.assign({id:'exit_L16'}, data));
+  }).catch(function(){});
+}
+
+/* ==================== Export ==================== */
+function exportData(){
+  openDB().then(function(db){
+    var tx = db.transaction(STORE, 'readonly');
+    var req = tx.objectStore(STORE).getAll();
+    req.onsuccess = function(){
+      var data = req.result;
+      if(!data.length){ showBubble('暂无数据', false); return; }
+      var json = JSON.stringify(data, null, 2);
+      var blob = new Blob([json], {type:'application/json'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'L16_lesson_data.json';
+      a.click();
+      /* CSV export */
+      var csv = convertCSV(data);
+      var blob2 = new Blob(['\uFEFF' + csv], {type:'text/csv'});
+      var a2 = document.createElement('a');
+      a2.href = URL.createObjectURL(blob2);
+      a2.download = 'L16_lesson_data.csv';
+      a2.click();
+      showBubble('📊 数据已导出(' + data.length + '条)', true);
+    };
+  });
+}
+function convertCSV(data){
+  if(!data.length) return '';
+  var headers = Object.keys(data[0]);
+  var rows = data.map(function(d){
+    return headers.map(function(h){
+      var v = d[h];
+      if(v === null || v === undefined) v = '';
+      v = String(v).replace(/"/g,'""');
+      return '"' + v + '"';
+    }).join(',');
+  });
+  return headers.join(',') + '\n' + rows.join('\n');
+}
+
+/* ==================== Radar Chart ==================== */
+function drawRadar(){
+  var canvas = document.getElementById('radarCanvas');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var cx = canvas.width / 2, cy = canvas.height / 2;
+  var radius = 130;
+  var labels = ['G01-G06\n代词','G07-G12\n名词介词','G13-G18\n句型基础','G19-G24\n过去时','G25-G30\n三单规则','G31-G33\n冠词量词','G34-G39\n购物外貌','G40-G42\n天气礼貌'];
+  var values = [75, 68, 72, 58, 70, 62, 65, 60];
+  var target = 85;
+  var n = labels.length;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  /* Grid */
+  for(var level = 1; level <= 5; level++){
+    ctx.beginPath();
+    var r = radius * level / 5;
+    for(var i = 0; i < n; i++){
+      var angle = -Math.PI/2 + i * 2 * Math.PI / n;
+      var x = cx + r * Math.cos(angle);
+      var y = cy + r * Math.sin(angle);
+      if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+    ctx.strokeStyle = '#E0E0E0';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+  /* Target line (green) */
+  ctx.beginPath();
+  var rt = radius * target / 100;
+  for(var i = 0; i < n; i++){
+    var angle = -Math.PI/2 + i * 2 * Math.PI / n;
+    var x = cx + rt * Math.cos(angle);
+    var y = cy + rt * Math.sin(angle);
+    if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  }
+  ctx.closePath();
+  ctx.strokeStyle = '#059669';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([4,4]);
+  ctx.stroke();
+  ctx.setLineDash([]);
+  /* Actual (red) */
+  ctx.beginPath();
+  for(var i = 0; i < n; i++){
+    var angle = -Math.PI/2 + i * 2 * Math.PI / n;
+    var r = radius * values[i] / 100;
+    var x = cx + r * Math.cos(angle);
+    var y = cy + r * Math.sin(angle);
+    if(i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  }
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(230,57,70,0.15)';
+  ctx.fill();
+  ctx.strokeStyle = '#E63946';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+  /* Points */
+  for(var i = 0; i < n; i++){
+    var angle = -Math.PI/2 + i * 2 * Math.PI / n;
+    var r = radius * values[i] / 100;
+    var x = cx + r * Math.cos(angle);
+    var y = cy + r * Math.sin(angle);
+    ctx.beginPath();
+    ctx.arc(x, y, 4, 0, 2 * Math.PI);
+    ctx.fillStyle = '#E63946';
+    ctx.fill();
+  }
+  /* Labels */
+  ctx.font = '11px "Microsoft YaHei", sans-serif';
+  ctx.fillStyle = '#4A4A5A';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  for(var i = 0; i < n; i++){
+    var angle = -Math.PI/2 + i * 2 * Math.PI / n;
+    var lr = radius + 20;
+    var x = cx + lr * Math.cos(angle);
+    var y = cy + lr * Math.sin(angle);
+    var lines = labels[i].split('\n');
+    lines.forEach(function(line, j){
+      ctx.fillText(line, x, y + (j - 0.5) * 12);
+    });
+  }
+}
+
+/* ==================== Keyboard Navigation ==================== */
+document.addEventListener('keydown', function(e){
+  if(e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if(e.key === 'ArrowLeft') prevPage();
+  if(e.key === 'ArrowRight') nextPage();
+});
+
+/* ==================== Init ==================== */
+window.addEventListener('load', function(){
+  drawRadar();
+  updateNav();
+});
+</script>
+  </div>
+  </div>
+</body>
+</html>

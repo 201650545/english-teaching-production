@@ -1,0 +1,136 @@
+{
+  "course": "第17课 · 频度副词·健康习惯",
+  "stage": "Stage 5",
+  "lesson": "L17",
+  "duration": "90min",
+  "totalPages": 42,
+  "brand": "#6B21A8",
+  "accent": "#EC4899",
+  "bgGradient": "#F5F3FF → #EDE9FE",
+  "pageIdContract": true,
+  "pageIdRange": "44-53",
+  "style": "S06 校园活力, health-dashboard-card",
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "realtime",
+    "exportFormats": ["json", "csv"],
+    "sessionIdRule": "L17_{studentId}_{YYYYMMDD}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  },
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": [
+        {
+          "page": 0,
+          "type": "cover",
+          "title": "第17课 · 频度副词·健康习惯",
+          "subtitle": "Stage 5 · 健康习惯 | 90分钟课程",
+          "objectives": ["掌握20个频度副词·健康习惯词汇", "掌握G43频度副词/G44 How often/G45百分比", "完成al/aw拼读学习"],
+          "meta": [
+            {"label": "核心场景", "value": "健康习惯"},
+            {"label": "新词", "value": "20 Words"},
+            {"label": "时长", "value": "90 min"},
+            {"label": "语法", "value": "G43/G44/G45"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 2,
+      "pages": [
+        {
+          "page": 1,
+          "type": "review-grammar",
+          "title": "L15 语法回顾",
+          "content": ["G40 天气句型", "G41 Could/Would礼貌请求", "G42 非人称It指代"],
+          "interactions": ["formula-box × 3"]
+        },
+        {
+          "page": 2,
+          "type": "review-vocab",
+          "title": "L15 词汇快闪 + 导入",
+          "content": ["L15 20词分类速览", "3句口头翻译", "导入：How often do you exercise?"],
+          "interactions": ["answer-mask × 3"]
+        }
+      ]
+    },
+    {
+      "name": "新词20",
+      "start": 3,
+      "end": 8,
+      "pages": [
+        {"page": 3, "type": "vocab-group", "title": "频度副词类 (1-5)", "words": ["daily", "usually", "often", "sometimes", "hardly"], "layout": "item-board 2col"},
+        {"page": 4, "type": "vocab-group", "title": "频度与健康类 (6-10)", "words": ["never", "percent", "online", "television", "mind"], "layout": "item-board 2col"},
+        {"page": 5, "type": "vocab-group", "title": "健康与生活类 (11-15)", "words": ["body", "health", "routine", "jog", "lifestyle"], "layout": "item-board 2col"},
+        {"page": 6, "type": "vocab-group", "title": "数据与习惯类 (16-20)", "words": ["twice", "point", "result", "energy", "regularly"], "layout": "item-board 2col"},
+        {"page": 7, "type": "vocab-matrix", "title": "20词分类矩阵 + 快闪复习", "content": ["语义场分类表格", "mini-flash 20词"], "interactions": ["gtab", "mini-flash-grid"]},
+        {"page": 8, "type": "vocab-preview", "title": "频度副词百分比阶梯预览", "content": ["always→never百分比阶梯思维导图"]}
+      ]
+    },
+    {
+      "name": "语法3考点",
+      "start": 9,
+      "end": 19,
+      "pages": [
+        {"page": 9, "type": "grammar", "title": "G43 频度副词百分比与位置", "content": ["口诀", "百分比阶梯表", "位置规则表", "例句"], "grammarTag": "G43"},
+        {"page": 10, "type": "grammar-examples", "title": "G43 例句精讲 + 易错点", "content": ["6条例句", "4条易错点", "中考辨析hardly vs hard"], "grammarTag": "G43"},
+        {"page": 11, "type": "interactive-1", "title": "频度副词健身盘", "component": "freq-health-disk", "adverbs": ["always", "usually", "often", "sometimes", "hardly", "never"]},
+        {"page": 12, "type": "grammar", "title": "G44 How often疑问句与回答", "content": ["口诀", "How often公式矩阵", "次数表达规则", "例句"], "grammarTag": "G44"},
+        {"page": 13, "type": "grammar-examples", "title": "G44 例句精讲 + 易错点", "content": ["4条例句", "3条易错点", "中考辨析How often vs How long"], "grammarTag": "G44"},
+        {"page": 14, "type": "grammar", "title": "G45 百分比与生活习惯短语", "content": ["口诀", "百分比公式矩阵", "健康习惯短语表", "例句"], "grammarTag": "G45"},
+        {"page": 15, "type": "grammar-examples", "title": "G45 例句精讲 + 易错点", "content": ["4条例句", "3条易错点", "中考辨析percent单复数"], "grammarTag": "G45"},
+        {"page": 16, "type": "interactive-2", "title": "健康数据仪表盘", "component": "health-dashboard", "behaviors": ["exercise", "sleep", "read", "watch TV"]},
+        {"page": 17, "type": "grammar-compare", "title": "G43/G44/G45 综合对比", "content": ["三考点横向对比", "频度副词→How often→百分比流程图"]},
+        {"page": 18, "type": "quiz", "title": "随堂演练 上（G43+G44）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]},
+        {"page": 19, "type": "quiz", "title": "随堂演练 下（G45+综合）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]}
+      ]
+    },
+    {
+      "name": "阅读理解",
+      "start": 20,
+      "end": 22,
+      "pages": [
+        {"page": 20, "type": "reading", "title": "阅读A篇 A Health Survey in Our School", "content": ["161词", "5选择题"]},
+        {"page": 21, "type": "reading", "title": "阅读B篇 Running Changed My Life", "content": ["183词", "3选择题"]},
+        {"page": 22, "type": "reading", "title": "阅读B篇（下）+ C篇导入", "content": ["2选择题", "阅读回答问题"]}
+      ]
+    },
+    {
+      "name": "句子练习",
+      "start": 25,
+      "end": 27,
+      "pages": [
+        {"page": 25, "type": "translation", "title": "汉译英 5句", "content": ["频度副词2句", "How often 2句", "百分比1句"], "interactions": ["answer-mask × 5"]},
+        {"page": 26, "type": "sentence-build", "title": "造句练习 5句", "content": ["G43/G44/G45造句"], "interactions": ["answer-mask × 5"]},
+        {"page": 27, "type": "error-correction", "title": "改错练习 5句", "content": ["G43/G44/G45易错点"], "interactions": ["answer-mask × 5"]}
+      ]
+    },
+    {
+      "name": "自然拼读",
+      "start": 28,
+      "end": 33,
+      "pages": [
+        {"page": 28, "type": "phonics", "title": "al/ɔː 与 aw/ɔː 音素学习", "content": ["al /ɔː/", "aw /ɔː/"], "grammarTag": "PH"},
+        {"page": 29, "type": "phonics-read", "title": "练习1 朗读词汇表", "content": ["al × 6词", "aw × 6词"]},
+        {"page": 30, "type": "phonics-exercise", "title": "练习2 听音选词", "content": ["4题听音选词"]},
+        {"page": 31, "type": "phonics-exercise", "title": "练习3 看词归音", "content": ["4题看词归音"]},
+        {"page": 32, "type": "phonics-exercise", "title": "练习4 最小对立对辨析", "content": ["4题最小对立对"]},
+        {"page": 33, "type": "phonics-summary", "title": "拼读总结", "content": ["mini-flash拼读总结"]}
+      ]
+    },
+    {
+      "name": "课堂总结",
+      "start": 34,
+      "end": 34,
+      "pages": [
+        {"page": 34, "type": "summary", "title": "核心总结", "content": ["G43/G44/G45三卡片", "20词快闪", "口诀汇总", "频度副词百分比阶梯思维导图"]}
+      ]
+    }
+  ]
+}

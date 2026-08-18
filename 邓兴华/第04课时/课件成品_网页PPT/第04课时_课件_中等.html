@@ -1,0 +1,4250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第04课 · 名词单复数、tidy形容词与房间介词 | Stage 2 · L04</title>
+<style>
+/* ============================================================
+   第04课 课件 — 橙色系主题CSS框架
+   Stage 2 · L04 · 名词单复数、tidy形容词与房间介词
+   主题色：橙色系 #CA6F1E + #F5B041
+   ============================================================ */
+
+:root {
+  /* L4 主题色：橙色系 */
+  --primary: #CA6F1E;
+  --primary-light: #F5B041;
+  --primary-dark: #8B4513;
+  --accent: #2E86C1;
+  --accent-light: #5DADE2;
+  --accent-dark: #1B4F72;
+  --success: #27AE60;
+  --error: #E74C3C;
+  --warning: #F39C12;
+  --gold: #D4AC0D;
+
+  /* 背景渐变 */
+  --bg-gradient: linear-gradient(160deg, #FEF5E7 0%, #FAE5D3 100%);
+  --card-bg: #FFFFFF;
+  --card-shadow: 0 4px 20px rgba(202, 111, 30, 0.12);
+  --card-shadow-hover: 0 8px 30px rgba(202, 111, 30, 0.2);
+
+  /* 文字 */
+  --text-primary: #2C1810;
+  --text-secondary: #6B4226;
+  --text-light: #9A7B5A;
+  --text-white: #FFFFFF;
+
+  /* 橙色系框架变量 */
+  --rg-primary: #CA6F1E;
+  --rg-accent: #2E86C1;
+  --rg-gold: #D4AC0D;
+  --rg-bg: #FEF5E7;
+  --rg-card: #FFFFFF;
+  --rg-border: rgba(202, 111, 30, 0.15);
+  --rg-shadow: 0 4px 20px rgba(202, 111, 30, 0.12);
+
+  /* 尺寸 */
+  --slide-width: 100vw;
+  --slide-height: calc(100vw * 9 / 21);
+  --font-base: 28px;
+  --font-large: 36px;
+  --font-small: 20px;
+  --radius: 16px;
+  --radius-sm: 8px;
+  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  font-size: var(--font-base);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ============================================================
+   幻灯片容器 — 21:9 宽屏
+   ============================================================ */
+#presentation {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  background: var(--bg-gradient);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.slide.active {
+  display: flex;
+  animation: slideFadeIn 0.5s ease;
+}
+
+.slide.scrollable {
+  overflow-y: auto;
+}
+
+@keyframes slideFadeIn {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ============================================================
+   CSS 动画定义
+   ============================================================ */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { transform: scale(1.08); }
+  70% { transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bpSwing {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulseGreen {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
+  50% { box-shadow: 0 0 0 8px rgba(39, 174, 96, 0.2); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 动画工具类 */
+.anim-fadeSlideUp { animation: fadeSlideUp 0.5s ease both; }
+.anim-scaleUp { animation: scaleUp 0.5s ease both; }
+.anim-bounceIn { animation: bounceIn 0.6s ease both; }
+.anim-slideInLeft { animation: slideInLeft 0.5s ease both; }
+.anim-pulse { animation: pulse 2s ease infinite; }
+.anim-floatY { animation: floatY 3s ease infinite; }
+
+/* ============================================================
+   左右半屏翻页区
+   ============================================================ */
+.nav-zone {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.nav-zone.left { left: 0; }
+.nav-zone.right { right: 0; }
+
+.nav-hint {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  color: var(--primary);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.nav-zone.left:hover .nav-hint,
+.nav-zone.right:hover .nav-hint {
+  opacity: 0.3;
+}
+
+.nav-zone.left .nav-hint { left: 20px; }
+.nav-zone.right .nav-hint { right: 20px; }
+
+/* 涟漪效果 */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(245, 176, 65, 0.3);
+  transform: scale(0);
+  animation: rippleAnim 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes rippleAnim {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ============================================================
+   顶部导航栏
+   ============================================================ */
+.top-bar {
+  height: 7%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: var(--text-white);
+  flex-shrink: 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(202, 111, 30, 0.3);
+}
+
+.top-bar .lesson-badge {
+  font-size: 14px;
+  font-weight: 600;
+  background: rgba(255,255,255,0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.top-bar .section-label {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+.top-bar .page-counter {
+  font-size: 14px;
+  font-weight: 600;
+  background: rgba(255,255,255,0.15);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* ============================================================
+   底部八段式导航条
+   ============================================================ */
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8%;
+  min-height: 48px;
+  display: flex;
+  background: var(--primary-dark);
+  z-index: 10;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+}
+
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.5);
+  font-size: 11px;
+  cursor: pointer;
+  transition: var(--transition);
+  border-top: 3px solid transparent;
+  padding: 4px 2px;
+  text-align: center;
+}
+
+.nav-item:hover {
+  color: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.05);
+}
+
+.nav-item.active {
+  color: var(--text-white);
+  border-top-color: var(--primary-light);
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-item .nav-icon {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.nav-item .nav-text {
+  font-size: 10px;
+  line-height: 1.2;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   幻灯片内容区
+   ============================================================ */
+.slide-content {
+  flex: 1;
+  padding: 20px 40px 60px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  position: relative;
+  z-index: 3;
+}
+
+/* ============================================================
+   封面页
+   ============================================================ */
+.cover-slide {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--text-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.cover-slide::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+}
+
+.cover-slide::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+}
+
+.cover-content {
+  z-index: 2;
+  position: relative;
+}
+
+.cover-content .stage-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.cover-content h1 {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  line-height: 1.2;
+}
+
+.cover-content .subtitle {
+  font-size: 24px;
+  opacity: 0.9;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.cover-content .objectives {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.cover-content .objective-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.2);
+  min-width: 200px;
+}
+
+.cover-content .objective-card .obj-icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.cover-content .objective-card .obj-text {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* ============================================================
+   通用卡片样式
+   ============================================================ */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  border: 1px solid var(--rg-border);
+}
+
+.card:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ============================================================
+   词汇卡片
+   ============================================================ */
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.vocab-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+  border-left: 4px solid var(--primary-light);
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.vocab-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+  border-left-color: var(--accent);
+}
+
+.vocab-card .vc-number {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 14px;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.vocab-card .vc-emoji {
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.vocab-card .vc-word {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.vocab-card .vc-phonetic {
+  font-size: 16px;
+  color: var(--accent);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.vocab-card .vc-pos {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--text-white);
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.vocab-card .vc-meaning {
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.vocab-card .vc-collocation {
+  font-size: 13px;
+  color: var(--text-secondary);
+  background: rgba(245, 176, 65, 0.1);
+  padding: 6px 10px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.vocab-card .vc-example {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.vocab-card .vc-mnemonic {
+  font-size: 13px;
+  color: var(--primary-dark);
+  background: rgba(202, 111, 30, 0.08);
+  padding: 6px 10px;
+  border-radius: 8px;
+  border-left: 3px solid var(--primary);
+}
+
+/* 词汇记忆矩阵 */
+.memory-matrix {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.matrix-category {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--card-shadow);
+  border-top: 4px solid var(--primary-light);
+}
+
+.matrix-category .mc-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.matrix-category .mc-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
+.matrix-category .mc-word {
+  background: rgba(245, 176, 65, 0.1);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.matrix-category .mc-word:hover {
+  background: var(--primary-light);
+  color: var(--text-white);
+  transform: scale(1.1);
+}
+
+/* ============================================================
+   语法表格
+   ============================================================ */
+.grammar-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.grammar-table th {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: var(--text-white);
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.grammar-table td {
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 16px;
+  border-bottom: 1px solid var(--rg-border);
+  transition: var(--transition);
+}
+
+.grammar-table tr:hover td {
+  background: rgba(245, 176, 65, 0.05);
+}
+
+.grammar-table .row-highlight td {
+  background: rgba(212, 172, 13, 0.1);
+  font-weight: 600;
+}
+
+.grammar-table .col-highlight {
+  background: rgba(202, 111, 30, 0.12) !important;
+}
+
+.grammar-table .error-cell {
+  color: var(--error);
+  text-decoration: line-through;
+}
+
+.grammar-table .correct-cell {
+  color: var(--success);
+  font-weight: 600;
+}
+
+/* 语法口诀框 */
+.grammar-formula {
+  background: linear-gradient(135deg, rgba(202, 111, 30, 0.08) 0%, rgba(245, 176, 65, 0.08) 100%);
+  border: 2px solid var(--primary-light);
+  border-radius: var(--radius);
+  padding: 20px 30px;
+  margin: 16px 0;
+  text-align: center;
+}
+
+.grammar-formula .gf-title {
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.grammar-formula .gf-content {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.6;
+}
+
+/* 例句卡片 */
+.example-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  margin: 8px 0;
+  box-shadow: 0 2px 8px rgba(202, 111, 30, 0.08);
+  border-left: 4px solid var(--success);
+}
+
+.example-card .ec-label {
+  font-size: 12px;
+  color: var(--success);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.example-card .ec-sentence {
+  font-size: 18px;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.example-card .ec-translation {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+/* 易错点 */
+.error-warning {
+  background: rgba(231, 76, 60, 0.08);
+  border-left: 4px solid var(--error);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  margin: 8px 0;
+}
+
+.error-warning .ew-title {
+  font-size: 14px;
+  color: var(--error);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.error-warning .ew-content {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.error-warning .ew-correct {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.error-warning .ew-wrong {
+  color: var(--error);
+  text-decoration: line-through;
+}
+
+/* ============================================================
+   复数变化器
+   ============================================================ */
+.plural-builder {
+  background: linear-gradient(135deg, rgba(202, 111, 30, 0.05) 0%, rgba(245, 176, 65, 0.05) 100%);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 16px 0;
+}
+
+.pb-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.pb-btn {
+  background: var(--card-bg);
+  border: 2px solid var(--primary-light);
+  color: var(--primary);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pb-btn:hover {
+  background: var(--primary-light);
+  color: var(--text-white);
+  transform: scale(1.05);
+}
+
+.pb-btn.active {
+  background: var(--success);
+  color: var(--text-white);
+  border-color: var(--success);
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.35);
+}
+
+.pb-display {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  min-height: 160px;
+}
+
+.pb-singular {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.pb-arrow {
+  font-size: 36px;
+  color: var(--primary-light);
+  margin: 8px 0;
+}
+
+.pb-plural {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--success);
+}
+
+.pb-pronunciation {
+  font-size: 20px;
+  color: var(--accent);
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.pb-sentence {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-top: 12px;
+  font-style: italic;
+}
+
+/* ============================================================
+   房间布置器
+   ============================================================ */
+.room-arranger {
+  background: linear-gradient(135deg, rgba(202, 111, 30, 0.05) 0%, rgba(245, 176, 65, 0.05) 100%);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 16px 0;
+}
+
+.ra-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.ra-btn {
+  background: var(--card-bg);
+  border: 2px solid var(--primary-light);
+  color: var(--primary);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.ra-btn:hover {
+  background: var(--primary-light);
+  color: var(--text-white);
+  transform: scale(1.05);
+}
+
+.ra-btn.active {
+  background: var(--primary);
+  color: var(--text-white);
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(202, 111, 30, 0.35);
+}
+
+.ra-display {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  min-height: 160px;
+}
+
+.ra-emoji {
+  font-size: 64px;
+  margin-bottom: 8px;
+}
+
+.ra-position {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.ra-sentence {
+  font-size: 20px;
+  color: var(--text-secondary);
+  margin-top: 12px;
+  font-style: italic;
+}
+
+/* ============================================================
+   答题区域
+   ============================================================ */
+.quiz-section {
+  margin-top: 16px;
+}
+
+.quiz-question {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  transition: var(--transition);
+}
+
+.quiz-question.answered-correct {
+  border-left: 4px solid var(--success);
+}
+
+.quiz-question.answered-wrong {
+  border-left: 4px solid var(--error);
+}
+
+.qq-number {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--text-white);
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.qq-text {
+  font-size: 18px;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.q-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.q-option {
+  background: rgba(245, 176, 65, 0.06);
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.q-option:hover {
+  background: rgba(245, 176, 65, 0.12);
+  border-color: var(--primary-light);
+}
+
+.q-option .qo-letter {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--text-white);
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.q-option.correct {
+  background: rgba(39, 174, 96, 0.15);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.q-option.correct .qo-letter {
+  background: var(--success);
+}
+
+.q-option.wrong {
+  background: rgba(231, 76, 60, 0.15);
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.q-option.wrong .qo-letter {
+  background: var(--error);
+}
+
+.q-option.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.q-option.highlight-correct {
+  background: rgba(39, 174, 96, 0.2);
+  border-color: var(--success);
+  animation: pulseGreen 0.6s ease;
+}
+
+/* 答案解析 */
+.q-explanation {
+  display: none;
+  margin-top: 10px;
+  padding: 12px 16px;
+  background: rgba(212, 172, 13, 0.08);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.q-explanation.show {
+  display: block;
+  animation: fadeInUp 0.4s ease;
+}
+
+/* 答案遮罩 */
+.answer-mask {
+  background: var(--primary);
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+  margin-top: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.answer-mask::before {
+  content: '点击查看答案';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-white);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.answer-mask.revealed {
+  background: rgba(39, 174, 96, 0.1);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.answer-mask.revealed::before {
+  display: none;
+}
+
+/* 答错双击撤销提示 */
+.undo-hint {
+  font-size: 11px;
+  color: var(--text-light);
+  margin-top: 4px;
+  display: none;
+}
+
+.undo-hint.show {
+  display: block;
+}
+
+/* ============================================================
+   阅读理解
+   ============================================================ */
+.reading-passage {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 16px;
+  border-left: 4px solid var(--primary-light);
+}
+
+.reading-passage .rp-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.reading-passage .rp-meta {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+
+.reading-passage .rp-text {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.reading-passage .rp-text .highlight-word {
+  background: rgba(212, 172, 13, 0.15);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.reading-quiz {
+  margin-top: 16px;
+}
+
+/* ============================================================
+   句子练习
+   ============================================================ */
+.sentence-exercise {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.se-chinese {
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.se-hint {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.se-answer {
+  background: rgba(245, 176, 65, 0.06);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 17px;
+  color: var(--primary);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.se-answer:hover {
+  background: rgba(245, 176, 65, 0.12);
+}
+
+.se-answer .mask-text {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.se-answer.revealed {
+  background: rgba(39, 174, 96, 0.08);
+  color: var(--success);
+}
+
+.se-answer.revealed .mask-text {
+  display: none;
+}
+
+/* ============================================================
+   自然拼读
+   ============================================================ */
+.phonics-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  transition: var(--transition);
+  cursor: pointer;
+  border-top: 4px solid var(--accent);
+}
+
+.phonics-card:hover {
+  transform: translateY(-4px);
+}
+
+.phonics-card .pc-letter {
+  font-size: 64px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.phonics-card .pc-sound {
+  font-size: 28px;
+  color: var(--accent);
+  font-style: italic;
+  margin: 8px 0;
+}
+
+.phonics-card .pc-tip {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.phonics-card .pc-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
+.phonics-card .pc-word {
+  background: rgba(245, 176, 65, 0.1);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--primary);
+}
+
+.phonics-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* ============================================================
+   课堂总结
+   ============================================================ */
+.summary-card {
+  background: linear-gradient(135deg, rgba(202, 111, 30, 0.05) 0%, rgba(245, 176, 65, 0.05) 100%);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 16px;
+  border: 1px solid var(--rg-border);
+}
+
+.summary-card .sc-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-card .sc-content {
+  font-size: 16px;
+  color: var(--text-primary);
+  line-height: 1.8;
+}
+
+.summary-card .sc-formula {
+  background: var(--card-bg);
+  border-radius: var(--radius-sm);
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center;
+  border: 2px dashed var(--primary-light);
+}
+
+/* ============================================================
+   词汇复习游戏
+   ============================================================ */
+.vocab-game {
+  background: linear-gradient(135deg, rgba(202, 111, 30, 0.08) 0%, rgba(245, 176, 65, 0.08) 100%);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 16px 0;
+}
+
+.vocab-game .vg-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.vocab-game .vg-subtitle {
+  font-size: 14px;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.vocab-game .vg-word-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.vocab-game .vg-word {
+  background: var(--card-bg);
+  border: 2px solid var(--primary-light);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.vocab-game .vg-word:hover {
+  background: var(--primary-light);
+  color: var(--text-white);
+  transform: scale(1.08);
+}
+
+.vocab-game .vg-word.used {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.vocab-game .vg-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vocab-game .vg-question {
+  background: var(--card-bg);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  flex-wrap: wrap;
+}
+
+.vocab-game .vg-blank {
+  display: inline-block;
+  min-width: 80px;
+  min-height: 32px;
+  border: 2px dashed var(--primary-light);
+  border-radius: 8px;
+  text-align: center;
+  line-height: 28px;
+  font-weight: 600;
+  color: var(--accent);
+  padding: 0 8px;
+}
+
+.vocab-game .vg-blank.filled {
+  border-style: solid;
+  border-color: var(--success);
+  color: var(--success);
+  background: rgba(39, 174, 96, 0.08);
+}
+
+.vocab-game .vg-blank.filled.wrong {
+  border-color: var(--error);
+  color: var(--error);
+  background: rgba(231, 76, 60, 0.08);
+}
+
+.vocab-game .vg-feedback {
+  font-size: 14px;
+  margin-top: 4px;
+  display: none;
+}
+
+.vocab-game .vg-feedback.show {
+  display: block;
+}
+
+.vocab-game .vg-feedback.correct {
+  color: var(--success);
+}
+
+.vocab-game .vg-feedback.wrong {
+  color: var(--error);
+}
+
+/* ============================================================
+   复习导入 - L1-L3 语法卡片
+   ============================================================ */
+.review-grammar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.review-grammar-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  box-shadow: var(--card-shadow);
+  border-top: 3px solid var(--primary-light);
+  transition: var(--transition);
+}
+
+.review-grammar-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.review-grammar-card .rgc-code {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--text-white);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.review-grammar-card .rgc-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.review-grammar-card .rgc-formula {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* L1-L3 词汇分类速览 */
+.review-vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.review-vocab-category {
+  background: var(--card-bg);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.review-vocab-category .rvc-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+  text-align: center;
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 4px;
+}
+
+.review-vocab-category .rvc-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+}
+
+.review-vocab-category .rvc-word {
+  background: rgba(245, 176, 65, 0.08);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  color: var(--primary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.review-vocab-category .rvc-word:hover {
+  background: var(--primary-light);
+  color: var(--text-white);
+  transform: scale(1.1);
+}
+
+/* 句型翻译练习 */
+.translation-practice {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 12px 0;
+  box-shadow: var(--card-shadow);
+  border-left: 4px solid var(--accent);
+}
+
+.translation-practice .tp-chinese {
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.translation-practice .tp-answer {
+  background: rgba(46, 134, 193, 0.06);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 17px;
+  color: var(--accent);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.translation-practice .tp-answer:hover {
+  background: rgba(46, 134, 193, 0.12);
+}
+
+.translation-practice .tp-answer .mask-text {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.translation-practice .tp-answer.revealed {
+  background: rgba(39, 174, 96, 0.08);
+  color: var(--success);
+}
+
+.translation-practice .tp-answer.revealed .mask-text {
+  display: none;
+}
+
+/* ============================================================
+   滚动条美化
+   ============================================================ */
+.slide::-webkit-scrollbar,
+.slide-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.slide::-webkit-scrollbar-track,
+.slide-content::-webkit-scrollbar-track {
+  background: rgba(202, 111, 30, 0.05);
+}
+
+.slide::-webkit-scrollbar-thumb,
+.slide-content::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 3px;
+}
+
+/* ============================================================
+   响应式
+   ============================================================ */
+@media (max-width: 1200px) {
+  :root {
+    --font-base: 22px;
+    --font-large: 28px;
+    --font-small: 16px;
+  }
+  .cover-content h1 { font-size: 48px; }
+  .cover-content .subtitle { font-size: 20px; }
+  .phonics-grid { grid-template-columns: repeat(3, 1fr); }
+  .review-grammar-grid { grid-template-columns: repeat(2, 1fr); }
+  .review-vocab-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-base: 18px;
+    --font-large: 24px;
+    --font-small: 14px;
+  }
+  .cover-content h1 { font-size: 32px; }
+  .cover-content .subtitle { font-size: 16px; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .phonics-grid { grid-template-columns: repeat(2, 1fr); }
+  .memory-matrix { grid-template-columns: repeat(2, 1fr); }
+  .review-grammar-grid { grid-template-columns: 1fr; }
+  .review-vocab-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   打印优化
+   ============================================================ */
+@media print {
+  .nav-zone, .bottom-nav, .top-bar { display: none; }
+  .slide { display: flex !important; page-break-after: always; }
+}
+</style>
+</head>
+<body>
+
+<div id="presentation">
+
+<!-- ============================================================
+     P0 · 封面
+     ============================================================ -->
+<div class="slide cover-slide active" data-page="0" data-section="cover">
+  <div class="cover-content anim-bounceIn">
+    <div class="stage-badge">🚀 Stage 2 · L04</div>
+    <h1>名词单复数、tidy形容词与房间介词</h1>
+    <div class="subtitle">🏠 小小室内设计师 — 用英语描述你的房间</div>
+    <div class="objectives">
+      <div class="objective-card">
+        <div class="obj-icon">📚</div>
+        <div class="obj-text">20个新词：房间·家具·方位</div>
+      </div>
+      <div class="objective-card">
+        <div class="obj-icon">📐</div>
+        <div class="obj-text">3个语法：G10复数 + G11形容词 + G12方位介词</div>
+      </div>
+      <div class="objective-card">
+        <div class="obj-icon">🔤</div>
+        <div class="obj-text">5个音素：Pp / Qq / Rr / Ss / Tt</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P1 · 复习L1-L3 语法九考点快闪
+     ============================================================ -->
+<div class="slide" data-page="1" data-section="review">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 复习导入</span>
+    <span class="section-label">📋 Stage 1 语法九考点快闪</span>
+    <span class="page-counter">P1 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">📋 L1–L3 语法九考点口诀快闪</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">Stage 1 我们学了9个语法点，谁能一口气背出3个口诀？</p>
+    <div class="review-grammar-grid">
+      <div class="review-grammar-card anim-fadeSlideUp" style="animation-delay:0.05s">
+        <span class="rgc-code">G01</span>
+        <div class="rgc-title">主格宾格</div>
+        <div class="rgc-formula">I→me, he→him, she→her, we→us, they→them</div>
+      </div>
+      <div class="review-grammar-card anim-fadeSlideUp" style="animation-delay:0.1s">
+        <span class="rgc-code">G02</span>
+        <div class="rgc-title">物主代词</div>
+        <div class="rgc-formula">my→mine, your→yours, his→his, her→hers, our→ours</div>
+      </div>
+      <div class="review-grammar-card anim-fadeSlideUp" style="animation-delay:0.15s">
+        <span class="rgc-code">G03</span>
+        <div class="rgc-title">be动词三态</div>
+        <div class="rgc-formula">I am, you are, he/she/it is → was/were</div>
+      </div>
+      <div class="review-grammar-card anim-fadeSlideUp" style="animation-delay:0.2s">
+        <span class="rgc-code">G04</span>
+        <div class="rgc-title">指示代词</div>
+        <div class="rgc-formula">this→these, that→those（近单→近复，远单→远复）</div>
+      </div>
+      <div class="review-grammar-card anim-fadeSlideUp" style="animation-delay:0.25s">
+        <span class="rgc-code">G05</span>
+        <div class="rgc-title">be否定疑问</div>
+        <div class="rgc-formula">is not = isn't, are not = aren't, was not = wasn't</div>
+      </div>
+      <div class="review-grammar-card anim-fadeSlideUp" style="animation-delay:0.3s">
+        <span class="rgc-code">G06</span>
+        <div class="rgc-title">Who疑问句</div>
+        <div class="rgc-formula">Who is + 单? Who are + 复? Who's that?</div>
+      </div>
+      <div class="review-grammar-card anim-fadeSlideUp" style="animation-delay:0.35s">
+        <span class="rgc-code">G07</span>
+        <div class="rgc-title">名词所有格</div>
+        <div class="rgc-formula">单数+'s (Tom's), 复数+s' (students'), 不规则+children's</div>
+      </div>
+      <div class="review-grammar-card anim-fadeSlideUp" style="animation-delay:0.4s">
+        <span class="rgc-code">G08</span>
+        <div class="rgc-title">基数词1-100</div>
+        <div class="rgc-formula">one-ten, eleven-twenty, twenty-one…ninety-nine, hundred</div>
+      </div>
+      <div class="review-grammar-card anim-fadeSlideUp" style="animation-delay:0.45s">
+        <span class="rgc-code">G09</span>
+        <div class="rgc-title">Where疑问+存在句</div>
+        <div class="rgc-formula">Where is/are…? There is/are… (就近原则)</div>
+      </div>
+    </div>
+
+    <div class="quiz-section" style="margin-top:20px;">
+      <div class="quiz-question" data-qid="r1">
+        <div class="qq-text"><span class="qq-number">1</span>选择正确答案：______ is my friend. ______ name is Tom. (G01+G02)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'r1','B')" data-key="A"><span class="qo-letter">A</span>He; His</div>
+          <div class="q-option" onclick="checkAnswer(this,'r1','A')" data-key="B"><span class="qo-letter">B</span>Him; He's</div>
+          <div class="q-option" onclick="checkAnswer(this,'r1','A')" data-key="C"><span class="qo-letter">C</span>His; Him</div>
+        </div>
+        <div class="q-explanation" id="exp-r1">解析：主格用He作主语，物主代词His修饰name。正确答案：A "He; His"。</div>
+        <div class="undo-hint" id="undo-r1">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="r2">
+        <div class="qq-text"><span class="qq-number">2</span>选择正确答案：There ______ a book and two pens on the desk. (G09)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'r2','B')" data-key="A"><span class="qo-letter">A</span>are</div>
+          <div class="q-option" onclick="checkAnswer(this,'r2','A')" data-key="B"><span class="qo-letter">B</span>is</div>
+          <div class="q-option" onclick="checkAnswer(this,'r2','B')" data-key="C"><span class="qo-letter">C</span>be</div>
+        </div>
+        <div class="q-explanation" id="exp-r2">解析：There be句型遵循"就近原则"，离be动词最近的是a book（单数），所以用is。正确答案：B "is"。</div>
+        <div class="undo-hint" id="undo-r2">💡 答错了？双击此题可撤销重答</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P2 · L1-L3 词汇60词速览 + 句型翻译 + 跨课词汇复习游戏
+     ============================================================ -->
+<div class="slide" data-page="2" data-section="review">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 复习导入</span>
+    <span class="section-label">📖 L1-L3 词汇速览 + 跨课复习游戏</span>
+    <span class="page-counter">P2 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">📖 L1–L3 词汇60词分类速览</h2>
+    <div class="review-vocab-grid">
+      <div class="review-vocab-category anim-slideInLeft">
+        <div class="rvc-title">L1 · 问候交友</div>
+        <div class="rvc-words">
+          <span class="rvc-word">hello</span><span class="rvc-word">hi</span><span class="rvc-word">name</span><span class="rvc-word">friend</span><span class="rvc-word">nice</span><span class="rvc-word">meet</span><span class="rvc-word">good</span><span class="rvc-word">morning</span><span class="rvc-word">afternoon</span><span class="rvc-word">thank</span><span class="rvc-word">please</span><span class="rvc-word">sorry</span><span class="rvc-word">yes</span><span class="rvc-word">no</span><span class="rvc-word">what</span><span class="rvc-word">who</span><span class="rvc-word">how</span><span class="rvc-word">old</span><span class="rvc-word">year</span><span class="rvc-word">student</span>
+        </div>
+      </div>
+      <div class="review-vocab-category anim-slideInLeft" style="animation-delay:0.1s">
+        <div class="rvc-title">L2 · 个人信息</div>
+        <div class="rvc-words">
+          <span class="rvc-word">I</span><span class="rvc-word">you</span><span class="rvc-word">he</span><span class="rvc-word">she</span><span class="rvc-word">it</span><span class="rvc-word">we</span><span class="rvc-word">they</span><span class="rvc-word">my</span><span class="rvc-word">your</span><span class="rvc-word">his</span><span class="rvc-word">her</span><span class="rvc-word">our</span><span class="rvc-word">this</span><span class="rvc-word">that</span><span class="rvc-word">these</span><span class="rvc-word">those</span><span class="rvc-word">am</span><span class="rvc-word">is</span><span class="rvc-word">are</span><span class="rvc-word">from</span>
+        </div>
+      </div>
+      <div class="review-vocab-category anim-slideInLeft" style="animation-delay:0.2s">
+        <div class="rvc-title">L3 · 数字与位置</div>
+        <div class="rvc-words">
+          <span class="rvc-word">one</span><span class="rvc-word">two</span><span class="rvc-word">three</span><span class="rvc-word">four</span><span class="rvc-word">five</span><span class="rvc-word">six</span><span class="rvc-word">seven</span><span class="rvc-word">eight</span><span class="rvc-word">nine</span><span class="rvc-word">ten</span><span class="rvc-word">where</span><span class="rvc-word">here</span><span class="rvc-word">there</span><span class="rvc-word">school</span><span class="rvc-word">home</span><span class="rvc-word">class</span><span class="rvc-word">teacher</span><span class="rvc-word">book</span><span class="rvc-word">pen</span><span class="rvc-word">bag</span>
+        </div>
+      </div>
+      <div class="review-vocab-category anim-slideInLeft" style="animation-delay:0.3s">
+        <div class="rvc-title">句型复习</div>
+        <div class="rvc-words">
+          <span class="rvc-word">What's your name?</span><span class="rvc-word">My name is…</span><span class="rvc-word">How old are you?</span><span class="rvc-word">I'm … years old.</span><span class="rvc-word">Where are you from?</span><span class="rvc-word">I'm from…</span><span class="rvc-word">This is…</span><span class="rvc-word">Nice to meet you.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 跨课词汇复习游戏：复习L3的20词，Tier2/3 -->
+    <div class="vocab-game anim-scaleUp" style="margin-top:20px;">
+      <div class="vg-title">🎮 跨课词汇复习游戏 — L3词汇复习 (Tier 2/3)</div>
+      <div class="vg-subtitle">点击词库中的词填入对应空格，复习L3核心词汇</div>
+      <div class="vg-word-bank" id="vg-bank-review">
+        <span class="vg-word" onclick="fillReviewBlank(this, 1)" data-word="where">where</span>
+        <span class="vg-word" onclick="fillReviewBlank(this, 2)" data-word="school">school</span>
+        <span class="vg-word" onclick="fillReviewBlank(this, 3)" data-word="teacher">teacher</span>
+        <span class="vg-word" onclick="fillReviewBlank(this, 4)" data-word="book">book</span>
+        <span class="vg-word" onclick="fillReviewBlank(this, 5)" data-word="pen">pen</span>
+        <span class="vg-word" onclick="fillReviewBlank(this, 6)" data-word="there">there</span>
+        <span class="vg-word" onclick="fillReviewBlank(this, 7)" data-word="home">home</span>
+        <span class="vg-word" onclick="fillReviewBlank(this, 8)" data-word="bag">bag</span>
+      </div>
+      <div class="vg-questions">
+        <div class="vg-question">
+          <span>1. ______ is my schoolbag? — It's on the desk. (G09 Where疑问)</span>
+          <span class="vg-blank" id="rvb-1" onclick="clearReviewBlank(1)"></span>
+          <span class="vg-feedback" id="rvf-1"></span>
+        </div>
+        <div class="vg-question">
+          <span>2. I go to ______ every day. My ______ is big and clean. (L3名词)</span>
+          <span class="vg-blank" id="rvb-2" onclick="clearReviewBlank(2)"></span>
+          <span class="vg-blank" id="rvb-3" onclick="clearReviewBlank(3)"></span>
+          <span class="vg-feedback" id="rvf-2"></span>
+        </div>
+        <div class="vg-question">
+          <span>3. My ______ is Mr. Wang. He teaches English. (L3名词)</span>
+          <span class="vg-blank" id="rvb-4" onclick="clearReviewBlank(4)"></span>
+          <span class="vg-feedback" id="rvf-3"></span>
+        </div>
+        <div class="vg-question">
+          <span>4. There is a ______ on the desk. And ______ is a pen in my bag. (L3名词 + 存在句)</span>
+          <span class="vg-blank" id="rvb-5" onclick="clearReviewBlank(5)"></span>
+          <span class="vg-blank" id="rvb-6" onclick="clearReviewBlank(6)"></span>
+          <span class="vg-feedback" id="rvf-4"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3句快速口头翻译 -->
+    <div style="margin-top:16px;">
+      <h3 style="color:var(--primary);font-size:20px;margin-bottom:8px;">🗣️ 3句快速口头翻译</h3>
+      <div class="translation-practice">
+        <div class="tp-chinese">1. 这是我的朋友Tom。他十二岁了。</div>
+        <div class="tp-answer" onclick="toggleReveal(this)">
+          <span class="mask-text">点击查看答案</span>
+          <span style="display:none;">This is my friend Tom. He is twelve years old.</span>
+        </div>
+      </div>
+      <div class="translation-practice">
+        <div class="tp-chinese">2. 你的书在哪里？在书包里。</div>
+        <div class="tp-answer" onclick="toggleReveal(this)">
+          <span class="mask-text">点击查看答案</span>
+          <span style="display:none;">Where is your book? It's in the bag.</span>
+        </div>
+      </div>
+      <div class="translation-practice">
+        <div class="tp-chinese">3. 那些是她的铅笔。这些是我的。</div>
+        <div class="tp-answer" onclick="toggleReveal(this)">
+          <span class="mask-text">点击查看答案</span>
+          <span style="display:none;">Those are her pencils. These are mine.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P3 · 新词 1-5 房间家具组
+     ============================================================ -->
+<div class="slide" data-page="3" data-section="vocab">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 新词20</span>
+    <span class="section-label">🏠 新词 1-5 房间家具组</span>
+    <span class="page-counter">P3 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">🏠 新词 1-5 · 房间家具组</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">看这5个词，都是房间里的家具 🔍</p>
+    <div class="vocab-grid">
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.05s">
+        <span class="vc-number">1</span>
+        <div class="vc-emoji">🏠</div>
+        <div class="vc-word">room</div>
+        <div class="vc-phonetic">/ruːm/</div>
+        <span class="vc-pos">n.</span>
+        <div class="vc-meaning">房间</div>
+        <div class="vc-collocation">📌 in the room / a tidy room</div>
+        <div class="vc-example">"My room is big and clean."</div>
+        <div class="vc-mnemonic">🧠 r-oo-m — room里有oo(两只眼睛看房间)</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.1s">
+        <span class="vc-number">2</span>
+        <div class="vc-emoji">🛏️</div>
+        <div class="vc-word">bed</div>
+        <div class="vc-phonetic">/bed/</div>
+        <span class="vc-pos">n.</span>
+        <div class="vc-meaning">床</div>
+        <div class="vc-collocation">📌 go to bed / on the bed</div>
+        <div class="vc-example">"My book is on the bed."</div>
+        <div class="vc-mnemonic">🧠 b-ed — bed音似"白的"——白床单</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.15s">
+        <span class="vc-number">3</span>
+        <div class="vc-emoji">🍽️</div>
+        <div class="vc-word">table</div>
+        <div class="vc-phonetic">/ˈteɪbl/</div>
+        <span class="vc-pos">n.</span>
+        <div class="vc-meaning">桌子</div>
+        <div class="vc-collocation">📌 on the table / table tennis</div>
+        <div class="vc-example">"The keys are on the table."</div>
+        <div class="vc-mnemonic">🧠 t-able — 能坐的桌子=table</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.2s">
+        <span class="vc-number">4</span>
+        <div class="vc-emoji">🪑</div>
+        <div class="vc-word">chair</div>
+        <div class="vc-phonetic">/tʃeə(r)/</div>
+        <span class="vc-pos">n.</span>
+        <div class="vc-meaning">椅子</div>
+        <div class="vc-collocation">📌 sit on the chair</div>
+        <div class="vc-example">"The chair is next to the desk."</div>
+        <div class="vc-mnemonic">🧠 ch-air — chair里有air(空气)——椅子很轻</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.25s">
+        <span class="vc-number">5</span>
+        <div class="vc-emoji">📝</div>
+        <div class="vc-word">desk</div>
+        <div class="vc-phonetic">/desk/</div>
+        <span class="vc-pos">n.</span>
+        <div class="vc-meaning">书桌</div>
+        <div class="vc-collocation">📌 at the desk / desk lamp</div>
+        <div class="vc-example">"My computer is on the desk."</div>
+        <div class="vc-mnemonic">🧠 d-esk — desk音似"呆死磕"——趴桌上死磕作业</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P4 · 新词 6-10 家具与方位组
+     ============================================================ -->
+<div class="slide" data-page="4" data-section="vocab">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 新词20</span>
+    <span class="section-label">🛋️ 新词 6-10 家具与方位组</span>
+    <span class="page-counter">P4 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">🛋️ 新词 6-10 · 家具与方位组</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">这5个词告诉你东西在哪里 📍</p>
+    <div class="vocab-grid">
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.05s">
+        <span class="vc-number">6</span>
+        <div class="vc-emoji">📚</div>
+        <div class="vc-word">bookcase</div>
+        <div class="vc-phonetic">/ˈbʊkkeɪs/</div>
+        <span class="vc-pos">n.</span>
+        <div class="vc-meaning">书柜</div>
+        <div class="vc-collocation">📌 in the bookcase / a tall bookcase</div>
+        <div class="vc-example">"My books are in the bookcase."</div>
+        <div class="vc-mnemonic">🧠 book(书)+case(箱子)——放书的箱子</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.1s">
+        <span class="vc-number">7</span>
+        <div class="vc-emoji">🛋️</div>
+        <div class="vc-word">sofa</div>
+        <div class="vc-phonetic">/ˈsəʊfə/</div>
+        <span class="vc-pos">n.</span>
+        <div class="vc-meaning">沙发</div>
+        <div class="vc-collocation">📌 on the sofa / sofa bed</div>
+        <div class="vc-example">"The cat is on the sofa."</div>
+        <div class="vc-mnemonic">🧠 sofa音译"沙发"——直接音译词</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.15s">
+        <span class="vc-number">8</span>
+        <div class="vc-emoji">⬇️</div>
+        <div class="vc-word">under</div>
+        <div class="vc-phonetic">/ˈʌndə(r)/</div>
+        <span class="vc-pos">prep.</span>
+        <div class="vc-meaning">在……下面</div>
+        <div class="vc-collocation">📌 under the bed / under the tree</div>
+        <div class="vc-example">"My shoes are under the bed."</div>
+        <div class="vc-mnemonic">🧠 un-der — under音似"昂德"——往下昂</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.2s">
+        <span class="vc-number">9</span>
+        <div class="vc-emoji">⬆️</div>
+        <div class="vc-word">on</div>
+        <div class="vc-phonetic">/ɒn/</div>
+        <span class="vc-pos">prep.</span>
+        <div class="vc-meaning">在……上面</div>
+        <div class="vc-collocation">📌 on the desk / on the wall</div>
+        <div class="vc-example">"The clock is on the wall."</div>
+        <div class="vc-mnemonic">🧠 o-n — on就是"在上"——o像鸡蛋放在n上</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.25s">
+        <span class="vc-number">10</span>
+        <div class="vc-emoji">🔲</div>
+        <div class="vc-word">in</div>
+        <div class="vc-phonetic">/ɪn/</div>
+        <span class="vc-pos">prep.</span>
+        <div class="vc-meaning">在……里面</div>
+        <div class="vc-collocation">📌 in the box / in the room</div>
+        <div class="vc-example">"The pen is in the pencil box."</div>
+        <div class="vc-mnemonic">🧠 i-n — in就是"在内"——i钻进n里</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P5 · 新词 11-15 方位与描述组
+     ============================================================ -->
+<div class="slide" data-page="5" data-section="vocab">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 新词20</span>
+    <span class="section-label">➡️ 新词 11-15 方位与描述组</span>
+    <span class="page-counter">P5 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">➡️ 新词 11-15 · 方位与描述组</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">继续学方位词和描述词 🎯</p>
+    <div class="vocab-grid">
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.05s">
+        <span class="vc-number">11</span>
+        <div class="vc-emoji">↩️</div>
+        <div class="vc-word">behind</div>
+        <div class="vc-phonetic">/bɪˈhaɪnd/</div>
+        <span class="vc-pos">prep.</span>
+        <div class="vc-meaning">在……后面</div>
+        <div class="vc-collocation">📌 behind the door / behind the tree</div>
+        <div class="vc-example">"The bike is behind the door."</div>
+        <div class="vc-mnemonic">🧠 be(在)+hind(后面)——在后面</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.1s">
+        <span class="vc-number">12</span>
+        <div class="vc-emoji">➡️</div>
+        <div class="vc-word">next</div>
+        <div class="vc-phonetic">/nekst/</div>
+        <span class="vc-pos">adj./adv.</span>
+        <div class="vc-meaning">下一个的；紧邻的</div>
+        <div class="vc-collocation">📌 next to / next week</div>
+        <div class="vc-example">"The sofa is next to the window."</div>
+        <div class="vc-mnemonic">🧠 n-ext — next音似"耐克斯特"——紧挨着下一个</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.15s">
+        <span class="vc-number">13</span>
+        <div class="vc-emoji">🌐</div>
+        <div class="vc-word">everywhere</div>
+        <div class="vc-phonetic">/ˈevriweə(r)/</div>
+        <span class="vc-pos">adv.</span>
+        <div class="vc-meaning">到处</div>
+        <div class="vc-collocation">📌 everywhere in the room</div>
+        <div class="vc-example">"My books are everywhere in my room."</div>
+        <div class="vc-mnemonic">🧠 every(每个)+where(哪里)——每个地方=到处</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.2s">
+        <span class="vc-number">14</span>
+        <div class="vc-emoji">♾️</div>
+        <div class="vc-word">always</div>
+        <div class="vc-phonetic">/ˈɔːlweɪz/</div>
+        <span class="vc-pos">adv.</span>
+        <div class="vc-meaning">总是</div>
+        <div class="vc-collocation">📌 always clean / always busy</div>
+        <div class="vc-example">"I always keep my room tidy."</div>
+        <div class="vc-mnemonic">🧠 al(全部)+way(路)+s——所有路都走=总是</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.25s">
+        <span class="vc-number">15</span>
+        <div class="vc-emoji">✨</div>
+        <div class="vc-word">tidy</div>
+        <div class="vc-phonetic">/ˈtaɪdi/</div>
+        <span class="vc-pos">adj.</span>
+        <div class="vc-meaning">整洁的</div>
+        <div class="vc-collocation">📌 a tidy room / keep tidy</div>
+        <div class="vc-example">"My room is always tidy."</div>
+        <div class="vc-mnemonic">🧠 ti-dy — tidy音似"泰迪"——泰迪熊很整洁</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P6 · 新词 16-20 习惯与动作组
+     ============================================================ -->
+<div class="slide" data-page="6" data-section="vocab">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 新词20</span>
+    <span class="section-label">🔄 新词 16-20 习惯与动作组</span>
+    <span class="page-counter">P6 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">🔄 新词 16-20 · 习惯与动作组</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">最后5个词，关于习惯和动作 💪</p>
+    <div class="vocab-grid">
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.05s">
+        <span class="vc-number">16</span>
+        <div class="vc-emoji">🔀</div>
+        <div class="vc-word">but</div>
+        <div class="vc-phonetic">/bʌt/</div>
+        <span class="vc-pos">conj.</span>
+        <div class="vc-meaning">但是</div>
+        <div class="vc-collocation">📌 but also / but not</div>
+        <div class="vc-example">"The room is small but tidy."</div>
+        <div class="vc-mnemonic">🧠 b-ut — but音似"罢特"——但是，特殊转折</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.1s">
+        <span class="vc-number">17</span>
+        <div class="vc-emoji">🌀</div>
+        <div class="vc-word">messy</div>
+        <div class="vc-phonetic">/ˈmesi/</div>
+        <span class="vc-pos">adj.</span>
+        <div class="vc-meaning">凌乱的</div>
+        <div class="vc-collocation">📌 a messy room / look messy</div>
+        <div class="vc-example">"His room is very messy."</div>
+        <div class="vc-mnemonic">🧠 mess(混乱)+y(形容词后缀)——混乱的</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.15s">
+        <span class="vc-number">18</span>
+        <div class="vc-emoji">🔄</div>
+        <div class="vc-word">habit</div>
+        <div class="vc-phonetic">/ˈhæbɪt/</div>
+        <span class="vc-pos">n.</span>
+        <div class="vc-meaning">习惯</div>
+        <div class="vc-collocation">📌 good habit / bad habit</div>
+        <div class="vc-example">"Keeping the room clean is a good habit."</div>
+        <div class="vc-mnemonic">🧠 ha-bit — habit音似"海比特"——习惯成海</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.2s">
+        <span class="vc-number">19</span>
+        <div class="vc-emoji">🧹</div>
+        <div class="vc-word">clean</div>
+        <div class="vc-phonetic">/kliːn/</div>
+        <span class="vc-pos">adj./v.</span>
+        <div class="vc-meaning">干净的；打扫</div>
+        <div class="vc-collocation">📌 clean the room / keep clean</div>
+        <div class="vc-example">"I clean my room every weekend."</div>
+        <div class="vc-mnemonic">🧠 c-lean — clean里有lean(倾斜)——打扫要弯腰</div>
+      </div>
+      <div class="vocab-card anim-fadeSlideUp" style="animation-delay:0.25s">
+        <span class="vc-number">20</span>
+        <div class="vc-emoji">🤲</div>
+        <div class="vc-word">keep</div>
+        <div class="vc-phonetic">/kiːp/</div>
+        <span class="vc-pos">v.</span>
+        <div class="vc-meaning">保持</div>
+        <div class="vc-collocation">📌 keep tidy / keep clean / keep healthy</div>
+        <div class="vc-example">"We should keep our classroom clean."</div>
+        <div class="vc-mnemonic">🧠 k-eep — keep音似"基普"——保持基普乔格跑姿</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P7 · 20词分类矩阵 + 课内词汇复习游戏 Tier1
+     ============================================================ -->
+<div class="slide" data-page="7" data-section="vocab">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 新词20</span>
+    <span class="section-label">🗂️ 20词分类矩阵 + 词汇复习游戏</span>
+    <span class="page-counter">P7 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">🗂️ 20词分类矩阵</h2>
+    <div class="memory-matrix">
+      <div class="matrix-category anim-scaleUp">
+        <div class="mc-title">🏠 家具名词</div>
+        <div class="mc-words">
+          <span class="mc-word">room</span><span class="mc-word">bed</span><span class="mc-word">table</span><span class="mc-word">chair</span><span class="mc-word">desk</span><span class="mc-word">bookcase</span><span class="mc-word">sofa</span>
+        </div>
+      </div>
+      <div class="matrix-category anim-scaleUp" style="animation-delay:0.1s">
+        <div class="mc-title">📍 方位介词</div>
+        <div class="mc-words">
+          <span class="mc-word">under</span><span class="mc-word">on</span><span class="mc-word">in</span><span class="mc-word">behind</span><span class="mc-word">next</span>
+        </div>
+      </div>
+      <div class="matrix-category anim-scaleUp" style="animation-delay:0.2s">
+        <div class="mc-title">✨ 描述形容词/副词</div>
+        <div class="mc-words">
+          <span class="mc-word">tidy</span><span class="mc-word">messy</span><span class="mc-word">clean</span><span class="mc-word">everywhere</span><span class="mc-word">always</span>
+        </div>
+      </div>
+      <div class="matrix-category anim-scaleUp" style="animation-delay:0.3s">
+        <div class="mc-title">🔗 连词/动词/名词</div>
+        <div class="mc-words">
+          <span class="mc-word">but</span><span class="mc-word">keep</span><span class="mc-word">habit</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 课内词汇复习游戏 Tier 1 -->
+    <div class="vocab-game anim-fadeSlideUp" style="margin-top:20px;">
+      <div class="vg-title">🎮 课内词汇复习游戏 (Tier 1) — 看中文选英文</div>
+      <div class="vg-subtitle">点击正确的英文单词完成配对</div>
+      <div class="vg-questions">
+        <div class="vg-question" style="flex-direction:column;align-items:flex-start;gap:6px;">
+          <span style="font-weight:600;">1. "书柜" 的英文是？</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span class="vg-word" onclick="checkVocabGame(this,1,'A')" data-key="A">bookcase</span>
+            <span class="vg-word" onclick="checkVocabGame(this,1,'B')" data-key="B">desk</span>
+            <span class="vg-word" onclick="checkVocabGame(this,1,'C')" data-key="C">table</span>
+          </div>
+          <span class="vg-feedback" id="vgs-1"></span>
+        </div>
+        <div class="vg-question" style="flex-direction:column;align-items:flex-start;gap:6px;">
+          <span style="font-weight:600;">2. "凌乱的" 的英文是？</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span class="vg-word" onclick="checkVocabGame(this,2,'A')" data-key="A">tidy</span>
+            <span class="vg-word" onclick="checkVocabGame(this,2,'B')" data-key="B">clean</span>
+            <span class="vg-word" onclick="checkVocabGame(this,2,'C')" data-key="C">messy</span>
+          </div>
+          <span class="vg-feedback" id="vgs-2"></span>
+        </div>
+        <div class="vg-question" style="flex-direction:column;align-items:flex-start;gap:6px;">
+          <span style="font-weight:600;">3. "在……后面" 的英文是？</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span class="vg-word" onclick="checkVocabGame(this,3,'A')" data-key="A">behind</span>
+            <span class="vg-word" onclick="checkVocabGame(this,3,'B')" data-key="B">under</span>
+            <span class="vg-word" onclick="checkVocabGame(this,3,'C')" data-key="C">next</span>
+          </div>
+          <span class="vg-feedback" id="vgs-3"></span>
+        </div>
+        <div class="vg-question" style="flex-direction:column;align-items:flex-start;gap:6px;">
+          <span style="font-weight:600;">4. "保持" 的英文是？</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span class="vg-word" onclick="checkVocabGame(this,4,'A')" data-key="A">habit</span>
+            <span class="vg-word" onclick="checkVocabGame(this,4,'B')" data-key="B">keep</span>
+            <span class="vg-word" onclick="checkVocabGame(this,4,'C')" data-key="C">but</span>
+          </div>
+          <span class="vg-feedback" id="vgs-4"></span>
+        </div>
+        <div class="vg-question" style="flex-direction:column;align-items:flex-start;gap:6px;">
+          <span style="font-weight:600;">5. "到处" 的英文是？</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span class="vg-word" onclick="checkVocabGame(this,5,'A')" data-key="A">always</span>
+            <span class="vg-word" onclick="checkVocabGame(this,5,'B')" data-key="B">everywhere</span>
+            <span class="vg-word" onclick="checkVocabGame(this,5,'C')" data-key="C">room</span>
+          </div>
+          <span class="vg-feedback" id="vgs-5"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P8 · 词汇检测5题 + 课内词汇复习游戏 Tier2/3
+     ============================================================ -->
+<div class="slide" data-page="8" data-section="vocab">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 新词20</span>
+    <span class="section-label">✅ 词汇检测 + 词汇复习游戏 (Tier 2/3)</span>
+    <span class="page-counter">P8 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">✅ 词汇检测 · 5题选择题</h2>
+    <div class="quiz-section">
+      <div class="quiz-question" data-qid="vq1">
+        <div class="qq-text"><span class="qq-number">1</span>选择正确的词：My books are in the ______. (书柜)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'vq1','A')" data-key="A"><span class="qo-letter">A</span>bookcase</div>
+          <div class="q-option" onclick="checkAnswer(this,'vq1','B')" data-key="B"><span class="qo-letter">B</span>desk</div>
+          <div class="q-option" onclick="checkAnswer(this,'vq1','B')" data-key="C"><span class="qo-letter">C</span>table</div>
+        </div>
+        <div class="q-explanation" id="exp-vq1">解析：书柜是bookcase，book(书)+case(箱子)=放书的箱子。答案：A。</div>
+        <div class="undo-hint" id="undo-vq1">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="vq2">
+        <div class="qq-text"><span class="qq-number">2</span>选择正确的搭配：I always keep my room ______. (整洁的)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'vq2','A')" data-key="A"><span class="qo-letter">A</span>messy</div>
+          <div class="q-option" onclick="checkAnswer(this,'vq2','B')" data-key="B"><span class="qo-letter">B</span>tidy</div>
+          <div class="q-option" onclick="checkAnswer(this,'vq2','B')" data-key="C"><span class="qo-letter">C</span>but</div>
+        </div>
+        <div class="q-explanation" id="exp-vq2">解析：keep tidy是固定搭配，意为"保持整洁"。messy是凌乱，but是但是。答案：B。</div>
+        <div class="undo-hint" id="undo-vq2">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="vq3">
+        <div class="qq-text"><span class="qq-number">3</span>选择正确的介词：The cat is ______ the sofa. (在……上面)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'vq3','A')" data-key="A"><span class="qo-letter">A</span>on</div>
+          <div class="q-option" onclick="checkAnswer(this,'vq3','B')" data-key="B"><span class="qo-letter">B</span>in</div>
+          <div class="q-option" onclick="checkAnswer(this,'vq3','B')" data-key="C"><span class="qo-letter">C</span>under</div>
+        </div>
+        <div class="q-explanation" id="exp-vq3">解析：on表示"在……上面"，in是里面，under是下面。答案：A。</div>
+        <div class="undo-hint" id="undo-vq3">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="vq4">
+        <div class="qq-text"><span class="qq-number">4</span>选择正确的词：His room is very ______. His books are everywhere. (凌乱的)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'vq4','B')" data-key="A"><span class="qo-letter">A</span>tidy</div>
+          <div class="q-option" onclick="checkAnswer(this,'vq4','A')" data-key="B"><span class="qo-letter">B</span>clean</div>
+          <div class="q-option" onclick="checkAnswer(this,'vq4','A')" data-key="C"><span class="qo-letter">C</span>messy</div>
+        </div>
+        <div class="q-explanation" id="exp-vq4">解析：books everywhere说明房间很凌乱，messy=凌乱的。答案：C。</div>
+        <div class="undo-hint" id="undo-vq4">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="vq5">
+        <div class="qq-text"><span class="qq-number">5</span>选择正确的词：Keeping the room clean is a good ______. (习惯)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'vq5','B')" data-key="A"><span class="qo-letter">A</span>habit</div>
+          <div class="q-option" onclick="checkAnswer(this,'vq5','B')" data-key="B"><span class="qo-letter">B</span>room</div>
+          <div class="q-option" onclick="checkAnswer(this,'vq5','B')" data-key="C"><span class="qo-letter">C</span>bed</div>
+        </div>
+        <div class="q-explanation" id="exp-vq5">解析：good habit=好习惯，a good habit是固定搭配。答案：A。</div>
+        <div class="undo-hint" id="undo-vq5">💡 答错了？双击此题可撤销重答</div>
+      </div>
+    </div>
+
+    <!-- 课内词汇复习游戏 Tier 2/3 -->
+    <div class="vocab-game anim-fadeSlideUp" style="margin-top:20px;">
+      <div class="vg-title">🎮 课内词汇复习游戏 (Tier 2/3) — 选词填空挑战</div>
+      <div class="vg-subtitle">从词库中选词填入空格，完成句子</div>
+      <div class="vg-word-bank" id="vg-bank-l4">
+        <span class="vg-word" onclick="fillL4Blank(this,1)" data-word="always">always</span>
+        <span class="vg-word" onclick="fillL4Blank(this,2)" data-word="behind">behind</span>
+        <span class="vg-word" onclick="fillL4Blank(this,3)" data-word="habit">habit</span>
+        <span class="vg-word" onclick="fillL4Blank(this,4)" data-word="next">next</span>
+        <span class="vg-word" onclick="fillL4Blank(this,5)" data-word="everywhere">everywhere</span>
+        <span class="vg-word" onclick="fillL4Blank(this,6)" data-word="keep">keep</span>
+        <span class="vg-word" onclick="fillL4Blank(this,7)" data-word="but">but</span>
+        <span class="vg-word" onclick="fillL4Blank(this,8)" data-word="tidy">tidy</span>
+      </div>
+      <div class="vg-questions">
+        <div class="vg-question">
+          <span>1. The room is small ______ tidy. (but)</span>
+          <span class="vg-blank" id="l4b-1" onclick="clearL4Blank(1)"></span>
+          <span class="vg-feedback" id="l4f-1"></span>
+        </div>
+        <div class="vg-question">
+          <span>2. I ______ keep my room clean. (always)</span>
+          <span class="vg-blank" id="l4b-2" onclick="clearL4Blank(2)"></span>
+          <span class="vg-feedback" id="l4f-2"></span>
+        </div>
+        <div class="vg-question">
+          <span>3. The bike is ______ the door. (behind)</span>
+          <span class="vg-blank" id="l4b-3" onclick="clearL4Blank(3)"></span>
+          <span class="vg-feedback" id="l4f-3"></span>
+        </div>
+        <div class="vg-question">
+          <span>4. The sofa is ______ to the window. (next)</span>
+          <span class="vg-blank" id="l4b-4" onclick="clearL4Blank(4)"></span>
+          <span class="vg-feedback" id="l4f-4"></span>
+        </div>
+        <div class="vg-question">
+          <span>5. My books are ______ in my room. (everywhere)</span>
+          <span class="vg-blank" id="l4b-5" onclick="clearL4Blank(5)"></span>
+          <span class="vg-feedback" id="l4f-5"></span>
+        </div>
+        <div class="vg-question">
+          <span>6. We should ______ our classroom clean. (keep)</span>
+          <span class="vg-blank" id="l4b-6" onclick="clearL4Blank(6)"></span>
+          <span class="vg-feedback" id="l4f-6"></span>
+        </div>
+        <div class="vg-question">
+          <span>7. A tidy room is a good ______. (habit)</span>
+          <span class="vg-blank" id="l4b-7" onclick="clearL4Blank(7)"></span>
+          <span class="vg-feedback" id="l4f-7"></span>
+        </div>
+        <div class="vg-question">
+          <span>8. My room is always ______. (tidy)</span>
+          <span class="vg-blank" id="l4b-8" onclick="clearL4Blank(8)"></span>
+          <span class="vg-feedback" id="l4f-8"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P9 · G10 可数名词规则复数变化
+     ============================================================ -->
+<div class="slide" data-page="9" data-section="grammar">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 语法3考点</span>
+    <span class="section-label">📐 G10 可数名词规则复数变化</span>
+    <span class="page-counter">P9 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">📐 G10 · 可数名词规则复数变化</h2>
+    <div class="grammar-formula anim-scaleUp">
+      <div class="gf-title">语法口诀</div>
+      <div class="gf-content">直加 s 最常见，遇 s/x/sh/ch 加 es，辅音+y 去 y 加 ies</div>
+    </div>
+    <table class="grammar-table anim-fadeSlideUp">
+      <thead>
+        <tr>
+          <th>规则</th>
+          <th>词尾条件</th>
+          <th>变化方式</th>
+          <th>示例</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>规则 1</td>
+          <td>一般情况</td>
+          <td>直接加 -s</td>
+          <td>room→rooms, book→books, pen→pens</td>
+        </tr>
+        <tr>
+          <td>规则 2</td>
+          <td>-s, -x, -sh, -ch 结尾</td>
+          <td>加 -es</td>
+          <td>box→boxes, watch→watches, bus→buses</td>
+        </tr>
+        <tr>
+          <td>规则 3</td>
+          <td>辅音字母 + y 结尾</td>
+          <td>去 y 加 -ies</td>
+          <td>family→families, dictionary→dictionaries</td>
+        </tr>
+        <tr>
+          <td>规则 4</td>
+          <td>元音字母 + y 结尾</td>
+          <td>直接加 -s</td>
+          <td>boy→boys, key→keys, day→days</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="color:var(--primary);font-size:20px;margin:16px 0 8px;">📊 本课20词复数变化实例对照表</h3>
+    <table class="grammar-table anim-fadeSlideUp">
+      <thead>
+        <tr>
+          <th>本课词汇</th>
+          <th>词尾类型</th>
+          <th>复数变化</th>
+          <th>适用规则</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>room</td><td>一般</td><td class="correct-cell">rooms</td><td>规则 1（直接加 s）</td></tr>
+        <tr><td>bed</td><td>一般</td><td class="correct-cell">beds</td><td>规则 1</td></tr>
+        <tr><td>table</td><td>一般</td><td class="correct-cell">tables</td><td>规则 1</td></tr>
+        <tr><td>chair</td><td>一般</td><td class="correct-cell">chairs</td><td>规则 1</td></tr>
+        <tr><td>desk</td><td>一般</td><td class="correct-cell">desks</td><td>规则 1</td></tr>
+        <tr><td>bookcase</td><td>一般（以e结尾）</td><td class="correct-cell">bookcases</td><td>规则 1</td></tr>
+        <tr><td>sofa</td><td>一般</td><td class="correct-cell">sofas</td><td>规则 1</td></tr>
+        <tr><td>habit</td><td>一般</td><td class="correct-cell">habits</td><td>规则 1</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:14px;color:var(--text-secondary);margin-top:8px;">📌 规律总结：本课20词中，8个可数名词全部适用规则1（直接加s），无一例外。介词、形容词、副词、连词、动词不变复数。</p>
+
+    <h3 style="color:var(--primary);font-size:20px;margin:16px 0 8px;">🔊 读音规则</h3>
+    <table class="grammar-table anim-fadeSlideUp">
+      <thead>
+        <tr><th>词尾</th><th>读音</th><th>示例</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>清辅音后</td><td>/s/</td><td>books /buːks/, desks /desks/</td></tr>
+        <tr><td>浊辅音/元音后</td><td>/z/</td><td>rooms /ruːmz/, boys /bɔɪz/</td></tr>
+        <tr><td>s/x/sh/ch 后加 es</td><td>/ɪz/</td><td>boxes /ˈbɒksɪz/, watches /ˈwɒtʃɪz/</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P10 · G10 复数变化器 + 读音规则 + 即时练习
+     ============================================================ -->
+<div class="slide" data-page="10" data-section="grammar">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 语法3考点</span>
+    <span class="section-label">🔧 G10 复数变化器 + 即时练习</span>
+    <span class="page-counter">P10 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">🔧 G10 复数变化器</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">点击按钮，看名词如何变成复数！</p>
+    <div class="plural-builder anim-scaleUp">
+      <div class="pb-buttons">
+        <button class="pb-btn active" onclick="switchPlural('room', this)">room</button>
+        <button class="pb-btn" onclick="switchPlural('box', this)">box</button>
+        <button class="pb-btn" onclick="switchPlural('family', this)">family</button>
+        <button class="pb-btn" onclick="switchPlural('boy', this)">boy</button>
+      </div>
+      <div class="pb-display" id="pb-display">
+        <div class="pb-singular" id="pb-singular">room</div>
+        <div class="pb-arrow">⬇️</div>
+        <div class="pb-plural" id="pb-plural">rooms</div>
+        <div class="pb-pronunciation" id="pb-pron">/ruːmz/</div>
+        <div class="pb-sentence" id="pb-sentence">I have two rooms.</div>
+      </div>
+    </div>
+
+    <div class="error-warning anim-fadeSlideUp">
+      <div class="ew-title">⚠️ 中考易错点</div>
+      <div class="ew-content">
+        <span class="ew-wrong">❌ boxs</span> → <span class="ew-correct">✅ boxes</span>（x结尾加es）<br>
+        <span class="ew-wrong">❌ dictionarys</span> → <span class="ew-correct">✅ dictionaries</span>（辅音+y去y加ies）<br>
+        <span class="ew-wrong">❌ boies</span> → <span class="ew-correct">✅ boys</span>（元音+y直接加s，不要误改）
+      </div>
+    </div>
+
+    <h3 style="color:var(--primary);font-size:20px;margin:16px 0 8px;">✏️ 即时练习 · 3题</h3>
+    <div class="quiz-section">
+      <div class="quiz-question" data-qid="g10p1">
+        <div class="qq-text"><span class="qq-number">1</span>box 的复数形式是？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'g10p1','B')" data-key="A"><span class="qo-letter">A</span>boxs</div>
+          <div class="q-option" onclick="checkAnswer(this,'g10p1','A')" data-key="B"><span class="qo-letter">B</span>boxes</div>
+          <div class="q-option" onclick="checkAnswer(this,'g10p1','B')" data-key="C"><span class="qo-letter">C</span>boxies</div>
+        </div>
+        <div class="q-explanation" id="exp-g10p1">解析：box以x结尾，规则2，加-es → boxes，读音/ɪz/。答案：B。</div>
+        <div class="undo-hint" id="undo-g10p1">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="g10p2">
+        <div class="qq-text"><span class="qq-number">2</span>family 的复数形式是？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'g10p2','B')" data-key="A"><span class="qo-letter">A</span>familys</div>
+          <div class="q-option" onclick="checkAnswer(this,'g10p2','A')" data-key="B"><span class="qo-letter">B</span>families</div>
+          <div class="q-option" onclick="checkAnswer(this,'g10p2','B')" data-key="C"><span class="qo-letter">C</span>familyes</div>
+        </div>
+        <div class="q-explanation" id="exp-g10p2">解析：family是辅音+y结尾，规则3，去y加-ies → families。答案：B。</div>
+        <div class="undo-hint" id="undo-g10p2">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="g10p3">
+        <div class="qq-text"><span class="qq-number">3</span>boy 的复数形式是？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'g10p3','A')" data-key="A"><span class="qo-letter">A</span>boys</div>
+          <div class="q-option" onclick="checkAnswer(this,'g10p3','B')" data-key="B"><span class="qo-letter">B</span>boies</div>
+          <div class="q-option" onclick="checkAnswer(this,'g10p3','B')" data-key="C"><span class="qo-letter">C</span>boies</div>
+        </div>
+        <div class="q-explanation" id="exp-g10p3">解析：boy是元音(o)+y结尾，规则4，直接加-s → boys。答案：A。</div>
+        <div class="undo-hint" id="undo-g10p3">💡 答错了？双击此题可撤销重答</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P11 · G11 形容词作定语与作表语
+     ============================================================ -->
+<div class="slide" data-page="11" data-section="grammar">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 语法3考点</span>
+    <span class="section-label">✨ G11 形容词作定语与作表语</span>
+    <span class="page-counter">P11 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">✨ G11 · 形容词作定语与作表语</h2>
+    <div class="grammar-formula anim-scaleUp">
+      <div class="gf-title">语法口诀</div>
+      <div class="gf-content">定语在前修饰名（a tidy room），表语在后跟 be 动（The room is tidy）</div>
+    </div>
+    <table class="grammar-table anim-fadeSlideUp">
+      <thead>
+        <tr><th>用法</th><th>结构</th><th>位置</th><th>示例</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>作定语</td><td>a/an + 形容词 + 名词</td><td>名词前</td><td>a tidy room, a clean desk, a big table</td></tr>
+        <tr><td>作表语</td><td>主语 + be + 形容词</td><td>be 动词后</td><td>The room is tidy. The desk is clean.</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="color:var(--primary);font-size:20px;margin:16px 0 8px;">📝 例句对比</h3>
+    <div class="example-card anim-fadeSlideUp">
+      <div class="ec-label">定语用法</div>
+      <div class="ec-sentence">This is <span style="color:var(--primary);font-weight:700;">a tidy</span> room.</div>
+      <div class="ec-translation">这是一个整洁的房间。（tidy 在名词 room 前面修饰）</div>
+    </div>
+    <div class="example-card anim-fadeSlideUp">
+      <div class="ec-label">表语用法</div>
+      <div class="ec-sentence">The room <span style="color:var(--primary);font-weight:700;">is tidy</span>.</div>
+      <div class="ec-translation">房间是整洁的。（tidy 在 is 后面作表语）</div>
+    </div>
+    <div class="example-card anim-fadeSlideUp">
+      <div class="ec-label">多形容词并列</div>
+      <div class="ec-sentence">My desk is <span style="color:var(--primary);font-weight:700;">clean and big</span>.</div>
+      <div class="ec-translation">我的书桌干净又大。（clean 和 big 作表语，用 and 连接）</div>
+    </div>
+    <div class="example-card anim-fadeSlideUp">
+      <div class="ec-label">中考常考转换</div>
+      <div class="ec-sentence">a tidy room = The room is tidy.</div>
+      <div class="ec-translation">定语↔表语转换：a/an + adj + n ↔ n + is + adj</div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P12 · G11 易错点与中考辨析
+     ============================================================ -->
+<div class="slide" data-page="12" data-section="grammar">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 语法3考点</span>
+    <span class="section-label">⚠️ G11 易错点与中考辨析</span>
+    <span class="page-counter">P12 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">⚠️ G11 易错点与中考辨析</h2>
+
+    <div class="error-warning anim-fadeSlideUp">
+      <div class="ew-title">❌ 易错点 1：定语位置错误</div>
+      <div class="ew-content">
+        <span class="ew-wrong">❌ This is a room tidy.</span> → <span class="ew-correct">✅ This is a tidy room.</span><br>
+        形容词作定语<strong>必须在名词前</strong>。
+      </div>
+    </div>
+
+    <div class="error-warning anim-fadeSlideUp">
+      <div class="ew-title">❌ 易错点 2：表语缺be动词</div>
+      <div class="ew-content">
+        <span class="ew-wrong">❌ The room tidy.</span> → <span class="ew-correct">✅ The room is tidy.</span><br>
+        形容词作表语<strong>需要be动词</strong>连接。
+      </div>
+    </div>
+
+    <div class="error-warning anim-fadeSlideUp">
+      <div class="ew-title">❌ 易错点 3：表语误加a/an</div>
+      <div class="ew-content">
+        <span class="ew-wrong">❌ The room is a tidy.</span> → <span class="ew-correct">✅ The room is tidy.</span><br>
+        表语<strong>不加a/an</strong>，直接用形容词。
+      </div>
+    </div>
+
+    <div class="card anim-fadeSlideUp" style="margin-top:16px;">
+      <div class="card-title">📚 中考辨析要点</div>
+      <div style="font-size:16px;line-height:1.8;color:var(--text-primary);">
+        <strong>定语位置：</strong>形容词必须在名词前——a tidy room ✅ / a room tidy ❌<br>
+        <strong>表语位置：</strong>形容词必须在be动词后——The room is tidy ✅ / The room tidy is ❌<br>
+        <strong>多个形容词并列：</strong>a clean and tidy room（用and连接）<br>
+        <strong>中考常考转换：</strong>a tidy room = The room is tidy
+      </div>
+    </div>
+
+    <div class="quiz-section">
+      <div class="quiz-question" data-qid="g11p1">
+        <div class="qq-text"><span class="qq-number">1</span>哪个句子是正确的？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'g11p1','A')" data-key="A"><span class="qo-letter">A</span>This is a tidy room.</div>
+          <div class="q-option" onclick="checkAnswer(this,'g11p1','B')" data-key="B"><span class="qo-letter">B</span>This is a room tidy.</div>
+          <div class="q-option" onclick="checkAnswer(this,'g11p1','B')" data-key="C"><span class="qo-letter">C</span>This is tidy a room.</div>
+        </div>
+        <div class="q-explanation" id="exp-g11p1">解析：形容词作定语必须在名词前，a tidy room ✅。答案：A。</div>
+        <div class="undo-hint" id="undo-g11p1">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="g11p2">
+        <div class="qq-text"><span class="qq-number">2</span>"The desk is clean." 中 clean 的用法是？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'g11p2','A')" data-key="A"><span class="qo-letter">A</span>作定语</div>
+          <div class="q-option" onclick="checkAnswer(this,'g11p2','B')" data-key="B"><span class="qo-letter">B</span>作表语</div>
+          <div class="q-option" onclick="checkAnswer(this,'g11p2','B')" data-key="C"><span class="qo-letter">C</span>作主语</div>
+        </div>
+        <div class="q-explanation" id="exp-g11p2">解析：clean在is后面，作表语。答案：B。</div>
+        <div class="undo-hint" id="undo-g11p2">💡 答错了？双击此题可撤销重答</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P13 · G12 方位介词短语
+     ============================================================ -->
+<div class="slide" data-page="13" data-section="grammar">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 语法3考点</span>
+    <span class="section-label">🧭 G12 方位介词短语</span>
+    <span class="page-counter">P13 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">🧭 G12 · 方位介词短语</h2>
+    <div class="grammar-formula anim-scaleUp">
+      <div class="gf-title">语法口诀</div>
+      <div class="gf-content">in 里面 on 上面，under 下面 behind 后；next to 紧挨着，between...and 夹中间</div>
+    </div>
+    <table class="grammar-table anim-fadeSlideUp">
+      <thead>
+        <tr><th>介词</th><th>含义</th><th>结构</th><th>示例</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>in</td><td>在……里面</td><td>in + the + 名词</td><td>in the room, in the box</td></tr>
+        <tr><td>on</td><td>在……上面</td><td>on + the + 名词</td><td>on the desk, on the wall</td></tr>
+        <tr><td>under</td><td>在……下面</td><td>under + the + 名词</td><td>under the bed, under the chair</td></tr>
+        <tr><td>behind</td><td>在……后面</td><td>behind + the + 名词</td><td>behind the door, behind the sofa</td></tr>
+        <tr><td>next to</td><td>紧挨着</td><td>next to + the + 名词</td><td>next to the window, next to the desk</td></tr>
+        <tr><td>in front of</td><td>在……前面</td><td>in front of + the + 名词</td><td>in front of the TV, in front of the house</td></tr>
+        <tr><td>between...and</td><td>在……和……之间</td><td>between A and B</td><td>between the desk and the bed</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="color:var(--primary);font-size:20px;margin:16px 0 8px;">📝 例句</h3>
+    <div class="example-card anim-fadeSlideUp">
+      <div class="ec-sentence">The book is <span style="color:var(--primary);font-weight:700;">on</span> the desk.</div>
+      <div class="ec-translation">书在桌子上。</div>
+    </div>
+    <div class="example-card anim-fadeSlideUp">
+      <div class="ec-sentence">The cat is <span style="color:var(--primary);font-weight:700;">under</span> the bed.</div>
+      <div class="ec-translation">猫在床下。</div>
+    </div>
+    <div class="example-card anim-fadeSlideUp">
+      <div class="ec-sentence">The sofa is <span style="color:var(--primary);font-weight:700;">next to</span> the window.</div>
+      <div class="ec-translation">沙发紧挨着窗户。</div>
+    </div>
+    <div class="example-card anim-fadeSlideUp">
+      <div class="ec-sentence">The TV is <span style="color:var(--primary);font-weight:700;">between</span> the bookcase <span style="color:var(--primary);font-weight:700;">and</span> the door.</div>
+      <div class="ec-translation">电视在书柜和门之间。</div>
+    </div>
+
+    <div class="error-warning anim-fadeSlideUp" style="margin-top:16px;">
+      <div class="ew-title">⚠️ 中考辨析</div>
+      <div class="ew-content">
+        <strong>in vs. on：</strong>in 强调"在里面"（in the drawer），on 强调"在表面"（on the desk）<br>
+        <strong>next to vs. near：</strong>next to = 紧挨着（零距离），near = 附近（有距离）<br>
+        <strong>in front of vs. in the front of：</strong>in front of = 在外部前方，in the front of = 在内部前方<br><br>
+        <span class="ew-wrong">❌ on wall</span> → <span class="ew-correct">✅ on the wall</span>（方位介词后必须加the）<br>
+        <span class="ew-wrong">❌ next the desk</span> → <span class="ew-correct">✅ next to the desk</span>（next to是固定短语，不能省to）<br>
+        <span class="ew-wrong">❌ between the desk the bed</span> → <span class="ew-correct">✅ between the desk and the bed</span>（between...and缺一不可）
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P14 · G12 房间布置器 + 例句精讲 + 即时练习
+     ============================================================ -->
+<div class="slide" data-page="14" data-section="grammar">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 语法3考点</span>
+    <span class="section-label">🏠 G12 房间布置器 + 即时练习</span>
+    <span class="page-counter">P14 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">🏠 G12 房间布置器</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">点击按钮，把家具放到不同位置，学方位介词！</p>
+    <div class="room-arranger anim-scaleUp">
+      <div class="ra-buttons">
+        <button class="ra-btn active" onclick="switchRoom('bed', this)">🛏️ bed</button>
+        <button class="ra-btn" onclick="switchRoom('desk', this)">📝 desk</button>
+        <button class="ra-btn" onclick="switchRoom('sofa', this)">🛋️ sofa</button>
+        <button class="ra-btn" onclick="switchRoom('bookcase', this)">📚 bookcase</button>
+      </div>
+      <div class="ra-display" id="ra-display">
+        <div class="ra-emoji" id="ra-emoji">🛏️</div>
+        <div class="ra-position" id="ra-position">next to the desk</div>
+        <div class="ra-sentence" id="ra-sentence">The bed is next to the desk.</div>
+      </div>
+    </div>
+
+    <h3 style="color:var(--primary);font-size:20px;margin:16px 0 8px;">✏️ 即时练习 · 3题</h3>
+    <div class="quiz-section">
+      <div class="quiz-question" data-qid="g12p1">
+        <div class="qq-text"><span class="qq-number">1</span>The book is ______ the desk. (在……上面)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'g12p1','A')" data-key="A"><span class="qo-letter">A</span>on</div>
+          <div class="q-option" onclick="checkAnswer(this,'g12p1','B')" data-key="B"><span class="qo-letter">B</span>in</div>
+          <div class="q-option" onclick="checkAnswer(this,'g12p1','B')" data-key="C"><span class="qo-letter">C</span>under</div>
+        </div>
+        <div class="q-explanation" id="exp-g12p1">解析：on表示"在……上面"，书在桌面表面。答案：A。</div>
+        <div class="undo-hint" id="undo-g12p1">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="g12p2">
+        <div class="qq-text"><span class="qq-number">2</span>The sofa is ______ ______ the window. (紧挨着)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'g12p2','A')" data-key="A"><span class="qo-letter">A</span>next to</div>
+          <div class="q-option" onclick="checkAnswer(this,'g12p2','B')" data-key="B"><span class="qo-letter">B</span>next</div>
+          <div class="q-option" onclick="checkAnswer(this,'g12p2','B')" data-key="C"><span class="qo-letter">C</span>next at</div>
+        </div>
+        <div class="q-explanation" id="exp-g12p2">解析：next to是固定短语，不能省to。答案：A。</div>
+        <div class="undo-hint" id="undo-g12p2">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="g12p3">
+        <div class="qq-text"><span class="qq-number">3</span>The TV is between the bookcase ______ the door. (填连词)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'g12p3','A')" data-key="A"><span class="qo-letter">A</span>and</div>
+          <div class="q-option" onclick="checkAnswer(this,'g12p3','B')" data-key="B"><span class="qo-letter">B</span>or</div>
+          <div class="q-option" onclick="checkAnswer(this,'g12p3','B')" data-key="C"><span class="qo-letter">C</span>but</div>
+        </div>
+        <div class="q-explanation" id="exp-g12p3">解析：between...and...是固定结构，and不可省。答案：A。</div>
+        <div class="undo-hint" id="undo-g12p3">💡 答错了？双击此题可撤销重答</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P15 · 随堂演练 上 4题
+     ============================================================ -->
+<div class="slide" data-page="15" data-section="quiz">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 随堂演练</span>
+    <span class="section-label">✏️ 随堂演练 上 · G10复数+G11形容词</span>
+    <span class="page-counter">P15 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">✏️ 随堂演练 · 上 (4题)</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">G10 名词复数 + G11 形容词定语/表语 — 先做后讲！</p>
+    <div class="quiz-section">
+      <div class="quiz-question" data-qid="ic1">
+        <div class="qq-text"><span class="qq-number">1</span>选择正确的复数形式：There are three ______ in the room.</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ic1','A')" data-key="A"><span class="qo-letter">A</span>boxs</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic1','B')" data-key="B"><span class="qo-letter">B</span>boxes</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic1','B')" data-key="C"><span class="qo-letter">C</span>boxies</div>
+        </div>
+        <div class="q-explanation" id="exp-ic1">解析：box以x结尾，规则2，加-es → boxes。答案：B。</div>
+        <div class="undo-hint" id="undo-ic1">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ic2">
+        <div class="qq-text"><span class="qq-number">2</span>选择正确句子（G11 形容词位置）：</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ic2','A')" data-key="A"><span class="qo-letter">A</span>The room is tidy.</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic2','B')" data-key="B"><span class="qo-letter">B</span>The room tidy is.</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic2','B')" data-key="C"><span class="qo-letter">C</span>The room is a tidy.</div>
+        </div>
+        <div class="q-explanation" id="exp-ic2">解析：表语在be动词后，不加a/an。The room is tidy ✅。答案：A。</div>
+        <div class="undo-hint" id="undo-ic2">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ic3">
+        <div class="qq-text"><span class="qq-number">3</span>dictionary 的复数形式是？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ic3','B')" data-key="A"><span class="qo-letter">A</span>dictionarys</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic3','A')" data-key="B"><span class="qo-letter">B</span>dictionaries</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic3','B')" data-key="C"><span class="qo-letter">C</span>dictionaryes</div>
+        </div>
+        <div class="q-explanation" id="exp-ic3">解析：dictionary是辅音+y结尾，规则3，去y加-ies → dictionaries。答案：B。</div>
+        <div class="undo-hint" id="undo-ic3">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ic4">
+        <div class="qq-text"><span class="qq-number">4</span>"a clean desk" 中 clean 的用法是？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ic4','A')" data-key="A"><span class="qo-letter">A</span>作定语，在名词前</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic4','B')" data-key="B"><span class="qo-letter">B</span>作表语，在be后</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic4','B')" data-key="C"><span class="qo-letter">C</span>作主语</div>
+        </div>
+        <div class="q-explanation" id="exp-ic4">解析：clean在名词desk前面，修饰desk，作定语。答案：A。</div>
+        <div class="undo-hint" id="undo-ic4">💡 答错了？双击此题可撤销重答</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P16 · 随堂演练 下 4题
+     ============================================================ -->
+<div class="slide" data-page="16" data-section="quiz">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 随堂演练</span>
+    <span class="section-label">✏️ 随堂演练 下 · G12方位+G01-G09复现</span>
+    <span class="page-counter">P16 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">✏️ 随堂演练 · 下 (4题)</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">G12 方位介词 + G01-G09复现 — 综合检验！</p>
+    <div class="quiz-section">
+      <div class="quiz-question" data-qid="ic5">
+        <div class="qq-text"><span class="qq-number">1</span>My shoes are ______ the bed. (在……下面)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ic5','B')" data-key="A"><span class="qo-letter">A</span>on</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic5','A')" data-key="B"><span class="qo-letter">B</span>in</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic5','A')" data-key="C"><span class="qo-letter">C</span>under</div>
+        </div>
+        <div class="q-explanation" id="exp-ic5">解析：under表示"在……下面"，鞋子在床下。答案：C。</div>
+        <div class="undo-hint" id="undo-ic5">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ic6">
+        <div class="qq-text"><span class="qq-number">2</span>The bike is ______ the door. (在……后面)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ic6','A')" data-key="A"><span class="qo-letter">A</span>behind</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic6','B')" data-key="B"><span class="qo-letter">B</span>in front of</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic6','B')" data-key="C"><span class="qo-letter">C</span>next to</div>
+        </div>
+        <div class="q-explanation" id="exp-ic6">解析：behind表示"在……后面"。答案：A。</div>
+        <div class="undo-hint" id="undo-ic6">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ic7">
+        <div class="qq-text"><span class="qq-number">3</span>(G09复现) There ______ a book and two pens on the desk.</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ic7','B')" data-key="A"><span class="qo-letter">A</span>are</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic7','A')" data-key="B"><span class="qo-letter">B</span>is</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic7','B')" data-key="C"><span class="qo-letter">C</span>be</div>
+        </div>
+        <div class="q-explanation" id="exp-ic7">解析：There be就近原则，离be最近的是a book（单数），用is。答案：B。</div>
+        <div class="undo-hint" id="undo-ic7">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ic8">
+        <div class="qq-text"><span class="qq-number">4</span>(G01复现) ______ is my friend. ______ name is Lily.</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ic8','A')" data-key="A"><span class="qo-letter">A</span>She; Her</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic8','B')" data-key="B"><span class="qo-letter">B</span>Her; She</div>
+          <div class="q-option" onclick="checkAnswer(this,'ic8','B')" data-key="C"><span class="qo-letter">C</span>She; She's</div>
+        </div>
+        <div class="q-explanation" id="exp-ic8">解析：主格She作主语，物主代词Her修饰name。答案：A。</div>
+        <div class="undo-hint" id="undo-ic8">💡 答错了？双击此题可撤销重答</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P17 · 阅读A篇 应用文 A Clean and Tidy Room
+     ============================================================ -->
+<div class="slide" data-page="17" data-section="reading">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 阅读理解</span>
+    <span class="section-label">📖 阅读A篇 · 应用文</span>
+    <span class="page-counter">P17 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">📖 阅读A篇 · A Clean and Tidy Room</h2>
+    <div class="reading-passage anim-fadeSlideUp">
+      <div class="rp-title">A Clean and Tidy Room</div>
+      <div class="rp-meta">应用文 · 86词 · 主题：整洁房间物品布局描述</div>
+      <div class="rp-text">
+        This is my <span class="highlight-word">room</span>. It is <span class="highlight-word">clean</span> and <span class="highlight-word">tidy</span>. A <span class="highlight-word">bed</span> is in the room. A <span class="highlight-word">desk</span> is <span class="highlight-word">next to</span> the bed. My books are <span class="highlight-word">on</span> the desk. A <span class="highlight-word">bookcase</span> is <span class="highlight-word">behind</span> the door. My schoolbag is <span class="highlight-word">under</span> the <span class="highlight-word">chair</span>. I <span class="highlight-word">always</span> <span class="highlight-word">keep</span> my room clean. This is a good <span class="highlight-word">habit</span>.
+      </div>
+    </div>
+
+    <div class="quiz-section">
+      <div class="quiz-question" data-qid="ra1">
+        <div class="qq-text"><span class="qq-number">1</span>Where is the desk? (细节题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ra1','A')" data-key="A"><span class="qo-letter">A</span>Next to the bed.</div>
+          <div class="q-option" onclick="checkAnswer(this,'ra1','B')" data-key="B"><span class="qo-letter">B</span>Behind the door.</div>
+          <div class="q-option" onclick="checkAnswer(this,'ra1','B')" data-key="C"><span class="qo-letter">C</span>Under the chair.</div>
+        </div>
+        <div class="q-explanation" id="exp-ra1">解析：原文"A desk is next to the bed." 答案：A。</div>
+        <div class="undo-hint" id="undo-ra1">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ra2">
+        <div class="qq-text"><span class="qq-number">2</span>Where is the bookcase? (细节题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ra2','B')" data-key="A"><span class="qo-letter">A</span>On the desk.</div>
+          <div class="q-option" onclick="checkAnswer(this,'ra2','A')" data-key="B"><span class="qo-letter">B</span>Behind the door.</div>
+          <div class="q-option" onclick="checkAnswer(this,'ra2','B')" data-key="C"><span class="qo-letter">C</span>Under the bed.</div>
+        </div>
+        <div class="q-explanation" id="exp-ra2">解析：原文"A bookcase is behind the door." 答案：B。</div>
+        <div class="undo-hint" id="undo-ra2">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ra3">
+        <div class="qq-text"><span class="qq-number">3</span>Where is the schoolbag? (细节题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ra3','B')" data-key="A"><span class="qo-letter">A</span>On the bed.</div>
+          <div class="q-option" onclick="checkAnswer(this,'ra3','B')" data-key="B"><span class="qo-letter">B</span>In the bookcase.</div>
+          <div class="q-option" onclick="checkAnswer(this,'ra3','A')" data-key="C"><span class="qo-letter">C</span>Under the chair.</div>
+        </div>
+        <div class="q-explanation" id="exp-ra3">解析：原文"My schoolbag is under the chair." 答案：C。</div>
+        <div class="undo-hint" id="undo-ra3">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ra4">
+        <div class="qq-text"><span class="qq-number">4</span>What does the writer always do? (推断题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ra4','A')" data-key="A"><span class="qo-letter">A</span>Keeps the room clean.</div>
+          <div class="q-option" onclick="checkAnswer(this,'ra4','B')" data-key="B"><span class="qo-letter">B</span>Reads books on the bed.</div>
+          <div class="q-option" onclick="checkAnswer(this,'ra4','B')" data-key="C"><span class="qo-letter">C</span>Puts the schoolbag on the desk.</div>
+        </div>
+        <div class="q-explanation" id="exp-ra4">解析：原文"I always keep my room clean." 答案：A。</div>
+        <div class="undo-hint" id="undo-ra4">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ra5">
+        <div class="qq-text"><span class="qq-number">5</span>What is the main idea of the passage? (主旨题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ra5','A')" data-key="A"><span class="qo-letter">A</span>A clean and tidy room and the habit of keeping it.</div>
+          <div class="q-option" onclick="checkAnswer(this,'ra5','B')" data-key="B"><span class="qo-letter">B</span>A messy room with things everywhere.</div>
+          <div class="q-option" onclick="checkAnswer(this,'ra5','B')" data-key="C"><span class="qo-letter">C</span>How to organize a bookcase.</div>
+        </div>
+        <div class="q-explanation" id="exp-ra5">解析：全文描述整洁房间布局并强调保持清洁的好习惯。答案：A。</div>
+        <div class="undo-hint" id="undo-ra5">💡 答错了？双击此题可撤销重答</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P18 · 阅读B篇 记叙文 My Messy Brother's Room
+     ============================================================ -->
+<div class="slide" data-page="18" data-section="reading">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 阅读理解</span>
+    <span class="section-label">📖 阅读B篇 · 记叙文</span>
+    <span class="page-counter">P18 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">📖 阅读B篇 · My Messy Brother's Room</h2>
+    <div class="reading-passage anim-fadeSlideUp">
+      <div class="rp-title">My Messy Brother's Room</div>
+      <div class="rp-meta">记叙文 · 107词 · 主题：对比整洁vs.凌乱房间</div>
+      <div class="rp-text">
+        My brother's room is very <span class="highlight-word">messy</span>. His books are <span class="highlight-word">everywhere</span> in his room. His clothes are <span class="highlight-word">on</span> the bed. His shoes are <span class="highlight-word">under</span> the desk. His schoolbag is <span class="highlight-word">behind</span> the door. <span class="highlight-word">But</span> my room is <span class="highlight-word">always</span> <span class="highlight-word">tidy</span>. My books are in the <span class="highlight-word">bookcase</span>. My clothes are in the wardrobe. My shoes are under the bed. I <span class="highlight-word">clean</span> my room every weekend. My brother says he wants to <span class="highlight-word">keep</span> his room tidy, but he always forgets. I tell him: "A tidy room is a good <span class="highlight-word">habit</span>."
+      </div>
+    </div>
+
+    <div class="quiz-section">
+      <div class="quiz-question" data-qid="rb1">
+        <div class="qq-text"><span class="qq-number">1</span>Where are the brother's books? (细节题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'rb1','A')" data-key="A"><span class="qo-letter">A</span>Everywhere in his room.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rb1','B')" data-key="B"><span class="qo-letter">B</span>In the bookcase.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rb1','B')" data-key="C"><span class="qo-letter">C</span>Under the desk.</div>
+        </div>
+        <div class="q-explanation" id="exp-rb1">解析：原文"His books are everywhere in his room." 答案：A。</div>
+        <div class="undo-hint" id="undo-rb1">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="rb2">
+        <div class="qq-text"><span class="qq-number">2</span>Where are the writer's clothes? (细节题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'rb2','B')" data-key="A"><span class="qo-letter">A</span>On the bed.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rb2','A')" data-key="B"><span class="qo-letter">B</span>In the wardrobe.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rb2','B')" data-key="C"><span class="qo-letter">C</span>Behind the door.</div>
+        </div>
+        <div class="q-explanation" id="exp-rb2">解析：原文"My clothes are in the wardrobe." 答案：B。</div>
+        <div class="undo-hint" id="undo-rb2">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="rb3">
+        <div class="qq-text"><span class="qq-number">3</span>What does the writer do every weekend? (细节题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'rb3','A')" data-key="A"><span class="qo-letter">A</span>Cleans the room.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rb3','B')" data-key="B"><span class="qo-letter">B</span>Reads books.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rb3','B')" data-key="C"><span class="qo-letter">C</span>Plays with the brother.</div>
+        </div>
+        <div class="q-explanation" id="exp-rb3">解析：原文"I clean my room every weekend." 答案：A。</div>
+        <div class="undo-hint" id="undo-rb3">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="rb4">
+        <div class="qq-text"><span class="qq-number">4</span>The word "forgets" in the passage means ______. (词义题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'rb4','B')" data-key="A"><span class="qo-letter">A</span>记住</div>
+          <div class="q-option" onclick="checkAnswer(this,'rb4','A')" data-key="B"><span class="qo-letter">B</span>忘记</div>
+          <div class="q-option" onclick="checkAnswer(this,'rb4','B')" data-key="C"><span class="qo-letter">C</span>想要</div>
+        </div>
+        <div class="q-explanation" id="exp-rb4">解析：forget=忘记，从上下文"he wants to keep tidy, but always forgets"可推断。答案：B。</div>
+        <div class="undo-hint" id="undo-rb4">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="rb5">
+        <div class="qq-text"><span class="qq-number">5</span>What can we infer from the passage? (推断题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'rb5','A')" data-key="A"><span class="qo-letter">A</span>The writer has a good habit but the brother doesn't.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rb5','B')" data-key="B"><span class="qo-letter">B</span>The brother is younger than the writer.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rb5','B')" data-key="C"><span class="qo-letter">C</span>The writer and brother share a room.</div>
+        </div>
+        <div class="q-explanation" id="exp-rb5">解析：全文对比两人房间，writer有整洁好习惯，brother房间凌乱。答案：A。</div>
+        <div class="undo-hint" id="undo-rb5">💡 答错了？双击此题可撤销重答</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P19 · 阅读C篇 说明文 How to Organize Your Room
+     ============================================================ -->
+<div class="slide" data-page="19" data-section="reading">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 阅读理解</span>
+    <span class="section-label">📖 阅读C篇 · 说明文</span>
+    <span class="page-counter">P19 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">📖 阅读C篇 · How to Organize Your Room</h2>
+    <div class="reading-passage anim-fadeSlideUp">
+      <div class="rp-title">How to Organize Your Room</div>
+      <div class="rp-meta">说明文 · 107词 · 主题：物品分类与收纳科普</div>
+      <div class="rp-text">
+        Do you want a <span class="highlight-word">tidy</span> room? First, put your books in the <span class="highlight-word">bookcase</span>. Books <span class="highlight-word">everywhere</span> make your room <span class="highlight-word">messy</span>. Second, put your clothes in the wardrobe. Third, put your shoes <span class="highlight-word">under</span> the bed or <span class="highlight-word">next to</span> the door. Fourth, <span class="highlight-word">clean</span> your desk every day. A clean desk helps you study better. Fifth, <span class="highlight-word">keep</span> your room clean every week. A good <span class="highlight-word">habit</span> makes a tidy room. A tidy room helps you find things quickly. You can organize your room today!
+      </div>
+    </div>
+
+    <div class="quiz-section">
+      <div class="quiz-question" data-qid="rc1">
+        <div class="qq-text"><span class="qq-number">1</span>What is the main idea of this passage? (主旨题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'rc1','A')" data-key="A"><span class="qo-letter">A</span>How to organize and keep your room tidy.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rc1','B')" data-key="B"><span class="qo-letter">B</span>Why books make your room messy.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rc1','B')" data-key="C"><span class="qo-letter">C</span>How to find things in your room.</div>
+        </div>
+        <div class="q-explanation" id="exp-rc1">解析：全文讲如何整理房间5个步骤。答案：A。</div>
+        <div class="undo-hint" id="undo-rc1">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="rc2">
+        <div class="qq-text"><span class="qq-number">2</span>Where should you put your shoes? (细节题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'rc2','A')" data-key="A"><span class="qo-letter">A</span>Under the bed or next to the door.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rc2','B')" data-key="B"><span class="qo-letter">B</span>On the desk.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rc2','B')" data-key="C"><span class="qo-letter">C</span>In the bookcase.</div>
+        </div>
+        <div class="q-explanation" id="exp-rc2">解析：原文"put your shoes under the bed or next to the door." 答案：A。</div>
+        <div class="undo-hint" id="undo-rc2">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="rc3">
+        <div class="qq-text"><span class="qq-number">3</span>How often should you clean your desk? (细节题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'rc3','A')" data-key="A"><span class="qo-letter">A</span>Every day.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rc3','B')" data-key="B"><span class="qo-letter">B</span>Every week.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rc3','B')" data-key="C"><span class="qo-letter">C</span>Every month.</div>
+        </div>
+        <div class="q-explanation" id="exp-rc3">解析：原文"clean your desk every day." 答案：A。</div>
+        <div class="undo-hint" id="undo-rc3">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="rc4">
+        <div class="qq-text"><span class="qq-number">4</span>What can we infer from "A tidy room helps you find things quickly"? (推断题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'rc4','A')" data-key="A"><span class="qo-letter">A</span>A messy room wastes your time looking for things.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rc4','B')" data-key="B"><span class="qo-letter">B</span>You should buy more things for your room.</div>
+          <div class="q-option" onclick="checkAnswer(this,'rc4','B')" data-key="C"><span class="qo-letter">C</span>A tidy room is bigger than a messy room.</div>
+        </div>
+        <div class="q-explanation" id="exp-rc4">解析：整洁房间帮你快速找到东西，反推凌乱房间浪费时间找东西。答案：A。</div>
+        <div class="undo-hint" id="undo-rc4">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="rc5">
+        <div class="qq-text"><span class="qq-number">5</span>The word "organize" in the passage means ______. (词义题)</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'rc5','B')" data-key="A"><span class="qo-letter">A</span>弄乱</div>
+          <div class="q-option" onclick="checkAnswer(this,'rc5','A')" data-key="B"><span class="qo-letter">B</span>整理</div>
+          <div class="q-option" onclick="checkAnswer(this,'rc5','B')" data-key="C"><span class="qo-letter">C</span>打扫</div>
+        </div>
+        <div class="q-explanation" id="exp-rc5">解析：organize=整理，从上下文5个整理步骤可推断。答案：B。</div>
+        <div class="undo-hint" id="undo-rc5">💡 答错了？双击此题可撤销重答</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P20 · 汉译英练习 上
+     ============================================================ -->
+<div class="slide" data-page="20" data-section="sentence">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 句子练习</span>
+    <span class="section-label">📝 汉译英 · 上 (方位介词运用)</span>
+    <span class="page-counter">P20 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">📝 汉译英练习 · 上</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">方位介词运用 — 先自己写，再查看答案对比！</p>
+
+    <div class="sentence-exercise anim-fadeSlideUp">
+      <div class="se-chinese">1. 书在桌子上。📚</div>
+      <div class="se-hint">提示：on the desk</div>
+      <div class="se-answer" onclick="toggleReveal(this)">
+        <span class="mask-text">点击查看答案</span>
+        <span style="display:none;">The book is on the desk.</span>
+      </div>
+    </div>
+    <div class="sentence-exercise anim-fadeSlideUp">
+      <div class="se-chinese">2. 我的鞋子在床下面。👟🛏️</div>
+      <div class="se-hint">提示：under the bed</div>
+      <div class="se-answer" onclick="toggleReveal(this)">
+        <span class="mask-text">点击查看答案</span>
+        <span style="display:none;">My shoes are under the bed.</span>
+      </div>
+    </div>
+    <div class="sentence-exercise anim-fadeSlideUp">
+      <div class="se-chinese">3. 沙发紧挨着窗户。🛋️🪟</div>
+      <div class="se-hint">提示：next to the window</div>
+      <div class="se-answer" onclick="toggleReveal(this)">
+        <span class="mask-text">点击查看答案</span>
+        <span style="display:none;">The sofa is next to the window.</span>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P21 · 汉译英练习 中
+     ============================================================ -->
+<div class="slide" data-page="21" data-section="sentence">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 句子练习</span>
+    <span class="section-label">📝 汉译英 · 中 (形容词定语/表语)</span>
+    <span class="page-counter">P21 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">📝 汉译英练习 · 中</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">形容词定语/表语转换 — 注意形容词位置！</p>
+
+    <div class="sentence-exercise anim-fadeSlideUp">
+      <div class="se-chinese">1. 这是一个整洁的房间。✨🏠</div>
+      <div class="se-hint">提示：a tidy room（定语在名词前）</div>
+      <div class="se-answer" onclick="toggleReveal(this)">
+        <span class="mask-text">点击查看答案</span>
+        <span style="display:none;">This is a tidy room.</span>
+      </div>
+    </div>
+    <div class="sentence-exercise anim-fadeSlideUp">
+      <div class="se-chinese">2. 我的房间总是干净的。🧹♾️</div>
+      <div class="se-hint">提示：is always clean（表语在be后）</div>
+      <div class="se-answer" onclick="toggleReveal(this)">
+        <span class="mask-text">点击查看答案</span>
+        <span style="display:none;">My room is always clean.</span>
+      </div>
+    </div>
+    <div class="sentence-exercise anim-fadeSlideUp">
+      <div class="se-chinese">3. 房间很小但是很整洁。🏠✨</div>
+      <div class="se-hint">提示：small but tidy</div>
+      <div class="se-answer" onclick="toggleReveal(this)">
+        <span class="mask-text">点击查看答案</span>
+        <span style="display:none;">The room is small but tidy.</span>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P22 · 汉译英练习 下
+     ============================================================ -->
+<div class="slide" data-page="22" data-section="sentence">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 句子练习</span>
+    <span class="section-label">📝 汉译英 · 下 (名词复数+房间综合)</span>
+    <span class="page-counter">P22 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">📝 汉译英练习 · 下</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">名词复数 + 房间综合描述 — 注意复数变化规则！</p>
+
+    <div class="sentence-exercise anim-fadeSlideUp">
+      <div class="se-chinese">1. 我有两个房间。🏠🏠</div>
+      <div class="se-hint">提示：room → rooms（直接加s）</div>
+      <div class="se-answer" onclick="toggleReveal(this)">
+        <span class="mask-text">点击查看答案</span>
+        <span style="display:none;">I have two rooms.</span>
+      </div>
+    </div>
+    <div class="sentence-exercise anim-fadeSlideUp">
+      <div class="se-chinese">2. 桌子上有三个盒子。📦📦📦</div>
+      <div class="se-hint">提示：box → boxes（x结尾加es）</div>
+      <div class="se-answer" onclick="toggleReveal(this)">
+        <span class="mask-text">点击查看答案</span>
+        <span style="display:none;">There are three boxes on the table.</span>
+      </div>
+    </div>
+    <div class="sentence-exercise anim-fadeSlideUp">
+      <div class="se-chinese">3. 保持房间整洁是一个好习惯。✨🤲🔄</div>
+      <div class="se-hint">提示：keep tidy, a good habit</div>
+      <div class="se-answer" onclick="toggleReveal(this)">
+        <span class="mask-text">点击查看答案</span>
+        <span style="display:none;">Keeping the room tidy is a good habit.</span>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P23 · 自然拼读 Pp-Tt 音素学习
+     ============================================================ -->
+<div class="slide" data-page="23" data-section="phonics">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 自然拼读</span>
+    <span class="section-label">🔤 Stage 1 拼读 · Pp-Tt 音素学习</span>
+    <span class="page-counter">P23 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">🔤 Pp-Tt 五音素学习</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">5个字母音素 + 20个朗读词汇 — 跟读两遍！</p>
+    <div class="phonics-grid">
+      <div class="phonics-card anim-scaleUp" style="animation-delay:0.05s">
+        <div class="pc-letter">Pp</div>
+        <div class="pc-sound">/p/</div>
+        <div class="pc-tip">双唇闭合，气流冲出（不振动声带）</div>
+        <div class="pc-words">
+          <span class="pc-word">pen</span><span class="pc-word">pig</span><span class="pc-word">cup</span><span class="pc-word">map</span>
+        </div>
+      </div>
+      <div class="phonics-card anim-scaleUp" style="animation-delay:0.1s">
+        <div class="pc-letter">Qq</div>
+        <div class="pc-sound">/kw/</div>
+        <div class="pc-tip">k+w 双音组合</div>
+        <div class="pc-words">
+          <span class="pc-word">queen</span><span class="pc-word">quick</span><span class="pc-word">quiet</span><span class="pc-word">square</span>
+        </div>
+      </div>
+      <div class="phonics-card anim-scaleUp" style="animation-delay:0.15s">
+        <div class="pc-letter">Rr</div>
+        <div class="pc-sound">/r/</div>
+        <div class="pc-tip">舌尖卷起，不接触上颚，声带振动</div>
+        <div class="pc-words">
+          <span class="pc-word">red</span><span class="pc-word">run</span><span class="pc-word">room</span><span class="pc-word">rice</span>
+        </div>
+      </div>
+      <div class="phonics-card anim-scaleUp" style="animation-delay:0.2s">
+        <div class="pc-letter">Ss</div>
+        <div class="pc-sound">/s/</div>
+        <div class="pc-tip">舌尖抵下齿，气流从舌面摩擦出</div>
+        <div class="pc-words">
+          <span class="pc-word">sun</span><span class="pc-word">bus</span><span class="pc-word">yes</span><span class="pc-word">sit</span>
+        </div>
+      </div>
+      <div class="phonics-card anim-scaleUp" style="animation-delay:0.25s">
+        <div class="pc-letter">Tt</div>
+        <div class="pc-sound">/t/</div>
+        <div class="pc-tip">舌尖抵上齿龈，气流突然冲出</div>
+        <div class="pc-words">
+          <span class="pc-word">table</span><span class="pc-word">cat</span><span class="pc-word">ten</span><span class="pc-word">foot</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P24 · 拼读练习1 听音选词
+     ============================================================ -->
+<div class="slide" data-page="24" data-section="phonics">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 自然拼读</span>
+    <span class="section-label">👂 拼读练习1 · 听音选词</span>
+    <span class="page-counter">P24 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">👂 拼读练习1 · 听音选词</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">听老师读单词，选出含目标音素的单词 🔊</p>
+    <div class="quiz-section">
+      <div class="quiz-question" data-qid="ph1">
+        <div class="qq-text"><span class="qq-number">1</span>哪个单词含有 /p/ 音？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ph1','A')" data-key="A"><span class="qo-letter">A</span>pen</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph1','B')" data-key="B"><span class="qo-letter">B</span>red</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph1','B')" data-key="C"><span class="qo-letter">C</span>sit</div>
+        </div>
+        <div class="q-explanation" id="exp-ph1">解析：pen /pen/ 以 /p/ 开头。答案：A。</div>
+        <div class="undo-hint" id="undo-ph1">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ph2">
+        <div class="qq-text"><span class="qq-number">2</span>哪个单词含有 /kw/ 音？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ph2','B')" data-key="A"><span class="qo-letter">A</span>cat</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph2','A')" data-key="B"><span class="qo-letter">B</span>quick</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph2','B')" data-key="C"><span class="qo-letter">C</span>map</div>
+        </div>
+        <div class="q-explanation" id="exp-ph2">解析：quick /kwɪk/ 以 /kw/ 开头。答案：B。</div>
+        <div class="undo-hint" id="undo-ph2">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ph3">
+        <div class="qq-text"><span class="qq-number">3</span>哪个单词含有 /r/ 音？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ph3','A')" data-key="A"><span class="qo-letter">A</span>rice</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph3','B')" data-key="B"><span class="qo-letter">B</span>cup</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph3','B')" data-key="C"><span class="qo-letter">C</span>ten</div>
+        </div>
+        <div class="q-explanation" id="exp-ph3">解析：rice /raɪs/ 以 /r/ 开头。答案：A。</div>
+        <div class="undo-hint" id="undo-ph3">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ph4">
+        <div class="qq-text"><span class="qq-number">4</span>哪个单词含有 /t/ 音？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ph4','B')" data-key="A"><span class="qo-letter">A</span>sun</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph4','A')" data-key="B"><span class="qo-letter">B</span>cat</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph4','B')" data-key="C"><span class="qo-letter">C</span>pen</div>
+        </div>
+        <div class="q-explanation" id="exp-ph4">解析：cat /kæt/ 以 /t/ 结尾。答案：B。</div>
+        <div class="undo-hint" id="undo-ph4">💡 答错了？双击此题可撤销重答</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P25 · 拼读练习2 看词归音
+     ============================================================ -->
+<div class="slide" data-page="25" data-section="phonics">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 自然拼读</span>
+    <span class="section-label">👀 拼读练习2 · 看词归音</span>
+    <span class="page-counter">P25 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">👀 拼读练习2 · 看词归音</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">看单词，判断它含有哪个目标音素 🎯</p>
+    <div class="quiz-section">
+      <div class="quiz-question" data-qid="ph5">
+        <div class="qq-text"><span class="qq-number">1</span>单词 "pig" 含有哪个音素？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ph5','A')" data-key="A"><span class="qo-letter">A</span>/p/</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph5','B')" data-key="B"><span class="qo-letter">B</span>/kw/</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph5','B')" data-key="C"><span class="qo-letter">C</span>/t/</div>
+        </div>
+        <div class="q-explanation" id="exp-ph5">解析：pig /pɪg/ 以 /p/ 开头。答案：A。</div>
+        <div class="undo-hint" id="undo-ph5">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ph6">
+        <div class="qq-text"><span class="qq-number">2</span>单词 "queen" 含有哪个音素？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ph6','B')" data-key="A"><span class="qo-letter">A</span>/r/</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph6','A')" data-key="B"><span class="qo-letter">B</span>/kw/</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph6','B')" data-key="C"><span class="qo-letter">C</span>/s/</div>
+        </div>
+        <div class="q-explanation" id="exp-ph6">解析：queen /kwiːn/ 以 /kw/ 开头。答案：B。</div>
+        <div class="undo-hint" id="undo-ph6">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ph7">
+        <div class="qq-text"><span class="qq-number">3</span>单词 "bus" 含有哪个音素？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ph7','B')" data-key="A"><span class="qo-letter">A</span>/p/</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph7','A')" data-key="B"><span class="qo-letter">B</span>/s/</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph7','B')" data-key="C"><span class="qo-letter">C</span>/t/</div>
+        </div>
+        <div class="q-explanation" id="exp-ph7">解析：bus /bʌs/ 以 /s/ 结尾。答案：B。</div>
+        <div class="undo-hint" id="undo-ph7">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ph8">
+        <div class="qq-text"><span class="qq-number">4</span>单词 "foot" 含有哪个音素？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ph8','B')" data-key="A"><span class="qo-letter">A</span>/r/</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph8','B')" data-key="B"><span class="qo-letter">B</span>/kw/</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph8','A')" data-key="C"><span class="qo-letter">C</span>/t/</div>
+        </div>
+        <div class="q-explanation" id="exp-ph8">解析：foot /fʊt/ 以 /t/ 结尾。答案：C。</div>
+        <div class="undo-hint" id="undo-ph8">💡 答错了？双击此题可撤销重答</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div>
+
+<!-- ============================================================
+     P26 · 拼读练习3 最小对立对辨析 + 课堂总结
+     ============================================================ -->
+<div class="slide" data-page="26" data-section="summary">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · 总结</span>
+    <span class="section-label">🎯 拼读练习3 + 课堂总结</span>
+    <span class="page-counter">P26 / P27</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">🎯 拼读练习3 · 最小对立对辨析</h2>
+    <div class="quiz-section">
+      <div class="quiz-question" data-qid="ph9">
+        <div class="qq-text"><span class="qq-number">1</span>pat 和 bat 的区别在于？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ph9','A')" data-key="A"><span class="qo-letter">A</span>/p/ vs /b/ — 清浊对比</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph9','B')" data-key="B"><span class="qo-letter">B</span>/t/ vs /d/ — 清浊对比</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph9','B')" data-key="C"><span class="qo-letter">C</span>/p/ vs /t/ — 不同音</div>
+        </div>
+        <div class="q-explanation" id="exp-ph9">解析：pat/pæt/ vs bat/bæt/，首辅音 /p/(清) vs /b/(浊)。答案：A。</div>
+        <div class="undo-hint" id="undo-ph9">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ph10">
+        <div class="qq-text"><span class="qq-number">2</span>rope 和 rose 的区别在于？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ph10','B')" data-key="A"><span class="qo-letter">A</span>/r/ vs /l/ — 不同音</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph10','A')" data-key="B"><span class="qo-letter">B</span>/p/ vs /s/ — 不同音</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph10','B')" data-key="C"><span class="qo-letter">C</span>/p/ vs /z/ — 清浊对比</div>
+        </div>
+        <div class="q-explanation" id="exp-ph10">解析：rope/roʊp/ vs rose/roʊz/，尾辅音 /p/(清) vs /z/(浊)。答案：C。</div>
+        <div class="undo-hint" id="undo-ph10">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ph11">
+        <div class="qq-text"><span class="qq-number">3</span>sit 和 fit 的区别在于？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ph11','A')" data-key="A"><span class="qo-letter">A</span>/s/ vs /f/ — 不同音</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph11','B')" data-key="B"><span class="qo-letter">B</span>/t/ vs /d/ — 清浊对比</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph11','B')" data-key="C"><span class="qo-letter">C</span>/s/ vs /z/ — 清浊对比</div>
+        </div>
+        <div class="q-explanation" id="exp-ph11">解析：sit/sɪt/ vs fit/fɪt/，首辅音 /s/ vs /f/。答案：A。</div>
+        <div class="undo-hint" id="undo-ph11">💡 答错了？双击此题可撤销重答</div>
+      </div>
+      <div class="quiz-question" data-qid="ph12">
+        <div class="qq-text"><span class="qq-number">4</span>以下哪组是清浊对立对？</div>
+        <div class="q-options">
+          <div class="q-option" onclick="checkAnswer(this,'ph12','A')" data-key="A"><span class="qo-letter">A</span>/p/ vs /b/ — 清浊</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph12','B')" data-key="B"><span class="qo-letter">B</span>/p/ vs /t/ — 不同音</div>
+          <div class="q-option" onclick="checkAnswer(this,'ph12','B')" data-key="C"><span class="qo-letter">C</span>/s/ vs /f/ — 不同音</div>
+        </div>
+        <div class="q-explanation" id="exp-ph12">解析：/p/(清辅音) vs /b/(浊辅音)是清浊对立对。答案：A。</div>
+        <div class="undo-hint" id="undo-ph12">💡 答错了？双击此题可撤销重答</div>
+      </div>
+    </div>
+
+    <!-- 课堂总结 -->
+    <h2 style="color:var(--primary);font-size:28px;margin:24px 0 8px;">🎓 课堂总结</h2>
+    <div class="summary-card anim-bounceIn">
+      <div class="sc-title">📐 三考点口诀</div>
+      <div class="sc-formula">G10：直加 s 最常见，遇 s/x/sh/ch 加 es，辅音+y 去 y 加 ies</div>
+      <div class="sc-formula">G11：定语在前修饰名（a tidy room），表语在后跟 be 动（The room is tidy）</div>
+      <div class="sc-formula">G12：in 里面 on 上面，under 下面 behind 后；next to 紧挨着，between...and 夹中间</div>
+    </div>
+    <div class="summary-card anim-bounceIn" style="animation-delay:0.1s">
+      <div class="sc-title">📚 20词速览</div>
+      <div class="sc-content" style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">room</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">bed</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">table</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">chair</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">desk</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">bookcase</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">sofa</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">under</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">on</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">in</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">behind</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">next</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">everywhere</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">always</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">tidy</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">but</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">messy</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">habit</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">clean</span>
+        <span style="background:rgba(245,176,65,0.1);padding:4px 10px;border-radius:12px;font-size:14px;color:var(--primary);">keep</span>
+      </div>
+    </div>
+    <div class="summary-card anim-bounceIn" style="animation-delay:0.2s">
+      <div class="sc-title">🔤 5音素速览</div>
+      <div class="sc-content" style="display:flex;justify-content:space-around;flex-wrap:wrap;gap:8px;">
+        <span style="font-size:24px;font-weight:700;color:var(--primary);">Pp /p/</span>
+        <span style="font-size:24px;font-weight:700;color:var(--primary);">Qq /kw/</span>
+        <span style="font-size:24px;font-weight:700;color:var(--primary);">Rr /r/</span>
+        <span style="font-size:24px;font-weight:700;color:var(--primary);">Ss /s/</span>
+        <span style="font-size:24px;font-weight:700;color:var(--primary);">Tt /t/</span>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:18px;color:var(--primary);font-weight:700;margin-top:16px;" class="anim-pulse">🏠 今天三句口诀记住了吗？回家用方位介词描述你的房间！ 🏠</p>
+  </div>
+  <div class="nav-zone left" onclick="prevPage()"></div>
+  <div class="nav-zone right" onclick="nextPage()"></div>
+</div><div class="slide" data-page="27" data-section="summary">
+  <div class="top-bar">
+    <span class="lesson-badge">L04 · Exit Ticket</span>
+    <span class="section-label">🎫 出门检测</span>
+    <span class="page-counter">P28 / P28</span>
+  </div>
+  <div class="slide-content">
+    <h2 style="color:var(--primary);font-size:28px;margin-bottom:8px;">🎫 Exit Ticket · 5 题检测</h2>
+    <p style="color:var(--text-secondary);font-size:16px;margin-bottom:12px;">答错双击可撤销重答，全部弄懂才算过关。</p>
+    <div class="quiz-question" data-qid="L04-EX-01">
+      <div class="qq-text"><span class="qq-number">1</span>选择正确答案：There ___ two books on the desk. (G09)</div>
+      <div class="q-options">
+        <div class="q-option" onclick="checkAnswer(this,'L04-EX-01','B')" data-key="A"><span class="qo-letter">A</span>is</div>
+        <div class="q-option" onclick="checkAnswer(this,'L04-EX-01','B')" data-key="B"><span class="qo-letter">B</span>are</div>
+        <div class="q-option" onclick="checkAnswer(this,'L04-EX-01','B')" data-key="C"><span class="qo-letter">C</span>be</div>
+      </div>
+      <div class="q-explanation" id="exp-L04-EX-01">解析：two books 是复数，There be 就近用 are。</div>
+      <div class="undo-hint" id="undo-L04-EX-01">💡 答错了？双击此题可撤销重答</div>
+    </div>
+    <div class="quiz-question" data-qid="L04-EX-02">
+      <div class="qq-text"><span class="qq-number">2</span>选择正确答案：box 的复数是？ (G10)</div>
+      <div class="q-options">
+        <div class="q-option" onclick="checkAnswer(this,'L04-EX-02','B')" data-key="A"><span class="qo-letter">A</span>boxs</div>
+        <div class="q-option" onclick="checkAnswer(this,'L04-EX-02','B')" data-key="B"><span class="qo-letter">B</span>boxes</div>
+        <div class="q-option" onclick="checkAnswer(this,'L04-EX-02','B')" data-key="C"><span class="qo-letter">C</span>boxies</div>
+      </div>
+      <div class="q-explanation" id="exp-L04-EX-02">解析：box 以 x 结尾，加 -es → boxes。</div>
+      <div class="undo-hint" id="undo-L04-EX-02">💡 答错了？双击此题可撤销重答</div>
+    </div>
+    <div class="quiz-question" data-qid="L04-EX-03">
+      <div class="qq-text"><span class="qq-number">3</span>选择正确答案：The room is ___. (整洁的) (G11)</div>
+      <div class="q-options">
+        <div class="q-option" onclick="checkAnswer(this,'L04-EX-03','A')" data-key="A"><span class="qo-letter">A</span>tidy</div>
+        <div class="q-option" onclick="checkAnswer(this,'L04-EX-03','A')" data-key="B"><span class="qo-letter">B</span>tidys</div>
+        <div class="q-option" onclick="checkAnswer(this,'L04-EX-03','A')" data-key="C"><span class="qo-letter">C</span>tidies</div>
+      </div>
+      <div class="q-explanation" id="exp-L04-EX-03">解析：形容词 tidy 作表语，在 be 动词后不加 s。</div>
+      <div class="undo-hint" id="undo-L04-EX-03">💡 答错了？双击此题可撤销重答</div>
+    </div>
+    <div class="quiz-question" data-qid="L04-EX-04">
+      <div class="qq-text"><span class="qq-number">4</span>口头表达：用方位介词 on / in / under 各说一句描述你房间的物品位置。</div>
+      <div class="q-options">
+        <div class="q-option" onclick="checkAnswer(this,'L04-EX-04','A')" data-key="A"><span class="qo-letter">▶</span>看示范</div>
+      </div>
+      <div class="q-explanation" id="exp-L04-EX-04">示范：The book is on the desk. The cat is in the box. The ball is under the bed. 教师点评即可。</div>
+      <div class="undo-hint" id="undo-L04-EX-04">💡 表达题，教师点评即可</div>
+    </div>
+    <div class="quiz-question" data-qid="L04-EX-05">
+      <div class="qq-text"><span class="qq-number">5</span>自我评估：今天的内容掌握得怎么样？</div>
+      <div class="q-options">
+        <div class="q-option" onclick="checkAnswer(this,'L04-EX-05','A')" data-key="A"><span class="qo-letter">✓</span>我已掌握名词复数与形容词用法</div>
+        <div class="q-option" onclick="checkAnswer(this,'L04-EX-05','A')" data-key="A"><span class="qo-letter">✓</span>我已掌握方位介词与房间词汇</div>
+        <div class="q-option" onclick="checkAnswer(this,'L04-EX-05','A')" data-key="B"><span class="qo-letter">↻</span>我还需要复习一下</div>
+      </div>
+      <div class="q-explanation" id="exp-L04-EX-05">提示：诚实评估有助于下次复习更高效！自评不扣分。</div>
+      <div class="undo-hint" id="undo-L04-EX-05">💡 自评题，如实选择即可</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     底部八段式导航条
+     ============================================================ -->
+<div class="bottom-nav" id="bottomNav">
+  <div class="nav-item" data-section="cover" onclick="jumpToSection('cover')">
+    <span class="nav-icon">🏠</span>
+    <span class="nav-text">封面</span>
+  </div>
+  <div class="nav-item" data-section="review" onclick="jumpToSection('review')">
+    <span class="nav-icon">📋</span>
+    <span class="nav-text">复习导入</span>
+  </div>
+  <div class="nav-item" data-section="vocab" onclick="jumpToSection('vocab')">
+    <span class="nav-icon">📚</span>
+    <span class="nav-text">新词20</span>
+  </div>
+  <div class="nav-item" data-section="grammar" onclick="jumpToSection('grammar')">
+    <span class="nav-icon">📐</span>
+    <span class="nav-text">语法3考点</span>
+  </div>
+  <div class="nav-item" data-section="quiz" onclick="jumpToSection('quiz')">
+    <span class="nav-icon">✏️</span>
+    <span class="nav-text">随堂演练</span>
+  </div>
+  <div class="nav-item" data-section="reading" onclick="jumpToSection('reading')">
+    <span class="nav-icon">📖</span>
+    <span class="nav-text">阅读理解</span>
+  </div>
+  <div class="nav-item" data-section="sentence" onclick="jumpToSection('sentence')">
+    <span class="nav-icon">📝</span>
+    <span class="nav-text">句子练习</span>
+  </div>
+  <div class="nav-item" data-section="phonics" onclick="jumpToSection('phonics')">
+    <span class="nav-icon">🔤</span>
+    <span class="nav-text">自然拼读</span>
+  </div>
+  <div class="nav-item" data-section="summary" onclick="jumpToSection('summary')">
+    <span class="nav-icon">🎓</span>
+    <span class="nav-text">总结</span>
+  </div>
+</div>
+
+</div>
+
+<!-- ============================================================
+     JavaScript 核心逻辑
+     ============================================================ -->
+<script>
+/* ============================================================
+   全局变量
+   ============================================================ */
+var currentPage = 0;
+var totalPages = document.querySelectorAll('.slide').length;
+var audioCtx = null;
+
+/* ============================================================
+   音效系统 — Web Audio API
+   ============================================================ */
+function initAudio() {
+  if (!audioCtx) {
+    try {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    } catch(e) {
+      console.warn('AudioContext not supported');
+    }
+  }
+}
+
+function playCorrect() {
+  initAudio();
+  if (!audioCtx) return;
+  var now = audioCtx.currentTime;
+  var osc = audioCtx.createOscillator();
+  var gain = audioCtx.createGain();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(880, now);
+  osc.frequency.linearRampToValueAtTime(1100, now + 0.15);
+  gain.gain.setValueAtTime(0.3, now);
+  gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start(now);
+  osc.stop(now + 0.3);
+}
+
+function playError() {
+  initAudio();
+  if (!audioCtx) return;
+  var now = audioCtx.currentTime;
+  var osc = audioCtx.createOscillator();
+  var gain = audioCtx.createGain();
+  osc.type = 'sawtooth';
+  osc.frequency.setValueAtTime(220, now);
+  gain.gain.setValueAtTime(0.2, now);
+  gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start(now);
+  osc.stop(now + 0.3);
+}
+
+function playPageTurn() {
+  initAudio();
+  if (!audioCtx) return;
+  var now = audioCtx.currentTime;
+  var osc = audioCtx.createOscillator();
+  var gain = audioCtx.createGain();
+  osc.type = 'triangle';
+  osc.frequency.setValueAtTime(440, now);
+  gain.gain.setValueAtTime(0.15, now);
+  gain.gain.exponentialRampToValueAtTime(0.01, now + 0.1);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start(now);
+  osc.stop(now + 0.1);
+}
+
+/* ============================================================
+   页面导航
+   ============================================================ */
+function nextPage() {
+  if (currentPage < totalPages - 1) {
+    goToPage(currentPage + 1);
+  }
+}
+
+function prevPage() {
+  if (currentPage > 0) {
+    goToPage(currentPage - 1);
+  }
+}
+
+function goToPage(pageIndex) {
+  var slides = document.querySelectorAll('.slide');
+  if (pageIndex < 0 || pageIndex >= slides.length) return;
+  slides[currentPage].classList.remove('active');
+  currentPage = pageIndex;
+  slides[currentPage].classList.add('active');
+  slides[currentPage].scrollTop = 0;
+  playPageTurn();
+  updateNav();
+  saveData();
+}
+
+function jumpToSection(sectionName) {
+  var slides = document.querySelectorAll('.slide');
+  for (var i = 0; i < slides.length; i++) {
+    if (slides[i].getAttribute('data-section') === sectionName ||
+        (sectionName === 'cover' && slides[i].getAttribute('data-page') === '0')) {
+      goToPage(i);
+      return;
+    }
+  }
+}
+
+function updateNav() {
+  var slides = document.querySelectorAll('.slide');
+  var currentSection = slides[currentPage].getAttribute('data-section');
+  var navItems = document.querySelectorAll('.nav-item');
+  for (var i = 0; i < navItems.length; i++) {
+    navItems[i].classList.remove('active');
+    if (navItems[i].getAttribute('data-section') === currentSection) {
+      navItems[i].classList.add('active');
+    }
+  }
+  // Update page counter
+  var counter = document.querySelector('.page-counter');
+  if (counter) {
+    counter.textContent = 'P' + currentPage + ' / P' + (totalPages - 1);
+  }
+}
+
+/* ============================================================
+   答题系统
+   ============================================================ */
+function checkAnswer(optionEl, qid, correctKey) {
+  var question = optionEl.closest('.quiz-question');
+  if (question.classList.contains('answered-correct') || question.classList.contains('answered-wrong')) return;
+
+  var selectedKey = optionEl.getAttribute('data-key');
+  var options = question.querySelectorAll('.q-option');
+  var isCorrect = (selectedKey === correctKey);
+
+  // Disable all options
+  for (var i = 0; i < options.length; i++) {
+    options[i].classList.add('disabled');
+  }
+
+  if (isCorrect) {
+    optionEl.classList.add('correct');
+    question.classList.add('answered-correct');
+    playCorrect();
+  } else {
+    optionEl.classList.add('wrong');
+    question.classList.add('answered-wrong');
+    playError();
+    // Highlight correct answer
+    for (var i = 0; i < options.length; i++) {
+      if (options[i].getAttribute('data-key') === correctKey) {
+        options[i].classList.add('highlight-correct');
+        break;
+      }
+    }
+    // Show undo hint
+    var undoHint = document.getElementById('undo-' + qid);
+    if (undoHint) undoHint.classList.add('show');
+  }
+
+  // Show explanation
+  var exp = document.getElementById('exp-' + qid);
+  if (exp) exp.classList.add('show');
+
+  // Save data
+  saveQuizData(qid, isCorrect, selectedKey, correctKey);
+}
+
+/* ============================================================
+   答错双击撤销
+   ============================================================ */
+document.addEventListener('dblclick', function(e) {
+  var question = e.target.closest('.quiz-question');
+  if (question && question.classList.contains('answered-wrong')) {
+    var qid = question.getAttribute('data-qid');
+    question.classList.remove('answered-wrong');
+    var options = question.querySelectorAll('.q-option');
+    for (var i = 0; i < options.length; i++) {
+      options[i].classList.remove('disabled', 'correct', 'wrong', 'highlight-correct');
+    }
+    var exp = document.getElementById('exp-' + qid);
+    if (exp) exp.classList.remove('show');
+    var undoHint = document.getElementById('undo-' + qid);
+    if (undoHint) undoHint.classList.remove('show');
+  }
+});
+
+/* ============================================================
+   答案遮罩 reveal
+   ============================================================ */
+function toggleReveal(el) {
+  if (el.classList.contains('revealed')) {
+    el.classList.remove('revealed');
+    var spans = el.querySelectorAll('span');
+    for (var i = 0; i < spans.length; i++) {
+      if (spans[i].classList.contains('mask-text')) {
+        spans[i].style.display = '';
+      } else {
+        spans[i].style.display = 'none';
+      }
+    }
+  } else {
+    el.classList.add('revealed');
+    var spans = el.querySelectorAll('span');
+    for (var i = 0; i < spans.length; i++) {
+      if (spans[i].classList.contains('mask-text')) {
+        spans[i].style.display = 'none';
+      } else {
+        spans[i].style.display = '';
+      }
+    }
+  }
+}
+
+/* ============================================================
+   复数变化器
+   ============================================================ */
+var pluralData = {
+  room: { singular: 'room', plural: 'rooms', pron: '/ruːmz/', sentence: 'I have two rooms.' },
+  box: { singular: 'box', plural: 'boxes', pron: '/ˈbɒksɪz/', sentence: 'There are three boxes on the table.' },
+  family: { singular: 'family', plural: 'families', pron: '/ˈfæmɪliz/', sentence: 'She has two families.' },
+  boy: { singular: 'boy', plural: 'boys', pron: '/bɔɪz/', sentence: 'The boys are in the room.' }
+};
+
+function switchPlural(word, btn) {
+  var data = pluralData[word];
+  if (!data) return;
+  var btns = document.querySelectorAll('.pb-btn');
+  for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
+  btn.classList.add('active');
+
+  var singular = document.getElementById('pb-singular');
+  var plural = document.getElementById('pb-plural');
+  var pron = document.getElementById('pb-pron');
+  var sentence = document.getElementById('pb-sentence');
+
+  singular.textContent = data.singular;
+  singular.style.animation = 'none';
+  singular.offsetHeight; // trigger reflow
+  singular.style.animation = 'bounceIn 0.6s ease';
+
+  plural.textContent = data.plural;
+  plural.style.animation = 'none';
+  plural.offsetHeight;
+  plural.style.animation = 'bounceIn 0.6s ease';
+
+  pron.textContent = data.pron;
+  pron.style.animation = 'none';
+  pron.offsetHeight;
+  pron.style.animation = 'fadeSlideUp 0.5s ease';
+
+  sentence.textContent = data.sentence;
+  sentence.style.animation = 'none';
+  sentence.offsetHeight;
+  sentence.style.animation = 'fadeSlideUp 0.5s ease';
+}
+
+/* ============================================================
+   房间布置器
+   ============================================================ */
+var roomData = {
+  bed: { emoji: '🛏️', position: 'next to the desk', sentence: 'The bed is next to the desk.' },
+  desk: { emoji: '📝', position: 'under the window', sentence: 'The desk is under the window.' },
+  sofa: { emoji: '🛋️', position: 'behind the door', sentence: 'The sofa is behind the door.' },
+  bookcase: { emoji: '📚', position: 'between the bed and the wall', sentence: 'The bookcase is between the bed and the wall.' }
+};
+
+function switchRoom(item, btn) {
+  var data = roomData[item];
+  if (!data) return;
+  var btns = document.querySelectorAll('.ra-btn');
+  for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
+  btn.classList.add('active');
+
+  var emoji = document.getElementById('ra-emoji');
+  var position = document.getElementById('ra-position');
+  var sentence = document.getElementById('ra-sentence');
+
+  emoji.textContent = data.emoji;
+  emoji.style.animation = 'none';
+  emoji.offsetHeight;
+  emoji.style.animation = 'bounceIn 0.6s ease';
+
+  position.textContent = data.position;
+  position.style.animation = 'none';
+  position.offsetHeight;
+  position.style.animation = 'fadeSlideUp 0.5s ease';
+
+  sentence.textContent = data.sentence;
+  sentence.style.animation = 'none';
+  sentence.offsetHeight;
+  sentence.style.animation = 'fadeSlideUp 0.5s ease';
+}
+
+/* ============================================================
+   跨课词汇复习游戏 (L3)
+   ============================================================ */
+var reviewAnswers = {
+  1: 'where', 2: 'school', 3: 'teacher', 4: 'book',
+  5: 'pen', 6: 'there', 7: 'home', 8: 'bag'
+};
+var reviewFilled = {};
+
+function fillReviewBlank(wordEl, blankId) {
+  var blank = document.getElementById('rvb-' + blankId);
+  if (!blank || blank.classList.contains('filled')) return;
+  var word = wordEl.getAttribute('data-word');
+  blank.textContent = word;
+  blank.classList.add('filled');
+  wordEl.classList.add('used');
+  reviewFilled[blankId] = word;
+
+  // Check answer
+  var correct = reviewAnswers[blankId];
+  var feedback = document.getElementById('rvf-' + Math.ceil(blankId / 2));
+  if (!feedback) {
+    // Try individual feedback
+  }
+
+  if (word === correct) {
+    blank.classList.remove('wrong');
+    playCorrect();
+  } else {
+    blank.classList.add('wrong');
+    playError();
+  }
+}
+
+function clearReviewBlank(blankId) {
+  var blank = document.getElementById('rvb-' + blankId);
+  if (!blank || !blank.classList.contains('filled')) return;
+  var word = reviewFilled[blankId];
+  blank.textContent = '';
+  blank.classList.remove('filled', 'wrong');
+  delete reviewFilled[blankId];
+  // Restore word to bank
+  var bank = document.getElementById('vg-bank-review');
+  if (bank) {
+    var words = bank.querySelectorAll('.vg-word');
+    for (var i = 0; i < words.length; i++) {
+      if (words[i].getAttribute('data-word') === word && words[i].classList.contains('used')) {
+        words[i].classList.remove('used');
+        break;
+      }
+    }
+  }
+}
+
+/* ============================================================
+   课内词汇复习游戏 Tier 1 (看中文选英文)
+   ============================================================ */
+var vocabGameAnswers = {
+  1: 'A', 2: 'C', 3: 'A', 4: 'B', 5: 'B'
+};
+
+function checkVocabGame(wordEl, qid, correctKey) {
+  var key = wordEl.getAttribute('data-key');
+  var feedback = document.getElementById('vgs-' + qid);
+  var isCorrect = (key === correctKey);
+
+  // Disable all words in this question
+  var question = wordEl.closest('.vg-question');
+  var words = question.querySelectorAll('.vg-word');
+  for (var i = 0; i < words.length; i++) {
+    words[i].style.pointerEvents = 'none';
+    words[i].style.opacity = '0.5';
+  }
+
+  if (isCorrect) {
+    wordEl.style.background = 'var(--success)';
+    wordEl.style.color = 'white';
+    wordEl.style.borderColor = 'var(--success)';
+    wordEl.style.opacity = '1';
+    if (feedback) {
+      feedback.textContent = '✅ 正确！';
+      feedback.className = 'vg-feedback show correct';
+    }
+    playCorrect();
+  } else {
+    wordEl.style.background = 'var(--error)';
+    wordEl.style.color = 'white';
+    wordEl.style.borderColor = 'var(--error)';
+    wordEl.style.opacity = '1';
+    // Highlight correct
+    for (var i = 0; i < words.length; i++) {
+      if (words[i].getAttribute('data-key') === correctKey) {
+        words[i].style.background = 'var(--success)';
+        words[i].style.color = 'white';
+        words[i].style.borderColor = 'var(--success)';
+        words[i].style.opacity = '1';
+        break;
+      }
+    }
+    if (feedback) {
+      feedback.textContent = '❌ 答错了，正确答案已高亮。双击题目可重答。';
+      feedback.className = 'vg-feedback show wrong';
+    }
+    playError();
+    // Enable double-click undo
+    question.style.cursor = 'pointer';
+    question.ondblclick = function() {
+      for (var i = 0; i < words.length; i++) {
+        words[i].style.pointerEvents = '';
+        words[i].style.opacity = '';
+        words[i].style.background = '';
+        words[i].style.color = '';
+        words[i].style.borderColor = '';
+      }
+      if (feedback) {
+        feedback.className = 'vg-feedback';
+        feedback.textContent = '';
+      }
+      question.ondblclick = null;
+    };
+  }
+}
+
+/* ============================================================
+   课内词汇复习游戏 Tier 2/3 (选词填空)
+   ============================================================ */
+var l4Answers = {
+  1: 'but', 2: 'always', 3: 'behind', 4: 'next',
+  5: 'everywhere', 6: 'keep', 7: 'habit', 8: 'tidy'
+};
+var l4Filled = {};
+
+function fillL4Blank(wordEl, blankId) {
+  var blank = document.getElementById('l4b-' + blankId);
+  if (!blank || blank.classList.contains('filled')) return;
+  var word = wordEl.getAttribute('data-word');
+  blank.textContent = word;
+  blank.classList.add('filled');
+  wordEl.classList.add('used');
+  l4Filled[blankId] = word;
+
+  var correct = l4Answers[blankId];
+  var feedback = document.getElementById('l4f-' + blankId);
+
+  if (word === correct) {
+    blank.classList.remove('wrong');
+    if (feedback) {
+      feedback.textContent = '✅ 正确！';
+      feedback.className = 'vg-feedback show correct';
+    }
+    playCorrect();
+  } else {
+    blank.classList.add('wrong');
+    if (feedback) {
+      feedback.textContent = '❌ 不对，正确答案是 "' + correct + '"。双击空格可重选。';
+      feedback.className = 'vg-feedback show wrong';
+    }
+    playError();
+  }
+}
+
+function clearL4Blank(blankId) {
+  var blank = document.getElementById('l4b-' + blankId);
+  if (!blank || !blank.classList.contains('filled')) return;
+  var word = l4Filled[blankId];
+  blank.textContent = '';
+  blank.classList.remove('filled', 'wrong');
+  delete l4Filled[blankId];
+  var feedback = document.getElementById('l4f-' + blankId);
+  if (feedback) {
+    feedback.className = 'vg-feedback';
+    feedback.textContent = '';
+  }
+  // Restore word to bank
+  var bank = document.getElementById('vg-bank-l4');
+  if (bank) {
+    var words = bank.querySelectorAll('.vg-word');
+    for (var i = 0; i < words.length; i++) {
+      if (words[i].getAttribute('data-word') === word && words[i].classList.contains('used')) {
+        words[i].classList.remove('used');
+        break;
+      }
+    }
+  }
+}
+
+/* ============================================================
+   IndexedDB 数据采集
+   ============================================================ */
+var DB_NAME = 'EnglishCourseL04';
+var DB_VERSION = 1;
+var STORE_NAME = 'quiz_data';
+
+function initDB() {
+  return new Promise(function(resolve, reject) {
+    if (!window.indexedDB) {
+      console.warn('IndexedDB not supported');
+      resolve(null);
+      return;
+    }
+    var request = indexedDB.open(DB_NAME, DB_VERSION);
+    request.onerror = function() { resolve(null); };
+    request.onsuccess = function() { resolve(request.result); };
+    request.onupgradeneeded = function(e) {
+      var db = e.target.result;
+      if (!db.objectStoreNames.contains(STORE_NAME)) {
+        var store = db.createObjectStore(STORE_NAME, { keyPath: 'qid' });
+        store.createIndex('timestamp', 'timestamp', { unique: false });
+      }
+    };
+  });
+}
+
+function saveQuizData(qid, isCorrect, selectedKey, correctKey) {
+  initDB().then(function(db) {
+    if (!db) return;
+    var tx = db.transaction([STORE_NAME], 'readwrite');
+    var store = tx.objectStore(STORE_NAME);
+    var data = {
+      qid: qid,
+      isCorrect: isCorrect,
+      selectedKey: selectedKey,
+      correctKey: correctKey,
+      timestamp: Date.now(),
+      page: currentPage
+    };
+    store.put(data);
+  });
+}
+
+function saveData() {
+  initDB().then(function(db) {
+    if (!db) return;
+    var tx = db.transaction([STORE_NAME], 'readwrite');
+    var store = tx.objectStore(STORE_NAME);
+    var data = {
+      qid: '_page_visit',
+      page: currentPage,
+      timestamp: Date.now()
+    };
+    store.put(data);
+  });
+}
+
+/* ============================================================
+   涟漪效果
+   ============================================================ */
+document.addEventListener('click', function(e) {
+  var slide = e.target.closest('.slide');
+  if (!slide) return;
+  var ripple = document.createElement('div');
+  ripple.className = 'ripple';
+  var rect = slide.getBoundingClientRect();
+  var size = 20;
+  ripple.style.width = size + 'px';
+  ripple.style.height = size + 'px';
+  ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
+  ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
+  slide.appendChild(ripple);
+  setTimeout(function() { ripple.remove(); }, 600);
+});
+
+/* ============================================================
+   键盘导航
+   ============================================================ */
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    prevPage();
+  } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+    e.preventDefault();
+    nextPage();
+  } else if (e.key === 'Home') {
+    e.preventDefault();
+    goToPage(0);
+  } else if (e.key === 'End') {
+    e.preventDefault();
+    goToPage(totalPages - 1);
+  }
+});
+
+/* ============================================================
+   触摸滑动导航
+   ============================================================ */
+var touchStartX = 0;
+var touchEndX = 0;
+
+document.addEventListener('touchstart', function(e) {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener('touchend', function(e) {
+  touchEndX = e.changedTouches[0].screenX;
+  var diff = touchStartX - touchEndX;
+  if (Math.abs(diff) > 50) {
+    if (diff > 0) {
+      nextPage();
+    } else {
+      prevPage();
+    }
+  }
+});
+
+/* ============================================================
+   初始化
+   ============================================================ */
+(function init() {
+  updateNav();
+  initDB();
+  // Auto-resume from last page if available
+  try {
+    var saved = sessionStorage.getItem('l04_currentPage');
+    if (saved !== null) {
+      var page = parseInt(saved);
+      if (page > 0 && page < totalPages) {
+        goToPage(page);
+      }
+    }
+  } catch(e) {}
+})();
+
+// Save current page on navigation
+var originalGoToPage = goToPage;
+goToPage = function(pageIndex) {
+  originalGoToPage(pageIndex);
+  try {
+    sessionStorage.setItem('l04_currentPage', currentPage.toString());
+  } catch(e) {}
+};
+
+// Periodic data save
+setInterval(function() {
+  try {
+    sessionStorage.setItem('l04_currentPage', currentPage.toString());
+  } catch(e) {}
+}, 5000);
+</script>
+
+</body>
+</html>

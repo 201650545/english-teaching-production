@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第01课 · 代词、be动词与问候句型 | Stage 1 · L01</title>
+<style>
+
+:root{--primary:#1A5276;--primary-light:#5DADE2;--primary-dark:#0E3A5F;--accent:#E67E22;--accent-light:#F5B041;--accent-dark:#CA6F1E;--success:#27AE60;--error:#E74C3C;--warning:#F39C12;--gold:#D4AC0D;--bg-gradient:linear-gradient(160deg,#EBF5FB 0%,#D6EAF8 100%);--card-bg:#FFF;--card-shadow:0 4px 20px rgba(26,82,118,.12);--card-shadow-hover:0 8px 30px rgba(26,82,118,.2);--text-primary:#1A2C38;--text-secondary:#5D6D7E;--text-light:#8395A7;--text-white:#FFF;--rg-border:rgba(26,82,118,.15);--radius:16px;--radius-sm:8px;--transition:all .35s cubic-bezier(.4,0,.2,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;background:var(--bg-gradient);color:var(--text-primary);font-size:20px;user-select:none;-webkit-user-select:none}
+#presentation{width:100vw;height:100vh;overflow:hidden;position:relative}
+.slide{position:absolute;top:0;left:0;width:100%;height:100%;display:none;flex-direction:column;background:var(--bg-gradient);overflow-y:auto;overflow-x:hidden;scroll-behavior:smooth;padding-top:44px}
+.slide.active{display:flex;animation:slideFadeIn .5s ease}
+.slide.scrollable{overflow-y:auto}
+@keyframes slideFadeIn{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+.nav-zone{position:absolute;top:0;width:50%;height:100%;z-index:5;cursor:pointer}
+.nav-zone.left{left:0}.nav-zone.right{right:0}
+.ripple{position:absolute;border-radius:50%;background:rgba(93,173,226,.3);transform:scale(0);animation:rippleAnim .6s ease-out;pointer-events:none}
+@keyframes rippleAnim{to{transform:scale(4);opacity:0}}
+.top-bar{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:linear-gradient(90deg,var(--primary) 0%,var(--primary-light) 100%);color:var(--text-white);flex-shrink:0;z-index:10;box-shadow:0 2px 10px rgba(26,82,118,.3)}
+.top-bar .lesson-badge{font-size:13px;font-weight:600;background:rgba(255,255,255,.2);padding:3px 10px;border-radius:20px;white-space:nowrap}
+.top-bar .section-label{font-size:15px;font-weight:500;opacity:.95}
+.top-bar .page-counter{font-size:13px;font-weight:600;background:rgba(255,255,255,.15);padding:3px 10px;border-radius:20px}
+.bottom-nav{position:absolute;bottom:0;left:0;width:100%;height:48px;display:flex;background:var(--primary-dark);z-index:10;box-shadow:0 -2px 10px rgba(0,0,0,.15)}
+.nav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-size:11px;cursor:pointer;transition:var(--transition);border-top:3px solid transparent;padding:4px 2px;text-align:center}
+.nav-item:hover{color:rgba(255,255,255,.8);background:rgba(255,255,255,.05)}
+.nav-item.active{color:var(--text-white);border-top-color:var(--accent);background:rgba(255,255,255,.1)}
+.nav-item .nav-icon{font-size:16px;margin-bottom:2px}
+.nav-item .nav-text{font-size:9px;line-height:1.2;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.slide-content{flex:1;padding:16px 32px 56px;display:flex;flex-direction:column;overflow-y:auto;position:relative;z-index:3}
+.cover-slide{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 50%,var(--primary-light) 100%);justify-content:center;align-items:center;text-align:center;color:var(--text-white);position:relative;overflow:hidden}
+.cover-slide::before{content:"";position:absolute;top:-50%;right:-20%;width:600px;height:600px;border-radius:50%;background:rgba(255,255,255,.05)}
+.cover-slide::after{content:"";position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.03)}
+.cover-content{z-index:2;position:relative}
+.cover-content .stage-badge{display:inline-block;background:rgba(255,255,255,.2);padding:8px 24px;border-radius:30px;font-size:18px;font-weight:600;margin-bottom:24px;backdrop-filter:blur(10px)}
+.cover-content h1{font-size:56px;font-weight:800;margin-bottom:16px;text-shadow:0 4px 20px rgba(0,0,0,.3);line-height:1.2}
+.cover-content .subtitle{font-size:22px;opacity:.9;margin-bottom:30px;font-weight:300}
+.cover-content .objectives{display:flex;gap:24px;justify-content:center;margin-top:24px}
+.cover-content .objective-card{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);padding:16px 24px;border-radius:16px;border:1px solid rgba(255,255,255,.2);min-width:180px}
+.cover-content .objective-card .obj-icon{font-size:32px;margin-bottom:6px}
+.cover-content .objective-card .obj-text{font-size:14px;opacity:.9}
+.card{background:var(--card-bg);border-radius:var(--radius);padding:20px;box-shadow:var(--card-shadow);transition:var(--transition);border:1px solid var(--rg-border)}
+.card:hover{box-shadow:var(--card-shadow-hover);transform:translateY(-2px)}
+.card-title{font-size:20px;font-weight:700;color:var(--primary);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:12px}
+.vocab-card{background:var(--card-bg);border-radius:var(--radius);padding:18px;box-shadow:var(--card-shadow);border-left:4px solid var(--primary-light);transition:var(--transition);cursor:pointer;position:relative;overflow:hidden}
+.vocab-card:hover{transform:translateY(-3px);box-shadow:var(--card-shadow-hover);border-left-color:var(--accent)}
+.vocab-card .vc-number{position:absolute;top:6px;right:10px;font-size:12px;color:var(--text-light);font-weight:600}
+.vocab-card .vc-word{font-size:24px;font-weight:700;color:var(--primary);margin-bottom:3px}
+.vocab-card .vc-phonetic{font-size:14px;color:var(--accent);font-style:italic;margin-bottom:6px}
+.vocab-card .vc-pos{display:inline-block;background:var(--primary-light);color:var(--text-white);padding:1px 8px;border-radius:10px;font-size:11px;margin-bottom:6px}
+.vocab-card .vc-meaning{font-size:16px;color:var(--text-primary);margin-bottom:6px}
+.vocab-card .vc-collocation{font-size:12px;color:var(--text-secondary);background:rgba(93,173,226,.1);padding:4px 8px;border-radius:6px;margin-bottom:4px}
+.vocab-card .vc-example{font-size:13px;color:var(--text-secondary);font-style:italic;margin-bottom:4px;line-height:1.4}
+.vocab-card .vc-mnemonic{font-size:12px;color:var(--accent-dark);background:rgba(230,126,34,.08);padding:4px 8px;border-radius:6px;border-left:3px solid var(--accent)}
+.memory-matrix{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px}
+.matrix-category{background:var(--card-bg);border-radius:var(--radius);padding:14px;box-shadow:var(--card-shadow);border-top:4px solid var(--primary-light)}
+.matrix-category .mc-title{font-size:15px;font-weight:700;color:var(--primary);margin-bottom:8px;text-align:center}
+.matrix-category .mc-words{display:flex;flex-wrap:wrap;gap:4px;justify-content:center}
+.matrix-category .mc-word{background:rgba(93,173,226,.1);padding:3px 8px;border-radius:10px;font-size:12px;color:var(--primary);font-weight:500}
+.flash-card-area{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:12px}
+.flash-card{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);border-radius:20px;padding:30px;text-align:center;color:var(--text-white);box-shadow:0 8px 30px rgba(26,82,118,.3);cursor:pointer;transition:var(--transition);min-height:160px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.flash-card:hover{transform:scale(1.03)}
+.flash-card .fc-word{font-size:36px;font-weight:800;margin-bottom:6px}
+.flash-card .fc-meaning{font-size:20px;opacity:.9}
+.flash-card .fc-phonetic{font-size:14px;opacity:.7;margin-top:4px}
+.flash-card .fc-hint{font-size:12px;opacity:.5;margin-top:10px}
+.grammar-table{width:100%;border-collapse:collapse;margin-top:12px;background:var(--card-bg);border-radius:var(--radius);overflow:hidden;box-shadow:var(--card-shadow)}
+.grammar-table th{background:linear-gradient(90deg,var(--primary) 0%,var(--primary-light) 100%);color:var(--text-white);padding:10px 12px;text-align:center;font-size:15px;font-weight:600}
+.grammar-table td{padding:8px 12px;text-align:center;font-size:15px;border-bottom:1px solid var(--rg-border);transition:var(--transition)}
+.grammar-table tr:hover td{background:rgba(93,173,226,.05)}
+.grammar-table .row-highlight td{background:rgba(212,172,13,.1);font-weight:600}
+.grammar-table .col-highlight{background:rgba(230,126,34,.12)!important}
+.grammar-table .error-cell{color:var(--error);text-decoration:line-through}
+.grammar-table .correct-cell{color:var(--success);font-weight:600}
+.grammar-formula{background:linear-gradient(135deg,rgba(26,82,118,.08) 0%,rgba(93,173,226,.08) 100%);border:2px solid var(--primary-light);border-radius:var(--radius);padding:16px 24px;margin:12px 0;text-align:center}
+.grammar-formula .gf-title{font-size:13px;color:var(--accent);font-weight:600;margin-bottom:6px;text-transform:uppercase;letter-spacing:2px}
+.grammar-formula .gf-content{font-size:20px;font-weight:700;color:var(--primary);line-height:1.6}
+.example-card{background:var(--card-bg);border-radius:var(--radius-sm);padding:12px 16px;margin:6px 0;box-shadow:0 2px 8px rgba(26,82,118,.08);border-left:4px solid var(--success)}
+.example-card .ec-label{font-size:11px;color:var(--success);font-weight:600;margin-bottom:3px}
+.example-card .ec-sentence{font-size:16px;color:var(--text-primary);line-height:1.5}
+.example-card .ec-translation{font-size:13px;color:var(--text-light);margin-top:3px}
+.error-warning{background:rgba(231,76,60,.08);border-left:4px solid var(--error);border-radius:var(--radius-sm);padding:10px 14px;margin:6px 0}
+.error-warning .ew-title{font-size:13px;color:var(--error);font-weight:600;margin-bottom:4px}
+.error-warning .ew-content{font-size:14px;color:var(--text-primary);line-height:1.5}
+.pronoun-transformer{background:linear-gradient(135deg,rgba(26,82,118,.05) 0%,rgba(93,173,226,.05) 100%);border-radius:var(--radius);padding:20px;margin:12px 0}
+.pt-buttons{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.pt-btn{background:var(--card-bg);border:2px solid var(--primary-light);color:var(--primary);padding:8px 16px;border-radius:20px;font-size:14px;font-weight:600;cursor:pointer;transition:var(--transition)}
+.pt-btn:hover{background:var(--primary-light);color:var(--text-white);transform:scale(1.05)}
+.pt-btn.active{background:var(--primary);color:var(--text-white);border-color:var(--primary);box-shadow:0 4px 15px rgba(26,82,118,.3)}
+.pt-table{width:100%;border-collapse:collapse;background:var(--card-bg);border-radius:var(--radius);overflow:hidden;box-shadow:var(--card-shadow);margin-bottom:12px}
+.pt-table th{background:var(--primary);color:var(--text-white);padding:10px;font-size:14px;text-align:center}
+.pt-table td{padding:12px;text-align:center;font-size:17px;font-weight:600;border-bottom:1px solid var(--rg-border);transition:all .4s ease}
+.pt-table td.highlight{background:rgba(230,126,34,.15);color:var(--accent-dark);transform:scale(1.05)}
+.pt-example{background:var(--card-bg);border-radius:var(--radius);padding:14px 20px;box-shadow:var(--card-shadow);border-left:4px solid var(--accent);min-height:70px}
+.pt-example .pte-label{font-size:11px;color:var(--accent);font-weight:600;margin-bottom:4px}
+.pt-example .pte-sentence{font-size:18px;color:var(--text-primary);font-weight:600;line-height:1.6}
+.quiz-question{background:var(--card-bg);border-radius:var(--radius);padding:16px 20px;margin-bottom:12px;box-shadow:var(--card-shadow);position:relative;transition:var(--transition);border-left:4px solid transparent}
+.quiz-question.answered-correct{border-left-color:var(--success)}
+.quiz-question.answered-wrong{border-left-color:var(--error)}
+.qq-number{display:inline-block;background:var(--primary);color:var(--text-white);width:26px;height:26px;line-height:26px;text-align:center;border-radius:50%;font-size:13px;font-weight:700;margin-right:6px}
+.qq-text{font-size:16px;color:var(--text-primary);line-height:1.6;margin-bottom:10px}
+.q-options{display:flex;flex-direction:column;gap:6px}
+.q-option{background:rgba(93,173,226,.06);border:2px solid transparent;border-radius:var(--radius-sm);padding:8px 14px;font-size:15px;cursor:pointer;transition:var(--transition);display:flex;align-items:center;gap:8px;position:relative}
+.q-option:hover{background:rgba(93,173,226,.12);border-color:var(--primary-light)}
+.q-option .qo-letter{display:inline-block;background:var(--primary-light);color:var(--text-white);width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;font-size:11px;font-weight:700;flex-shrink:0}
+.q-option.correct{background:rgba(39,174,96,.15);border-color:var(--success);color:var(--success)}
+.q-option.correct .qo-letter{background:var(--success)}
+.q-option.wrong{background:rgba(231,76,60,.15);border-color:var(--error);color:var(--error)}
+.q-option.wrong .qo-letter{background:var(--error)}
+.q-option.disabled{pointer-events:none;opacity:.6}
+.q-option.highlight-correct{background:rgba(39,174,96,.2);border-color:var(--success);animation:pulseGreen .6s ease}
+@keyframes pulseGreen{0%,100%{box-shadow:0 0 0 0 rgba(39,174,96,0)}50%{box-shadow:0 0 0 8px rgba(39,174,96,.2)}}
+.q-explanation{display:none;margin-top:8px;padding:10px 14px;background:rgba(212,172,13,.08);border-left:3px solid var(--gold);border-radius:var(--radius-sm);font-size:13px;color:var(--text-secondary);line-height:1.5}
+.q-explanation.show{display:block;animation:fadeInUp .4s ease}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.answer-mask{background:var(--primary);color:var(--primary);border-radius:var(--radius-sm);padding:6px 14px;cursor:pointer;transition:var(--transition);display:inline-block;margin-top:6px;position:relative;overflow:hidden}
+.answer-mask::before{content:"点击查看答案";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--text-white);font-size:13px;white-space:nowrap}
+.answer-mask.revealed{background:rgba(39,174,96,.1);color:var(--success);border:1px solid var(--success)}
+.answer-mask.revealed::before{display:none}
+.undo-hint{font-size:11px;color:var(--text-light);margin-top:3px;display:none}
+.undo-hint.show{display:block}
+.reading-passage{background:var(--card-bg);border-radius:var(--radius);padding:20px;box-shadow:var(--card-shadow);margin-bottom:12px;border-left:4px solid var(--primary-light)}
+.reading-passage .rp-title{font-size:20px;font-weight:700;color:var(--primary);margin-bottom:8px}
+.reading-passage .rp-meta{font-size:12px;color:var(--text-light);margin-bottom:8px}
+.reading-passage .rp-text{font-size:16px;line-height:1.8;color:var(--text-primary)}
+.reading-passage .rp-text .highlight-word{background:rgba(212,172,13,.15);padding:1px 3px;border-radius:3px;font-weight:500}
+.sentence-exercise{background:var(--card-bg);border-radius:var(--radius);padding:16px 20px;margin-bottom:10px;box-shadow:var(--card-shadow)}
+.se-chinese{font-size:16px;color:var(--text-primary);margin-bottom:6px;font-weight:500}
+.se-hint{font-size:12px;color:var(--text-light);margin-bottom:6px}
+.se-answer{background:rgba(93,173,226,.06);border-radius:var(--radius-sm);padding:10px 14px;font-size:15px;color:var(--primary);cursor:pointer;transition:var(--transition);position:relative;overflow:hidden;min-height:40px;display:flex;align-items:center}
+.se-answer:hover{background:rgba(93,173,226,.12)}
+.se-answer .mask-text{color:var(--text-light);font-size:13px}
+.se-answer.revealed{background:rgba(39,174,96,.08);color:var(--success)}
+.se-answer.revealed .mask-text{display:none}
+.phonics-card{background:var(--card-bg);border-radius:var(--radius);padding:20px;box-shadow:var(--card-shadow);text-align:center;transition:var(--transition);cursor:pointer;border-top:4px solid var(--accent)}
+.phonics-card:hover{transform:translateY(-3px)}
+.phonics-card .pc-letter{font-size:56px;font-weight:800;color:var(--primary);line-height:1}
+.phonics-card .pc-sound{font-size:24px;color:var(--accent);font-style:italic;margin:6px 0}
+.phonics-card .pc-tip{font-size:13px;color:var(--text-secondary);margin-bottom:8px}
+.phonics-card .pc-words{display:flex;flex-wrap:wrap;gap:4px;justify-content:center}
+.phonics-card .pc-word{background:rgba(93,173,226,.1);padding:3px 10px;border-radius:10px;font-size:13px;color:var(--primary)}
+.phonics-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:12px}
+.summary-card{background:linear-gradient(135deg,rgba(26,82,118,.05) 0%,rgba(93,173,226,.05) 100%);border-radius:var(--radius);padding:20px;margin-bottom:12px;border:1px solid var(--rg-border)}
+.summary-card .sc-title{font-size:18px;font-weight:700;color:var(--primary);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.summary-card .sc-content{font-size:15px;color:var(--text-primary);line-height:1.8}
+.summary-card .sc-formula{background:var(--card-bg);border-radius:var(--radius-sm);padding:10px 16px;margin:6px 0;font-size:17px;font-weight:600;color:var(--primary);text-align:center;border:2px dashed var(--primary-light)}
+.vocab-game{background:linear-gradient(135deg,rgba(26,82,118,.08) 0%,rgba(93,173,226,.08) 100%);border-radius:var(--radius);padding:20px;margin:12px 0}
+.vocab-game .vg-title{font-size:18px;font-weight:700;color:var(--primary);margin-bottom:12px;text-align:center}
+.vocab-game .vg-word-bank{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:14px}
+.vocab-game .vg-word{background:var(--card-bg);border:2px solid var(--primary-light);padding:6px 14px;border-radius:18px;font-size:14px;font-weight:600;color:var(--primary);cursor:pointer;transition:var(--transition)}
+.vocab-game .vg-word:hover{background:var(--primary-light);color:var(--text-white)}
+.vocab-game .vg-word.used{opacity:.3;pointer-events:none}
+.vocab-game .vg-questions{display:flex;flex-direction:column;gap:10px}
+.vocab-game .vg-question{background:var(--card-bg);border-radius:var(--radius-sm);padding:10px 14px;display:flex;align-items:center;gap:10px;font-size:14px}
+.vocab-game .vg-blank{display:inline-block;min-width:70px;min-height:28px;border:2px dashed var(--primary-light);border-radius:6px;text-align:center;line-height:24px;font-weight:600;color:var(--accent);padding:0 6px}
+.vocab-game .vg-blank.filled{border-style:solid;border-color:var(--success);color:var(--success)}
+.vocab-game .vg-blank.wrong{border-color:var(--error);color:var(--error)}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.section-header .sh-icon{font-size:28px}
+.section-header h2{font-size:24px;font-weight:700;color:var(--primary)}
+.section-divider{height:2px;background:linear-gradient(90deg,var(--primary) 0%,transparent 100%);margin:12px 0;border-radius:2px}
+.db-panel{position:fixed;bottom:60px;right:16px;z-index:100;background:var(--card-bg);border-radius:var(--radius);padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,.15);display:none;max-width:320px}
+.db-panel.show{display:block}
+.db-panel .db-title{font-size:13px;font-weight:700;color:var(--primary);margin-bottom:8px}
+.db-panel .db-stats{font-size:12px;color:var(--text-secondary);margin-bottom:8px}
+.db-panel button{background:var(--primary);color:var(--text-white);border:none;padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;margin-right:4px;transition:var(--transition)}
+.db-panel button:hover{background:var(--primary-dark)}
+.db-toggle{position:fixed;bottom:60px;right:16px;z-index:99;width:40px;height:40px;border-radius:50%;background:var(--primary);color:var(--text-white);border:none;cursor:pointer;font-size:18px;box-shadow:0 4px 15px rgba(0,0,0,.2);transition:var(--transition)}
+.db-toggle:hover{transform:scale(1.1)}
+.toast{position:fixed;top:60px;left:50%;transform:translateX(-50%);background:var(--primary);color:var(--text-white);padding:10px 24px;border-radius:20px;font-size:14px;z-index:200;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+.progress-bar{position:absolute;top:48px;left:0;height:3px;background:var(--accent);transition:width .5s ease;z-index:10}
+.diag-question{background:var(--card-bg);border-radius:var(--radius-sm);padding:12px 16px;margin-bottom:8px;box-shadow:0 2px 8px rgba(26,82,118,.06)}
+.diag-question .dq-prompt{font-size:14px;color:var(--text-primary);margin-bottom:6px}
+.diag-question .dq-options{display:flex;gap:6px}
+.diag-question .dq-opt{background:rgba(93,173,226,.06);border:1px solid transparent;border-radius:6px;padding:6px 12px;font-size:13px;cursor:pointer;transition:var(--transition)}
+.diag-question .dq-opt:hover{background:rgba(93,173,226,.12)}
+.diag-question .dq-opt.correct{background:rgba(39,174,96,.15);border-color:var(--success);color:var(--success)}
+.diag-question .dq-opt.wrong{background:rgba(231,76,60,.15);border-color:var(--error);color:var(--error)}
+.slide::-webkit-scrollbar,.slide-content::-webkit-scrollbar{width:6px}
+.slide::-webkit-scrollbar-track,.slide-content::-webkit-scrollbar-track{background:rgba(0,0,0,.05)}
+.slide::-webkit-scrollbar-thumb,.slide-content::-webkit-scrollbar-thumb{background:var(--primary-light);border-radius:3px}
+
+
+/* ==================== 流程标签图（顶端 8-Pill 时间轴）2026-08-08 ==================== */
+.stage-nav{position:fixed;top:0;left:0;right:0;height:44px;display:flex;align-items:center;justify-content:center;gap:4px;padding:0 12px;background:var(--primary-dark);z-index:2000;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.stage-pill{padding:5px 12px;border-radius:14px;font-size:12px;font-weight:600;color:rgba(255,255,255,.55);cursor:pointer;white-space:nowrap;transition:var(--transition);border:1px solid transparent}
+.stage-pill:hover{color:#fff;background:rgba(255,255,255,.08)}
+.stage-pill.active{color:var(--text-white);background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+</style>
+</head>
+<body>
+<div id="presentation">
+<div class="stage-nav" id="stageNav">
+  <div class="stage-pill" data-section="问候导入" onclick="jumpToStage(this)">①导入</div>
+  <div class="stage-pill" data-section="新词20" onclick="jumpToStage(this)">②新词20</div>
+  <div class="stage-pill" data-section="语法3考点" onclick="jumpToStage(this)">③语法精讲</div>
+  <div class="stage-pill" data-section="随堂演练" onclick="jumpToStage(this)">④随堂演练</div>
+  <div class="stage-pill" data-section="阅读理解" onclick="jumpToStage(this)">⑤阅读理解</div>
+  <div class="stage-pill" data-section="自然拼读" onclick="jumpToStage(this)">⑥自然拼读</div>
+  <div class="stage-pill" data-section="句子练习" onclick="jumpToStage(this)">⑦综合提升</div>
+  <div class="stage-pill" data-section="课堂总结" onclick="jumpToStage(this)">⑧Exit Ticket</div>
+</div>
+
+<div class="slide cover-slide active" data-section="封面" data-page="1"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="slide-content"><div class="cover-content"><div class="stage-badge">Stage 1 · L01</div><h1>第01课 · 代词、be动词与问候句型</h1><div class="subtitle">问候·交友·个人信息 | 90分钟课程</div><div class="objectives"><div class="objective-card"><div class="obj-icon">🎯</div><div class="obj-text">掌握20个问候交友词汇</div></div><div class="objective-card"><div class="obj-icon">📐</div><div class="obj-text">理解代词系统+be动词搭配</div></div><div class="objective-card"><div class="obj-icon">💬</div><div class="obj-text">能做自我介绍</div></div></div></div></div></div>
+<div class="slide" data-section="问候导入" data-page="2"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">问候互动</span><span class="page-counter">2 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">👋</span><h2>Hello! Welcome to English Class!</h2></div><div class="section-divider"></div><div class="card" style="text-align:center;padding:40px;"><div style="font-size:48px;margin-bottom:16px;">🌍🎉</div><div style="font-size:32px;font-weight:700;color:var(--primary);margin-bottom:12px;">Welcome to Our English Journey!</div><div style="font-size:18px;color:var(--text-secondary);margin-bottom:20px;">欢迎开启英语学习之旅！</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;"><div class="card" style="text-align:center;"><div style="font-size:36px;">👋</div><div style="font-size:16px;font-weight:600;color:var(--primary);">Hello!</div><div style="font-size:13px;color:var(--text-light);">你好</div></div><div class="card" style="text-align:center;"><div style="font-size:36px;">🤝</div><div style="font-size:16px;font-weight:600;color:var(--primary);">Nice to meet you!</div><div style="font-size:13px;color:var(--text-light);">很高兴认识你</div></div><div class="card" style="text-align:center;"><div style="font-size:36px;">🎒</div><div style="font-size:16px;font-weight:600;color:var(--primary);">Welcome!</div><div style="font-size:13px;color:var(--text-light);">欢迎</div></div></div><div style="margin-top:24px;padding:16px;background:rgba(93,173,226,0.08);border-radius:12px;font-size:15px;color:var(--text-secondary);">💡 今天我们将学习如何用英语<strong style="color:var(--primary);">打招呼、交朋友、介绍自己</strong>。<br>准备好了吗？让我们一起出发！🚀</div></div></div></div>
+<div class="slide" data-section="问候导入" data-page="3"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">学情诊断</span><span class="page-counter">3 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">📋</span><h2>快速诊断 · 你的起点在哪里？</h2></div><div style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;">💡 共10题快速诊断，评估你的英语起点水平。选对显绿✅，选错显红❌。</div><div class="diag-question" data-correct="am"><div class="dq-prompt">1. I ___ a student.</div><div class="dq-options"><span class="dq-opt" onclick="diagAnswer(this,'am')">am</span><span class="dq-opt" onclick="diagAnswer(this,'am')">is</span><span class="dq-opt" onclick="diagAnswer(this,'am')">are</span></div></div><div class="diag-question" data-correct="her"><div class="dq-prompt">2. This is ___ book. (她的)</div><div class="dq-options"><span class="dq-opt" onclick="diagAnswer(this,'her')">she</span><span class="dq-opt" onclick="diagAnswer(this,'her')">her</span><span class="dq-opt" onclick="diagAnswer(this,'her')">hers</span></div></div><div class="diag-question" data-correct="him"><div class="dq-prompt">3. Can you help ___? (他)</div><div class="dq-options"><span class="dq-opt" onclick="diagAnswer(this,'him')">he</span><span class="dq-opt" onclick="diagAnswer(this,'him')">him</span><span class="dq-opt" onclick="diagAnswer(this,'him')">his</span></div></div><div class="diag-question" data-correct="are"><div class="dq-prompt">4. They ___ from China.</div><div class="dq-options"><span class="dq-opt" onclick="diagAnswer(this,'are')">is</span><span class="dq-opt" onclick="diagAnswer(this,'are')">am</span><span class="dq-opt" onclick="diagAnswer(this,'are')">are</span></div></div><div class="diag-question" data-correct="my"><div class="dq-prompt">5. ___ name is Tom.</div><div class="dq-options"><span class="dq-opt" onclick="diagAnswer(this,'my')">I</span><span class="dq-opt" onclick="diagAnswer(this,'my')">My</span><span class="dq-opt" onclick="diagAnswer(this,'my')">Me</span></div></div><div class="diag-question" data-correct="is"><div class="dq-prompt">6. She ___ my friend.</div><div class="dq-options"><span class="dq-opt" onclick="diagAnswer(this,'is')">are</span><span class="dq-opt" onclick="diagAnswer(this,'is')">is</span><span class="dq-opt" onclick="diagAnswer(this,'is')">am</span></div></div><div class="diag-question" data-correct="them"><div class="dq-prompt">7. We help ___ every day. (他们)</div><div class="dq-options"><span class="dq-opt" onclick="diagAnswer(this,'them')">they</span><span class="dq-opt" onclick="diagAnswer(this,'them')">them</span><span class="dq-opt" onclick="diagAnswer(this,'them')">their</span></div></div><div class="diag-question" data-correct="mine"><div class="dq-prompt">8. This pen is ___. (我的)</div><div class="dq-options"><span class="dq-opt" onclick="diagAnswer(this,'mine')">my</span><span class="dq-opt" onclick="diagAnswer(this,'mine')">me</span><span class="dq-opt" onclick="diagAnswer(this,'mine')">mine</span></div></div><div class="diag-question" data-correct="your"><div class="dq-prompt">9. What is ___ name? (你的)</div><div class="dq-options"><span class="dq-opt" onclick="diagAnswer(this,'your')">you</span><span class="dq-opt" onclick="diagAnswer(this,'your')">your</span><span class="dq-opt" onclick="diagAnswer(this,'your')">yours</span></div></div><div class="diag-question" data-correct="our"><div class="dq-prompt">10. ___ class is very big.</div><div class="dq-options"><span class="dq-opt" onclick="diagAnswer(this,'our')">We</span><span class="dq-opt" onclick="diagAnswer(this,'our')">Us</span><span class="dq-opt" onclick="diagAnswer(this,'our')">Our</span></div></div><div id="diag-result" style="margin-top:16px;padding:16px;background:rgba(93,173,226,0.08);border-radius:12px;text-align:center;font-size:16px;display:none;"><span id="diag-score"></span></div></div></div>
+<div class="slide" data-section="问候导入" data-page="4"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">学习目标</span><span class="page-counter">4 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">🎯</span><h2>本课学习目标</h2></div><div class="section-divider"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;"><div class="card"><div class="card-title">📚 词汇目标 · 20词</div><div style="font-size:14px;color:var(--text-secondary);line-height:1.8;">掌握问候·交友·个人信息主题的20个核心词汇：name, friend, phone, number, school, teacher, student, class, China, English, his, her, their, our, yours, welcome, meet, nice, spell, zero</div></div><div class="card"><div class="card-title">📐 语法目标 · 3考点</div><div style="font-size:14px;color:var(--text-secondary);line-height:1.8;"><strong style="color:var(--primary);">G01</strong> 人称代词主格与宾格<br><strong style="color:var(--primary);">G02</strong> 形容词性与名词性物主代词<br><strong style="color:var(--primary);">G03</strong> be动词与人称搭配口诀</div></div><div class="card"><div class="card-title">📖 阅读目标</div><div style="font-size:14px;color:var(--text-secondary);line-height:1.8;">完成3篇阅读理解：A篇 Making New Friends (65词) / B篇 My First Day (86词) / C篇 Self-Introduction Card (86词)</div></div><div class="card"><div class="card-title">🔤 拼读目标 · 5音素</div><div style="font-size:14px;color:var(--text-secondary);line-height:1.8;">Aa /æ/ · Bb /b/ · Cc /k/ · Dd /d/ · Ee /e/<br>掌握5个字母的发音要点与朗读词汇</div></div></div></div></div>
+<div class="slide scrollable" data-section="新词20" data-page="5"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">新词1</span><span class="page-counter">5 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">📚</span><h2>新词学习 第1组 (词1-5)</h2></div><div class="section-divider"></div><div class="vocab-grid"><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#1</span><div class="vc-word">name</div><div class="vc-phonetic">/neɪm/</div><span class="vc-pos">n./v.</span><div class="vc-meaning">名字；命名</div><div class="vc-collocation">What's your name? / name card</div><div class="vc-example">What's your name? My name is Tom.</div><div class="vc-mnemonic">谐音内幕——名字是人的内幕</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#2</span><div class="vc-word">friend</div><div class="vc-phonetic">/frend/</div><span class="vc-pos">n.</span><div class="vc-meaning">朋友</div><div class="vc-collocation">make friends with / be friends</div><div class="vc-example">He is my best friend.</div><div class="vc-mnemonic">f-ri-end三段拆分，end结尾朋友到永远</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#3</span><div class="vc-word">phone</div><div class="vc-phonetic">/fəʊn/</div><span class="vc-pos">n./v.</span><div class="vc-meaning">电话；打电话</div><div class="vc-collocation">phone number / phone sb.</div><div class="vc-example">What's your phone number?</div><div class="vc-mnemonic">phone音似凤——打电话找凤姐</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#4</span><div class="vc-word">number</div><div class="vc-phonetic">/ˈnʌmbər/</div><span class="vc-pos">n.</span><div class="vc-meaning">数字；号码</div><div class="vc-collocation">phone number / room number</div><div class="vc-example">My phone number is 138-0000-0000.</div><div class="vc-mnemonic">numb麻木+er——数字太多让人麻木</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#5</span><div class="vc-word">school</div><div class="vc-phonetic">/skuːl/</div><span class="vc-pos">n.</span><div class="vc-meaning">学校</div><div class="vc-collocation">go to school / school bus</div><div class="vc-example">I go to school by bus every day.</div><div class="vc-mnemonic">s-ch-ool——school里有cool</div></div></div><div class="vocab-game"><div class="vg-title">🎮 词汇复习游戏 · Tier 1 基础词</div><div class="vg-word-bank"><span class="vg-word" onclick="vgSelect(this,'name')">name</span><span class="vg-word" onclick="vgSelect(this,'friend')">friend</span><span class="vg-word" onclick="vgSelect(this,'phone')">phone</span><span class="vg-word" onclick="vgSelect(this,'number')">number</span><span class="vg-word" onclick="vgSelect(this,'school')">school</span></div><div class="vg-questions"><div class="vg-question"><span>1. My ___ is Tom. (名字)</span><span class="vg-blank" data-answer="name" onclick="vgCheck(this)" ondblclick="vgUndo(this)"></span></div><div class="vg-question"><span>2. He is my best ___. (朋友)</span><span class="vg-blank" data-answer="friend" onclick="vgCheck(this)" ondblclick="vgUndo(this)"></span></div><div class="vg-question"><span>3. What is your ___ number? (电话)</span><span class="vg-blank" data-answer="phone" onclick="vgCheck(this)" ondblclick="vgUndo(this)"></span></div><div class="vg-question"><span>4. My ___ is 138-0000-0000. (号码)</span><span class="vg-blank" data-answer="number" onclick="vgCheck(this)" ondblclick="vgUndo(this)"></span></div><div class="vg-question"><span>5. I go to ___ by bus. (学校)</span><span class="vg-blank" data-answer="school" onclick="vgCheck(this)" ondblclick="vgUndo(this)"></span></div></div></div></div></div>
+<div class="slide scrollable" data-section="新词20" data-page="6"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">新词2</span><span class="page-counter">6 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">📚</span><h2>新词学习 第2组 (词6-10)</h2></div><div class="section-divider"></div><div class="vocab-grid"><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#6</span><div class="vc-word">teacher</div><div class="vc-phonetic">/ˈtiːtʃər/</div><span class="vc-pos">n.</span><div class="vc-meaning">老师</div><div class="vc-collocation">English teacher / teacher's desk</div><div class="vc-example">My English teacher is Miss Wang.</div><div class="vc-mnemonic">teach(教)+er(人)——教书的人</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#7</span><div class="vc-word">student</div><div class="vc-phonetic">/ˈstjuːdnt/</div><span class="vc-pos">n.</span><div class="vc-meaning">学生</div><div class="vc-collocation">middle school student / student card</div><div class="vc-example">I am a middle school student.</div><div class="vc-mnemonic">study(学习)+ent(人)——学习的人</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#8</span><div class="vc-word">class</div><div class="vc-phonetic">/klɑːs/</div><span class="vc-pos">n.</span><div class="vc-meaning">班级；课</div><div class="vc-collocation">in class / have a class / classmate</div><div class="vc-example">We have an English class on Monday.</div><div class="vc-mnemonic">c-lass——班级里有头驴</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#9</span><div class="vc-word">China</div><div class="vc-phonetic">/ˈtʃaɪnə/</div><span class="vc-pos">n.</span><div class="vc-meaning">中国</div><div class="vc-collocation">in China / made in China</div><div class="vc-example">I am from China.</div><div class="vc-mnemonic">拼音Chi-na——吃呐</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#10</span><div class="vc-word">English</div><div class="vc-phonetic">/ˈɪŋɡlɪʃ/</div><span class="vc-pos">n./adj.</span><div class="vc-meaning">英语；英国的</div><div class="vc-collocation">speak English / English book</div><div class="vc-example">I can speak English and Chinese.</div><div class="vc-mnemonic">Eng-lish——英格兰的语言</div></div></div></div></div>
+<div class="slide scrollable" data-section="新词20" data-page="7"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">新词3</span><span class="page-counter">7 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">📚</span><h2>新词学习 第3组 (词11-15)</h2></div><div class="section-divider"></div><div class="vocab-grid"><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#11</span><div class="vc-word">his</div><div class="vc-phonetic">/hɪz/</div><span class="vc-pos">pron.</span><div class="vc-meaning">他的</div><div class="vc-collocation">his name / his book</div><div class="vc-example">His name is Jack.</div><div class="vc-mnemonic">he的所有格，s结尾</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#12</span><div class="vc-word">her</div><div class="vc-phonetic">/hɜːr/</div><span class="vc-pos">pron.</span><div class="vc-meaning">她的；她</div><div class="vc-collocation">her phone / her teacher</div><div class="vc-example">Her phone number is 139-0000-0000.</div><div class="vc-mnemonic">she变her，e变r</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#13</span><div class="vc-word">their</div><div class="vc-phonetic">/ðeər/</div><span class="vc-pos">pron.</span><div class="vc-meaning">他们的</div><div class="vc-collocation">their teacher / their school</div><div class="vc-example">Their school is very big.</div><div class="vc-mnemonic">they变their，y变ir</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#14</span><div class="vc-word">our</div><div class="vc-phonetic">/ˈaʊər/</div><span class="vc-pos">pron.</span><div class="vc-meaning">我们的</div><div class="vc-collocation">our class / our teacher</div><div class="vc-example">Our class has 40 students.</div><div class="vc-mnemonic">we变our，完全变形</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#15</span><div class="vc-word">yours</div><div class="vc-phonetic">/jɔːz/</div><span class="vc-pos">pron.</span><div class="vc-meaning">你的；你们的</div><div class="vc-collocation">Is this yours? / Yours sincerely</div><div class="vc-example">Is this pen yours?</div><div class="vc-mnemonic">you变your变yours，加s变名词性</div></div></div></div></div>
+<div class="slide scrollable" data-section="新词20" data-page="8"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">新词4</span><span class="page-counter">8 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">📚</span><h2>新词学习 第4组 (词16-20)</h2></div><div class="section-divider"></div><div class="vocab-grid"><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#16</span><div class="vc-word">welcome</div><div class="vc-phonetic">/ˈwelkəm/</div><span class="vc-pos">v./interj.</span><div class="vc-meaning">欢迎</div><div class="vc-collocation">Welcome to... / You're welcome</div><div class="vc-example">Welcome to our school!</div><div class="vc-mnemonic">well+come——好好来=欢迎</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#17</span><div class="vc-word">meet</div><div class="vc-phonetic">/miːt/</div><span class="vc-pos">v.</span><div class="vc-meaning">遇见；见面</div><div class="vc-collocation">Nice to meet you / meet sb.</div><div class="vc-example">Nice to meet you, too.</div><div class="vc-mnemonic">m-eet——见面要会面</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#18</span><div class="vc-word">nice</div><div class="vc-phonetic">/naɪs/</div><span class="vc-pos">adj.</span><div class="vc-meaning">好的；愉快的</div><div class="vc-collocation">Nice to meet you / nice day</div><div class="vc-example">It's a nice day today.</div><div class="vc-mnemonic">ni-ce——nice音似奈斯=好</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#19</span><div class="vc-word">spell</div><div class="vc-phonetic">/spel/</div><span class="vc-pos">v.</span><div class="vc-meaning">拼写</div><div class="vc-collocation">spell it / spell out</div><div class="vc-example">How do you spell your name?</div><div class="vc-mnemonic">s-pell——spell音似死背哦</div></div><div class="vocab-card" onclick="event.stopPropagation()"><span class="vc-number">#20</span><div class="vc-word">zero</div><div class="vc-phonetic">/ˈzɪərəʊ/</div><span class="vc-pos">num.</span><div class="vc-meaning">零</div><div class="vc-collocation">zero to ten / zero degrees</div><div class="vc-example">My phone number has two zeros.</div><div class="vc-mnemonic">ze-ro——圈圈是零</div></div></div><div class="vocab-game"><div class="vg-title">🎮 词汇复习游戏 · Tier 2/3 进阶词</div><div class="vg-word-bank"><span class="vg-word" onclick="vgSelect(this,'welcome')">welcome</span><span class="vg-word" onclick="vgSelect(this,'meet')">meet</span><span class="vg-word" onclick="vgSelect(this,'nice')">nice</span><span class="vg-word" onclick="vgSelect(this,'spell')">spell</span><span class="vg-word" onclick="vgSelect(this,'zero')">zero</span></div><div class="vg-questions"><div class="vg-question"><span>1. ___ to our school! (欢迎)</span><span class="vg-blank" data-answer="welcome" onclick="vgCheck(this)" ondblclick="vgUndo(this)"></span></div><div class="vg-question"><span>2. Nice to ___ you! (遇见)</span><span class="vg-blank" data-answer="meet" onclick="vgCheck(this)" ondblclick="vgUndo(this)"></span></div><div class="vg-question"><span>3. It is a ___ day. (好的)</span><span class="vg-blank" data-answer="nice" onclick="vgCheck(this)" ondblclick="vgUndo(this)"></span></div><div class="vg-question"><span>4. How do you ___ your name? (拼写)</span><span class="vg-blank" data-answer="spell" onclick="vgCheck(this)" ondblclick="vgUndo(this)"></span></div><div class="vg-question"><span>5. My phone has two ___s. (零)</span><span class="vg-blank" data-answer="zero" onclick="vgCheck(this)" ondblclick="vgUndo(this)"></span></div></div></div></div></div>
+<div class="slide scrollable" data-section="新词20" data-page="9"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">记忆矩阵</span><span class="page-counter">9 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">🧩</span><h2>词汇记忆矩阵 · 20词分类</h2></div><div class="section-divider"></div><div class="memory-matrix"><div class="matrix-category"><div class="mc-title">问候类</div><div class="mc-words"><span class="mc-word">welcome</span><span class="mc-word">meet</span><span class="mc-word">nice</span><span class="mc-word">hello</span></div></div><div class="matrix-category"><div class="mc-title">身份类</div><div class="mc-words"><span class="mc-word">name</span><span class="mc-word">friend</span><span class="mc-word">student</span><span class="mc-word">teacher</span><span class="mc-word">school</span><span class="mc-word">class</span></div></div><div class="matrix-category"><div class="mc-title">代词类</div><div class="mc-words"><span class="mc-word">his</span><span class="mc-word">her</span><span class="mc-word">their</span><span class="mc-word">our</span><span class="mc-word">yours</span></div></div><div class="matrix-category"><div class="mc-title">数字/信息类</div><div class="mc-words"><span class="mc-word">phone</span><span class="mc-word">number</span><span class="mc-word">zero</span><span class="mc-word">spell</span><span class="mc-word">China</span><span class="mc-word">English</span></div></div></div><div class="card" style="margin-top:16px;"><div class="card-title">💡 记忆小贴士</div><div style="font-size:14px;color:var(--text-secondary);line-height:1.6;">将20个词汇按语义场分类记忆，可以大幅提升记忆效率！试试看：闭上眼睛，能否回忆起每个类别下的所有单词？</div></div></div></div>
+<div class="slide scrollable" data-section="新词20" data-page="10"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">快闪复习</span><span class="page-counter">10 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">⚡</span><h2>词汇快闪复习 · 20词</h2></div><div class="section-divider"></div><div class="flash-card-area"><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">name</div><div class="fc-phonetic">/neɪm/</div><div class="fc-meaning" style="display:none;">名字；命名</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">friend</div><div class="fc-phonetic">/frend/</div><div class="fc-meaning" style="display:none;">朋友</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">phone</div><div class="fc-phonetic">/fəʊn/</div><div class="fc-meaning" style="display:none;">电话；打电话</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">number</div><div class="fc-phonetic">/ˈnʌmbər/</div><div class="fc-meaning" style="display:none;">数字；号码</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">school</div><div class="fc-phonetic">/skuːl/</div><div class="fc-meaning" style="display:none;">学校</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">teacher</div><div class="fc-phonetic">/ˈtiːtʃər/</div><div class="fc-meaning" style="display:none;">老师</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">student</div><div class="fc-phonetic">/ˈstjuːdnt/</div><div class="fc-meaning" style="display:none;">学生</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">class</div><div class="fc-phonetic">/klɑːs/</div><div class="fc-meaning" style="display:none;">班级；课</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">China</div><div class="fc-phonetic">/ˈtʃaɪnə/</div><div class="fc-meaning" style="display:none;">中国</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">English</div><div class="fc-phonetic">/ˈɪŋɡlɪʃ/</div><div class="fc-meaning" style="display:none;">英语；英国的</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">his</div><div class="fc-phonetic">/hɪz/</div><div class="fc-meaning" style="display:none;">他的</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">her</div><div class="fc-phonetic">/hɜːr/</div><div class="fc-meaning" style="display:none;">她的；她</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">their</div><div class="fc-phonetic">/ðeər/</div><div class="fc-meaning" style="display:none;">他们的</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">our</div><div class="fc-phonetic">/ˈaʊər/</div><div class="fc-meaning" style="display:none;">我们的</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">yours</div><div class="fc-phonetic">/jɔːz/</div><div class="fc-meaning" style="display:none;">你的；你们的</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">welcome</div><div class="fc-phonetic">/ˈwelkəm/</div><div class="fc-meaning" style="display:none;">欢迎</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">meet</div><div class="fc-phonetic">/miːt/</div><div class="fc-meaning" style="display:none;">遇见；见面</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">nice</div><div class="fc-phonetic">/naɪs/</div><div class="fc-meaning" style="display:none;">好的；愉快的</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">spell</div><div class="fc-phonetic">/spel/</div><div class="fc-meaning" style="display:none;">拼写</div><div class="fc-hint">点击翻转 🔄</div></div><div class="flash-card" onclick="flashCard(this)"><div class="fc-word">zero</div><div class="fc-phonetic">/ˈzɪərəʊ/</div><div class="fc-meaning" style="display:none;">零</div><div class="fc-hint">点击翻转 🔄</div></div></div></div></div>
+<div class="slide scrollable" data-section="语法3考点" data-page="11"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">G01 主格宾格</span><span class="page-counter">11 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">📐</span><h2>G01 · 人称代词主格与宾格</h2></div><div class="section-divider"></div><div class="grammar-formula"><div class="gf-title">口诀</div><div class="gf-content">主格做主语（I am, he is, she is）<br>宾格做宾语（help me, call him, ask her）</div></div><table class="grammar-table"><tr><th>人称</th><th>主格（做主语）</th><th>宾格（做宾语/介词后）</th><th>记忆规律</th></tr><tr><td>我</td><td><strong>I</strong></td><td><strong>me</strong></td><td>I变me，完全变形</td></tr><tr><td>你</td><td><strong>you</strong></td><td><strong>you</strong></td><td>you主宾同形</td></tr><tr><td>他</td><td><strong>he</strong></td><td><strong>him</strong></td><td>he变him，加m</td></tr><tr><td>她</td><td><strong>she</strong></td><td><strong>her</strong></td><td>she变her，e变r</td></tr><tr><td>它</td><td><strong>it</strong></td><td><strong>it</strong></td><td>it主宾同形</td></tr><tr><td>我们</td><td><strong>we</strong></td><td><strong>us</strong></td><td>we变us，完全变形</td></tr><tr><td>你们</td><td><strong>you</strong></td><td><strong>you</strong></td><td>you主宾同形</td></tr><tr><td>他们</td><td><strong>they</strong></td><td><strong>them</strong></td><td>they变them，y变em</td></tr></table><div class="error-warning"><div class="ew-title">⚠️ 中考辨析</div><div class="ew-content">介词后必须用宾格：for me, with him, to her, about them<br>动词后必须用宾格：help us, ask them, call me</div></div></div></div>
+<div class="slide scrollable" data-section="语法3考点" data-page="12"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">G01 例句</span><span class="page-counter">12 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">📝</span><h2>G01 · 例句精讲</h2></div><div class="section-divider"></div><div class="example-card"><div class="ec-label">例句1 · 主格做主语</div><div class="ec-sentence">I am a student.</div><div class="ec-translation">我是一个学生。</div></div><div class="example-card"><div class="ec-label">例句2 · 宾格做宾语</div><div class="ec-sentence">Can you help me?</div><div class="ec-translation">你能帮我吗？</div></div><div class="example-card"><div class="ec-label">例句3 · 主格+宾格</div><div class="ec-sentence">She calls him every day.</div><div class="ec-translation">她每天给他打电话。</div></div><div class="error-warning"><div class="ew-title">❌ 易错点</div><div class="ew-content">❌ for he → ✅ for him（介词后用宾格）<br>❌ help they → ✅ help them（动词后用宾格）<br>❌ She and me are friends. → ✅ She and I are friends.（做主语用主格，别人优先放前面）</div></div></div></div>
+<div class="slide scrollable" data-section="语法3考点" data-page="13"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">G02 物主代词</span><span class="page-counter">13 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">📐</span><h2>G02 · 形容词性与名词性物主代词</h2></div><div class="section-divider"></div><div class="grammar-formula"><div class="gf-title">口诀</div><div class="gf-content">形容词性要加名词（my book）<br>名词性自己当名词（The book is mine）</div></div><table class="grammar-table"><tr><th>人称</th><th>主格</th><th>宾格</th><th>形容词性物主(+名词)</th><th>名词性物主(独立用)</th></tr><tr><td>我</td><td>I</td><td>me</td><td><strong>my</strong></td><td><strong>mine</strong></td></tr><tr><td>你</td><td>you</td><td>you</td><td><strong>your</strong></td><td><strong>yours</strong></td></tr><tr><td>他</td><td>he</td><td>him</td><td><strong>his</strong></td><td><strong>his</strong></td></tr><tr><td>她</td><td>she</td><td>her</td><td><strong>her</strong></td><td><strong>hers</strong></td></tr><tr><td>它</td><td>it</td><td>it</td><td><strong>its</strong></td><td><strong>its</strong></td></tr><tr><td>我们</td><td>we</td><td>us</td><td><strong>our</strong></td><td><strong>ours</strong></td></tr><tr><td>你们</td><td>you</td><td>you</td><td><strong>your</strong></td><td><strong>yours</strong></td></tr><tr><td>他们</td><td>they</td><td>them</td><td><strong>their</strong></td><td><strong>theirs</strong></td></tr></table><div class="error-warning"><div class="ew-title">⚠️ 规律</div><div class="ew-content">名词性物主代词 = 形容词性物主代词 + s（mine例外，yours/hers/ours/theirs全加s）<br>只有his和its形容词性与名词性同形（不加s）</div></div></div></div>
+<div class="slide scrollable" data-section="语法3考点" data-page="14"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">G02 例句</span><span class="page-counter">14 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">📝</span><h2>G02 · 例句精讲</h2></div><div class="section-divider"></div><div class="example-card"><div class="ec-label">例句1 · 形容词性+名词</div><div class="ec-sentence">This is my book. That is your book.</div><div class="ec-translation">这是我的书。那是你的书。</div></div><div class="example-card"><div class="ec-label">例句2 · 名词性独立使用</div><div class="ec-sentence">This book is mine. That book is yours.</div><div class="ec-translation">这本书是我的。那本书是你的。</div></div><div class="example-card"><div class="ec-label">例句3 · 名词性避免重复</div><div class="ec-sentence">Her phone is red. His is blue.</div><div class="ec-translation">她的手机是红色的。他的是蓝色的。（His = His phone）</div></div><div class="error-warning"><div class="ew-title">❌ 易错点</div><div class="ew-content">❌ This is my. → ✅ This is mine.（无名词时用名词性）<br>❌ This is mine book. → ✅ This is my book.（有名词时用形容词性）<br>❌ her's → ✅ hers（名词性物主代词不加's）</div></div></div></div>
+<div class="slide scrollable" data-section="语法3考点" data-page="15"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">代词魔法转换器</span><span class="page-counter">15 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">✨</span><h2>代词魔法转换器</h2></div><div class="section-divider"></div><div class="pronoun-transformer"><div class="pt-buttons" id="pt-buttons"><button class="pt-btn active" onclick="transformPronoun('I',event)">I</button><button class="pt-btn" onclick="transformPronoun('You',event)">You</button><button class="pt-btn" onclick="transformPronoun('He',event)">He</button><button class="pt-btn" onclick="transformPronoun('She',event)">She</button><button class="pt-btn" onclick="transformPronoun('It',event)">It</button><button class="pt-btn" onclick="transformPronoun('We',event)">We</button><button class="pt-btn" onclick="transformPronoun('They',event)">They</button></div><table class="pt-table" id="pt-table"><tr><th>主格</th><th>宾格</th><th>形容词性物主</th><th>名词性物主</th><th>be动词</th><th>缩写</th></tr><tr id="pt-row"><td id="pt-subject">I</td><td id="pt-object">me</td><td id="pt-adj">my</td><td id="pt-noun">mine</td><td id="pt-be">am</td><td id="pt-contr">I'm</td></tr></table><div class="pt-example" id="pt-example"><div class="pte-label">例句</div><div class="pte-sentence" id="pte-text">I am a student. This is my book. This book is mine.</div></div></div><div style="font-size:13px;color:var(--text-light);text-align:center;margin-top:8px;">💡 点击上方人称按钮，查看四列同步高亮、be动词搭配和例句变化！</div></div></div>
+<div class="slide scrollable" data-section="语法3考点" data-page="16"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">G03 be动词口诀</span><span class="page-counter">16 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">🎵</span><h2>G03 · be动词与人称搭配口诀</h2></div><div class="section-divider"></div><div class="grammar-formula"><div class="gf-title">口诀</div><div class="gf-content">我用am，你用are<br>is连着他她它<br>复数人称都用are</div></div><table class="grammar-table"><tr><th>主语</th><th>be动词</th><th>缩写</th></tr><tr><td>I</td><td><strong>am</strong></td><td>I'm</td></tr><tr><td>You</td><td><strong>are</strong></td><td>You're</td></tr><tr><td>He / She / It</td><td><strong>is</strong></td><td>He's / She's / It's</td></tr><tr><td>We / You / They</td><td><strong>are</strong></td><td>We're / You're / They're</td></tr></table><div class="example-card"><div class="ec-label">例句1</div><div class="ec-sentence">I am a student. = I'm a student.</div></div><div class="example-card"><div class="ec-label">例句2</div><div class="ec-sentence">She is my friend. = She's my friend.</div></div><div class="example-card"><div class="ec-label">例句3</div><div class="ec-sentence">They are from China. = They're from China.</div></div><div class="error-warning"><div class="ew-title">❌ 易错点</div><div class="ew-content">❌ I is a student. → ✅ I am a student.（I固定搭配am）<br>❌ He are my friend. → ✅ He is my friend.（三单用is）<br>❌ They is from China. → ✅ They are from China.（复数用are）</div></div></div></div>
+<div class="slide" data-section="随堂演练" data-page="17"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">演练1</span><span class="page-counter">17 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">✏️</span><h2>随堂演练 · 语法刷题</h2></div><div class="section-divider"></div><div class="quiz-section"><div class="quiz-question" id="qq-1"><div class="qq-text"><span class="qq-number">1</span>___ is my best friend. (他)</div><div class="q-options"><div class="q-option" data-correct="true" onclick="quizAnswer(this,1,'He','做主语用主格he。',event)"><span class="qo-letter">A</span>He</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,1,'He','做主语用主格he。',event)"><span class="qo-letter">B</span>Him</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,1,'He','做主语用主格he。',event)"><span class="qo-letter">C</span>His</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-2"><div class="qq-text"><span class="qq-number">2</span>Can you help ___? (我们)</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,2,'us','动词后用宾格us。',event)"><span class="qo-letter">A</span>we</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,2,'us','动词后用宾格us。',event)"><span class="qo-letter">B</span>us</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,2,'us','动词后用宾格us。',event)"><span class="qo-letter">C</span>our</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-3"><div class="qq-text"><span class="qq-number">3</span>This is ___ book. (她的)</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,3,'her','形容词性物主代词+名词，用her。',event)"><span class="qo-letter">A</span>she</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,3,'her','形容词性物主代词+名词，用her。',event)"><span class="qo-letter">B</span>her</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,3,'her','形容词性物主代词+名词，用her。',event)"><span class="qo-letter">C</span>hers</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-4"><div class="qq-text"><span class="qq-number">4</span>This pen is ___. (我的)</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,4,'mine','无名词时用名词性物主代词mine。',event)"><span class="qo-letter">A</span>my</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,4,'mine','无名词时用名词性物主代词mine。',event)"><span class="qo-letter">B</span>me</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,4,'mine','无名词时用名词性物主代词mine。',event)"><span class="qo-letter">C</span>mine</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div></div></div></div>
+<div class="slide" data-section="随堂演练" data-page="18"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">演练2</span><span class="page-counter">18 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">✏️</span><h2>随堂演练 · 语法刷题</h2></div><div class="section-divider"></div><div class="quiz-section"><div class="quiz-question" id="qq-5"><div class="qq-text"><span class="qq-number">5</span>I ___ a student.</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,5,'am','I固定搭配am。',event)"><span class="qo-letter">A</span>is</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,5,'am','I固定搭配am。',event)"><span class="qo-letter">B</span>am</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,5,'am','I固定搭配am。',event)"><span class="qo-letter">C</span>are</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-6"><div class="qq-text"><span class="qq-number">6</span>She ___ my friend.</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,6,'is','三单用is。',event)"><span class="qo-letter">A</span>are</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,6,'is','三单用is。',event)"><span class="qo-letter">B</span>is</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,6,'is','三单用is。',event)"><span class="qo-letter">C</span>am</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-7"><div class="qq-text"><span class="qq-number">7</span>They ___ from China.</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,7,'are','复数用are。',event)"><span class="qo-letter">A</span>is</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,7,'are','复数用are。',event)"><span class="qo-letter">B</span>am</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,7,'are','复数用are。',event)"><span class="qo-letter">C</span>are</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-8"><div class="qq-text"><span class="qq-number">8</span>___ class is very big.</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,8,'Our','形容词性物主代词+名词，用our。',event)"><span class="qo-letter">A</span>We</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,8,'Our','形容词性物主代词+名词，用our。',event)"><span class="qo-letter">B</span>Us</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,8,'Our','形容词性物主代词+名词，用our。',event)"><span class="qo-letter">C</span>Our</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div></div></div></div>
+<div class="slide" data-section="阅读理解" data-page="19"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">A篇</span><span class="page-counter">19 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">📖</span><h2>阅读理解 A篇</h2></div><div class="section-divider"></div><div class="reading-passage"><div class="rp-title">Making New Friends at School</div><div class="rp-meta">应用文 · 65词 · 交友主题</div><div class="rp-text">Hello! My <span class="highlight-word">name</span> is Tom. I am a new <span class="highlight-word">student</span> at this <span class="highlight-word">school</span>. Today is my first day. I meet a nice <span class="highlight-word">friend</span>. Her name is Lily. She is from <span class="highlight-word">China</span>. She can speak <span class="highlight-word">English</span> very well. We are in the same <span class="highlight-word">class</span>. Our <span class="highlight-word">teacher</span> is Miss Wang. She is very kind. <span class="highlight-word">Welcome</span> to our school!</div></div><div class="section-header"><span class="sh-icon">✏️</span><h2>随堂演练 · 语法刷题</h2></div><div class="section-divider"></div><div class="quiz-section"><div class="quiz-question" id="qq-1"><div class="qq-text"><span class="qq-number">1</span>Who is the new student?</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,1,'Tom','原文：My name is Tom. I am a new student.',event)"><span class="qo-letter">A</span>Lily</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,1,'Tom','原文：My name is Tom. I am a new student.',event)"><span class="qo-letter">B</span>Tom</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,1,'Tom','原文：My name is Tom. I am a new student.',event)"><span class="qo-letter">C</span>Miss Wang</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-2"><div class="qq-text"><span class="qq-number">2</span>Where is Lily from?</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,2,'China','原文：She is from China.',event)"><span class="qo-letter">A</span>America</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,2,'China','原文：She is from China.',event)"><span class="qo-letter">B</span>England</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,2,'China','原文：She is from China.',event)"><span class="qo-letter">C</span>China</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-3"><div class="qq-text"><span class="qq-number">3</span>What can Lily speak well?</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,3,'English','原文：She can speak English very well.',event)"><span class="qo-letter">A</span>Chinese</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,3,'English','原文：She can speak English very well.',event)"><span class="qo-letter">B</span>English</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,3,'English','原文：She can speak English very well.',event)"><span class="qo-letter">C</span>Japanese</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-4"><div class="qq-text"><span class="qq-number">4</span>Who is the teacher?</div><div class="q-options"><div class="q-option" data-correct="true" onclick="quizAnswer(this,4,'Miss Wang','原文：Our teacher is Miss Wang.',event)"><span class="qo-letter">A</span>Miss Wang</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,4,'Miss Wang','原文：Our teacher is Miss Wang.',event)"><span class="qo-letter">B</span>Mr. Wang</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,4,'Miss Wang','原文：Our teacher is Miss Wang.',event)"><span class="qo-letter">C</span>Miss Li</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-5"><div class="qq-text"><span class="qq-number">5</span>How does Tom feel about the school?</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,5,'Happy/Welcomed','原文提到nice friend和welcome，说明他感到开心和被欢迎。',event)"><span class="qo-letter">A</span>Sad</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,5,'Happy/Welcomed','原文提到nice friend和welcome，说明他感到开心和被欢迎。',event)"><span class="qo-letter">B</span>Happy/Welcomed</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,5,'Happy/Welcomed','原文提到nice friend和welcome，说明他感到开心和被欢迎。',event)"><span class="qo-letter">C</span>Angry</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div></div></div></div>
+<div class="slide" data-section="阅读理解" data-page="20"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">B篇</span><span class="page-counter">20 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">📖</span><h2>阅读理解 B篇</h2></div><div class="section-divider"></div><div class="reading-passage"><div class="rp-title">My First Day at Middle School</div><div class="rp-meta">记叙文 · 86词 · 校园主题</div><div class="rp-text">Today is my first day at middle school. I am twelve years old. My name is Jack. I have a new <span class="highlight-word">phone</span>. My <span class="highlight-word">number</span> is 138-0000-1234. I meet my new <span class="highlight-word">teacher</span>, Mr. Brown. He is tall and friendly. I also meet a new <span class="highlight-word">friend</span>. His name is Mike. He is from America. He can <span class="highlight-word">spell</span> his name very fast. We have an English <span class="highlight-word">class</span> together. The classroom is big and clean. I like my new school very much. Everyone is nice to me.</div></div><div class="section-header"><span class="sh-icon">✏️</span><h2>随堂演练 · 语法刷题</h2></div><div class="section-divider"></div><div class="quiz-section"><div class="quiz-question" id="qq-6"><div class="qq-text"><span class="qq-number">6</span>How old is Jack?</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,6,'Twelve','原文：I am twelve years old.',event)"><span class="qo-letter">A</span>Eleven</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,6,'Twelve','原文：I am twelve years old.',event)"><span class="qo-letter">B</span>Twelve</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,6,'Twelve','原文：I am twelve years old.',event)"><span class="qo-letter">C</span>Thirteen</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-7"><div class="qq-text"><span class="qq-number">7</span>What is Jacks phone number?</div><div class="q-options"><div class="q-option" data-correct="true" onclick="quizAnswer(this,7,'138-0000-1234','原文：My number is 138-0000-1234.',event)"><span class="qo-letter">A</span>138-0000-1234</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,7,'138-0000-1234','原文：My number is 138-0000-1234.',event)"><span class="qo-letter">B</span>139-0000-1234</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,7,'138-0000-1234','原文：My number is 138-0000-1234.',event)"><span class="qo-letter">C</span>138-0000-0000</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-8"><div class="qq-text"><span class="qq-number">8</span>Where is Mike from?</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,8,'America','原文：He is from America.',event)"><span class="qo-letter">A</span>China</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,8,'America','原文：He is from America.',event)"><span class="qo-letter">B</span>England</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,8,'America','原文：He is from America.',event)"><span class="qo-letter">C</span>America</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-9"><div class="qq-text"><span class="qq-number">9</span>What can Mike do very fast?</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,9,'Spell his name','原文：He can spell his name very fast.',event)"><span class="qo-letter">A</span>Run</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,9,'Spell his name','原文：He can spell his name very fast.',event)"><span class="qo-letter">B</span>Spell his name</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,9,'Spell his name','原文：He can spell his name very fast.',event)"><span class="qo-letter">C</span>Speak Chinese</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-10"><div class="qq-text"><span class="qq-number">10</span>How does Jack feel about his school?</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,10,'He likes it','原文：I like my new school very much.',event)"><span class="qo-letter">A</span>He dislikes it</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,10,'He likes it','原文：I like my new school very much.',event)"><span class="qo-letter">B</span>He likes it</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,10,'He likes it','原文：I like my new school very much.',event)"><span class="qo-letter">C</span>He is bored</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div></div></div></div>
+<div class="slide" data-section="阅读理解" data-page="21"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">C篇</span><span class="page-counter">21 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">📖</span><h2>阅读理解 C篇 + 五选四</h2></div><div class="section-divider"></div><div class="reading-passage"><div class="rp-title">A Self-Introduction Card</div><div class="rp-meta">说明文 · 86词 · 自我介绍主题</div><div class="rp-text">Name: Amy | Age: 13 | From: <span class="highlight-word">China</span> | School: No. 5 Middle School | <span class="highlight-word">English</span> teacher: Mrs. Lee | <span class="highlight-word">Phone</span>: 139-0000-5678 | Favorite <span class="highlight-word">number</span>: <span class="highlight-word">zero</span> (because it means a new start) | Hobby: making <span class="highlight-word">friend</span>s | My name is Amy. I am 13 years old. I am from China. I am a student at No. 5 Middle School. My English teacher is Mrs. Lee. She is very kind. My phone number is 139-0000-5678. I like making new friends.</div></div><div class="section-header"><span class="sh-icon">✏️</span><h2>随堂演练 · 语法刷题</h2></div><div class="section-divider"></div><div class="quiz-section"><div class="quiz-question" id="qq-11"><div class="qq-text"><span class="qq-number">11</span>How old is Amy?</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,11,'13','原文：Age: 13',event)"><span class="qo-letter">A</span>12</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,11,'13','原文：Age: 13',event)"><span class="qo-letter">B</span>13</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,11,'13','原文：Age: 13',event)"><span class="qo-letter">C</span>14</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-12"><div class="qq-text"><span class="qq-number">12</span>Who is Amys English teacher?</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,12,'Mrs. Lee','原文：English teacher: Mrs. Lee',event)"><span class="qo-letter">A</span>Mr. Lee</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,12,'Mrs. Lee','原文：English teacher: Mrs. Lee',event)"><span class="qo-letter">B</span>Mrs. Lee</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,12,'Mrs. Lee','原文：English teacher: Mrs. Lee',event)"><span class="qo-letter">C</span>Miss Lee</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-13"><div class="qq-text"><span class="qq-number">13</span>What is Amys favorite number?</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,13,'Zero','原文：Favorite number: zero',event)"><span class="qo-letter">A</span>One</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,13,'Zero','原文：Favorite number: zero',event)"><span class="qo-letter">B</span>Seven</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,13,'Zero','原文：Favorite number: zero',event)"><span class="qo-letter">C</span>Zero</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div></div><div class="card" style="margin-top:16px;"><div class="card-title">五选四 · My School Life</div><div style="font-size:15px;color:var(--text-primary);line-height:1.8;margin-bottom:12px;">I love my school. ___1___ I have many friends here. ___2___ We play and study together. ___3___ She is very kind. ___4___ I want to be a good student.</div><div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;"><div class="q-option" style="justify-content:center;" onclick="event.stopPropagation()">A. My teacher is nice.</div><div class="q-option" style="justify-content:center;" onclick="event.stopPropagation()">B. It is big and beautiful.</div><div class="q-option" style="justify-content:center;" onclick="event.stopPropagation()">C. I do not like it.</div><div class="q-option" style="justify-content:center;" onclick="event.stopPropagation()">D. They are very friendly.</div><div class="q-option" style="justify-content:center;" onclick="event.stopPropagation()">E. I work hard every day.</div></div><div style="margin-top:8px;font-size:13px;color:var(--text-secondary);">答案：1-B 2-D 3-A 4-E（C为干扰项）</div></div></div></div>
+<div class="slide" data-section="句子练习" data-page="22"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">汉译英</span><span class="page-counter">22 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">✍️</span><h2>汉译英练习</h2></div><div class="section-divider"></div><div class="sentence-exercise"><div class="se-chinese">1. 我叫汤姆。</div><div class="se-hint">提示词：name / call</div><div class="se-answer" onclick="revealAnswer(this,event)"><span class="mask-text">点击查看答案</span><span style="display:none;">My name is Tom.</span></div></div><div class="sentence-exercise"><div class="se-chinese">2. 你好，很高兴认识你！</div><div class="se-hint">提示词：nice / meet</div><div class="se-answer" onclick="revealAnswer(this,event)"><span class="mask-text">点击查看答案</span><span style="display:none;">Hello, nice to meet you!</span></div></div><div class="sentence-exercise"><div class="se-chinese">3. 你的电话号码是多少？</div><div class="se-hint">提示词：phone / number</div><div class="se-answer" onclick="revealAnswer(this,event)"><span class="mask-text">点击查看答案</span><span style="display:none;">What is your phone number?</span></div></div><div class="sentence-exercise"><div class="se-chinese">4. 你怎么拼写你的名字？</div><div class="se-hint">提示词：spell / name</div><div class="se-answer" onclick="revealAnswer(this,event)"><span class="mask-text">点击查看答案</span><span style="display:none;">How do you spell your name?</span></div></div><div class="sentence-exercise"><div class="se-chinese">5. 我来自中国。</div><div class="se-hint">提示词：China / from</div><div class="se-answer" onclick="revealAnswer(this,event)"><span class="mask-text">点击查看答案</span><span style="display:none;">I am from China. / I come from China.</span></div></div></div></div>
+<div class="slide" data-section="句子练习" data-page="23"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">造句</span><span class="page-counter">23 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">📝</span><h2>造句练习</h2></div><div class="section-divider"></div><div class="sentence-exercise"><div class="se-chinese">1. 用 my/name/is/Tom 造句</div><div class="se-answer" onclick="revealAnswer(this,event)"><span class="mask-text">点击查看答案</span><span style="display:none;">My name is Tom.</span></div></div><div class="sentence-exercise"><div class="se-chinese">2. 用 she/friend/my/is 造句</div><div class="se-answer" onclick="revealAnswer(this,event)"><span class="mask-text">点击查看答案</span><span style="display:none;">She is my friend.</span></div></div><div class="sentence-exercise"><div class="se-chinese">3. 用 welcome/to/school/our 造句</div><div class="se-answer" onclick="revealAnswer(this,event)"><span class="mask-text">点击查看答案</span><span style="display:none;">Welcome to our school!</span></div></div><div class="sentence-exercise"><div class="se-chinese">4. 用 what/phone/number/your 造句</div><div class="se-answer" onclick="revealAnswer(this,event)"><span class="mask-text">点击查看答案</span><span style="display:none;">What is your phone number?</span></div></div><div class="sentence-exercise"><div class="se-chinese">5. 用 I/am/from/China 造句</div><div class="se-answer" onclick="revealAnswer(this,event)"><span class="mask-text">点击查看答案</span><span style="display:none;">I am from China.</span></div></div></div></div>
+<div class="slide" data-section="自然拼读" data-page="24"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">音素学习</span><span class="page-counter">24 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">🔤</span><h2>自然拼读 · 5音素学习</h2></div><div class="section-divider"></div><div class="phonics-grid"><div class="phonics-card"><div class="pc-letter">Aa</div><div class="pc-sound">/æ/</div><div class="pc-tip">嘴巴张大，短促有力，像咬苹果</div><div class="pc-words"><span class="pc-word">apple</span><span class="pc-word">cat</span><span class="pc-word">bag</span><span class="pc-word">map</span></div></div><div class="phonics-card"><div class="pc-letter">Bb</div><div class="pc-sound">/b/</div><div class="pc-tip">双唇闭合，气流突然冲出</div><div class="pc-words"><span class="pc-word">book</span><span class="pc-word">boy</span><span class="pc-word">blue</span><span class="pc-word">big</span></div></div><div class="phonics-card"><div class="pc-letter">Cc</div><div class="pc-sound">/k/</div><div class="pc-tip">舌根抵软腭，气流冲出</div><div class="pc-words"><span class="pc-word">kite</span><span class="pc-word">cake</span><span class="pc-word">cup</span><span class="pc-word">key</span></div></div><div class="phonics-card"><div class="pc-letter">Dd</div><div class="pc-sound">/d/</div><div class="pc-tip">舌尖抵上齿龈，气流冲出</div><div class="pc-words"><span class="pc-word">dog</span><span class="pc-word">desk</span><span class="pc-word">door</span><span class="pc-word">dad</span></div></div><div class="phonics-card"><div class="pc-letter">Ee</div><div class="pc-sound">/e/</div><div class="pc-tip">嘴巴半开，短促清晰</div><div class="pc-words"><span class="pc-word">egg</span><span class="pc-word">bed</span><span class="pc-word">pen</span><span class="pc-word">red</span></div></div></div></div></div>
+<div class="slide" data-section="自然拼读" data-page="25"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">练习2+3</span><span class="page-counter">25 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">🎧</span><h2>练习2 听音选词 + 练习3 看词归音</h2></div><div class="section-divider"></div><div class="card"><div class="card-title">练习2 · 听音选词（含目标音素的单词）</div><div class="section-header"><span class="sh-icon">✏️</span><h2>随堂演练 · 语法刷题</h2></div><div class="section-divider"></div><div class="quiz-section"><div class="quiz-question" id="qq-1"><div class="qq-text"><span class="qq-number">1</span>哪个单词含 /æ/ 音？</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,1,'cat','cat中的a发/æ/音。',event)"><span class="qo-letter">A</span>bed</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,1,'cat','cat中的a发/æ/音。',event)"><span class="qo-letter">B</span>cat</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,1,'cat','cat中的a发/æ/音。',event)"><span class="qo-letter">C</span>dog</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-2"><div class="qq-text"><span class="qq-number">2</span>哪个单词含 /b/ 音？</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,2,'book','book中的b发/b/音。',event)"><span class="qo-letter">A</span>red</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,2,'book','book中的b发/b/音。',event)"><span class="qo-letter">B</span>book</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,2,'book','book中的b发/b/音。',event)"><span class="qo-letter">C</span>cat</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-3"><div class="qq-text"><span class="qq-number">3</span>哪个单词含 /k/ 音？</div><div class="q-options"><div class="q-option" data-correct="true" onclick="quizAnswer(this,3,'key','key中的k发/k/音。',event)"><span class="qo-letter">A</span>key</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,3,'key','key中的k发/k/音。',event)"><span class="qo-letter">B</span>bed</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,3,'key','key中的k发/k/音。',event)"><span class="qo-letter">C</span>egg</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-4"><div class="qq-text"><span class="qq-number">4</span>哪个单词含 /d/ 音？</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,4,'dog','dog中的d发/d/音。',event)"><span class="qo-letter">A</span>map</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,4,'dog','dog中的d发/d/音。',event)"><span class="qo-letter">B</span>dog</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,4,'dog','dog中的d发/d/音。',event)"><span class="qo-letter">C</span>cup</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div></div></div><div class="card" style="margin-top:12px;"><div class="card-title">练习3 · 看词归音</div><div class="section-header"><span class="sh-icon">✏️</span><h2>随堂演练 · 语法刷题</h2></div><div class="section-divider"></div><div class="quiz-section"><div class="quiz-question" id="qq-5"><div class="qq-text"><span class="qq-number">5</span>apple 含哪个音素？</div><div class="q-options"><div class="q-option" data-correct="true" onclick="quizAnswer(this,5,'/æ/','apple的a发/æ/音。',event)"><span class="qo-letter">A</span>/æ/</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,5,'/æ/','apple的a发/æ/音。',event)"><span class="qo-letter">B</span>/e/</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,5,'/æ/','apple的a发/æ/音。',event)"><span class="qo-letter">C</span>/b/</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-6"><div class="qq-text"><span class="qq-number">6</span>egg 含哪个音素？</div><div class="q-options"><div class="q-option" data-correct="false" onclick="quizAnswer(this,6,'/e/','egg的e发/e/音。',event)"><span class="qo-letter">A</span>/æ/</div><div class="q-option" data-correct="true" onclick="quizAnswer(this,6,'/e/','egg的e发/e/音。',event)"><span class="qo-letter">B</span>/e/</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,6,'/e/','egg的e发/e/音。',event)"><span class="qo-letter">C</span>/d/</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-7"><div class="qq-text"><span class="qq-number">7</span>desk 含哪个音素？</div><div class="q-options"><div class="q-option" data-correct="true" onclick="quizAnswer(this,7,'/d/','desk的d发/d/音。',event)"><span class="qo-letter">A</span>/d/</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,7,'/d/','desk的d发/d/音。',event)"><span class="qo-letter">B</span>/æ/</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,7,'/d/','desk的d发/d/音。',event)"><span class="qo-letter">C</span>/k/</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-8"><div class="qq-text"><span class="qq-number">8</span>cake 含哪个音素？</div><div class="q-options"><div class="q-option" data-correct="true" onclick="quizAnswer(this,8,'/k/','cake的c发/k/音。',event)"><span class="qo-letter">A</span>/k/</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,8,'/k/','cake的c发/k/音。',event)"><span class="qo-letter">B</span>/e/</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,8,'/k/','cake的c发/k/音。',event)"><span class="qo-letter">C</span>/b/</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div></div></div></div></div>
+<div class="slide" data-section="自然拼读" data-page="26"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">练习4</span><span class="page-counter">26 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">🔍</span><h2>练习4 · 最小对立对辨析</h2></div><div class="section-divider"></div><div class="section-header"><span class="sh-icon">✏️</span><h2>随堂演练 · 语法刷题</h2></div><div class="section-divider"></div><div class="quiz-section"><div class="quiz-question" id="qq-1"><div class="qq-text"><span class="qq-number">1</span>cat 和 cut 的区别是？</div><div class="q-options"><div class="q-option" data-correct="true" onclick="quizAnswer(this,1,'元音不同','cat中a发/æ/，cut中u发/ʌ/，元音不同。',event)"><span class="qo-letter">A</span>元音不同</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,1,'元音不同','cat中a发/æ/，cut中u发/ʌ/，元音不同。',event)"><span class="qo-letter">B</span>辅音不同</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,1,'元音不同','cat中a发/æ/，cut中u发/ʌ/，元音不同。',event)"><span class="qo-letter">C</span>完全相同</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-2"><div class="qq-text"><span class="qq-number">2</span>bed 和 bad 的区别是？</div><div class="q-options"><div class="q-option" data-correct="true" onclick="quizAnswer(this,2,'元音不同','bed中e发/e/，bad中a发/æ/，元音不同。',event)"><span class="qo-letter">A</span>元音不同</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,2,'元音不同','bed中e发/e/，bad中a发/æ/，元音不同。',event)"><span class="qo-letter">B</span>辅音不同</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,2,'元音不同','bed中e发/e/，bad中a发/æ/，元音不同。',event)"><span class="qo-letter">C</span>完全相同</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-3"><div class="qq-text"><span class="qq-number">3</span>bag 和 beg 的区别是？</div><div class="q-options"><div class="q-option" data-correct="true" onclick="quizAnswer(this,3,'元音不同','bag中a发/æ/，beg中e发/e/，元音不同。',event)"><span class="qo-letter">A</span>元音不同</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,3,'元音不同','bag中a发/æ/，beg中e发/e/，元音不同。',event)"><span class="qo-letter">B</span>辅音不同</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,3,'元音不同','bag中a发/æ/，beg中e发/e/，元音不同。',event)"><span class="qo-letter">C</span>完全相同</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div><div class="quiz-question" id="qq-4"><div class="qq-text"><span class="qq-number">4</span>pen 和 pin 的区别是？</div><div class="q-options"><div class="q-option" data-correct="true" onclick="quizAnswer(this,4,'元音不同','pen中e发/e/，pin中i发/ɪ/，元音不同。',event)"><span class="qo-letter">A</span>元音不同</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,4,'元音不同','pen中e发/e/，pin中i发/ɪ/，元音不同。',event)"><span class="qo-letter">B</span>辅音不同</div><div class="q-option" data-correct="false" onclick="quizAnswer(this,4,'元音不同','pen中e发/e/，pin中i发/ɪ/，元音不同。',event)"><span class="qo-letter">C</span>完全相同</div></div><div class="q-explanation"></div><div class="undo-hint">💡 答错了？双击选项可撤销重选</div></div></div></div></div>
+<div class="slide" data-section="课堂总结" data-page="27"><div class="nav-zone left" onclick="prevSlide(event)"></div><div class="nav-zone right" onclick="nextSlide(event)"></div><div class="top-bar"><span class="lesson-badge">Stage 1 L01</span><span class="section-label">总结</span><span class="page-counter">27 / 27</span></div><div class="slide-content"><div class="section-header"><span class="sh-icon">🏆</span><h2>课堂总结 · 核心口诀大打卡</h2></div><div class="section-divider"></div><div class="summary-card"><div class="sc-title">📐 语法三大口诀</div><div class="sc-content"><div class="sc-formula">G01：主格做主语，宾格做宾语<br>（I→me, he→him, she→her, we→us, they→them）</div><div class="sc-formula">G02：形容词性加名词，名词性独立用<br>（my book → The book is mine）</div><div class="sc-formula">G03：我用am你用are，is连着他她它，复数人称都用are</div></div></div><div class="summary-card"><div class="sc-title">📚 20词快闪回顾</div><div class="sc-content" style="display:flex;flex-wrap:wrap;gap:6px;"><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">name</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">friend</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">phone</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">number</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">school</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">teacher</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">student</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">class</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">China</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">English</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">his</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">her</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">their</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">our</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">yours</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">welcome</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">meet</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">nice</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">spell</span><span style="background:rgba(93,173,226,.1);padding:4px 10px;border-radius:10px;font-size:13px;color:var(--primary);font-weight:500;">zero</span></div></div><div class="summary-card"><div class="sc-title">🔤 拼读回顾</div><div class="sc-content">Aa /æ/ · Bb /b/ · Cc /k/ · Dd /d/ · Ee /e/</div></div><div style="text-align:center;margin-top:16px;font-size:18px;color:var(--primary);font-weight:700;">🎉 恭喜完成第01课！Keep going! 🚀</div></div></div>
+<div class="bottom-nav"><div class="nav-item" onclick="jumpToSection('封面')"><span class="nav-icon">🏠</span><span class="nav-text">封面</span></div><div class="nav-item" onclick="jumpToSection('问候导入')"><span class="nav-icon">👋</span><span class="nav-text">问候导入</span></div><div class="nav-item" onclick="jumpToSection('新词20')"><span class="nav-icon">📚</span><span class="nav-text">新词20</span></div><div class="nav-item" onclick="jumpToSection('语法3考点')"><span class="nav-icon">📐</span><span class="nav-text">语法3考点</span></div><div class="nav-item" onclick="jumpToSection('随堂演练')"><span class="nav-icon">✏️</span><span class="nav-text">随堂演练</span></div><div class="nav-item" onclick="jumpToSection('阅读理解')"><span class="nav-icon">📖</span><span class="nav-text">阅读理解</span></div><div class="nav-item" onclick="jumpToSection('句子练习')"><span class="nav-icon">✍️</span><span class="nav-text">句子练习</span></div><div class="nav-item" onclick="jumpToSection('自然拼读')"><span class="nav-icon">🔤</span><span class="nav-text">自然拼读</span></div><div class="nav-item" onclick="jumpToSection('课堂总结')"><span class="nav-icon">🏆</span><span class="nav-text">课堂总结</span></div></div>
+<button class="db-toggle" onclick="toggleDBPanel()">📊</button>
+<div class="db-panel" id="dbPanel">
+<div class="db-title">📊 学习数据面板</div>
+<div class="db-stats" id="dbStats">暂无数据</div>
+<button onclick="exportJSON()">导出JSON</button>
+<button onclick="exportCSV()">导出CSV</button>
+<button onclick="clearDBData()">清空</button>
+</div>
+<div class="toast" id="toast"></div>
+<div class="progress-bar" id="progressBar" style="width:3.7%"></div>
+</div>
+
+<script>
+// ===== STATE =====
+var currentPage = 1;
+var totalPages = 27;
+var selectedWord = null;
+
+// ===== AUDIO SYSTEM =====
+var audioCtx = null;
+function initAudio(){ if(!audioCtx){ audioCtx = new (window.AudioContext||window.webkitAudioContext)(); } }
+function playTone(freq, dur, type){
+  initAudio();
+  var osc = audioCtx.createOscillator();
+  var gain = audioCtx.createGain();
+  osc.connect(gain); gain.connect(audioCtx.destination);
+  osc.frequency.value = freq; osc.type = type||'sine';
+  gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + (dur||0.3));
+  osc.start(); osc.stop(audioCtx.currentTime + (dur||0.3));
+}
+function playCorrect(){ playTone(523,0.1); setTimeout(function(){playTone(659,0.1);},100); setTimeout(function(){playTone(784,0.2);},200); }
+function playError(){ playTone(200,0.15,'sawtooth'); setTimeout(function(){playTone(150,0.2,'sawtooth');},150); }
+function playPageTurn(){ playTone(400,0.05); setTimeout(function(){playTone(600,0.08);},50); }
+
+// ===== NAVIGATION =====
+function nextSlide(e){
+  if(e) e.stopPropagation();
+  if(currentPage < totalPages){
+    showSlide(currentPage + 1);
+    playPageTurn();
+  }
+}
+function prevSlide(e){
+  if(e) e.stopPropagation();
+  if(currentPage > 1){
+    showSlide(currentPage - 1);
+    playPageTurn();
+  }
+}
+function showSlide(n){
+  var slides = document.querySelectorAll('.slide');
+  for(var i=0; i<slides.length; i++){
+    slides[i].classList.remove('active');
+    if(parseInt(slides[i].dataset.page) === n){
+      slides[i].classList.add('active');
+    }
+  }
+  currentPage = n;
+  updateNav();
+  updateProgress();
+  updateStageNav();
+  // Reset scroll
+  var active = document.querySelector('.slide.active');
+  if(active) active.scrollTop = 0;
+}
+function updateNav(){
+  var items = document.querySelectorAll('.nav-item');
+  var sections = {};
+  var slides = document.querySelectorAll('.slide');
+  for(var i=0; i<slides.length; i++){
+    if(parseInt(slides[i].dataset.page) === currentPage){
+      var sec = slides[i].dataset.section;
+      for(var j=0; j<items.length; j++){
+        if(items[j].querySelector('.nav-text').textContent === sec){
+          items[j].classList.add('active');
+        } else {
+          items[j].classList.remove('active');
+        }
+      }
+      break;
+    }
+  }
+}
+function updateProgress(){
+  var bar = document.getElementById('progressBar');
+  if(bar) bar.style.width = (currentPage / totalPages * 100) + '%';
+}
+function jumpToSection(section){
+  var slides = document.querySelectorAll('.slide');
+  for(var i=0; i<slides.length; i++){
+    if(slides[i].dataset.section === section){
+      showSlide(parseInt(slides[i].dataset.page));
+      return;
+    }
+  }
+}
+
+// ===== RIPPLE EFFECT =====
+document.addEventListener('click', function(e){
+  var nav = e.target.closest('.nav-zone');
+  if(nav){
+    var ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    var rect = nav.getBoundingClientRect();
+    var size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
+    ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
+    nav.appendChild(ripple);
+    setTimeout(function(){ ripple.remove(); }, 600);
+  }
+});
+
+// ===== DIAGNOSIS =====
+var diagCount = 0;
+var diagCorrect = 0;
+function diagAnswer(el, correct){
+  var q = el.closest('.diag-question');
+  if(q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  var opts = q.querySelectorAll('.dq-opt');
+  for(var i=0; i<opts.length; i++){
+    opts[i].style.pointerEvents = 'none';
+    if(opts[i].textContent === correct){
+      opts[i].classList.add('correct');
+    }
+  }
+  if(el.textContent === correct){
+    diagCorrect++;
+  } else {
+    el.classList.add('wrong');
+  }
+  diagCount++;
+  saveAnswer('diag', diagCount, el.textContent, correct, el.textContent === correct);
+  if(diagCount >= 10){
+    var result = document.getElementById('diag-result');
+    var score = document.getElementById('diag-score');
+    result.style.display = 'block';
+    score.innerHTML = '诊断完成！得分：' + diagCorrect + '/10 (' + (diagCorrect*10) + '分)';
+    if(diagCorrect >= 8){ score.innerHTML += ' 🌟 优秀！'; playCorrect(); }
+    else if(diagCorrect >= 6){ score.innerHTML += ' 👍 不错！'; playCorrect(); }
+    else { score.innerHTML += ' 💪 继续努力！'; playError(); }
+  }
+}
+
+// ===== QUIZ SYSTEM =====
+function quizAnswer(el, qNum, correct, explanation, e){
+  if(e) e.stopPropagation();
+  var q = el.closest('.quiz-question');
+  if(q.classList.contains('answered-correct') || q.classList.contains('answered-wrong')) return;
+
+  var isCorrect = el.dataset.correct === 'true';
+
+  // Save first, then feedback
+  saveAnswer('quiz', qNum, el.textContent, correct, isCorrect);
+
+  if(isCorrect){
+    el.classList.add('correct');
+    q.classList.add('answered-correct');
+    q.querySelectorAll('.q-option').forEach(function(opt){ opt.classList.add('disabled'); });
+    var exp = q.querySelector('.q-explanation');
+    if(exp){ exp.textContent = '✅ ' + explanation; exp.classList.add('show'); }
+    playCorrect();
+  } else {
+    el.classList.add('wrong');
+    q.classList.add('answered-wrong');
+    // Highlight correct answer
+    q.querySelectorAll('.q-option').forEach(function(opt){
+      if(opt.dataset.correct === 'true'){
+        opt.classList.add('highlight-correct');
+      }
+      opt.classList.add('disabled');
+    });
+    var exp = q.querySelector('.q-explanation');
+    if(exp){ exp.textContent = '❌ ' + explanation; exp.classList.add('show'); }
+    var hint = q.querySelector('.undo-hint');
+    if(hint) hint.classList.add('show');
+    playError();
+  }
+}
+
+// ===== UNDO (double-click) =====
+document.addEventListener('dblclick', function(e){
+  var q = e.target.closest('.quiz-question.answered-wrong');
+  if(q && e.target.closest('.q-option')){
+    e.stopPropagation();
+    q.classList.remove('answered-wrong');
+    q.querySelectorAll('.q-option').forEach(function(opt){
+      opt.classList.remove('disabled','correct','wrong','highlight-correct');
+    });
+    var exp = q.querySelector('.q-explanation');
+    if(exp) exp.classList.remove('show');
+    var hint = q.querySelector('.undo-hint');
+    if(hint) hint.classList.remove('show');
+    showToast('已撤销，请重新作答');
+  }
+});
+
+// ===== ANSWER MASK =====
+function revealAnswer(el, e){
+  if(e) e.stopPropagation();
+  el.classList.add('revealed');
+  var hidden = el.querySelector('span[style*="display:none"], span[style*="display: none"]');
+  if(hidden) hidden.style.display = 'inline';
+  playCorrect();
+}
+
+// ===== FLASH CARDS =====
+function flashCard(el){
+  var word = el.querySelector('.fc-word');
+  var meaning = el.querySelector('.fc-meaning');
+  var phonetic = el.querySelector('.fc-phonetic');
+  if(meaning.style.display === 'none'){
+    meaning.style.display = 'block';
+    word.style.fontSize = '24px';
+    playCorrect();
+  } else {
+    meaning.style.display = 'none';
+    word.style.fontSize = '36px';
+  }
+}
+
+// ===== PRONOUN TRANSFORMER =====
+var pronData = {
+  'I': {sub:'I',obj:'me',adj:'my',noun:'mine',be:'am',contr:"I'm",ex:'I am a student. This is my book. This book is mine.'},
+  'You': {sub:'You',obj:'you',adj:'your',noun:'yours',be:'are',contr:"You're",ex:'You are my friend. This is your book. This book is yours.'},
+  'He': {sub:'He',obj:'him',adj:'his',noun:'his',be:'is',contr:"He's",ex:'He is my friend. This is his book. This book is his.'},
+  'She': {sub:'She',obj:'her',adj:'her',noun:'hers',be:'is',contr:"She's",ex:'She is my friend. This is her book. This book is hers.'},
+  'It': {sub:'It',obj:'it',adj:'its',noun:'its',be:'is',contr:"It's",ex:'It is a cat. This is its food. This food is its.'},
+  'We': {sub:'We',obj:'us',adj:'our',noun:'ours',be:'are',contr:"We're",ex:'We are students. This is our class. This class is ours.'},
+  'They': {sub:'They',obj:'them',adj:'their',noun:'theirs',be:'are',contr:"They're",ex:'They are my friends. This is their school. This school is theirs.'}
+};
+function transformPronoun(p, e){
+  if(e) e.stopPropagation();
+  // Update buttons
+  document.querySelectorAll('.pt-btn').forEach(function(btn){ btn.classList.remove('active'); });
+  e.target.classList.add('active');
+  var d = pronData[p];
+  document.getElementById('pt-subject').textContent = d.sub;
+  document.getElementById('pt-object').textContent = d.obj;
+  document.getElementById('pt-adj').textContent = d.adj;
+  document.getElementById('pt-noun').textContent = d.noun;
+  document.getElementById('pt-be').textContent = d.be;
+  document.getElementById('pt-contr').textContent = d.contr;
+  document.getElementById('pte-text').textContent = d.ex;
+  // Highlight
+  var tds = document.querySelectorAll('#pt-row td');
+  tds.forEach(function(td){
+    td.classList.remove('highlight');
+    setTimeout(function(){ td.classList.add('highlight'); }, 50);
+  });
+  playCorrect();
+}
+
+// ===== VOCAB GAME =====
+function vgSelect(el, word){
+  selectedWord = word;
+  el.classList.add('used');
+  showToast('已选择：' + word);
+}
+function vgCheck(el){
+  if(!selectedWord){ showToast('请先点击上方选择一个单词'); return; }
+  var answer = el.dataset.answer;
+  if(selectedWord === answer){
+    el.classList.add('filled');
+    el.textContent = selectedWord;
+    playCorrect();
+    saveAnswer('vocabgame', 0, selectedWord, answer, true);
+  } else {
+    el.classList.add('wrong');
+    el.textContent = selectedWord;
+    playError();
+    saveAnswer('vocabgame', 0, selectedWord, answer, false);
+    setTimeout(function(){
+      el.classList.remove('wrong');
+      el.textContent = '';
+    }, 1500);
+  }
+  selectedWord = null;
+}
+function vgUndo(el){
+  if(el.classList.contains('filled') || el.classList.contains('wrong')){
+    el.classList.remove('filled','wrong');
+    el.textContent = '';
+    showToast('已撤销');
+  }
+}
+
+// ===== TOAST =====
+function showToast(msg){
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 2000);
+}
+
+// ===== INDEXEDDB =====
+var db = null;
+var DB_NAME = 'Lesson01_DB';
+var STORE = 'answers';
+function initDB(){
+  return new Promise(function(resolve, reject){
+    var req = indexedDB.open(DB_NAME, 1);
+    req.onupgradeneeded = function(e){
+      var d = e.target.result;
+      if(!d.objectStoreNames.contains(STORE)){
+        d.createObjectStore(STORE, {keyPath: 'id', autoIncrement: true});
+      }
+    };
+    req.onsuccess = function(e){ db = e.target.result; resolve(db); };
+    req.onerror = function(e){ reject(e); };
+  });
+}
+function saveAnswer(type, qNum, userAns, correctAns, isCorrect){
+  if(!db){ initDB().then(function(){ _save(type, qNum, userAns, correctAns, isCorrect); }); }
+  else { _save(type, qNum, userAns, correctAns, isCorrect); }
+}
+function _save(type, qNum, userAns, correctAns, isCorrect){
+  var tx = db.transaction([STORE], 'readwrite');
+  var store = tx.objectStore(STORE);
+  var record = {type:type, qNum:qNum, userAns:userAns, correctAns:correctAns, isCorrect:isCorrect, timestamp:Date.now()};
+  store.add(record);
+  tx.oncomplete = function(){ updateDBStats(); };
+}
+function updateDBStats(){
+  if(!db) return;
+  var tx = db.transaction([STORE], 'readonly');
+  var store = tx.objectStore(STORE);
+  var req = store.getAll();
+  req.onsuccess = function(e){
+    var records = e.target.result;
+    var correct = records.filter(function(r){return r.isCorrect;}).length;
+    var total = records.length;
+    var stats = document.getElementById('dbStats');
+    if(stats) stats.innerHTML = '总答题：' + total + ' | 正确：' + correct + ' | 正确率：' + (total>0 ? Math.round(correct/total*100) : 0) + '%';
+  };
+}
+function exportJSON(){
+  if(!db) return;
+  var tx = db.transaction([STORE], 'readonly');
+  var store = tx.objectStore(STORE);
+  store.getAll().onsuccess = function(e){
+    var data = JSON.stringify(e.target.result, null, 2);
+    var blob = new Blob([data], {type:'application/json'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = 'lesson01_answers.json';
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('JSON已导出！');
+  };
+}
+function exportCSV(){
+  if(!db) return;
+  var tx = db.transaction([STORE], 'readonly');
+  var store = tx.objectStore(STORE);
+  store.getAll().onsuccess = function(e){
+    var records = e.target.result;
+    var csv = 'id,type,qNum,userAns,correctAns,isCorrect,timestamp\n';
+    records.forEach(function(r){
+      csv += [r.id||'',r.type,r.qNum,'"'+r.userAns+'"','"'+r.correctAns+'"',r.isCorrect,r.timestamp].join(',') + '\n';
+    });
+    var blob = new Blob(['\ufeff'+csv], {type:'text/csv'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = 'lesson01_answers.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('CSV已导出！');
+  };
+}
+function clearDBData(){
+  if(!db) return;
+  var tx = db.transaction([STORE], 'readwrite');
+  tx.objectStore(STORE).clear();
+  tx.oncomplete = function(){ updateDBStats(); showToast('数据已清空'); };
+}
+function toggleDBPanel(){
+  var p = document.getElementById('dbPanel');
+  p.classList.toggle('show');
+  if(p.classList.contains('show')) updateDBStats();
+}
+
+// ===== KEYBOARD NAV =====
+document.addEventListener('keydown', function(e){
+  if(e.key === 'ArrowRight' || e.key === ' '){ nextSlide(); }
+  if(e.key === 'ArrowLeft'){ prevSlide(); }
+});
+
+
+// ===== 流程标签图 =====
+function jumpToStage(el){
+  var sec = el.getAttribute('data-section');
+  if(sec) jumpToSection(sec);
+}
+function updateStageNav(){
+  var pills = document.querySelectorAll('.stage-pill');
+  var activeSec = null;
+  var slides = document.querySelectorAll('.slide');
+  for(var i=0; i<slides.length; i++){
+    if(slides[i].classList.contains('active')){
+      activeSec = slides[i].dataset.section; break;
+    }
+  }
+  for(var j=0; j<pills.length; j++){
+    if(pills[j].getAttribute('data-section') === activeSec){
+      pills[j].classList.add('active');
+    } else {
+      pills[j].classList.remove('active');
+    }
+  }
+}
+
+// ===== INIT =====
+initDB();
+updateNav();
+updateProgress();
+updateStageNav();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+{
+  "lesson_id": "第09课",
+  "theme": {
+    "style": "自然绿棕",
+    "primary_color": "#27AE60",
+    "accent_color": "#E67E22",
+    "font_size_base": "26px"
+  },
+  "total_pages": 43,
+  "pages": [
+    {"page_index": 1, "section": "封面", "title": "封面：特征与观察", "layout_type": "Cover", "components": [{"type": "cover", "data": {"title": "Unit 4 Amazing Plants and Animals①"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 2, "section": "复习导入", "title": "话题引入：奇妙的动植物", "layout_type": "Split-2", "components": [{"type": "scenario", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "scenario"},
+    {"page_index": 3, "section": "复习导入", "title": "学习目标", "layout_type": "Split-2", "components": [{"type": "goal-list", "data": {"count": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 4, "section": "复习导入", "title": "跨课词汇复习：友谊语篇重建", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "T3-H", "sentences": 6}}], "vocabReviewTier": "T3", "vocabReviewScope": "cross-lesson", "gameType": "T3-H", "trainingObjective": "CTX", "promptLevel": 3, "contextType": "passage"},
+    {"page_index": 5, "section": "新词20", "title": "目标词①：植物与工具", "layout_type": "Grid-5", "components": [{"type": "word-card", "data": {"words": ["moss", "redwood", "cheetah", "folding fan", "bamboo"]}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "word"},
+    {"page_index": 6, "section": "新词20", "title": "目标词②：动物与描述", "layout_type": "Grid-5", "components": [{"type": "word-card", "data": {"words": ["popular", "tool", "appear", "butterfly", "weigh"]}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "word"},
+    {"page_index": 7, "section": "新词20", "title": "词块与搭配", "layout_type": "Split-2", "components": [{"type": "example-line", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "sentence"},
+    {"page_index": 8, "section": "新词20", "title": "语境例句", "layout_type": "Exercise-List", "components": [{"type": "example-line", "data": {"count": 10}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "sentence"},
+    {"page_index": 9, "section": "新词20", "title": "复习词闪卡", "layout_type": "Grid-5", "components": [{"type": "word-card", "data": {"words": 20}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": "REC", "promptLevel": 1, "contextType": "word"},
+    {"page_index": 10, "section": "新词20", "title": "课内游戏①：中文选英文", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "T1-K", "words": 20}}], "vocabReviewTier": "T1", "vocabReviewScope": "in-lesson", "gameType": "T1-K", "trainingObjective": "RET", "promptLevel": 3, "contextType": "word"},
+    {"page_index": 11, "section": "新词20", "title": "课内游戏②：角色对话填词", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "T3-I", "questions": 6}}], "vocabReviewTier": "T3", "vocabReviewScope": "in-lesson", "gameType": "T3-I", "trainingObjective": "CTX", "promptLevel": 3, "contextType": "dialogue"},
+    {"page_index": 12, "section": "新词20", "title": "词汇小结与记忆法", "layout_type": "Split-2", "components": [{"type": "summary-table", "data": {"words": 10}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": "word"},
+    {"page_index": 13, "section": "语法", "title": "语法①：数量/长度/重量表达", "layout_type": "Formula-Card", "components": [{"type": "formula-box", "data": {"formula": "How long/tall is...? / How much does it weigh? + meters/kilograms"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 14, "section": "语法", "title": "语法①练习：数据选择", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 15, "section": "语法", "title": "语法②：比较级与最高级复习", "layout_type": "Formula-Card", "components": [{"type": "formula-box", "data": {"formula": "-er/-est + than / the + 最高级 + 范围 / as + 原级 + as"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 16, "section": "语法", "title": "语法②练习：变化与最高级", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 17, "section": "语法", "title": "语法③：看图描述与信息卡", "layout_type": "Formula-Card", "components": [{"type": "formula-box", "data": {"formula": "This is... / It has... / It can... / It lives... / It weighs..."}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 18, "section": "语法", "title": "语法③练习：信息卡选择", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 19, "section": "自然拼读", "title": "oo 长元音 /uː/ 规则①", "layout_type": "Split-2", "components": [{"type": "formula-box", "data": {"formula": "oo → /uː/"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 20, "section": "自然拼读", "title": "oo 短元音 /ʊ/ 规则②与对比", "layout_type": "Split-2", "components": [{"type": "formula-box", "data": {"formula": "oo → /ʊ/"}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 21, "section": "自然拼读", "title": "辨音归类", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 15}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 22, "section": "自然拼读", "title": "拼读练习", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 23, "section": "听力", "title": "听力策略提示", "layout_type": "Split-2", "components": [{"type": "strategy-box", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 24, "section": "听力", "title": "第一节：听对话选答语", "layout_type": "Exercise-List", "components": [{"type": "listening-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 25, "section": "听力", "title": "第二节：听对话/独白选答案①", "layout_type": "Exercise-List", "components": [{"type": "listening-item", "data": {"count": 8}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 26, "section": "听力", "title": "第二节：②+答案解析", "layout_type": "Exercise-List", "components": [{"type": "listening-item", "data": {"count": 7}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 27, "section": "阅读理解", "title": "阅读 A 短文：A Day of Watching Plants and Animals", "layout_type": "Reading-Passage", "components": [{"type": "reading-passage", "data": {"words": 180}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 28, "section": "阅读理解", "title": "阅读 A 题目", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 29, "section": "阅读理解", "title": "阅读 B 短文：Records of Nature", "layout_type": "Reading-Passage", "components": [{"type": "reading-passage", "data": {"words": 220}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 30, "section": "阅读理解", "title": "阅读 B 题目", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 5}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 31, "section": "阅读理解", "title": "阅读 C 短文：Bamboo in Our Life", "layout_type": "Reading-Passage", "components": [{"type": "reading-passage", "data": {"words": 260}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 32, "section": "阅读理解", "title": "阅读 C 题目", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 33, "section": "阅读理解", "title": "阅读策略与答案解析", "layout_type": "Exercise-List", "components": [{"type": "explanation", "data": {"count": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 34, "section": "输出任务", "title": "Mini Task：动植物信息卡", "layout_type": "Split-2", "components": [{"type": "exercise-item", "data": {"count": 1}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": "EXP", "promptLevel": 3, "contextType": "scenario"},
+    {"page_index": 35, "section": "输出任务", "title": "输出任务①：名称与外观", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 36, "section": "输出任务", "title": "输出任务②：能力与数据", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 37, "section": "输出任务", "title": "课堂游戏②：动植物猜猜猜", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "guessing", "rounds": 5}}], "vocabReviewTier": "T3", "vocabReviewScope": "in-lesson", "gameType": "guessing", "trainingObjective": "CTX", "promptLevel": 3, "contextType": "scenario"},
+    {"page_index": 38, "section": "输出任务", "title": "课堂游戏：数据配对", "layout_type": "Exercise-List", "components": [{"type": "matching", "data": {"pairs": 4}}], "vocabReviewTier": "T2", "vocabReviewScope": "in-lesson", "gameType": "matching", "trainingObjective": "RET", "promptLevel": 2, "contextType": "sentence"},
+    {"page_index": 39, "section": "输出任务", "title": "学生输出展示与互评", "layout_type": "Split-2", "components": [{"type": "peer-review", "data": {"criteria": 3}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": "EXP", "promptLevel": 3, "contextType": "scenario"},
+    {"page_index": 40, "section": "总结", "title": "思维导图", "layout_type": "Split-2", "components": [{"type": "mind-map", "data": {"branches": 4}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 41, "section": "总结", "title": "课堂游戏③：知识快闪", "layout_type": "Vocab-Game", "components": [{"type": "vocab-game", "data": {"gameType": "flash", "words": 10}}], "vocabReviewTier": "T1", "vocabReviewScope": "in-lesson", "gameType": "flash", "trainingObjective": "RET", "promptLevel": 2, "contextType": "word"},
+    {"page_index": 42, "section": "总结", "title": "作业布置", "layout_type": "Split-2", "components": [{"type": "homework", "data": {"count": 2}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null},
+    {"page_index": 43, "section": "总结", "title": "Exit Ticket 退出检测", "layout_type": "Exercise-List", "components": [{"type": "exercise-item", "data": {"count": 6}}], "vocabReviewTier": null, "vocabReviewScope": null, "gameType": null, "trainingObjective": null, "promptLevel": null, "contextType": null}
+  ],
+  "vocabReviewPlan": {
+    "inLessonGames": [
+      {"pageIndex": 10, "tier": "T1", "gameType": "T1-K", "trainingObjective": "RET", "promptLevel": 3, "wordCount": 20},
+      {"pageIndex": 11, "tier": "T3", "gameType": "T3-I", "trainingObjective": "CTX", "promptLevel": 3, "wordCount": 6}
+    ],
+    "crossLessonGame": {
+      "pageIndex": 4,
+      "tier": "T3",
+      "gameType": "T3-H",
+      "trainingObjective": "CTX",
+      "promptLevel": 3,
+      "reviewLessonId": "L08",
+      "wordCount": 6
+    },
+    "miniTask": {
+      "pageIndex": 34,
+      "taskContext": "制作一种动植物的信息卡",
+      "communicationGoal": "用 This is / It has / It can 信息卡句式含数据",
+      "requiredWords": ["cheetah", "bamboo", "popular", "tool", "butterfly", "weigh"],
+      "sentenceStarter": "This is... / It has... / It can... / It lives in... / It weighs...",
+      "completionCriteria": "至少 6 个必用词 + 含数据 + 至少 1 个比较级/最高级 + 结构完整"
+    },
+    "exitTicket": {
+      "pageIndex": 43,
+      "questionCount": 6,
+      "recQuestions": 2,
+      "retQuestions": 2,
+      "expQuestions": 1,
+      "hasSelfAssessment": true
+    },
+    "errorWordPool": {
+      "recentRatio": 40,
+      "errorRatio": 35,
+      "longTermRatio": 25,
+      "classificationDepth": "full-D-page"
+    }
+  },
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "csv",
+    "exportFormats": ["json", "csv"],
+    "questionIdPrefix": "L09",
+    "sessionIdRule": "stu_001_YYYYMMDDAM/PM",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  }
+}

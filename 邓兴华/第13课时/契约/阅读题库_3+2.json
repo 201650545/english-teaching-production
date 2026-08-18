@@ -1,0 +1,134 @@
+{
+  "L13-RA-01": {
+    "question": "Why does Mom go to the market?",
+    "canonical_answer": "to buy food for a special dinner",
+    "minimum_acceptable_answer": "food for a special dinner",
+    "accepted_answers": [
+      "to buy food for a special dinner",
+      "buy food for a special dinner",
+      "food for a special dinner"
+    ],
+    "required_vocab": [
+      "market",
+      "special",
+      "dinner"
+    ],
+    "required_grammar": "不定式表目的"
+  },
+  "L13-RA-02": {
+    "question": "How much are the dumplings?",
+    "canonical_answer": "twenty yuan",
+    "minimum_acceptable_answer": "20 yuan",
+    "accepted_answers": [
+      "twenty yuan",
+      "20 yuan",
+      "20"
+    ],
+    "required_vocab": [
+      "dumplings",
+      "yuan"
+    ],
+    "required_grammar": "价格表达"
+  },
+  "L13-RA-04": {
+    "question": "What does Mom buy for the children?",
+    "canonical_answer": "snacks",
+    "minimum_acceptable_answer": "snacks",
+    "accepted_answers": [
+      "snacks",
+      "some snacks"
+    ],
+    "required_vocab": [
+      "snacks",
+      "children"
+    ],
+    "required_grammar": "名词复数"
+  },
+  "L13-RB-01": {
+    "question": "When did Lily go to the supermarket?",
+    "canonical_answer": "last Sunday",
+    "minimum_acceptable_answer": "last Sunday",
+    "accepted_answers": [
+      "last Sunday"
+    ],
+    "required_vocab": [
+      "supermarket",
+      "Sunday"
+    ],
+    "required_grammar": "时间名词 last"
+  },
+  "L13-RB-02": {
+    "question": "Who did Lily go to the supermarket with?",
+    "canonical_answer": "her mother",
+    "minimum_acceptable_answer": "her mother",
+    "accepted_answers": [
+      "her mother",
+      "her mom",
+      "Lily's mother"
+    ],
+    "required_vocab": [
+      "mother"
+    ],
+    "required_grammar": "物主代词 her"
+  },
+  "L13-RB-04": {
+    "question": "How much change did the seller give Lily's mother?",
+    "canonical_answer": "five yuan",
+    "minimum_acceptable_answer": "5 yuan",
+    "accepted_answers": [
+      "five yuan",
+      "5 yuan",
+      "5"
+    ],
+    "required_vocab": [
+      "change",
+      "seller"
+    ],
+    "required_grammar": "价格表达"
+  },
+  "L13-RC-01": {
+    "question": "How many shopping tips are there in the passage?",
+    "canonical_answer": "four",
+    "minimum_acceptable_answer": "four",
+    "accepted_answers": [
+      "four",
+      "4",
+      "Four tips"
+    ],
+    "required_vocab": [
+      "tips",
+      "shopping"
+    ],
+    "required_grammar": "数词"
+  },
+  "L13-RC-02": {
+    "question": "What should you do before you go shopping?",
+    "canonical_answer": "make a shopping list",
+    "minimum_acceptable_answer": "make a shopping list",
+    "accepted_answers": [
+      "make a shopping list",
+      "make shopping list",
+      "a shopping list"
+    ],
+    "required_vocab": [
+      "shopping",
+      "list"
+    ],
+    "required_grammar": "祈使句"
+  },
+  "L13-RC-04": {
+    "question": "According to the passage, why should you make a shopping list?",
+    "canonical_answer": "because it helps you save money",
+    "minimum_acceptable_answer": "save money",
+    "accepted_answers": [
+      "because it helps you save money",
+      "to save money",
+      "save money"
+    ],
+    "required_vocab": [
+      "save",
+      "money"
+    ],
+    "required_grammar": "because/不定式"
+  }
+}

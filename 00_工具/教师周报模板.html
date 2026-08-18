@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教师周报 · 一页模板</title>
+<style>
+  :root{
+    --brand:#E63946; --accent:#FFD700; --brand-light:#FF6B6B; --accent-light:#FFE66D;
+    --bg:#FFF8F0; --text:#1A1A2E; --sub:#555555;
+    --card:#FFFFFF; --line:#f0e0d0; --hl-gold:#FFF8E1;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Noto Sans SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);padding:24px;line-height:1.5;}
+  .wrap{max-width:1100px;margin:0 auto;}
+  h1{font-size:24px;color:var(--brand);text-align:center;margin-bottom:4px;}
+  .sub{text-align:center;color:var(--sub);font-size:13px;margin-bottom:18px;}
+  .block{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+  .block h2{font-size:16px;color:var(--brand);border-left:4px solid var(--brand);padding-left:8px;margin-bottom:12px;}
+  .block h2.gold{border-left-color:#B8860B;color:#B8860B;}
+  table{width:100%;border-collapse:collapse;font-size:14px;}
+  th{background:var(--brand);color:#fff;padding:7px 10px;text-align:left;font-weight:600;}
+  td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top;}
+  tr:nth-child(even) td{background:rgba(255,248,225,.5);}
+  .sev{font-weight:600;padding:2px 10px;border-radius:10px;}
+  .sev.high{background:#FFEBEE;color:var(--brand);}
+  .sev.mid{background:var(--hl-gold);color:#B8860B;}
+  .sev.watch{background:#E8F5E9;color:#06A77D;}
+  .action{display:flex;gap:8px;margin-bottom:8px;align-items:flex-start;}
+  .action .n{flex:0 0 26px;height:26px;line-height:26px;text-align:center;background:var(--brand);color:#fff;border-radius:50%;font-size:13px;font-weight:700;}
+  .action .body{flex:1;}
+  .time{display:inline-block;background:var(--accent);color:#5a4a00;font-size:12px;font-weight:600;padding:1px 8px;border-radius:8px;margin-left:6px;}
+  .trend{display:flex;gap:14px;flex-wrap:wrap;}
+  .metric{flex:1;min-width:150px;background:linear-gradient(135deg,#FFF8E1,#FFE8A3);border-radius:8px;padding:10px 14px;text-align:center;border:1px solid #FFD54F;}
+  .metric .v{font-size:22px;font-weight:700;color:#B8860B;}
+  .metric .l{font-size:12px;color:#6b5a00;}
+  .confirm{display:flex;gap:10px;flex-wrap:wrap;}
+  .confirm button{padding:8px 16px;border:1px solid #E0C060;border-radius:8px;background:#FFFCF0;font-size:14px;cursor:pointer;color:#8B5E00;}
+  .confirm button:hover{border-color:var(--brand);color:var(--brand);background:#FFF8E1;}
+  .confirm button.primary{background:linear-gradient(135deg,#FFD700,#E0A800);border-color:#C89600;color:#5a3e00;font-weight:600;}
+  .confirm button.primary:hover{color:#5a3e00;border-color:var(--brand);}
+  .note{font-size:12px;color:var(--sub);margin-top:10px;text-align:center;}
+  .tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:8px;margin-right:4px;}
+  .tag.k{background:#eee;color:#555;}
+  .tag.e{background:#FFEBEE;color:var(--brand);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>教师周报</h1>
+  <div class="sub">学生：<span id="stu">stu_001</span> ｜ 第 <span id="wk">3</span> 周 ｜ 数据期间：<span id="range">2026-08-03 ~ 2026-08-09</span> ｜ 建议处理总时长：<span id="budget">≤ 30 分钟</span></div>
+
+  <!-- 区域一：本周最需要处理的3个问题 -->
+  <div class="block">
+    <h2>一、本周最需要处理的 3 个问题</h2>
+    <table>
+      <thead><tr><th style="width:24%">知识点</th><th style="width:52%">证据</th><th>严重程度</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="tag k">GR_L02_DID_BASE</span>did 后动词原形</td>
+          <td>近 2 课共 3 次首次错误 ＋ 1 次迁移失败</td>
+          <td><span class="sev high">高</span></td>
+        </tr>
+        <tr>
+          <td><span class="tag k">VOC_somewhere</span>somewhere 拼写</td>
+          <td>二级提示后正确，未独立拼出</td>
+          <td><span class="sev mid">中</span></td>
+        </tr>
+        <tr>
+          <td><span class="tag k">SK_READ_LOC</span>阅读事实定位</td>
+          <td>用时长但正确（2.5× 个人中位数）</td>
+          <td><span class="sev watch">观察</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 区域二：下节课3项动作 -->
+  <div class="block">
+    <h2 class="gold">二、下节课 3 项动作</h2>
+    <div class="action"><span class="n">1</span><div class="body">did 后原形：正确示范 1 题 ＋ 错句医生 2 题<span class="time">预计 6 分钟</span></div></div>
+    <div class="action"><span class="n">2</span><div class="body">somewhere：无提示拼写 ＋ 新句 1 题<span class="time">预计 3 分钟</span></div></div>
+    <div class="action"><span class="n">3</span><div class="body">阅读定位：证据连线 1 题<span class="time">预计 4 分钟</span></div></div>
+  </div>
+
+  <!-- 区域三：趋势 -->
+  <div class="block">
+    <h2>三、趋势</h2>
+    <div class="trend">
+      <div class="metric"><div class="v" id="t1">78%</div><div class="l">首次独立正确率</div></div>
+      <div class="metric"><div class="v" id="t2">12</div><div class="l">跨日复测成功数</div></div>
+      <div class="metric"><div class="v" id="t3">3</div><div class="l">高优先级知识点</div></div>
+      <div class="metric"><div class="v" id="t4">↓ 2</div><div class="l">提示依赖变化（较上周）</div></div>
+    </div>
+  </div>
+
+  <!-- 区域四：教师确认 -->
+  <div class="block">
+    <h2 class="gold">四、教师确认</h2>
+    <div class="confirm">
+      <button class="primary">接受建议</button>
+      <button>编辑建议</button>
+      <button>暂不处理</button>
+      <button>错因需要确认</button>
+    </div>
+    <div class="note">建议状态：<span class="tag e">accepted</span><span class="tag e">edited</span><span class="tag e">rejected</span> ｜ 最终错因仅显示 <code>error_code_final</code>，未确认显示「待确认」</div>
+  </div>
+
+  <div class="note">本模板符号约定：<code>independent_correct</code> 是主判据，提示后/显示答案后答对不视为独立掌握；技术排错指标（IndexedDB 写失败、sync_status=failed 等）只进系统健康视图，不进本报告。</div>
+</div>
+</body>
+</html>

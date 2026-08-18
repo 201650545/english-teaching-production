@@ -1,0 +1,107 @@
+{
+  "course": "第19课",
+  "animations": {
+    "css": [
+      {"name": "fadeSlideUp", "definition": "from {opacity:0; transform:translateY(30px)} to {opacity:1; transform:translateY(0)}", "usage": "页面进入、内容块出现"},
+      {"name": "scaleUp", "definition": "from {opacity:0; transform:scale(0.85)} to {opacity:1; transform:scale(1)}", "usage": "卡片缩放出现"},
+      {"name": "bounceIn", "definition": "0%{opacity:0;transform:scale(0.3)} 50%{transform:scale(1.08)} 70%{transform:scale(0.95)} 100%{opacity:1;transform:scale(1)}", "usage": "正确反馈"},
+      {"name": "bpSwing", "definition": "0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)}", "usage": "错误反馈摇摆"},
+      {"name": "pulse", "definition": "0%,100%{transform:scale(1)} 50%{transform:scale(1.05)}", "usage": "高亮脉冲"},
+      {"name": "slideInLeft", "definition": "from {opacity:0; transform:translateX(-40px)} to {opacity:1; transform:translateX(0)}", "usage": "句子行进入"},
+      {"name": "floatY", "definition": "0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)}", "usage": "emoji浮动"},
+      {"name": "shimmer", "definition": "0%{background-position:-200% center} 100%{background-position:200% center}", "usage": "进度条闪光"}
+    ],
+    "additional": [
+      {"name": "matrixFill", "definition": "from {opacity:0; transform:scale(0.5)} to {opacity:1; transform:scale(1)}", "usage": "矩阵单元格填充"},
+      {"name": "waveFlow", "definition": "0%{transform:translateX(-100%)} 100%{transform:translateX(100%)}", "usage": "波浪流动背景"},
+      {"name": "shakeX", "definition": "0%,100%{transform:translateX(0)} 10%,30%,50%,70%,90%{transform:translateX(-4px)} 20%,40%,60%,80%{transform:translateX(4px)}", "usage": "错误抖动"},
+      {"name": "cardFlyIn", "definition": "0%{opacity:0;transform:translateY(-30px) scale(0.5) rotate(-10deg)} 60%{transform:translateY(5px) scale(1.1) rotate(2deg)} 100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}", "usage": "词卡飞入"},
+      {"name": "postFix", "definition": "0%{opacity:0; transform:translateX(20px)} 100%{opacity:1; transform:translateX(0)}", "usage": "形容词后置滑入"}
+    ]
+  },
+  "interactions": {
+    "navigation": {
+      "halfScreenClick": true,
+      "pageTurnExemption": ["quiz-q", "quiz-container", "drag-container", "link-container", "matrix-container", "planner-container"],
+      "answerRevealPriority": true,
+      "keyboardArrows": true,
+      "navPills": true
+    },
+    "quiz": {
+      "type": "checkOpt",
+      "containerResolve": "btn.closest('.quiz-container')||btn.closest('.quiz-q')",
+      "feedback": {
+        "correct": "海洋蓝✅ + bounceIn动画 + 正确音效",
+        "wrong": "红色❌ + bpSwing动画 + 错误音效"
+      },
+      "undo": {
+        "doubleClick": true,
+        "description": "答错后双击可撤销重答"
+      },
+      "disableAfterAnswer": false,
+      "showCorrectAnswer": true
+    },
+    "dataCollection": {
+      "type": "IndexedDB",
+      "recordAnswer": true,
+      "recordUndo": true,
+      "syncMode": "realtime",
+      "exportFormats": ["json", "csv"]
+    },
+    "phonics": {
+      "type": "checkPhonics",
+      "feedback": "同quiz"
+    },
+    "answerMask": {
+      "type": "toggleMask",
+      "initial": "蓝色遮罩显示'🔍 点击揭晓'",
+      "revealed": "浅蓝背景显示答案 + 正确音效"
+    }
+  },
+  "interactiveComponents": {
+    "component1": {
+      "name": "不定代词矩阵探索器",
+      "grammarTag": "G49",
+      "elements": {
+        "scene": ".pronoun-matrix-scene",
+        "categories": ["some-", "any-", "no-", "every-"],
+        "targets": ["one", "thing", "where"]
+      },
+      "logic": {
+        "selectCategory": "选择类别",
+        "selectTarget": "选择指代",
+        "generatePronoun": "生成复合不定代词",
+        "generateSentence": "生成例句",
+        "highlight": "高亮矩阵位置"
+      }
+    },
+    "component2": {
+      "name": "周末计划生成器",
+      "grammarTag": "G51",
+      "elements": {
+        "scene": ".weekend-planner-scene",
+        "subjects": ["someone", "everyone", "no one", "anyone"],
+        "activities": ["explore", "plan", "wonder", "seem"],
+        "adjectives": ["something new", "nothing important", "anything else", "everything ready"]
+      },
+      "logic": {
+        "selectSubject": "选择主语",
+        "selectActivity": "选择活动",
+        "selectAdjective": "选择形容词后置",
+        "generateSentence": "生成周末计划句子",
+        "highlightAgreement": "高亮主谓一致"
+      }
+    }
+  },
+  "audio": {
+    "correct": {"freq": [880, 1100], "duration": [0.15, 0.2], "type": "sine"},
+    "error": {"freq": 220, "duration": 0.3, "type": "sawtooth"},
+    "pageTurn": {"freq": 440, "duration": 0.1, "type": "triangle"},
+    "matrixChime": {"type": "matrix-chime", "description": "矩阵选择音效"}
+  },
+  "assets": {
+    "emojis": ["👤", "🙋", "🚫", "👥", "📦", "❓", "∅", "💯", "📍", "🗺️", "🏜️", "✈️", "🎉", "📋", "🧭", "🤔", "👀", "😑", "📔", "😊", "🔍", "✅", "❌", "💡", "🌊"],
+    "images": "none (all CSS/emoji based)",
+    "externalLibs": "none (vanilla JS)"
+  }
+}

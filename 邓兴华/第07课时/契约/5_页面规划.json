@@ -1,0 +1,97 @@
+{
+  "course": "第07课 · 阶段测试Ⅰ·七上基础综合诊断",
+  "stage": "Stage 2",
+  "lesson": "L07",
+  "duration": "90min",
+  "courseType": "test",
+  "totalPages": 28,
+  "structure": "五段式",
+  "brand": "#06D6A0",
+  "accent": "#FF9F43",
+  "bgGradient": "#F0FFF4 → #E0F8E0",
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "batch",
+    "exportFormats": ["json", "csv", "pdf"],
+    "sessionIdRule": "L07_TEST_{studentId}_{YYYYMMDD}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  },
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": [
+        {
+          "page": 0,
+          "type": "cover",
+          "title": "第07课 · 阶段测试Ⅰ·七上基础综合诊断",
+          "subtitle": "Stage 2 · L07 | 测试60min + 讲评30min",
+          "objectives": ["G01-G18全覆盖诊断", "120词综合诊断", "100分标准卷"],
+          "meta": [{"label": "课型", "value": "阶段测试"}, {"label": "考点", "value": "G01-G18"}, {"label": "时长", "value": "90 min"}, {"label": "标准", "value": "湖南中考"}]
+        }
+      ]
+    },
+    {
+      "name": "测试概况",
+      "start": 1,
+      "end": 2,
+      "pages": [
+        {"page": 1, "type": "overview", "title": "全卷得分分布", "content": ["题型得分率柱状图", "考点掌握度雷达图(G01-G18)"], "interactions": ["radarChart", "hover-detail"]},
+        {"page": 2, "type": "error-preview", "title": "高频错题预览", "content": ["Top 10错题列表"], "interactions": ["errorNav"]}
+      ]
+    },
+    {
+      "name": "语法错题精讲",
+      "start": 3,
+      "end": 12,
+      "pages": [
+        {"page": 3, "type": "grammar-review", "title": "代词类 (G01/G02/G04)", "content": ["主格宾格", "物主代词", "指示代词", "错题对照"], "grammarTags": ["G01", "G02", "G04"]},
+        {"page": 4, "type": "grammar-review", "title": "be动词类 (G03/G05)", "content": ["be搭配口诀", "否定疑问转换", "错题对照"], "grammarTags": ["G03", "G05"]},
+        {"page": 5, "type": "grammar-review", "title": "疑问句类 (G06/G09/G14)", "content": ["Who/Where/What提问与回答", "错题对照"], "grammarTags": ["G06", "G09", "G14"]},
+        {"page": 6, "type": "grammar-review", "title": "名词类 (G07/G10/G17)", "content": ["所有格+复数+可数不可数", "错题对照"], "grammarTags": ["G07", "G10", "G17"]},
+        {"page": 7, "type": "grammar-review", "title": "介词类 (G12)", "content": ["方位介词矩阵", "错题对照"], "grammarTags": ["G12"]},
+        {"page": 8, "type": "grammar-review", "title": "祈使句类 (G13)", "content": ["Do/Don't结构", "错题对照"], "grammarTags": ["G13"]},
+        {"page": 9, "type": "grammar-review", "title": "动词搭配类 (G15/G18)", "content": ["like+复数/like to do + want to do", "错题对照"], "grammarTags": ["G15", "G18"]},
+        {"page": 10, "type": "grammar-review", "title": "时态类 (G16)", "content": ["一般现在时非三单", "错题对照"], "grammarTags": ["G16"]},
+        {"page": 11, "type": "grammar-review", "title": "数词类 (G08)", "content": ["基数词拼写与连字符", "错题对照"], "grammarTags": ["G08"]},
+        {"page": 12, "type": "grammar-review", "title": "综合错题 (跨考点)", "content": ["G10-G18综合辨析"], "grammarTags": ["G10", "G11", "G12", "G13", "G14", "G15", "G16", "G17", "G18"]}
+      ]
+    },
+    {
+      "name": "词汇错题精讲",
+      "start": 13,
+      "end": 17,
+      "pages": [
+        {"page": 13, "type": "vocab-review", "title": "L1+L2 组", "content": ["theirs/yours拼写", "these/those复数", "cousin"], "interactions": ["answer-mask"]},
+        {"page": 14, "type": "vocab-review", "title": "L3+L4 组", "content": ["dictionary/schoolbag复合词", "everywhere/between...and"], "interactions": ["answer-mask"]},
+        {"page": 15, "type": "vocab-review", "title": "L5 组", "content": ["relaxing/boring/interesting -ing形容词辨析"], "interactions": ["answer-mask"]},
+        {"page": 16, "type": "vocab-review", "title": "L6 组", "content": ["strawberry/tomato/potato复数陷阱", "milk/bread不可数"], "interactions": ["answer-mask"]},
+        {"page": 17, "type": "vocab-strategy", "title": "词汇策略总结", "content": ["猜词法", "语境推断法", "复合词拆分法"]}
+      ]
+    },
+    {
+      "name": "阅读与写作讲评",
+      "start": 18,
+      "end": 22,
+      "pages": [
+        {"page": 18, "type": "reading-review", "title": "阅读A篇讲评", "content": ["应用文信息定位法"]},
+        {"page": 19, "type": "reading-review", "title": "阅读B篇讲评", "content": ["记叙文细节题+词义题策略"]},
+        {"page": 20, "type": "reading-review", "title": "五选四讲评", "content": ["句际逻辑分析"]},
+        {"page": 21, "type": "reading-review", "title": "简答翻译讲评", "content": ["疑问词选择", "作答规范", "英译中技巧"]},
+        {"page": 22, "type": "writing-review", "title": "写作范文展示", "content": ["高分范文", "评分拆解"]}
+      ]
+    },
+    {
+      "name": "总结与提升计划",
+      "start": 23,
+      "end": 25,
+      "pages": [
+        {"page": 23, "type": "summary", "title": "薄弱考点清单", "content": ["按A/B/C/D等级列出待巩固考点"]},
+        {"page": 24, "type": "plan", "title": "下阶段学习建议", "content": ["Stage 3预习重点", "本阶段巩固任务"]},
+        {"page": 25, "type": "summary", "title": "核心口诀总览", "content": ["G01-G18全部口诀一页速览"]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八年级全册语法诊断 · 培优起点检测</title>
+<style>
+:root{
+  --brand:#2563EB; --brand-dark:#1E40AF; --brand-light:#EFF6FF;
+  --success:#16A34A; --error:#DC2626; --warn:#D97706;
+  --text-primary:#1F2937; --text-light:#6B7280;
+  --bg:#F8FAFC; --card:#FFFFFF; --border:#E5E7EB;
+  --radius:12px; --radius-sm:8px; --shadow:0 2px 8px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:var(--bg);color:var(--text-primary);line-height:1.7}
+.page{display:none;max-width:860px;margin:0 auto;padding:32px 24px 60px}
+.page.active{display:block;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* 封面 */
+.cover{text-align:center;padding:70px 24px}
+.cover .badge{display:inline-block;background:var(--brand-light);color:var(--brand-dark);padding:6px 16px;border-radius:20px;font-size:14px;font-weight:600;margin-bottom:24px}
+.cover h1{font-size:36px;margin-bottom:12px;color:var(--brand-dark)}
+.cover .sub{font-size:18px;color:var(--text-light);margin-bottom:40px}
+.cover .info-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px 32px;max-width:520px;margin:0 auto;text-align:left}
+.cover .info-card h3{font-size:16px;margin-bottom:16px;color:var(--brand-dark)}
+.cover .info-card li{margin:10px 0;font-size:15px;list-style:none;padding-left:22px;position:relative}
+.cover .info-card li:before{content:"✓";position:absolute;left:0;color:var(--success);font-weight:700}
+.btn{display:inline-block;background:var(--brand);color:#fff;border:none;padding:14px 42px;border-radius:var(--radius);font-size:17px;font-weight:600;cursor:pointer;transition:all .2s;margin-top:32px}
+.btn:hover{background:var(--brand-dark);transform:translateY(-1px)}
+.btn.secondary{background:var(--text-light)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* 题卡 */
+.section-title{font-size:22px;color:var(--brand-dark);margin:32px 0 4px;padding-bottom:10px;border-bottom:2px solid var(--brand-light);display:flex;align-items:center;gap:10px}
+.section-title .num{background:var(--brand);color:#fff;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.section-desc{font-size:14px;color:var(--text-light);margin-bottom:18px;padding-left:44px}
+.q-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 24px;margin:16px 0;border-left:4px solid var(--brand-light);transition:border-color .2s}
+.q-card.answered{border-left-color:var(--brand)}
+.q-card.correct{border-left-color:var(--success);background:#F0FDF4}
+.q-card.wrong{border-left-color:var(--error);background:#FEF2F2}
+.q-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:6px}
+.q-no{font-weight:700;color:var(--brand-dark);font-size:15px}
+.q-tag{font-size:12px;color:var(--text-light);background:var(--bg);padding:2px 10px;border-radius:12px;border:1px solid var(--border)}
+.q-text{font-size:17px;margin-bottom:14px;line-height:1.8}
+.q-text .blank{display:inline-block;min-width:70px;border-bottom:2px dashed var(--brand);text-align:center;padding:0 6px;color:var(--brand-dark);font-weight:600}
+.quiz-opt{display:block;width:100%;text-align:left;padding:12px 18px;border-radius:var(--radius-sm);border:2px solid var(--border);background:#FAFAFA;cursor:pointer;transition:all .15s;font-size:16px;margin:8px 0;font-family:inherit}
+.quiz-opt:hover{border-color:var(--brand);background:var(--brand-light)}
+.quiz-opt.selected{border-color:var(--brand);background:var(--brand-light);font-weight:600}
+.quiz-opt.correct{background:#E7F6EF;border-color:var(--success);color:#14532D}
+.quiz-opt.wrong{background:#FEE2E2;border-color:var(--error);color:#7F1D1D}
+.quiz-opt .opt-label{display:inline-block;width:26px;height:26px;line-height:26px;text-align:center;border-radius:50%;background:#E5E7EB;margin-right:10px;font-size:13px;font-weight:700;color:var(--text-primary)}
+.quiz-opt.selected .opt-label{background:var(--brand);color:#fff}
+.quiz-opt.correct .opt-label{background:var(--success);color:#fff}
+.quiz-opt.wrong .opt-label{background:var(--error);color:#fff}
+.explain{display:none;margin-top:10px;padding:10px 14px;border-radius:var(--radius-sm);background:var(--brand-light);font-size:14px;color:var(--text-primary)}
+.explain.show{display:block}
+.explain b{color:var(--brand-dark)}
+
+/* 进度 */
+.progress-bar{position:fixed;top:0;left:0;height:4px;background:var(--brand);transition:width .3s;z-index:100}
+.topbar{position:fixed;top:8px;right:16px;z-index:99;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:4px 14px;font-size:13px;color:var(--text-light);box-shadow:var(--shadow)}
+
+/* 结果页 */
+.result-hero{text-align:center;padding:48px 24px 20px}
+.result-score{font-size:64px;font-weight:800;color:var(--brand-dark)}
+.result-label{font-size:18px;color:var(--text-light);margin-top:8px}
+.result-rank{margin-top:16px;font-size:17px;padding:10px 24px;border-radius:24px;display:inline-block;font-weight:600}
+.rank-A{background:#DCFCE7;color:#166534}
+.rank-B{background:#FEF9C3;color:#854D0E}
+.rank-C{background:#FFEDD5;color:#9A3412}
+.rank-D{background:#FEE2E2;color:#991B1B}
+table.analysis{width:100%;border-collapse:collapse;margin:24px 0;background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+table.analysis th,table.analysis td{padding:12px 16px;text-align:center;border-bottom:1px solid var(--border);font-size:14px}
+table.analysis th{background:var(--brand-dark);color:#fff;font-weight:600}
+table.analysis tr:nth-child(even){background:var(--bg)}
+.pill{display:inline-block;padding:2px 12px;border-radius:12px;font-size:13px;font-weight:600}
+.pill.strong{background:#DCFCE7;color:#166534}
+.pill.mid{background:#FEF9C3;color:#854D0E}
+.pill.weak{background:#FEE2E2;color:#991B1B}
+.export-box{margin:28px 0;padding:20px 24px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);border:2px dashed var(--brand-light)}
+.export-box h3{margin-bottom:12px;font-size:16px;color:var(--brand-dark)}
+.suggest{margin:24px 0;padding:20px 24px;background:var(--brand-light);border-radius:var(--radius);border-left:4px solid var(--brand)}
+.suggest h3{font-size:16px;color:var(--brand-dark);margin-bottom:10px}
+.suggest li{margin:6px 0;font-size:15px}
+.advice-area{margin-top:16px;padding:16px 20px;background:#fff;border-radius:var(--radius-sm);border:1px solid var(--border);font-size:14px;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<div class="topbar" id="topbar" style="display:none">已完成 <b id="doneCount">0</b>/50</div>
+
+<!-- ======== 封面 ======== -->
+<div class="page active" id="cover">
+  <div class="cover">
+    <div class="badge">培优起点检测 · 初二升初三</div>
+    <h1>八年级全册语法诊断</h1>
+    <div class="sub">人教版新教材 · 25 个语法点 · 50 题</div>
+    <div class="info-card">
+      <h3>📌 检测说明</h3>
+      <ul>
+        <li>覆盖八年级上册 + 下册全部核心语法</li>
+        <li>共 50 题，每题选择最合适的一项</li>
+        <li>每道题对应一个语法点，答完自动分析薄弱环节</li>
+        <li>完成后可一键导出成绩数据（CSV）用于精准分析</li>
+      </ul>
+      <center>
+        <button class="btn" onclick="startTest()">开始检测 →</button>
+      </center>
+    </div>
+  </div>
+</div>
+
+<!-- ======== 题目页 ======== -->
+<div class="page" id="quiz"></div>
+
+<!-- ======== 结果页 ======== -->
+<div class="page" id="result"></div>
+
+<script>
+/* ================= 题库：25 语法点 × 2 题 = 50 题 ================= */
+const POINTS = [
+  {id:"p01", name:"一般过去时", unit:"八上 U1"},
+  {id:"p02", name:"不定代词", unit:"八上 U1"},
+  {id:"p03", name:"情态动词 can/could 请求", unit:"八上 U2"},
+  {id:"p04", name:"比较级 + as...as", unit:"八上 U3"},
+  {id:"p05", name:"最高级", unit:"八上 U4"},
+  {id:"p06", name:"感叹句", unit:"八上 U5"},
+  {id:"p07", name:"不可数名词", unit:"八上 U5"},
+  {id:"p08", name:"be going to", unit:"八上 U6"},
+  {id:"p09", name:"will 将来时", unit:"八上 U7"},
+  {id:"p10", name:"if 条件句", unit:"八上 U8"},
+  {id:"p11", name:"动词不定式", unit:"八下 U1"},
+  {id:"p12", name:"spend/cost/take/pay", unit:"八下 U1"},
+  {id:"p13", name:"It's adj for/of sb to do", unit:"八下 U1"},
+  {id:"p14", name:"主谓一致", unit:"八下 U1"},
+  {id:"p15", name:"情态动词 should/could/had better", unit:"八下 U2"},
+  {id:"p16", name:"反身代词", unit:"八下 U2"},
+  {id:"p17", name:"stop doing/to do 辨析", unit:"八下 U2"},
+  {id:"p18", name:"状语从句 although/until/so that", unit:"八下 U3"},
+  {id:"p19", name:"数词 / 大数表达", unit:"八下 U4"},
+  {id:"p20", name:"过去进行时", unit:"八下 U5"},
+  {id:"p21", name:"宾语从句", unit:"八下 U6"},
+  {id:"p22", name:"现在完成时（基础）", unit:"八下 U7"},
+  {id:"p23", name:"现在完成时 for/since", unit:"八下 U8"},
+  {id:"p24", name:"被动语态（基础）", unit:"八下 U8"},
+  {id:"p25", name:"祈使句 + 礼貌用语综合", unit:"八上 U2"}
+];
+
+const QUESTIONS = [
+  /* ---- 八上 U1 一般过去时 ---- */
+  {pt:"p01", q:"I ___ a great time at the beach last summer.", opts:["had","have","am having","will have"], ans:0, ex:"last summer 表过去 → 一般过去时 had。"},
+  {pt:"p01", q:"She ___ her homework two hours ago.", opts:["finishes","finished","has finished","is finishing"], ans:1, ex:"two hours ago 明确过去时间点 → finished。"},
+  /* ---- 八上 U1 不定代词 ---- */
+  {pt:"p02", q:"I'm hungry. Is there ___ to eat?", opts:["something","anything","nothing","everything"], ans:1, ex:"疑问句中用 anything。"},
+  {pt:"p02", q:"There is ___ wrong with my computer. It doesn't work.", opts:["something","anything","nothing","everything"], ans:0, ex:"肯定句表达'有毛病' → something wrong。"},
+  /* ---- 八上 U2 can/could ---- */
+  {pt:"p03", q:"___ you help me carry this box, please?", opts:["Could","Must","Need","Should"], ans:0, ex:"礼貌请求用 could，语气更委婉。"},
+  {pt:"p03", q:"Excuse me, ___ I use your phone for a moment?", opts:["may","must","need","should"], ans:0, ex:"征求许可用 may，比 can 更正式礼貌。"},
+  /* ---- 八上 U3 比较级 + as...as ---- */
+  {pt:"p04", q:"This movie is ___ than that one.", opts:["interesting","more interesting","most interesting","the most interesting"], ans:1, ex:"than 是比较级标志 → more interesting。"},
+  {pt:"p04", q:"Tom is ___ as his brother.", opts:["as tall","taller","the tallest","so tall"], ans:0, ex:"as...as 中间用原级 → as tall as。"},
+  /* ---- 八上 U4 最高级 ---- */
+  {pt:"p05", q:"Mount Qomolangma is ___ mountain in the world.", opts:["the highest","higher","high","as high as"], ans:0, ex:"in the world 表范围 → 最高级 the highest。"},
+  {pt:"p05", q:"This is ___ book of the three.", opts:["interesting","more interesting","the most interesting","most interesting"], ans:2, ex:"of the three 三者以上 → 最高级 the most interesting。"},
+  /* ---- 八上 U5 感叹句 ---- */
+  {pt:"p06", q:"___ beautiful the flowers are!", opts:["How","What","What a","How a"], ans:0, ex:"How + 形容词 + 主谓 结构。"},
+  {pt:"p06", q:"___ a clever boy he is!", opts:["What","How","What a","How a"], ans:2, ex:"What + a/an + 形容词 + 名词 → What a clever boy。"},
+  /* ---- 八上 U5 不可数名词 ---- */
+  {pt:"p07", q:"There isn't ___ milk in the glass.", opts:["much","many","a few","few"], ans:0, ex:"milk 不可数 → 用 much。"},
+  {pt:"p07", q:"Would you like ___ tea?", opts:["some","any","a","many"], ans:0, ex:"礼貌邀请/请求用 some。"},
+  /* ---- 八上 U6 be going to ---- */
+  {pt:"p08", q:"Look at the clouds! It ___ rain.", opts:["is going to","will","was going to","is going"], ans:0, ex:"有迹象即将发生 → is going to。"},
+  {pt:"p08", q:"We ___ visit the museum this weekend.", opts:["are going to","will going to","were going","is going to"], ans:0, ex:"计划安排 + be going to，主语 We → are going to。"},
+  /* ---- 八上 U7 will 将来时 ---- */
+  {pt:"p09", q:"I think it ___ be sunny tomorrow.", opts:["will","is","was","has"], ans:0, ex:"tomorrow + 预测 → will。"},
+  {pt:"p09", q:"They ___ a party next Saturday.", opts:["will have","had","have","are having"], ans:0, ex:"next Saturday 将来 → will have。"},
+  /* ---- 八上 U8 if 条件句 ---- */
+  {pt:"p10", q:"If it ___ tomorrow, we'll stay at home.", opts:["rains","will rain","rained","is raining"], ans:0, ex:"if 条件句主将从现 → rains。"},
+  {pt:"p10", q:"You'll be late ___ you don't hurry.", opts:["if","unless","because","so"], ans:0, ex:"if 引导条件句，主句将来时。"},
+  /* ---- 八下 U1 动词不定式 ---- */
+  {pt:"p11", q:"She went to the library ___ some books.", opts:["to borrow","borrow","borrowing","borrowed"], ans:0, ex:"目的状语用不定式 to borrow。"},
+  {pt:"p11", q:"He decided ___ a new hobby.", opts:["to take up","take up","taking up","took up"], ans:0, ex:"decide to do sth → to take up。"},
+  /* ---- 八下 U1 spend/cost/take/pay ---- */
+  {pt:"p12", q:"I ___ two hours finishing the report.", opts:["spent","cost","took","paid"], ans:0, ex:"spend + 时间 + doing。"},
+  {pt:"p12", q:"This dictionary ___ me 50 yuan.", opts:["cost","spent","took","paid"], ans:0, ex:"物作主语表'花费金钱' → cost。"},
+  /* ---- 八下 U1 It's adj for/of ---- */
+  {pt:"p13", q:"It's very kind ___ you to help me.", opts:["of","for","to","with"], ans:0, ex:"kind 描述人的品质 → of sb。"},
+  {pt:"p13", q:"It's important ___ us to learn English well.", opts:["for","of","to","with"], ans:0, ex:"important 描述事情性质 → for sb。"},
+  /* ---- 八下 U1 主谓一致 ---- */
+  {pt:"p14", q:"The number of students in our class ___ 45.", opts:["is","are","were","have"], ans:0, ex:"the number of + 复数名词作主语 → 谓语用单数 is。"},
+  {pt:"p14", q:"Maths ___ my favorite subject.", opts:["is","are","were","be"], ans:0, ex:"学科名 maths 作主语 → 单数 is。"},
+  /* ---- 八下 U2 should/could/had better ---- */
+  {pt:"p15", q:"You look tired. You ___ go to bed earlier.", opts:["should","shouldn't","needn't","don't"], ans:0, ex:"给建议用 should。"},
+  {pt:"p15", q:"You'd better ___ so much junk food.", opts:["not eat","not to eat","don't eat","not eating"], ans:0, ex:"had better not do sth。"},
+  /* ---- 八下 U2 反身代词 ---- */
+  {pt:"p16", q:"She taught ___ English.", opts:["herself","her","she","hers"], ans:0, ex:"主语 She 反身 → herself。"},
+  {pt:"p16", q:"Help ___ to some fish, children!", opts:["yourselves","yourself","you","your"], ans:0, ex:"对复数 children 说 → yourselves。"},
+  /* ---- 八下 U2 stop doing/to do ---- */
+  {pt:"p17", q:"Stop ___! The teacher is coming.", opts:["talking","to talk","talk","talked"], ans:0, ex:"stop doing 停下正在做的事。"},
+  {pt:"p17", q:"He was tired, so he stopped ___ a rest.", opts:["to have","having","have","had"], ans:0, ex:"stop to do 停下来去做另一件事。"},
+  /* ---- 八下 U3 状语从句 ---- */
+  {pt:"p18", q:"___ he is old, he works very hard.", opts:["Although","Because","If","When"], ans:0, ex:"让步关系 → although。"},
+  {pt:"p18", q:"I'll wait ___ he comes back.", opts:["until","although","if","unless"], ans:0, ex:"等到... → until。"},
+  /* ---- 八下 U4 数词 ---- */
+  {pt:"p19", q:"There are about ___ students in our school.", opts:["two thousand","two thousands","thousand of","two thousands of"], ans:0, ex:"数词 + 具体数字 → two thousand，不加 s。"},
+  {pt:"p19", q:"___ of the workers are from the south.", opts:["Two thirds","Two third","Two thirds'","Twos third"], ans:0, ex:"分数 two thirds。"},
+  /* ---- 八下 U5 过去进行时 ---- */
+  {pt:"p20", q:"I ___ TV when my father came back.", opts:["was watching","watched","am watching","have watched"], ans:0, ex:"when 从句瞬间动作打断 → 主句过去进行时。"},
+  {pt:"p20", q:"At that time yesterday, they ___ a meeting.", opts:["were having","had","have","will have"], ans:0, ex:"at that time yesterday → 过去进行时 were having。"},
+  /* ---- 八下 U6 宾语从句 ---- */
+  {pt:"p21", q:"I don't know ___ he will come tomorrow.", opts:["whether","that","what","which"], ans:0, ex:"宾语从句表'是否' → whether/if。"},
+  {pt:"p21", q:"Could you tell me ___ the bank is?", opts:["where","what","who","whose"], ans:0, ex:"宾语从句缺地点状语 → where。"},
+  /* ---- 八下 U7 现在完成时基础 ---- */
+  {pt:"p22", q:"I ___ the book already.", opts:["have read","read","am reading","reads"], ans:0, ex:"already + 现在完成时 → have read。"},
+  {pt:"p22", q:"She ___ to Shanghai twice.", opts:["has been","went","goes","is going"], ans:0, ex:"have been to 表去过某地（经历）→ has been。"},
+  /* ---- 八下 U8 现在完成时 for/since ---- */
+  {pt:"p23", q:"He has lived here ___ 2020.", opts:["since","for","in","at"], ans:0, ex:"2020 是时间点 → since。"},
+  {pt:"p23", q:"I have learned English ___ five years.", opts:["for","since","from","during"], ans:0, ex:"five years 是时间段 → for。"},
+  /* ---- 八下 U8 被动语态 ---- */
+  {pt:"p24", q:"English ___ in many countries.", opts:["is spoken","speaks","spoke","is speaking"], ans:0, ex:"English 作主语表被动 → is spoken。"},
+  {pt:"p24", q:"The room ___ every day.", opts:["is cleaned","cleans","cleaning","clean"], ans:0, ex:"room 被打扫 → is cleaned。"},
+  /* ---- 八上 U2 祈使句 + 礼貌用语 ---- */
+  {pt:"p25", q:"___ the door, please.", opts:["Open","Opening","Opened","Opens"], ans:0, ex:"祈使句以动词原形开头。"},
+  {pt:"p25", q:"___ late for school again.", opts:["Don't be","Not be","No be","Be not"], ans:0, ex:"否定祈使句 → Don't + 动词原形。"}
+];
+
+/* ================= 状态 ================= */
+let answers = {};   // 题号 -> 选项索引
+let results = [];   // 每题结果
+let startTime = null;
+
+/* ================= 渲染 ================= */
+const SECTIONS = [
+  {pt:"p01", title:"时态 · 一般过去时", span:"p01"},
+  {pt:"p02", title:"不定代词", span:"p02"},
+  {pt:"p03", title:"情态动词 · can/could", span:"p03"},
+  {pt:"p04", title:"比较级与最高级", span:"p04"},
+  {pt:"p05", title:"比较级与最高级", span:"p05"},
+  {pt:"p06", title:"感叹句", span:"p06"},
+  {pt:"p07", title:"不可数名词", span:"p07"},
+  {pt:"p08", title:"be going to", span:"p08"},
+  {pt:"p09", title:"will 将来时", span:"p09"},
+  {pt:"p10", title:"if 条件句", span:"p10"},
+  {pt:"p11", title:"动词不定式", span:"p11"},
+  {pt:"p12", title:"spend/cost/take/pay", span:"p12"},
+  {pt:"p13", title:"It's adj for/of sb to do", span:"p13"},
+  {pt:"p14", title:"主谓一致", span:"p14"},
+  {pt:"p15", title:"情态动词 · should/had better", span:"p15"},
+  {pt:"p16", title:"反身代词", span:"p16"},
+  {pt:"p17", title:"stop doing/to do", span:"p17"},
+  {pt:"p18", title:"状语从句", span:"p18"},
+  {pt:"p19", title:"数词表达", span:"p19"},
+  {pt:"p20", title:"过去进行时", span:"p20"},
+  {pt:"p21", title:"宾语从句", span:"p21"},
+  {pt:"p22", title:"现在完成时（基础）", span:"p22"},
+  {pt:"p23", title:"现在完成时 for/since", span:"p23"},
+  {pt:"p24", title:"被动语态", span:"p24"},
+  {pt:"p25", title:"祈使句与礼貌用语", span:"p25"}
+];
+
+function startTest(){
+  document.getElementById("cover").classList.remove("active");
+  document.getElementById("quiz").classList.add("active");
+  document.getElementById("topbar").style.display="block";
+  startTime = new Date().getTime();
+  renderQuiz();
+}
+
+function renderQuiz(){
+  const quiz = document.getElementById("quiz");
+  let html = "";
+  let shown = {};
+  QUESTIONS.forEach((qt,i)=>{
+    const sec = shown[qt.pt] ? null : SECTIONS.find(s=>s.pt===qt.pt);
+    if(sec){ shown[qt.pt]=true; html += `<div class="section-title"><span class="num">${String(i+1)}</span>${sec.title}</div><div class="section-desc">${POINTS.find(p=>p.id===qt.pt).unit} · ${POINTS.find(p=>p.id===qt.pt).name}</div>`; }
+    html += renderQ(i, qt);
+  });
+  html += `<div style="text-align:center;margin-top:36px">
+    <button class="btn" onclick="submitTest()" id="submitBtn" disabled>交卷并分析</button>
+    <div style="font-size:13px;color:var(--text-light);margin-top:10px">交卷后无法修改，请确认所有题目已完成</div>
+  </div>`;
+  quiz.innerHTML = html;
+}
+
+function renderQ(i, qt){
+  const qn = i+1;
+  const opts = qt.opts.map((o,j)=>`<button class="quiz-opt" data-q="${i}" data-o="${j}" onclick="pick(${i},${j})"><span class="opt-label">${"ABCD"[j]}</span>${o}</button>`).join("");
+  return `<div class="q-card" id="qc-${i}">
+    <div class="q-head"><span class="q-no">第 ${qn} 题</span><span class="q-tag">${POINTS.find(p=>p.id===qt.pt).name}</span></div>
+    <div class="q-text">${qt.q}</div>
+    ${opts}
+    <div class="explain" id="ex-${i}">${qt.ex}</div>
+  </div>`;
+}
+
+function pick(i,j){
+  if(document.getElementById("submitBtn") && document.getElementById("submitBtn").disabled===false && answers[String(i)]!==undefined) return;
+  answers[String(i)] = j;
+  // 清除已选样式
+  const card = document.getElementById("qc-"+i);
+  card.querySelectorAll(".quiz-opt").forEach(b=>{
+    b.classList.remove("selected");
+    if(parseInt(b.dataset.o)===j) b.classList.add("selected");
+  });
+  card.classList.add("answered");
+  updateProgress();
+}
+
+function updateProgress(){
+  const done = Object.keys(answers).length;
+  document.getElementById("doneCount").textContent = done;
+  document.getElementById("progressBar").style.width = (done/QUESTIONS.length*100)+"%";
+  if(done===QUESTIONS.length){
+    document.getElementById("submitBtn").disabled = false;
+  }
+}
+
+/* ================= 交卷分析 ================= */
+function submitTest(){
+  if(Object.keys(answers).length < QUESTIONS.length){
+    alert("还有 "+(QUESTIONS.length-Object.keys(answers).length)+" 题未完成，请先答完再交卷。");
+    return;
+  }
+  // 计算
+  results = QUESTIONS.map((qt,i)=>{
+    const correct = answers[String(i)]===qt.ans;
+    return {no:i+1, pt:qt.pt, q:qt.q, your:answers[String(i)], ans:qt.ans, correct, ex:qt.ex};
+  });
+  // 显示对错 + 解析
+  results.forEach(r=>{
+    const card = document.getElementById("qc-"+(r.no-1));
+    card.classList.remove("answered","correct","wrong");
+    card.classList.add(r.correct?"correct":"wrong");
+    const opts = card.querySelectorAll(".quiz-opt");
+    opts.forEach(b=>{
+      const o=parseInt(b.dataset.o);
+      b.classList.remove("selected");
+      if(o===r.ans){ b.classList.add("correct"); }
+      else if(o===r.your && !r.correct){ b.classList.add("wrong"); }
+    });
+    document.getElementById("ex-"+(r.no-1)).classList.add("show");
+  });
+  // 切到结果页
+  document.getElementById("quiz").classList.remove("active");
+  document.getElementById("result").classList.add("active");
+  document.getElementById("topbar").style.display="none";
+  renderResult();
+  // 采集入库
+  try{ saveToIndexedDB(); }catch(e){}
+}
+
+function renderResult(){
+  const total = results.length;
+  const correct = results.filter(r=>r.correct).length;
+  const score = correct/total*100;
+  const res = document.getElementById("result");
+  let rankCls = "rank-C", rankTxt = "";
+  if(score>=85){ rankCls="rank-A"; rankTxt="优秀 · 语法基础扎实，可直入初三拔高"; }
+  else if(score>=70){ rankCls="rank-B"; rankTxt="良好 · 大部分语法点已掌握，个别薄弱点待补"; }
+  else if(score>=55){ rankCls="rank-C"; rankTxt="中等 · 存在明显薄弱板块，需系统复习"; }
+  else { rankCls="rank-D"; rankTxt="偏弱 · 建议从头系统梳理八年级语法"; }
+
+  // 按语法点聚合
+  const byPoint = {};
+  POINTS.forEach(p=>{ byPoint[p.id]={name:p.name, unit:p.unit, total:0, correct:0}; });
+  results.forEach(r=>{ byPoint[r.pt].total++; if(r.correct) byPoint[r.pt].correct++; });
+  const rows = Object.values(byPoint).map(p=>({
+    ...p,
+    rate: Math.round(p.correct/p.total*100),
+    level: p.correct/p.total>=0.5 ? "强" : (p.correct/p.total>=0.25?"中":"弱")
+  }));
+
+  let table = `<table class="analysis"><tr><th>语法点</th><th>单元</th><th>得分</th><th>掌握</th></tr>`;
+  rows.forEach(r=>{
+    const pill = r.level==="强"?"strong":(r.level==="中"?"mid":"weak");
+    table += `<tr><td style="text-align:left">${r.name}</td><td>${r.unit}</td><td>${r.correct}/${r.total}（${r.rate}%）</td><td><span class="pill ${pill}">${r.level}</span></td></tr>`;
+  });
+  table += `</table>`;
+
+  // 建议
+  const weak = rows.filter(r=>r.level==="弱").map(r=>r.name);
+  const mid = rows.filter(r=>r.level==="中").map(r=>r.name);
+  let suggest = `<div class="suggest"><h3>📋 针对性建议</h3><ul>`;
+  if(weak.length) suggest += `<li><b>重点补强：</b>${weak.join("、")}</li>`;
+  if(mid.length) suggest += `<li><b>巩固提升：</b>${mid.join("、")}</li>`;
+  if(!weak.length && !mid.length) suggest += `<li>全部语法点掌握良好，可进入初三综合训练与难题突破</li>`;
+  suggest += `</ul></div>`;
+
+  // 导出区
+  const exportBox = `<div class="export-box">
+    <h3>📤 导出成绩数据</h3>
+    <p style="font-size:14px;color:var(--text-light);margin-bottom:12px">导出 CSV 后可用 Excel / WPS 打开，用于记录学生水平档案或进一步分析。</p>
+    <button class="btn secondary" onclick="exportCSV()">⬇ 导出成绩 CSV</button>
+    <button class="btn secondary" style="margin-left:12px" onclick="window.location.reload()">↻ 重新检测</button>
+  </div>`;
+
+  res.innerHTML = `
+    <div class="result-hero">
+      <div class="badge">八年级全册语法诊断 · 检测报告</div>
+      <div class="result-score">${Math.round(score)}<span style="font-size:28px">分</span></div>
+      <div class="result-label">答对 ${correct}/${total} 题 · 覆盖 25 个语法点</div>
+      <div class="result-rank ${rankCls}">${rankTxt}</div>
+    </div>
+    ${table}
+    ${suggest}
+    ${exportBox}
+    <div class="advice-area" id="adviceArea"></div>
+  `;
+}
+
+/* ================= CSV 导出 ================= */
+function exportCSV(){
+  const esc = s => '"' + String(s||"").replace(/"/g,'""') + '"';
+  let rows = [["题号","语法点","所属单元","题目","你的答案","正确答案","是否答对"]];
+  results.forEach(r=>{
+    const pt = POINTS.find(p=>p.id===r.pt);
+    rows.push([r.no, pt.name, pt.unit, r.q, "ABCD"[r.your], "ABCD"[r.ans], r.correct?"对":"错"]);
+  });
+  // 聚合行
+  rows.push([]);
+  rows.push(["语法点","单元","得分率","掌握","错题数"]);
+  const byPoint = {};
+  POINTS.forEach(p=>byPoint[p.id]={total:0,correct:0});
+  results.forEach(r=>{ byPoint[r.pt].total++; if(r.correct)byPoint[r.pt].correct++; });
+  POINTS.forEach(p=>{
+    rows.push([p.name,p.unit,Math.round(byPoint[p.id].correct/byPoint[p.id].total*100)+"%", byPoint[p.id].correct/byPoint[p.id].total>=0.5?"强":"弱", byPoint[p.id].total-byPoint[p.id].correct]);
+  });
+  const csv = "﻿"+rows.map(r=>r.map(esc).join(",")).join("\r\n");
+  const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "八年级语法诊断_" + new Date().toISOString().slice(0,10) + ".csv";
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+/* ================= IndexedDB 采集 ================= */
+function saveToIndexedDB(){
+  return new Promise((resolve)=>{
+    try{
+      const req = indexedDB.open("english-teaching",1);
+      req.onupgradeneeded = e=>{
+        const db = e.target.result;
+        if(!db.objectStoreNames.contains("grammar_diag")) db.createObjectStore("grammar_diag",{keyPath:"id"});
+      };
+      req.onsuccess = e=>{
+        const db = e.target.result;
+        const tx = db.transaction("grammar_diag","readwrite");
+        const store = tx.objectStore("grammar_diag");
+        results.forEach(r=>{
+          store.put({id: Date.now()+"-"+r.no, student:"八年级新生-优生", type:"grammar", no:r.no, point:r.pt, correct:r.correct, ts:new Date().toISOString()});
+        });
+        tx.oncomplete = ()=>resolve();
+      };
+      req.onerror = ()=>resolve();
+    }catch(e){ resolve(); }
+  });
+}
+</script>
+</body>
+</html>

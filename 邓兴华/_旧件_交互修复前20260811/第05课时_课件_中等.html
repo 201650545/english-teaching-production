@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>第05课 祈使句基础 What问句 like动词</title>
+<style>
+:root{--P:#922B21;--PL:#C0392B;--PD:#641E16;--A:#E67E22;--AL:#F39C12;--AD:#D35400;--BM:#FDF6F0;--BC:#FFF;--BS:#FAEAE0;--TM:#2C1810;--TS:#5D4E37;--TL:#8B7D6B;--BD:#E8D5C4;--SH:0 4px 20px rgba(146,43,33,.15);--SH2:0 8px 30px rgba(146,43,33,.25);--R:16px;--RS:8px;--TR:all .3s cubic-bezier(.4,0,.2,1);--FZ:"PingFang SC","Microsoft YaHei",sans-serif;--FE:"Georgia","Times New Roman",serif;--FI:"Doulos SIL","Lucida Sans Unicode",serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:var(--FZ);color:var(--TM);background:var(--BM)}
+body{display:flex;flex-direction:column}
+.tn{display:flex;align-items:center;justify-content:space-between;padding:8px 24px;background:linear-gradient(135deg,var(--PD),var(--P));color:#fff;min-height:56px;box-shadow:0 2px 12px rgba(0,0,0,.15);z-index:100;flex-shrink:0}
+.tn .lt{font-size:16px;font-weight:600;white-space:nowrap}
+.tn .ns{display:flex;gap:4px;flex:1;justify-content:center;overflow-x:auto;padding:0 12px}
+.np{padding:6px 14px;border-radius:20px;font-size:13px;cursor:pointer;white-space:nowrap;transition:var(--TR);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);user-select:none}
+.np:hover{background:rgba(255,255,255,.25)}
+.np.act{background:var(--A);border-color:var(--AL);box-shadow:0 2px 8px rgba(230,126,34,.4)}
+.tn .nc{display:flex;gap:8px;align-items:center}
+.nb{width:36px;height:36px;border-radius:50%;border:none;background:rgba(255,255,255,.15);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:var(--TR)}
+.nb:hover{background:rgba(255,255,255,.3)}
+.nb:active{transform:scale(.95)}
+.nb:disabled{opacity:.3;cursor:not-allowed}
+.pi{font-size:13px;opacity:.8;min-width:60px;text-align:center}
+.pb{height:4px;background:rgba(146,43,33,.1);flex-shrink:0;cursor:pointer}
+.pf{height:100%;background:linear-gradient(90deg,var(--P),var(--A));border-radius:0 2px 2px 0;transition:width .4s ease;position:relative}
+.pf::after{content:'';position:absolute;right:-6px;top:-4px;width:12px;height:12px;border-radius:50%;background:var(--A);box-shadow:0 0 8px rgba(230,126,34,.5)}
+.slide{position:absolute;top:0;left:0;width:100%;height:100%;display:none;flex-direction:column;padding:32px 48px;overflow-y:auto;animation:sIn .4s ease}
+.slide.act{display:flex}
+@keyframes sIn{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+.sh{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:16px;border-bottom:3px solid var(--P);flex-shrink:0}
+.sh .sb{background:var(--A);color:#fff;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:600}
+.sh h2{font-size:28px;color:var(--P);font-weight:700}
+.sh .ss{font-size:14px;color:var(--TL);margin-left:auto}
+.sct{flex:1;display:flex;flex-direction:column;gap:20px}
+.cover{justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,var(--PD),var(--P) 50%,var(--A));color:#fff}
+.cover .cb{background:rgba(255,255,255,.15);padding:8px 24px;border-radius:24px;font-size:14px;margin-bottom:24px;border:1px solid rgba(255,255,255,.2)}
+.cover h1{font-size:48px;font-weight:800;margin-bottom:16px;text-shadow:0 4px 20px rgba(0,0,0,.3);letter-spacing:2px}
+.cover .et{font-family:var(--FE);font-size:24px;margin-bottom:32px;opacity:.9;font-style:italic}
+.cover .ci{display:flex;gap:40px;margin-top:32px}
+.cover .ii{display:flex;flex-direction:column;align-items:center;gap:8px}
+.cover .il{font-size:13px;opacity:.7}
+.cover .iv{font-size:18px;font-weight:600}
+.cover .cd{margin-top:40px;font-size:60px;opacity:.15}
+.rc{background:var(--BC);border-radius:var(--R);padding:24px;box-shadow:var(--SH);border-left:5px solid var(--P);transition:var(--TR)}
+.rc:hover{box-shadow:var(--SH2);transform:translateY(-2px)}
+.rc .rt{display:inline-block;background:var(--A);color:#fff;padding:3px 10px;border-radius:8px;font-size:12px;margin-bottom:12px}
+.rc h3{color:var(--P);font-size:20px;margin-bottom:12px}
+.rco{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ri{background:var(--BS);padding:12px 16px;border-radius:var(--RS);font-size:14px}
+.ri strong{color:var(--P);display:block;margin-bottom:4px}
+.vg{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.vc{background:var(--BC);border-radius:var(--R);padding:20px;box-shadow:var(--SH);border-left:4px solid var(--A);transition:var(--TR);display:flex;flex-direction:column;gap:8px}
+.vc:hover{box-shadow:var(--SH2);transform:translateY(-3px);border-left-color:var(--P)}
+.vh{display:flex;align-items:center;justify-content:space-between}
+.vw{font-family:var(--FE);font-size:22px;font-weight:700;color:var(--P)}
+.vn{background:var(--A);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
+.vi{font-family:var(--FI);font-size:16px;color:var(--AD);background:var(--BS);padding:4px 10px;border-radius:6px;display:inline-block;width:fit-content}
+.vp{font-style:italic;color:var(--TS);font-size:14px}
+.vcn{font-size:16px;color:var(--TM);font-weight:500}
+.vph{background:var(--BS);padding:8px 12px;border-radius:var(--RS);font-family:var(--FE);font-size:14px;color:var(--PD)}
+.vex{font-family:var(--FE);font-size:14px;color:var(--TS);font-style:italic;padding-left:8px;border-left:2px solid var(--BD)}
+.vm{font-size:13px;color:var(--AD);background:rgba(230,126,34,.08);padding:6px 10px;border-radius:6px}
+.gb{background:var(--BC);border-radius:var(--R);padding:28px;box-shadow:var(--SH);border-top:4px solid var(--P)}
+.gb h3{color:var(--P);font-size:22px;margin-bottom:16px}
+.gf{background:linear-gradient(135deg,var(--P),var(--PL));color:#fff;padding:16px 24px;border-radius:var(--RS);font-size:18px;text-align:center;margin:16px 0;font-weight:600;letter-spacing:1px}
+.gf .fh{color:var(--AL);font-weight:800}
+.gt{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+.gt th{background:var(--P);color:#fff;padding:10px 16px;text-align:left;font-weight:600}
+.gt th:first-child{border-radius:var(--RS) 0 0 0}
+.gt th:last-child{border-radius:0 var(--RS) 0 0}
+.gt td{padding:10px 16px;border-bottom:1px solid var(--BD)}
+.gt tr:nth-child(even) td{background:var(--BS)}
+.gt .ec{font-family:var(--FE);color:var(--PD)}
+.gtp{background:rgba(230,126,34,.1);border-left:4px solid var(--A);padding:12px 16px;border-radius:0 var(--RS) var(--RS) 0;margin:12px 0;font-size:14px}
+.gtp strong{color:var(--AD)}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pc{background:var(--BC);border-radius:var(--R);padding:20px;box-shadow:var(--SH);text-align:center;border-bottom:4px solid var(--A);transition:var(--TR)}
+.pc:hover{transform:translateY(-3px);box-shadow:var(--SH2)}
+.pc .lb{font-family:var(--FE);font-size:48px;font-weight:800;color:var(--P);line-height:1.2}
+.pc .si{font-family:var(--FI);font-size:24px;color:var(--AD);margin:8px 0}
+.pc .sw{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:8px}
+.pc .swd{background:var(--BS);padding:4px 10px;border-radius:6px;font-family:var(--FE);font-size:14px;color:var(--PD)}
+.rp{background:var(--BC);border-radius:var(--R);padding:24px;box-shadow:var(--SH);margin-bottom:16px}
+.rp h3{color:var(--P);font-size:20px;margin-bottom:12px}
+.rp .pm{display:flex;gap:16px;font-size:13px;color:var(--TL);margin-bottom:12px}
+.rp .pt{font-family:var(--FE);font-size:16px;line-height:1.8;color:var(--TM);text-align:justify}
+.rp .pt p{margin-bottom:8px;text-indent:2em}
+.qz{display:flex;flex-direction:column;gap:16px}
+.sct-row{flex-direction:row;align-items:stretch;gap:24px;min-height:0}
+.sct-row .rp{flex:0 0 46%;max-width:46%;margin-bottom:0;overflow-y:auto;position:relative;padding-right:10px}
+.sct-row .qz{flex:1;min-height:0;overflow-y:auto;padding-right:6px}
+.qi{background:var(--BC);border-radius:var(--R);padding:20px;box-shadow:var(--SH);border-left:4px solid var(--BD);transition:var(--TR)}
+.qi.ok{border-left-color:#27AE60}
+.qi.no{border-left-color:#E74C3C}
+.qq{font-size:15px;margin-bottom:12px;line-height:1.6}
+.qq .qn{font-weight:700;color:var(--P);margin-right:8px}
+.qo{display:flex;flex-direction:column;gap:8px}
+.qop{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--BS);border-radius:var(--RS);cursor:pointer;transition:var(--TR);border:2px solid transparent;font-size:14px}
+.qop:hover{background:var(--BM);border-color:var(--A)}
+.qop.sel{background:rgba(230,126,34,.15);border-color:var(--A)}
+.qop.ca{background:rgba(39,174,96,.15);border-color:#27AE60}
+.qop.wa{background:rgba(231,76,60,.15);border-color:#E74C3C}
+.qop .ol{font-weight:700;color:var(--P);width:24px;height:24px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:50%;font-size:13px;flex-shrink:0}
+.qfb{margin-top:8px;padding:8px 12px;border-radius:var(--RS);font-size:13px;display:none}
+.qfb.show{display:block}
+.qfb.ok{background:rgba(39,174,96,.1);color:#27AE60}
+.qfb.no{background:rgba(231,76,60,.1);color:#E74C3C}
+.ia{background:var(--BC);border-radius:var(--R);padding:24px;box-shadow:var(--SH)}
+.ia h3{color:var(--P);font-size:20px;margin-bottom:16px}
+.cw{display:flex;flex-direction:column;align-items:center;gap:20px}
+.cdi{width:100%;min-height:120px;background:var(--BS);border-radius:var(--R);display:flex;align-items:center;justify-content:center;font-family:var(--FE);font-size:28px;color:var(--P);font-weight:700;border:3px dashed var(--BD);transition:var(--TR)}
+.cdi.act{border-color:var(--A);background:rgba(230,126,34,.08);transform:scale(1.02)}
+.cbt{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.cbn{padding:12px 24px;border-radius:var(--RS);border:none;cursor:pointer;font-size:15px;font-weight:600;transition:var(--TR);display:flex;align-items:center;gap:6px;color:#fff}
+.cbn.p1{background:linear-gradient(135deg,#27AE60,#2ECC71)}
+.cbn.p2{background:linear-gradient(135deg,#E74C3C,#EC644B)}
+.cbn.p3{background:linear-gradient(135deg,var(--A),var(--AL))}
+.cbn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.sud{display:flex;flex-direction:column;gap:16px}
+.sus{display:flex;gap:8px;flex-wrap:wrap}
+.ssb{padding:6px 16px;border-radius:20px;border:2px solid var(--BD);background:var(--BC);cursor:pointer;font-size:14px;transition:var(--TR)}
+.ssb.act{background:var(--P);color:#fff;border-color:var(--P)}
+.ssg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ssc{background:var(--BS);border-radius:var(--RS);padding:16px;text-align:center;cursor:pointer;transition:var(--TR);border:2px solid transparent}
+.ssc:hover{transform:translateY(-2px)}
+.ssc.sel{background:rgba(230,126,34,.15);border-color:var(--A)}
+.ssc .si2{font-size:36px}
+.ssc .sn{font-family:var(--FE);font-size:16px;color:var(--P);margin-top:4px;font-weight:600}
+.suo{background:var(--BS);border-radius:var(--RS);padding:16px;font-family:var(--FE);font-size:18px;color:var(--PD);text-align:center;min-height:60px;display:flex;align-items:center;justify-content:center}
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.mc{display:flex;flex-direction:column;gap:8px}
+.mc h4{text-align:center;color:var(--P);font-size:16px;margin-bottom:8px}
+.mi{padding:10px 16px;background:var(--BC);border:2px solid var(--BD);border-radius:var(--RS);cursor:pointer;text-align:center;transition:var(--TR);font-size:15px}
+.mi:hover{border-color:var(--A)}
+.mi.sel{background:rgba(230,126,34,.15);border-color:var(--A)}
+.mi.mtd{background:rgba(39,174,96,.15);border-color:#27AE60;pointer-events:none;opacity:.6}
+.mi.wf{animation:shk .4s ease;border-color:#E74C3C!important}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.cg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.clc{aspect-ratio:1;background:var(--BC);border:2px solid var(--BD);border-radius:var(--RS);display:flex;align-items:center;justify-content:center;font-family:var(--FE);font-size:18px;font-weight:600;color:var(--P);cursor:pointer;transition:var(--TR)}
+.clc:hover{background:var(--BS);transform:scale(1.05)}
+.clc.rem{background:transparent;border-color:transparent;pointer-events:none;opacity:0}
+.clc.sel{background:rgba(230,126,34,.2);border-color:var(--A)}
+.am{position:relative;display:inline-block}
+.am .mcv{background:var(--P);color:#fff;padding:4px 12px;border-radius:var(--RS);cursor:pointer;font-size:14px;transition:var(--TR);display:inline-block}
+.am .mcv:hover{background:var(--PL)}
+.am .mcv::before{content:'查看答案'}
+.am.rev .mcv{display:none}
+.am .ma{display:none;font-family:var(--FE);color:var(--P);font-weight:600}
+.am.rev .ma{display:inline-block}
+.dsb{display:flex;align-items:center;justify-content:space-between;background:var(--BC);padding:12px 20px;border-radius:var(--RS);box-shadow:var(--SH);margin-top:12px;font-size:14px}
+.dsb .ss2{display:flex;align-items:center;gap:8px}
+.dsb .sd{width:10px;height:10px;border-radius:50%;background:#27AE60}
+.dsb .sd.un{background:#E74C3C}
+.dsb .eb{padding:6px 16px;background:var(--A);color:#fff;border:none;border-radius:var(--RS);cursor:pointer;font-size:13px;transition:var(--TR)}
+.dsb .eb:hover{background:var(--AD)}
+.bct{display:flex;align-items:center;justify-content:center;gap:16px;padding:8px 24px;background:var(--BC);border-top:1px solid var(--BD);flex-shrink:0}
+.bb{padding:8px 24px;border-radius:var(--RS);border:2px solid var(--P);background:transparent;color:var(--P);cursor:pointer;font-size:14px;font-weight:600;transition:var(--TR);display:flex;align-items:center;gap:6px}
+.bb:hover{background:var(--P);color:#fff}
+.bb.pri{background:var(--P);color:#fff}
+.bb.pri:hover{background:var(--PD)}
+.cpa{font-family:var(--FE);font-size:16px;line-height:2;color:var(--TM)}
+.cbl{display:inline-block;min-width:80px;padding:2px 8px;margin:0 4px;border:2px dashed var(--A);border-radius:6px;text-align:center;cursor:pointer;font-weight:600;color:var(--AD);background:rgba(230,126,34,.05)}
+.cbl.fld{border-style:solid;background:rgba(39,174,96,.1);color:#27AE60}
+.cob{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;padding:12px;background:var(--BS);border-radius:var(--RS)}
+.coc{padding:6px 16px;background:var(--BC);border:2px solid var(--BD);border-radius:20px;cursor:pointer;font-family:var(--FE);font-size:14px;transition:var(--TR)}
+.coc:hover{border-color:var(--A)}
+.coc.used{opacity:.4;pointer-events:none}
+.clz-sl{display:inline-block;min-width:80px;padding:2px 8px;margin:0 4px;border:2px dashed var(--A);border-radius:6px;text-align:center;color:var(--A);font-weight:700}
+.clz-sl.clz-sln{border-style:solid;background:rgba(39,174,96,.1);color:#27AE60;border-color:#27AE60}
+.clz-ans{margin-top:16px;padding:14px;background:var(--BS);border-radius:var(--RS)}
+.clz-tip{font-size:13px;color:var(--TL);margin-bottom:10px;text-align:center}
+.clz-boxes{display:flex;gap:10px;justify-content:center;margin-bottom:12px}
+.clz-box{width:108px;min-height:54px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px dashed var(--A);border-radius:10px;background:var(--BC);cursor:pointer}
+.clz-bn{font-size:13px;color:var(--TL);font-weight:700}
+.clz-bv{font-size:17px;font-weight:700;color:var(--P);min-height:24px}
+.clz-box.clz-ok{border-color:#27AE60;background:rgba(39,174,96,.08)}
+.clz-box.clz-ok .clz-bv{color:#27AE60}
+.clz-box.clz-no{border-color:#E74C3C;background:rgba(231,76,60,.08)}
+.clz-box.clz-no .clz-bv{color:#E74C3C}
+.clz-box.clz-over{border-color:var(--A);background:#FFF3E0;box-shadow:0 0 0 2px rgba(230,126,34,.35)}
+.clz-opts{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.clz-opt{padding:7px 14px;background:var(--BC);border:2px solid var(--BD);border-radius:20px;cursor:grab;font-family:var(--FE);font-size:15px;user-select:none;-webkit-user-select:none;touch-action:none}
+.clz-opt.clz-dragging{opacity:.5}
+.clz-opt.clz-used{opacity:.35;pointer-events:none;cursor:default}
+
+.sg{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.sci{background:var(--BC);border-radius:var(--R);padding:20px;box-shadow:var(--SH);border-top:4px solid var(--A)}
+.sci h4{color:var(--P);font-size:18px;margin-bottom:12px}
+.sci ul{list-style:none;padding:0}
+.sci ul li{padding:6px 0;font-size:14px;border-bottom:1px solid var(--BD)}
+.sci ul li:last-child{border-bottom:none}
+.sci ul li::before{content:'\2713 ';color:#27AE60;font-weight:700}
+.ep{background:#FFF3E0;border:2px dashed var(--A);border-radius:var(--RS);padding:12px 16px;margin:12px 0}
+.ep .el{display:inline-block;background:var(--A);color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;margin-bottom:8px;font-weight:600}
+.ep .ec2{font-size:14px;color:var(--TM);line-height:1.6}
+.tt{background:linear-gradient(90deg,var(--A),var(--AL));color:#fff;padding:12px 20px;border-radius:var(--RS);font-size:14px;margin:12px 0;display:flex;align-items:center;gap:8px}
+.hl{color:var(--P);font-weight:700;font-family:var(--FE)}
+.hb{background:linear-gradient(135deg,rgba(230,126,34,.1),rgba(146,43,33,.05));border-radius:var(--R);padding:16px 20px;margin:12px 0;border:1px solid rgba(230,126,34,.2)}
+.hb h4{color:var(--P);font-size:16px;margin-bottom:8px}
+.hb p{font-size:14px;color:var(--TS);line-height:1.6}
+.dv{height:2px;background:linear-gradient(90deg,transparent,var(--BD),transparent);margin:16px 0}
+.slide::-webkit-scrollbar{width:6px}
+.slide::-webkit-scrollbar-thumb{background:rgba(146,43,33,.2);border-radius:3px}
+.undo-note{font-size:11px;color:#8B7D6B;margin-top:4px;animation:fin .3s ease}
+@media print{.tn,.pb,.bct{display:none!important}.slide{display:block!important;page-break-after:always;position:static}}
+@media (max-width:768px){.sct-row{flex-direction:column!important}.vg{grid-template-columns:1fr!important}.pg{grid-template-columns:1fr!important}.sg{grid-template-columns:1fr!important}.rco{grid-template-columns:1fr!important}.cover h1{font-size:32px!important}.sh h2{font-size:22px!important}.slide{padding:16px 20px!important}}
+
+.rule-card{border-radius:14px;padding:12px 14px;color:#fff;box-shadow:0 3px 10px rgba(0,0,0,.12);margin:8px 0;}
+.rc-zhug{background:#3B82F6;} .rc-bin{background:#06A77D;} .rc-xing{background:#F59E0B;}
+.rc-ming{background:#8B5CF6;} .rc-warn{background:#E63946;} .rc-qita{background:#14B8A6;}
+.rc-cat{font-size:14px;opacity:.85;font-weight:600;}
+.rc-text{font-size:16px;font-weight:700;margin-top:4px;line-height:1.5;}
+.rc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;}
+@media (max-width:640px){.rc-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="tn"><div class="lt">第05课 祈使句 What问句 like动词</div><div class="ns" id="navPills"></div><div class="nc"><span class="pi" id="pageInd">1 / 42</span></div></div>
+<div class="pb" id="progressBar" onclick="seekProgress(event)"><div class="pf" id="progressFill" style="width:3%"></div></div>
+<div style="flex:1;position:relative;overflow:hidden;background:var(--BM)" id="slideContainer">
+<!-- S1 Cover -->
+<div class="slide cover act" data-page="1">
+<div class="cb">Stage 2 L4-L7 授课课 90分钟</div>
+<h1>第05课 祈使句基础</h1>
+<div class="et">Imperative Sentences What Questions Like Verb</div>
+<div class="ci">
+<div class="ii"><span class="il">语法</span><span class="iv">G13 G14 G15</span></div>
+<div class="ii"><span class="il">词汇</span><span class="iv">20个运动主题</span></div>
+<div class="ii"><span class="il">拼读</span><span class="iv">Uu-Zz六音素</span></div>
+<div class="ii"><span class="il">阅读</span><span class="iv">A+B+五选四</span></div>
+</div>
+<div class="cd">&#9917;&#127936;&#127934;&#127952;&#127955;</div>
+</div>
+<div class="slide" data-page="2">
+<div class="sh"><span class="sb">课程导览</span><h2>本课地图</h2><span class="ss">90分钟</span></div>
+<div class="sct">
+<div class="hb"><h4>教学目标</h4><p>掌握G13祈使句基础结构（Do/Dont）、G14 What引导特殊疑问句、G15实义动词like加名词复数及like to do；学习20个运动主题词汇；完成Uu-Zz六音素拼读收官。</p></div>
+<div class="sg">
+<div class="sci"><h4>八段式教学流程</h4><ul><li>复习导入（L4：G10/G11/G12）</li><li>词汇新授（20个运动主题）</li><li>语法精讲（G13/G14/G15）</li><li>拼读收官（Uu-Zz六音素）</li><li>阅读理解（A篇+B篇）</li><li>五选四完形填空</li><li>随堂演练（8题诊断）</li><li>学情诊断与总结</li></ul></div>
+<div class="sci"><h4>关键提醒</h4><ul><li>祈使句无主语，动词原形开头</li><li>What加do/does加主语加动词原形</li><li>like接名词或like to do</li><li>拼读Uu-Zz收官Stage 1体系</li><li>防越级：不引入Lets等</li></ul></div>
+</div></div></div>
+<div class="slide" data-page="3">
+<div class="sh"><span class="sb">复习导入</span><h2>G10 名词复数</h2><span class="ss">3分钟</span></div>
+<div class="sct">
+<div class="rc"><span class="rt">G10 回顾</span><h3>名词复数变化规则</h3><div class="rco">
+<div class="ri"><strong>规则变化</strong>① 加s: sport到sports, ball到balls<br>② 加es: box到boxes, bus到buses<br>③ y变i加es: family到families<br>④ f/fe变v加es: leaf到leaves</div>
+<div class="ri"><strong>不规则变化</strong>man到men, woman到women<br>child到children, foot到feet<br>tooth到teeth, mouse到mice<br>sheep到sheep（不变）</div>
+</div></div>
+<div class="ep"><span class="el">中考辨析</span><div class="ec2">可数名词有单复数变化，不可数名词无复数。sport作为可数名词，复数形式sports常表示体育运动的总称。注意sport到sports直接加s，因为以辅音字母结尾。</div></div>
+<div class="tt">快速判断：sport到sportes（错） | bus到buses（对） | box到boxs（错） | tennis到tennis（对，不变）</div>
+</div></div>
+<div class="slide" data-page="4">
+<div class="sh"><span class="sb">复习导入</span><h2>G11 形容词</h2><span class="ss">3分钟</span></div>
+<div class="sct">
+<div class="rc"><span class="rt">G11 回顾</span><h3>形容词用法与位置</h3><div class="rco">
+<div class="ri"><strong>形容词位置</strong>① 修饰名词：a good student, an interesting book<br>② 系动词后：be/look/sound/feel<br>例：The book is interesting.<br>例：That sounds good.</div>
+<div class="ri"><strong>本课相关形容词</strong>good（好的）<br>interesting（有趣的）<br>fun（有趣的/乐趣）<br>relaxing（令人放松的）<br>boring（无聊的）<br>difficult（困难的）<br>easy（容易的）</div>
+</div></div>
+<div class="ep"><span class="el">中考辨析</span><div class="ec2">形容词修饰名词时放在名词前面。注意interesting修饰物，interested修饰人。本课重点掌握interesting修饰物的用法：an interesting book, an interesting game。</div></div>
+<div class="tt">连线练习：good到好的 | interesting到有趣的 | relaxing到令人放松的 | boring到无聊的 | difficult到困难的 | easy到容易的</div>
+</div></div>
+<div class="slide" data-page="5">
+<div class="sh"><span class="sb">复习导入</span><h2>G12 方位介词</h2><span class="ss">3分钟</span></div>
+<div class="sct">
+<div class="rc"><span class="rt">G12 回顾</span><h3>方位介词图解</h3><div class="rco">
+<div class="ri"><strong>核心方位介词</strong>in（在...里面）<br>on（在...上面）<br>under（在...下面）<br>behind（在...后面）<br>in front of（在...前面）<br>next to（在...旁边）</div>
+<div class="ri"><strong>例句回顾</strong>The ball is in the box.<br>The bat is on the table.<br>The TV is under the shelf.<br>The team is behind the door.<br>The cup is next to the TV.</div>
+</div></div>
+<div class="ep"><span class="el">中考辨析</span><div class="ec2">in front of表示在物体外部的前面，in the front of表示在物体内部的前面。例：There is a tree in front of the house.（外部）The driver sits in the front of the bus.（内部）</div></div>
+<div class="tt">情境运用：The ball is under the table. The bat is next to the TV.</div>
+</div></div>
+<div class="slide" data-page="6">
+<div class="sh"><span class="sb">词汇新授</span><h2>运动词汇 Part 1（1-5）</h2><span class="ss">10分钟</span></div>
+<div class="sct"><div class="vg">
+<div class="vc"><div class="vh"><span class="vw">sport</span><span class="vn">1</span></div><span class="vi">/sp&#596;&#720;t/</span><span class="vp">n. 运动</span><span class="vcn">运动</span><span class="vph">do sports / play sports</span><span class="vex">I like sports. Do you play sports?</span><span class="vm">sport加s等于sports，运动总称</span></div>
+<div class="vc"><div class="vh"><span class="vw">basketball</span><span class="vn">2</span></div><span class="vi">/&#712;b&#593;&#720;sk&#618;tb&#596;&#720;l/</span><span class="vp">n. 篮球</span><span class="vcn">篮球</span><span class="vph">play basketball</span><span class="vex">Let us play basketball after school.</span><span class="vm">basket篮子加ball球等于篮球</span></div>
+<div class="vc"><div class="vh"><span class="vw">soccer</span><span class="vn">3</span></div><span class="vi">/&#712;s&#594;k&#601;(r)/</span><span class="vp">n. 足球</span><span class="vcn">足球（美式英语）</span><span class="vph">play soccer</span><span class="vex">Do you like to play soccer?</span><span class="vm">美式football等于英式soccer</span></div>
+<div class="vc"><div class="vh"><span class="vw">volleyball</span><span class="vn">4</span></div><span class="vi">/&#712;v&#594;lib&#596;&#720;l/</span><span class="vp">n. 排球</span><span class="vcn">排球</span><span class="vph">play volleyball</span><span class="vex">Volleyball is a fun sport.</span><span class="vm">volley截击加ball等于排球</span></div>
+<div class="vc"><div class="vh"><span class="vw">tennis</span><span class="vn">5</span></div><span class="vi">/&#712;ten&#618;s/</span><span class="vp">n. 网球</span><span class="vcn">网球</span><span class="vph">play tennis</span><span class="vex">Tennis is not easy. It is difficult.</span><span class="vm">注意重音在第一音节</span></div>
+<div class="vc"><div class="vh"><span class="vw">球类搭配规律</span><span class="vn">&#9733;</span></div><span class="vp">play加球类（无冠词）</span><span class="vcn">play basketball / play soccer / play volleyball / play tennis</span><span class="vph">注意：play the basketball（错误）</span><span class="vex">球类运动前不加the，固定搭配</span><span class="vm">口诀：球类不加the，乐器必须加the</span></div>
+</div></div></div>
+<div class="slide" data-page="7">
+<div class="sh"><span class="sb">词汇新授</span><h2>运动词汇 Part 2（6-10）</h2><span class="ss">10分钟</span></div>
+<div class="sct"><div class="vg">
+<div class="vc"><div class="vh"><span class="vw">ping-pong</span><span class="vn">6</span></div><span class="vi">/&#712;p&#618;&#331;p&#594;&#331;/</span><span class="vp">n. 乒乓球</span><span class="vcn">乒乓球</span><span class="vph">play ping-pong</span><span class="vex">Ping-pong is very popular in China.</span><span class="vm">也叫table tennis</span></div>
+<div class="vc"><div class="vh"><span class="vw">bat</span><span class="vn">7</span></div><span class="vi">/b&#230;t/</span><span class="vp">n. 球棒；球拍</span><span class="vcn">球棒；球拍</span><span class="vph">baseball bat</span><span class="vex">I have a baseball bat. It is good.</span><span class="vm">bat还有蝙蝠的意思</span></div>
+<div class="vc"><div class="vh"><span class="vw">ball</span><span class="vn">8</span></div><span class="vi">/b&#596;&#720;l/</span><span class="vp">n. 球</span><span class="vcn">球</span><span class="vph">a ball / ball game</span><span class="vex">Pass the ball to me, please.</span><span class="vm">复数：ball到balls</span></div>
+<div class="vc"><div class="vh"><span class="vw">play</span><span class="vn">9</span></div><span class="vi">/ple&#618;/</span><span class="vp">v. 玩；打（球）</span><span class="vcn">玩；打（球）</span><span class="vph">play sports</span><span class="vex">Do you play tennis on weekends?</span><span class="vm">play加球类，play加the加乐器</span></div>
+<div class="vc"><div class="vh"><span class="vw">sound</span><span class="vn">10</span></div><span class="vi">/sa&#650;nd/</span><span class="vp">v./n. 听起来</span><span class="vcn">听起来；声音</span><span class="vph">sound good</span><span class="vex">That sounds good! Let us go.</span><span class="vm">sound是感官动词，后接形容词</span></div>
+<div class="vc"><div class="vh"><span class="vw">play用法矩阵</span><span class="vn">&#9733;</span></div><span class="vp">play的三种搭配</span><span class="vcn">play加球类 / play加the加乐器 / play加游戏</span><span class="vph">play basketball / play the piano / play games</span><span class="vex">对比：play soccer（对） | play the soccer（错）</span><span class="vm">球类不加the，乐器必须加the</span></div>
+</div></div></div>
+<div class="slide" data-page="8">
+<div class="sh"><span class="sb">词汇新授</span><h2>运动词汇 Part 3（11-15）</h2><span class="ss">10分钟</span></div>
+<div class="sct"><div class="vg">
+<div class="vc"><div class="vh"><span class="vw">good</span><span class="vn">11</span></div><span class="vi">/&#609;&#650;d/</span><span class="vp">adj. 好的</span><span class="vcn">好的</span><span class="vph">be good at</span><span class="vex">He is good at basketball. He is a good player.</span><span class="vm">be good at等于擅长于</span></div>
+<div class="vc"><div class="vh"><span class="vw">interesting</span><span class="vn">12</span></div><span class="vi">/&#712;&#618;ntr&#601;st&#618;&#331;/</span><span class="vp">adj. 有趣的</span><span class="vcn">有趣的</span><span class="vph">an interesting book</span><span class="vex">This book is very interesting. I like it.</span><span class="vm">修饰物用interesting，修饰人用interested</span></div>
+<div class="vc"><div class="vh"><span class="vw">fun</span><span class="vn">13</span></div><span class="vi">/f&#652;n/</span><span class="vp">adj./n. 有趣的；乐趣</span><span class="vcn">有趣的；乐趣</span><span class="vph">have fun</span><span class="vex">We have fun in the ping-pong game.</span><span class="vm">fun是不可数名词，不加a</span></div>
+<div class="vc"><div class="vh"><span class="vw">relaxing</span><span class="vn">14</span></div><span class="vi">/r&#618;&#712;l&#230;ks&#618;&#331;/</span><span class="vp">adj. 令人放松的</span><span class="vcn">令人放松的</span><span class="vph">relaxing music</span><span class="vex">Watching TV is relaxing after a long day.</span><span class="vm">relax加ing等于relaxing</span></div>
+<div class="vc"><div class="vh"><span class="vw">boring</span><span class="vn">15</span></div><span class="vi">/&#712;b&#596;&#720;r&#618;&#331;/</span><span class="vp">adj. 无聊的</span><span class="vcn">无聊的</span><span class="vph">a boring book</span><span class="vex">The movie is boring. I do not like it.</span><span class="vm">bore加ing等于boring</span></div>
+<div class="vc"><div class="vh"><span class="vw">形容词对比</span><span class="vn">&#9733;</span></div><span class="vp">本课七形容词对比</span><span class="vcn">good/interesting/fun/relaxing/boring/difficult/easy</span><span class="vph">正面：good, interesting, fun, relaxing, easy</span><span class="vex">负面：boring, difficult</span><span class="vm">口诀：好坏有趣无聊，放松困难容易</span></div>
+</div></div></div>
+<div class="slide" data-page="9">
+<div class="sh"><span class="sb">词汇新授</span><h2>运动词汇 Part 4（16-20）</h2><span class="ss">10分钟</span></div>
+<div class="sct"><div class="vg">
+<div class="vc"><div class="vh"><span class="vw">difficult</span><span class="vn">16</span></div><span class="vi">/&#712;d&#618;f&#618;k&#601;lt/</span><span class="vp">adj. 困难的</span><span class="vcn">困难的</span><span class="vph">a difficult question</span><span class="vex">Tennis is difficult for me. I can not play it.</span><span class="vm">difficulty名词形式，difficult形容词</span></div>
+<div class="vc"><div class="vh"><span class="vw">easy</span><span class="vn">17</span></div><span class="vi">/&#712;i&#720;zi/</span><span class="vp">adj. 容易的</span><span class="vcn">容易的</span><span class="vph">an easy question</span><span class="vex">Ping-pong is easy for me. I like it.</span><span class="vm">easy是difficult的反义词</span></div>
+<div class="vc"><div class="vh"><span class="vw">watch</span><span class="vn">18</span></div><span class="vi">/w&#594;t&#643;/</span><span class="vp">v. 观看</span><span class="vcn">观看</span><span class="vph">watch TV</span><span class="vex">Do you watch TV on weekends?</span><span class="vm">watch看动态画面，see看静态画面</span></div>
+<div class="vc"><div class="vh"><span class="vw">TV</span><span class="vn">19</span></div><span class="vi">/&#716;ti&#720;&#712;vi&#720;/</span><span class="vp">n. 电视</span><span class="vcn">电视</span><span class="vph">watch TV</span><span class="vex">I watch TV every evening. It is relaxing.</span><span class="vm">TV是television的缩写</span></div>
+<div class="vc"><div class="vh"><span class="vw">team</span><span class="vn">20</span></div><span class="vi">/ti&#720;m/</span><span class="vp">n. 队；队伍</span><span class="vcn">队；队伍</span><span class="vph">basketball team</span><span class="vex">Our basketball team is good. We play every day.</span><span class="vm">team是集合名词，表示整个队伍</span></div>
+<div class="vc"><div class="vh"><span class="vw">词汇总结</span><span class="vn">&#9733;</span></div><span class="vp">20词分类</span><span class="vcn">名词类：sport/basketball/soccer/volleyball/tennis/ping-pong/bat/ball/TV/team</span><span class="vph">动词类：play/sound/watch</span><span class="vex">形容词类：good/interesting/fun/relaxing/boring/difficult/easy</span><span class="vm">运动主题词汇，搭配play加球类</span></div>
+</div></div></div>
+<div class="slide" data-page="10">
+<div class="sh"><span class="sb">语法精讲</span><h2>G13 Do/Dont 祈使句基础</h2><span class="ss">12分钟</span></div>
+<div class="sct">
+<div class="gb">
+<h3>祈使句口诀</h3>
+<div class="gf">祈使句无主语，<span class="fh">动词原形</span>打头阵；肯定 <span class="fh">Do</span> 开头，否定 <span class="fh">Dont</span> 加原形</div>
+<table class="gt">
+<tr><th>类型</th><th>结构</th><th>例句</th></tr>
+<tr><td>肯定祈使句</td><td>动词原形+其他</td><td class="ec">Play basketball.</td></tr>
+<tr><td>否定祈使句</td><td>Dont+动词原形+其他</td><td class="ec">Dont play soccer here.</td></tr>
+<tr><td>礼貌祈使句</td><td>Please+动词原形+其他</td><td class="ec">Please open the door.</td></tr>
+<tr><td>否定礼貌</td><td>Please dont+动词原形</td><td class="ec">Please dont watch TV now.</td></tr>
+</table>
+</div>
+<div class="gtp"><strong>易错点：</strong>① 祈使句主语you通常省略；② 否定形式一定要用Dont，不能用No（No+动名词是另一种结构，本课不学）；③ 动词必须用原形，不能加s/es</div>
+<div class="ep"><span class="el">中考辨析</span><div class="ec2">祈使句的否定形式：Dont+动词原形。注意区分：Dont play soccer（祈使句否定）和 No parking（禁止停车，No+动名词结构）。中考常考：给出情境，选择正确的祈使句形式。</div></div>
+<div class="hb"><h4>实例对照</h4><p>肯定：Play basketball after school. / Open the door. / Pass the ball to me.<br>否定：Dont play soccer in the classroom. / Dont watch TV too late. / Dont be late.<br>礼貌：Please listen to me. / Please have fun. / Please dont be boring.</p></div>
+<div class="rc-grid">
+<div class="rule-card rc-zhug"><div class="rc-cat">用法</div><div class="rc-text">祈使句用于发出指令、命令或礼貌请求（肯定/否定/礼貌三种）</div></div>
+<div class="rule-card rc-bin"><div class="rc-cat">构成</div><div class="rc-text">肯定=动词原形+其他；否定=Dont+动词原形；礼貌=Please+动词原形</div></div>
+<div class="rule-card rc-xing"><div class="rc-cat">易错</div><div class="rc-text">否定用 Dont 不用 No；动词必须原形不加 s/es；主语 you 通常省略</div></div>
+<div class="rule-card rc-ming"><div class="rc-cat">例句</div><div class="rc-text">Play basketball. / Dont play soccer here. / Please open the door.</div></div>
+<div class="rule-card rc-warn"><div class="rc-cat">注意</div><div class="rc-text">Dont+动词原形（否定祈使）与 No+动名词（No parking 禁止停车）区分</div></div>
+<div class="rule-card rc-qita"><div class="rc-cat">口诀</div><div class="rc-text">祈使句无主语，动词原形打头阵；肯定 Do 开头，否定 Dont 加原形</div></div>
+</div>
+</div></div>
+<div class="slide" data-page="11">
+<div class="sh"><span class="sb">语法精讲</span><h2>G13 运动指令指挥棒</h2><span class="ss">互动组件</span></div>
+<div class="sct">
+<div class="ia">
+<h3>点击按钮，生成祈使句</h3>
+<div class="cw">
+<div class="cdi" id="cmdDisplay">点击下方按钮生成祈使句</div>
+<div class="cbt">
+<button class="cbn p1" onclick="genCommand('pos')">肯定指令</button>
+<button class="cbn p2" onclick="genCommand('neg')">否定指令</button>
+<button class="cbn p3" onclick="genCommand('polite')">礼貌指令</button>
+</div>
+<div class="hb"><h4>当前句型分析</h4><p id="cmdAnalysis">选择类型后查看分析</p></div>
+</div>
+</div>
+<div class="gtp"><strong>练习提示：</strong>请学生说出每种类型的特点：肯定句用什么开头？否定句加什么词？礼貌句加什么词？</div>
+</div></div>
+<div class="slide" data-page="12">
+<div class="sh"><span class="sb">语法精讲</span><h2>G14 What 引导特殊疑问句</h2><span class="ss">12分钟</span></div>
+<div class="sct">
+<div class="gb">
+<h3>What问句口诀</h3>
+<div class="gf">What 开头问什么，<span class="fh">名词</span>可跟在 What 后；<span class="fh">助动词 do/does</span> 跟着走，主语之后 <span class="fh">动词原形</span> 走</div>
+<table class="gt">
+<tr><th>句型</th><th>结构</th><th>例句</th><th>回答</th></tr>
+<tr><td>What+名词+do+主语+动词</td><td>What+n+do+主语+V原</td><td class="ec">What sports do you like?</td><td>I like basketball.</td></tr>
+<tr><td>What+do+主语+动词</td><td>What+do+主语+V原</td><td class="ec">What do you watch on TV?</td><td>I watch soccer games.</td></tr>
+<tr><td>What+does+主语+动词</td><td>What+does+主语+V原</td><td class="ec">What does he play?</td><td>He plays tennis.</td></tr>
+<tr><td>What+名词+does+主语+动词</td><td>What+n+does+主语+V原</td><td class="ec">What sport does she like?</td><td>She likes volleyball.</td></tr>
+</table>
+</div>
+<div class="gtp"><strong>易错点：</strong>① 主语是第三人称单数时用does，其余用do；② does后面动词必须用原形；③ What后面可以直接跟名词（What sports），也可以不加名词（What do you...）</div>
+<div class="ep"><span class="el">中考辨析</span><div class="ec2">What引导的特殊疑问句，关键在于助动词的选择：主语是I/you/we/they用do，主语是he/she/it/单数名词用does。注意does后动词恢复原形：What does he like（对） What does he likes（错）</div></div>
+<div class="hb"><h4>句型转换练习</h4><p>陈述句转疑问句：I like basketball. -> What sports do you like?<br>陈述句转疑问句：He plays tennis. -> What does he play?<br>陈述句转疑问句：They watch TV. -> What do they watch?</p></div>
+</div></div>
+<div class="slide" data-page="13">
+<div class="sh"><span class="sb">语法精讲</span><h2>G15 实义动词 like 用法</h2><span class="ss">12分钟</span></div>
+<div class="sct">
+<div class="gb">
+<h3>like用法口诀</h3>
+<div class="gf">like 接 <span class="fh">名词</span> 喜欢物，like to <span class="fh">do</span> 喜欢做；名词复数表习惯，<span class="fh">to do</span> 首次来相识</div>
+<table class="gt">
+<tr><th>用法</th><th>结构</th><th>例句</th><th>含义</th></tr>
+<tr><td>like+名词</td><td>like+n(s)</td><td class="ec">I like sports.</td><td>我喜欢运动。</td></tr>
+<tr><td>like+名词复数</td><td>like+n(复数)</td><td class="ec">I like basketballs.</td><td>我喜欢篮球。</td></tr>
+<tr><td>like to do</td><td>like to+V原</td><td class="ec">I like to play basketball.</td><td>我喜欢打篮球。</td></tr>
+<tr><td>否定句</td><td>dont/doesnt like</td><td class="ec">I dont like boring books.</td><td>我不喜欢无聊的书。</td></tr>
+<tr><td>疑问句</td><td>Do/Does+主语+like</td><td class="ec">Do you like soccer?</td><td>你喜欢足球吗？</td></tr>
+</table>
+</div>
+<div class="gtp"><strong>易错点：</strong>① like后面接名词或to do，不能接动词ing形式（本课不学like doing）；② 第三人称单数：he/she/it用likes；③ 否定句用dont like或doesnt like，不用dont likes</div>
+<div class="ep"><span class="el">中考辨析</span><div class="ec2">like to do表示具体的、某次行为倾向；like doing表示习惯性爱好（本课不引入）。本课重点掌握：like+名词复数（I like sports）和like to do（I like to play basketball）。</div></div>
+<div class="hb"><h4>对比矩阵</h4><p>like+名词：I like basketball. / She likes sports. / Do you like tennis?<br>like to do：I like to play basketball. / She likes to watch TV. / Do you like to play soccer?<br>否定：I dont like boring movies. / He doesnt like difficult sports.<br>疑问：Do you like volleyball? / Does she like to play tennis?</p></div>
+</div></div>
+<div class="slide" data-page="14">
+<div class="sh"><span class="sb">语法精讲</span><h2>喜好调查仪表盘</h2><span class="ss">互动组件</span></div>
+<div class="sct">
+<div class="ia">
+<h3>选择主语和运动，生成like句子</h3>
+<div class="sud">
+<div class="sus" id="surveySubjects">
+<button class="ssb act" onclick="setSurveySubject('I')">I</button>
+<button class="ssb" onclick="setSurveySubject('He')">He</button>
+<button class="ssb" onclick="setSurveySubject('She')">She</button>
+<button class="ssb" onclick="setSurveySubject('They')">They</button>
+<button class="ssb" onclick="setSurveySubject('We')">We</button>
+<button class="ssb" onclick="setSurveySubject('You')">You</button>
+</div>
+<div class="ssg" id="surveySports">
+<div class="ssc" onclick="toggleSurveySport(this,'basketball')"><div class="si2">&#127936;</div><div class="sn">basketball</div></div>
+<div class="ssc" onclick="toggleSurveySport(this,'soccer')"><div class="si2">&#9917;</div><div class="sn">soccer</div></div>
+<div class="ssc" onclick="toggleSurveySport(this,'volleyball')"><div class="si2">&#127952;</div><div class="sn">volleyball</div></div>
+<div class="ssc" onclick="toggleSurveySport(this,'tennis')"><div class="si2">&#127934;</div><div class="sn">tennis</div></div>
+<div class="ssc" onclick="toggleSurveySport(this,'ping-pong')"><div class="si2">&#127955;</div><div class="sn">ping-pong</div></div>
+<div class="ssc" onclick="toggleSurveySport(this,'TV')"><div class="si2">&#128250;</div><div class="sn">watch TV</div></div>
+</div>
+<div class="suo" id="surveyOutput">请选择运动</div>
+</div>
+</div>
+<div class="gtp"><strong>使用方法：</strong>选择主语（I/He/She/They/We/You），点击运动图标，系统自动生成正确的like句子。注意第三人称单数用likes，其余用like。</div>
+</div></div>
+<div class="slide" data-page="15">
+<div class="sh"><span class="sb">语法精讲</span><h2>G55 形容词比较级</h2><span class="ss">12分钟</span></div>
+<div class="sct">
+<div class="gb">
+<h3>比较级构成口诀</h3>
+<div class="gf">短词加 <span class="fh">-er</span>，长词加 <span class="fh">more</span>；句子必有 <span class="fh">than</span> 来比</div>
+<table class="gt">
+<tr><th>构成方式</th><th>规则</th><th>例词</th></tr>
+<tr><td>单音节词</td><td>词尾直接 +er</td><td class="ec">tall → taller</td></tr>
+<tr><td>以 e 结尾</td><td>直接 +r</td><td class="ec">nice → nicer</td></tr>
+<tr><td>辅音字母 + y</td><td>变 y 为 i 再加 er</td><td class="ec">easy → easier</td></tr>
+<tr><td>重读闭音节</td><td>双写尾字母 +er</td><td class="ec">big → bigger</td></tr>
+<tr><td>多音节词</td><td>前加 more</td><td class="ec">interesting → more interesting</td></tr>
+<tr><td>特殊词</td><td>不规则变化</td><td class="ec">good → better</td></tr>
+</table>
+<div class="gf">句型：A is <span class="fh">比较级</span> than B.（A 比 B 更……）</div>
+</div>
+<div class="gtp"><strong>易错点：</strong>① 比较级句子必须有 than；② than 后接人称用宾格（taller than me）；③ 多音节形容词必须用 more，不能说 interestinger</div>
+<div class="ep"><span class="el">中考辨析</span><div class="ec2">中考常在完形/语法填空考比较级变形：tall→taller、easy→easier、interesting→more interesting。见到 than 就要想到比较级。</div></div>
+<div class="qz" id="g55Quiz">
+<div class="qi" id="g55q1">
+<div class="qq"><span class="qn">1.</span>Basketball is ___ than soccer.（篮球比足球更有趣。）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">A</span>more interesting</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">B</span>interesting</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">C</span>most interesting</div>
+</div>
+<div class="qfb" id="g55q1fb"></div>
+</div>
+<div class="qi" id="g55q2">
+<div class="qq"><span class="qn">2.</span>Ping-pong is ___ than soccer.（乒乓球比足球更容易。）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">A</span>easier</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">B</span>more easy</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">C</span>easiest</div>
+</div>
+<div class="qfb" id="g55q2fb"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="slide" data-page="16">
+<div class="sh"><span class="sb">语法精讲</span><h2>G56 形容词最高级</h2><span class="ss">12分钟</span></div>
+<div class="sct">
+<div class="gb">
+<h3>最高级构成口诀</h3>
+<div class="gf">短词加 <span class="fh">-est</span>，长词加 <span class="fh">most</span>；最高级前必有 <span class="fh">the</span></div>
+<table class="gt">
+<tr><th>构成方式</th><th>规则</th><th>例词</th></tr>
+<tr><td>单音节词</td><td>词尾直接 +est</td><td class="ec">tall → tallest</td></tr>
+<tr><td>以 e 结尾</td><td>直接 +st</td><td class="ec">nice → nicest</td></tr>
+<tr><td>辅音字母 + y</td><td>变 y 为 i 再加 est</td><td class="ec">easy → easiest</td></tr>
+<tr><td>重读闭音节</td><td>双写尾字母 +est</td><td class="ec">big → biggest</td></tr>
+<tr><td>多音节词</td><td>前加 the most</td><td class="ec">interesting → the most interesting</td></tr>
+<tr><td>特殊词</td><td>不规则变化</td><td class="ec">good → best</td></tr>
+</table>
+<div class="gf">句型：A is <span class="fh">the 最高级</span> in/of ...（A 是……中最……的）</div>
+</div>
+<div class="gtp"><strong>易错点：</strong>① 最高级前必须加 the；② 范围用 in（大范围：in our class）或 of（同类中：of the three）；③ 多音节用 the most，不能说 interestingest</div>
+<div class="ep"><span class="el">中考辨析</span><div class="ec2">中考最高级常见搭配：the tallest in our class / the best of the three。见到 in/of 范围标志词，先想最高级。</div></div>
+<div class="qz" id="g56Quiz">
+<div class="qi" id="g56q1">
+<div class="qq"><span class="qn">1.</span>Tom is ___ student in our class.（汤姆是我们班最高的学生。）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">A</span>taller</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">B</span>tall</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">C</span>the tallest</div>
+</div>
+<div class="qfb" id="g56q1fb"></div>
+</div>
+<div class="qi" id="g56q2">
+<div class="qq"><span class="qn">2.</span>She is the ___ player in our team.（她是我们队里最好的队员。）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">A</span>good</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">B</span>best</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">C</span>better</div>
+</div>
+<div class="qfb" id="g56q2fb"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="slide" data-page="17">
+<div class="sh"><span class="sb">拼读收官</span><h2>Uu-Zz 六音素</h2><span class="ss">15分钟</span></div>
+<div class="sct">
+<div class="hb"><h4>Stage 1拼读收官</h4><p>本课完成Uu到Zz六个字母的音素学习，标志Stage 1拼读体系全部完成。掌握这六个音素后，学生可以拼读所有26个字母的基础发音。</p></div>
+<div class="pg">
+<div class="pc"><div class="lb">Uu</div><div class="si">/&#652;/</div><div class="sw"><span class="swd">up</span><span class="swd">cup</span><span class="swd">sun</span><span class="swd">bus</span></div></div>
+<div class="pc"><div class="lb">Vv</div><div class="si">/v/</div><div class="sw"><span class="swd">van</span><span class="swd">five</span><span class="swd">love</span><span class="swd">very</span></div></div>
+<div class="pc"><div class="lb">Ww</div><div class="si">/w/</div><div class="sw"><span class="swd">water</span><span class="swd">we</span><span class="swd">win</span><span class="swd">watch</span></div></div>
+<div class="pc"><div class="lb">Xx</div><div class="si">/ks/</div><div class="sw"><span class="swd">box</span><span class="swd">six</span><span class="swd">fox</span><span class="swd">ax</span></div></div>
+<div class="pc"><div class="lb">Yy</div><div class="si">/j/</div><div class="sw"><span class="swd">yes</span><span class="swd">yellow</span><span class="swd">you</span><span class="swd">yogurt</span></div></div>
+<div class="pc"><div class="lb">Zz</div><div class="si">/z/</div><div class="sw"><span class="swd">zoo</span><span class="swd">zero</span><span class="swd">buzz</span><span class="swd">zebra</span></div></div>
+</div>
+<div class="ep"><span class="el">拼读要点</span><div class="ec2">Uu发/&#652;/短元音，嘴巴微张；Vv发/v/唇齿音，上牙咬下唇；Ww发/w/双唇音，嘴唇收圆；Xx发/ks/辅音组合，先k后s；Yy发/j/半元音，类似"耶"；Zz发/z/浊辅音，声带振动。</div></div>
+<div class="tt">拼读练习：cup=c+u+p / five=f+i+v+e / box=b+o+x / zoo=z+oo / yes=y+e+s / watch=w+a+t+c+h</div>
+</div></div>
+<div class="slide" data-page="18">
+<div class="sh"><span class="sb">拼读收官</span><h2>Uu-Zz 拼读练习</h2><span class="ss">10分钟</span></div>
+<div class="sct">
+<div class="ia">
+<h3>拼读挑战：听音选词</h3>
+<div class="qz" id="phonicsQuiz">
+<div class="qi" id="pq1">
+<div class="qq"><span class="qn">1.</span>Which word has the /&#652;/ sound?（哪个单词含有/&#652;/音？）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">A</span>box</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">B</span>cup</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">C</span>zoo</div>
+</div>
+<div class="qfb" id="pq1fb"></div>
+</div>
+<div class="qi" id="pq2">
+<div class="qq"><span class="qn">2.</span>Which word has the /v/ sound?（哪个单词含有/v/音？）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">A</span>very</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">B</span>up</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">C</span>six</div>
+</div>
+<div class="qfb" id="pq2fb"></div>
+</div>
+<div class="qi" id="pq3">
+<div class="qq"><span class="qn">3.</span>Which word has the /ks/ sound?（哪个单词含有/ks/音？）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">A</span>yes</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">B</span>water</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">C</span>box</div>
+</div>
+<div class="qfb" id="pq3fb"></div>
+</div>
+<div class="qi" id="pq4">
+<div class="qq"><span class="qn">4.</span>Which word has the /j/ sound?（哪个单词含有/j/音？）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">A</span>bus</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">B</span>zero</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">C</span>yellow</div>
+</div>
+<div class="qfb" id="pq4fb"></div>
+</div>
+<div class="qi" id="pq5">
+<div class="qq"><span class="qn">5.</span>Which word has the /z/ sound?（哪个单词含有/z/音？）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">A</span>sun</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">B</span>buzz</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">C</span>win</div>
+</div>
+<div class="qfb" id="pq5fb"></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="slide" data-page="19">
+<div class="sh"><span class="sb">阅读理解</span><h2>A篇：Sports in Our School</h2><span class="ss">10分钟</span></div>
+<div class="sct sct-row">
+<div class="rp">
+<h3>&#128214; Sports in Our School</h3>
+<div class="pm"><span>词数：130词</span><span>题型：5题选择题</span><span>难度：基础</span></div>
+<div class="pt"> <p>Our school has many sports. We have a basketball team. It is a good team. We play basketball after class. It is fun and relaxing.</p> <p>Tom likes soccer. He plays soccer with his friends after school. Soccer is not easy, but it is interesting. Tom runs fast and kicks the ball well. Lisa likes volleyball. She is good at it. She plays volleyball on weekends with her classmates. The ball goes up and down, and it is exciting.</p> <p>I like ping-pong. It is easy for me. I play ping-pong with my dad in the evening. Ping-pong is a small sport, but it needs quick hands. We have fun together.</p> <p>There are many sports at our school. Students play them after class and on weekends. Sports make us happy and healthy!</p> </div>
+</div>
+<div class="qz" id="readingAQuiz">
+<div class="qi" id="raq1">
+<div class="qq"><span class="qn">1.</span>What sports does the school have?</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">A</span>Only soccer</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">B</span>A basketball team</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">C</span>Only ping-pong</div>
+</div>
+<div class="qfb" id="raq1fb"></div>
+</div>
+<div class="qi" id="raq2">
+<div class="qq"><span class="qn">2.</span>What does Tom like?</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">A</span>Soccer</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">B</span>Volleyball</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">C</span>Ping-pong</div>
+</div>
+<div class="qfb" id="raq2fb"></div>
+</div>
+<div class="qi" id="raq3">
+<div class="qq"><span class="qn">3.</span>How is soccer for Tom?</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">A</span>Easy and boring</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">B</span>Difficult and boring</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">C</span>Not easy but interesting</div>
+</div>
+<div class="qfb" id="raq3fb"></div>
+</div>
+<div class="qi" id="raq4">
+<div class="qq"><span class="qn">4.</span>Who plays ping-pong with the writer?</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">A</span>Tom</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">B</span>Lisa</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">C</span>His dad</div>
+</div>
+<div class="qfb" id="raq4fb"></div>
+</div>
+<div class="qi" id="raq5">
+<div class="qq"><span class="qn">5.</span>What does the writer think of ping-pong?</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">A</span>Easy</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">B</span>Difficult</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">C</span>Boring</div>
+</div>
+<div class="qfb" id="raq5fb"></div>
+</div>
+</div>
+</div></div>
+<div class="slide" data-page="20">
+<div class="sh"><span class="sb">阅读理解</span><h2>B篇：My Favorite Sports After Class</h2><span class="ss">10分钟</span></div>
+<div class="sct sct-row">
+<div class="rp">
+<h3>&#128214; My Favorite Sports After Class</h3>
+<div class="pm"><span>词数：149词</span><span>题型：5题选择题</span><span>难度：中等</span></div>
+<div class="pt"> <p>After class, I like to play sports with my friends. My favorite sport is basketball. I am on the school basketball team. We practice every day after school. Our team is good. We win many games. Basketball is fast, and it makes me strong.</p> <p>My friend Mike likes soccer. He plays soccer on the team, too. He says soccer is fun. He can run fast and kick the ball hard. I think soccer is difficult. I can not play it. The ball is small, and the players move very quickly.</p> <p>My sister Anna likes to watch sports on TV. She does not play sports. She thinks watching TV is relaxing. She watches basketball and soccer games on TV every weekend with our family.</p> <p>Sports are interesting. They make us happy and healthy. Some sports are easy, and some are difficult. Do you like sports? What sports do you like?</p> </div>
+</div>
+<div class="qz" id="readingBQuiz">
+<div class="qi" id="rbq1">
+<div class="qq"><span class="qn">1.</span>What is the writers favorite sport?</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">A</span>Soccer</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">B</span>Basketball</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">C</span>Volleyball</div>
+</div>
+<div class="qfb" id="rbq1fb"></div>
+</div>
+<div class="qi" id="rbq2">
+<div class="qq"><span class="qn">2.</span>What does Mike think of soccer?</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">A</span>Fun</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">B</span>Boring</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">C</span>Difficult</div>
+</div>
+<div class="qfb" id="rbq2fb"></div>
+</div>
+<div class="qi" id="rbq3">
+<div class="qq"><span class="qn">3.</span>What does the writer think of soccer?</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">A</span>Easy</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">B</span>Fun</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">C</span>Difficult</div>
+</div>
+<div class="qfb" id="rbq3fb"></div>
+</div>
+<div class="qi" id="rbq4">
+<div class="qq"><span class="qn">4.</span>What does Anna like to do?</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">A</span>Play basketball</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">B</span>Watch sports on TV</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">C</span>Play soccer</div>
+</div>
+<div class="qfb" id="rbq4fb"></div>
+</div>
+<div class="qi" id="rbq5">
+<div class="qq"><span class="qn">5.</span>When does Anna watch sports on TV?</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">A</span>Every day</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">B</span>On school days</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">C</span>Every weekend</div>
+</div>
+<div class="qfb" id="rbq5fb"></div>
+</div>
+</div>
+</div></div>
+<div class="slide" data-page="21">
+<div class="sh"><span class="sb">五选四</span><h2>A Basketball Game</h2><span class="ss">10分钟</span></div>
+<div class="sct">
+<div class="rp">
+<h3>&#128214; A Basketball Game</h3>
+<div class="pm"><span>词数：138词</span><span>题型：五选四</span><span>难度：中等</span></div>
+<div class="pt"> <p>Today is a good day. Our basketball team has a game. We play against No. 2 Middle School. It is our first game this year. The game is <span class="clz-sl" id="cb0" data-idx="0">（1）</span>. We start well, and the ball moves fast.</p> <p>Many students come to <span class="clz-sl" id="cb1" data-idx="1">（2）</span> us. They sit in the gym and cheer for us. At first, we do not play well. The other team is <span class="clz-sl" id="cb2" data-idx="2">（3）</span>. They are big and tall, and they score first. But we do not give up. We practice hard every day.</p> <p>In the second half, we play <span class="clz-sl" id="cb3" data-idx="3">（4）</span>. We pass the ball to each other. We score many points. At last, we win the game! Everyone is happy. We shout and jump together.</p> <p>Our teacher says, "Good job, team!" After the game, we have a party in the classroom. We eat fruit and drink water. It is a great day!</p> </div>
+</div>
+<div class="clz-ans"><div class="clz-tip">把选项滑入对应的空（①②③④）：对了变绿，错了变红，双击红色撤销。</div><div class="clz-boxes"><div class="clz-box" data-idx="0" onclick="event.stopPropagation()" ondragover="clzDragOver(event)" ondrop="clzDrop(event)" ondblclick="clzUndo(this)"><span class="clz-bn">①</span><span class="clz-bv"></span></div><div class="clz-box" data-idx="1" onclick="event.stopPropagation()" ondragover="clzDragOver(event)" ondrop="clzDrop(event)" ondblclick="clzUndo(this)"><span class="clz-bn">②</span><span class="clz-bv"></span></div><div class="clz-box" data-idx="2" onclick="event.stopPropagation()" ondragover="clzDragOver(event)" ondrop="clzDrop(event)" ondblclick="clzUndo(this)"><span class="clz-bn">③</span><span class="clz-bv"></span></div><div class="clz-box" data-idx="3" onclick="event.stopPropagation()" ondragover="clzDragOver(event)" ondrop="clzDrop(event)" ondblclick="clzUndo(this)"><span class="clz-bn">④</span><span class="clz-bv"></span></div></div><div class="clz-opts"><div class="clz-opt" draggable="true" data-w="interesting" onclick="event.stopPropagation()" ondragstart="clzDragStart(event)" ontouchstart="clzTouchStart(event)" ontouchmove="clzTouchMove(event)" ontouchend="clzTouchEnd(event)">A. interesting</div><div class="clz-opt" draggable="true" data-w="watch" onclick="event.stopPropagation()" ondragstart="clzDragStart(event)" ontouchstart="clzTouchStart(event)" ontouchmove="clzTouchMove(event)" ontouchend="clzTouchEnd(event)">B. watch</div><div class="clz-opt" draggable="true" data-w="good" onclick="event.stopPropagation()" ondragstart="clzDragStart(event)" ontouchstart="clzTouchStart(event)" ontouchmove="clzTouchMove(event)" ontouchend="clzTouchEnd(event)">C. good</div><div class="clz-opt" draggable="true" data-w="difficult" onclick="event.stopPropagation()" ondragstart="clzDragStart(event)" ontouchstart="clzTouchStart(event)" ontouchmove="clzTouchMove(event)" ontouchend="clzTouchEnd(event)">D. difficult</div><div class="clz-opt" draggable="true" data-w="easy" onclick="event.stopPropagation()" ondragstart="clzDragStart(event)" ontouchstart="clzTouchStart(event)" ontouchmove="clzTouchMove(event)" ontouchend="clzTouchEnd(event)">E. easy</div></div></div><div class="ep"><span class="el">答案解析</span><div class="ec2">1. C. good（比赛是好的） 2. B. watch（来看我们比赛） 3. D. difficult（对手是困难的） 4. A. interesting（我们打得有趣）注意：E. easy是干扰项</div></div>
+</div></div>
+<div class="slide" data-page="22">
+<div class="sh"><span class="sb">互动复习</span><h2>跨课词汇配对游戏</h2><span class="ss">L4复习</span></div>
+<div class="sct">
+<div class="ia">
+<h3>将英文单词与中文释义配对</h3>
+<div class="mg">
+<div class="mc">
+<h4>English</h4>
+<div class="mi" onclick="selectMatch(this,'left',0)">basketball</div>
+<div class="mi" onclick="selectMatch(this,'left',1)">interesting</div>
+<div class="mi" onclick="selectMatch(this,'left',2)">difficult</div>
+<div class="mi" onclick="selectMatch(this,'left',3)">relaxing</div>
+<div class="mi" onclick="selectMatch(this,'left',4)">volleyball</div>
+<div class="mi" onclick="selectMatch(this,'left',5)">boring</div>
+</div>
+<div class="mc">
+<h4>中文</h4>
+<div class="mi" onclick="selectMatch(this,'right',0)">排球</div>
+<div class="mi" onclick="selectMatch(this,'right',1)">有趣的</div>
+<div class="mi" onclick="selectMatch(this,'right',2)">困难的</div>
+<div class="mi" onclick="selectMatch(this,'right',3)">无聊的</div>
+<div class="mi" onclick="selectMatch(this,'right',4)">篮球</div>
+<div class="mi" onclick="selectMatch(this,'right',5)">令人放松的</div>
+</div>
+</div>
+<div class="hb"><h4>配对结果</h4><p id="matchResult">点击左右两侧的卡片进行配对。正确配对：basketball-篮球, interesting-有趣的, difficult-困难的, relaxing-令人放松的, volleyball-排球, boring-无聊的</p></div>
+</div>
+</div></div>
+<div class="slide" data-page="23">
+<div class="sh"><span class="sb">互动复习</span><h2>课内词汇消消乐</h2><span class="ss">词汇巩固</span></div>
+<div class="sct">
+<div class="ia">
+<h3>找到同义词/翻译配对，点击消除</h3>
+<div class="cg" id="elimGrid">
+<div class="clc" onclick="clickElim(this,0)">sport</div>
+<div class="clc" onclick="clickElim(this,1)">运动</div>
+<div class="clc" onclick="clickElim(this,2)">team</div>
+<div class="clc" onclick="clickElim(this,3)">好的</div>
+<div class="clc" onclick="clickElim(this,4)">good</div>
+<div class="clc" onclick="clickElim(this,5)">球</div>
+<div class="clc" onclick="clickElim(this,6)">ball</div>
+<div class="clc" onclick="clickElim(this,7)">队伍</div>
+</div>
+<div class="hb"><h4>游戏规则</h4><p>点击配对的英文和中文卡片即可消除。配对关系：sport-运动, team-队伍, good-好的, ball-球。全部消除后获得胜利！</p></div>
+</div>
+</div></div>
+<div class="slide" data-page="24">
+<div class="sh"><span class="sb">随堂演练</span><h2>随堂演练（1-4题）</h2><span class="ss">10分钟</span></div>
+<div class="sct">
+<div class="qz">
+<div class="qi" id="pz1">
+<div class="qq"><span class="qn">1.</span>Choose the correct imperative sentence.（选择正确的祈使句）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">A</span>You play basketball.</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">B</span>Playing basketball.</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">C</span>Play basketball.</div>
+</div>
+<div class="qfb" id="pz1fb"></div>
+</div>
+<div class="qi" id="pz2">
+<div class="qq"><span class="qn">2.</span>Choose the negative imperative.（选择否定祈使句）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">A</span>No play soccer here.</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">B</span>Dont play soccer here.</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">C</span>Not play soccer here.</div>
+</div>
+<div class="qfb" id="pz2fb"></div>
+</div>
+<div class="qi" id="pz3">
+<div class="qq"><span class="qn">3.</span>Complete: What sports ____ you like?（填空）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">A</span>do</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">B</span>does</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">C</span>are</div>
+</div>
+<div class="qfb" id="pz3fb"></div>
+</div>
+<div class="qi" id="pz4">
+<div class="qq"><span class="qn">4.</span>Complete: What ____ she like to watch on TV?（填空）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">A</span>do</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">B</span>does</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">C</span>is</div>
+</div>
+<div class="qfb" id="pz4fb"></div>
+</div>
+</div>
+</div></div>
+<div class="slide" data-page="25">
+<div class="sh"><span class="sb">随堂演练</span><h2>随堂演练（5-8题）</h2><span class="ss">10分钟</span></div>
+<div class="sct">
+<div class="qz">
+<div class="qi" id="pz5">
+<div class="qq"><span class="qn">5.</span>Choose the correct sentence with "like".（选择正确的like句子）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">A</span>I like play basketball.</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">B</span>I like playing basketball.</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">C</span>I like to play basketball.</div>
+</div>
+<div class="qfb" id="pz5fb"></div>
+</div>
+<div class="qi" id="pz6">
+<div class="qq"><span class="qn">6.</span>Choose the correct negative sentence.（选择正确的否定句）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">A</span>He doesnt like boring books.</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">B</span>He dont like boring books.</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">C</span>He not like boring books.</div>
+</div>
+<div class="qfb" id="pz6fb"></div>
+</div>
+<div class="qi" id="pz7">
+<div class="qq"><span class="qn">7.</span>Which is correct?（哪个是正确的？）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">A</span>What sport do he like?</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">B</span>What sport does he like?</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">C</span>What sport does he likes?</div>
+</div>
+<div class="qfb" id="pz7fb"></div>
+</div>
+<div class="qi" id="pz8">
+<div class="qq"><span class="qn">8.</span>Choose: Please ____ the door.（选择：请开门）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">A</span>opening</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">B</span>to open</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">C</span>open</div>
+</div>
+<div class="qfb" id="pz8fb"></div>
+</div>
+</div>
+</div></div>
+<div class="slide" data-page="26">
+<div class="sh"><span class="sb">随堂演练</span><h2>答案解析与知识点回顾</h2><span class="ss">5分钟</span></div>
+<div class="sct">
+<div class="sg">
+<div class="sci"><h4>1-4题解析</h4><ul>
+<li>1. C Play basketball.（祈使句用动词原形开头）</li>
+<li>2. B Dont play soccer here.（否定祈使句用Dont加原形）</li>
+<li>3. A do（主语you用do）</li>
+<li>4. B does（主语she是第三人称单数用does）</li>
+</ul></div>
+<div class="sci"><h4>5-8题解析</h4><ul>
+<li>5. C I like to play basketball.（like to do结构）</li>
+<li>6. A He doesnt like boring books.（三单否定用doesnt）</li>
+<li>7. B What sport does he like?（does后动词原形）</li>
+<li>8. C open（祈使句用动词原形）</li>
+</ul></div>
+</div>
+<div class="ep"><span class="el">答案分布统计</span><div class="ec2">8题答案分布：A=2题(25%), B=3题(37.5%), C=3题(37.5%)。最大占比37.5%，低于40%阈值，分布均匀。</div></div>
+<div class="tt">知识点回顾：祈使句用动词原形开头，否定用Dont；What问句用do/does；like接名词或to do；第三人称单数用does/likes/doesnt</div>
+</div></div>
+<div class="slide" data-page="27">
+<div class="sh"><span class="sb">学情诊断</span><h2>学情诊断面板</h2><span class="ss">教师用</span></div>
+<div class="sct">
+<div class="sg">
+<div class="sci"><h4>基础知识诊断</h4><ul>
+<li>G13祈使句：掌握动词原形开头，否定用Dont</li>
+<li>G14 What问句：掌握do/does选择，动词原形</li>
+<li>G15 like用法：掌握like加名词和like to do</li>
+<li>词汇：20个运动主题词汇认读和拼写</li>
+<li>拼读：Uu到Zz六音素发音准确</li>
+</ul></div>
+<div class="sci"><h4>能力提升诊断</h4><ul>
+<li>阅读理解：A篇86词+B篇107词正确率</li>
+<li>完形填空：五选四完形填空正确率</li>
+<li>语法应用：祈使句/What问句/like句型运用</li>
+<li>综合表达：用like表达运动喜好</li>
+<li>拼读应用：六音素在实际单词中的识别</li>
+</ul></div>
+</div>
+<div class="dsb">
+<div class="ss2"><div class="sd un" id="syncDot"></div><span id="syncText">未保存</span></div>
+<button class="eb" onclick="exportData()">导出数据 (JSON/CSV)</button>
+</div>
+</div></div>
+<div class="slide" data-page="28">
+<div class="sh"><span class="sb">课堂总结</span><h2>本课总结</h2><span class="ss">5分钟</span></div>
+<div class="sct">
+<div class="sg">
+<div class="sci"><h4>语法收获</h4><ul>
+<li>G13：祈使句用动词原形开头，否定用Dont</li>
+<li>G14：What加do/does加主语加动词原形</li>
+<li>G15：like加名词或like to do表达喜好</li>
+<li>口诀：祈使无主语原形开头，What问句do/does</li>
+</ul></div>
+<div class="sci"><h4>词汇收获</h4><ul>
+<li>10个运动名词：sport/basketball/soccer等</li>
+<li>3个动词：play/sound/watch</li>
+<li>7个形容词：good/interesting/fun等</li>
+<li>球类搭配：play加球类（不加the）</li>
+</ul></div>
+<div class="sci"><h4>拼读收获</h4><ul>
+<li>Uu发短元音</li>
+<li>Vv发唇齿音</li>
+<li>Ww发双唇音</li>
+<li>Xx发辅音组合</li>
+<li>Yy发半元音</li>
+<li>Zz发浊辅音</li>
+</ul></div>
+<div class="sci"><h4>下节预告</h4><ul>
+<li>复习G13/G14/G15语法点</li>
+<li>拓展运动主题阅读和写作</li>
+<li>引入新的语法点（待定）</li>
+<li>继续拼读复习和综合应用</li>
+</ul></div>
+</div>
+<div class="tt">本课完成Stage 2第05课全部内容，学生应掌握祈使句基础、What问句和like动词用法，以及20个运动主题词汇和Uu-Zz六音素拼读。</div>
+</div></div>
+<div class="slide" data-page="29">
+<div class="sh"><span class="sb">答案遮罩</span><h2>答案遮罩系统</h2><span class="ss">复习用</span></div>
+<div class="sct">
+<div class="ia">
+<h3>点击遮罩查看答案</h3>
+<div class="hb"><h4>祈使句</h4><p>1. 肯定形式：<span class="am" onclick="this.classList.toggle('rev')"><span class="mcv"></span><span class="ma">Play basketball.</span></span></p>
+<p>2. 否定形式：<span class="am" onclick="this.classList.toggle('rev')"><span class="mcv"></span><span class="ma">Dont play soccer here.</span></span></p>
+<p>3. 礼貌形式：<span class="am" onclick="this.classList.toggle('rev')"><span class="mcv"></span><span class="ma">Please open the door.</span></span></p></div>
+<div class="hb"><h4>What问句</h4><p>4. 你喜欢什么运动：<span class="am" onclick="this.classList.toggle('rev')"><span class="mcv"></span><span class="ma">What sports do you like?</span></span></p>
+<p>5. 她看什么电视：<span class="am" onclick="this.classList.toggle('rev')"><span class="mcv"></span><span class="ma">What does she watch on TV?</span></span></p></div>
+<div class="hb"><h4>like用法</h4><p>6. 我喜欢运动：<span class="am" onclick="this.classList.toggle('rev')"><span class="mcv"></span><span class="ma">I like sports.</span></span></p>
+<p>7. 他喜欢打篮球：<span class="am" onclick="this.classList.toggle('rev')"><span class="mcv"></span><span class="ma">He likes to play basketball.</span></span></p></div>
+</div>
+</div></div>
+<div class="slide" data-page="30">
+<div class="sh"><span class="sb">数据采集</span><h2>IndexedDB 数据采集</h2><span class="ss">教师用</span></div>
+<div class="sct">
+<div class="hb"><h4>先保存再反馈原则</h4><p>所有学生的答题数据先保存到IndexedDB本地数据库，然后才给予反馈。这确保数据不会丢失，即使页面刷新或意外关闭。</p></div>
+<div class="sg">
+<div class="sci"><h4>数据采集内容</h4><ul>
+<li>每道题的答题记录（题号/答案/对错）</li>
+<li>答题时间戳</li>
+<li>互动组件使用记录</li>
+<li>翻页停留时间</li>
+<li>整体完成进度</li>
+</ul></div>
+<div class="sci"><h4>数据导出功能</h4><ul>
+<li>JSON格式导出（完整数据）</li>
+<li>CSV格式导出（表格数据）</li>
+<li>答错双击撤销功能</li>
+<li>同步状态实时显示</li>
+</ul></div>
+</div>
+<div class="dsb">
+<div class="ss2"><div class="sd un" id="syncDot2"></div><span id="syncText2">0条记录未保存</span></div>
+<button class="eb" onclick="exportData()">导出JSON</button>
+<button class="eb" onclick="exportCSV()">导出CSV</button>
+</div>
+<div class="ep"><span class="el">使用提示</span><div class="ec2">答错题目可双击撤销，系统会显示小字提醒"已撤销，请重答"。所有数据保存在浏览器本地，不涉及学生个人信息上传。</div></div>
+</div></div>
+<div class="slide" data-page="31">
+<div class="sh"><span class="sb">语法对比</span><h2>G13/G14/G15 综合对比</h2><span class="ss">5分钟</span></div>
+<div class="sct">
+<div class="gb">
+<h3>三大语法点对比矩阵</h3>
+<table class="gt">
+<tr><th>语法点</th><th>核心结构</th><th>关键特征</th><th>例句</th></tr>
+<tr><td>G13 祈使句</td><td>动词原形/Dont+原形</td><td class="ec">无主语</td><td class="ec">Play basketball. / Dont watch TV.</td></tr>
+<tr><td>G14 What问句</td><td>What+n+do/does+主+V原</td><td class="ec">do/does选择</td><td class="ec">What sports do you like?</td></tr>
+<tr><td>G15 like用法</td><td>like+n / like to do</td><td class="ec">like接名词或to do</td><td class="ec">I like sports. / I like to play.</td></tr>
+</table>
+</div>
+<div class="gtp"><strong>综合对比要点：</strong>G13关注句子类型（祈使句），G14关注疑问句结构（What引导），G15关注动词用法（like搭配）。三者都涉及动词原形的使用。</div>
+<div class="ep"><span class="el">中考综合辨析</span><div class="ec2">中考常将三个语法点综合考查。例：Please dont play soccer here.（G13祈使句否定） What sports do you like to play?（G14+G15综合） I like to watch basketball on TV.（G15+词汇综合）</div></div>
+<div class="hb"><h4>综合练习</h4><p>用三种语法各造一个句子：<br>祈使句：______<br>What问句：______<br>like句型：______</p></div>
+</div></div>
+<div class="slide" data-page="32">
+<div class="sh"><span class="sb">词汇拓展</span><h2>构词法与记忆策略</h2><span class="ss">5分钟</span></div>
+<div class="sct">
+<div class="gb">
+<h3>构词法分析</h3>
+<table class="gt">
+<tr><th>构词法</th><th>词例</th><th>分析</th></tr>
+<tr><td>合成词</td><td class="ec">basketball</td><td>basket+ball=篮子+球</td></tr>
+<tr><td>合成词</td><td class="ec">volleyball</td><td>volley+ball=截击+球</td></tr>
+<tr><td>合成词</td><td class="ec">ping-pong</td><td>拟声词，模仿乒乓球声音</td></tr>
+<tr><td>缩写词</td><td class="ec">TV</td><td>television的缩写</td></tr>
+<tr><td>派生词</td><td class="ec">interesting</td><td>interest+ing=兴趣+ing</td></tr>
+<tr><td>派生词</td><td class="ec">relaxing</td><td>relax+ing=放松+ing</td></tr>
+<tr><td>派生词</td><td class="ec">boring</td><td>bore+ing=厌倦+ing</td></tr>
+</table>
+</div>
+<div class="gtp"><strong>记忆策略：</strong>① 合成词拆分记忆法：basketball=basket+ball；② 派生词词根记忆法：interesting=interest+ing；③ 分类记忆法：运动名词一组，形容词一组，动词一组；④ 搭配记忆法：play basketball, watch TV, sound good</div>
+<div class="hb"><h4>反义词配对</h4><p>good <-> difficult（好的 <-> 困难的）<br>interesting <-> boring（有趣的 <-> 无聊的）<br>easy <-> difficult（容易的 <-> 困难的）<br>fun <-> boring（有趣的 <-> 无聊的）</p></div>
+</div></div>
+<div class="slide" data-page="33">
+<div class="sh"><span class="sb">中考备考</span><h2>中考考点全梳理</h2><span class="ss">5分钟</span></div>
+<div class="sct">
+<div class="sg">
+<div class="sci"><h4>G13中考考点</h4><ul>
+<li>祈使句的肯定/否定形式选择</li>
+<li>动词原形在祈使句中的使用</li>
+<li>Please的位实和用法</li>
+<li>祈使句与陈述句的区分</li>
+<li>情境对话中的祈使句应用</li>
+</ul></div>
+<div class="sci"><h4>G14中考考点</h4><ul>
+<li>do/does在What问句中的选择</li>
+<li>does后动词恢复原形</li>
+<li>What+名词的搭配用法</li>
+<li>特殊疑问句的回答方式</li>
+<li>陈述句转疑问句的句型转换</li>
+</ul></div>
+<div class="sci"><h4>G15中考考点</h4><ul>
+<li>like加名词的用法</li>
+<li>like to do的用法</li>
+<li>第三人称单数likes的用法</li>
+<li>否定句dont/doesnt like的用法</li>
+<li>like句型在语境中的应用</li>
+</ul></div>
+<div class="sci"><h4>词汇中考考点</h4><ul>
+<li>play加球类（不加the）的固定搭配</li>
+<li>sound作为感官动词后接形容词</li>
+<li>interesting与interested的区分</li>
+<li>sport的复数形式sports</li>
+<li>watch TV固定搭配</li>
+</ul></div>
+</div>
+<div class="ep"><span class="el">备考建议</span><div class="ec2">重点掌握：① 祈使句动词原形开头，否定用Dont；② What问句中do/does的正确选择；③ like加名词和like to do的两种结构；④ play加球类不加the的固定搭配。建议做5-10道相关中考真题巩固。</div></div>
+</div></div>
+<div class="slide" data-page="34">
+<div class="sh"><span class="sb">课堂检测</span><h2>课堂检测（综合）</h2><span class="ss">5分钟</span></div>
+<div class="sct">
+<div class="qz">
+<div class="qi" id="fq1">
+<div class="qq"><span class="qn">1.</span>____ basketball after school.（放学后打篮球。）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">A</span>Playing</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">B</span>Play</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">C</span>Plays</div>
+</div>
+<div class="qfb" id="fq1fb"></div>
+</div>
+<div class="qi" id="fq2">
+<div class="qq"><span class="qn">2.</span>____ watch TV too late.（不要看电视太晚。）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">A</span>Dont</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">B</span>Doesnt</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">C</span>No</div>
+</div>
+<div class="qfb" id="fq2fb"></div>
+</div>
+<div class="qi" id="fq3">
+<div class="qq"><span class="qn">3.</span>What ____ your brother like to play?（你哥哥喜欢打什么？）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">A</span>do</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">B</span>are</div>
+<div class="qop" onclick="checkQuiz(this,'C','A','B','C')"><span class="ol">C</span>does</div>
+</div>
+<div class="qfb" id="fq3fb"></div>
+</div>
+<div class="qi" id="fq4">
+<div class="qq"><span class="qn">4.</span>She ____ to play volleyball.（她喜欢打排球。）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">A</span>like</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">B</span>likes</div>
+<div class="qop" onclick="checkQuiz(this,'B','A','B','C')"><span class="ol">C</span>liking</div>
+</div>
+<div class="qfb" id="fq4fb"></div>
+</div>
+<div class="qi" id="fq5">
+<div class="qq"><span class="qn">5.</span>That ____ good!（那听起来不错！）</div>
+<div class="qo">
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">A</span>sounds</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">B</span>sound</div>
+<div class="qop" onclick="checkQuiz(this,'A','A','B','C')"><span class="ol">C</span>sounding</div>
+</div>
+<div class="qfb" id="fq5fb"></div>
+</div>
+</div>
+</div></div>
+<div class="slide" data-page="35">
+<div class="sh"><span class="sb">课程结束</span><h2>第05课 完！h2><span class="ss">下节见</span></div>
+<div class="sct">
+<div class="cover" style="background:none;color:var(--TM);justify-content:center;align-items:center;text-align:center;flex:1">
+<h1 style="font-size:36px;color:var(--P);margin-bottom:16px">&#127881; 课程结束 &#127881;</h1>
+<p style="font-size:18px;color:var(--TS);margin-bottom:24px">本课完成了G13祈使句、G14 What问句、G15 like动词的学习</p>
+<div class="sg" style="max-width:800px;margin:0 auto">
+<div class="sci"><h4>今日收获</h4><ul>
+<li>3个语法点：G13/G14/G15</li>
+<li>20个运动主题词汇</li>
+<li>6个拼读音素：Uu到Zz</li>
+<li>2篇阅读理解+1篇完形填空</li>
+</ul></div>
+<div class="sci"><h4>课后任务</h4><ul>
+<li>复习20个词汇及其搭配</li>
+<li>用like to do造5个句子</li>
+<li>用What问句造3个句子</li>
+<li>朗读Uu到Zz的拼读单词</li>
+</ul></div>
+</div>
+<p style="font-size:14px;color:var(--TL);margin-top:24px;text-align:center">第05课 祈使句基础 What问句 like动词 | Stage 2 L4-L7 | 90分钟授课课</p>
+</div>
+</div></div>
+<div class="slide" data-page="36">
+<div class="sh"><span class="sb">易错分析</span><h2>常见错误与纠正</h2><span class="ss">巩固</span></div>
+<div class="sct">
+<div class="gb">
+<h3>G13祈使句常见错误</h3>
+<table class="gt">
+<tr><th>序号</th><th>错误句子</th><th>正确句子</th><th>错误分析</th></tr>
+<tr><td>1</td><td class="ec">You play basketball.</td><td class="ec">Play basketball.</td><td>祈使句不加主语you</td></tr>
+<tr><td>2</td><td class="ec">Plays basketball.</td><td class="ec">Play basketball.</td><td>动词用原形不加s</td></tr>
+<tr><td>3</td><td class="ec">Not play soccer.</td><td class="ec">Dont play soccer.</td><td>否定用Dont不用Not</td></tr>
+<tr><td>4</td><td class="ec">Dont playing soccer.</td><td class="ec">Dont play soccer.</td><td>Dont后用原形不用ing</td></tr>
+<tr><td>5</td><td class="ec">No play soccer here.</td><td class="ec">Dont play soccer here.</td><td>No+动名词是另一种结构</td></tr>
+</table>
+</div>
+<div class="gb">
+<h3>G14 What问句常见错误</h3>
+<table class="gt">
+<tr><th>序号</th><th>错误句子</th><th>正确句子</th><th>错误分析</th></tr>
+<tr><td>1</td><td class="ec">What sports do he like?</td><td class="ec">What sports does he like?</td><td>主语he用does不用do</td></tr>
+<tr><td>2</td><td class="ec">What does he likes?</td><td class="ec">What does he like?</td><td>does后动词用原形</td></tr>
+<tr><td>3</td><td class="ec">What sport do you like?</td><td class="ec">What sports do you like?</td><td>多项运动用复数sports</td></tr>
+<tr><td>4</td><td class="ec">What you watch on TV?</td><td class="ec">What do you watch on TV?</td><td>缺少助动词do</td></tr>
+<tr><td>5</td><td class="ec">What does she likes to play?</td><td class="ec">What does she like to play?</td><td>does后like用原形</td></tr>
+</table>
+</div>
+<div class="gb">
+<h3>G15 like用法常见错误</h3>
+<table class="gt">
+<tr><th>序号</th><th>错误句子</th><th>正确句子</th><th>错误分析</th></tr>
+<tr><td>1</td><td class="ec">He like sports.</td><td class="ec">He likes sports.</td><td>三单加s</td></tr>
+<tr><td>2</td><td class="ec">I like play basketball.</td><td class="ec">I like to play basketball.</td><td>like后接to do</td></tr>
+<tr><td>3</td><td class="ec">He dont like soccer.</td><td class="ec">He doesnt like soccer.</td><td>三单否定用doesnt</td></tr>
+<tr><td>4</td><td class="ec">Does he likes sports?</td><td class="ec">Does he like sports?</td><td>Does后用原形</td></tr>
+<tr><td>5</td><td class="ec">She like to watches TV.</td><td class="ec">She likes to watch TV.</td><td>likes后to watch用原形</td></tr>
+</table>
+</div>
+<div class="gtp"><strong>错误预防口诀：</strong>① 祈使句：无主语，原形开头，否定Dont；② What问句：do/does看主语，后面动词必原形；③ like句型：三单加s，否定doesnt后原形，like to do不忘to。</div>
+<div class="ep"><span class="el">高频考点提醒</span><div class="ec2">中考最高频的三个错误：① does/doesnt后忘记动词恢复原形（占错误率40%）；② 祈使句否定用No代替Dont（占25%）；③ like后忘记加to（占20%）。建议针对性练习这三个易错点。</div></div>
+</div></div>
+<div class="slide" data-page="37">
+<div class="sh"><span class="sb">教学备忘</span><h2>教师教学备忘</h2><span class="ss">教师用</span></div>
+<div class="sct">
+<div class="sg">
+<div class="sci"><h4>时间分配建议</h4><ul>
+<li>复习导入：9分钟（3分钟x3页）</li>
+<li>词汇新授：30分钟（4页x7-8分钟）</li>
+<li>语法精讲：36分钟（5页x7分钟）</li>
+<li>拼读收官：15分钟（2页）</li>
+<li>阅读理解：20分钟（2篇x10分钟）</li>
+</ul></div>
+<div class="sci"><h4>时间分配建议（续）</h4><ul>
+<li>五选四：10分钟</li>
+<li>互动复习：8分钟</li>
+<li>随堂演练：15分钟（2页x7-8分钟）</li>
+<li>学情诊断：3分钟</li>
+<li>总结：5分钟</li>
+</ul></div>
+</div>
+<div class="sg">
+<div class="sci"><h4>教学重点</h4><ul>
+<li>祈使句动词原形开头（G13核心）</li>
+<li>do/does在What问句中的选择（G14核心）</li>
+<li>like加名词和like to do（G15核心）</li>
+<li>play加球类不加the（词汇搭配）</li>
+<li>sound感官动词后接形容词</li>
+</ul></div>
+<div class="sci"><h4>教学难点</h4><ul>
+<li>does后动词恢复原形</li>
+<li>第三人称单数likes/doesnt like</li>
+<li>祈使句否定形式Dont的使用</li>
+<li>What+名词+do/does+主语+V原的完整结构</li>
+<li>Vv和Wv的发音区分</li>
+</ul></div>
+</div>
+<div class="sg">
+<div class="sci"><h4>互动组件使用建议</h4><ul>
+<li>运动指令指挥棒：G13讲解后使用</li>
+<li>喜好调查仪表盘：G14/G15讲解后使用</li>
+<li>词汇配对游戏：词汇新授后使用</li>
+<li>词汇消消乐：课程结束前使用</li>
+<li>答案遮罩系统：复习环节使用</li>
+</ul></div>
+<div class="sci"><h4>数据采集注意</h4><ul>
+<li>先保存再反馈原则</li>
+<li>答错双击撤销功能</li>
+<li>JSON/CSV导出功能</li>
+<li>同步状态实时显示</li>
+<li>不记录真实学生姓名</li>
+</ul></div>
+</div>
+<div class="ep"><span class="el">防越级提醒</span><div class="ec2">本课严格不引入：Lets句型、What color/time/day、like doing、将来时态、shall、比较级/superlative、现在完成时、被动语态等超纲内容。如学生提及，简要说明并告知后续课程会学习。</div></div>
+</div></div>
+<div class="slide" data-page="38">
+<div class="sh"><span class="sb">阅读策略</span><h2>阅读理解答题策略</h2><span class="ss">技巧</span></div>
+<div class="sct">
+<div class="gb">
+<h3>阅读理解三步法</h3>
+<table class="gt">
+<tr><th>步骤</th><th>名称</th><th>操作</th><th>时间分配</th></tr>
+<tr><td>1</td><td>略读</td><td>快速浏览全文，了解大意和结构</td><td>1-2分钟</td></tr>
+<tr><td>2</td><td>审题</td><td>阅读题目，划出关键词</td><td>1分钟</td></tr>
+<tr><td>3</td><td>精读定位</td><td>回到原文，定位答案所在句</td><td>2-3分钟</td></tr>
+</table>
+</div>
+<div class="gb">
+<h3>A篇 Sports in Our School 详细解析</h3>
+<table class="gt">
+<tr><th>题号</th><th>题目类型</th><th>定位句</th><th>答案</th><th>解析</th></tr>
+<tr><td>1</td><td>细节题</td><td class="ec">We have a basketball team.</td><td>B</td><td>原文直接提及basketball team</td></tr>
+<tr><td>2</td><td>细节题</td><td class="ec">Tom likes soccer.</td><td>A</td><td>原文明确说Tom喜欢soccer</td></tr>
+<tr><td>3</td><td>推断题</td><td class="ec">Soccer is not easy, but it is interesting.</td><td>C</td><td>not easy=difficult，but interesting</td></tr>
+<tr><td>4</td><td>细节题</td><td class="ec">I play ping-pong with my dad.</td><td>C</td><td>原文说和dad一起打ping-pong</td></tr>
+<tr><td>5</td><td>细节题</td><td class="ec">It is easy for me.</td><td>A</td><td>原文说ping-pong对作者是easy的</td></tr>
+</table>
+</div>
+<div class="gb">
+<h3>B篇 My Favorite Sports After Class 详细解析</h3>
+<table class="gt">
+<tr><th>题号</th><th>题目类型</th><th>定位句</th><th>答案</th><th>解析</th></tr>
+<tr><td>1</td><td>细节题</td><td class="ec">My favorite sport is basketball.</td><td>B</td><td>原文直接说favorite是basketball</td></tr>
+<tr><td>2</td><td>细节题</td><td class="ec">He says soccer is fun.</td><td>A</td><td>Mike认为soccer是fun</td></tr>
+<tr><td>3</td><td>细节题</td><td class="ec">I think soccer is difficult.</td><td>C</td><td>作者认为soccer是difficult</td></tr>
+<tr><td>4</td><td>细节题</td><td class="ec">Anna likes to watch sports on TV.</td><td>B</td><td>Anna喜欢在TV上看运动</td></tr>
+<tr><td>5</td><td>细节题</td><td class="ec">every weekend</td><td>C</td><td>原文说每个weekend看</td></tr>
+</table>
+</div>
+<div class="gtp"><strong>答题技巧：</strong>① 细节题在原文中找到对应句子即可；② 推断题需要理解句子的隐含意思（如not easy=difficult）；③ 注意区分不同人物的观点（Tom vs Mike vs Anna vs writer）；④ 注意时间、频率等细节词（every day vs every weekend）。</div>
+<div class="ep"><span class="el">完形填空策略</span><div class="ec2">五选四完形填空策略：① 先通读全文了解大意；② 分析空格前后的逻辑关系；③ 注意词性和语法搭配；④ 排除法：先确定最确定的选项，再用排除法处理剩余选项；⑤ 检查：将选出的词代入原文，看是否通顺。本课完形填空的干扰项是easy，因为它在语法上也正确，但不符合语境。</div></div>
+</div></div>
+<div class="slide" data-page="39">
+<div class="sh"><span class="sb">口语练习</span><h2>口语表达训练</h2><span class="ss">应用</span></div>
+<div class="sct">
+<div class="gb">
+<h3>情景对话练习</h3>
+<table class="gt">
+<tr><th>情景</th><th>A说</th><th>B说</th><th>语法点</th></tr>
+<tr><td>邀请运动</td><td class="ec">Let us play basketball.</td><td class="ec">That sounds good!</td><td>G13+sound</td></tr>
+<tr><td>询问喜好</td><td class="ec">What sports do you like?</td><td class="ec">I like soccer. It is fun.</td><td>G14+G15</td></tr>
+<tr><td>禁止行为</td><td class="ec">Dont play soccer here.</td><td class="ec">OK. Where can I play?</td><td>G13否定</td></tr>
+<tr><td>礼貌请求</td><td class="ec">Please pass the ball.</td><td class="ec">Here you are.</td><td>G13礼貌</td></tr>
+<tr><td>描述感受</td><td class="ec">Is tennis easy?</td><td class="ec">No, it is difficult. But it is interesting.</td><td>形容词应用</td></tr>
+<tr><td>第三人称</td><td class="ec">What does she like?</td><td class="ec">She likes to watch TV.</td><td>G14+G15三单</td></tr>
+</table>
+</div>
+<div class="gb">
+<h3>口语表达模板</h3>
+<table class="gt">
+<tr><th>功能</th><th>模板</th><th>示例</th></tr>
+<tr><td>表达喜好</td><td class="ec">I like ___. I like to ___.</td><td class="ec">I like sports. I like to play basketball.</td></tr>
+<tr><td>询问喜好</td><td class="ec">What sports do you like? What does he/she like?</td><td class="ec">What sports do you like? I like volleyball.</td></tr>
+<tr><td>给出指令</td><td class="ec">___(动词原形). Dont ___. Please ___.</td><td class="ec">Play basketball. Dont watch TV. Please sit down.</td></tr>
+<tr><td>描述感受</td><td class="ec">It is ___(形容词). That sounds ___.</td><td class="ec">It is relaxing. That sounds interesting.</td></tr>
+<tr><td>询问信息</td><td class="ec">What do you ___? What does he/she ___?</td><td class="ec">What do you watch on TV? I watch soccer.</td></tr>
+</table>
+</div>
+<div class="gtp"><strong>口语训练建议：</strong>① 两人一组进行对话练习；② 每个情景练习2-3分钟；③ 注意语音语调，特别是祈使句的语气；④ 使用本课20个词汇进行替换练习；⑤ 鼓励学生自由发挥，不限于模板。</div>
+<div class="hb"><h4>角色扮演活动</h4><p>角色A：体育老师，给出运动指令（使用祈使句）<br>角色B：学生，回答并表达喜好（使用like和What问句）<br>示例：<br>A: Play basketball. Dont play soccer here.<br>B: OK. I like to play basketball. It is fun. What sports do you like, teacher?<br>A: I like volleyball. It is relaxing.<br>B: That sounds interesting. Can I try it?</p></div>
+<div class="ep"><span class="el">口语评估标准</span><div class="ec2">评估维度：① 语法准确性（祈使句、What问句、like句型是否正确）；② 词汇运用（是否使用本课词汇）；③ 流利度（表达是否流畅）；④ 互动性（是否能进行有效对话）；⑤ 语音语调（发音是否清晰）。</div></div>
+</div></div>
+<div class="slide" data-page="40">
+<div class="sh"><span class="sb">写作练习</span><h2>书面表达训练</h2><span class="ss">应用</span></div>
+<div class="sct">
+<div class="gb">
+<h3>写作任务：My Favorite Sport</h3>
+<div class="gf">要求：用50-80词写一段关于你最喜欢的运动的短文，包含以下要素：<span class="fh">like句型</span>、<span class="fh">形容词描述</span>、<span class="fh">What问句</span>（可选）</div>
+</div>
+<div class="gb">
+<h3>写作模板</h3>
+<table class="gt">
+<tr><th>段落</th><th>内容</th><th>句型</th><th>示例</th></tr>
+<tr><td>开头</td><td>点明最喜欢的运动</td><td class="ec">My favorite sport is ___. I like ___.</td><td class="ec">My favorite sport is basketball. I like basketball.</td></tr>
+<tr><td>展开</td><td>描述感受和原因</td><td class="ec">It is ___(adj). I like to ___.</td><td class="ec">It is fun and relaxing. I like to play it after school.</td></tr>
+<tr><td>拓展</td><td>描述其他人</td><td class="ec">My friend likes ___. He/She is good at ___.</td><td class="ec">My friend Tom likes soccer. He is good at it.</td></tr>
+<tr><td>结尾</td><td>总结或提问</td><td class="ec">Sports make us ___. What sports do you like?</td><td class="ec">Sports make us happy. What sports do you like?</td></tr>
+</table>
+</div>
+<div class="gb">
+<h3>范文展示</h3>
+<div class="rp">
+<div class="pt">
+<p>My favorite sport is basketball. I like basketball very much. It is fun and relaxing. I like to play basketball after school with my friends. Our team is good. We play every day.</p>
+<p>My friend Mike likes soccer. He thinks it is interesting. I think soccer is difficult. I can not play it. But Mike says, "Dont give up! Please try again."</p>
+<p>I like sports. Sports make us happy and healthy. What sports do you like? Do you like easy sports or difficult sports?</p>
+</div>
+</div>
+</div>
+<div class="gtp"><strong>写作评分标准：</strong>① 内容完整性（是否包含所有要求要素）；② 语法准确性（G13/G14/G15是否正确使用）；③ 词汇丰富度（是否使用本课词汇）；④ 逻辑连贯性（句子之间是否有逻辑关系）；⑤ 书写规范性（大小写、标点、拼写）。</div>
+<div class="ep"><span class="el">常见写作错误</span><div class="ec2">① I like play basketball.（缺to，应为I like to play basketball.）② He like soccer.（缺s，应为He likes soccer.）③ It is fun and relaxing. It is not boring.（可以合并为It is fun and relaxing, not boring.）④ What sports do you like? I like play volleyball.（缺to，应为I like to play volleyball.或I like volleyball.）</div></div>
+<div class="hb"><h4>写作检查清单</h4><p>&#9744; 是否使用了like句型（like+名词或like to do）？<br>&#9744; 是否使用了形容词描述运动？<br>&#9744; 是否使用了祈使句（可选）？<br>&#9744; 第三人称单数是否加了s？<br>&#9744; does/doesnt后动词是否用了原形？<br>&#9744; play加球类是否没加the？<br>&#9744; 单词拼写是否正确？<br>&#9744; 标点符号是否正确？</p></div>
+</div></div>
+<div class="slide" data-page="41">
+<div class="sh"><span class="sb">词汇宝库</span><h2>20词词汇宝库总表</h2><span class="ss">速查</span></div>
+<div class="sct">
+<div class="gb">
+<h3>20词完整速查表</h3>
+<table class="gt">
+<tr><th>#</th><th>单词</th><th>音标</th><th>词性</th><th>中文</th><th>搭配</th></tr>
+<tr><td>1</td><td class="ec">sport</td><td>/sp&#596;&#720;t/</td><td>n.</td><td>运动</td><td>do/play sports</td></tr>
+<tr><td>2</td><td class="ec">basketball</td><td>/&#712;b&#593;&#720;sk&#618;tb&#596;&#720;l/</td><td>n.</td><td>篮球</td><td>play basketball</td></tr>
+<tr><td>3</td><td class="ec">soccer</td><td>/&#712;s&#594;k&#601;(r)/</td><td>n.</td><td>足球</td><td>play soccer</td></tr>
+<tr><td>4</td><td class="ec">volleyball</td><td>/&#712;v&#594;lib&#596;&#720;l/</td><td>n.</td><td>排球</td><td>play volleyball</td></tr>
+<tr><td>5</td><td class="ec">tennis</td><td>/&#712;ten&#618;s/</td><td>n.</td><td>网球</td><td>play tennis</td></tr>
+<tr><td>6</td><td class="ec">ping-pong</td><td>/&#712;p&#618;&#331;p&#594;&#331;/</td><td>n.</td><td>乒乓球</td><td>play ping-pong</td></tr>
+<tr><td>7</td><td class="ec">bat</td><td>/b&#230;t/</td><td>n.</td><td>球棒；球拍</td><td>baseball bat</td></tr>
+<tr><td>8</td><td class="ec">ball</td><td>/b&#596;&#720;l/</td><td>n.</td><td>球</td><td>a ball/ball game</td></tr>
+<tr><td>9</td><td class="ec">play</td><td>/ple&#618;/</td><td>v.</td><td>玩；打（球）</td><td>play sports</td></tr>
+<tr><td>10</td><td class="ec">sound</td><td>/sa&#650;nd/</td><td>v./n.</td><td>听起来</td><td>sound good</td></tr>
+<tr><td>11</td><td class="ec">good</td><td>/&#609;&#650;d/</td><td>adj.</td><td>好的</td><td>be good at</td></tr>
+<tr><td>12</td><td class="ec">interesting</td><td>/&#712;&#618;ntr&#601;st&#618;&#331;/</td><td>adj.</td><td>有趣的</td><td>an interesting book</td></tr>
+<tr><td>13</td><td class="ec">fun</td><td>/f&#652;n/</td><td>adj./n.</td><td>有趣的；乐趣</td><td>have fun</td></tr>
+<tr><td>14</td><td class="ec">relaxing</td><td>/r&#618;&#712;l&#230;ks&#618;&#331;/</td><td>adj.</td><td>令人放松的</td><td>relaxing music</td></tr>
+<tr><td>15</td><td class="ec">boring</td><td>/&#712;b&#596;&#720;r&#618;&#331;/</td><td>adj.</td><td>无聊的</td><td>a boring book</td></tr>
+<tr><td>16</td><td class="ec">difficult</td><td>/&#712;d&#618;f&#618;k&#601;lt/</td><td>adj.</td><td>困难的</td><td>a difficult question</td></tr>
+<tr><td>17</td><td class="ec">easy</td><td>/&#712;i&#720;zi/</td><td>adj.</td><td>容易的</td><td>an easy question</td></tr>
+<tr><td>18</td><td class="ec">watch</td><td>/w&#594;t&#643;/</td><td>v.</td><td>观看</td><td>watch TV</td></tr>
+<tr><td>19</td><td class="ec">TV</td><td>/&#716;ti&#720;&#712;vi&#720;/</td><td>n.</td><td>电视</td><td>watch TV</td></tr>
+<tr><td>20</td><td class="ec">team</td><td>/ti&#720;m/</td><td>n.</td><td>队；队伍</td><td>basketball team</td></tr>
+</table>
+</div>
+<div class="gtp"><strong>词汇分类记忆：</strong>名词类(10个)：sport, basketball, soccer, volleyball, tennis, ping-pong, bat, ball, TV, team；动词类(3个)：play, sound, watch；形容词类(7个)：good, interesting, fun, relaxing, boring, difficult, easy。</div>
+<div class="ep"><span class="el">高频搭配速记</span><div class="ec2">play basketball/soccer/volleyball/tennis/ping-pong | watch TV | sound good/interesting/fun/relaxing/boring/difficult/easy | be good at | do sports | have fun | a basketball team | an interesting book/game | a boring book | a difficult/easy question</div></div>
+</div></div>
+<div class="slide" data-page="42">
+<div class="sh"><span class="sb">公式卡片</span><h2>G13/G14/G15 公式速查卡</h2><span class="ss">速查</span></div>
+<div class="sct">
+<div class="gb">
+<h3>G13 祈使句公式卡</h3>
+<div class="gf">公式1 肯定：<span class="fh">V原 + 其他.</span> 例：Play basketball.</div>
+<div class="gf">公式2 否定：<span class="fh">Dont + V原 + 其他.</span> 例：Dont play soccer here.</div>
+<div class="gf">公式3 礼貌：<span class="fh">Please + V原 + 其他.</span> 例：Please open the door.</div>
+<div class="gf">公式4 否定礼貌：<span class="fh">Please dont + V原 + 其他.</span> 例：Please dont watch TV now.</div>
+<table class="gt">
+<tr><th>动词原形</th><th>肯定祈使句</th><th>否定祈使句</th><th>礼貌祈使句</th></tr>
+<tr><td>play</td><td class="ec">Play sports.</td><td class="ec">Dont play sports.</td><td class="ec">Please play sports.</td></tr>
+<tr><td>watch</td><td class="ec">Watch TV.</td><td class="ec">Dont watch TV.</td><td class="ec">Please watch TV.</td></tr>
+<tr><td>open</td><td class="ec">Open the door.</td><td class="ec">Dont open the door.</td><td class="ec">Please open the door.</td></tr>
+<tr><td>pass</td><td class="ec">Pass the ball.</td><td class="ec">Dont pass the ball.</td><td class="ec">Please pass the ball.</td></tr>
+<tr><td>listen</td><td class="ec">Listen to me.</td><td class="ec">Dont listen to him.</td><td class="ec">Please listen to me.</td></tr>
+<tr><td>sit</td><td class="ec">Sit down.</td><td class="ec">Dont sit there.</td><td class="ec">Please sit down.</td></tr>
+<tr><td>have</td><td class="ec">Have fun!</td><td class="ec">Dont have fun?（不常用）</td><td class="ec">Please have fun.</td></tr>
+<tr><td>be</td><td class="ec">Be good!</td><td class="ec">Dont be late.</td><td class="ec">Please be careful.</td></tr>
+</table>
+</div>
+<div class="gb">
+<h3>G14 What问句公式卡</h3>
+<div class="gf">公式1：<span class="fh">What + do + 主语(I/you/we/they) + V原 + 其他?</span></div>
+<div class="gf">公式2：<span class="fh">What + does + 主语(he/she/it) + V原 + 其他?</span></div>
+<div class="gf">公式3：<span class="fh">What + 名词 + do + 主语 + V原 + 其他?</span></div>
+<div class="gf">公式4：<span class="fh">What + 名词 + does + 主语 + V原 + 其他?</span></div>
+<table class="gt">
+<tr><th>问句</th><th>回答</th><th>语法点</th></tr>
+<tr><td class="ec">What do you like?</td><td class="ec">I like basketball.</td><td>do+you</td></tr>
+<tr><td class="ec">What does he like?</td><td class="ec">He likes soccer.</td><td>does+he</td></tr>
+<tr><td class="ec">What sports do you like?</td><td class="ec">I like tennis and volleyball.</td><td>What+sports+do</td></tr>
+<tr><td class="ec">What sport does she like?</td><td class="ec">She likes ping-pong.</td><td>What+sport+does</td></tr>
+<tr><td class="ec">What do you watch on TV?</td><td class="ec">I watch soccer games.</td><td>do+you+介词</td></tr>
+<tr><td class="ec">What does Tom play?</td><td class="ec">He plays basketball.</td><td>does+Tom</td></tr>
+</table>
+</div>
+<div class="gb">
+<h3>G15 like用法公式卡</h3>
+<div class="gf">公式1：<span class="fh">主语 + like/likes + 名词.</span> 例：I like sports. He likes basketball.</div>
+<div class="gf">公式2：<span class="fh">主语 + like/likes to + V原.</span> 例：I like to play. She likes to watch TV.</div>
+<div class="gf">公式3 否定：<span class="fh">主语 + dont/doesnt like + 名词/to do.</span> 例：I dont like boring books. He doesnt like to play.</div>
+<div class="gf">公式4 疑问：<span class="fh">Do/Does + 主语 + like + 名词/to do?</span> 例：Do you like sports? Does he like to play?</div>
+<table class="gt">
+<tr><th>人称</th><th>like+名词</th><th>like to do</th><th>否定</th><th>疑问</th></tr>
+<tr><td>I</td><td class="ec">I like sports.</td><td class="ec">I like to play.</td><td class="ec">I dont like...</td><td class="ec">Do I like...?</td></tr>
+<tr><td>You</td><td class="ec">You like sports.</td><td class="ec">You like to play.</td><td class="ec">You dont like...</td><td class="ec">Do you like...?</td></tr>
+<tr><td>He</td><td class="ec">He likes sports.</td><td class="ec">He likes to play.</td><td class="ec">He doesnt like...</td><td class="ec">Does he like...?</td></tr>
+<tr><td>She</td><td class="ec">She likes sports.</td><td class="ec">She likes to play.</td><td class="ec">She doesnt like...</td><td class="ec">Does she like...?</td></tr>
+<tr><td>We</td><td class="ec">We like sports.</td><td class="ec">We like to play.</td><td class="ec">We dont like...</td><td class="ec">Do we like...?</td></tr>
+<tr><td>They</td><td class="ec">They like sports.</td><td class="ec">They like to play.</td><td class="ec">They dont like...</td><td class="ec">Do they like...?</td></tr>
+</table>
+</div>
+<div class="gtp"><strong>公式使用提醒：</strong>① 祈使句无主语，动词原形开头；② What问句中does后动词恢复原形；③ like三单加s，否定用doesnt后原形；④ play加球类不加the；⑤ sound后接形容词不接副词。这五条规则覆盖了本课全部语法考点。</div>
+<div class="ep"><span class="el">终极口诀</span><div class="ec2">祈使句无主原形走，Dont否定Please礼貌；What问句do/does选，后面动词必原形；like名词like to do，三单加s否定doesnt；play球类不加the，sound后面形容词。五句口诀记住本课全部语法！</div></div>
+</div></div>
+
+</div><!-- /slideContainer -->
+<script>
+// ===== State =====
+var currentPage=1;
+var totalPages=42;
+var quizResults={};
+var surveySubject='I';
+var surveySports=[];
+var matchSelected={left:null,right:null};
+var elimPairs={0:1,2:7,4:3,6:5};
+var elimSelected=null;
+var elimMatched=[];
+var clozeAnswers={0:'good',1:'watch',2:'difficult',3:'interesting'};
+var clozeSelected='';
+
+// ===== Audio =====
+var audioCtx=null;
+function initAudio(){if(!audioCtx){try{audioCtx=new(window.AudioContext||window.webkitAudioContext)()}catch(e){}}}
+function playCorrect(){initAudio();if(!audioCtx)return;var o=audioCtx.createOscillator();var g=audioCtx.createGain();o.connect(g);g.connect(audioCtx.destination);o.frequency.setValueAtTime(523.25,audioCtx.currentTime);o.frequency.setValueAtTime(659.25,audioCtx.currentTime+0.1);o.frequency.setValueAtTime(783.99,audioCtx.currentTime+0.2);g.gain.setValueAtTime(0.3,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(0.01,audioCtx.currentTime+0.4);o.start();o.stop(audioCtx.currentTime+0.4)}
+function playError(){initAudio();if(!audioCtx)return;var o=audioCtx.createOscillator();var g=audioCtx.createGain();o.connect(g);g.connect(audioCtx.destination);o.type='sawtooth';o.frequency.setValueAtTime(200,audioCtx.currentTime);o.frequency.exponentialRampToValueAtTime(100,audioCtx.currentTime+0.3);g.gain.setValueAtTime(0.2,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(0.01,audioCtx.currentTime+0.3);o.start();o.stop(audioCtx.currentTime+0.3)}
+function playPageTurn(){initAudio();if(!audioCtx)return;var o=audioCtx.createOscillator();var g=audioCtx.createGain();o.connect(g);g.connect(audioCtx.destination);o.frequency.setValueAtTime(400,audioCtx.currentTime);o.frequency.exponentialRampToValueAtTime(800,audioCtx.currentTime+0.1);g.gain.setValueAtTime(0.15,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(0.01,audioCtx.currentTime+0.15);o.start();o.stop(audioCtx.currentTime+0.15)}
+
+// ===== Navigation =====
+function navPage(dir){
+  var np=currentPage+dir;
+  if(np<1||np>totalPages)return;
+  showPage(np);
+}
+function showPage(n){
+  var slides=document.querySelectorAll('.slide');
+  for(var i=0;i<slides.length;i++){
+    slides[i].classList.remove('act');
+  }
+  var target=document.querySelector('.slide[data-page="'+n+'"]');
+  if(target){target.classList.add('act');currentPage=n;}
+  document.getElementById('pageInd').textContent=n+' / '+totalPages;
+  document.getElementById('progressFill').style.width=(n/totalPages*100)+'%';
+  updateNavPills();
+  playPageTurn();
+  // Save page visit
+  saveData('pageVisit',{page:n,ts:Date.now()});
+}
+function seekProgress(e){
+  var bar=document.getElementById('progressBar');
+  var rect=bar.getBoundingClientRect();
+  var pct=(e.clientX-rect.left)/rect.width;
+  var pg=Math.round(pct*totalPages);
+  if(pg<1)pg=1;if(pg>totalPages)pg=totalPages;
+  showPage(pg);
+}
+
+// ===== Nav Pills =====
+function updateNavPills(){
+  var sections=[
+    {name:'封面',start:1,end:1},
+    {name:'导览',start:2,end:2},
+    {name:'复习',start:3,end:5},
+    {name:'词汇',start:6,end:9},
+    {name:'语法',start:10,end:16},
+    {name:'拼读',start:17,end:18},
+    {name:'阅读',start:19,end:21},
+    {name:'互动',start:22,end:23},
+    {name:'演练',start:24,end:26},
+    {name:'诊断',start:27,end:27},
+    {name:'总结',start:28,end:29},
+    {name:'数据',start:30,end:30},
+    {name:'拓展',start:31,end:33},
+    {name:'检测',start:34,end:35},
+    {name:'补充',start:36,end:37},
+    {name:'技能',start:38,end:40},
+    {name:'速查',start:41,end:42}
+  ];
+  var container=document.getElementById('navPills');
+  container.innerHTML='';
+  for(var i=0;i<sections.length;i++){
+    var s=sections[i];
+    var pill=document.createElement('div');
+    pill.className='np';
+    if(currentPage>=s.start&&currentPage<=s.end)pill.className+=' act';
+    pill.textContent=s.name;
+    (function(st){pill.onclick=function(){showPage(st)}})(s.start);
+    container.appendChild(pill);
+  }
+}
+
+// ===== Quiz System =====
+function checkQuiz(element,correctAnswer,a,b,c){
+  var qi=element.closest('.qi');
+  var options=qi.querySelectorAll('.qop');
+  var clickedLetter='';
+  for(var i=0;i<options.length;i++){
+    options[i].classList.remove('sel','ca','wa');
+    if(options[i]===element){
+      clickedLetter=options[i].querySelector('.ol').textContent;
+      options[i].classList.add('sel');
+    }
+  }
+  var fb=qi.querySelector('.qfb');
+  fb.classList.remove('show','ok','no');
+  if(clickedLetter===correctAnswer){
+    element.classList.add('ca');
+    qi.classList.add('ok');
+    qi.classList.remove('no');
+    fb.classList.add('show','ok');
+    fb.textContent='正确！';
+    playCorrect();
+  }else{
+    element.classList.add('wa');
+    qi.classList.add('no');
+    qi.classList.remove('ok');
+    fb.classList.add('show','no');
+    fb.textContent='答案错误，正确答案是 '+correctLetter+'。双击可撤销重答。';
+    playError();
+  }
+  // Save result
+  var qid=qi.id||'quiz_'+Date.now();
+  saveData('quiz',{id:qid,answer:clickedLetter,correct:correctAnswer,isRight:clickedLetter===correctAnswer,ts:Date.now()});
+  updateSyncStatus();
+}
+var correctLetter='';
+
+// ===== Command Wand =====
+function genCommand(type){
+  var display=document.getElementById('cmdDisplay');
+  var analysis=document.getElementById('cmdAnalysis');
+  var verbs=['Play basketball','Play soccer','Play volleyball','Watch TV','Play tennis','Play ping-pong'];
+  var verb=verbs[Math.floor(Math.random()*verbs.length)];
+  display.classList.add('act');
+  if(type==='pos'){
+    display.textContent=verb+'.';
+    analysis.innerHTML='肯定祈使句：动词原形Play开头，无主语，句末加句号。';
+  }else if(type==='neg'){
+    display.textContent='Dont '+verb.toLowerCase()+'.';
+    analysis.innerHTML='否定祈使句：Dont加动词原形，表示禁止或劝阻。';
+  }else if(type==='polite'){
+    display.textContent='Please '+verb.toLowerCase()+'.';
+    analysis.innerHTML='礼貌祈使句：Please加动词原形，表示客气的请求。';
+  }
+  setTimeout(function(){display.classList.remove('act')},2000);
+}
+
+// ===== Survey Dashboard =====
+function setSurveySubject(subj){
+  surveySubject=subj;
+  var btns=document.querySelectorAll('.ssb');
+  for(var i=0;i<btns.length;i++){btns.classList.remove('act')}
+  event.target.classList.add('act');
+  updateSurveyOutput();
+}
+function toggleSurveySport(elem,sport){
+  elem.classList.toggle('sel');
+  var idx=surveySports.indexOf(sport);
+  if(idx>=0){surveySports.splice(idx,1)}
+  else{surveySports.push(sport)}
+  updateSurveyOutput();
+}
+function updateSurveyOutput(){
+  var out=document.getElementById('surveyOutput');
+  if(surveySports.length===0){out.textContent='请选择运动';return}
+  var verb='like';
+  if(surveySubject==='He'||surveySubject==='She')verb='likes';
+  var sportsStr=surveySports.join(', ');
+  out.textContent=surveySubject+' '+verb+' '+sportsStr+'.';
+}
+
+// ===== Match Game =====
+function selectMatch(elem,side,index){
+  var items=document.querySelectorAll('.mc:nth-child('+(side==='left'?1:2)+') .mi');
+  for(var i=0;i<items.length;i++){
+    if(side==='left'&&i!==index)items[i].classList.remove('sel');
+    if(side==='right'&&i!==index)items[i].classList.remove('sel');
+  }
+  elem.classList.add('sel');
+  matchSelected[side]={elem:elem,index:index};
+  if(matchSelected.left&&matchSelected.right){
+    var correctPairs={0:4,1:1,2:2,3:5,4:0,5:3};
+    if(correctPairs[matchSelected.left.index]===matchSelected.right.index){
+      matchSelected.left.elem.classList.add('mtd');
+      matchSelected.right.elem.classList.add('mtd');
+      matchSelected.left.elem.classList.remove('sel');
+      matchSelected.right.elem.classList.remove('sel');
+      playCorrect();
+    }else{
+      matchSelected.left.elem.classList.add('wf');
+      matchSelected.right.elem.classList.add('wf');
+      playError();
+      var le=matchSelected.left.elem,re=matchSelected.right.elem;
+      setTimeout(function(){le.classList.remove('wf','sel');re.classList.remove('wf','sel')},500);
+    }
+    matchSelected={left:null,right:null};
+  }
+}
+
+// ===== Elimination Game =====
+function clickElim(elem,index){
+  if(elimMatched.indexOf(index)>=0)return;
+  if(elimSelected===null){
+    elimSelected=index;
+    elem.classList.add('sel');
+  }else{
+    if(elimSelected===index){
+      elem.classList.remove('sel');
+      elimSelected=null;
+      return;
+    }
+    var prevElem=document.querySelectorAll('.clc')[elimSelected];
+    if(elimPairs[elimSelected]===index||elimPairs[index]===elimSelected){
+      prevElem.classList.add('rem');
+      elem.classList.add('rem');
+      elimMatched.push(elimSelected,index);
+      playCorrect();
+    }else{
+      prevElem.classList.add('sel');
+      elem.classList.add('sel');
+      playError();
+      var pe=prevElem;
+      setTimeout(function(){pe.classList.remove('sel');elem.classList.remove('sel')},500);
+    }
+    elimSelected=null;
+  }
+}
+
+// ===== Cloze (五选四) =====
+function clzDragStart(ev){ var o=ev.target.closest('.clz-opt'); if(!o) return; clzDragWord=o.getAttribute('data-w'); ev.dataTransfer.setData('text/plain', clzDragWord); o.classList.add('clz-dragging'); }
+function clzDragOver(ev){ if(!ev.target.closest('.clz-box')) return; ev.preventDefault(); }
+function clzDrop(ev){ ev.preventDefault(); var box=ev.target.closest('.clz-box'); if(!box || box.getAttribute('data-filled')) return; placeClz(box, parseInt(box.getAttribute('data-idx'),10), clzDragWord); }
+function placeClz(box, idx, w){
+  box.setAttribute('data-filled', w);
+  var ok = w === clozeAnswers[idx];
+  box.classList.add(ok ? 'clz-ok' : 'clz-no');
+  box.querySelector('.clz-bv').textContent = w;
+  var sl = document.getElementById('cb'+idx);
+  if(sl){ sl.textContent = w; sl.classList.add('clz-sln'); }
+  var opt = document.querySelector('.clz-opt[data-w="'+w+'"]');
+  if(opt) opt.classList.add('clz-used');
+  if(ok){ if(typeof playCorrect==='function') playCorrect(); } else { if(typeof playError==='function') playError(); }
+  if(typeof saveAnswer==='function') saveAnswer('CMP_W5_'+idx, w, clozeAnswers[idx], ok, 1, 0, false);
+}
+function clzUndo(box){
+  var idx = parseInt(box.getAttribute('data-idx'),10);
+  var w = box.getAttribute('data-filled'); if(!w) return;
+  box.removeAttribute('data-filled'); box.classList.remove('clz-ok','clz-no');
+  box.querySelector('.clz-bv').textContent = '';
+  var sl = document.getElementById('cb'+idx);
+  if(sl){ sl.textContent = '（'+(idx+1)+'）'; sl.classList.remove('clz-sln'); }
+  var opt = document.querySelector('.clz-opt[data-w="'+w+'"]');
+  if(opt) opt.classList.remove('clz-used');
+}
+var clzDragWord=''; var clzTouchEl=null; var clzTouchX=0; var clzTouchY=0;
+function clzTouchStart(ev){ var o=ev.target.closest('.clz-opt'); if(!o || o.classList.contains('clz-used')) return; clzDragWord=o.getAttribute('data-w'); clzTouchEl=o; var t=ev.touches[0]; clzTouchX=t.clientX; clzTouchY=t.clientY; o.classList.add('clz-dragging'); }
+function clzTouchMove(ev){ if(!clzTouchEl) return; ev.preventDefault(); var t=ev.touches[0]; clzTouchX=t.clientX; clzTouchY=t.clientY;
+  var el=document.elementFromPoint(t.clientX,t.clientY); var box=el&&el.closest('.clz-box');
+  var boxes=document.querySelectorAll('.clz-box'); for(var i=0;i<boxes.length;i++) boxes[i].classList.remove('clz-over');
+  if(box && !box.getAttribute('data-filled')) box.classList.add('clz-over');
+}
+function clzTouchEnd(ev){ if(!clzTouchEl) return; var el=document.elementFromPoint(clzTouchX,clzTouchY); var box=el&&el.closest('.clz-box'); clzTouchEl.classList.remove('clz-dragging'); var opt=clzTouchEl; clzTouchEl=null;
+  var boxes=document.querySelectorAll('.clz-box'); for(var i=0;i<boxes.length;i++) boxes[i].classList.remove('clz-over');
+  if(box && !box.getAttribute('data-filled')) placeClz(box, parseInt(box.getAttribute('data-idx'),10), clzDragWord);
+}
+// ===== IndexedDB =====
+var db=null;
+function initDB(){
+  try{
+    var req=indexedDB.open('Lesson5DB',1);
+    req.onupgradeneeded=function(e){
+      var d=e.target.result;
+      if(!d.objectStoreNames.contains('records')){
+        d.createObjectStore('records',{keyPath:'id',autoIncrement:true});
+      }
+    };
+    req.onsuccess=function(e){db=e.target.result};
+    req.onerror=function(e){console.log('DB error')};
+  }catch(e){console.log('IndexedDB not available')}
+}
+function saveData(type,data){
+  if(!db)return;
+  try{
+    var tx=db.transaction(['records'],'readwrite');
+    var store=tx.objectStore('records');
+    data.type=type;
+    store.add(data);
+  }catch(e){}
+}
+function updateSyncStatus(){
+  var dot=document.getElementById('syncDot');
+  var txt=document.getElementById('syncText');
+  if(dot){dot.classList.remove('un')}
+  if(txt){txt.textContent='已保存'}
+}
+function exportData(){
+  if(!db)return;
+  var tx=db.transaction(['records'],'readonly');
+  var store=tx.objectStore('records');
+  var req=store.getAll();
+  req.onsuccess=function(e){
+    var data=JSON.stringify(e.target.result,null,2);
+    var blob=new Blob([data],{type:'application/json'});
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement('a');
+    a.href=url;a.download='lesson5_data.json';
+    a.click();
+  };
+}
+function exportCSV(){
+  if(!db)return;
+  var tx=db.transaction(['records'],'readonly');
+  var store=tx.objectStore('records');
+  var req=store.getAll();
+  req.onsuccess=function(e){
+    var records=e.target.result;
+    var csv='id,type,answer,correct,isRight,ts\n';
+    for(var i=0;i<records.length;i++){
+      var r=records[i];
+      csv+=(r.id||'')+','+(r.type||'')+','+(r.answer||'')+','+(r.correct||'')+','+(r.isRight||'')+','+(r.ts||'')+'\n';
+    }
+    var blob=new Blob(['\ufeff'+csv],{type:'text/csv'});
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement('a');
+    a.href=url;a.download='lesson5_data.csv';
+    a.click();
+  };
+}
+
+
+// ===== 左右半屏翻页（规范 01 §3.4：左半屏上一页 / 右半屏下一页；交互元素不误触翻页；静默无视觉反馈） =====
+document.getElementById('slideContainer').addEventListener('click',function(e){
+  var t=e.target;
+  if(t.closest('[onclick],.np'))return;   // 答题/卡牌/导航/进度条等带 onclick 的交互元素不翻页
+  var r=document.getElementById('slideContainer').getBoundingClientRect();
+  var x=e.clientX-r.left;
+  if(x<r.width/2){navPage(-1)}else{navPage(1)}
+});
+// ===== Keyboard =====
+document.addEventListener('keydown',function(e){
+  if(e.key==='ArrowLeft'){navPage(-1)}
+  else if(e.key==='ArrowRight'){navPage(1)}
+});
+
+// ===== Extra Data Collection =====
+var sessionStart=Date.now();
+var pageVisits={};
+var quizHistory=[];
+var interactionCount=0;
+function trackInteraction(type,data){interactionCount++;var record={type:type,data:data,ts:Date.now(),page:currentPage,sessionElapsed:Date.now()-sessionStart};quizHistory.push(record);saveData('interaction',record);}
+function getPageStats(){var stats={totalVisits:Object.keys(pageVisits).length,totalInteractions:interactionCount,sessionDuration:Date.now()-sessionStart,quizCount:quizHistory.filter(function(r){return r.type==='quiz'}).length};return stats;}
+function showStats(){var s=getPageStats();var msg='Session Stats:\n';msg+='Total page visits: '+s.totalVisits+'\n';msg+='Total interactions: '+s.totalInteractions+'\n';msg+='Quiz attempts: '+s.quizCount+'\n';msg+='Session duration: '+Math.round(s.sessionDuration/1000)+'s';return msg;}
+
+// ===== Double-click undo for wrong answers =====
+document.addEventListener('dblclick',function(e){var qi=e.target.closest('.qi.no');if(qi){var options=qi.querySelectorAll('.qop');for(var i=0;i<options.length;i++){options[i].classList.remove('sel','ca','wa')}qi.classList.remove('no');var fb=qi.querySelector('.qfb');fb.classList.remove('show','ok','no');var note=qi.querySelector('.undo-note');if(!note){note=document.createElement('div');note.className='undo-note';note.style.fontSize='11px';note.style.color='#8B7D6B';note.style.marginTop='4px';note.textContent='已撤销，请重答';qi.appendChild(note);setTimeout(function(){if(note.parentNode)note.parentNode.removeChild(note)},3000)}}});
+
+// ===== Init =====
+initDB();
+updateNavPills();
+console.log('Lesson 5 Courseware Loaded - 42 pages, Stage 2 L5');
+
+// ===== Page Visit Tracking =====
+var origShowPage=showPage;
+showPage=function(n){origShowPage(n);pageVisits[n]=(pageVisits[n]||0)+1;trackInteraction('pageVisit',{page:n,visitCount:pageVisits[n]});};
+
+// ===== Helper: count answered quizzes =====
+function countAnsweredQuizzes(){return document.querySelectorAll('.qi.ok,.qi.no').length;}
+function countCorrectQuizzes(){return document.querySelectorAll('.qi.ok').length;}
+function getAccuracy(){var total=countAnsweredQuizzes();if(total===0)return 0;return Math.round(countCorrectQuizzes()/total*100);}
+
+// ===== Helper: format time =====
+function formatDuration(ms){var s=Math.floor(ms/1000);var m=Math.floor(s/60);s=s%60;return m+'m '+s+'s';}
+
+// ===== Helper: get all quiz results summary =====
+function getQuizSummary(){var results={total:0,correct:0,wrong:0,accuracy:0};document.querySelectorAll('.qi').forEach(function(qi){if(qi.classList.contains('ok')){results.total++;results.correct++}else if(qi.classList.contains('no')){results.total++;results.wrong++}});results.accuracy=results.total>0?Math.round(results.correct/results.total*100):0;return results;}
+
+// ===== Helper: export summary report =====
+function exportSummary(){var s=getQuizSummary();var stats=getPageStats();var report='=== Lesson 5 Summary Report ===\n';report+='Total quiz questions: '+s.total+'\n';report+='Correct answers: '+s.correct+'\n';report+='Wrong answers: '+s.wrong+'\n';report+='Accuracy: '+s.accuracy+'%\n';report+='Pages visited: '+Object.keys(pageVisits).length+'\n';report+='Total interactions: '+stats.totalInteractions+'\n';report+='Session duration: '+formatDuration(stats.sessionDuration)+'\n';return report;}
+</script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+{
+  "lesson": "L23",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A篇 6题→4 fill+2 opt；B篇 6题→4 fill+2 opt；C篇 6题→3 fill+3 opt（Q094 unless 语法点、Q095/Q099 词义题保留选择，分类优先）——C 篇按 2+3 弹性/题量混合适配（§3.18.1）；五选四（§3.16）不纳入 3+2。题量口径（页面实际题量、含既有语法填空，既有语法填空不纳入 3+2 配额）：A 篇页面 6 题 = 4 fill-input（4 处 data-answers 阅读题）+ 2 opt，计入口径 6 题 = 4 fill + 2 opt；B 篇页面 7 题 = 5 fill-input（4 处 data-answers 阅读题 + 1 处既有语法填空 Q090）+ 2 opt，计入口径 6 题 = 4 fill + 2 opt；C 篇页面 7 题 = 4 fill-input（3 处 data-answers 阅读题 + 1 处既有语法填空 Q097）+ 3 opt，计入口径 6 题 = 3 fill + 3 opt",
+  "vocab_pool": [
+    "if",
+    "unless",
+    "condition",
+    "possible",
+    "impossible",
+    "advice",
+    "suggest",
+    "decision",
+    "choose",
+    "choice",
+    "future",
+    "succeed",
+    "fail",
+    "effort",
+    "practice",
+    "improve",
+    "progress",
+    "goal",
+    "plan",
+    "result"
+  ],
+  "grammar_cap": "G58 if 真实条件句（主将从现）/ G59 unless 否定条件句 / G13 祈使句+and/or；禁止比较级/最高级/完成时/被动；允许原文摘录（§3.18.4.4）",
+  "A篇": {
+    "Q080": {
+      "question": "If I become a volunteer, I will ____.",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "help people",
+      "minimum_acceptable_answer": "help people",
+      "accepted_answers": [
+        "help people",
+        "help people in need",
+        "help others",
+        "help the people in need"
+      ],
+      "required_vocab": [],
+      "required_grammar": "if 条件句主句 will+动词短语（G58 本课上限），原文摘录"
+    },
+    "Q081": {
+      "question": "Unless I practice, I won't be a ____ volunteer.",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "good",
+      "minimum_acceptable_answer": "good",
+      "accepted_answers": [
+        "good"
+      ],
+      "required_vocab": [],
+      "required_grammar": "unless 否定条件句（G59 本课上限），表语形容词"
+    },
+    "Q082": {
+      "question": "作者在哪里打扫公园？",
+      "type": "fill",
+      "openness": "细节·中文题面、答案填英文原文",
+      "canonical_answer": "the park",
+      "minimum_acceptable_answer": "the park",
+      "accepted_answers": [
+        "the park",
+        "in the park",
+        "park"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（地点名词短语，原文摘录）"
+    },
+    "Q083": {
+      "question": "'Work hard' 在这里是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "B"
+    },
+    "Q084": {
+      "question": "作者每周会做什么来提高技能？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "practice skills",
+      "minimum_acceptable_answer": "practice skills",
+      "accepted_answers": [
+        "practice skills",
+        "practice my skills",
+        "practice"
+      ],
+      "required_vocab": [
+        "practice"
+      ],
+      "required_grammar": "无（动词短语，原文摘录；practice 池内词）"
+    },
+    "Q085": {
+      "question": "成为好志愿者需要？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "A"
+    }
+  },
+  "B篇": {
+    "Q086": {
+      "question": "If I study abroad, I will learn a new ____.",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "language",
+      "minimum_acceptable_answer": "language",
+      "accepted_answers": [
+        "language",
+        "a new language",
+        "new language"
+      ],
+      "required_vocab": [],
+      "required_grammar": "if 条件句主句（G58 本课上限），名词"
+    },
+    "Q087": {
+      "question": "Unless I save money, I ____ go abroad.",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "C"
+    },
+    "Q088": {
+      "question": "作者建议如何实现梦想？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "work hard",
+      "minimum_acceptable_answer": "work hard",
+      "accepted_answers": [
+        "work hard",
+        "study hard"
+      ],
+      "required_vocab": [],
+      "required_grammar": "祈使句（G13 本课上限），原文 advice 摘录"
+    },
+    "Q089": {
+      "question": "'make a plan' 的意思是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "B"
+    },
+    "Q091": {
+      "question": "作者打算出国做什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "learn a new language",
+      "minimum_acceptable_answer": "learn a new language",
+      "accepted_answers": [
+        "learn a new language",
+        "learn a language",
+        "study a new language",
+        "a new language"
+      ],
+      "required_vocab": [],
+      "required_grammar": "if 条件句主句（G58 本课上限），原文摘录"
+    },
+    "Q092": {
+      "question": "谁给作者建议？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "parents",
+      "minimum_acceptable_answer": "parents",
+      "accepted_answers": [
+        "parents",
+        "my parents"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（名词，原文摘录）"
+    }
+  },
+  "C篇": {
+    "Q093": {
+      "question": "失败后应该怎么做？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "review and try again",
+      "minimum_acceptable_answer": "review and try again",
+      "accepted_answers": [
+        "review and try again",
+        "review your mistakes and try again",
+        "review mistakes and try again",
+        "review and retry",
+        "try again"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（动词短语，原文摘录）"
+    },
+    "Q094": {
+      "question": "Unless you give up, you ____ a chance.",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "A"
+    },
+    "Q095": {
+      "question": "'practice makes perfect' 意思是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "B"
+    },
+    "Q096": {
+      "question": "作者认为失败是？",
+      "type": "fill",
+      "openness": "观点细节·原文直接提取",
+      "canonical_answer": "a teacher",
+      "minimum_acceptable_answer": "a teacher",
+      "accepted_answers": [
+        "a teacher",
+        "teacher",
+        "it is a teacher",
+        "a teacher that helps you grow"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（名词短语，原文摘录）"
+    },
+    "Q098": {
+      "question": "作者建议失败后？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "review and retry",
+      "minimum_acceptable_answer": "review and retry",
+      "accepted_answers": [
+        "review and retry",
+        "review and try again",
+        "review your mistakes and try again"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（动词短语，原文摘录）"
+    },
+    "Q099": {
+      "question": "'set a goal' 的意思是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "C"
+    }
+  }
+}

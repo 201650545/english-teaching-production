@@ -1,0 +1,94 @@
+{
+  "course": "第08课",
+  "animations": {
+    "css": [
+      {"name": "fadeSlideUp", "definition": "from {opacity:0; transform:translateY(30px)} to {opacity:1; transform:translateY(0)}", "usage": "页面进入、内容块出现"},
+      {"name": "scaleUp", "definition": "from {opacity:0; transform:scale(0.85)} to {opacity:1; transform:scale(1)}", "usage": "卡片缩放出现"},
+      {"name": "bounceIn", "definition": "0%{opacity:0;transform:scale(0.3)} 50%{transform:scale(1.08)} 70%{transform:scale(0.95)} 100%{opacity:1;transform:scale(1)}", "usage": "正确反馈"},
+      {"name": "bpSwing", "definition": "0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)}", "usage": "错误反馈摇摆"},
+      {"name": "pulse", "definition": "0%,100%{transform:scale(1)} 50%{transform:scale(1.05)}", "usage": "高亮脉冲"},
+      {"name": "slideInLeft", "definition": "from {opacity:0; transform:translateX(-40px)} to {opacity:1; transform:translateX(0)}", "usage": "句子行进入"},
+      {"name": "floatY", "definition": "0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)}", "usage": "emoji浮动"},
+      {"name": "shimmer", "definition": "0%{background-position:-200% center} 100%{background-position:200% center}", "usage": "进度条闪光"}
+    ],
+    "additional": [
+      {"name": "timeWarp", "definition": "0%{filter:blur(10px);opacity:0} 50%{filter:blur(3px);opacity:0.5} 100%{filter:blur(0);opacity:1}", "usage": "时光机时态转换动画"},
+      {"name": "diaryWrite", "definition": "0%{width:0} 100%{width:100%}", "usage": "旅行日记书写动画"},
+      {"name": "edMorph", "definition": "0%{transform:scale(0) rotate(-180deg)} 50%{transform:scale(1.2) rotate(10deg)} 100%{transform:scale(1) rotate(0)}", "usage": "-ed变化变形动画"},
+      {"name": "shakeX", "definition": "0%,100%{transform:translateX(0)} 10%,30%,50%,70%,90%{transform:translateX(-4px)} 20%,40%,60%,80%{transform:translateX(4px)}", "usage": "错误抖动"},
+      {"name": "cardFlyIn", "definition": "0%{opacity:0;transform:translateY(-30px) scale(0.5) rotate(-10deg)} 60%{transform:translateY(5px) scale(1.1) rotate(2deg)} 100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}", "usage": "词卡飞入"}
+    ]
+  },
+  "interactions": {
+    "navigation": {
+      "halfScreenClick": true,
+      "keyboardArrows": true,
+      "navPills": true,
+      "progressBarClick": true
+    },
+    "quiz": {
+      "type": "checkQuiz",
+      "feedback": {"correct": "蓝色✅ + bounceIn动画 + 正确音效", "wrong": "红色❌ + bpSwing动画 + 错误音效"},
+      "disableAfterAnswer": true,
+      "showCorrectAnswer": true
+    },
+    "phonics": {
+      "type": "checkPhonics",
+      "feedback": "同quiz"
+    },
+    "answerMask": {
+      "type": "toggleMask",
+      "initial": "蓝色遮罩显示'🔍 点击揭晓'",
+      "revealed": "浅蓝色背景显示答案 + 正确音效"
+    }
+  },
+  "interactiveComponents": {
+    "component1": {
+      "name": "时光机转换器",
+      "page": 12,
+      "grammarTag": "G19",
+      "elements": {
+        "scene": ".time-machine-scene",
+        "slider": "现在↔过去 滑块",
+        "subjectSwitch": ["I", "He", "They", "We"]
+      },
+      "logic": {
+        "dragSlider": "拖动滑块→时态切换（现在↔过去）",
+        "transformBe": "be动词自动变形：am→was, is→was, are→were",
+        "toggleNegative": "点击否定按钮→加not/wasn't/weren't",
+        "sentenceUpdate": "底部例句区 timeWarp + fadeSlideUp"
+      }
+    },
+    "component2": {
+      "name": "旅行日记生成器",
+      "page": 17,
+      "grammarTag": "G20+G21",
+      "elements": {
+        "scene": ".trip-diary-scene",
+        "title": "My Trip Diary",
+        "timeOptions": ["yesterday", "last week", "two days ago"],
+        "actionOptions": ["visited", "stayed", "tried", "enjoyed", "decided"],
+        "placeOptions": ["beach", "museum", "camp"],
+        "negativeToggle": true
+      },
+      "logic": {
+        "selectTime": "选择时间状语",
+        "selectAction": "选择动作（过去式）",
+        "selectPlace": "选择地点",
+        "generateSentence": "实时生成: I [动作] the [地点] [时间].",
+        "toggleNegative": "切换否定: I didn't [原形] the [地点] [时间]."
+      }
+    }
+  },
+  "audio": {
+    "correct": {"freq": [880, 1100], "duration": [0.15, 0.2], "type": "sine"},
+    "error": {"freq": 220, "duration": 0.3, "type": "sawtooth"},
+    "pageTurn": {"freq": 440, "duration": 0.1, "type": "triangle"},
+    "timeMachine": {"type": "ascending-descending", "description": "上升下降音阶配合时光机"}
+  },
+  "assets": {
+    "emojis": ["🏠", "🏛️", "💰", "😋", "😱", "💵", "💸", "📍", "⛺", "🏖️", "🧭", "🎯", "🤔", "💪", "🖐️", "▶️", "🏁", "😊", "⏪", "✅", "❌"],
+    "images": "none (all CSS/emoji based)",
+    "externalLibs": "none (vanilla JS)"
+  }
+}

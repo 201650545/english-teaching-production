@@ -1,0 +1,304 @@
+{
+  "lesson": "L24",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A篇 8题→3 fill+5 opt（连词课 Q071/Q074 词义、Q072 语法、Q078 句法、Q079 态度保留选择）——A 篇按 2+3 弹性/题量混合适配（§3.18.1）；B篇 9题→5 fill+4 opt——B 篇按 2+3 弹性/题量混合适配（§3.18.1）；C篇 10题→4 fill+6 opt（Q093/Q095/Q098/Q100/Q102 词义、Q099 结构题保留选择）——C 篇按 2+3 弹性/题量混合适配（§3.18.1）；五选四不纳入。题量口径（页面实际题量、含既有语法填空，既有语法填空不纳入 3+2 配额）：A 篇页面 10 题 = 5 fill-input（3 处 data-answers 阅读题 Q070/Q073/Q075 + 2 处既有语法填空 Q076/Q077）+ 5 opt，计入口径 8 题 = 3 fill + 5 opt；B 篇页面 12 题 = 8 fill-input（5 处 data-answers 阅读题 Q080/Q081/Q083/Q085/Q090 + 3 处既有语法填空 Q084/Q087/Q088）+ 4 opt，计入口径 9 题 = 5 fill + 4 opt；C 篇页面 11 题 = 5 fill-input（4 处 data-answers 阅读题 Q092/Q094/Q097/Q101 + 1 处既有语法填空 Q096）+ 6 opt，计入口径 10 题 = 4 fill + 6 opt",
+  "vocab_pool": [
+    "because",
+    "since",
+    "as",
+    "although",
+    "though",
+    "however",
+    "therefore",
+    "result",
+    "cause",
+    "effect",
+    "reason",
+    "explain",
+    "situation",
+    "problem",
+    "solution",
+    "besides",
+    "despite",
+    "unless",
+    "while",
+    "instead"
+  ],
+  "grammar_cap": "G60 because/since/as 原因、although/though 让步 / G61 so、so that、in order that 结果与目的；禁止比较级/最高级/完成时/被动（原文摘录豁免，§3.18.4.4）",
+  "A篇": {
+    "Q070": {
+      "question": "青少年为什么爱社交媒体？（原因）",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "easy to use",
+      "minimum_acceptable_answer": "easy to use",
+      "accepted_answers": [
+        "easy to use",
+        "it is easy to use",
+        "social media is easy to use",
+        "because it is easy to use"
+      ],
+      "required_vocab": [],
+      "required_grammar": "because 原因从句（G60 本课上限），原文摘录"
+    },
+    "Q071": {
+      "question": "'feel connected' 意思是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "B"
+    },
+    "Q072": {
+      "question": "although 引导的从句表？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "C"
+    },
+    "Q073": {
+      "question": "作者建议家长做什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "set rules",
+      "minimum_acceptable_answer": "set rules",
+      "accepted_answers": [
+        "set rules",
+        "set limits",
+        "set clear limits",
+        "set clear rules",
+        "make rules"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（动词短语，原文摘录；so/therefore 连词语境为本课上限）"
+    },
+    "Q074": {
+      "question": "'feel connected' 的相反意思大概是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "B"
+    },
+    "Q075": {
+      "question": "家长应帮孩子做什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "balance their time",
+      "minimum_acceptable_answer": "balance their time",
+      "accepted_answers": [
+        "balance their time",
+        "balance their online time",
+        "balance online time",
+        "balance the time",
+        "balance time"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（动词短语，原文摘录）"
+    },
+    "Q078": {
+      "question": "'share photos and ideas quickly' 中 quickly 修饰？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "C"
+    },
+    "Q079": {
+      "question": "最后一句表达作者什么态度？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "A"
+    }
+  },
+  "B篇": {
+    "Q080": {
+      "question": "作者为什么帮助老人？",
+      "type": "fill",
+      "openness": "细节·中文题面、答案填英文原文",
+      "canonical_answer": "the traffic was heavy",
+      "minimum_acceptable_answer": "the traffic was heavy",
+      "accepted_answers": [
+        "the traffic was heavy",
+        "traffic was heavy",
+        "because the traffic was heavy",
+        "heavy traffic"
+      ],
+      "required_vocab": [],
+      "required_grammar": "because 原因从句（G60 本课上限），原文摘录（简单过去时）"
+    },
+    "Q081": {
+      "question": "although 从句的内容是？",
+      "type": "fill",
+      "openness": "细节·中文题面、答案填英文原文",
+      "canonical_answer": "I was in a hurry",
+      "minimum_acceptable_answer": "I was in a hurry",
+      "accepted_answers": [
+        "I was in a hurry",
+        "in a hurry",
+        "he was in a hurry",
+        "the author was in a hurry"
+      ],
+      "required_vocab": [],
+      "required_grammar": "although 让步从句内容（G60 本课上限），原文摘录"
+    },
+    "Q082": {
+      "question": "'too busy to notice' 意思是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "A"
+    },
+    "Q083": {
+      "question": "作者希望社区变得更？",
+      "type": "fill",
+      "openness": "细节·中文题面、答案填英文原文",
+      "canonical_answer": "warmer",
+      "minimum_acceptable_answer": "warmer",
+      "accepted_answers": [
+        "warmer",
+        "warm"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（比较级 warmer 为原文摘录，§3.18.4.4 豁免；warm 变体无比较级）"
+    },
+    "Q085": {
+      "question": "作者帮助老人后的心情是？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "happy",
+      "minimum_acceptable_answer": "happy",
+      "accepted_answers": [
+        "happy",
+        "very happy",
+        "glad"
+      ],
+      "required_vocab": [],
+      "required_grammar": "so 结果（G61 本课上限），原文摘录"
+    },
+    "Q086": {
+      "question": "'one small act' 意思是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "B"
+    },
+    "Q089": {
+      "question": "'As a result' 相当于？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "B"
+    },
+    "Q090": {
+      "question": "作者希望更多人？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "help each other",
+      "minimum_acceptable_answer": "help each other",
+      "accepted_answers": [
+        "help each other",
+        "help one another",
+        "help others"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（动词短语，原文摘录）"
+    },
+    "Q091": {
+      "question": "'too busy to notice' 中 to notice 表？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "A"
+    }
+  },
+  "C篇": {
+    "Q092": {
+      "question": "解决问题前先要？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "understand the problem",
+      "minimum_acceptable_answer": "understand the problem",
+      "accepted_answers": [
+        "understand the problem",
+        "understand it",
+        "know the problem",
+        "understand"
+      ],
+      "required_vocab": [
+        "problem"
+      ],
+      "required_grammar": "无（动词短语，原文摘录；problem 池内词）"
+    },
+    "Q093": {
+      "question": "'the reason might be no review' 意思是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "C"
+    },
+    "Q094": {
+      "question": "作者建议遇到问题不要？",
+      "type": "fill",
+      "openness": "细节·中文题面、答案填英文原文",
+      "canonical_answer": "give up",
+      "minimum_acceptable_answer": "give up",
+      "accepted_answers": [
+        "give up",
+        "don't give up",
+        "don’t give up",
+        "never give up"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（祈使句 don’t give up 原文摘录）"
+    },
+    "Q095": {
+      "question": "'turn...into' 意思是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "B"
+    },
+    "Q097": {
+      "question": "作者建议制定？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "a study plan",
+      "minimum_acceptable_answer": "a study plan",
+      "accepted_answers": [
+        "a study plan",
+        "study plan",
+        "make a study plan",
+        "the study plan"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（名词短语，原文摘录）"
+    },
+    "Q098": {
+      "question": "'pay off' 意思是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "B"
+    },
+    "Q099": {
+      "question": "文章按什么顺序展开？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "C"
+    },
+    "Q100": {
+      "question": "'don't give up' 意思是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "A"
+    },
+    "Q101": {
+      "question": "向老师或家长诉说情况可以？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "get advice",
+      "minimum_acceptable_answer": "get advice",
+      "accepted_answers": [
+        "get advice",
+        "get some advice",
+        "advice",
+        "ask for advice"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（动词短语，原文摘录）"
+    },
+    "Q102": {
+      "question": "'turn a problem into a chance' 意思是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "C"
+    }
+  }
+}

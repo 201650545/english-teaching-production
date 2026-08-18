@@ -1,0 +1,411 @@
+{
+  "courseInfo": {
+    "courseId": "L23",
+    "courseName": "中考题型SOPⅡ·阅读五选四与简答翻译",
+    "courseType": "省卷题型专项冲刺课",
+    "stage": "Stage 5",
+    "stageBadge": "Stage 5 · L23 刷题冲刺",
+    "totalPages": 25,
+    "aspectRatio": "21:9",
+    "duration": "90分钟",
+    "reviewScope": {
+      "grammarPoints": "G01-G54",
+      "grammarCount": 54,
+      "vocabularyRange": "L1-L21",
+      "vocabularyCount": 360,
+      "currentLessonWords": 20,
+      "newWords": 0,
+      "newGrammar": 0,
+      "phonics": false,
+      "examTypes": [
+        "阅读五选四(10分)",
+        "简答与翻译(10分)"
+      ]
+    }
+  },
+  "colorScheme": {
+    "brand": "#E63946",
+    "accent": "#FFD700",
+    "bgStart": "#FFF8F0",
+    "bgEnd": "#FFE8D6",
+    "brandLight": "#FF6B6B",
+    "accentLight": "#FFE66D",
+    "textPrimary": "#1A1A2E",
+    "textSecondary": "#555555",
+    "correct": "#06A77D",
+    "error": "#E63946",
+    "grayNode": "#C0C0C0",
+    "grayBorder": "#999999"
+  },
+  "fontSpecs": {
+    "pageTitle": "36-42px / 700",
+    "subtitle": "28-32px / 600",
+    "body": "25-28px / 400",
+    "tableContent": "20-22px / 400",
+    "mnemonic": "32px / 700",
+    "mnemonicCard": "22-24px / 500",
+    "navTimeline": "14-16px / 500",
+    "pageNumber": "16-18px / 400",
+    "stageBadge": "14-16px / 600"
+  },
+  "segments": [
+    {
+      "segmentId": 1,
+      "segmentName": "复习导入",
+      "pageRange": "P1-P2",
+      "pageCount": 2,
+      "color": "#E63946"
+    },
+    {
+      "segmentId": 2,
+      "segmentName": "词汇复习",
+      "pageRange": "P3-P9",
+      "pageCount": 6,
+      "color": "#FFD700"
+    },
+    {
+      "segmentId": 3,
+      "segmentName": "题型SOP",
+      "pageRange": "P10-P14",
+      "pageCount": 5,
+      "color": "#E63946"
+    },
+    {
+      "segmentId": 4,
+      "segmentName": "随堂演练",
+      "pageRange": "P15-P16",
+      "pageCount": 2,
+      "color": "#FFD700"
+    },
+    {
+      "segmentId": 5,
+      "segmentName": "阅读理解",
+      "pageRange": "P17-P19",
+      "pageCount": 3,
+      "color": "#E63946"
+    },
+    {
+      "segmentId": 6,
+      "segmentName": "句子练习",
+      "pageRange": "P20-P21",
+      "pageCount": 2,
+      "color": "#FFD700"
+    },
+    {
+      "segmentId": 7,
+      "segmentName": "题型策略",
+      "pageRange": "P22-P24",
+      "pageCount": 3,
+      "color": "#E63946"
+    },
+    {
+      "segmentId": 8,
+      "segmentName": "课堂总结",
+      "pageRange": "P25-P25",
+      "pageCount": 1,
+      "color": "#FFD700"
+    }
+  ],
+  "pages": [
+    {
+      "pageId": 1,
+      "title": "第23课 中考题型SOPⅡ",
+      "type": "cover",
+      "interactions": [
+        "cover-nav"
+      ],
+      "segment": 1
+    },
+    {
+      "pageId": 2,
+      "title": "刷题阶段总览",
+      "type": "stats+exam-type-grid",
+      "interactions": [
+        "warning-box",
+        "content-table"
+      ],
+      "segment": 1
+    },
+    {
+      "pageId": 3,
+      "title": "跨课词汇复习·对话连线",
+      "type": "match-game",
+      "interactions": [
+        "pickDialogLeft",
+        "pickDialogRight"
+      ],
+      "segment": 2,
+      "creative": true
+    },
+    {
+      "pageId": 4,
+      "title": "词汇复习 Part 1 (1-7)",
+      "type": "vocab-grid",
+      "interactions": [
+        "vocab-card"
+      ],
+      "segment": 2
+    },
+    {
+      "pageId": 5,
+      "title": "词汇复习 Part 2 (8-14)",
+      "type": "vocab-grid",
+      "interactions": [
+        "vocab-card"
+      ],
+      "segment": 2
+    },
+    {
+      "pageId": 6,
+      "title": "词汇复习 Part 3 (15-20)",
+      "type": "vocab-grid",
+      "interactions": [
+        "vocab-card"
+      ],
+      "segment": 2
+    },
+    {
+      "pageId": 7,
+      "title": "课内词汇游戏①·中文选英文",
+      "type": "quiz-game",
+      "interactions": [
+        "checkT1G",
+        "showT1GQuestion"
+      ],
+      "segment": 2
+    },
+    {
+      "pageId": 8,
+      "title": "课内词汇游戏②·语境填空",
+      "type": "quiz-game",
+      "interactions": [
+        "checkT2A",
+        "showT2AQuestion"
+      ],
+      "segment": 2
+    },
+    {
+      "pageId": 9,
+      "title": "词汇运用·词形变化速练",
+      "type": "fill-table",
+      "interactions": [
+        "checkFormPractice"
+      ],
+      "segment": 2
+    },
+    {
+      "pageId": 10,
+      "title": "五选四SOP·四步法",
+      "type": "sop-flowchart+mnemonic",
+      "interactions": [
+        "mnemonic-card-flip"
+      ],
+      "segment": 3
+    },
+    {
+      "pageId": 11,
+      "title": "五选四SOP·衔接词信号点亮器",
+      "type": "click-highlight",
+      "interactions": [
+        "lightCohesion"
+      ],
+      "segment": 3,
+      "creative": true
+    },
+    {
+      "pageId": 12,
+      "title": "简答与翻译SOP·三步法",
+      "type": "sop-flowchart+mnemonic",
+      "interactions": [
+        "mnemonic-card-flip"
+      ],
+      "segment": 3
+    },
+    {
+      "pageId": 13,
+      "title": "简答翻译SOP·疑问词归类器",
+      "type": "click-sort",
+      "interactions": [
+        "pickWh",
+        "whBoxClick"
+      ],
+      "segment": 3,
+      "creative": true
+    },
+    {
+      "pageId": 14,
+      "title": "高频语法速览",
+      "type": "content-table+warning",
+      "interactions": [],
+      "segment": 3
+    },
+    {
+      "pageId": 15,
+      "title": "Mini Task·综合表达任务",
+      "type": "mini-task-box",
+      "interactions": [
+        "recordMiniTask"
+      ],
+      "segment": 4
+    },
+    {
+      "pageId": 16,
+      "title": "五选四实战演练·拖拽还原",
+      "type": "drag-game",
+      "interactions": [
+        "pickDragWord",
+        "dragSlotClick"
+      ],
+      "segment": 4,
+      "creative": true
+    },
+    {
+      "pageId": 17,
+      "title": "五选四·语篇阅读",
+      "type": "reading-passage",
+      "interactions": [],
+      "segment": 5
+    },
+    {
+      "pageId": 18,
+      "title": "五选四·题目",
+      "type": "quiz-with-qnav",
+      "interactions": [
+        "checkRead54Test",
+        "goRead54Q"
+      ],
+      "segment": 5
+    },
+    {
+      "pageId": 19,
+      "title": "五选四·排除法模拟器",
+      "type": "flip-grid",
+      "interactions": [
+        "excludeStep"
+      ],
+      "segment": 5,
+      "creative": true
+    },
+    {
+      "pageId": 20,
+      "title": "简答翻译·实战·定位高亮",
+      "type": "reading-passage+fill",
+      "interactions": [
+        "locateLine",
+        "checkLocate"
+      ],
+      "segment": 6,
+      "creative": true
+    },
+    {
+      "pageId": 21,
+      "title": "句子练习·汉译英",
+      "type": "fill-table",
+      "interactions": [
+        "checkTranslate"
+      ],
+      "segment": 6
+    },
+    {
+      "pageId": 22,
+      "title": "题型策略·时间管理",
+      "type": "content-table+warning",
+      "interactions": [],
+      "segment": 7
+    },
+    {
+      "pageId": 23,
+      "title": "题型策略·限时训练法",
+      "type": "roadmap",
+      "interactions": [],
+      "segment": 7
+    },
+    {
+      "pageId": 24,
+      "title": "题型策略·错因本",
+      "type": "flip-grid",
+      "interactions": [
+        "error-type-card-flip"
+      ],
+      "segment": 7
+    },
+    {
+      "pageId": 25,
+      "title": "Exit Ticket·课堂总结",
+      "type": "exit-quiz",
+      "interactions": [
+        "checkExit",
+        "checkExitSentence",
+        "recordExit",
+        "completion-badge"
+      ],
+      "segment": 8
+    }
+  ],
+  "creativeInteractions": [
+    {
+      "id": "creative1_dialogMatch",
+      "page": 3,
+      "function": "pickDialogLeft/Right",
+      "behavior": "点击左列问句高亮，再点右列答句匹配"
+    },
+    {
+      "id": "creative2_lightCohesion",
+      "page": 11,
+      "function": "lightCohesion(i,el)",
+      "behavior": "点击 6 张衔接词卡，背景金色高亮，显示功能分类反馈"
+    },
+    {
+      "id": "creative3_whSort",
+      "page": 13,
+      "function": "pickWh/whBoxClick",
+      "behavior": "先点疑问词高亮，再点 5 个归类箱正确自动放入"
+    },
+    {
+      "id": "creative4_dragBlank",
+      "page": 16,
+      "function": "pickDragWord/dragSlotClick",
+      "behavior": "点击句子卡+空位两步操作，正确金色✓"
+    },
+    {
+      "id": "creative5_excludeStep",
+      "page": 19,
+      "function": "excludeStep(i,el)",
+      "behavior": "4 张卡片点击翻面，显示思考过程"
+    },
+    {
+      "id": "creative6_locateLine",
+      "page": 20,
+      "function": "locateLine/checkLocate",
+      "behavior": "点击段落高亮+输入答案，支持撇号变体"
+    }
+  ],
+  "stopPropagationSelectors": [
+    ".quiz-opt",
+    ".game-option",
+    ".fill-check-btn",
+    ".fill-input",
+    ".nav-item",
+    ".vocab-card",
+    ".flip-card",
+    ".mnemonic-card",
+    ".error-type-card",
+    ".exam-type-card",
+    ".eval-card",
+    ".cover-nav-item",
+    ".modal-content",
+    ".export-btn",
+    ".drag-word",
+    ".drag-slot",
+    ".match-item",
+    ".stats-card",
+    ".pos-word",
+    ".button",
+    "input",
+    ".game-progress-dot",
+    ".q-nav-item",
+    ".pos-box",
+    ".drag-slot"
+  ],
+  "_versionNote": "重做版 v2 · 解耦框架课件 | gen_l23_v2.py + courseware_core.py | 2026-07-31"
+}

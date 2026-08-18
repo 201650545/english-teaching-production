@@ -1,0 +1,130 @@
+{
+  "course": "第13课 · would like 结构、how much/many 与价格表达",
+  "stage": "Stage 4",
+  "lesson": "L13",
+  "duration": "90min",
+  "totalPages": 45,
+  "brand": "#E63946",
+  "accent": "#FFD700",
+  "bgGradient": "#FFF8F0 → #FFF0E0",
+  "pageIdContract": true,
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "realtime",
+    "exportFormats": ["json", "csv"],
+    "sessionIdRule": "L13_{studentId}_{YYYYMMDD}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  },
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": [
+        {
+          "page": 0,
+          "type": "cover",
+          "title": "第13课 · would like 结构、how much/many 与价格表达",
+          "subtitle": "Stage 4 · 购物·食材与价格表达 | 90分钟课程",
+          "objectives": ["掌握20个购物食材核心词汇", "掌握would like G34/how much-many G35/价格G36", "完成ea/ee /iː/拼读学习"],
+          "meta": [{"label": "核心场景", "value": "购物食材"}, {"label": "新词", "value": "20 Words"}, {"label": "时长", "value": "90 min"}, {"label": "语法", "value": "G34/G35/G36"}]
+        }
+      ]
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 2,
+      "pages": [
+        {
+          "page": 1,
+          "type": "review-grammar",
+          "title": "L12 语法回顾",
+          "content": ["G31 冠词 a/an/the", "G32 可数不可数量词", "G33 some/any"],
+          "interactions": ["formula-box × 3"]
+        },
+        {
+          "page": 2,
+          "type": "review-vocab",
+          "title": "L12 词汇快闪 + 导入",
+          "content": ["L12 20词分类速览", "3句口头翻译", "导入：How much is the pancake?"],
+          "interactions": ["answer-mask × 3"]
+        }
+      ]
+    },
+    {
+      "name": "新词20",
+      "start": 3,
+      "end": 8,
+      "pages": [
+        {"page": 3, "type": "vocab-group", "title": "食物类 A组 (1-5)", "words": ["pancake", "dumpling", "dessert", "snack", "sugar"], "layout": "item-board 2col"},
+        {"page": 4, "type": "vocab-group", "title": "调料与价格类 (6-10)", "words": ["salt", "oil", "price", "dollar", "yuan"], "layout": "item-board 2col"},
+        {"page": 5, "type": "vocab-group", "title": "支付类 (11-15)", "words": ["total", "pay", "change", "spend", "cost"], "layout": "item-board 2col"},
+        {"page": 6, "type": "vocab-group", "title": "买卖市场类 (16-20)", "words": ["sell", "buy", "market", "supermarket", "service"], "layout": "item-board 2col"},
+        {"page": 7, "type": "vocab-matrix", "title": "20词分类矩阵 + 快闪复习", "content": ["语义场分类表格", "mini-flash 20词"], "interactions": ["gtab", "mini-flash-grid"]},
+        {"page": 8, "type": "vocab-preview", "title": "价格表达概念预览", "content": ["would like礼貌表达预览", "how much/many提问预览"]}
+      ]
+    },
+    {
+      "name": "语法3考点",
+      "start": 9,
+      "end": 19,
+      "pages": [
+        {"page": 9, "type": "grammar", "title": "G34 would like to do sth. 与 would like sth.", "content": ["口诀", "句型结构表", "would like=want对比", "防越级约束"], "grammarTag": "G34"},
+        {"page": 10, "type": "grammar-examples", "title": "G34 例句精讲 + 易错点", "content": ["5条例句", "4条易错点", "中考辨析"], "grammarTag": "G34"},
+        {"page": 11, "type": "interactive-1", "title": "点餐选择器", "component": "order-selector", "foods": ["pancake", "dumplings", "dessert", "snacks"]},
+        {"page": 12, "type": "grammar", "title": "G35 how much vs. how many", "content": ["口诀", "how much/how many对照表", "划线提问转换规则", "防越级约束"], "grammarTag": "G35"},
+        {"page": 13, "type": "grammar-examples", "title": "G35 例句精讲 + 易错点", "content": ["5条例句", "易错点", "中考辨析"], "grammarTag": "G35"},
+        {"page": 14, "type": "grammar", "title": "G36 基数词与货币/价格表达", "content": ["口诀", "price is/cost/spend对照表", "yuan/dollar货币单位", "防越级约束"], "grammarTag": "G36"},
+        {"page": 15, "type": "grammar-examples", "title": "G36 例句精讲 + 易错点", "content": ["5条例句", "易错点", "中考辨析"], "grammarTag": "G36"},
+        {"page": 16, "type": "interactive-2", "title": "购物结算台", "component": "checkout-counter", "goods": ["dumplings", "pancakes", "snacks"]},
+        {"page": 17, "type": "grammar-compare", "title": "G34/G35/G36 综合对比", "content": ["三考点横向对比", "购物表达完整流程"]},
+        {"page": 18, "type": "quiz", "title": "随堂演练 上（G34+G35）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]},
+        {"page": 19, "type": "quiz", "title": "随堂演练 下（G36+综合）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]}
+      ]
+    },
+    {
+      "name": "阅读理解",
+      "start": 20,
+      "end": 24,
+      "pages": [
+        {"page": 20, "type": "reading", "title": "阅读A篇 Shopping for a Special Dinner", "content": ["129词", "5选择题"]},
+        {"page": 21, "type": "reading", "title": "阅读B篇 A Trip to the Supermarket", "content": ["150词", "3选择题"]},
+        {"page": 22, "type": "reading", "title": "阅读B篇（下）+ 五选四", "content": ["2选择题", "阅读回答问题"]},
+        {"page": 23, "type": "reading", "title": "阅读C篇 Smart Shopping Tips for Teens", "content": ["150词", "5选择题"]},
+        {"page": 24, "type": "reading", "title": "阅读五选四 Shopping Dialogue", "content": ["140词", "5空4选"]}
+      ]
+    },
+    {
+      "name": "句子练习",
+      "start": 25,
+      "end": 27,
+      "pages": [
+        {"page": 25, "type": "translation", "title": "汉译英 5句", "content": ["would like 2句", "how much/many 2句", "价格表达 1句"], "interactions": ["answer-mask × 5"]},
+        {"page": 26, "type": "sentence-build", "title": "造句练习 5句", "content": ["G34/G35/G36造句"], "interactions": ["answer-mask × 5"]},
+        {"page": 27, "type": "error-correction", "title": "改错练习 5句", "content": ["G34/G35/G36易错点"], "interactions": ["answer-mask × 5"]}
+      ]
+    },
+    {
+      "name": "自然拼读",
+      "start": 28,
+      "end": 31,
+      "pages": [
+        {"page": 28, "type": "phonics", "title": "ea/ee /iː/ 音素学习", "content": ["ea /iː/", "ee /iː/"], "grammarTag": "PH"},
+        {"page": 29, "type": "phonics-read", "title": "练习1 朗读词汇表", "content": ["ea × 6词", "ee × 6词"]},
+        {"page": 30, "type": "phonics-exercise", "title": "练习2+3 听音选词 + 看词归音", "content": ["4题听音选词", "4题看词归音"]},
+        {"page": 31, "type": "phonics-exercise", "title": "练习4 + 拼读总结", "content": ["4题最小对立对", "拼读总结"]}
+      ]
+    },
+    {
+      "name": "课堂总结",
+      "start": 32,
+      "end": 33,
+      "pages": [
+        {"page": 32, "type": "summary", "title": "核心总结", "content": ["G34/G35/G36三卡片", "20词快闪", "口诀汇总"]},
+        {"page": 33, "type": "mindmap", "title": "思维导图 + 完成提示", "content": ["购物表达系统", "完成提示"]}
+      ]
+    }
+  ]
+}

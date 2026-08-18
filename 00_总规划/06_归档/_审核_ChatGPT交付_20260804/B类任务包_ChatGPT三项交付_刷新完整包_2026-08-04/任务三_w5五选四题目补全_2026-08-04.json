@@ -1,0 +1,122 @@
+[
+  {
+    "id": "HN2026_L1_w5",
+    "passage_with_blanks": "Hello, everyone! My name is David. I am a new student at No. 1 Middle School. __(11)__ I am in Class Two, Grade Seven. My English teacher is Mr. Zhang. __(12)__ He is very nice to us. He helps us with English. I have some good friends here. __(13)__ Their names are Mike and Tom. We often play together after class. I like playing basketball with them. __(14)__ It is my favorite sport. I am happy to be here. I like my school, my teachers and my classmates. Welcome to my school!",
+    "options": [
+      [
+        "A",
+        "He teaches us English."
+      ],
+      [
+        "B",
+        "We enjoy it very much."
+      ],
+      [
+        "C",
+        "I am new here."
+      ],
+      [
+        "D",
+        "I am in Grade Seven."
+      ],
+      [
+        "E",
+        "I like them very much."
+      ]
+    ],
+    "answers": {
+      "11": "C",
+      "12": "A",
+      "13": "E",
+      "14": "B"
+    },
+    "extra": "D",
+    "rationale": {
+      "11": "I am new here 是前文 new student 的最小改写，并过渡到班级信息。",
+      "12": "He 指 Mr. Zhang，teaches us English 与 English teacher 呼应。",
+      "13": "them 指前文 good friends，并自然过渡到 Mike 和 Tom。",
+      "14": "it 指 playing basketball，并与后文 favorite sport 呼应。"
+    },
+    "note": "删除原空15：It is my favorite sport. 与 I am happy to be here. 之间本身衔接自然，该空信息量最低；仅移除占位符，正文单词与标点未改动。自检：正文仅将保留的4个空规范为__(11)__—__(14)__；衔接类型依次为语义承接、代词指代、关系承接、代词指代。"
+  },
+  {
+    "id": "HN2026_L6_w5",
+    "passage_with_blanks": "Eating healthy food is important for every student at school. Good food is the fuel for your body and your brain. A good breakfast helps you listen and learn in class with a clear mind. __(11)__ We should eat fruit every day after our three meals because fruit gives us vitamins. __(12)__ Fresh vegetables help our body grow tall and stay strong, so eat them often. __(13)__ Drink milk for strong bones and white teeth every morning before school. __(14)__ A good diet keeps us happy and full of energy for the whole day. Eat well, drink water often and move every day for a healthy life that you will love!",
+    "options": [
+      [
+        "A",
+        "Fruit gives us vitamins."
+      ],
+      [
+        "B",
+        "We also need water every day."
+      ],
+      [
+        "C",
+        "Candy is bad for our teeth."
+      ],
+      [
+        "D",
+        "Exercise is good for us, too."
+      ],
+      [
+        "E",
+        "Cola is a good drink for health."
+      ]
+    ],
+    "answers": {
+      "11": "A",
+      "12": "B",
+      "13": "D",
+      "14": "C"
+    },
+    "extra": "E",
+    "rationale": {
+      "11": "fruit 与后句 fruit gives us vitamins 呼应，由早餐过渡到水果。",
+      "12": "water 与篇末 drink water often 呼应，并过渡到其他健康食物。",
+      "13": "Exercise 与篇末 move every day 呼应，构成健康习惯并列。",
+      "14": "teeth 与前句 white teeth 呼应，说明应少吃糖果。"
+    },
+    "note": "沿用原4个空位，采用任务包给出的在用范例。自检：正文只把裸空规范为__(11)__—__(14)__；衔接类型依次为主题引入、并列补充、并列补充、关键词照应。"
+  },
+  {
+    "id": "HN2026_L8_w5",
+    "passage_with_blanks": "We went on a school trip last month and it was a lot of fun for the whole class. A good plan before the day helps a lot to make the trip easy. __(11)__ We visited the science museum and saw old and strange exhibits there with our eyes for the first time. __(12)__ Our guide told us funny stories about small robots and stars in the sky. __(13)__ We took many photos by the big door together to remember the day with joy. __(14)__ Everyone enjoyed the trip and we went home happy and tired at night. The bus was yellow and clean, and the weather was fine and bright. We learned new things and made new friends on the way all together. Next time we want to go there again with the same smile!",
+    "options": [
+      [
+        "A",
+        "The photos would help us remember the day."
+      ],
+      [
+        "B",
+        "Then we took the yellow bus to the museum."
+      ],
+      [
+        "C",
+        "We saw old and strange exhibits there."
+      ],
+      [
+        "D",
+        "There was a guide with us."
+      ],
+      [
+        "E",
+        "After listening, we went to the big door."
+      ]
+    ],
+    "answers": {
+      "11": "B",
+      "12": "D",
+      "13": "E",
+      "14": "A"
+    },
+    "extra": "C",
+    "rationale": {
+      "11": "Then 承接出发计划，yellow bus 与后文 The bus was yellow and clean 呼应，并引出 museum。",
+      "12": "a guide 与后句 Our guide 形成指代和信息承接。",
+      "13": "After listening 承接导游讲故事，big door 与后句 by the big door 呼应。",
+      "14": "The photos 指前句 many photos，remember the day 与前句同一目的呼应并过渡到总体感受。"
+    },
+    "note": "沿用原4个空位。自检：正文只把裸空规范为__(11)__—__(14)__；衔接类型依次为时间顺序、代词指代、时间顺序与地点照应、代词指代与总结过渡。"
+  }
+]

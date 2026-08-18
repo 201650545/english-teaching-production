@@ -1,0 +1,130 @@
+{
+  "course": "第14课 · 外貌描述、why/because 因果与形容词用法",
+  "stage": "Stage 4",
+  "lesson": "L14",
+  "duration": "90min",
+  "totalPages": 45,
+  "brand": "#E63946",
+  "accent": "#FFD700",
+  "bgGradient": "#FFF8F0 → #FFF0E0",
+  "pageIdContract": true,
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "realtime",
+    "exportFormats": ["json", "csv"],
+    "sessionIdRule": "L14_{studentId}_{YYYYMMDD}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  },
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": [
+        {
+          "page": 0,
+          "type": "cover",
+          "title": "第14课 · 外貌描述、why/because 因果与形容词用法",
+          "subtitle": "Stage 4 · 外貌·人物描述 | 90分钟课程",
+          "objectives": ["掌握20个外貌人物核心词汇", "掌握G37 be vs have外貌/G38 why-because/G39描述性形容词", "完成oa/ou/ow /əʊ//aʊ/拼读学习"],
+          "meta": [{"label": "核心场景", "value": "外貌人物"}, {"label": "新词", "value": "20 Words"}, {"label": "时长", "value": "90 min"}, {"label": "语法", "value": "G37/G38/G39"}]
+        }
+      ]
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 2,
+      "pages": [
+        {
+          "page": 1,
+          "type": "review-grammar",
+          "title": "L13 语法回顾",
+          "content": ["G34 would like", "G35 how much/many", "G36 价格表达"],
+          "interactions": ["formula-box × 3"]
+        },
+        {
+          "page": 2,
+          "type": "review-vocab",
+          "title": "L13 词汇快闪 + 导入",
+          "content": ["L13 20词分类速览", "3句口头翻译", "导入：Look at the actor!"],
+          "interactions": ["answer-mask × 3"]
+        }
+      ]
+    },
+    {
+      "name": "新词20",
+      "start": 3,
+      "end": 8,
+      "pages": [
+        {"page": 3, "type": "vocab-group", "title": "身高体型类 A组 (1-5)", "words": ["height", "weight", "medium", "thin", "heavy"], "layout": "item-board 2col"},
+        {"page": 4, "type": "vocab-group", "title": "外貌特征类 (6-10)", "words": ["tall", "short", "straight", "curly", "hair"], "layout": "item-board 2col"},
+        {"page": 5, "type": "vocab-group", "title": "身体部位与职业类 (11-15)", "words": ["eye", "face", "glass", "actor", "actress"], "layout": "item-board 2col"},
+        {"page": 6, "type": "vocab-group", "title": "职业与动作类 (16-20)", "words": ["singer", "artist", "describe", "person", "appearance"], "layout": "item-board 2col"},
+        {"page": 7, "type": "vocab-matrix", "title": "20词分类矩阵 + 快闪复习", "content": ["语义场分类表格", "mini-flash 20词"], "interactions": ["gtab", "mini-flash-grid"]},
+        {"page": 8, "type": "vocab-preview", "title": "外貌描述概念预览", "content": ["be vs. have/has外貌描述预览", "why/because因果表达预览"]}
+      ]
+    },
+    {
+      "name": "语法3考点",
+      "start": 9,
+      "end": 19,
+      "pages": [
+        {"page": 9, "type": "grammar", "title": "G37 外貌描述 be 动词 vs. have/has", "content": ["口诀", "句型结构表", "be vs have/has核心区分", "防越级约束"], "grammarTag": "G37"},
+        {"page": 10, "type": "grammar-examples", "title": "G37 例句精讲 + 易错点", "content": ["5条例句", "4条易错点", "中考辨析"], "grammarTag": "G37"},
+        {"page": 11, "type": "interactive-1", "title": "外貌描述选择器", "component": "appearance-selector", "traits": ["tall", "thin", "medium", "hair", "eyes"]},
+        {"page": 12, "type": "grammar", "title": "G38 why/because 因果状语", "content": ["口诀", "句型结构表", "why/because配对规则", "防越级约束"], "grammarTag": "G38"},
+        {"page": 13, "type": "grammar-examples", "title": "G38 例句精讲 + 易错点", "content": ["5条例句", "易错点", "中考辨析"], "grammarTag": "G38"},
+        {"page": 14, "type": "grammar", "title": "G39 描述性形容词", "content": ["口诀", "形容词位置规则表", "本课形容词分类表", "防越级约束"], "grammarTag": "G39"},
+        {"page": 15, "type": "grammar-examples", "title": "G39 例句精讲 + 易错点", "content": ["5条例句", "易错点", "中考辨析"], "grammarTag": "G39"},
+        {"page": 16, "type": "interactive-2", "title": "外貌猜人物", "component": "guess-person", "people": ["actor", "singer", "artist"]},
+        {"page": 17, "type": "grammar-compare", "title": "G37/G38/G39 综合对比", "content": ["三考点横向对比", "外貌描述完整流程"]},
+        {"page": 18, "type": "quiz", "title": "随堂演练 上（G37+G38）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]},
+        {"page": 19, "type": "quiz", "title": "随堂演练 下（G39+综合）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]}
+      ]
+    },
+    {
+      "name": "阅读理解",
+      "start": 20,
+      "end": 24,
+      "pages": [
+        {"page": 20, "type": "reading", "title": "阅读A篇 Describing My Favorite Teacher", "content": ["129词", "5选择题"]},
+        {"page": 21, "type": "reading", "title": "阅读B篇 The New Art Teacher", "content": ["150词", "3选择题"]},
+        {"page": 22, "type": "reading", "title": "阅读B篇（下）+ 阅读回答问题", "content": ["2选择题", "阅读回答问题"]},
+        {"page": 23, "type": "reading", "title": "阅读C篇 Why We Look Different", "content": ["150词", "5选择题"]},
+        {"page": 24, "type": "reading", "title": "阅读五选四 Guess Who I Am Describing", "content": ["140词", "5空4选"]}
+      ]
+    },
+    {
+      "name": "句子练习",
+      "start": 25,
+      "end": 27,
+      "pages": [
+        {"page": 25, "type": "translation", "title": "汉译英 5句", "content": ["外貌描述 be/have 2句", "why/because 2句", "形容词用法 1句"], "interactions": ["answer-mask × 5"]},
+        {"page": 26, "type": "sentence-build", "title": "造句练习 5句", "content": ["G37/G38/G39造句"], "interactions": ["answer-mask × 5"]},
+        {"page": 27, "type": "error-correction", "title": "改错练习 5句", "content": ["G37/G38/G39易错点"], "interactions": ["answer-mask × 5"]}
+      ]
+    },
+    {
+      "name": "自然拼读",
+      "start": 28,
+      "end": 31,
+      "pages": [
+        {"page": 28, "type": "phonics", "title": "oa/ou/ow /əʊ//aʊ/ 音素学习", "content": ["oa /əʊ/", "ou /aʊ/", "ow /əʊ/或/aʊ/"], "grammarTag": "PH"},
+        {"page": 29, "type": "phonics-read", "title": "练习1 朗读词汇表", "content": ["oa × 4词", "ou × 4词", "ow /əʊ/ × 4词", "ow /aʊ/ × 4词"]},
+        {"page": 30, "type": "phonics-exercise", "title": "练习2+3 听音选词 + 看词归音", "content": ["4题听音选词", "4题看词归音"]},
+        {"page": 31, "type": "phonics-exercise", "title": "练习4 + 拼读总结", "content": ["4题最小对立对", "拼读总结"]}
+      ]
+    },
+    {
+      "name": "课堂总结",
+      "start": 32,
+      "end": 33,
+      "pages": [
+        {"page": 32, "type": "summary", "title": "核心总结", "content": ["G37/G38/G39三卡片", "20词快闪", "口诀汇总"]},
+        {"page": 33, "type": "mindmap", "title": "思维导图 + 完成提示", "content": ["外貌描述系统", "完成提示"]}
+      ]
+    }
+  ]
+}

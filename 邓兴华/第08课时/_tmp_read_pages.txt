@@ -1,0 +1,189 @@
+="fill-input-box" id="drill3" placeholder="输入答案" autocomplete="off">
+<button class="fill-check-btn" onclick="checkSpell('drill3','ago','ago — ago 放在时间段之后，用于过去时')">检查</button>
+<div class="fill-feedback" id="drill3fb"></div>
+
+    </div></div>
+</div>
+<!-- P27: Reading A - Passage -->
+<div class="page" id="page27" data-page="26">
+<span class="section-badge">📖 阅读理解 · A 篇</span>
+<h2 class="page-title"><span class="title-icon">📖</span> Reading A: Getting Dressed for Yesterday's Trip</h2>
+<div class="reading-layout">
+<div class="rl-left">
+<div class="reading-passage" style="max-height:none">
+<div class="passage-title">Getting Dressed for Yesterday's Trip</div>
+<div class="word-count">词数：107 · 应用文</div>
+<p>Yesterday, we decided to visit the beach. It was a sunny day. I stayed at home in the morning to prepare. I needed to find the right clothes for the trip.</p>
+<p>First, I put on a T-shirt and shorts. The weather was warm, so I didn't need a jacket. I also packed a hat to protect my face. The place was beautiful, and I wanted to enjoy every moment.</p>
+<p>I brought some cheap snacks and water. The tickets were not expensive. We started the trip at 8 a.m. and finished at 6 p.m. It was a wonderful day. I felt very happy. The food at the beach was delicious!</p>
+</div>
+</div>
+<div class="rl-right">
+<div class="quiz-container">
+    <div class="quiz-q" data-interaction-item="1" data-question-id="L08_READ_A_Q1" data-knowledge-id="R08" data-section="reading" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval">
+<div class="quiz-question">1. Where did they decide to go yesterday?</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文说 visit the beach，不是 museum。','L08_READ_A_Q1')">A. <span class="opt-label">A</span>The museum</button>
+<button class="quiz-opt" data-correct="1" onclick="handleQuizMeta(this,true,'原文：we decided to visit the beach，正确！','L08_READ_A_Q1')">B. <span class="opt-label">B</span>The beach</button>
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文未提及 camp。','L08_READ_A_Q1')">C. <span class="opt-label">C</span>The camp</button>
+</div>
+<div class="quiz-feedback" id="L08_READ_A_Q1fb"></div>
+
+    </div></div>
+<div class="quiz-container">
+    <div class="quiz-q" data-interaction-item="1" data-question-id="L08_READ_A_Q2" data-knowledge-id="R08" data-section="reading" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval">
+<div class="quiz-question">2. What time did they start the trip?</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="1" onclick="handleQuizMeta(this,true,'原文：started the trip at 8 a.m.，正确！','L08_READ_A_Q2')">A. <span class="opt-label">A</span>8 a.m.</button>
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文说 started at 8 a.m.，不是 6 a.m.。','L08_READ_A_Q2')">B. <span class="opt-label">B</span>6 a.m.</button>
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文说 finished at 6 p.m.，不是开始时间。','L08_READ_A_Q2')">C. <span class="opt-label">C</span>6 p.m.</button>
+</div>
+<div class="quiz-feedback" id="L08_READ_A_Q2fb"></div>
+
+    </div></div>
+</div>
+</div>
+</div>
+<!-- P28: Reading A - Questions 3-5 + Evidence -->
+<div class="page" id="page28" data-page="27">
+<span class="section-badge">📖 阅读理解 · A 篇续</span>
+<h2 class="page-title"><span class="title-icon">📝</span> Reading A 续 + 证据定位</h2>
+<div class="quiz-container">
+    <div class="quiz-q" data-interaction-item="1" data-question-id="L08_READ_A_Q3" data-knowledge-id="R08" data-section="reading" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval">
+<div class="quiz-question">3. How did the writer feel about the trip?</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="1" onclick="handleQuizMeta(this,true,'原文：I felt very happy，正确！','L08_READ_A_Q3')">A. <span class="opt-label">A</span>Happy</button>
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文说 I felt very happy，不是 terrible。','L08_READ_A_Q3')">B. <span class="opt-label">B</span>Terrible</button>
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文未提及 bored。','L08_READ_A_Q3')">C. <span class="opt-label">C</span>Bored</button>
+</div>
+<div class="quiz-feedback" id="L08_READ_A_Q3fb"></div>
+
+    </div></div>
+<div class="quiz-container">
+    <div class="quiz-q" data-interaction-item="1" data-question-id="L08_READ_A_Q4" data-knowledge-id="R08" data-section="reading" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval">
+<div class="quiz-question">4. What was NOT mentioned in the passage?</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文提到了 cheap snacks。','L08_READ_A_Q4')">A. <span class="opt-label">A</span>Cheap snacks</button>
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文提到了 a hat。','L08_READ_A_Q4')">B. <span class="opt-label">B</span>A hat</button>
+<button class="quiz-opt" data-correct="1" onclick="handleQuizMeta(this,true,'原文未提及 a guide，正确！','L08_READ_A_Q4')">C. <span class="opt-label">C</span>A guide</button>
+</div>
+<div class="quiz-feedback" id="L08_READ_A_Q4fb"></div>
+
+    </div></div>
+<div class="drag-container">
+    <div class="quiz-q" data-interaction-item="1" data-question-id="L08_READ_A_Q5" data-knowledge-id="R08" data-section="reading" data-template-id="R-WRITE-ANSWER" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application">
+<p style="font-size:17px;margin-bottom:8px;">5. 短答：What did the writer bring for the trip? (用原文词句回答)</p>
+<input class="fill-input-box" id="readSA1" placeholder="输入答案" autocomplete="off" style="width:400px">
+<button class="fill-check-btn" onclick="checkShortAnswer('readSA1',['cheap snacks','a hat','water','some cheap snacks and water'],'关键信息：cheap snacks / a hat / water')">检查</button>
+<div class="fill-feedback" id="readSA1fb"></div>
+
+    </div></div>
+</div>
+<!-- P29: Reading B - Passage + Questions -->
+<div class="page" id="page29" data-page="28">
+<span class="section-badge">📖 阅读理解 · B 篇</span>
+<h2 class="page-title"><span class="title-icon">📖</span> Reading B: Yesterday's Trip to the Beach</h2>
+<div class="reading-layout">
+<div class="rl-left">
+<div class="reading-passage" style="max-height:none">
+<div class="passage-title">Yesterday's Trip to the Beach</div>
+<div class="word-count">词数：129 · 记叙文</div>
+<p>Yesterday, my family visited the beach. We started early in the morning. The weather was sunny and warm. The place was beautiful with white sand and blue water. We spent the whole day there.</p>
+<p>First, we tried beach volleyball. It was very exciting. Then, a guide showed us around the area. He told us about the local history. We felt amazed by the stories. After that, we had lunch at a restaurant nearby. The fish was delicious!</p>
+<p>In the afternoon, we enjoyed some water activities. The tickets were cheap, so we tried many things. However, the weather became terrible later. It started to rain. We decided to go home. We finished our trip at 5 p.m. Although it rained, we enjoyed the trip very much. It was a memorable day two days ago.</p>
+</div>
+</div>
+<div class="rl-right">
+<div class="quiz-container">
+    <div class="quiz-q" data-interaction-item="1" data-question-id="L08_READ_B_Q1" data-knowledge-id="R08" data-section="reading" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval">
+<div class="quiz-question">1. What did they try first at the beach?</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文说先尝试排球，游泳是下午的。','L08_READ_B_Q1')">A. <span class="opt-label">A</span>Swimming</button>
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文说先尝试排球，午餐在之后。','L08_READ_B_Q1')">B. <span class="opt-label">B</span>Lunch</button>
+<button class="quiz-opt" data-correct="1" onclick="handleQuizMeta(this,true,'原文：we tried beach volleyball，正确！','L08_READ_B_Q1')">C. <span class="opt-label">C</span>Beach volleyball</button>
+</div>
+<div class="quiz-feedback" id="L08_READ_B_Q1fb"></div>
+
+    </div></div>
+<div class="quiz-container">
+    <div class="quiz-q" data-interaction-item="1" data-question-id="L08_READ_B_Q2" data-knowledge-id="R08" data-section="reading" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval">
+<div class="quiz-question">2. The word "memorable" means ____.</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'memorable 意为难忘的，不是 boring。','L08_READ_B_Q2')">A. <span class="opt-label">A</span>Boring</button>
+<button class="quiz-opt" data-correct="1" onclick="handleQuizMeta(this,true,'memorable = 难忘的，正确！','L08_READ_B_Q2')">B. <span class="opt-label">B</span>Unforgettable</button>
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'memorable 意为难忘的，不是 terrible。','L08_READ_B_Q2')">C. <span class="opt-label">C</span>Terrible</button>
+</div>
+<div class="quiz-feedback" id="L08_READ_B_Q2fb"></div>
+
+    </div></div>
+<div class="quiz-container">
+    <div class="quiz-q" data-interaction-item="1" data-question-id="L08_READ_B_Q3" data-knowledge-id="R08" data-section="reading" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval">
+<div class="quiz-question">3. Why did they decide to go home?</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文说因为下雨，不是因为 tired。','L08_READ_B_Q3')">A. <span class="opt-label">A</span>They were tired</button>
+<button class="quiz-opt" data-correct="1" onclick="handleQuizMeta(this,true,'原文：the weather became terrible, it started to rain，正确！','L08_READ_B_Q3')">B. <span class="opt-label">B</span>It started to rain</button>
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文说因为下雨，不是因为 expensive。','L08_READ_B_Q3')">C. <span class="opt-label">C</span>The tickets were expensive</button>
+</div>
+<div class="quiz-feedback" id="L08_READ_B_Q3fb"></div>
+
+    </div></div>
+</div>
+</div>
+</div>
+<!-- P30: Reading B - Questions 4-5 + Short Answer -->
+<div class="page" id="page30" data-page="29">
+<span class="section-badge">📖 阅读理解 · B 篇续</span>
+<h2 class="page-title"><span class="title-icon">📝</span> Reading B 续 + 短答</h2>
+<div class="quiz-container">
+    <div class="quiz-q" data-interaction-item="1" data-question-id="L08_READ_B_Q4" data-knowledge-id="R08" data-section="reading" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval">
+<div class="quiz-question">4. How did they feel about the guide's stories?</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文说 felt amazed，不是 bored。','L08_READ_B_Q4')">A. <span class="opt-label">A</span>Bored</button>
+<button class="quiz-opt" data-correct="1" onclick="handleQuizMeta(this,true,'原文：We felt amazed by the stories，正确！','L08_READ_B_Q4')">B. <span class="opt-label">B</span>Amazed</button>
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文说 felt amazed，不是 terrible。','L08_READ_B_Q4')">C. <span class="opt-label">C</span>Terrible</button>
+</div>
+<div class="quiz-feedback" id="L08_READ_B_Q4fb"></div>
+
+    </div></div>
+<div class="quiz-container">
+    <div class="quiz-q" data-interaction-item="1" data-question-id="L08_READ_B_Q5" data-knowledge-id="R08" data-section="reading" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval">
+<div class="quiz-question">5. What can we infer from the passage?</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文说尽管下雨仍享受旅行，不完全是糟糕经历。','L08_READ_B_Q5')">A. <span class="opt-label">A</span>The trip was completely terrible</button>
+<button class="quiz-opt" data-correct="1" onclick="handleQuizMeta(this,true,'原文说 Although it rained, we enjoyed the trip，说明虽然下雨但仍然开心，正确！','L08_READ_B_Q5')">B. <span class="opt-label">B</span>They enjoyed the trip despite the rain</button>
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'原文说 spent the whole day there，不是只有上午。','L08_READ_B_Q5')">C. <span class="opt-label">C</span>They only stayed in the morning</button>
+</div>
+<div class="quiz-feedback" id="L08_READ_B_Q5fb"></div>
+
+    </div></div>
+</div>
+<!-- P31: Reading - Five Select Four -->
+<div class="page" id="page31" data-page="30">
+<span class="section-badge">📖 阅读理解 · 五选四</span>
+<h2 class="page-title"><span class="title-icon">📖</span> A Science Trip to the Museum — 五选四</h2>
+<div class="reading-passage">
+<div class="passage-title">A Science Trip to the Museum</div>
+<div class="word-count">词数：129 · 说明文</div>
+<p>Last week, our class visited the science museum. It was a great place to learn about the world. The guide showed us many exhibits. We started the tour at 9 a.m.</p>
+<p>____1____. He explained how machines work and showed us ancient tools. We felt amazed by the inventions. The museum was very big, so we spent three hours there.</p>
+<p>____2____. We tried some science activities. It was very exciting. We decided to explore the space section next. The exhibits about stars were wonderful.</p>
+<p>____3____. The guide told us that the museum was built many years ago. It has a long history of science education.</p>
+<p>____4____. We finished our visit at noon. We enjoyed the trip very much. It was a meaningful activity for all of us.</p>
+</div>
+<div class="quiz-container">
+    <div class="quiz-q" data-interaction-item="1" data-question-id="L08_READ_5Q_Q1" data-knowledge-id="R08" data-section="reading" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval">
+<div class="quiz-question">选出填入空格的最佳选项（有一个多余选项）：</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="1" onclick="handleQuizMeta(this,true,'A. First, the guide took us to the machine room — 接在导览之后。','L08_READ_5Q_Q1')">A. <span class="opt-label">A</span>First, the guide took us to the machine room</button>
+<button class="quiz-opt" data-correct="1" onclick="handleQuizMeta(this,true,'B. Then we moved to the activity center — 接在尝试活动之前。','L08_READ_5Q_Q1')">B. <span class="opt-label">B</span>Then we moved to the activity center</button>
+<button class="quiz-opt" data-correct="0" onclick="handleQuizMeta(this,false,'C. 与后文矛盾，we enjoyed the trip。','L08_READ_5Q_Q1')">C. <span class="opt-label">C</span>We didn't like the museum at all</button>
+<button class="quiz-opt" data-correct="1" onclick="handleQuizMeta(this,true,'D. After that, we visited the history section — 接在历史介绍之前。','L08_READ_5Q_Q1')">D. <span class="opt-label">D</span>After that, we visited the history section</button>
+<button class="quiz-opt" data-correct="1" onclick="handleQuizMeta(this,true,'E. Finally, we went to the gift shop — 接在结束参观之前。','L08_READ_5Q_Q1')">E. <span class="opt-label">E</span>Finally, we went to the gift shop</button>
+</div>
+<div class="quiz-feedback" id="L08_READ_5Q_Q1fb"></div>
+
+    </div></div>
+<p style="font-size:14px;color:var(--text-light);text-align:center;margin-top:8px;">💡 C 选项与全文 "we enjoyed the trip" 矛盾，是干扰项。</p>
+</div>
+<!-- P32: Sentence Practice - Chinese to English -->
+<div class="page" 

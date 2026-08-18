@@ -1,0 +1,219 @@
+{
+  "lesson": "L25",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A篇 6题→3 fill+3 opt（Q078/Q079/Q081 为 enjoy/hope/promise 接续语法点，本课上限，保留选择）；B篇 6题→2 fill+4 opt（Q085/Q086/Q088 词义语法点、Q089 主旨保留选择）——B 篇按 2+3 弹性/题量混合适配（§3.18.1）；C篇 6题→4 fill+2 opt；五选四不纳入。题量口径（页面实际题量、含既有语法填空，既有语法填空不纳入 3+2 配额）：A 篇页面 7 题 = 4 fill-input（3 处 data-answers 阅读题 Q076/Q077/Q082 + 1 处既有语法填空 Q080）+ 3 opt，计入口径 6 题 = 3 fill + 3 opt；B 篇页面 7 题 = 3 fill-input（2 处 data-answers 阅读题 Q083/Q084 + 1 处既有语法填空 Q087）+ 4 opt，计入口径 6 题 = 2 fill + 4 opt；C 篇页面 7 题 = 5 fill-input（4 处 data-answers 阅读题 Q090/Q091/Q093/Q096 + 1 处既有语法填空 Q094）+ 2 opt，计入口径 6 题 = 4 fill + 2 opt",
+  "vocab_pool": [
+    "enjoy",
+    "finish",
+    "mind",
+    "practice",
+    "suggest",
+    "avoid",
+    "consider",
+    "imagine",
+    "decide",
+    "hope",
+    "plan",
+    "want",
+    "need",
+    "agree",
+    "refuse",
+    "promise",
+    "manage",
+    "afford",
+    "offer",
+    "fail"
+  ],
+  "grammar_cap": "G62 动名词 V-ing 作主语/宾语 / G63 不定式 to do 作宾语/目的状语 / stop-remember doing vs to do 辨析；禁止比较级/最高级/完成时/被动；允许原文摘录（§3.18.4.4）",
+  "A篇": {
+    "Q076": {
+      "question": "作者喜欢做什么？",
+      "type": "fill",
+      "openness": "细节·中文题面、答案填英文原文",
+      "canonical_answer": "reading and playing chess",
+      "minimum_acceptable_answer": "reading and playing chess",
+      "accepted_answers": [
+        "reading and playing chess",
+        "reading and chess",
+        "read and play chess",
+        "playing chess and reading"
+      ],
+      "required_vocab": [],
+      "required_grammar": "动名词短语（G62 本课上限），原文摘录"
+    },
+    "Q077": {
+      "question": "作者想成为什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "a musician",
+      "minimum_acceptable_answer": "a musician",
+      "accepted_answers": [
+        "a musician",
+        "musician"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（名词短语，原文摘录；want to be 不定式为本课上限）"
+    },
+    "Q078": {
+      "question": "enjoy 后接什么？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "C"
+    },
+    "Q079": {
+      "question": "'I hope to join' 中 to join 表？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "A"
+    },
+    "Q081": {
+      "question": "'I promise to work hard' 中 promise to do 表？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "C"
+    },
+    "Q082": {
+      "question": "作者还计划做什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "learn another language",
+      "minimum_acceptable_answer": "learn another language",
+      "accepted_answers": [
+        "learn another language",
+        "learn a second language",
+        "learn a new language",
+        "another language"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（plan to do 不定式宾语，G63 本课上限），原文摘录"
+    }
+  },
+  "B篇": {
+    "Q083": {
+      "question": "作者与朋友约定做什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "run a race",
+      "minimum_acceptable_answer": "run a race",
+      "accepted_answers": [
+        "run a race",
+        "a race",
+        "race",
+        "running a race"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（agree to do 不定式，G63 本课上限），原文摘录"
+    },
+    "Q084": {
+      "question": "Tom 建议作者？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "keep running",
+      "minimum_acceptable_answer": "keep running",
+      "accepted_answers": [
+        "keep running",
+        "keep on running",
+        "continue running",
+        "keeping on running"
+      ],
+      "required_vocab": [],
+      "required_grammar": "动名词（suggest doing，G62 本课上限），原文摘录"
+    },
+    "Q085": {
+      "question": "'Remember to rest' 意思是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "A"
+    },
+    "Q086": {
+      "question": "'managed to finish' 意思是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "B"
+    },
+    "Q088": {
+      "question": "'I remember doing my best' 意思是？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "A"
+    },
+    "Q089": {
+      "question": "作者从这次经历学到？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "B"
+    }
+  },
+  "C篇": {
+    "Q090": {
+      "question": "作者为什么爱运动？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "strong and happy",
+      "minimum_acceptable_answer": "strong and happy",
+      "accepted_answers": [
+        "strong and happy",
+        "it makes me strong and happy",
+        "strong",
+        "happy"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（形容词短语，原文摘录；because 原因句）"
+    },
+    "Q091": {
+      "question": "教练建议先做什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "warm-up exercises",
+      "minimum_acceptable_answer": "warm-up exercises",
+      "accepted_answers": [
+        "warm-up exercises",
+        "warm up exercises",
+        "do warm-up exercises",
+        "warmup exercises"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（suggest doing 动名词宾语，G62 本课上限），原文摘录"
+    },
+    "Q092": {
+      "question": "'I want to be on the team' 中 to be 表？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "B"
+    },
+    "Q093": {
+      "question": "作者需要做什么来实现梦想？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "train hard",
+      "minimum_acceptable_answer": "train hard",
+      "accepted_answers": [
+        "train hard",
+        "practice hard",
+        "training hard"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（need to do 不定式，G63 本课上限），原文摘录"
+    },
+    "Q095": {
+      "question": "'Doing sports teaches me' 中 Doing sports 作？",
+      "type": "opt",
+      "openness": "开放性判断→有选项（词义/语法/主旨/推断）",
+      "correct": "B"
+    },
+    "Q096": {
+      "question": "运动教会作者？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "work with others",
+      "minimum_acceptable_answer": "work with others",
+      "accepted_answers": [
+        "work with others",
+        "work as a team",
+        "work together"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（to do 不定式作宾补/目的，G63 本课上限），原文摘录"
+    }
+  }
+}

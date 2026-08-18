@@ -1,0 +1,696 @@
+{
+ "_doc": "邓兴华 L12 配套练习内容（中等）· 2026-08-06。主题：餐厅点餐综合；语法：G31 冠词 a/an/the / G32 可数/不可数与量词结构 / G33 some/any 用法。难度：中等。结构对齐 exam_spec v2026.2（阅读30/语言25/综合25 + 教学诊断附件）。全部语篇为真题母本改编（教师授权原创），source_id=DXH2026_L12_*。",
+ "reading_a": {
+  "id": "DXH2026_L12_reading_a",
+  "genre": "应用文（餐厅广告）",
+  "difficulty": "中",
+  "word_count": 110,
+  "provenance": "真题母本改编（教师授权原创 2026-08-06）",
+  "绑定": "冠词a/an/the/可数不可数名词/some/any/餐厅词汇",
+  "paragraphs": [
+   "Sunny Restaurant\nWelcome to Sunny Restaurant! We have great specials today.\n\nNoodle House\nA large bowl of beef noodles ¥20\nA medium bowl of mutton noodles ¥18\nA small bowl of tomato noodles ¥12\n\nDumpling King\nPork and cabbage dumplings ¥15 for 20\nBeef and onion dumplings ¥18 for 20\n\nDrinks\nA cup of green tea ¥4\nA glass of orange juice ¥5\nA cup of coffee ¥8\n\nCome and enjoy your meal! Tel: 888-6666"
+  ],
+  "questions": [
+   {
+    "num": 1,
+    "q": "How much is a medium bowl of mutton noodles?",
+    "opts": [
+     [
+      "A",
+      "¥18"
+     ],
+     [
+      "B",
+      "¥20"
+     ],
+     [
+      "C",
+      "¥12"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "If you want 20 beef and onion dumplings, you need to pay ____.",
+    "opts": [
+     [
+      "A",
+      "¥15"
+     ],
+     [
+      "B",
+      "¥18"
+     ],
+     [
+      "C",
+      "¥20"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "Which drink is the cheapest?",
+    "opts": [
+     [
+      "A",
+      "Green tea"
+     ],
+     [
+      "B",
+      "Orange juice"
+     ],
+     [
+      "C",
+      "Coffee"
+     ]
+    ],
+    "answer": "A"
+   }
+  ]
+ },
+ "reading_b": {
+  "id": "DXH2026_L12_reading_b",
+  "genre": "记叙文",
+  "difficulty": "中",
+  "word_count": 126,
+  "provenance": "真题母本改编（教师授权原创 2026-08-06）",
+  "绑定": "冠词a/an/the/量词短语a bowl of/ a cup of/some/any用法/点餐对话",
+  "paragraphs": [
+   "Today is my birthday. My parents take me to a new restaurant. The restaurant is big and clean. There is a large menu on the table. I look at the menu carefully.",
+   "I would like a bowl of beef noodles. My mother orders a plate of vegetable salad and a cup of green tea. My father wants a large bowl of mutton noodles. He also orders some soup.",
+   "The waiter is friendly. He asks, \"Would you like some juice?\" We say, \"No, thanks. We don't want any juice.\" The food is delicious. We have a good time there. I like the restaurant very much."
+  ],
+  "questions": [
+   {
+    "num": 1,
+    "q": "Why do they go to the restaurant?",
+    "opts": [
+     [
+      "A",
+      "Because it's the writer's birthday"
+     ],
+     [
+      "B",
+      "Because the food is cheap"
+     ],
+     [
+      "C",
+      "Because the restaurant is new"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "What does the mother order?",
+    "opts": [
+     [
+      "A",
+      "Beef noodles and soup"
+     ],
+     [
+      "B",
+      "Vegetable salad and green tea"
+     ],
+     [
+      "C",
+      "Mutton noodles and juice"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "Do they order any juice?",
+    "opts": [
+     [
+      "A",
+      "Yes, they do"
+     ],
+     [
+      "B",
+      "No, they don't"
+     ],
+     [
+      "C",
+      "We don't know"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 4,
+    "q": "What does the underlined word \"waiter\" mean in Chinese?",
+    "opts": [
+     [
+      "A",
+      "顾客"
+     ],
+     [
+      "B",
+      "服务员"
+     ],
+     [
+      "C",
+      "厨师"
+     ]
+    ],
+    "answer": "B"
+   }
+  ]
+ },
+ "reading_c": {
+  "id": "DXH2026_L12_reading_c",
+  "genre": "说明文",
+  "difficulty": "中",
+  "word_count": 138,
+  "provenance": "真题母本改编（教师授权原创 2026-08-06）",
+  "绑定": "冠词a/an/the用法/some/any肯定否定疑问/可数不可数名词",
+  "paragraphs": [
+   "Do you know how to use a, an and the correctly? Let's learn together. We use a or an when we talk about one thing for the first time. We use a before a consonant sound, like a book, a cup and a bowl. We use an before a vowel sound, like an egg, an apple and an onion.",
+   "We use the when we talk about a specific thing. For example, \"I have a cat. The cat is white.\" The first time we use a cat, and the second time we use the cat because we know which cat we are talking about.",
+   "We also use some and any with nouns. We use some in positive sentences, like \"I have some tea.\" We use any in negative sentences and questions, like \"I don't have any coffee.\" and \"Do you have any soup?\" But in polite requests like \"Would you like some tea?\", we use some."
+  ],
+  "questions": [
+   {
+    "num": 1,
+    "q": "When do we use an?",
+    "opts": [
+     [
+      "A",
+      "Before a consonant sound"
+     ],
+     [
+      "B",
+      "Before a vowel sound"
+     ],
+     [
+      "C",
+      "Before any noun"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 2,
+    "q": "Which sentence is correct?",
+    "opts": [
+     [
+      "A",
+      "I have a apple"
+     ],
+     [
+      "B",
+      "I have an egg"
+     ],
+     [
+      "C",
+      "I have an cup"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "When do we use some in a question?",
+    "opts": [
+     [
+      "A",
+      "Never"
+     ],
+     [
+      "B",
+      "In polite requests"
+     ],
+     [
+      "C",
+      "In all questions"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 4,
+    "q": "What is the passage mainly about?",
+    "opts": [
+     [
+      "A",
+      "How to use articles and some/any"
+     ],
+     [
+      "B",
+      "Different kinds of food"
+     ],
+     [
+      "C",
+      "How to order in a restaurant"
+     ]
+    ],
+    "answer": "A"
+   }
+  ]
+ },
+ "w5": {
+  "id": "DXH2026_L12_w5",
+  "title": "根据短文内容，从方框中选出最佳句子填入文中空白处，使短文通顺连贯（有一项为多余选项）",
+  "paragraphs": [
+   "Eating habits are different in different countries. ___1___ For example, Chinese people like eating rice and noodles. People in the US like hamburgers and hot dogs.",
+   "In China, people use chopsticks to eat. ___2___ But in Western countries, people use knives and forks. They also use spoons for soup.",
+   "___3___ We should eat more vegetables and fruit. We should not eat too much fast food. ___4___ An apple a day keeps the doctor away."
+  ],
+  "candidates": [
+   [
+    "A",
+    "It's important to have healthy eating habits."
+   ],
+   [
+    "B",
+    "People in different countries eat different food."
+   ],
+   [
+    "C",
+    "We should drink some milk every day."
+   ],
+   [
+    "D",
+    "Chopsticks are very useful for eating noodles."
+   ],
+   [
+    "E",
+    "Fast food is delicious and healthy."
+   ]
+  ],
+  "answers": {
+   "1": "B",
+   "2": "D",
+   "3": "A",
+   "4": "C"
+  }
+ },
+ "cloze": {
+  "id": "DXH2026_L12_cloze",
+  "title": "完形填空",
+  "paragraphs": [
+   "Today is Sunday. I go to ___1___ new restaurant with my friend Tom. The restaurant is big and clean. There is ___2___ menu on each table. We look at the menu carefully.",
+   "I would like ___3___ bowl of beef noodles. Tom wants a plate of dumplings. There are twenty ___4___ in a plate. We also order ___5___ green tea. Tom doesn't want ___6___ juice. He says he doesn't like sweet drinks.",
+   "The food comes quickly. The noodles are delicious. ___7___ dumplings are great, too. We eat a lot. The waiter is very friendly. ___8___ he comes and asks, \"Is everything OK?\" We say yes.",
+   "We usually go to a restaurant ___9___ Sunday afternoon. We think eating out is fun. But we should not eat too much fast food. ___10___ healthy food is good for us."
+  ],
+  "items": [
+   {
+    "num": 1,
+    "opts": [
+     [
+      "A",
+      "a"
+     ],
+     [
+      "B",
+      "an"
+     ],
+     [
+      "C",
+      "the"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "opts": [
+     [
+      "A",
+      "a"
+     ],
+     [
+      "B",
+      "an"
+     ],
+     [
+      "C",
+      "/"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 3,
+    "opts": [
+     [
+      "A",
+      "a"
+     ],
+     [
+      "B",
+      "an"
+     ],
+     [
+      "C",
+      "the"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 4,
+    "opts": [
+     [
+      "A",
+      "dumpling"
+     ],
+     [
+      "B",
+      "dumplings"
+     ],
+     [
+      "C",
+      "dumplinges"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 5,
+    "opts": [
+     [
+      "A",
+      "some"
+     ],
+     [
+      "B",
+      "any"
+     ],
+     [
+      "C",
+      "a"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 6,
+    "opts": [
+     [
+      "A",
+      "some"
+     ],
+     [
+      "B",
+      "any"
+     ],
+     [
+      "C",
+      "an"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 7,
+    "opts": [
+     [
+      "A",
+      "A"
+     ],
+     [
+      "B",
+      "An"
+     ],
+     [
+      "C",
+      "The"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 8,
+    "opts": [
+     [
+      "A",
+      "Sometime"
+     ],
+     [
+      "B",
+      "Sometimes"
+     ],
+     [
+      "C",
+      "Some time"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 9,
+    "opts": [
+     [
+      "A",
+      "in"
+     ],
+     [
+      "B",
+      "on"
+     ],
+     [
+      "C",
+      "at"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 10,
+    "opts": [
+     [
+      "A",
+      "Eat"
+     ],
+     [
+      "B",
+      "Eating"
+     ],
+     [
+      "C",
+      "Eats"
+     ]
+    ],
+    "answer": "B"
+   }
+  ]
+ },
+ "grammar_fill": {
+  "id": "DXH2026_L12_grammar_fill",
+  "title": "从方框内选择适当的词并用其正确形式填空，使短文通顺完整（每空限填一词，每词限用一次）",
+  "绑定": "语法综合",
+  "word_bank": [
+   "a",
+   "an",
+   "any",
+   "be",
+   "drink",
+   "dumpling",
+   "in",
+   "the",
+   "to try",
+   "we",
+   "extra10",
+   "extra11"
+  ],
+  "paragraphs": [
+   "There is ___1___ new restaurant near my school. The restaurant has many kinds of food. We can order noodles, dumplings and rice. There are also some ___2___ (drink) like tea and juice.",
+   "I usually have lunch there ___3___ noon. I would like ___4___ bowl of tomato noodles. The tomato noodles are delicious. There ___5___ (be) some vegetables in the noodles. I don't want ___6___ (some) soup because I'm not very hungry.",
+   "My friend Tom likes ___7___ (dumpling) there. He says the beef dumplings are great. We often go there with ___8___ (we) classmates. ___9___ people in the restaurant are very friendly. Would you like ___10___ (try) the food there?"
+  ],
+  "answers": [
+   "a",
+   "drinks",
+   "in",
+   "a",
+   "are",
+   "any",
+   "dumplings",
+   "our",
+   "The",
+   "to try"
+  ]
+ },
+ "sa": {
+  "id": "DXH2026_L12_sa",
+  "title": "阅读表达",
+  "passage_title": "My Favorite Restaurant",
+  "paragraphs": [
+   "My favorite restaurant is Happy Dumpling House. It is on Center Street, near my home. The restaurant is not very big, but it is clean and nice. There are pictures of food on the walls. There is a green plant on each table.",
+   "The restaurant has many kinds of dumplings. I like pork and cabbage dumplings best. There are 20 dumplings in a large plate, and it costs 15 yuan. I also like the tomato soup there. It tastes great.",
+   "I often go there with my parents on weekends. The waiters are friendly and the food comes quickly. We always have a good time there. Would you like to try this restaurant?"
+  ],
+  "questions": [
+   {
+    "num": 1,
+    "q": "Where is Happy Dumpling House?",
+    "answer": "It's on Center Street, near the writer's home."
+   },
+   {
+    "num": 2,
+    "q": "What kind of dumplings does the writer like best?",
+    "answer": "Pork and cabbage dumplings."
+   },
+   {
+    "num": 3,
+    "q": "Is the restaurant very big?",
+    "answer": "No, it isn't."
+   },
+   {
+    "num": 4,
+    "q": "Why does the writer like the restaurant?",
+    "answer": "Because the food is delicious, the waiters are friendly, and the place is clean and nice."
+   },
+   {
+    "num": 5,
+    "q": "请把文中画线句子翻译成汉语（There are pictures of food on the walls.）",
+    "answer": "墙上有食物的图片。"
+   }
+  ]
+ },
+ "writing": {
+  "id": "DXH2026_L12_writing",
+  "title": "书面表达",
+  "prompt": "假如你是李华，请你用英语写一篇80词左右的短文，介绍你常去的一家餐厅。内容包括：\n1. 餐厅的名称和位置；\n2. 餐厅里有什么食物（至少3种）；\n3. 你最喜欢的食物及原因；\n4. 你对这家餐厅的评价。",
+  "sample": [
+   "My Favorite Restaurant",
+   "My favorite restaurant is Moon Noodle House. It is on Long Street, not far from my school. I often go there with my classmates after school.",
+   "The restaurant has many kinds of food. There are beef noodles, mutton noodles, tomato noodles and vegetable dumplings. You can also drink green tea, orange juice and coffee there.",
+   "I like beef noodles best. They are delicious and not expensive. A large bowl costs only 16 yuan. The restaurant is clean and quiet. The waiters there are very friendly. I like the restaurant very much. I hope you can try it someday."
+  ],
+  "requirements": "1. 词数约 80 词；2. 包含所有提示要点；3. 语句通顺，意思连贯，语法正确；4. 可适当发挥。"
+ },
+ "grammar_diag": {
+  "id": "DXH2026_L12_grammar_diag",
+  "mc": [
+   {
+    "num": 1,
+    "q": "There is ____ egg and ____ bowl of rice on the table.",
+    "opts": [
+     [
+      "A",
+      "a; an"
+     ],
+     [
+      "B",
+      "an; a"
+     ],
+     [
+      "C",
+      "an; an"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 2,
+    "q": "I would like ____ tea, but I don't want ____ coffee.",
+    "opts": [
+     [
+      "A",
+      "some; any"
+     ],
+     [
+      "B",
+      "any; some"
+     ],
+     [
+      "C",
+      "some; some"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 3,
+    "q": "____ man over there is my uncle. He is ____ cook.",
+    "opts": [
+     [
+      "A",
+      "A; the"
+     ],
+     [
+      "B",
+      "The; a"
+     ],
+     [
+      "C",
+      "The; an"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 4,
+    "q": "How many ____ would you like?",
+    "opts": [
+     [
+      "A",
+      "bowl of noodles"
+     ],
+     [
+      "B",
+      "bowls of noodles"
+     ],
+     [
+      "C",
+      "bowls of noodle"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 5,
+    "q": "Would you like ____ orange juice? — Yes, please.",
+    "opts": [
+     [
+      "A",
+      "some"
+     ],
+     [
+      "B",
+      "any"
+     ],
+     [
+      "C",
+      "an"
+     ]
+    ],
+    "answer": "A"
+   }
+  ],
+  "fill": [
+   {
+    "num": 1,
+    "q": "There is ____ \"u\" in the word \"useful\". (填冠词)",
+    "answer": "a"
+   },
+   {
+    "num": 2,
+    "q": "I have some ____ (tomato) in the fridge.",
+    "answer": "tomatoes"
+   },
+   {
+    "num": 3,
+    "q": "There isn't ____ (some) milk in the bottle.",
+    "answer": "any"
+   },
+   {
+    "num": 4,
+    "q": "____ sun rises in the east. (填冠词)",
+    "answer": "The"
+   },
+   {
+    "num": 5,
+    "q": "I'd like two ____ (glass) of water, please.",
+    "answer": "glasses"
+   }
+  ]
+ }
+}

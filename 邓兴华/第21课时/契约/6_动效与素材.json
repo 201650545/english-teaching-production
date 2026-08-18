@@ -1,0 +1,161 @@
+{
+  "course": "第21课 · 阶段测试Ⅲ·七上–八上中段诊断",
+  "animations": {
+    "css": [
+      {
+        "name": "fadeSlideUp",
+        "definition": "from {opacity:0; transform:translateY(30px)} to {opacity:1; transform:translateY(0)}",
+        "usage": "页面进入、内容块出现"
+      },
+      {
+        "name": "scaleUp",
+        "definition": "from {opacity:0; transform:scale(0.85)} to {opacity:1; transform:scale(1)}",
+        "usage": "卡片缩放出现"
+      },
+      {
+        "name": "bounceIn",
+        "definition": "correct feedback",
+        "usage": "正确反馈"
+      },
+      {
+        "name": "bpSwing",
+        "definition": "wrong feedback",
+        "usage": "错误反馈摇摆"
+      },
+      {
+        "name": "burstFly",
+        "definition": "0%{transform:translate(0,0) scale(1);opacity:1} 100%{transform:translate(var(--dx),var(--dy)) scale(.3);opacity:0}",
+        "usage": "正确彩带爆发"
+      },
+      {
+        "name": "shake",
+        "definition": "0%,100%{transform:translateX(0);} 25%{transform:translateX(-6px);} 75%{transform:translateX(6px);}",
+        "usage": "错误抖动"
+      },
+      {
+        "name": "pageFade",
+        "definition": "from{opacity:0}to{opacity:1}",
+        "usage": "翻页淡入（无滑动偏移）"
+      }
+    ]
+  },
+  "interactions": {
+    "navigation": {
+      "halfScreenClick": true,
+      "pageTurnExemption": [
+        "quiz-q",
+        "quiz-container",
+        "drag-container",
+        "link-container",
+        "order-container"
+      ],
+      "answerRevealPriority": true,
+      "keyboardArrows": true,
+      "navPills": true
+    },
+    "quiz": {
+      "type": "checkOpt",
+      "containerResolve": "btn.closest('.quiz-q')",
+      "feedback": {
+        "correct": "绿✅ + bounceIn + 正确音效",
+        "wrong": "红❌ + bpSwing + 错误音效"
+      },
+      "undo": {
+        "doubleClick": true,
+        "description": "答错后双击可撤销重答"
+      },
+      "disableAfterAnswer": false,
+      "showCorrectAnswer": true
+    },
+    "fill": {
+      "type": "fillCheck",
+      "feedback": "同 quiz"
+    },
+    "drag": {
+      "type": "pickWord/dragSubmit",
+      "feedback": "同 quiz"
+    },
+    "order": {
+      "type": "moveUp/moveDown/orderCheck",
+      "feedback": "同 quiz"
+    },
+    "match": {
+      "type": "matchPick",
+      "feedback": "同 quiz"
+    },
+    "flip": {
+      "type": "flipCard"
+    },
+    "dataCollection": {
+      "type": "IndexedDB",
+      "recordAnswer": true,
+      "recordUndo": true,
+      "syncMode": "realtime",
+      "exportFormats": [
+        "json",
+        "csv"
+      ]
+    }
+  },
+  "interactiveComponents": {
+    "component1": {
+      "name": "随堂自检·选择",
+      "type": "checkOpt",
+      "elements": {
+        "scene": ".quiz-q"
+      },
+      "logic": {
+        "select": "点击选项判分落库"
+      }
+    },
+    "component2": {
+      "name": "随堂自检·多题型",
+      "type": "fill/drag/order/match",
+      "elements": {
+        "scene": ".quiz-q"
+      },
+      "logic": {
+        "input": "判分落库"
+      }
+    }
+  },
+  "audio": {
+    "correct": {
+      "freq": [
+        880,
+        1100
+      ],
+      "duration": [
+        0.15,
+        0.2
+      ],
+      "type": "sine"
+    },
+    "error": {
+      "freq": 220,
+      "duration": 0.3,
+      "type": "sawtooth"
+    },
+    "pageTurn": {
+      "freq": 440,
+      "duration": 0.1,
+      "type": "triangle"
+    }
+  },
+  "assets": {
+    "emojis": [
+      "📊",
+      "📈",
+      "✅",
+      "❌",
+      "🔍",
+      "⭐",
+      "🏆",
+      "💡",
+      "📝",
+      "🎯"
+    ],
+    "images": "none (all CSS/emoji based)",
+    "externalLibs": "none (vanilla JS)"
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "map": {
+    "1": "R1",
+    "2": "R4",
+    "3": "R2",
+    "4": "R5",
+    "5": "R3",
+    "6": "R1",
+    "7": "R4",
+    "8": "R2",
+    "9": "R5",
+    "10": "R3",
+    "11": "R1",
+    "12": "R4",
+    "13": "R2",
+    "14": "R5",
+    "15": "R3",
+    "16": "R1",
+    "17": "R2",
+    "18": "R4",
+    "19": "R5",
+    "20": "R3",
+    "21": "R1",
+    "22": "R4",
+    "23": "R2",
+    "24": "R5",
+    "25": "R3",
+    "26": "R1"
+  },
+  "results": [
+    {
+      "lesson": 1,
+      "ok": true,
+      "recipe": "R1",
+      "skipped": false
+    },
+    {
+      "lesson": 2,
+      "ok": true,
+      "recipe": "R4",
+      "skipped": false
+    },
+    {
+      "lesson": 3,
+      "ok": true,
+      "recipe": "R2",
+      "skipped": false
+    },
+    {
+      "lesson": 4,
+      "ok": true,
+      "recipe": "R5",
+      "skipped": false
+    },
+    {
+      "lesson": 5,
+      "ok": true,
+      "recipe": "R3",
+      "skipped": false
+    },
+    {
+      "lesson": 6,
+      "ok": true,
+      "recipe": "R1",
+      "skipped": false
+    },
+    {
+      "lesson": 7,
+      "ok": true,
+      "recipe": "R4",
+      "skipped": false
+    },
+    {
+      "lesson": 8,
+      "ok": true,
+      "recipe": "R2",
+      "skipped": false
+    },
+    {
+      "lesson": 9,
+      "ok": true,
+      "recipe": "R5",
+      "skipped": false
+    },
+    {
+      "lesson": 10,
+      "ok": true,
+      "recipe": "R3",
+      "skipped": false
+    },
+    {
+      "lesson": 11,
+      "ok": true,
+      "recipe": "R1",
+      "skipped": false
+    },
+    {
+      "lesson": 12,
+      "ok": true,
+      "recipe": "R4",
+      "skipped": false
+    },
+    {
+      "lesson": 13,
+      "ok": true,
+      "recipe": "R2",
+      "skipped": false
+    },
+    {
+      "lesson": 14,
+      "ok": true,
+      "recipe": "R5",
+      "skipped": false
+    },
+    {
+      "lesson": 15,
+      "ok": true,
+      "recipe": "R3",
+      "skipped": false
+    },
+    {
+      "lesson": 16,
+      "ok": true,
+      "recipe": "R1",
+      "skipped": false
+    },
+    {
+      "lesson": 17,
+      "ok": true,
+      "recipe": "R2",
+      "skipped": false
+    },
+    {
+      "lesson": 18,
+      "ok": true,
+      "recipe": "R4",
+      "skipped": false
+    },
+    {
+      "lesson": 19,
+      "ok": true,
+      "recipe": "R5",
+      "skipped": false
+    },
+    {
+      "lesson": 20,
+      "ok": true,
+      "recipe": "R3",
+      "skipped": false
+    },
+    {
+      "lesson": 21,
+      "ok": true,
+      "recipe": "R1",
+      "skipped": false
+    },
+    {
+      "lesson": 22,
+      "ok": true,
+      "recipe": "R4",
+      "skipped": false
+    },
+    {
+      "lesson": 23,
+      "ok": true,
+      "recipe": "R2",
+      "skipped": false
+    },
+    {
+      "lesson": 24,
+      "ok": true,
+      "recipe": "R5",
+      "skipped": false
+    },
+    {
+      "lesson": 25,
+      "ok": true,
+      "recipe": "R3",
+      "skipped": false
+    },
+    {
+      "lesson": 26,
+      "ok": true,
+      "recipe": "R1",
+      "skipped": false
+    }
+  ]
+}

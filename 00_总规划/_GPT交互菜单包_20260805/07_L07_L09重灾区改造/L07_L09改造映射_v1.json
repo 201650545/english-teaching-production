@@ -1,0 +1,187 @@
+{
+  "version": "1.0",
+  "source_note": "页码来自此前审计，执行前必须重新确认真实HTML",
+  "level": "medium",
+  "thresholds": {
+    "choice_ratio_max": 0.45,
+    "hot_choice_ratio_max": 0.35,
+    "recognition_ratio_max": 0.5,
+    "min_actions": 4,
+    "max_consecutive_choice_dominant_pages": 2
+  },
+  "lessons": {
+    "L07": {
+      "priority_pages": [
+        "p14",
+        "p28",
+        "p29",
+        "p30",
+        "p31",
+        "p32",
+        "p33",
+        "p34",
+        "p35",
+        "p36",
+        "p37",
+        "p38",
+        "p39",
+        "p40"
+      ],
+      "pages": {
+        "p14": {
+          "pattern": [
+            "C-POINT-DIAGNOSE",
+            "G-POINT-ERROR",
+            "G-WRITE-FORM",
+            "application_transfer"
+          ],
+          "note": "综合错题过密，先诊断再修正"
+        },
+        "p28": {
+          "preferred_action": "point",
+          "template_candidates": [
+            "C-POINT-DIAGNOSE",
+            "G-POINT-ERROR"
+          ]
+        },
+        "p29": {
+          "preferred_action": "write",
+          "template_candidates": [
+            "G-WRITE-FORM",
+            "C-WRITE-SCENARIO"
+          ]
+        },
+        "p30": {
+          "preferred_action": "drag",
+          "template_candidates": [
+            "G-DRAG-CLASSIFY",
+            "C-DRAG-DECISION"
+          ]
+        },
+        "p31": {
+          "preferred_action": "order",
+          "template_candidates": [
+            "G-ORDER-SENTENCE"
+          ]
+        },
+        "p32": {
+          "preferred_action": "link",
+          "template_candidates": [
+            "G-LINK-RELATION",
+            "C-LINK-EVIDENCE"
+          ]
+        },
+        "p33": {
+          "preferred_action": "write",
+          "template_candidates": [
+            "V-WRITE-RECALL",
+            "C-WRITE-SCENARIO"
+          ]
+        },
+        "p34": {
+          "preferred_action": "point",
+          "template_candidates": [
+            "G-POINT-ERROR",
+            "C-POINT-DIAGNOSE"
+          ]
+        },
+        "p35": {
+          "preferred_action": "drag",
+          "template_candidates": [
+            "V-DRAG-CATEGORY",
+            "C-DRAG-DECISION"
+          ]
+        },
+        "p36": {
+          "preferred_action": "order",
+          "template_candidates": [
+            "C-ORDER-DIALOGUE",
+            "G-ORDER-SENTENCE"
+          ]
+        },
+        "p37": {
+          "preferred_action": "link",
+          "template_candidates": [
+            "V-LINK-COLLOCATION",
+            "C-LINK-EVIDENCE"
+          ]
+        },
+        "p38": {
+          "preferred_action": "write",
+          "template_candidates": [
+            "G-WRITE-FORM",
+            "V-WRITE-RECALL"
+          ]
+        },
+        "p39": {
+          "preferred_action": "point",
+          "template_candidates": [
+            "C-POINT-DIAGNOSE"
+          ]
+        },
+        "p40": {
+          "preferred_action": "write",
+          "template_candidates": [
+            "C-WRITE-SCENARIO",
+            "C-ORDER-DIALOGUE"
+          ]
+        }
+      }
+    },
+    "L09": {
+      "priority_pages": [
+        "p22",
+        "p24",
+        "p26",
+        "p29",
+        "p34",
+        "p35",
+        "p37"
+      ],
+      "pages": {
+        "p22": {
+          "pattern": [
+            "C-POINT-DIAGNOSE",
+            "G-WRITE-FORM"
+          ]
+        },
+        "p24": {
+          "template_candidates": [
+            "G-ORDER-SENTENCE",
+            "G-LINK-RELATION"
+          ]
+        },
+        "p26": {
+          "pattern": [
+            "G-DRAG-CLASSIFY",
+            "G-WRITE-FORM"
+          ]
+        },
+        "p29": {
+          "pattern": [
+            "C-POINT-DIAGNOSE",
+            "C-LINK-EVIDENCE"
+          ]
+        },
+        "p34": {
+          "template_candidates": [
+            "C-WRITE-SCENARIO"
+          ]
+        },
+        "p35": {
+          "template_candidates": [
+            "V-LINK-COLLOCATION",
+            "G-LINK-RELATION"
+          ]
+        },
+        "p37": {
+          "template_candidates": [
+            "C-LISTEN-RESPOND",
+            "C-WRITE-SCENARIO"
+          ],
+          "note": "无可靠音频时使用教师朗读或写作备用"
+        }
+      }
+    }
+  }
+}

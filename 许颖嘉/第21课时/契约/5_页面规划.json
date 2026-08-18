@@ -1,0 +1,336 @@
+{
+  "courseInfo": {
+    "courseId": "L21",
+    "courseName": "语法复习Ⅲ·54语法考点全景系统化",
+    "courseType": "语法复习课",
+    "stage": "Stage 5",
+    "stageBadge": "Stage 5 · L21 语法复习",
+    "totalPages": 30,
+    "aspectRatio": "21:9",
+    "duration": "90分钟",
+    "reviewScope": {
+      "grammarPoints": "G01-G54",
+      "grammarCount": 54,
+      "vocabularyRange": "L1-L20",
+      "vocabularyCount": 360,
+      "themeGroups": "T1-T14",
+      "themeCount": 14,
+      "spiralChains": ["S1", "S2", "S3", "S4", "S5", "S6"],
+      "spiralChainCount": 6,
+      "spiralChainComplete": true
+    }
+  },
+  "colorScheme": {
+    "brand": "#E63946",
+    "accent": "#FFD700",
+    "bgStart": "#FFF8F0",
+    "bgEnd": "#FFE8D6",
+    "brandLight": "#FF6B6B",
+    "accentLight": "#FFE66D",
+    "textPrimary": "#1A1A2E",
+    "textSecondary": "#555555",
+    "correct": "#06A77D",
+    "error": "#E63946",
+    "grayNode": "#C0C0C0",
+    "grayBorder": "#999999"
+  },
+  "fontSpecs": {
+    "pageTitle": "36-42px / 700",
+    "subtitle": "28-32px / 600",
+    "body": "25-28px / 400",
+    "tableContent": "20-22px / 400",
+    "mnemonic": "38px / 700",
+    "mnemonicCard": "22-24px / 500",
+    "navTimeline": "14-16px / 500",
+    "pageNumber": "16-18px / 400",
+    "stageBadge": "14-16px / 600"
+  },
+  "segments": [
+    {
+      "segmentId": 1,
+      "segmentName": "语法全景导览",
+      "pageRange": "P1-P3",
+      "pageCount": 3,
+      "color": "#E63946"
+    },
+    {
+      "segmentId": 2,
+      "segmentName": "主题分组精讲",
+      "pageRange": "P4-P18",
+      "pageCount": 15,
+      "color": "#FFD700"
+    },
+    {
+      "segmentId": 3,
+      "segmentName": "螺旋链追踪",
+      "pageRange": "P19-P21",
+      "pageCount": 3,
+      "color": "#E63946"
+    },
+    {
+      "segmentId": 4,
+      "segmentName": "易错点对照",
+      "pageRange": "P22-P24",
+      "pageCount": 3,
+      "color": "#FFD700"
+    },
+    {
+      "segmentId": 5,
+      "segmentName": "综合运用演练",
+      "pageRange": "P25-P28",
+      "pageCount": 4,
+      "color": "#E63946"
+    },
+    {
+      "segmentId": 6,
+      "segmentName": "知识图谱总结",
+      "pageRange": "P29-P30",
+      "pageCount": 2,
+      "color": "#FFD700"
+    }
+  ],
+  "pages": [
+    {
+      "pageId": 1, "pageNumber": "P1", "segment": 1, "segmentName": "语法全景导览",
+      "title": "54语法考点全景导图", "subtitle": "G01-G54 · 14大主题 · 6螺旋链 · 全部封顶",
+      "interactionType": "点击展开折叠", "creativeInteraction": "交互①-语法全景思维导图",
+      "contentSummary": "中心节点辐射T1-T14分支、考点详情弹窗、统计面板54/14/6/360",
+      "hasTable": false, "hasMnemonic": false, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 2, "pageNumber": "P2", "segment": 1, "segmentName": "语法全景导览",
+      "title": "6条螺旋递进链鸟瞰图", "subtitle": "S1-S6全部完整展示 · L21独家全景",
+      "interactionType": "hover高亮tooltip", "creativeInteraction": "交互②-螺旋链鸟瞰hover",
+      "contentSummary": "6条螺旋链横向流程图、节点hover显示课次和规则、G54金色终点徽章",
+      "hasTable": false, "hasMnemonic": false, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 3, "pageNumber": "P3", "segment": 1, "segmentName": "语法全景导览",
+      "title": "L21复习路线图", "subtitle": "六段式系统复习路径 · 90分钟",
+      "interactionType": "路线图展示", "creativeInteraction": null,
+      "contentSummary": "六段式路线图①→⑥、每段核心目标和预估时长、复习范围概览",
+      "hasTable": false, "hasMnemonic": false, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 4, "pageNumber": "P4", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T1代词系统（终极回顾）", "subtitle": "G01,G02,G04,G33,G42",
+      "interactionType": "主题切换器高亮", "creativeInteraction": null,
+      "contentSummary": "五合一系统表：主格宾格+形物名物+指示代词+some/any+It非人称、口诀、5例句、3易错点",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 5, "pageNumber": "P5", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T2 be动词系统（终极回顾）", "subtitle": "G03,G05,G19",
+      "interactionType": "卡片翻转", "creativeInteraction": null,
+      "contentSummary": "跨时态be动词系统表：现在am/is/are+否定疑问+过去was/were、口诀、5例句、3易错点",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 6, "pageNumber": "P6", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T3疑问句系统（终极回顾）", "subtitle": "G06,G09,G14,G22,G23,G35,G44",
+      "interactionType": "疑问词矩阵hover", "creativeInteraction": null,
+      "contentSummary": "七疑问词系统表、S4链标注、口诀、5例句",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 7, "pageNumber": "P7", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T4名词系统（终极回顾）", "subtitle": "G07,G10,G17,G29,G32",
+      "interactionType": "复数变形动效", "creativeInteraction": null,
+      "contentSummary": "五合一系统表：所有格+规则复数+可数不可数+不规则复数+量词、S5链标注、口诀、5例句",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 8, "pageNumber": "P8", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T5介词系统（终极回顾）", "subtitle": "G09,G12,G24,G30",
+      "interactionType": "方位场景图点击", "creativeInteraction": null,
+      "contentSummary": "四合一矩阵：方位+交通+时间介词、口诀、5例句",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 9, "pageNumber": "P9", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T6形容词系统（终极回顾）", "subtitle": "G11,G39",
+      "interactionType": "位置切换器", "creativeInteraction": null,
+      "contentSummary": "定语vs表语+描述性形容词对比表、防越级提醒、口诀、5例句",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 10, "pageNumber": "P10", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T7动词与句型（终极回顾）", "subtitle": "G13,G15,G16,G18,G34,G37",
+      "interactionType": "to do三阶阶梯图", "creativeInteraction": null,
+      "contentSummary": "六合一系统表、S1链标注、口诀、5例句",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 11, "pageNumber": "P11", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T8数词系统（终极回顾）", "subtitle": "G08,G36",
+      "interactionType": "数字拼写动效", "creativeInteraction": null,
+      "contentSummary": "基数词构成规则+连字符+pay/cost/spend对比、口诀、5例句",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 12, "pageNumber": "P12", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T9时态系统（终极回顾·重点）", "subtitle": "G16,G25,G26,G19,G20,G21,G46,G47,G48,G52,G54",
+      "interactionType": "三态切换器", "creativeInteraction": "交互③-三态对比切换器",
+      "contentSummary": "三态终极对照表、变化规则汇总、S2/S6链标注、口诀、5例句",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 13, "pageNumber": "P13", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T10情态与冠词（终极回顾）", "subtitle": "G28,G31,G41",
+      "interactionType": "冠词选择器", "creativeInteraction": null,
+      "contentSummary": "三合一系统表：情态+冠词+礼貌请求、防越级提醒、口诀、5例句",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 14, "pageNumber": "P14", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T11+T12连词句型与交通介词（终极回顾）", "subtitle": "G38,G40,G24,G30",
+      "interactionType": "场景图片配对", "creativeInteraction": null,
+      "contentSummary": "四合一合并对比表：why/because+天气+交通+校规、口诀、5例句",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 15, "pageNumber": "P15", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T13频度副词与进行时（上·新增详讲）", "subtitle": "G43,G44,G45",
+      "interactionType": "频度副词百分比滑块", "creativeInteraction": "交互④-频度副词百分比滑块",
+      "contentSummary": "G43频度六级百分比+be后实前、G44 How often提问回答、G45生活习惯短语、口诀、5例句、3易错点",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 16, "pageNumber": "P16", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T13频度副词与进行时（下·新增详讲）", "subtitle": "G46,G47,G48",
+      "interactionType": "V-ing变化动效", "creativeInteraction": null,
+      "contentSummary": "G46进行时结构be+V-ing、G47 V-ing三规则、G48标志词、口诀、5例句、3易错点",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 17, "pageNumber": "P17", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T14复合不定代词与综合（上·新增详讲）", "subtitle": "G49,G50,G51",
+      "interactionType": "不定代词矩阵点击", "creativeInteraction": "交互⑤-不定代词分类矩阵",
+      "contentSummary": "G49 4x3分类矩阵、G50形容词后置、G51主谓单数、S3链标注、口诀、5例句、3易错点",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 18, "pageNumber": "P18", "segment": 2, "segmentName": "主题分组精讲",
+      "title": "T14复合不定代词与综合（下·新增详讲）", "subtitle": "G52,G53,G54",
+      "interactionType": "跨时态对照表hover", "creativeInteraction": null,
+      "contentSummary": "G52过去时综合、G53不定代词+过去时、G54跨时态对照（语法最高终点）、金色徽章、口诀、5例句、3易错点",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 19, "pageNumber": "P19", "segment": 3, "segmentName": "螺旋链追踪",
+      "title": "S1-S3螺旋链完整展示", "subtitle": "to do三阶 · 一般现在时三阶 · 不定代词二阶",
+      "interactionType": "逐节点亮起+点击展开", "creativeInteraction": "交互⑥-螺旋链逐节点亮起动效",
+      "contentSummary": "S1(G15→G18→G34)+S2(G16→G25→G26)+S3(G33→G49)三条链完整可视化",
+      "hasTable": false, "hasMnemonic": false, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 20, "pageNumber": "P20", "segment": 3, "segmentName": "螺旋链追踪",
+      "title": "S4-S5螺旋链完整展示", "subtitle": "疑问句系统六环 · 名词复数二阶",
+      "interactionType": "逐节点亮起+点击展开", "creativeInteraction": "交互⑥-螺旋链逐节点亮起动效",
+      "contentSummary": "S4(G06→G09→G14→G22→G35→G44)六环+S5(G10→G29)二环完整可视化",
+      "hasTable": false, "hasMnemonic": false, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 21, "pageNumber": "P21", "segment": 3, "segmentName": "螺旋链追踪",
+      "title": "S6时态综合链完整展示", "subtitle": "七环完整可视化 · 语法授课最高终点",
+      "interactionType": "时态时间轴动效+点击展开", "creativeInteraction": "交互⑥-螺旋链逐节点亮起动效",
+      "contentSummary": "S6(G03→G16→G25→G19→G20→G46→G52)七环完整+G54延伸封顶金色徽章",
+      "hasTable": false, "hasMnemonic": false, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 22, "pageNumber": "P22", "segment": 4, "segmentName": "易错点对照",
+      "title": "时态易错点终极对照", "subtitle": "一般现在时vs一般过去时vs现在进行时",
+      "interactionType": "3D翻转卡", "creativeInteraction": null,
+      "contentSummary": "三态易错点并排对比、10组正误对照、翻转卡交互",
+      "hasTable": true, "hasMnemonic": false, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 23, "pageNumber": "P23", "segment": 4, "segmentName": "易错点对照",
+      "title": "代词与冠词易错点对照", "subtitle": "主格宾格·my/mine·some/any·a/an/the·形容词后置",
+      "interactionType": "3D翻转卡", "creativeInteraction": null,
+      "contentSummary": "代词与冠词高频易错点并排对比、10组正误对照、翻转卡交互",
+      "hasTable": true, "hasMnemonic": false, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 24, "pageNumber": "P24", "segment": 4, "segmentName": "易错点对照",
+      "title": "动词搭配与句型易错点对照", "subtitle": "like/want/would like·be vs have·how much/many/often·祈使句",
+      "interactionType": "3D翻转卡", "creativeInteraction": null,
+      "contentSummary": "动词搭配与句型高频易错点并排对比、10组正误对照、翻转卡交互",
+      "hasTable": true, "hasMnemonic": false, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 25, "pageNumber": "P25", "segment": 5, "segmentName": "综合运用演练",
+      "title": "综合演练·选择题", "subtitle": "跨时态综合 · 频度副词 · 5题",
+      "interactionType": "选择答题即时反馈", "creativeInteraction": null,
+      "contentSummary": "5道选择题、G16/G25/G19/G20/G46/G52/G54+G43、进度条、得分率",
+      "hasTable": false, "hasMnemonic": false, "hasExercise": true, "hasAnimation": true
+    },
+    {
+      "pageId": 26, "pageNumber": "P26", "segment": 5, "segmentName": "综合运用演练",
+      "title": "综合演练·填空题", "subtitle": "复合不定代词 · 形容词后置 · 5题",
+      "interactionType": "输入框答题即时反馈", "creativeInteraction": null,
+      "contentSummary": "5道填空题、G49/G50/G51/G53、即时判定+解析",
+      "hasTable": false, "hasMnemonic": false, "hasExercise": true, "hasAnimation": true
+    },
+    {
+      "pageId": 27, "pageNumber": "P27", "segment": 5, "segmentName": "综合运用演练",
+      "title": "综合演练·连线题", "subtitle": "疑问句六环匹配 · 6组",
+      "interactionType": "拖拽连线", "creativeInteraction": null,
+      "contentSummary": "6组连线题、G06/G09/G14/G22/G35/G44、金色连线锁定",
+      "hasTable": false, "hasMnemonic": false, "hasExercise": true, "hasAnimation": true
+    },
+    {
+      "pageId": 28, "pageNumber": "P28", "segment": 5, "segmentName": "综合运用演练",
+      "title": "综合演练·拖拽排序题", "subtitle": "句子重构 · 3题",
+      "interactionType": "拖拽排序", "creativeInteraction": null,
+      "contentSummary": "3道拖拽排序题、G50+G46+G52、词块拖拽排列正确语序",
+      "hasTable": false, "hasMnemonic": false, "hasExercise": true, "hasAnimation": true
+    },
+    {
+      "pageId": 29, "pageNumber": "P29", "segment": 6, "segmentName": "知识图谱总结",
+      "title": "54考点语法知识图谱（封顶）", "subtitle": "14主题 · 6螺旋链 · 全景封顶",
+      "interactionType": "滚轮缩放+拖拽平移", "creativeInteraction": "交互⑦-知识图谱缩放/拖拽",
+      "contentSummary": "一页式全景知识图谱、中心54考点→14主题分支→54考点叶节点→6螺旋链连线、统计面板",
+      "hasTable": false, "hasMnemonic": false, "hasExercise": false, "hasAnimation": true
+    },
+    {
+      "pageId": 30, "pageNumber": "P30", "segment": 6, "segmentName": "知识图谱总结",
+      "title": "核心口诀总览+复习自评", "subtitle": "14主题核心口诀 · A/B/C/D四级自评",
+      "interactionType": "口诀卡片翻转+自评展开", "creativeInteraction": null,
+      "contentSummary": "T1-T14口诀卡片14张、自评标准A/B/C/D、复习完成徽章、下一阶段预告",
+      "hasTable": true, "hasMnemonic": true, "hasExercise": false, "hasAnimation": true
+    }
+  ],
+  "soundEffects": {
+    "playCorrect": {
+      "description": "上行三音阶C-E-G",
+      "frequencies": [523, 659, 784],
+      "waveType": "triangle",
+      "duration": "100ms each",
+      "trigger": "答对题目、交互成功、螺旋链节点亮起、复习完成"
+    },
+    "playError": {
+      "description": "下行两音G-C",
+      "frequencies": [392, 261],
+      "waveType": "square",
+      "duration": "200ms each",
+      "trigger": "答错题目、交互失败"
+    },
+    "playPageTurn": {
+      "description": "短促翻页声",
+      "frequency": 800,
+      "waveType": "sine",
+      "duration": "80ms fadeout",
+      "trigger": "翻页、翻转卡片、主题切换、标签切换"
+    }
+  },
+  "navigationSpecs": {
+    "navTimelineHeight": "54px",
+    "navItems": ["①语法全景", "②主题精讲", "③螺旋链追踪", "④易错对照", "⑤综合演练", "⑥知识图谱"],
+    "pageTurn": "左右半屏点击（左=上一页，右=下一页）",
+    "answerStopPropagation": true,
+    "scrollReset": true,
+    "keyboardNav": true,
+    "fullscreenKey": "F"
+  }
+}

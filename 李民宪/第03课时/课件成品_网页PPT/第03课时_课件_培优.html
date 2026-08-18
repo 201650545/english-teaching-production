@@ -1,0 +1,1694 @@
+<!-- CW-VISUAL-CONTRACT:1 -->
+<!-- CW-INTERACTION-CONTRACT:1 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<title>李民宪 · 培优级 | Unit 1 第03课：文化旅行阅读与长句理解（绿色人文系）</title>
+<style>
+/* <CW-CSS-EXTRA version="1.0" required="true"> */
+/* THEME:study */
+/* <CW-SECTION name="tokens"> */
+:root{
+  --brand:#16A34A;--accent:#16A34A;--brand-light:#34D399;--accent-light:#4ADE80;
+  --bg-start:#F0FDF4;--bg-end:#DCFCE7;
+  --grad-brand:linear-gradient(135deg,#16A34A,#34D399);
+  --grad-gold:linear-gradient(135deg,#16A34A,#4ADE80);
+  --correct:#16A34A;--correct-row-bg:#DCFCE7;
+  --error:#DC2626;--error-row-bg:#FEE2E2;
+  --text:#1E293B;--text-primary:#0F172A;--text-secondary:#64748B;
+  --card-bg:#fff;--soft:#F0FDF4;--soft2:#E7F9EF;
+  --sop-blue:#3B82F6;--sop-green:#10B981;--sop-purple:#8B5CF6;--sop-orange:#16A34A;
+  --page-shadow:0 4px 20px rgba(22,163,74,.16);
+  --card-shadow:0 4px 14px rgba(22,163,74,.08);
+  --radius:14px;
+  --cw-fs-title:clamp(32px,3.0vw,50px);
+  --cw-fs-heading:clamp(24px,2.0vw,34px);
+  --cw-fs-body:clamp(19px,1.5vw,25px);
+  --cw-fs-example:clamp(21px,1.75vw,29px);
+  --cw-fs-note:clamp(15px,1.1vw,19px);
+}
+/* <CW-SECTION name="components"> */
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;height:100%;overflow:hidden;font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;}
+body{background:var(--bg-start);color:var(--text-primary);line-height:1.5;}
+.pages-container{position:relative;width:100%;height:calc(100% - 54px - 48px - 44px);overflow:hidden;}
+.page{position:absolute;top:0;left:0;width:100%;height:100%;overflow-y:auto;overflow-x:hidden;display:none;
+  background:radial-gradient(1200px 600px at 85% -10%,rgba(52,211,153,.20),transparent 60%),
+  radial-gradient(900px 500px at -10% 110%,rgba(22,163,74,.14),transparent 55%),
+  linear-gradient(135deg,var(--bg-start) 0%,var(--bg-end) 100%);}
+.page.active{display:block;}
+.page::-webkit-scrollbar{width:8px;}
+.page::-webkit-scrollbar-thumb{background:var(--brand-light);border-radius:4px;}
+.page::-webkit-scrollbar-track{background:transparent;}
+.page-content{padding:20px 40px 60px;max-width:1500px;margin:0 auto;}
+.top-bar{position:fixed;top:0;left:0;width:100%;height:54px;display:flex;align-items:center;justify-content:flex-end;
+  padding:0 20px;background:linear-gradient(135deg,#16A34A,#34D399);color:#fff;z-index:100;box-shadow:0 2px 12px rgba(22,163,74,.3);}
+.top-bar .tb-title{font-size:18px;font-weight:700;letter-spacing:1px;}
+.top-bar .tb-right{display:flex;align-items:center;gap:12px;}
+.sync-status{display:flex;align-items:center;gap:6px;font-size:13px;background:rgba(255,255,255,.15);padding:4px 12px;border-radius:20px;}
+.sync-dot{width:8px;height:8px;border-radius:50%;background:#10B981;}
+.sync-dot.pending{background:#16A34A;}
+.export-btn{background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.3);
+  padding:5px 14px;border-radius:20px;font-size:13px;cursor:pointer;transition:all .2s;}
+.export-btn:hover{background:rgba(255,255,255,.3);}
+.bottom-hud{position:fixed;bottom:44px;left:0;width:100%;height:48px;display:flex;align-items:center;justify-content:center;
+  gap:16px;padding:0 20px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);z-index:100;
+  border-top:1px solid rgba(22,163,74,.1);box-shadow:0 -2px 12px rgba(0,0,0,.06);}
+.hud-btn{background:var(--grad-brand);color:#fff;border:none;padding:8px 20px;border-radius:20px;font-size:16px;font-weight:600;cursor:pointer;transition:all .2s;min-height:36px;}
+.hud-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(22,163,74,.3);}
+.hud-btn:disabled{opacity:.4;cursor:not-allowed;}
+.hud-page{font-size:16px;font-weight:700;color:var(--brand);min-width:80px;text-align:center;font-variant-numeric:tabular-nums;}
+.hud-progress{flex:1;max-width:300px;height:6px;background:#DCFCE7;border-radius:3px;overflow:hidden;}
+.hud-progress-bar{height:100%;background:var(--grad-brand);border-radius:3px;transition:width .3s ease;}
+.nav-pills{position:fixed;bottom:0;left:0;width:100%;height:44px;display:flex;align-items:center;gap:4px;padding:0 8px;
+  background:#fff;overflow-x:auto;z-index:100;border-top:1px solid rgba(0,0,0,.06);}
+.nav-pills::-webkit-scrollbar{height:4px;}
+.nav-pills::-webkit-scrollbar-thumb{background:var(--brand-light);border-radius:2px;}
+.nav-pill{flex-shrink:0;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;
+  color:var(--text-secondary);background:#f1f5f9;transition:all .2s;border:2px solid transparent;}
+.nav-pill:hover{background:#DCFCE7;color:var(--brand);}
+.nav-pill.active{background:var(--grad-brand);color:#fff;border-color:var(--brand);}
+.page-title{font-size:var(--cw-fs-title);font-weight:900;color:var(--brand);margin-bottom:6px;letter-spacing:1px;}
+.page-subtitle{font-size:18px;color:var(--text-secondary);margin-bottom:14px;}
+.section-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.sh-num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;
+  background:var(--grad-brand);color:#fff;font-size:18px;font-weight:800;flex-shrink:0;}
+.sh-title{font-size:22px;font-weight:800;color:var(--text-primary);}
+.highlight{color:var(--brand);font-weight:700;background:rgba(22,163,74,.08);padding:1px 8px;border-radius:6px;}
+.body-text{font-size:var(--cw-fs-body);line-height:1.7;color:var(--text-primary);background:#fff;
+  border:1px solid rgba(22,163,74,.1);border-radius:12px;padding:14px 18px;box-shadow:var(--card-shadow);margin:8px 0;}
+.note-panel{background:#fff;border:1px solid rgba(22,163,74,.1);border-left:4px solid var(--accent);
+  border-radius:10px;padding:12px 16px;margin:10px 0;box-shadow:var(--card-shadow);}
+.np-title{font-size:18px;font-weight:800;color:var(--brand);margin-bottom:6px;}
+.card{background:#fff;border-radius:14px;padding:14px 18px;box-shadow:var(--card-shadow);margin:10px 0;}
+.card-title{font-size:20px;font-weight:800;color:var(--brand);margin-bottom:8px;}
+.card-content{font-size:var(--cw-fs-body);line-height:1.7;color:var(--text-primary);}
+.tip-box{background:var(--soft);border-left:4px solid var(--accent);border-radius:10px;
+  padding:12px 16px;margin:12px 0;font-size:18px;line-height:1.6;color:var(--text-primary);}
+.tip-box strong{color:var(--brand);}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:10px 0;}
+.grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin:10px 0;}
+.rule-card{background:#fff;border-radius:14px;padding:14px 18px;box-shadow:var(--card-shadow);
+  border-left:6px solid var(--brand);margin:8px 0;font-size:18px;line-height:1.7;}
+.rule-card strong{font-size:19px;}
+.rule-card em{font-style:normal;color:var(--text-secondary);font-size:16px;display:block;margin-top:4px;}
+.rc-zhug{border-left-color:var(--brand);}
+.rc-bin{border-left-color:var(--sop-blue);}
+.rc-xing{border-left-color:var(--sop-green);}
+.rc-ming{border-left-color:var(--sop-purple);}
+.rc-warn{border-left-color:var(--accent);}
+.rc-qita{border-left-color:var(--sop-orange);}
+.section-badge{display:inline-block;background:rgba(22,163,74,.12);color:var(--brand);padding:4px 14px;
+  border-radius:16px;font-size:16px;font-weight:800;margin-bottom:10px;border:1px solid rgba(22,163,74,.2);}
+.cover-wrap{position:relative;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:30px 20px;overflow:hidden;}
+/* 封面布局：信息标签置顶、底部留白（教师偏好 2026-08-05） */
+.cover-wrap{display:flex;flex-direction:column;justify-content:flex-start;padding-top:6vh;}
+.cover-wrap .cover-badge{order:-3;}
+.cover-wrap .cover-info{order:-2;}
+.cover-wrap .cover-title,.cover-wrap .cover-sub,.cover-wrap .cover-tagline{order:0;}
+.cover-wrap .cover-emoji{order:10;margin-top:auto;padding-bottom:4vh;}
+
+.cover-badge{font-size:22px;font-weight:800;color:#fff;background:var(--grad-brand);padding:8px 22px;border-radius:30px;margin-bottom:18px;}
+.cover-title{font-size:56px;font-weight:900;background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:var(--brand);margin-bottom:10px;}
+.cover-sub{font-size:24px;color:#16A34A;margin-top:10px;font-weight:600;}
+.cover-tagline{font-size:18px;color:var(--text-secondary);margin-top:8px;}
+.cover-info{display:flex;gap:20px;margin-top:26px;flex-wrap:wrap;justify-content:center;}
+.cover-info span{background:#fff;border:1px solid rgba(22,163,74,.2);border-radius:20px;padding:8px 18px;font-weight:700;color:var(--brand);}
+.quiz-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0;}
+.quiz-q{background:#fff;border-radius:var(--radius);padding:16px 18px;margin:12px 0;box-shadow:var(--card-shadow);
+  border:1px solid rgba(22,163,74,.12);}
+.qq-text{font-size:19px;font-weight:800;color:var(--text-primary);margin-bottom:10px;line-height:1.5;}
+.quiz-opt{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 14px;border-radius:10px;font-size:17px;
+  font-weight:700;cursor:pointer;border:2px solid #DCFCE7;background:#fff;color:var(--text-primary);transition:all .15s;font-family:inherit;}
+.quiz-opt:hover{border-color:var(--brand);background:var(--soft);}
+.quiz-opt:active{border-color:var(--brand);background:var(--soft2);}
+.quiz-opt:focus-visible{outline:3px solid var(--brand-light);outline-offset:1px;}
+.quiz-opt.opt-correct{border-color:var(--correct);background:var(--correct-row-bg);color:#14532D;}
+.quiz-opt.opt-wrong{border-color:var(--error);background:var(--error-row-bg);color:#7F1D1D;}
+.quiz-opt.locked{pointer-events:none;opacity:.85;}
+.qq-parse{font-size:15px;color:var(--text-secondary);background:var(--soft);border-radius:8px;padding:8px 12px;margin-top:10px;line-height:1.5;}
+.fill-input-wrap{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap;}
+.fill-input{flex:1;min-width:160px;padding:9px 12px;border:2px solid #DCFCE7;border-radius:8px;font-size:17px;text-align:center;font-family:inherit;}
+.fill-input:focus{border-color:var(--brand);outline:none;}
+.fill-input.correct{border-color:var(--correct);background:var(--correct-row-bg);}
+.fill-input.wrong{border-color:var(--error);background:var(--error-row-bg);}
+.fill-check-btn{background:var(--grad-brand);color:#fff;border:none;padding:9px 18px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;}
+.fill-answer{font-size:15px;color:#14532D;background:var(--correct-row-bg);border-radius:8px;padding:8px 12px;margin-top:8px;display:none;}
+.fill-answer.show{display:block;}
+.order-container{background:#fff;border-radius:10px;padding:14px;margin:10px 0;box-shadow:var(--card-shadow);
+  position:relative;z-index:2;border:1px solid rgba(22,163,74,.12);}
+.order-chunks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+.order-chunk{padding:9px 14px;background:var(--grad-brand);color:#fff;border-radius:8px;font-size:16px;cursor:pointer;user-select:none;transition:all .15s;}
+.order-chunk:hover{background:#34D399;}
+.order-chunk.active{background:var(--accent);color:#333;}
+.order-chunk.placed{background:var(--correct);}
+.order-result,.drag-result,.link-result{font-size:16px;font-weight:800;padding:8px 12px;border-radius:8px;margin-top:10px;}
+.order-result.correct,.drag-result.correct,.link-result.correct{background:var(--correct-row-bg);color:#14532D;}
+.order-result.wrong,.drag-result.wrong,.link-result.wrong{background:var(--error-row-bg);color:#7F1D1D;}
+.drag-container{background:#fff;border-radius:10px;padding:14px;margin:10px 0;box-shadow:var(--card-shadow);
+  position:relative;z-index:2;border:1px solid rgba(22,163,74,.12);}
+.drag-words{display:flex;flex-wrap:wrap;gap:8px;min-height:44px;padding:6px;background:#fafafa;border-radius:8px;margin-bottom:10px;}
+.drag-word{padding:9px 14px;background:var(--grad-brand);color:#fff;border-radius:8px;font-size:16px;cursor:pointer;user-select:none;transition:all .15s;min-height:36px;display:flex;align-items:center;}
+.drag-word:hover{background:#34D399;}
+.drag-word.selected{background:var(--accent);color:#333;transform:translateY(-3px);}
+.drag-word.used{opacity:.3;pointer-events:none;}
+.drag-slot{display:inline-block;min-width:80px;height:36px;border:2px dashed #bbb;border-radius:6px;margin:0 4px;vertical-align:middle;text-align:center;line-height:32px;font-size:15px;background:#fff;}
+.drag-slot.filled{border-color:var(--correct);border-style:solid;}
+.drag-slot.correct{border-color:var(--correct);background:var(--correct-row-bg);}
+.drag-slot.wrong{border-color:var(--error);background:var(--error-row-bg);}
+.link-container{background:#fff;border-radius:10px;padding:14px;margin:10px 0;box-shadow:var(--card-shadow);
+  position:relative;z-index:2;border:1px solid rgba(22,163,74,.12);}
+.link-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.link-left{display:flex;flex-direction:column;gap:6px;}
+.link-right{display:flex;flex-direction:column;gap:6px;}
+.link-item{padding:10px 14px;background:#fff;border:2px solid #DCFCE7;border-radius:8px;font-size:16px;cursor:pointer;transition:all .2s;margin:4px 0;text-align:center;min-height:44px;display:flex;align-items:center;justify-content:center;}
+.link-item:hover{border-color:var(--brand-light);}
+.link-item.selected{border-color:var(--accent);background:rgba(245,158,11,.1);}
+.link-item.matched{border-color:var(--correct);background:var(--correct-row-bg);pointer-events:none;}
+.link-item.correct{border-color:var(--correct);background:var(--correct-row-bg);}
+.link-item.wrong-match{border-color:var(--error);background:var(--error-row-bg);}
+.vocab-card{background:#fff;border-radius:14px;padding:14px 16px;box-shadow:var(--card-shadow);
+  border:1px solid rgba(22,163,74,.12);text-align:center;}
+.vocab-card .vw{font-size:24px;font-weight:900;color:var(--brand);}
+.vocab-card .vc{font-size:16px;color:var(--text-secondary);margin-top:4px;}
+.flash-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0;}
+.game-board{background:#fff;border-radius:14px;padding:16px;box-shadow:var(--card-shadow);border:2px solid var(--brand);margin:10px 0;}
+.game-title{font-size:20px;font-weight:800;color:var(--brand);margin-bottom:8px;}
+.game-rule{font-size:16px;color:var(--text-secondary);margin-bottom:10px;}
+.kmap{background:#fff;border-radius:16px;padding:18px;box-shadow:var(--card-shadow);border:1px solid rgba(22,163,74,.15);}
+.kmap-node{background:var(--grad-brand);color:#fff;border-radius:12px;padding:12px 16px;margin:8px 0;font-size:17px;font-weight:700;}
+.kmap-node.teal{background:linear-gradient(135deg,#0D9488,#2DD4BF);}
+.kmap-node.gold{background:linear-gradient(135deg,#D97706,#16A34A);}
+.kmap-node.purple{background:linear-gradient(135deg,#7C3AED,#A78BFA);}
+.kmap-node.blue{background:linear-gradient(135deg,#2563EB,#60A5FA);}
+.kn-title{font-size:20px;font-weight:900;color:var(--brand);margin-bottom:10px;}
+.kn-body{font-size:16px;color:var(--text-primary);line-height:1.6;}
+.ext-card{background:#fff;border-radius:14px;padding:16px;box-shadow:var(--card-shadow);border:1px solid rgba(22,163,74,.12);margin:10px 0;}
+.ext-cat{font-size:14px;font-weight:800;color:var(--brand);background:var(--soft);display:inline-block;padding:3px 12px;border-radius:14px;margin-bottom:6px;}
+.ext-body{font-size:var(--cw-fs-body);line-height:1.7;color:var(--text-primary);}
+.evidence-task{background:#FFF9E8;border-radius:10px;padding:12px;margin:10px 0;border-left:4px solid var(--accent);}
+.verb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0;}
+.verb-card{padding:14px;border-radius:12px;background:#fff;border:2px solid #DCFCE7;text-align:center;font-size:17px;font-weight:800;}
+.verb-card .base{color:var(--text-primary);}
+.verb-card .past{color:var(--brand);font-weight:900;}
+.et-undo-hint{font-size:14px;color:#B45309;background:#FEF3C7;border-radius:8px;padding:6px 10px;margin-top:8px;}
+.burst-p{position:fixed;width:14px;height:14px;border-radius:50%;z-index:4000;pointer-events:none;animation:burstFly .6s ease-out forwards;}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:2000;}
+@keyframes burstFly{to{transform:translate(var(--dx),var(--dy)) scale(.2);opacity:0;}}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;}}
+/* <CW-SECTION name="states"> */
+.sticky{position:sticky;top:0;}
+.strong{font-weight:800;}
+.muted{color:var(--text-secondary);}
+.nowrap{white-space:nowrap;}
+/* <CW-SECTION name="theme"> */
+.acc-text{color:var(--brand);}
+.acc-bg{background:var(--soft);}
+/* <CW-SECTION name="patches"> */
+/* 交互容器 z 提升，高于系统层 */
+.reading-passage{font-size:var(--cw-fs-body);line-height:1.9;color:#334155;white-space:pre-wrap;user-select:text;}
+.write-input{width:100%;min-width:200px;padding:9px 12px;border:2px solid #DCFCE7;border-radius:8px;font-size:16px;font-family:inherit;line-height:1.5;resize:vertical;}
+.write-input:focus{border-color:var(--brand);outline:none;}
+.write-input.correct{border-color:var(--correct);background:var(--correct-row-bg);}
+.write-input.wrong{border-color:var(--error);background:var(--error-row-bg);}
+/* </CW-CSS-EXTRA> */
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <div class="tb-right">
+    <div class="sync-status"><span class="sync-dot" id="syncDot"></span><span id="syncText">本地已保存</span></div>
+    <button class="export-btn" onclick="exportData(event)">导出数据</button>
+  </div>
+</div>
+<div class="pages-container" id="pagesContainer">
+
+<!-- ==================== P1 封面 ==================== -->
+<div class="page" id="page1"><div class="page-content">
+  <div class="cover-wrap">
+    <div class="cover-badge">Unit 1 · Happy Holiday</div>
+    <h1 class="cover-title">文化旅行阅读与长句理解</h1>
+    <div class="cover-sub">一般过去时 · 历史与旅行语篇</div>
+    <p class="cover-tagline">第 03 课 · 培优级 · 绿色人文系</p>
+    <div class="cover-info">
+      <span>新词 10 个</span><span>复习词 20 个</span><span>阅读 3 篇</span><span>互动 5 类</span>
+    </div>
+  </div>
+</div></div>
+
+<!-- ==================== P2 课程目标 ==================== -->
+<div class="page" id="page2"><div class="page-content">
+  <div class="section-head"><span class="sh-num">1</span><span class="sh-title">本课目标</span></div>
+  <h1 class="page-title">今天我们要学什么</h1>
+  <p class="page-subtitle">Unit 1 · 文化旅行阅读与长句理解</p>
+  <div class="grid-2">
+    <div class="card"><div class="card-title">词汇</div><div class="card-content">新词 10 个（building, trader, wonder, difference, top, wait, umbrella, wet, below, hungry）；复习词 20 个（家具服饰类）。</div></div>
+    <div class="card"><div class="card-title">语法</div><div class="card-content">一般过去时在历史/旅行语篇中的使用；动词过去式；长句主干；细节定位与时间顺序。</div></div>
+    <div class="card"><div class="card-title">阅读</div><div class="card-content">文化旅行阅读三篇（120–160 词），含任务型阅读与问答。</div></div>
+    <div class="card"><div class="card-title">输出</div><div class="card-content">完成一段"旅行导游介绍"或"博物馆参观对话"。</div></div>
+  </div>
+  <div class="note-panel"><div class="np-title">学习方法</div>主题语篇输入 → 词汇与语法观察 → 阅读策略训练 → 口头/书面输出 → 反馈修正。</div>
+  <div class="rule-card rc-zhug"><div class="rc-title">文化旅行 · 本课背景</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>历史语篇（historical discourse）</strong>：讲述过去的人与事，多用一般过去时。本课以"老市场"和"名桥"为例，介绍它们的历史与意义。</div>
+      <div class="body-text"><strong>旅行语篇（travel discourse）</strong>：记录一次旅行，按时间顺序（first→then→next→last）叙述，常用 went / visited / had / saw 等过去式动词。</div>
+      <div class="body-text"><strong>长句理解</strong>：一个长句往往 = 主干（who + did what）+ 附加信息（when / where / how）。阅读时先抓主干，再定位细节，就不怕长句。</div>
+      <div class="body-text"><strong>时间顺序</strong>：历史与旅行语篇常依靠时间词（ago / last year / yesterday / first / then / finally）展开，把握时间词即可理清事件先后。</div>
+    </div>
+  </div>
+  <div class="rule-card rc-bin"><div class="rc-title">五步学习路径</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>步骤1</strong>：认识新词与复习词（家具、服饰、旅行场景）。</div>
+      <div class="body-text"><strong>步骤2</strong>：观察一般过去时（was/were、规则 +ed、不规则动词）。</div>
+      <div class="body-text"><strong>步骤3</strong>：训练长句主干提取与细节定位、时间顺序。</div>
+      <div class="body-text"><strong>步骤4</strong>：完成三篇文化旅行阅读（含任务型与问答）。</div>
+      <div class="body-text"><strong>步骤5</strong>：输出旅行日记或导游介绍，用过去式完整表达。</div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ==================== P3 词汇导读 ==================== -->
+<div class="page" id="page3"><div class="page-content">
+  <div class="section-head"><span class="sh-num">词</span><span class="sh-title">30 词总览</span></div>
+  <h1 class="page-title">词汇导读</h1>
+  <p class="page-subtitle">复习词 20 + 新词 10</p>
+  <div class="card"><div class="card-title">八上目标词（理解→产出）</div>
+    <div class="card-content">building 建筑物｜trader 商人｜wonder 想知道/奇观｜difference 不同｜top 顶部｜wait 等待｜umbrella 雨伞｜wet 湿的｜below 在下方｜hungry 饥饿的</div>
+  </div>
+  <div class="card"><div class="card-title">七年级复习词（快速辨认）</div>
+    <div class="card-content">家具：table 桌子｜bed 床｜bookcase 书柜｜sofa 沙发｜chair 椅子　服饰：hat 帽子｜head 头｜shoe 鞋｜sock 袜子｜trousers 裤子｜shorts 短裤｜sweater 毛衣｜jacket 夹克｜shirt 衬衫｜skirt 裙子　其他：price 价格｜radio 收音机｜tape 磁带｜ring 戒指｜watch 手表</div>
+  </div>
+  <div class="rule-card rc-zhug"><div class="rc-title">词汇记忆宝典</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>① 按场景联想</strong>：旅行途中会"下雨"→ 拿出 <em>umbrella（雨伞）</em>，衣服会 <em>wet（湿）</em>；登到 <em>top（顶部）</em> 俯瞰 <em>below（下方）</em>；看到 <em>wonder（奇观）</em> 会 <em>wonder（想知道）</em> 它的历史。</div>
+      <div class="body-text"><strong>② 同类归类</strong>：家具（table/bed/sofa/chair/bookcase）、服饰（hat/shoe/sock/jacket/shirt/skirt/sweater/trousers/shorts）、随身小物（watch/ring/radio/tape）。</div>
+      <div class="body-text"><strong>③ 形似对比</strong>：<em>top</em>（顶）与 <em>below</em>（下面）是反义；<em>wet</em>（湿）与 <em>dry</em>（干）是反义；<em>hungry</em>（饿）与 <em>full</em>（饱）是反义。</div>
+      <div class="body-text"><strong>④ 词性延伸</strong>：<em>difference</em>（名词，不同）→ 形容词 <em>different</em>（不同的）；<em>wonder</em>（动词想知道 / 名词奇观）→ 形容词 <em>wonderful</em>（精彩的）。</div>
+    </div>
+  </div>
+  <div class="tip-box"><strong>记忆线索：</strong>家具与服饰词按"用途"分类记忆；目标词按"旅行场景"联想（下雨→umbrella/wet；登顶→top；排队→wait；饥饿→hungry）。</div>
+</div></div>
+
+<!-- ==================== P4 复习词1 ==================== -->
+<div class="page" id="page4"><div class="page-content">
+  <div class="section-head"><span class="sh-num">词</span><span class="sh-title">复习词 · 家具类</span></div>
+  <h1 class="page-title">家具 FURNITURE</h1>
+  <p class="page-subtitle">点击消灭 · 快速辨认</p>
+  <div class="flash-grid">
+    <div class="vocab-card"><div class="vw">table</div><div class="vc">桌子</div></div>
+    <div class="vocab-card"><div class="vw">bed</div><div class="vc">床</div></div>
+    <div class="vocab-card"><div class="vw">bookcase</div><div class="vc">书柜</div></div>
+    <div class="vocab-card"><div class="vw">sofa</div><div class="vc">沙发</div></div>
+    <div class="vocab-card"><div class="vw">chair</div><div class="vc">椅子</div></div>
+  </div>
+  <div class="note-panel"><div class="np-title">联想</div>sofa 沙发、chair 椅子、table 桌子 —— 家里最常见的三件家具；bookcase 书柜放书。</div>
+</div></div>
+
+<!-- ==================== P5 复习词2 ==================== -->
+<div class="page" id="page5"><div class="page-content">
+  <div class="section-head"><span class="sh-num">词</span><span class="sh-title">复习词 · 服饰类</span></div>
+  <h1 class="page-title">服饰 CLOTHING</h1>
+  <p class="page-subtitle">点击消灭 · 快速辨认</p>
+  <div class="flash-grid">
+    <div class="vocab-card"><div class="vw">hat</div><div class="vc">帽子</div></div>
+    <div class="vocab-card"><div class="vw">shoe</div><div class="vc">鞋</div></div>
+    <div class="vocab-card"><div class="vw">sock</div><div class="vc">袜子</div></div>
+    <div class="vocab-card"><div class="vw">trousers</div><div class="vc">裤子</div></div>
+    <div class="vocab-card"><div class="vw">shorts</div><div class="vc">短裤</div></div>
+    <div class="vocab-card"><div class="vw">sweater</div><div class="vc">毛衣</div></div>
+    <div class="vocab-card"><div class="vw">jacket</div><div class="vc">夹克</div></div>
+    <div class="vocab-card"><div class="vw">shirt</div><div class="vc">衬衫</div></div>
+    <div class="vocab-card"><div class="vw">skirt</div><div class="vc">裙子</div></div>
+  </div>
+  <div class="note-panel"><div class="np-title">联想</div>trousers 与 shorts 是"长裤"与"短裤"；sock 常以复数 socks 出现。</div>
+</div></div>
+
+<!-- ==================== P6 复习词3 ==================== -->
+<div class="page" id="page6"><div class="page-content">
+  <div class="section-head"><span class="sh-num">词</span><span class="sh-title">复习词 · 其他</span></div>
+  <h1 class="page-title">物品与概念</h1>
+  <p class="page-subtitle">head 头 · price 价格 · watch 手表 …</p>
+  <div class="flash-grid">
+    <div class="vocab-card"><div class="vw">head</div><div class="vc">头</div></div>
+    <div class="vocab-card"><div class="vw">price</div><div class="vc">价格</div></div>
+    <div class="vocab-card"><div class="vw">radio</div><div class="vc">收音机</div></div>
+    <div class="vocab-card"><div class="vw">tape</div><div class="vc">磁带</div></div>
+    <div class="vocab-card"><div class="vw">ring</div><div class="vc">戒指</div></div>
+    <div class="vocab-card"><div class="vw">watch</div><div class="vc">手表</div></div>
+  </div>
+  <div class="note-panel"><div class="np-title">易混提示</div>watch 既是"手表"名词，也是"观看"动词；ring 既是"戒指"也是"铃响"。</div>
+</div></div>
+
+<!-- ==================== P7 新词展示 ==================== -->
+<div class="page" id="page7"><div class="page-content">
+  <div class="section-head"><span class="sh-num">新</span><span class="sh-title">八上目标词 10 个</span></div>
+  <h1 class="page-title">新词导学</h1>
+  <p class="page-subtitle">旅行场景联想</p>
+  <div class="flash-grid">
+    <div class="vocab-card"><div class="vw">building</div><div class="vc">建筑物</div></div>
+    <div class="vocab-card"><div class="vw">trader</div><div class="vc">商人</div></div>
+    <div class="vocab-card"><div class="vw">wonder</div><div class="vc">奇观；想知道</div></div>
+    <div class="vocab-card"><div class="vw">difference</div><div class="vc">不同</div></div>
+    <div class="vocab-card"><div class="vw">top</div><div class="vc">顶部</div></div>
+    <div class="vocab-card"><div class="vw">wait</div><div class="vc">等待</div></div>
+    <div class="vocab-card"><div class="vw">umbrella</div><div class="vc">雨伞</div></div>
+    <div class="vocab-card"><div class="vw">wet</div><div class="vc">湿的</div></div>
+    <div class="vocab-card"><div class="vw">below</div><div class="vc">在下方</div></div>
+    <div class="vocab-card"><div class="vw">hungry</div><div class="vc">饥饿的</div></div>
+  </div>
+  <div class="rule-card rc-xing"><div class="rc-title">新词用法速记</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>building</strong> 可数名词：an old building；复数 buildings。如：The traders came to the old <em>building</em>.</div>
+      <div class="body-text"><strong>trader</strong> 可数名词"商人"：trade（贸易）+ -er（人）。如：Many <em>traders</em> sold food here.</div>
+      <div class="body-text"><strong>wonder</strong> 动词"想知道" / 名词"奇观"：I <em>wonder</em> about the past. / The bridge is a great <em>wonder</em>.</div>
+      <div class="body-text"><strong>difference</strong> 名词"不同"，同根词 different（不同的）：the <em>difference</em> between life then and now。</div>
+      <div class="body-text"><strong>top</strong> 名词"顶部"，反义 below：站在 the <em>top</em> of the tower 俯瞰 <em>below</em>（下方）。</div>
+      <div class="body-text"><strong>wait</strong> 动词"等待"：过去式 waited；wait for + 人/物。如：We <em>waited</em> for the bus.</div>
+      <div class="body-text"><strong>umbrella</strong> 名词"雨伞"：take an umbrella；在雨中撑伞 under the umbrella。</div>
+      <div class="body-text"><strong>wet</strong> 形容词"湿的"，反义 dry：My shoes got <em>wet</em> in the rain.</div>
+      <div class="body-text"><strong>below</strong> 介词/副词"在下方"，反义 above：The town looked small <em>below</em>.</div>
+      <div class="body-text"><strong>hungry</strong> 形容词"饥饿的"，反义 full：After the walk, I felt <em>hungry</em>.</div>
+    </div>
+  </div>
+  <div class="tip-box"><strong>场景例句：</strong>We <em>waited</em> at the <em>top</em> of the <em>building</em>. It was <em>wet</em> below, so I took my <em>umbrella</em>. I felt <em>hungry</em> after the visit.</div>
+</div></div>
+
+<!-- ==================== P8 V01 选择 ==================== -->
+<div class="page" id="page8"><div class="page-content">
+  <div class="section-head"><span class="sh-num">题</span><span class="sh-title">词汇 · 词义辨析</span></div>
+  <h1 class="page-title">新词词义</h1>
+  <p class="page-subtitle">选出正确的中文意思</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_V01" data-knowledge-id="V01" data-section="vocab" data-template-id="V-POINT-MEANING" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="recognition" data-qid="Q01">
+    <div class="qq-text">【词义辨析】"building" 的中文意思是？</div>
+    <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 建筑物</button>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 书店</button>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 公园</button>
+    <div class="qq-parse">解析：building = 建筑物。e.g. The tall building is a museum.</div>
+  </div>
+  <div class="note-panel"><div class="np-title">记忆</div>union 相关词：building, builder, rebuild。</div>
+</div></div>
+
+<!-- ==================== P9 V02 拼写 ==================== -->
+<div class="page" id="page9"><div class="page-content">
+  <div class="section-head"><span class="sh-num">写</span><span class="sh-title">词汇 · 拼写</span></div>
+  <h1 class="page-title">拼写练习</h1>
+  <p class="page-subtitle">输入正确的英文单词</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_V02" data-knowledge-id="V02" data-section="vocab" data-template-id="V-WRITE-SPELL" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="Q02">
+    <div class="qq-text">拼写："想知道；奇观" 的英文单词是？（输入小写字母）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="wonder" autocomplete="off" placeholder="输入单词" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+  <div class="note-panel"><div class="np-title">tips</div>wonder 是 w-o-n-d-e-r，注意与 wander（漫步）区分。</div>
+</div></div>
+
+<!-- ==================== P10 V03 连线 ==================== -->
+<div class="page" id="page10"><div class="page-content">
+  <div class="section-head"><span class="sh-num">连</span><span class="sh-title">词汇 · 词义配对</span></div>
+  <h1 class="page-title">连线配对</h1>
+  <p class="page-subtitle">把单词与中文意思连起来</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_V03" data-knowledge-id="V03" data-section="vocab" data-template-id="V-LINK-COLLOCATION" data-interaction-type="link" data-action-type="link" data-cognitive-level="recognition" data-qid="Q03">
+    <div class="qq-text">点击左边单词，再点击右边对应中文。</div>
+    <div class="link-container" id="linkV03">
+      <div class="link-grid">
+        <div class="link-left">
+          <div class="link-item" data-pair="1" onclick="linkClick(this)">building</div>
+          <div class="link-item" data-pair="2" onclick="linkClick(this)">umbrella</div>
+          <div class="link-item" data-pair="3" onclick="linkClick(this)">hungry</div>
+          <div class="link-item" data-pair="4" onclick="linkClick(this)">below</div>
+        </div>
+        <div class="link-right">
+          <div class="link-item" data-pair="3" onclick="linkClick(this)">饥饿的</div>
+          <div class="link-item" data-pair="1" onclick="linkClick(this)">建筑物</div>
+          <div class="link-item" data-pair="4" onclick="linkClick(this)">在下方</div>
+          <div class="link-item" data-pair="2" onclick="linkClick(this)">雨伞</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="note-panel"><div class="np-title">拓展</div>below 的反义词是 above（在……上方）。</div>
+</div></div>
+
+<!-- ==================== P11 V04 拖拽 ==================== -->
+<div class="page" id="page11"><div class="page-content">
+  <div class="section-head"><span class="sh-num">拖</span><span class="sh-title">词汇 · 语境填空</span></div>
+  <h1 class="page-title">拖词填空</h1>
+  <p class="page-subtitle">把复习词拖入正确句子</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_V04" data-knowledge-id="V04" data-section="vocab" data-template-id="V-DRAG-FILL" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="application" data-qid="Q04">
+    <div class="qq-text">先点选一个单词，再点击句子中的空位填入。</div>
+    <div class="drag-container" id="dragV04" data-order='["sofa","jacket"]'>
+      <div class="drag-words">
+        <div class="drag-word" onclick="dragSelect(this)">sofa</div>
+        <div class="drag-word" onclick="dragSelect(this)">jacket</div>
+        <div class="drag-word" onclick="dragSelect(this)">table</div>
+        <div class="drag-word" onclick="dragSelect(this)">skirt</div>
+      </div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">We like to sit on the <span class="drag-slot" onclick="dragPlace(this)">____</span> in the living room.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">It was cold, so I put on my <span class="drag-slot" onclick="dragPlace(this)">____</span>.</div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();dragSubmit(this)">检查答案</button>
+    </div>
+  </div>
+  <div class="note-panel"><div class="np-title">提示</div>sofa 是家具，jacket 是服饰，注意区分。</div>
+</div></div>
+
+<!-- ==================== P12 V05 拼写 ==================== -->
+<div class="page" id="page12"><div class="page-content">
+  <div class="section-head"><span class="sh-num">写</span><span class="sh-title">词汇 · 拼写</span></div>
+  <h1 class="page-title">拼写练习</h1>
+  <p class="page-subtitle">输入正确的英文单词</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_V05" data-knowledge-id="V05" data-section="vocab" data-template-id="V-WRITE-SPELL" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="Q05">
+    <div class="qq-text">拼写："不同" 的英文单词是？（输入小写字母）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="difference" autocomplete="off" placeholder="输入单词" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+  <div class="note-panel"><div class="np-title">tips</div>difference = differ + -ence，形容词为 different。</div>
+</div></div>
+
+<!-- ==================== P13 V06 排序 ==================== -->
+<div class="page" id="page13"><div class="page-content">
+  <div class="section-head"><span class="sh-num">排</span><span class="sh-title">词汇 · 字母排序</span></div>
+  <h1 class="page-title">拼出单词</h1>
+  <p class="page-subtitle">按正确顺序点击字母</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_V06" data-knowledge-id="V06" data-section="vocab" data-template-id="V-ORDER-WORD" data-interaction-type="order" data-action-type="order" data-cognitive-level="retrieval" data-qid="Q06">
+    <div class="qq-text">把字母按顺序点成单词（商人）trader。</div>
+    <div class="order-container" id="orderV06" data-order='["t","r","a","d","e","r"]'>
+      <div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">r</span><span class="order-chunk" onclick="orderClick(this)">a</span><span class="order-chunk" onclick="orderClick(this)">e</span><span class="order-chunk" onclick="orderClick(this)">t</span><span class="order-chunk" onclick="orderClick(this)">r</span><span class="order-chunk" onclick="orderClick(this)">d</span></div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();orderSubmit(this)">检查顺序</button>
+    </div>
+  </div>
+  <div class="note-panel"><div class="np-title">提示</div>trader 商人，来自 trade（贸易）。</div>
+</div></div>
+
+<!-- ==================== P14 V07 拖拽 ==================== -->
+<div class="page" id="page14"><div class="page-content">
+  <div class="section-head"><span class="sh-num">拖</span><span class="sh-title">词汇 · 场景填空</span></div>
+  <h1 class="page-title">拖词填空</h1>
+  <p class="page-subtitle">用目标词完成旅行场景</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_V07" data-knowledge-id="V07" data-section="vocab" data-template-id="V-DRAG-FILL" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="application" data-qid="Q07">
+    <div class="qq-text">先点选单词，再点击空位填入。</div>
+    <div class="drag-container" id="dragV07" data-order='["umbrella","hungry"]'>
+      <div class="drag-words">
+        <div class="drag-word" onclick="dragSelect(this)">umbrella</div>
+        <div class="drag-word" onclick="dragSelect(this)">hungry</div>
+        <div class="drag-word" onclick="dragSelect(this)">wet</div>
+        <div class="drag-word" onclick="dragSelect(this)">trader</div>
+      </div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">It began to rain, so I took my <span class="drag-slot" onclick="dragPlace(this)">____</span>.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">After the long walk, I felt very <span class="drag-slot" onclick="dragPlace(this)">____</span>.</div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();dragSubmit(this)">检查答案</button>
+    </div>
+  </div>
+  <div class="note-panel"><div class="np-title">提示</div>wet 湿的、hungry 饥饿的都是描述感受/状态的形容词。</div>
+</div></div>
+
+<!-- ==================== P15 语法导学 ==================== -->
+<div class="page" id="page15"><div class="page-content">
+  <div class="section-head"><span class="sh-num">语</span><span class="sh-title">语法 · 一般过去时（历史/旅行语篇）</span></div>
+  <h1 class="page-title">一般过去时</h1>
+  <p class="page-subtitle">描述过去发生的事 · was / were</p>
+  <div class="rule-card rc-zhug"><strong>核心规则：</strong>讲述历史或旅行经历时，用<b>一般过去时</b>。
+    <em>be 动词过去式：am/is → was；are → were。如：The town <b>was</b> small. / The traders <b>were</b> busy.</em></div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G01" data-knowledge-id="G01" data-section="grammar" data-template-id="G-FILL-BE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="G01">
+    <div class="qq-text">【句型填空】Yesterday I __ at the museum with my friends. （填 was / were）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="was" autocomplete="off" placeholder="输入 was 或 were" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+  <div class="tip-box"><strong>语篇观察：</strong>历史语篇常用 was/were 介绍过去的地点与状态；旅行语篇常用 went / visited / had / saw 记录行程。</div>
+</div></div>
+
+<!-- ==================== P16 动词过去式 ==================== -->
+<div class="page" id="page16"><div class="page-content">
+  <div class="section-head"><span class="sh-num">语</span><span class="sh-title">语法 · 动词过去式</span></div>
+  <h1 class="page-title">规则与不规则动词</h1>
+  <p class="page-subtitle">规则 +ed · 不规则须记忆</p>
+  <div class="grid-2">
+    <div class="verb-card"><div class="base">walk →</div><div class="past">walked</div></div>
+    <div class="verb-card"><div class="base">wait →</div><div class="past">waited</div></div>
+    <div class="verb-card"><div class="base">go →</div><div class="past">went</div></div>
+    <div class="verb-card"><div class="base">have →</div><div class="past">had</div></div>
+    <div class="verb-card"><div class="base">see →</div><div class="past">saw</div></div>
+    <div class="verb-card"><div class="base">write →</div><div class="past">wrote</div></div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G02" data-knowledge-id="G02" data-section="grammar" data-template-id="G-FILL-PAST" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="G02">
+    <div class="qq-text">【变过去式】write 的过去式是？（输入小写）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="wrote" autocomplete="off" placeholder="输入过去式" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G03" data-knowledge-id="G02" data-section="grammar" data-template-id="G-DRAG-PAST" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="application" data-qid="G03">
+    <div class="qq-text">先点选一个过去式，再点击句子空位填入。</div>
+    <div class="drag-container" id="dragG03" data-order='["went","had","saw"]'>
+      <div class="drag-words">
+        <div class="drag-word" onclick="dragSelect(this)">went</div>
+        <div class="drag-word" onclick="dragSelect(this)">had</div>
+        <div class="drag-word" onclick="dragSelect(this)">saw</div>
+        <div class="drag-word" onclick="dragSelect(this)">go</div>
+      </div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">Last summer we <span class="drag-slot" onclick="dragPlace(this)">____</span> to the sea.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">We <span class="drag-slot" onclick="dragPlace(this)">____</span> a big lunch there.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">I <span class="drag-slot" onclick="dragPlace(this)">____</span> many old buildings.</div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();dragSubmit(this)">检查答案</button>
+    </div>
+  </div>
+  <div class="rule-card rc-zhug"><div class="rc-title">过去式规则大全</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>一、be 动词</strong>：am/is → <strong>was</strong>；are → <strong>were</strong>。例：The town <em>was</em> small. / The traders <em>were</em> busy.</div>
+      <div class="body-text"><strong>二、规则动词（+ed）</strong>：wait→waited，walk→walked，visit→visited，look→looked，play→played。</div>
+      <div class="body-text"><strong>三、e 结尾加 d</strong>：live→lived，love→loved，believe→believed。</div>
+      <div class="body-text"><strong>四、辅字母+y 变 ies/ied</strong>：study→studied，carry→carried，hurry→hurried。</div>
+      <div class="body-text"><strong>五、重读闭音节双写</strong>：shop→shopped，stop→stopped，plan→planned。</div>
+      <div class="body-text"><strong>六、不规则动词（须记忆）</strong>：go→went，come→came，have→had，see→saw，write→wrote，buy→bought，teach→taught，eat→ate，drink→drank，take→took，sell→sold。</div>
+      <div class="body-text"><strong>七、否定与疑问</strong>：过去式否定用 <em>didn't + 原形</em>（如 didn't go）；疑问用 <em>Did + 主语 + 原形</em>（如 Did you go?）。be 动词例外：wasn't / weren't。</div>
+    </div>
+  </div>
+  <div class="rule-card rc-bin"><div class="rc-title">时间词速查（过去时标志）</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>yesterday</strong> 昨天 · <strong>last week</strong> 上周 · <strong>last summer</strong> 去年夏天 · <strong>two years ago</strong> 两年前 · <strong>in the past</strong> 在过去 · <strong>long ago</strong> 很久以前</div>
+      <div class="body-text"><strong>First…Then…Next…Last…</strong> 用于按时间顺序讲故事。</div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ==================== P17 长句主干 ==================== -->
+<div class="page" id="page17"><div class="page-content">
+  <div class="section-head"><span class="sh-num">语</span><span class="sh-title">语法 · 长句主干与细节</span></div>
+  <h1 class="page-title">读懂长句</h1>
+  <p class="page-subtitle">先找主干，再定位细节</p>
+  <div class="rule-card rc-bin"><strong>策略：</strong>长句 = 主干（主语+谓语+宾语）+ 附加信息（时间、地点、修饰语）。
+    <em>例：The young trader / waited / for a long time. → 主干：trader waited。</em></div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G05" data-knowledge-id="G03" data-section="grammar" data-template-id="G-POINT-MAIN" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-qid="G05">
+    <div class="qq-text">【长句主干】本题中句子的主语（Who）是？"The young trader with a blue hat waited for a long time at the market."</div>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. the blue hat</button>
+    <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. The young trader</button>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. the market</button>
+    <div class="qq-parse">解析：去掉修饰语 with a blue hat 后，主干是 The young trader waited，所以主语是 The young trader。</div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G06" data-knowledge-id="G03" data-section="grammar" data-template-id="G-FILL-DETAIL" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="G06">
+    <div class="qq-text">【细节定位】上句中的地点（where）是 the ____。（填一个词）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="market" autocomplete="off" placeholder="输入地点" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+</div></div>
+
+<!-- ==================== P18 时间顺序 ==================== -->
+<div class="page" id="page18"><div class="page-content">
+  <div class="section-head"><span class="sh-num">语</span><span class="sh-title">语法 · 时间顺序</span></div>
+  <h1 class="page-title">用时间词讲故事</h1>
+  <p class="page-subtitle">first / then / next / last</p>
+  <div class="rule-card rc-xing"><strong>时间链：</strong>First（先）→ Then（然后）→ Next（接着）→ Last（最后）。
+    <em>历史/旅行语篇常按时间顺序展开，把握时间词即可抓住事件先后。</em></div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G07" data-knowledge-id="G04" data-section="grammar" data-template-id="G-ORDER-TIME" data-interaction-type="order" data-action-type="order" data-cognitive-level="retrieval" data-qid="G07">
+    <div class="qq-text">把旅行经过按"先→后"正确排序。</div>
+    <div class="order-container" id="orderG07" data-order='["First we went to the museum","Then we had lunch","Last we went home"]'>
+      <div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">Then we had lunch</span><span class="order-chunk" onclick="orderClick(this)">Last we went home</span><span class="order-chunk" onclick="orderClick(this)">First we went to the museum</span></div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();orderSubmit(this)">检查顺序</button>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G08" data-knowledge-id="G04" data-section="grammar" data-template-id="G-WRITE-SENT" data-interaction-type="write" data-action-type="write" data-cognitive-level="application" data-qid="G08">
+    <div class="qq-text">【句型输出】用一般过去时写一句你的旅行经历（至少用 1 个时间词，如 first/Last）。</div>
+    <div class="fill-input-wrap"><textarea class="write-input" data-keywords="the,was,to" rows="2" placeholder="例：Last Sunday I went to the park."></textarea><button class="fill-check-btn" onclick="event.stopPropagation();checkWrite(this)">提交</button></div>
+  </div>
+  <div class="tip-box"><strong>提示：</strong>past 过去；Last summer 去年夏天；ago 在……之前。均由时间词引出过去事件。</div>
+  <div class="rule-card rc-zhug"><div class="rc-title">时间词详解</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>ago</strong>"……之前"：放在时间数量后，如 two years ago（两年前）、a long time ago（很久以前）。句中用过去式。</div>
+      <div class="body-text"><strong>yesterday</strong>"昨天"：yesterday morning / yesterday afternoon / yesterday evening。句中用过去式。</div>
+      <div class="body-text"><strong>last</strong>"上一个"：last week（上周）、last month（上月）、last summer（去年夏天）、last night（昨晚）。句中用过去式。</div>
+      <div class="body-text"><strong>first / then / next / last（顺序）</strong>：用于讲故事的第一步、然后、接着、最后。如：First we got up early. Then we had breakfast. Last we went home.</div>
+    </div>
+  </div>
+  <div class="rule-card rc-bin"><div class="rc-title">过去时微语篇范例</div>
+    <div class="rc-body">
+      <div class="body-text">Yesterday I went to the old market. Many traders sold food and clothes. I waited for my friend, but he did not come. I felt hungry, so I bought a warm cake. Last, I walked home happily.</div>
+      <div class="body-text">这段落用 went / sold / waited / did not come / felt / bought / walked 等过去式，配合时间词 yesterday / Last，把一个完整事件讲清楚。</div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ==================== P19 语法练习 ==================== -->
+<div class="page" id="page19"><div class="page-content">
+  <div class="section-head"><span class="sh-num">练</span><span class="sh-title">语法 · 综合练习</span></div>
+  <h1 class="page-title">语法巩固</h1>
+  <p class="page-subtitle">历史与旅行语篇</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G09" data-knowledge-id="G04" data-section="grammar" data-template-id="G-DRAG-TIME" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="application" data-qid="G09">
+    <div class="qq-text">点选时间词，填入合适位置。</div>
+    <div class="drag-container" id="dragG09" data-order='["Last","then","ago"]'>
+      <div class="drag-words">
+        <div class="drag-word" onclick="dragSelect(this)">Last</div>
+        <div class="drag-word" onclick="dragSelect(this)">then</div>
+        <div class="drag-word" onclick="dragSelect(this)">ago</div>
+        <div class="drag-word" onclick="dragSelect(this)">now</div>
+      </div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">The bridge was built many years <span class="drag-slot" onclick="dragPlace(this)">____</span>.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;"><span class="drag-slot" onclick="dragPlace(this)">____</span> summer, we visited it.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">First we looked around, and <span class="drag-slot" onclick="dragPlace(this)">____</span> we took photos.</div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();dragSubmit(this)">检查答案</button>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G10" data-knowledge-id="G01" data-section="grammar" data-template-id="G-FILL-BE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="G10">
+    <div class="qq-text">【句型填空】The old traders __ very busy every morning. （填 was / were）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="were" autocomplete="off" placeholder="输入 was 或 were" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+  <div class="rule-card rc-zhug"><div class="rc-title">历史与旅行语篇阅读策略</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>策略一 · 先抓时间</strong>：先圈出 ago / yesterday / last / first / then / finally 等时间词，它们决定事件顺序。</div>
+      <div class="body-text"><strong>策略二 · 再找主干</strong>：对每个长句，先分出主语和谓语动词，忽略修饰语，就能快速理解句意。</div>
+      <div class="body-text"><strong>策略三 · 定位细节</strong>：题目问 who / what / where / when / why，就回原文找对应信息所在句，做"细节定位"。</div>
+      <div class="body-text"><strong>策略四 · 判断推断</strong>：推断题不要去原文找原句，而是根据上下文"推测"作者的感受或意图。</div>
+      <div class="body-text"><strong>策略五 · 巧用工具词</strong>：and / but / so / because 提示并列、转折、因果；把握这些词能读懂语篇逻辑。</div>
+    </div>
+  </div>
+  <div class="rule-card rc-bin"><div class="rc-title">常见设问与答题句式</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>细节题</strong>：What did the traders sell? → They sold food and clothes.</div>
+      <div class="body-text"><strong>推断题</strong>：How did Tom feel? → He felt happy.</div>
+      <div class="body-text"><strong>时间顺序</strong>：What did they do first? → First they went to the museum.</div>
+      <div class="body-text"><strong>任务型</strong>：根据表格/问题填词或写完整句，答案要完整、用过去式。</div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ==================== P20 阅读A篇 ==================== -->
+<div class="page" id="page20"><div class="page-content">
+  <div class="section-head"><span class="sh-num">读</span><span class="sh-title">阅读 · 文化旅行（A篇）</span></div>
+  <h1 class="page-title">阅读 A 篇</h1>
+  <p class="page-subtitle">历史语篇 · 一般过去时</p>
+  <div class="card"><div class="card-title">📄 The Old Market Building</div>
+    <div class="reading-passage" data-source-id="LMX_L03_READ_A">The old market building is in the middle of our town. It is very old. Many years ago, traders came here every morning. They sold food and clothes. People from nearby towns hurried to buy what they needed.
+
+One day, a young trader named Tom came to the top of the building. He looked below. He saw many busy people and colourful shops. He wondered about the difference between life then and life now.
+
+Tom waited for a long time, but he was not hungry. He was too excited. He had a small notebook, and he wrote down everything he saw. At the end of the day, he put on his jacket and went home. He loved this old market building very much.</div>
+  </div>
+  <div class="rule-card rc-zhug"><div class="rc-title">精读辅导 · 生词速查</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>trader</strong> 商人 · <strong>difference</strong> 不同 · <strong>top</strong> 顶部 · <strong>below</strong> 在下面 · <strong>wonder</strong> 想知道</div>
+      <div class="body-text"><strong>wait</strong> 等待 · <strong>hungry</strong> 饿的 · <strong>building</strong> 建筑 · <strong>wet</strong> 湿的 · <strong>umbrella</strong> 雨伞</div>
+    </div>
+  </div>
+  <div class="rule-card rc-bin"><div class="rc-title">长句拆解 · 找主干</div>
+    <div class="rc-body">
+      <div class="body-text">句子：<em>Many years ago, traders came here every morning.</em></div>
+      <div class="body-text">主干：<strong>traders</strong>（主语） + <strong>came</strong>（谓语，come的过去式）；"Many years ago"是时间状语。</div>
+      <div class="body-text">句子：<em>He wondered about the difference between life then and life now.</em></div>
+      <div class="body-text">主干：<strong>He wondered</strong>；"about the difference..."补充内容；then=那时，now=现在。</div>
+    </div>
+  </div>
+  <div class="rule-card rc-xing"><div class="rc-title">时间顺序线索</div>
+    <div class="rc-body">
+      <div class="body-text">本段按时间推进：<strong>Many years ago</strong>（很久以前）→ <strong>One day</strong>（有一天）→ <strong>At the end of the day</strong>（一天结束时）。</div>
+      <div class="body-text">这些时间词帮助我们按顺序理解历史故事。</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_R_A1" data-knowledge-id="R_A" data-section="reading" data-template-id="C-POINT-DETAIL" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-qid="R_A1">
+    <div class="qq-text">【细节题】What did the traders sell at the old market?</div>
+    <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. food and clothes</button>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. toys and books</button>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. cars and phones</button>
+    <div class="qq-parse">解析：第一段 They sold food and clothes，故选 A。</div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_R_A2" data-knowledge-id="R_A" data-section="reading" data-template-id="C-POINT-INFER" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="application" data-qid="R_A2">
+    <div class="qq-text">【推断题】Which word best describes how Tom felt about the old market at the end?</div>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. bored</button>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. angry</button>
+    <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. happy</button>
+    <div class="qq-parse">解析：末句 He loved this old market building very much，说明他很喜欢、很开心，故选 happy。</div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_R_A3" data-knowledge-id="R_A" data-section="reading" data-template-id="R-WRITE-ANSWER" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="R_A3">
+    <div class="qq-text">【短答】Tom stood at the ____ of the building to look below.（填一个词）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="top" autocomplete="off" placeholder="输入单词" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+</div></div>
+
+<!-- ==================== P21 阅读B篇（任务型） ==================== -->
+<div class="page" id="page21"><div class="page-content">
+  <div class="section-head"><span class="sh-num">读</span><span class="sh-title">阅读 · 文化旅行（B篇·任务型）</span></div>
+  <h1 class="page-title">阅读 B 篇</h1>
+  <p class="page-subtitle">旅行语篇 · 表格填空 / 排序 / 问答</p>
+  <div class="card"><div class="card-title">📄 A Trip to the Sea (source: LMX_L03_READ_B)</div>
+    <div class="reading-passage" data-source-id="LMX_L03_READ_B">Last summer, Emma and her family went to a small town by the sea. They stayed in a hotel near the beach. On the first day, they walked to an old building. They walked slowly and talked about the town. Emma went to the top and looked below. The town looked very small.
+
+On the second day, it rained. Emma waited under her umbrella, but she still got wet. She felt a little hungry, so her father bought her a warm cake.
+
+They visited a museum about local traders. Emma learned about the difference between life in the past and life now. She took many photos. On the last day, they went home. Emma said the trip was the best time of her summer.</div>
+  </div>
+  <div class="rule-card rc-zhug"><div class="rc-title">精读辅导 · 生词速查</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>umbrella</strong> 雨伞 · <strong>wet</strong> 湿的 · <strong>hungry</strong> 饿的 · <strong>top</strong> 顶部 · <strong>below</strong> 在下面</div>
+      <div class="body-text"><strong>difference</strong> 不同 · <strong>trader</strong> 商人 · <strong>wonder</strong> 想知道 · <strong>wait</strong> 等待 · <strong>building</strong> 建筑</div>
+    </div>
+  </div>
+  <div class="rule-card rc-bin"><div class="rc-title">长句拆解 · 找主干</div>
+    <div class="rc-body">
+      <div class="body-text">句子：<em>On the second day, it rained, and Emma waited under her umbrella.</em></div>
+      <div class="body-text">主干：<strong>it rained</strong> + <strong>Emma waited</strong>；"under her umbrella"是地点状语。</div>
+      <div class="body-text">句子：<em>Emma said the trip was the best time of her summer.</em></div>
+      <div class="body-text">主干：<strong>Emma said</strong>；"the trip was the best time..."是从句（宾语从句）。</div>
+    </div>
+  </div>
+  <div class="rule-card rc-xing"><div class="rc-title">时间顺序线索</div>
+    <div class="rc-body">
+      <div class="body-text">本段按天推进：<strong>On the first day</strong>（第一天）→ <strong>On the second day</strong>（第二天）→ <strong>On the last day</strong>（最后一天）。</div>
+      <div class="body-text">用表示"第几天"的时间词，故事顺序一目了然。</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_R_B1" data-knowledge-id="R_B" data-section="reading" data-template-id="R-FILL-TABLE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="R_B1">
+    <div class="qq-text">【信息表】On the first day, they walked to an old ____.（填一个词）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="building" autocomplete="off" placeholder="输入单词" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_R_B2" data-knowledge-id="R_B" data-section="reading" data-template-id="R-ORDER-TIME" data-interaction-type="order" data-action-type="order" data-cognitive-level="retrieval" data-qid="R_B2">
+    <div class="qq-text">【时间顺序】把 Emma 的行程按先后排序。</div>
+    <div class="order-container" id="orderRB2" data-order='["went to the sea","walked to an old building","visited a museum","went home"]'>
+      <div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">visited a museum</span><span class="order-chunk" onclick="orderClick(this)">went to the sea</span><span class="order-chunk" onclick="orderClick(this)">went home</span><span class="order-chunk" onclick="orderClick(this)">walked to an old building</span></div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();orderSubmit(this)">检查顺序</button>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_R_B3" data-knowledge-id="R_B" data-section="reading" data-template-id="R-WRITE-ANSWER" data-interaction-type="write" data-action-type="write" data-cognitive-level="application" data-qid="R_B3">
+    <div class="qq-text">【问答/推断】Why did Emma's father buy her a warm cake?（用英文完整回答）</div>
+    <div class="fill-input-wrap"><textarea class="write-input" data-keywords="hungry,she,was" rows="2" placeholder="Because she was hungry."></textarea><button class="fill-check-btn" onclick="event.stopPropagation();checkWrite(this)">提交</button></div>
+  </div>
+  <div class="rule-card rc-zhug"><div class="rc-title">任务型阅读策略（B篇示范）</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>信息表填空</strong>：先读表格问题，再回原文找对应词。如"On the first day, they walked to an old ____"→ 原文 First day they walked to an old building，答案 building。</div>
+      <div class="body-text"><strong>时间顺序排序</strong>：按 first day / second day / last day 或 first→then→last 圈出动词，再按先后排。</div>
+      <div class="body-text"><strong>问答/推断</strong>：找"原因句"。如爸爸买蛋糕，往下找 because she felt hungry，得出 Because she was hungry。</div>
+    </div>
+  </div>
+  <div class="rule-card rc-bin"><div class="rc-title">阅读作答规范</div>
+    <div class="rc-body">
+      <div class="body-text">① 填空只填一个词，注意大小写与拼写；② 排序看清顺序词；③ 问答题要用完整的句子回答，动词用过去式；④ 写完回读一遍，检查时态与拼写。</div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ==================== P22 阅读C篇 ==================== -->
+<div class="page" id="page22"><div class="page-content">
+  <div class="section-head"><span class="sh-num">读</span><span class="sh-title">阅读 · 文化旅行（C篇）</span></div>
+  <h1 class="page-title">阅读 C 篇</h1>
+  <p class="page-subtitle">文化语篇 · 一般过去时</p>
+  <div class="card"><div class="card-title">📄 A Famous Old Bridge (source: LMX_L03_READ_C)</div>
+    <div class="reading-passage" data-source-id="LMX_L03_READ_C">The Great Bridge is a famous old bridge in our country. It was built many years ago. Every year, many people visit it. They come to see the tall towers and the wide river below.
+
+Long ago, traders crossed the bridge with their goods. They travelled from one town to another. The bridge was very important for them. It saved them a lot of time.
+
+Today, the bridge is still strong. People walk across it and enjoy the view. Some visitors wait at the top to take photos. Children feel happy and hungry after the walk, so their parents buy them ice cream.
+
+The old bridge is a wonder of our country. It tells us a story about the past. We should take care of it.</div>
+  </div>
+  <div class="rule-card rc-zhug"><div class="rc-title">精读辅导 · 生词速查</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>wonder</strong> 奇迹 · <strong>top</strong> 顶部 · <strong>below</strong> 在下面 · <strong>trader</strong> 商人 · <strong>hungry</strong> 饿的</div>
+      <div class="body-text"><strong>wait</strong> 等待 · <strong>building</strong> 建筑 · <strong>difference</strong> 不同 · <strong>wet</strong> 湿的 · <strong>umbrella</strong> 雨伞</div>
+    </div>
+  </div>
+  <div class="rule-card rc-bin"><div class="rc-title">长句拆解 · 找主干</div>
+    <div class="rc-body">
+      <div class="body-text">句子：<em>Every year, many people visit it to see the tall towers and the wide river below.</em></div>
+      <div class="body-text">主干：<strong>many people visit it</strong>；"to see..."表示目的；below=在下面。</div>
+      <div class="body-text">句子：<em>Some visitors wait at the top to take photos.</em></div>
+      <div class="body-text">主干：<strong>Some visitors wait</strong>；"at the top"是地点，"to take photos"表目的。</div>
+    </div>
+  </div>
+  <div class="rule-card rc-xing"><div class="rc-title">时间顺序线索</div>
+    <div class="rc-body">
+      <div class="body-text">本段跨时间叙述：<strong>Every year</strong>（每年）→ <strong>Long ago</strong>（很久以前）→ <strong>Today</strong>（今天）。</div>
+      <div class="body-text">先讲现在的样子，再讲过去，最后回到现在，形成对比。</div>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_R_C1" data-knowledge-id="R_C" data-section="reading" data-template-id="C-POINT-DETAIL" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-qid="R_C1">
+    <div class="qq-text">【细节题】Long ago, how did traders cross the river?</div>
+    <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. by the bridge</button>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. by boat</button>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. by plane</button>
+    <div class="qq-parse">解析：第二段 traders crossed the bridge，故选 A。</div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_R_C2" data-knowledge-id="R_C" data-section="reading" data-template-id="C-POINT-INFER" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="application" data-qid="R_C2">
+    <div class="qq-text">【主旨推断】What does the writer want us to do at the end?</div>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. build more bridges</button>
+    <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. take care of the bridge</button>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. sell goods</button>
+    <div class="qq-parse">解析：末段 We should take care of it，故选 A。</div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_R_C3" data-knowledge-id="R_C" data-section="reading" data-template-id="R-WRITE-ANSWER" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="R_C3">
+    <div class="qq-text">【短答】What is the name of the famous old bridge?（填 the Great ____）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="bridge" autocomplete="off" placeholder="输入单词" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+</div></div>
+
+<!-- ==================== P23 句子练习1 ==================== -->
+<div class="page" id="page23"><div class="page-content">
+  <div class="section-head"><span class="sh-num">句</span><span class="sh-title">句子练习 · 过去式运用</span></div>
+  <h1 class="page-title">句子练习</h1>
+  <p class="page-subtitle">把动词变成过去式</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_D01" data-knowledge-id="D01" data-section="drill" data-template-id="D-FILL-PAST" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="D01">
+    <div class="qq-text">【填空】Yesterday we __ to the museum. （go 的过去式）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="went" autocomplete="off" placeholder="输入过去式" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_D02" data-knowledge-id="D01" data-section="drill" data-template-id="D-DRAG-PAST" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="application" data-qid="D02">
+    <div class="qq-text">点选过去式，填入旅行句子。</div>
+    <div class="drag-container" id="dragD02" data-order='["visited","saw","was"]'>
+      <div class="drag-words">
+        <div class="drag-word" onclick="dragSelect(this)">visited</div>
+        <div class="drag-word" onclick="dragSelect(this)">saw</div>
+        <div class="drag-word" onclick="dragSelect(this)">was</div>
+        <div class="drag-word" onclick="dragSelect(this)">visits</div>
+      </div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">We <span class="drag-slot" onclick="dragPlace(this)">____</span> the old market last week.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">I <span class="drag-slot" onclick="dragPlace(this)">____</span> many traders in the town.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">The bridge <span class="drag-slot" onclick="dragPlace(this)">____</span> very old.</div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();dragSubmit(this)">检查答案</button>
+    </div>
+  </div>
+  <div class="rule-card rc-zhug"><div class="rc-title">句子练习 · 变过去式口诀</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>规则动词</strong>：一般直接加 -ed（wait→waited）；以 e 结尾只加 d（live→lived）；辅音+y 变 ied（study→studied）；重读闭音节双写加 ed（stop→stopped）。</div>
+      <div class="body-text"><strong>不规则动词</strong>：go→went，come→came，have→had，see→saw，write→wrote，buy→bought，take→took，sell→sold，teach→taught，eat→ate，drink→drank。</div>
+      <div class="body-text"><strong>be 动词</strong>：am/is→was；are→were。</div>
+    </div>
+  </div>
+  <div class="tip-box"><strong>判断技巧：</strong>看到 yesterday / last / ago / in the past 就用过去式。</div>
+</div></div>
+
+<!-- ==================== P24 句子练习2 ==================== -->
+<div class="page" id="page24"><div class="page-content">
+  <div class="section-head"><span class="sh-num">句</span><span class="sh-title">句子练习 · 排序与辨析</span></div>
+  <h1 class="page-title">句子练习</h1>
+  <p class="page-subtitle">组句 · 辨过去式</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_D03" data-knowledge-id="D02" data-section="drill" data-template-id="D-ORDER-WORDS" data-interaction-type="order" data-action-type="order" data-cognitive-level="retrieval" data-qid="D03">
+    <div class="qq-text">把单词按顺序组成一句完整的话。</div>
+    <div class="order-container" id="orderD03" data-order='["We","visited","the","museum","last","week"]'>
+      <div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">the</span><span class="order-chunk" onclick="orderClick(this)">week</span><span class="order-chunk" onclick="orderClick(this)">visited</span><span class="order-chunk" onclick="orderClick(this)">museum</span><span class="order-chunk" onclick="orderClick(this)">We</span><span class="order-chunk" onclick="orderClick(this)">last</span></div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();orderSubmit(this)">检查顺序</button>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_D04" data-knowledge-id="D02" data-section="drill" data-template-id="D-POINT-PAST" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-qid="D04">
+    <div class="qq-text">【辨析】She __ to school yesterday. 正确的过去式是？</div>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. goed</button>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. goes</button>
+    <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. went</button>
+    <div class="qq-parse">解析：go 的过去式是不规则形式 went，故选 A。</div>
+  </div>
+  <div class="tip-box"><strong>记忆：</strong>不规则过去式 go→went、see→saw、have→had、write→wrote、buy→bought。</div>
+</div></div>
+
+<!-- ==================== P25 综合技能 ==================== -->
+<div class="page" id="page25"><div class="page-content">
+  <div class="section-head"><span class="sh-num">写</span><span class="sh-title">综合技能 · 仿写与配对</span></div>
+  <h1 class="page-title">综合输出</h1>
+  <p class="page-subtitle">写旅行介绍 · 连时间词</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_E01" data-knowledge-id="E01" data-section="extend" data-template-id="E-WRITE-COMP" data-interaction-type="write" data-action-type="write" data-cognitive-level="application" data-qid="E01">
+    <div class="qq-text">【仿写】写 3 句"旅行导游介绍"，用一般过去时介绍你参观过的一个地方。</div>
+    <div class="fill-input-wrap"><textarea class="write-input" data-keywords="visited,was,and" rows="3" placeholder="例：Last month I visited the old town. It was very beautiful. I saw many old buildings."></textarea><button class="fill-check-btn" onclick="event.stopPropagation();checkWrite(this)">提交</button></div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_E02" data-knowledge-id="E01" data-section="extend" data-template-id="E-LINK-TIME" data-interaction-type="link" data-action-type="link" data-cognitive-level="retrieval" data-qid="E02">
+    <div class="qq-text">点击左边英文时间词，再点击右边正确中文。</div>
+    <div class="link-container" id="linkE02">
+      <div class="link-grid">
+        <div class="link-left">
+          <div class="link-item" data-pair="1" onclick="linkClick(this)">First</div>
+          <div class="link-item" data-pair="2" onclick="linkClick(this)">Then</div>
+          <div class="link-item" data-pair="3" onclick="linkClick(this)">Last</div>
+          <div class="link-item" data-pair="4" onclick="linkClick(this)">ago</div>
+        </div>
+        <div class="link-right">
+          <div class="link-item" data-pair="3" onclick="linkClick(this)">最后</div>
+          <div class="link-item" data-pair="1" onclick="linkClick(this)">首先</div>
+          <div class="link-item" data-pair="4" onclick="linkClick(this)">在……之前</div>
+          <div class="link-item" data-pair="2" onclick="linkClick(this)">然后</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rule-card rc-zhug"><div class="rc-title">综合输出 · 写作脚手架</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>开头句</strong>：Last weekend I went to… / Yesterday I visited… / Two years ago, we travelled to…</div>
+      <div class="body-text"><strong>中间句（看到）</strong>：We saw many old buildings. / I looked below from the top. / The traders sold food and clothes.</div>
+      <div class="body-text"><strong>中间句（感受）</strong>：I was very happy. / I felt hungry after the walk. / It was a great wonder.</div>
+      <div class="body-text"><strong>结尾句</strong>：Last, we went home. / I loved the trip very much. / It taught me about the difference between past and now.</div>
+    </div>
+  </div>
+  <div class="rule-card rc-bin"><div class="rc-title">写作小贴士</div>
+    <div class="rc-body">
+      <div class="body-text">① 全文用一般过去时，动词要用过去式；② 用 first / then / last 或 ago / yesterday 让顺序清楚；③ 每句先想"谁 + 做什么"，再补时间地点；④ 写完后检查动词是否都变过去式。</div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ==================== P26 课堂总结 ==================== -->
+<div class="page" id="page26"><div class="page-content">
+  <div class="section-head"><span class="sh-num">总</span><span class="sh-title">课堂总结 · 回顾与检测</span></div>
+  <h1 class="page-title">本节回顾</h1>
+  <p class="page-subtitle">新词 · 过去时 · 阅读策略</p>
+  <div class="kmap"><div class="kn-title">本课知识地图</div>
+    <div class="kmap-node">① 新词 10：building / trader / wonder / difference / top / wait / umbrella / wet / below / hungry</div>
+    <div class="kmap-node teal">② 语法：一般过去时（was/were + 规则ed + 不规则过去式）</div>
+    <div class="kmap-node gold">③ 阅读：长句主干 · 细节定位 · 时间顺序</div>
+    <div class="kmap-node purple">④ 输出：旅行导游介绍（过去时语篇）</div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_E03" data-knowledge-id="E02" data-section="extend" data-template-id="E-FILL-REVIEW" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="E03">
+    <div class="qq-text">【回顾】"湿的"的英文是？（填一个词，小写）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="wet" autocomplete="off" placeholder="输入单词" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_E04" data-knowledge-id="E02" data-section="extend" data-template-id="E-DRAG-REVIEW" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="application" data-qid="E04">
+    <div class="qq-text">点选单词，完成总结句。</div>
+    <div class="drag-container" id="dragE04" data-order='["past","building","below"]'>
+      <div class="drag-words">
+        <div class="drag-word" onclick="dragSelect(this)">past</div>
+        <div class="drag-word" onclick="dragSelect(this)">building</div>
+        <div class="drag-word" onclick="dragSelect(this)">below</div>
+        <div class="drag-word" onclick="dragSelect(this)">now</div>
+      </div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">We use the past tense to talk about the <span class="drag-slot" onclick="dragPlace(this)">____</span>.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">The old market <span class="drag-slot" onclick="dragPlace(this)">____</span> is full of history.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">We look <span class="drag-slot" onclick="dragPlace(this)">____</span> from the top of the tower.</div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();dragSubmit(this)">检查答案</button>
+    </div>
+  </div>
+  <div class="rule-card rc-zhug"><div class="rc-title">本课三大要点回顾</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>要点一 · 一般过去时</strong>：be 动词 am/is→was、are→were；规则动词 +ed（wait→waited）；不规则动词须记忆（go→went、have→had、see→saw、write→wrote、buy→bought、take→took、sell→sold）。否定用 didn't+原形；疑问用 Did+主语+原形。</div>
+      <div class="body-text"><strong>要点二 · 长句理解</strong>：长句 = 主干（主语+谓语）+ 附加信息。先找 who + did what，再定位 when / where / how。例：The young trader / waited / in the market. → 主干 trader waited。</div>
+      <div class="body-text"><strong>要点三 · 时间顺序</strong>：历史与旅行语篇按时间推进，用 ago / yesterday / last week / first / then / next / last 把握事件先后，理清故事脉络。</div>
+    </div>
+  </div>
+  <div class="rule-card rc-bin"><div class="rc-title">自我检测清单</div>
+    <div class="rc-body">
+      <div class="body-text">□ 我能认读并拼写 10 个新词（building…hungry）。</div>
+      <div class="body-text">□ 我能说出规则动词 +ed 的三种变化办法（直接+ed、e+ d、辅y变ied）。</div>
+      <div class="body-text">□ 我能区分 was / were，并用它们描述过去的地点与状态。</div>
+      <div class="body-text">□ 我能从长句中找出主干，并定位时间、地点等细节。</div>
+      <div class="body-text">□ 我能用 first / then / last 复述一段旅行或历史故事。</div>
+      <div class="body-text">□ 我能用过去时写 3 句旅行日记或导游介绍。</div>
+    </div>
+  </div>
+  <div class="tip-box"><strong>课后任务：</strong>用过去时写一段 3 句的"我的旅行"，下节课分享。</div>
+</div></div>
+
+<!-- ==================== P27 词汇游戏1 ==================== -->
+<div class="page" id="page27"><div class="page-content">
+  <div class="section-head"><span class="sh-num">游</span><span class="sh-title">词汇复习游戏 · 词义配对</span></div>
+  <h1 class="page-title">我连新词义</h1>
+  <p class="page-subtitle">Tier 1 · 词级</p>
+  <div class="game-board"><div class="game-title">🎯 词义连一连</div><div class="game-rule">点击左列英文，再点击右列正确中文。</div></div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_L01" data-knowledge-id="L01" data-section="vocab" data-template-id="V-LINK-MEANING" data-interaction-type="link" data-action-type="link" data-cognitive-level="retrieval" data-qid="L01">
+    <div class="qq-text">新词 ↔ 中文意思</div>
+    <div class="link-container" id="linkL01">
+      <div class="link-grid">
+        <div class="link-left">
+          <div class="link-item" data-pair="1" onclick="linkClick(this)">building</div>
+          <div class="link-item" data-pair="2" onclick="linkClick(this)">umbrella</div>
+          <div class="link-item" data-pair="3" onclick="linkClick(this)">hungry</div>
+          <div class="link-item" data-pair="4" onclick="linkClick(this)">trader</div>
+        </div>
+        <div class="link-right">
+          <div class="link-item" data-pair="3" onclick="linkClick(this)">饥饿的</div>
+          <div class="link-item" data-pair="1" onclick="linkClick(this)">建筑物</div>
+          <div class="link-item" data-pair="4" onclick="linkClick(this)">商人</div>
+          <div class="link-item" data-pair="2" onclick="linkClick(this)">雨伞</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tip-box"><strong>游戏提示：</strong>先记单词类别：building/trader 是名词，hungry 是形容词，umbrella 是物品。</div>
+</div></div>
+
+<!-- ==================== P28 词汇游戏2 ==================== -->
+<div class="page" id="page28"><div class="page-content">
+  <div class="section-head"><span class="sh-num">游</span><span class="sh-title">词汇复习游戏 · 句子填词</span></div>
+  <h1 class="page-title">把词填入句子</h1>
+  <p class="page-subtitle">Tier 2 · 句级</p>
+  <div class="game-board"><div class="game-title">🎯 旅行句子填词</div><div class="game-rule">点选一个词，再点击句子空位。</div></div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_L02" data-knowledge-id="L02" data-section="vocab" data-template-id="V-DRAG-SENT" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="application" data-qid="L02">
+    <div class="qq-text">用目标词完成旅行句子。</div>
+    <div class="drag-container" id="dragL02" data-order='["top","below","wet"]'>
+      <div class="drag-words">
+        <div class="drag-word" onclick="dragSelect(this)">top</div>
+        <div class="drag-word" onclick="dragSelect(this)">below</div>
+        <div class="drag-word" onclick="dragSelect(this)">wet</div>
+        <div class="drag-word" onclick="dragSelect(this)">dry</div>
+      </div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">We climbed to the <span class="drag-slot" onclick="dragPlace(this)">____</span> of the tower.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">The river is far <span class="drag-slot" onclick="dragPlace(this)">____</span> us.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">My shoes got <span class="drag-slot" onclick="dragPlace(this)">____</span> in the rain.</div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();dragSubmit(this)">检查答案</button>
+    </div>
+  </div>
+  <div class="tip-box"><strong>提示：</strong>top 顶部、below 在下方、wet 湿的 —— 都是描述方位与状态的词。</div>
+</div></div>
+
+<!-- ==================== P29 语法专练 -ed ==================== -->
+<div class="page" id="page29"><div class="page-content">
+  <div class="section-head"><span class="sh-num">练</span><span class="sh-title">语法专练 · 规则动词过去式</span></div>
+  <h1 class="page-title">-ed 规则</h1>
+  <p class="page-subtitle">walk→walked · wait→waited</p>
+  <div class="rule-card rc-zhug"><strong>规则：</strong>多数动词直接 +ed；以 e 结尾只加 d；"辅+y"变 y 为 i 再加 ed。
+    <em>例：walk→walked，live→lived，study→studied。</em></div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G11" data-knowledge-id="G05" data-section="grammar" data-template-id="G-FILL-ED" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="G11">
+    <div class="qq-text">【变过去式】study 的过去式是？（输入小写）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="studied" autocomplete="off" placeholder="输入过去式" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G12" data-knowledge-id="G05" data-section="grammar" data-template-id="G-DRAG-ED" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="application" data-qid="G12">
+    <div class="qq-text">点选过去式，填入句子。</div>
+    <div class="drag-container" id="dragG12" data-order='["walked","lived","studied"]'>
+      <div class="drag-words">
+        <div class="drag-word" onclick="dragSelect(this)">walked</div>
+        <div class="drag-word" onclick="dragSelect(this)">lived</div>
+        <div class="drag-word" onclick="dragSelect(this)">studied</div>
+        <div class="drag-word" onclick="dragSelect(this)">walks</div>
+      </div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">We <span class="drag-slot" onclick="dragPlace(this)">____</span> to the old town yesterday.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">The traders <span class="drag-slot" onclick="dragPlace(this)">____</span> near the market.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">Tom <span class="drag-slot" onclick="dragPlace(this)">____</span> the history of the bridge.</div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();dragSubmit(this)">检查答案</button>
+    </div>
+  </div>
+</div></div>
+
+<!-- ==================== P30 不规则动词表 ==================== -->
+<div class="page" id="page30"><div class="page-content">
+  <div class="section-head"><span class="sh-num">语</span><span class="sh-title">语法专练 · 不规则动词</span></div>
+  <h1 class="page-title">不规则动词配对</h1>
+  <p class="page-subtitle">go→went · see→saw · have→had</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G13" data-knowledge-id="G06" data-section="grammar" data-template-id="G-LINK-IRREG" data-interaction-type="link" data-action-type="link" data-cognitive-level="retrieval" data-qid="G13">
+    <div class="qq-text">把原形与过去式连起来。</div>
+    <div class="link-container" id="linkG13">
+      <div class="link-grid">
+        <div class="link-left">
+          <div class="link-item" data-pair="1" onclick="linkClick(this)">go</div>
+          <div class="link-item" data-pair="2" onclick="linkClick(this)">see</div>
+          <div class="link-item" data-pair="3" onclick="linkClick(this)">have</div>
+          <div class="link-item" data-pair="4" onclick="linkClick(this)">write</div>
+        </div>
+        <div class="link-right">
+          <div class="link-item" data-pair="1" onclick="linkClick(this)">went</div>
+          <div class="link-item" data-pair="3" onclick="linkClick(this)">had</div>
+          <div class="link-item" data-pair="4" onclick="linkClick(this)">wrote</div>
+          <div class="link-item" data-pair="2" onclick="linkClick(this)">saw</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tip-box"><strong>口诀：</strong>go-went，see-saw，have-had，write-wrote，buy-bought，take-took。</div>
+</div></div>
+
+<!-- ==================== P31 was/were 疑问否定 ==================== -->
+<div class="page" id="page31"><div class="page-content">
+  <div class="section-head"><span class="sh-num">语</span><span class="sh-title">语法 · was/were 疑问与否定</span></div>
+  <h1 class="page-title">问过去的事</h1>
+  <p class="page-subtitle">Was…? / Were…? / wasn't / weren't</p>
+  <div class="rule-card rc-bin"><strong>规则：</strong>疑问句把 was/were 提到句首；否定句在 was/were 后加 not（缩写 wasn't / weren't）。
+    <em>例：Was the town small? / The traders were not (weren't) busy.</em></div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G14" data-knowledge-id="G07" data-section="grammar" data-template-id="G-FILL-QUESTION" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="G14">
+    <div class="qq-text">【填空】__ the old building very tall?（填 Was / Were）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="was" autocomplete="off" placeholder="输入 Was 或 Were" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G15" data-knowledge-id="G07" data-section="grammar" data-template-id="G-POINT-NEG" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-qid="G15">
+    <div class="qq-text">【辨析】The tourists __ afraid of the wet road. 正确的否定过去式是？</div>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. isn't</button>
+    <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. weren't</button>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. aren't</button>
+    <div class="qq-parse">解析：tourists 是复数，用过去式否定 weren't，故选 B。</div>
+  </div>
+</div></div>
+
+<!-- ==================== P32 长句细节2 ==================== -->
+<div class="page" id="page32"><div class="page-content">
+  <div class="section-head"><span class="sh-num">语</span><span class="sh-title">语法 · 长句细节定位2</span></div>
+  <h1 class="page-title">再找细节</h1>
+  <p class="page-subtitle">时间 / 地点 / 人物</p>
+  <div class="rule-card rc-xing"><strong>长句：</strong>"Last week, the old traders from the market travelled to a new town by the sea."
+    <em>提问式定位：When?→Last week；Who?→the old traders；Where?→to a new town by the sea。</em></div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G16" data-knowledge-id="G08" data-section="grammar" data-template-id="G-POINT-WHERE" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-qid="G16">
+    <div class="qq-text">【细节题】上句中 Where did the traders travel?</div>
+    <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. to a new town by the sea</button>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. to the old market</button>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. to the school</button>
+    <div class="qq-parse">解析："travelled to a new town by the sea"，故选 A。</div>
+  </div>
+  <div class="tip-box"><strong>策略回顾：</strong>细节定位三步：① 找疑问词（when/where/who）② 定位对应短语 ③ 比对选项。</div>
+</div></div>
+
+<!-- ==================== P33 时间顺序2 ==================== -->
+<div class="page" id="page33"><div class="page-content">
+  <div class="section-head"><span class="sh-num">语</span><span class="sh-title">语法 · 时间顺序练习2</span></div>
+  <h1 class="page-title">给故事排排序</h1>
+  <p class="page-subtitle">按时间先后</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_G17" data-knowledge-id="G08" data-section="grammar" data-template-id="G-ORDER-TIME2" data-interaction-type="order" data-action-type="order" data-cognitive-level="application" data-qid="G17">
+    <div class="qq-text">把"建造大桥"的过程按先后排序。</div>
+    <div class="order-container" id="orderG17" data-order='["First the workers made a plan","Then they built the towers","Last people used the bridge"]'>
+      <div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">Last people used the bridge</span><span class="order-chunk" onclick="orderClick(this)">First the workers made a plan</span><span class="order-chunk" onclick="orderClick(this)">Then they built the towers</span></div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();orderSubmit(this)">检查顺序</button>
+    </div>
+  </div>
+  <div class="tip-box"><strong>时间链：</strong>First → Then → Next → Last；把握时间词即可排出事件先后。</div>
+</div></div>
+
+<!-- ==================== P34 语篇重组 ==================== -->
+<div class="page" id="page34"><div class="page-content">
+  <div class="section-head"><span class="sh-num">篇</span><span class="sh-title">语篇 · 时间顺序重组</span></div>
+  <h1 class="page-title">重组旅行日记</h1>
+  <p class="page-subtitle">把乱序句子排成一段日记</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_DR01" data-knowledge-id="DR01" data-section="reading" data-template-id="R-ORDER-SENT" data-interaction-type="order" data-action-type="order" data-cognitive-level="application" data-qid="DR01">
+    <div class="qq-text">把日记按"先→后"排成通顺的一段。</div>
+    <div class="order-container" id="orderDR01" data-order='["Last Sunday I went to the beach","I saw many old buildings there","Then I had lunch and felt hungry","In the evening I went home"]'>
+      <div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">In the evening I went home</span><span class="order-chunk" onclick="orderClick(this)">Last Sunday I went to the beach</span><span class="order-chunk" onclick="orderClick(this)">I saw many old buildings there</span><span class="order-chunk" onclick="orderClick(this)">Then I had lunch and felt hungry</span></div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();orderSubmit(this)">检查顺序</button>
+    </div>
+  </div>
+  <div class="tip-box"><strong>策略：</strong>先找开头时间（Last Sunday），再按动作先后衔接，最后找结束（went home）。</div>
+</div></div>
+
+<!-- ==================== P35 旅行日记填空 ==================== -->
+<div class="page" id="page35"><div class="page-content">
+  <div class="section-head"><span class="sh-num">篇</span><span class="sh-title">语篇 · 旅行日记填空</span></div>
+  <h1 class="page-title">补全日记</h1>
+  <p class="page-subtitle">用过去式补全</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_DR02" data-knowledge-id="DR02" data-section="reading" data-template-id="R-FILL-DIARY" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="DR02">
+    <div class="qq-text">【日记填空】Yesterday I __ (go) to the market with my mother.</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="went" autocomplete="off" placeholder="输入过去式" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_DR03" data-knowledge-id="DR02" data-section="reading" data-template-id="R-FILL-DIARY2" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="DR03">
+    <div class="qq-text">【日记填空】We __ (see) a very old building there.</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="saw" autocomplete="off" placeholder="输入过去式" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+  <div class="tip-box"><strong>提示：</strong>日记常用过去时，注意不规则过去式 go→went、see→saw。</div>
+</div></div>
+
+<!-- ==================== P36 拼读 -ed ==================== -->
+<div class="page" id="page36"><div class="page-content">
+  <div class="section-head"><span class="sh-num">拼</span><span class="sh-title">拼读 · 过去式 -ed 发音</span></div>
+  <h1 class="page-title">-ed 三种读音</h1>
+  <p class="page-subtitle">/t/ /d/ /ɪd/</p>
+  <div class="rule-card rc-qita"><strong>读音规则：</strong>清辅音后读 /t/（walked）；浊辅音和元音后读 /d/（lived）；t/d 后读 /ɪd/（waited, wanted）。
+    <em>例：walked→/t/，played→/d/，waited→/ɪd/。</em></div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_PH01" data-knowledge-id="PH01" data-section="phonics" data-template-id="PH-POINT-ED" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-qid="PH01">
+    <div class="qq-text">【辨音】"waited" 的 -ed 读音是？</div>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. /t/</button>
+    <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. /d/</button>
+    <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. /ɪd/</button>
+    <div class="qq-parse">解析：wait 以 t 结尾，-ed 读 /ɪd/，故选 C。</div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_PH02" data-knowledge-id="PH01" data-section="phonics" data-template-id="PH-LINK-ED" data-interaction-type="link" data-action-type="link" data-cognitive-level="retrieval" data-qid="PH02">
+    <div class="qq-text">把单词与 -ed 读音连起来。</div>
+    <div class="link-container" id="linkPH02">
+      <div class="link-grid">
+        <div class="link-left">
+          <div class="link-item" data-pair="1" onclick="linkClick(this)">walked</div>
+          <div class="link-item" data-pair="2" onclick="linkClick(this)">lived</div>
+          <div class="link-item" data-pair="3" onclick="linkClick(this)">waited</div>
+        </div>
+        <div class="link-right">
+          <div class="link-item" data-pair="1" onclick="linkClick(this)">/t/</div>
+          <div class="link-item" data-pair="2" onclick="linkClick(this)">/d/</div>
+          <div class="link-item" data-pair="3" onclick="linkClick(this)">/ɪd/</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rule-card rc-zhug"><div class="rc-title">-ed 读音规则详表</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>读 /t/（清辅音后）</strong>：walk→walked，cook→cooked，look→looked，stop→stopped，wash→washed，help→helped。</div>
+      <div class="body-text"><strong>读 /d/（浊辅音和元音后）</strong>：play→played，live→lived，open→opened，study→studied，stay→stayed，call→called。</div>
+      <div class="body-text"><strong>读 /ɪd/（t 或 d 结尾后）</strong>：wait→waited，want→wanted，visit→visited，need→needed，start→started，end→ended。</div>
+      <div class="body-text"><strong>记忆口诀：</strong>清后读 /t/，浊后读 /d/，t/d 后读 /ɪd/。先看动词末尾的声音是清是浊，再决定读音。</div>
+    </div>
+  </div>
+  <div class="rule-card rc-bin"><div class="rc-title">本课文言 · 不规则动词拼读</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>go→went</strong>（/went/）· <strong>have→had</strong>（/hæd/）· <strong>see→saw</strong>（/sɔː/）· <strong>write→wrote</strong>（/rəʊt/）· <strong>buy→bought</strong>（/bɔːt/）· <strong>take→took</strong>（/tʊk/）· <strong>sell→sold</strong>（/səʊld/）· <strong>teach→taught</strong>（/tɔːt/）· <strong>eat→ate</strong>（/eɪt/）· <strong>drink→drank</strong>（/dræŋk/）· <strong>come→came</strong>（/keɪm/）· <strong>put→put</strong>（/pʊt/）。</div>
+      <div class="body-text">这些动词在历史与旅行语篇中很常见，请跟着老师大声朗读并记忆。</div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ==================== P37 口语对话 ==================== -->
+<div class="page" id="page37"><div class="page-content">
+  <div class="section-head"><span class="sh-num">说</span><span class="sh-title">口语 · 旅行角色扮演</span></div>
+  <h1 class="page-title">导游对话</h1>
+  <p class="page-subtitle">问过去 · 答过去</p>
+  <div class="card"><div class="card-title">🎭 场景：你是小导游，向游客介绍老城</div>
+    <div class="card-content">游客会问：Was the building old? / Where did you go? / Did you feel hungry? 你需用过去时回答。</div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_SP01" data-knowledge-id="SP01" data-section="extend" data-template-id="SP-WRITE-DIALOG" data-interaction-type="write" data-action-type="write" data-cognitive-level="application" data-qid="SP01">
+    <div class="qq-text">【输出】写一句导游回答游客的话（用过去时，如 "We went to the old market."）。</div>
+    <div class="fill-input-wrap"><textarea class="write-input" data-keywords="went,to,the" rows="2" placeholder="例：We went to the old market."></textarea><button class="fill-check-btn" onclick="event.stopPropagation();checkWrite(this)">提交</button></div>
+  </div>
+  <div class="rule-card rc-zhug"><div class="rc-title">导游对话范例（Role-play）</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>游客（Tourist）：</strong>Was the building old?　<strong>导游（Guide）：</strong>Yes, it was. It was built many years ago.</div>
+      <div class="body-text"><strong>游客：</strong>Where did the traders come from?　<strong>导游：</strong>They came from nearby towns every morning.</div>
+      <div class="body-text"><strong>游客：</strong>Did you feel hungry after the walk?　<strong>导游：</strong>Yes, I did. So I bought a warm cake.</div>
+      <div class="body-text"><strong>游客：</strong>What did you see at the top?　<strong>导游：</strong>We saw the whole town below us.</div>
+    </div>
+  </div>
+  <div class="rule-card rc-bin"><div class="rc-title">问答句型速成</div>
+    <div class="rc-body">
+      <div class="body-text"><strong>一般疑问（be 动词）</strong>：Was/Were + 主语 + …? → Yes, it was. / No, it wasn't.</div>
+      <div class="body-text"><strong>一般疑问（动作动词）</strong>：Did + 主语 + 原形 + …? → Yes, I did. / No, I didn't.</div>
+      <div class="body-text"><strong>特殊疑问（时间）</strong>：When did you go? → We went last summer.</div>
+      <div class="body-text"><strong>特殊疑问（地点）</strong>：Where did you go? → We went to the old town.</div>
+      <div class="body-text"><strong>特殊疑问（感受）</strong>：How did you feel? → I felt happy.</div>
+    </div>
+  </div>
+  <div class="tip-box"><strong>口语提示：</strong>回答过去的问题用过去式：Yes, it was. / No, we didn't. / We went to…</div>
+</div></div>
+
+<!-- ==================== P38 句子游戏 ==================== -->
+<div class="page" id="page38"><div class="page-content">
+  <div class="section-head"><span class="sh-num">句</span><span class="sh-title">句子游戏 · 翻译填空</span></div>
+  <h1 class="page-title">中译英填空</h1>
+  <p class="page-subtitle">把中文句子译成英文</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_SN01" data-knowledge-id="SN01" data-section="drill" data-template-id="D-FILL-TRANS" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="SN01">
+    <div class="qq-text">【翻译】"我们昨天去了市场。" → We __ to the market yesterday.（填一个词）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="went" autocomplete="off" placeholder="输入单词" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_SN02" data-knowledge-id="SN01" data-section="drill" data-template-id="D-FILL-TRANS2" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="SN02">
+    <div class="qq-text">【翻译】"这座桥很老。" → The bridge __ very old.（填一个词）</div>
+    <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="was" autocomplete="off" placeholder="输入单词" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+  </div>
+  <div class="tip-box"><strong>提示：</strong>翻译时先找主干（主语+谓语），再补时间地点。</div>
+</div></div>
+
+<!-- ==================== P39 长句主干排序 ==================== -->
+<div class="page" id="page39"><div class="page-content">
+  <div class="section-head"><span class="sh-num">句</span><span class="sh-title">长句 · 主干提取排序</span></div>
+  <h1 class="page-title">把长句拼完整</h1>
+  <p class="page-subtitle">先找主干，再排细节</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_LS01" data-knowledge-id="LS01" data-section="reading" data-template-id="R-ORDER-MAIN" data-interaction-type="order" data-action-type="order" data-cognitive-level="application" data-qid="LS01">
+    <div class="qq-text">【句子1】把下列部分按正确顺序拼成一句话。</div>
+    <div class="order-container" id="orderLS1" data-order='["Tom","put on","his jacket","and went home"]'>
+      <div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">and went home</span><span class="order-chunk" onclick="orderClick(this)">Tom</span><span class="order-chunk" onclick="orderClick(this)">his jacket</span><span class="order-chunk" onclick="orderClick(this)">put on</span></div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();orderSubmit(this)">检查句子</button>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_LS02" data-knowledge-id="LS01" data-section="reading" data-template-id="R-ORDER-MAIN2" data-interaction-type="order" data-action-type="order" data-cognitive-level="application" data-qid="LS02">
+    <div class="qq-text">【句子2】"Emma 学习了过去和现在生活（life）的不同。"</div>
+    <div class="order-container" id="orderLS2" data-order='["Emma","learned about","the difference","between past and now"]'>
+      <div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">the difference</span><span class="order-chunk" onclick="orderClick(this)">learned about</span><span class="order-chunk" onclick="orderClick(this)">between past and now</span><span class="order-chunk" onclick="orderClick(this)">Emma</span></div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();orderSubmit(this)">检查句子</button>
+    </div>
+  </div>
+  <div class="tip-box"><strong>方法：</strong>先找主语+谓语动词（主干），再把时间地点补在后面。</div>
+  <div class="tip-box"><strong>巩固：</strong>长句主干辨析是"细节定位"的基础，先练熟主干，再练时间顺序。</div>
+</div></div>
+
+<!-- ==================== P40 新词复现 · 历史文化语篇 ==================== -->
+<div class="page" id="page40"><div class="page-content">
+  <div class="section-head"><span class="sh-num">篇</span><span class="sh-title">语篇 · 历史文化填空（新词复现）</span></div>
+  <h1 class="page-title">用新词补全故事</h1>
+  <p class="page-subtitle">拖拽单词填入空位</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_ND01" data-knowledge-id="ND01" data-section="vocab" data-template-id="V-DRAG-CULTURE" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="application" data-qid="ND01">
+    <div class="qq-text">【历史文化】把单词拖入正确位置。</div>
+    <div class="drag-container" id="dragND1" data-order='["wonder","traders","top","hungry","below"]'>
+      <div class="body-text" style="margin:8px 0;user-select:text;">The old bridge is a <span class="drag-slot" onclick="dragPlace(this)">____</span>（奇迹）of our country.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">Old <span class="drag-slot" onclick="dragPlace(this)">____</span>（商人）crossed the bridge often.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">Emma went to the <span class="drag-slot" onclick="dragPlace(this)">____</span>（顶部）of the building.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">Tom waited, but he was not <span class="drag-slot" onclick="dragPlace(this)">____</span>（饿的）.</div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">The town looked very small <span class="drag-slot" onclick="dragPlace(this)">____</span>（在下面）.</div>
+      <div class="drag-words">
+        <span class="drag-word" onclick="dragSelect(this)">traders</span>
+        <span class="drag-word" onclick="dragSelect(this)">below</span>
+        <span class="drag-word" onclick="dragSelect(this)">hungry</span>
+        <span class="drag-word" onclick="dragSelect(this)">wonder</span>
+        <span class="drag-word" onclick="dragSelect(this)">top</span>
+      </div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();dragSubmit(this)">检查</button>
+    </div>
+  </div>
+  <div class="tip-box"><strong>提示：</strong>这些都是本课新词，试着在随后的阅读中把它们找出来，加深记忆。</div>
+</div></div>
+
+<!-- ==================== P41 历史语篇 · 段落排序 ==================== -->
+<div class="page" id="page41"><div class="page-content">
+  <div class="section-head"><span class="sh-num">篇</span><span class="sh-title">语篇 · 段落排序重组</span></div>
+  <h1 class="page-title">给历史故事排顺序</h1>
+  <p class="page-subtitle">按时间先后排列段落</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_PO01" data-knowledge-id="PO01" data-section="reading" data-template-id="R-ORDER-PARA" data-interaction-type="order" data-action-type="order" data-cognitive-level="application" data-qid="PO01">
+    <div class="qq-text">【段落重组】把关于"老博物馆"的段落按正确顺序排列。</div>
+    <div class="order-container" id="orderPO1" data-order='["The museum opened long ago","Traders left old things there","Now people visit it every year"]'>
+      <div class="order-chunks">
+        <span class="order-chunk" onclick="orderClick(this)">Now people visit it every year</span>
+        <span class="order-chunk" onclick="orderClick(this)">The museum opened long ago</span>
+        <span class="order-chunk" onclick="orderClick(this)">Traders left old things there</span>
+      </div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();orderSubmit(this)">检查顺序</button>
+    </div>
+  </div>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_PO02" data-knowledge-id="PO01" data-section="reading" data-template-id="R-ORDER-PARA2" data-interaction-type="order" data-action-type="order" data-cognitive-level="application" data-qid="PO02">
+    <div class="qq-text">【段落重组】把"旅行的一天"按时间顺序排列。</div>
+    <div class="order-container" id="orderPO2" data-order='["We got up early","We walked to the old town","We ate lunch by the river","We went home"]'>
+      <div class="order-chunks">
+        <span class="order-chunk" onclick="orderClick(this)">We ate lunch by the river</span>
+        <span class="order-chunk" onclick="orderClick(this)">We went home</span>
+        <span class="order-chunk" onclick="orderClick(this)">We got up early</span>
+        <span class="order-chunk" onclick="orderClick(this)">We walked to the old town</span>
+      </div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();orderSubmit(this)">检查顺序</button>
+    </div>
+  </div>
+  <div class="tip-box"><strong>提示：</strong>按一天的时间先后：起床→出发→午餐→回家。</div>
+</div></div>
+
+<!-- ==================== P42 综合应用 · 旅行日记写作 ==================== -->
+<div class="page" id="page42"><div class="page-content">
+  <div class="section-head"><span class="sh-num">写</span><span class="sh-title">综合应用 · 旅行日记写作</span></div>
+  <h1 class="page-title">写一篇旅行日记</h1>
+  <p class="page-subtitle">用一般过去时描述昨天发生的事</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_WR01" data-knowledge-id="WR01" data-section="drill" data-template-id="R-WRITE-COMPOSE" data-interaction-type="write" data-action-type="write" data-cognitive-level="application" data-qid="WR01">
+    <div class="qq-text">【写作】用至少3个新词（如 wonder / wait / umbrella / hungry / top）写2-3句旅行日记，用一般过去时。</div>
+    <div class="fill-input-wrap"><textarea class="write-input" data-keywords="went,was" rows="4" placeholder="Yesterday I went to the old town. It was sunny. I waited..." style="min-height:96px;"></textarea><button class="fill-check-btn" onclick="event.stopPropagation();checkWrite(this)">提交</button></div>
+    <div class="tip-box"><strong>写作框：</strong>先写"去了哪里"，再写"看到了什么"，最后写"感觉如何"。</div>
+  </div>
+</div></div>
+
+<!-- ==================== P43 文化名胜 · 世界地标连线 ==================== -->
+<div class="page" id="page43"><div class="page-content">
+  <div class="section-head"><span class="sh-num">文</span><span class="sh-title">文化 · 世界名胜连线</span></div>
+  <h1 class="page-title">地标与国家的连线</h1>
+  <p class="page-subtitle">把名胜与所在国家连起来</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_LK01" data-knowledge-id="LK01" data-section="extend" data-template-id="E-LINK-LANDMARK" data-interaction-type="link" data-action-type="link" data-cognitive-level="retrieval" data-qid="LK01">
+    <div class="qq-text">【连线】把地标与它所在的国家连起来。</div>
+    <div class="link-container" id="linkLK1">
+      <div class="link-grid">
+        <div class="link-left">
+          <div class="link-item" data-pair="1" onclick="linkClick(this)">The Great Wall</div>
+          <div class="link-item" data-pair="2" onclick="linkClick(this)">The Eiffel Tower</div>
+          <div class="link-item" data-pair="3" onclick="linkClick(this)">The Great Pyramid</div>
+        </div>
+        <div class="link-right">
+          <div class="link-item" data-pair="3" onclick="linkClick(this)">Egypt</div>
+          <div class="link-item" data-pair="1" onclick="linkClick(this)">China</div>
+          <div class="link-item" data-pair="2" onclick="linkClick(this)">France</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tip-box"><strong>你知道吗：</strong>这些名胜都是"wonder（奇迹）"，很多游客会去"wait（等待）"拍照。</div>
+  <div class="tip-box"><strong>连线小技巧：</strong>先锁定最熟悉的地标（如 The Great Wall），再逐一配对国家。</div>
+</div></div>
+
+<!-- ==================== P44 过去式归类 ==================== -->
+<div class="page" id="page44"><div class="page-content">
+  <div class="section-head"><span class="sh-num">语</span><span class="sh-title">语法 · 动词过去式归类</span></div>
+  <h1 class="page-title">给动词找过去式</h1>
+  <p class="page-subtitle">把过去式拖到对应原形旁</p>
+  <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_PB01" data-knowledge-id="PB01" data-section="grammar" data-template-id="G-DRAG-PAST" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="retrieval" data-qid="PB01">
+    <div class="qq-text">【过去式】把动词过去式拖到对应原形旁边。</div>
+    <div class="drag-container" id="dragPB1" data-order='["went","bought","waited","sold"]'>
+      <div class="body-text" style="margin:8px 0;user-select:text;">go → <span class="drag-slot" onclick="dragPlace(this)">____</span></div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">buy → <span class="drag-slot" onclick="dragPlace(this)">____</span></div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">wait → <span class="drag-slot" onclick="dragPlace(this)">____</span></div>
+      <div class="body-text" style="margin:8px 0;user-select:text;">sell → <span class="drag-slot" onclick="dragPlace(this)">____</span></div>
+      <div class="drag-words">
+        <span class="drag-word" onclick="dragSelect(this)">waited</span>
+        <span class="drag-word" onclick="dragSelect(this)">sold</span>
+        <span class="drag-word" onclick="dragSelect(this)">went</span>
+        <span class="drag-word" onclick="dragSelect(this)">bought</span>
+      </div>
+      <button class="fill-check-btn" onclick="event.stopPropagation();dragSubmit(this)">检查</button>
+    </div>
+  </div>
+  <div class="tip-box"><strong>提示：</strong>wait→waited 是规则变化（+ed）；go/buy/sell 是不规则变化。</div>
+  <div class="tip-box"><strong>延伸：</strong>规则动词加 ed 时注意读音：清辅音后读 /t/，浊辅音和元音后读 /d/。</div>
+</div></div>
+
+<!-- ==================== P45 综合复习 · 文化旅行读写 ==================== -->
+<div class="page" id="page45"><div class="page-content">
+  <div class="section-head"><span class="sh-num">综</span><span class="sh-title">综合复习 · 文化旅行读写</span></div>
+  <h1 class="page-title">本课综合复习</h1>
+  <p class="page-subtitle">一般过去时 + 长句理解 + 文化阅读</p>
+
+  <div class="rule-card rc-zhug"><div class="rc-title">一、过去式变化对照（含本课动词）</div>
+    <div class="rc-body">
+      <div class="link-container" id="linkCY1">
+        <div class="link-grid">
+          <div class="link-left">
+            <div class="link-item" data-pair="1" onclick="linkClick(this)">wait</div>
+            <div class="link-item" data-pair="2" onclick="linkClick(this)">travel</div>
+            <div class="link-item" data-pair="3" onclick="linkClick(this)">buy</div>
+            <div class="link-item" data-pair="4" onclick="linkClick(this)">see</div>
+            <div class="link-item" data-pair="5" onclick="linkClick(this)">take</div>
+          </div>
+          <div class="link-right">
+            <div class="link-item" data-pair="1" onclick="linkClick(this)">waited</div>
+            <div class="link-item" data-pair="3" onclick="linkClick(this)">bought</div>
+            <div class="link-item" data-pair="2" onclick="linkClick(this)">travelled</div>
+            <div class="link-item" data-pair="5" onclick="linkClick(this)">took</div>
+            <div class="link-item" data-pair="4" onclick="linkClick(this)">saw</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule-card rc-bin"><div class="rc-title">二、长句主干找法（三步法）</div>
+    <div class="rc-body">
+      <p class="body-text">① 找主语（谁）→ ② 找谓语动词（做什么）→ ③ 把时间状语（yesterday / last week / ago）放在句尾。</p>
+      <p class="body-text">例：<em>Many years ago, traders came here to sell food.</em> → 主干 = <strong>traders came</strong>。</p>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_CY01" data-knowledge-id="CY01" data-section="reading" data-template-id="R-FILL-MAIN" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="CY01">
+        <div class="qq-text">【主干填空】句子 <em>Last summer, Emma went to the top of the building.</em> 的主干是 Emma <strong>____</strong>（填过去式）。</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="went" autocomplete="off" placeholder="输入单词" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule-card rc-xing"><div class="rc-title">三、文化旅行 · 时间顺序连线</div>
+    <div class="rc-body">
+      <div class="link-container" id="linkCY2">
+        <div class="link-grid">
+          <div class="link-left">
+            <div class="link-item" data-pair="1" onclick="linkClick(this)">First</div>
+            <div class="link-item" data-pair="2" onclick="linkClick(this)">Then</div>
+            <div class="link-item" data-pair="3" onclick="linkClick(this)">After that</div>
+            <div class="link-item" data-pair="4" onclick="linkClick(this)">Finally</div>
+          </div>
+          <div class="link-right">
+            <div class="link-item" data-pair="3" onclick="linkClick(this)">we visited the museum</div>
+            <div class="link-item" data-pair="1" onclick="linkClick(this)">we got up early</div>
+            <div class="link-item" data-pair="2" onclick="linkClick(this)">we had breakfast</div>
+            <div class="link-item" data-pair="4" onclick="linkClick(this)">we went home</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule-card rc-qita"><div class="rc-title">四、文化小阅读（任务型 · 判断正误）</div>
+    <div class="rc-body">
+      <div class="body-text" style="user-select:text;">Yesterday we visited the old museum near the river. It was built two hundred years ago. We saw many old things that traders used. We waited in a long line, but we were happy. We took many photos and learned about the difference between old times and today.</div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_CY02" data-knowledge-id="CY02" data-section="reading" data-template-id="R-WRITE-ANSWER" data-interaction-type="write" data-action-type="write" data-cognitive-level="application" data-qid="CY02">
+        <div class="qq-text">【问答】When was the museum built?（用英文完整回答，含 ago）</div>
+        <div class="fill-input-wrap"><textarea class="write-input" data-keywords="ago,two" rows="2" placeholder="It was built two hundred years ago."></textarea><button class="fill-check-btn" onclick="event.stopPropagation();checkWrite(this)">提交</button></div>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L03_CY03" data-knowledge-id="CY02" data-section="reading" data-template-id="R-DRAG-TF" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="retrieval" data-qid="CY03">
+        <div class="qq-text">【拖词】根据短文，把词拖入空位补全句子。</div>
+        <div class="drag-container" id="dragCY1" data-order='["waiting","photos","old"]'>
+          <div class="body-text" style="margin:8px 0;user-select:text;">We were <span class="drag-slot" onclick="dragPlace(this)">____</span> in a long line at the museum.</div>
+          <div class="body-text" style="margin:8px 0;user-select:text;">We took many <span class="drag-slot" onclick="dragPlace(this)">____</span> inside.</div>
+          <div class="body-text" style="margin:8px 0;user-select:text;">The museum showed <span class="drag-slot" onclick="dragPlace(this)">____</span> things from traders.</div>
+          <div class="drag-words">
+            <span class="drag-word" onclick="dragSelect(this)">old</span>
+            <span class="drag-word" onclick="dragSelect(this)">photos</span>
+            <span class="drag-word" onclick="dragSelect(this)">waiting</span>
+          </div>
+          <button class="fill-check-btn" onclick="event.stopPropagation();dragSubmit(this)">检查</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box"><strong>本课小结：</strong>一般过去时用于描述过去发生的事（历史与旅行），常用时间词 yesterday / last week / ago；阅读长句先找主干再理时间顺序。</div>
+  <div class="tip-box"><strong>检验：</strong>能独立完成本页连线、填空与拖词，即表示本课目标已达成。</div>
+  <div class="tip-box"><strong>回家作业：</strong>用 think / eat / drink 各造一个一般过去时的句子，并写出其过去式（thought / ate / drank），写在本课练习本上即可。</div>
+</div></div>
+
+</div><!-- /pages-container -->
+
+<div class="bottom-hud">
+  <button class="hud-btn" id="prevBtn" onclick="prevPage()">◀ 上一页</button>
+  <div class="hud-progress"><div class="hud-progress-bar" id="progressBar" style="width:3.8%;"></div></div>
+  <div class="hud-page" id="pageCounter">1 / 26</div>
+  <div class="hud-progress"><div class="hud-progress-bar" id="progressBar2" style="width:3.8%;"></div></div>
+  <button class="hud-btn" id="nextBtn" onclick="nextPage()">下一页 ▶</button>
+</div>
+
+<div class="nav-pills" id="navPills">
+  <div class="nav-pill active" onclick="goToPage(1)">封面</div>
+  <div class="nav-pill" onclick="goToPage(2)">目标</div>
+  <div class="nav-pill" onclick="goToPage(3)">词汇导读</div>
+  <div class="nav-pill" onclick="goToPage(4)">家具</div>
+  <div class="nav-pill" onclick="goToPage(5)">服饰</div>
+  <div class="nav-pill" onclick="goToPage(6)">其他复习词</div>
+  <div class="nav-pill" onclick="goToPage(7)">新词</div>
+  <div class="nav-pill" onclick="goToPage(8)">词义</div>
+  <div class="nav-pill" onclick="goToPage(9)">拼写1</div>
+  <div class="nav-pill" onclick="goToPage(10)">连线</div>
+  <div class="nav-pill" onclick="goToPage(11)">拖词1</div>
+  <div class="nav-pill" onclick="goToPage(12)">拼写2</div>
+  <div class="nav-pill" onclick="goToPage(13)">排序</div>
+  <div class="nav-pill" onclick="goToPage(14)">拖词2</div>
+  <div class="nav-pill" onclick="goToPage(15)">语法1</div>
+  <div class="nav-pill" onclick="goToPage(16)">语法2</div>
+  <div class="nav-pill" onclick="goToPage(17)">长句</div>
+  <div class="nav-pill" onclick="goToPage(18)">时间顺序</div>
+  <div class="nav-pill" onclick="goToPage(19)">语法练习</div>
+  <div class="nav-pill" onclick="goToPage(20)">阅读A</div>
+  <div class="nav-pill" onclick="goToPage(21)">阅读B</div>
+  <div class="nav-pill" onclick="goToPage(22)">阅读C</div>
+  <div class="nav-pill" onclick="goToPage(23)">句子1</div>
+  <div class="nav-pill" onclick="goToPage(24)">句子2</div>
+  <div class="nav-pill" onclick="goToPage(25)">综合</div>
+  <div class="nav-pill" onclick="goToPage(26)">总结</div>
+  <div class="nav-pill" onclick="goToPage(27)">游戏1</div>
+  <div class="nav-pill" onclick="goToPage(28)">游戏2</div>
+  <div class="nav-pill" onclick="goToPage(29)">-ed规则</div>
+  <div class="nav-pill" onclick="goToPage(30)">不规则</div>
+  <div class="nav-pill" onclick="goToPage(31)">was/were</div>
+  <div class="nav-pill" onclick="goToPage(32)">细节2</div>
+  <div class="nav-pill" onclick="goToPage(33)">排序2</div>
+  <div class="nav-pill" onclick="goToPage(34)">重组日记</div>
+  <div class="nav-pill" onclick="goToPage(35)">补全日记</div>
+  <div class="nav-pill" onclick="goToPage(36)">-ed读音</div>
+  <div class="nav-pill" onclick="goToPage(37)">导游对话</div>
+  <div class="nav-pill" onclick="goToPage(38)">翻译填空</div>
+  <div class="nav-pill" onclick="goToPage(39)">长句主干</div>
+  <div class="nav-pill" onclick="goToPage(40)">新词复现</div>
+  <div class="nav-pill" onclick="goToPage(41)">段落排序</div>
+  <div class="nav-pill" onclick="goToPage(42)">日记写作</div>
+  <div class="nav-pill" onclick="goToPage(43)">名胜连线</div>
+  <div class="nav-pill" onclick="goToPage(44)">过去式归类</div>
+  <div class="nav-pill" onclick="goToPage(45)">综合复习</div>
+</div>
+
+<script>
+/* ==================== Web Audio API ==================== */
+var audioCtx=null;
+function initAudio(){if(!audioCtx){try{audioCtx=new(window.AudioContext||window.webkitAudioContext)();}catch(e){}}if(audioCtx&&audioCtx.state==='suspended'){audioCtx.resume();}}
+function playCorrect(){initAudio();if(!audioCtx)return;[523.25,659.25,783.99].forEach(function(f,i){var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='triangle';o.frequency.value=f;g.gain.setValueAtTime(0,audioCtx.currentTime+i*.12);g.gain.linearRampToValueAtTime(.2,audioCtx.currentTime+i*.12+.01);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+i*.12+.1);o.connect(g);g.connect(audioCtx.destination);o.start(audioCtx.currentTime+i*.12);o.stop(audioCtx.currentTime+i*.12+.1);});}
+function playError(){initAudio();if(!audioCtx)return;[392,261.63].forEach(function(f,i){var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='square';o.frequency.value=f;g.gain.setValueAtTime(0,audioCtx.currentTime+i*.25);g.gain.linearRampToValueAtTime(.15,audioCtx.currentTime+i*.25+.01);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+i*.25+.2);o.connect(g);g.connect(audioCtx.destination);o.start(audioCtx.currentTime+i*.25);o.stop(audioCtx.currentTime+i*.25+.2);});}
+function playPageTurn(){initAudio();if(!audioCtx)return;var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.setValueAtTime(800,audioCtx.currentTime);o.frequency.exponentialRampToValueAtTime(400,audioCtx.currentTime+.08);g.gain.setValueAtTime(.15,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.08);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.08);}
+
+/* ==================== IndexedDB ==================== */
+var db=null,DB_NAME='EnglishCoursewareDB',DB_VERSION=1,STORE_NAME='answerRecords';
+var studentId='stu_lmx03',sessionId='LMX_L03_'+new Date().toISOString().slice(0,10).replace(/-/g,'');
+var answerRecords=[];
+function initDB(){if(!window.indexedDB)return;var r=indexedDB.open(DB_NAME,DB_VERSION);r.onerror=function(e){};r.onsuccess=function(e){db=e.target.result;loadExistingRecords();};r.onupgradeneeded=function(e){db=e.target.result;if(!db.objectStoreNames.contains(STORE_NAME)){var s=db.createObjectStore(STORE_NAME,{keyPath:'event_id'});s.createIndex('student_id','student_id',{unique:false});s.createIndex('question_id','question_id',{unique:false});s.createIndex('session_id','session_id',{unique:false});}};}
+function loadExistingRecords(){if(!db)return;var tx=db.transaction([STORE_NAME],'readonly');var s=tx.objectStore(STORE_NAME);var idx=s.index('session_id');var r=idx.getAll(sessionId);r.onsuccess=function(e){answerRecords=e.target.result||[];updateSyncStatus();};}
+function saveAnswer(qid,sa,ca,ok,att,tu,hu){if(!db)return;var eid=studentId+'_'+sessionId+'_'+qid+'_'+(att||1);var rec={event_id:eid,student_id:studentId,session_id:sessionId,question_id:qid,attempt_no:att||1,student_answer:sa,correct_answer:ca,is_correct:ok,time_used:tu||0,hint_used:hu||false,timestamp:new Date().toISOString(),synced:'pending',sync_status:'pending'};var tx=db.transaction([STORE_NAME],'readwrite');tx.objectStore(STORE_NAME).put(rec);answerRecords.push(rec);updateSyncStatus();}
+function updateSyncStatus(){var p=answerRecords.filter(function(r){return r.sync_status==='pending';}).length;var d=document.getElementById('syncDot'),t=document.getElementById('syncText');if(!d)return;if(p===0){d.className='sync-dot';t.textContent='本地已保存 ('+answerRecords.length+'条)';}else{d.className='sync-dot pending';t.textContent='待同步 ('+p+'/'+answerRecords.length+')';}}
+function exportData(e){if(e)e.stopPropagation();if(answerRecords.length===0){alert('暂无答题数据可导出');return;}var json=JSON.stringify(answerRecords,null,2);var csv=convertToCSV(answerRecords);var jb=new Blob([json],{type:'application/json'});var cb=new Blob(['\uFEFF'+csv],{type:'text/csv'});var jl=document.createElement('a');jl.href=URL.createObjectURL(jb);jl.download='LMX_L03_answers.json';jl.click();setTimeout(function(){var cl=document.createElement('a');cl.href=URL.createObjectURL(cb);cl.download='LMX_L03_answers.csv';cl.click();},300);}
+function convertToCSV(records){var h=['event_id','student_id','session_id','question_id','attempt_no','student_answer','correct_answer','is_correct','time_used','hint_used','sync_status','timestamp'];var csv=h.join(',')+'\n';records.forEach(function(r){csv+=h.map(function(f){var v=(f==='sync_status')?(r.sync_status||r.synced||'pending'):(r[f]!==undefined?String(r[f]):'');if(v.indexOf(',')!==-1||v.indexOf('"')!==-1){v='"'+v.replace(/"/g,'""')+'"';}return v;}).join(',')+'\n';});return csv;}
+
+/* ==================== 页面导航 ==================== */
+var currentPage=1,totalPages=45;
+function goToPage(n){if(n<1||n>totalPages)return;initAudio();var op=document.getElementById('page'+currentPage),np=document.getElementById('page'+n);if(op){op.classList.remove('active');op.scrollTop=0;}if(np){np.classList.add('active');np.scrollTop=0;}currentPage=n;updateNav();updateCounter();playPageTurn();}
+function nextPage(){if(currentPage<totalPages)goToPage(currentPage+1);}
+function prevPage(){if(currentPage>1)goToPage(currentPage-1);}
+function updateNav(){var pills=document.querySelectorAll('.nav-pill');pills.forEach(function(p,i){if(i+1===currentPage)p.classList.add('active');else p.classList.remove('active');});var pb=document.getElementById('progressBar'),pb2=document.getElementById('progressBar2');if(pb)pb.style.width=(currentPage/totalPages*100)+'%';if(pb2)pb2.style.width=(currentPage/totalPages*100)+'%';var pv=document.getElementById('prevBtn'),nv=document.getElementById('nextBtn');if(pv)pv.disabled=currentPage<=1;if(nv)nv.disabled=currentPage>=totalPages;}
+function updateCounter(){document.getElementById('pageCounter').textContent=currentPage+' / '+totalPages;}
+
+/* ==================== 翻页click（含豁免名单）==================== */
+document.addEventListener('click',function(e){
+  if(e.target.closest('.quiz-opt')||e.target.closest('.game-option')||
+     e.target.closest('.fill-check-btn')||e.target.closest('.fill-input')||
+     e.target.closest('.write-input')||e.target.closest('.nav-pill')||
+     e.target.closest('.vocab-card')||e.target.closest('.cover-wrap')||
+     e.target.closest('.card')||e.target.closest('.modal-content')||
+     e.target.closest('.export-btn')||
+     e.target.closest('.drag-container')||e.target.closest('.link-container')||
+     e.target.closest('.order-container')||
+     e.target.closest('button')||e.target.closest('input')||
+     e.target.closest('textarea')||e.target.closest('.hud-btn')||
+     e.target.closest('.top-bar')||e.target.closest('.bottom-hud')||
+     e.target.closest('.nav-pills')||e.target.closest('.evidence-task')||
+     e.target.closest('.drag-word')||e.target.closest('.drag-slot')||
+     e.target.closest('.link-item')||e.target.closest('.order-chunk')) return;
+  var c=document.getElementById('pagesContainer');if(!c)return;
+  var r=c.getBoundingClientRect();var x=e.clientX-r.left;
+  if(x<r.width/2){prevPage();}else{nextPage();}
+});
+
+/* ==================== 键盘导航 ==================== */
+document.addEventListener('keydown',function(e){if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp'){prevPage();}
+  else if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){e.preventDefault();nextPage();}
+  else if(e.key==='f'||e.key==='F'){if(!document.fullscreenElement)document.documentElement.requestFullscreen();else document.exitFullscreen();}
+});
+
+/* ==================== 动画 ==================== */
+function burst(el){var r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;for(var i=0;i<14;i++){var p=document.createElement('div');p.className='burst-p';var a=Math.random()*6.283,d=50+Math.random()*70;p.style.left=cx+'px';p.style.top=cy+'px';p.style.setProperty('--dx',(Math.cos(a)*d)+'px');p.style.setProperty('--dy',(Math.sin(a)*d)+'px');p.style.background=(Math.random()<.5?'#16A34A':'#16A34A');document.body.appendChild(p);(function(x){setTimeout(function(){x.remove();},700);})(p);}}
+function shake(el){el.style.animation='none';void el.offsetWidth;el.style.animation='shake .4s';}
+
+/* ==================== 选择题判题 ==================== */
+function checkOpt(btn){
+  if(btn&&btn.currentTarget&&btn.currentTarget.classList&&btn.currentTarget.classList.contains('quiz-opt'))btn=btn.currentTarget;
+  var q=btn.parentNode;if(q.dataset.done)return;q.dataset.done='1';
+  var opts=q.querySelectorAll('.quiz-opt');
+  for(var i=0;i<opts.length;i++)opts[i].classList.add('locked');
+  var ok=btn.dataset.correct==='1';
+  if(typeof saveAnswer==='function'&&q.dataset.qid){
+    var qid=q.dataset.qid,ca='';
+    for(var j=0;j<opts.length;j++){if(opts[j].dataset.correct==='1')ca=opts[j].textContent.replace(/^[A-E]\.\s*/,'').trim();}
+    saveAnswer(qid,btn.textContent.replace(/^[A-E]\.\s*/,'').trim(),ca,ok,parseInt(q.dataset.attempt||'1',10),0,false);
+  }
+  if(ok){btn.classList.add('opt-correct');playCorrect();burst(btn);}
+  else{q.dataset.wrong='1';btn.classList.add('opt-wrong');playError();shake(btn);
+    for(var i=0;i<opts.length;i++){if(opts[i].dataset.correct==='1')opts[i].classList.add('opt-correct');}
+    var h=q.querySelector('.et-undo-hint');
+    if(!h){h=document.createElement('div');h.className='et-undo-hint';h.onclick=function(ev){ev.stopPropagation();};q.appendChild(h);}
+    h.textContent='答错后双击可撤销回答';
+  }
+}
+function undoQuiz(q){var opts=q.querySelectorAll('.quiz-opt');for(var i=0;i<opts.length;i++)opts[i].classList.remove('opt-correct','opt-wrong','locked');delete q.dataset.done;delete q.dataset.wrong;q.dataset.attempt=String(parseInt(q.dataset.attempt||'1',10)+1);var h=q.querySelector('.et-undo-hint');if(h){h.textContent='已撤销，请重答';setTimeout(function(){if(h.parentNode)h.parentNode.removeChild(h);},3000);}}
+document.addEventListener('dblclick',function(e){var q=e.target.closest('.quiz-q');if(q&&q.dataset.done==='1'&&q.dataset.wrong==='1')undoQuiz(q);});
+
+/* ==================== 填空判题 ==================== */
+function checkFill(btn){
+  var wrap=btn.closest('.fill-input-wrap')||btn.parentNode;
+  var input=wrap.querySelector('input.fill-input');
+  if(!input||input.dataset.done)return;
+  var val=input.value.trim().toLowerCase();
+  var correct=(input.getAttribute('data-correct')||'').toLowerCase();
+  if(!val){input.focus();return;}
+  input.dataset.done='1';
+  var ok=val===correct;
+  if(ok){input.classList.add('correct');if(typeof playCorrect==='function')playCorrect();}
+  else{input.classList.add('wrong');if(typeof playError==='function')playError();
+    var q=input.closest('.quiz-q,.evidence-task');if(q){var a=document.createElement('div');a.className='fill-answer show';a.textContent='正确答案：'+correct;q.appendChild(a);}}
+  if(typeof saveAnswer==='function'){var qid='';var p=input.closest('[data-question-id]');if(p)qid=p.getAttribute('data-question-id');else{var pq=input.closest('.quiz-q');if(pq&&pq.dataset.qid)qid=pq.dataset.qid;}saveAnswer(qid,val,correct,ok,1,0,false);}
+}
+
+/* ==================== 文本/写作判题 ==================== */
+function checkWrite(btn){
+  var wrap=btn.closest('.fill-input-wrap')||btn.parentNode;
+  var ta=wrap.querySelector('textarea.write-input');
+  if(!ta||ta.dataset.done)return;
+  var val=ta.value.trim();
+  if(!val){ta.focus();return;}
+  ta.dataset.done='1';
+  var kws=(ta.getAttribute('data-keywords')||'').split(',').map(function(s){return s.trim().toLowerCase();}).filter(function(s){return s;});
+  var ok=kws.length>0&&kws.every(function(k){return val.toLowerCase().indexOf(k)>-1;});
+  if(ok){ta.classList.add('correct');if(typeof playCorrect==='function')playCorrect();}
+  else{ta.classList.add('wrong');if(typeof playError==='function')playError();
+    var q=ta.closest('.quiz-q,.evidence-task');if(q){var a=document.createElement('div');a.className='fill-answer show';a.textContent='已保存作答，请检查是否包含要点。';q.appendChild(a);}}
+  if(typeof saveAnswer==='function'){var qid='';var p=ta.closest('[data-question-id]');if(p)qid=p.getAttribute('data-question-id');else{var pq=ta.closest('.quiz-q');if(pq&&pq.dataset.qid)qid=pq.dataset.qid;}saveAnswer(qid,val,'',ok,1,0,false);}
+}
+
+/* ==================== 排序判题 ==================== */
+function orderClick(el){var c=el.closest('.order-container');var a=c.querySelector('.order-chunk.active');if(a&&a!==el)a.classList.remove('active');el.classList.toggle('active');}
+function orderSubmit(btn){var c=btn.closest('.order-container');var chunks=c.querySelectorAll('.order-chunk');var order=c.getAttribute('data-order');if(!order)return;var correct=JSON.parse(order);var userOrder=Array.from(chunks).map(function(c){return c.textContent.trim();});var ok=userOrder.length===correct.length&&userOrder.every(function(v,i){return v===correct[i];});var r=c.querySelector('.order-result');if(!r){r=document.createElement('div');r.className='order-result';c.appendChild(r);}if(ok){r.textContent='✓ 排序正确！';r.className='order-result correct';chunks.forEach(function(c){c.classList.add('placed');});if(typeof playCorrect==='function')playCorrect();}else{r.textContent='✗ 顺序不对，再试试。';r.className='order-result wrong';if(typeof playError==='function')playError();}var p=c.closest('[data-question-id]');var qid=p?p.getAttribute('data-question-id'):'';if(typeof saveAnswer==='function')saveAnswer(qid,userOrder.join('|'),correct.join('|'),ok,1,0,false);}
+
+/* ==================== 拖拽判题 ==================== */
+function dragSelect(el){var c=el.closest('.drag-container');var a=c.querySelector('.drag-word.selected');if(a===el){el.classList.remove('selected');return;}if(a)a.classList.remove('selected');el.classList.add('selected');}
+function dragPlace(el){var c=el.closest('.drag-container');var s=c.querySelector('.drag-word.selected');if(!s)return;el.textContent=s.textContent;el.dataset.value=s.textContent;el.classList.add('filled');s.classList.add('used');s.classList.remove('selected');}
+function dragSubmit(btn){var c=btn.closest('.drag-container');var slots=c.querySelectorAll('.drag-slot');var order=c.getAttribute('data-order');if(!order)return;var correct=JSON.parse(order);var allFilled=true,ok=true;slots.forEach(function(s,i){if(!s.dataset.value){allFilled=false;return;}if(s.dataset.value===correct[i]){s.classList.add('correct');}else{s.classList.add('wrong');ok=false;}});if(!allFilled){var r=c.querySelector('.drag-result');if(!r){r=document.createElement('div');r.className='drag-result';c.appendChild(r);}r.textContent='请先填入所有空位';return;}var r=c.querySelector('.drag-result');if(!r){r=document.createElement('div');r.className='drag-result';c.appendChild(r);}if(ok){r.textContent='✓ 全部正确！';r.className='drag-result correct';if(typeof playCorrect==='function')playCorrect();}else{r.textContent='✗ 有错误，红色标记处需修改。';r.className='drag-result wrong';if(typeof playError==='function')playError();}var p=c.closest('[data-question-id]');var qid=p?p.getAttribute('data-question-id'):'';if(typeof saveAnswer==='function'){var ua=Array.from(slots).map(function(s){return s.dataset.value||'';}).join('|');saveAnswer(qid,ua,correct.join('|'),ok,1,0,false);}}
+
+/* ==================== 连线判题 ==================== */
+function linkClick(el){var c=el.closest('.link-container');var sel=c.querySelector('.link-item.selected');if(sel===el){el.classList.remove('selected');return;}if(sel){var leftEl=sel.closest('.link-left')?sel:el;var rightEl=sel.closest('.link-right')?sel:el;if(leftEl===rightEl){el.classList.remove('selected');return;}sel.classList.remove('selected');el.classList.remove('selected');leftEl.classList.add('matched');rightEl.classList.add('matched');var lp=leftEl.getAttribute('data-pair'),rp=rightEl.getAttribute('data-pair');if(lp===rp){leftEl.classList.add('correct');rightEl.classList.add('correct');if(typeof playCorrect==='function')playCorrect();}else{leftEl.classList.add('wrong-match');rightEl.classList.add('wrong-match');setTimeout(function(){leftEl.classList.remove('matched','wrong-match');rightEl.classList.remove('matched','wrong-match');},800);if(typeof playError==='function')playError();}var unmatched=c.querySelectorAll('.link-item:not(.matched)');if(unmatched.length===0){var li=c.querySelectorAll('.link-left .link-item');var allCorrect=c.querySelectorAll('.link-item.correct').length===li.length*2;var r=c.querySelector('.link-result');if(!r){r=document.createElement('div');r.className='link-result';c.appendChild(r);}if(allCorrect){r.textContent='✓ 全部配对正确！';r.className='link-result correct';}else{r.textContent='✗ 有配对错误。';r.className='link-result wrong';c.querySelectorAll('.link-item.matched').forEach(function(m){m.classList.remove('matched','correct','wrong-match');});}var p=c.closest('[data-question-id]');var qid=p?p.getAttribute('data-question-id'):'';if(typeof saveAnswer==='function')saveAnswer(qid,'completed','all',allCorrect,1,0,false);}}else{el.classList.add('selected');}}
+
+/* ==================== 初始化 ==================== */
+initDB();
+updateCounter();
+updateNav();
+</script>
+</body>
+</html>

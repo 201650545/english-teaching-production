@@ -1,0 +1,1650 @@
+<!-- CW-INTERACTION-CONTRACT:1 -->
+<!-- CW-VISUAL-CONTRACT:1 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<title>李民宪 · 培优级 | 第04课 · Unit 1 综合复现与基础语法整合</title>
+<style>
+/* THEME:study */
+/* ==================== 琥珀金棕系 L4 ==================== */
+:root{
+  --brand:#B45309;--accent:#F59E0B;--brand-light:#D97706;--accent-light:#FCD34D;
+  --bg-start:#FFF7ED;--bg-end:#FDE9D9;
+  --grad-brand:linear-gradient(135deg,#B45309,#D97706);
+  --grad-gold:linear-gradient(135deg,#F59E0B,#FCD34D);
+  --page-shadow:0 4px 20px rgba(180,83,9,.18);
+  --correct:#15803D;--correct-row-bg:#DCFCE7;
+  --error:#DC2626;--error-row-bg:#FEE2E2;
+  --text:#3F3F46;--text-primary:#292524;--text-secondary:#78716C;
+  --card-shadow:0 4px 14px rgba(180,83,9,.08);
+  --glass:rgba(255,255,255,.72);--glass-line:rgba(180,83,9,.18);
+  --table-header-bg:linear-gradient(135deg,#B45309,#D97706);
+  --table-highlight-bg:#FFFBEB;
+  --sop-blue:#3B82F6;--sop-green:#15803D;--sop-purple:#8B5CF6;--sop-orange:#F59E0B;
+  --card-bg:#fff;
+  --cw-fs-title:clamp(30px,2.9vw,48px);
+  --cw-fs-heading:clamp(24px,2.1vw,34px);
+  --cw-fs-body:clamp(18px,1.5vw,24px);
+  --cw-fs-example:clamp(20px,1.7vw,28px);
+  --cw-fs-note:clamp(15px,1.1vw,19px);
+}
+/* root font size 28px */
+html{font-size:28px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;height:100%;overflow:hidden;font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;}
+body{background:var(--bg-start);color:var(--text-primary);line-height:1.5;}
+
+/* ==================== PPT模式 ==================== */
+.page{position:absolute;top:0;left:0;width:100%;height:100%;overflow-y:auto;overflow-x:hidden;
+  display:none;background:
+    radial-gradient(1200px 600px at 85% -10%,rgba(217,119,6,.20),transparent 60%),
+    radial-gradient(900px 500px at -10% 110%,rgba(180,83,9,.14),transparent 55%),
+    linear-gradient(135deg,var(--bg-start) 0%,var(--bg-end) 100%);}
+.page.active{display:block;}
+.page::-webkit-scrollbar{width:8px;}
+.page::-webkit-scrollbar-thumb{background:var(--brand-light);border-radius:4px;}
+.page-content{padding:20px 40px 60px;max-width:1600px;margin:0 auto;}
+
+/* ==================== 顶部条 ==================== */
+.top-bar{position:fixed;top:0;left:0;width:100%;height:54px;display:flex;align-items:center;justify-content:flex-end;
+  padding:0 20px;background:var(--grad-brand);color:#fff;z-index:100;box-shadow:0 2px 12px rgba(180,83,9,.3);}
+.top-bar .tb-title{font-size:17px;font-weight:700;letter-spacing:1px;}
+.top-bar .tb-right{display:flex;align-items:center;gap:12px;}
+.sync-status{display:flex;align-items:center;gap:6px;font-size:13px;background:rgba(255,255,255,.15);padding:4px 12px;border-radius:20px;}
+.sync-dot{width:8px;height:8px;border-radius:50%;background:#15803D;}
+.sync-dot.pending{background:#F59E0B;}
+.export-btn{background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.3);
+  padding:5px 14px;border-radius:20px;font-size:13px;cursor:pointer;transition:all .2s;}
+.export-btn:hover{background:rgba(255,255,255,.3);}
+
+/* ==================== 底部HUD ==================== */
+.bottom-hud{position:fixed;bottom:44px;left:0;width:100%;height:48px;display:flex;align-items:center;justify-content:center;
+  gap:16px;padding:0 20px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);z-index:100;
+  border-top:1px solid rgba(180,83,9,.1);box-shadow:0 -2px 12px rgba(0,0,0,.06);}
+.hud-btn{background:var(--grad-brand);color:#fff;border:none;padding:8px 20px;border-radius:20px;font-size:16px;font-weight:600;cursor:pointer;transition:all .2s;min-height:36px;}
+.hud-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(180,83,9,.3);}
+.hud-btn:disabled{opacity:.4;cursor:not-allowed;}
+.hud-page{font-size:16px;font-weight:700;color:var(--brand);min-width:80px;text-align:center;font-variant-numeric:tabular-nums;}
+.hud-progress{flex:1;max-width:300px;height:6px;background:#FDE9D9;border-radius:3px;overflow:hidden;}
+.hud-progress-bar{height:100%;background:var(--grad-brand);border-radius:3px;transition:width .3s ease;}
+
+/* ==================== 底部导航标签条 ==================== */
+.nav-pills{position:fixed;bottom:0;left:0;width:100%;height:44px;display:flex;align-items:center;gap:4px;padding:0 8px;
+  background:#fff;overflow-x:auto;z-index:100;border-top:1px solid rgba(0,0,0,.06);}
+.nav-pills::-webkit-scrollbar{height:4px;}
+.nav-pills::-webkit-scrollbar-thumb{background:var(--brand-light);border-radius:2px;}
+.nav-pill{flex-shrink:0;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;
+  color:var(--text-secondary);background:#f1f5f9;transition:all .2s;border:2px solid transparent;}
+.nav-pill:hover{background:#FDE9D9;color:var(--brand);}
+.nav-pill.active{background:var(--grad-brand);color:#fff;border-color:var(--brand);}
+
+/* ==================== 通用组件 ==================== */
+.page-title{font-size:var(--cw-fs-title);font-weight:900;color:var(--brand);margin-bottom:6px;letter-spacing:1px;}
+.page-subtitle{font-size:18px;color:var(--text-secondary);margin-bottom:14px;}
+.section-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.sh-num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;
+  background:var(--grad-brand);color:#fff;font-size:18px;font-weight:800;flex-shrink:0;}
+.sh-title{font-size:22px;font-weight:800;color:var(--text-primary);}
+.highlight{color:var(--brand);font-weight:700;background:rgba(180,83,9,.08);padding:1px 8px;border-radius:6px;}
+.body-text{font-size:var(--cw-fs-body);line-height:1.7;color:var(--text-primary);background:#fff;
+  border:1px solid rgba(180,83,9,.1);border-radius:12px;padding:14px 18px;box-shadow:var(--card-shadow);margin:8px 0;}
+.note-panel{background:#fff;border:1px solid rgba(180,83,9,.1);border-left:4px solid var(--accent);
+  border-radius:10px;padding:12px 16px;margin:10px 0;box-shadow:var(--card-shadow);}
+.np-title{font-size:18px;font-weight:800;color:var(--brand);margin-bottom:6px;}
+.card{background:#fff;border-radius:14px;padding:14px 18px;box-shadow:var(--card-shadow);margin:10px 0;}
+.card-title{font-size:20px;font-weight:800;color:var(--brand);margin-bottom:8px;}
+.card-content{font-size:var(--cw-fs-body);line-height:1.7;color:var(--text-primary);}
+.tip-box{background:var(--table-highlight-bg);border-left:4px solid var(--accent);border-radius:10px;
+  padding:12px 16px;margin:12px 0;font-size:18px;line-height:1.6;color:var(--text-primary);}
+.tip-box strong{color:var(--brand);}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:10px 0;}
+.grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin:10px 0;}
+
+/* 六色卡 */
+.rule-card{background:#fff;border-radius:14px;padding:14px 18px;box-shadow:var(--card-shadow);
+  border-left:6px solid var(--brand);margin:8px 0;font-size:18px;line-height:1.7;}
+.rule-card strong{font-size:19px;}
+.rule-card em{font-style:normal;color:var(--text-secondary);font-size:16px;display:block;margin-top:4px;}
+.rc-zhug{border-left-color:var(--brand);}
+.rc-bin{border-left-color:var(--sop-blue);}
+.rc-xing{border-left-color:var(--sop-green);}
+.rc-ming{border-left-color:var(--sop-purple);}
+.rc-warn{border-left-color:var(--accent);}
+.rc-qita{border-left-color:var(--sop-orange);}
+
+/* 对错对照 */
+.compare-box{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.compare-side{border-radius:12px;padding:14px 16px;font-size:18px;line-height:1.8;}
+.compare-wrong{background:var(--error-row-bg);border:1px solid rgba(220,38,38,.3);}
+.compare-correct{background:var(--correct-row-bg);border:1px solid rgba(22,163,74,.3);}
+.compare-label{font-weight:800;margin-bottom:6px;}
+.compare-wrong .compare-label{color:var(--error);}
+.compare-correct .compare-label{color:var(--correct);}
+.wrong-ex{color:var(--error);font-weight:700;}
+.correct-ex{color:var(--correct);font-weight:700;}
+
+/* formula-box */
+.formula-box{background:var(--table-highlight-bg);border-left:5px solid var(--brand);border-radius:10px;
+  padding:12px 16px;margin:12px 0;box-shadow:var(--card-shadow);}
+.formula-text{font-size:var(--cw-fs-example);font-weight:800;color:var(--brand);}
+.formula-sub{font-size:15px;color:var(--text-secondary);margin-top:4px;}
+
+/* 封面 */
+.cover-wrap{min-height:82vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;}
+/* 封面布局：信息标签置顶、底部留白（教师偏好 2026-08-05） */
+.cover-wrap{display:flex;flex-direction:column;justify-content:flex-start;padding-top:6vh;}
+.cover-wrap .cover-badge{order:-3;}
+.cover-wrap .cover-info{order:-2;}
+.cover-wrap .cover-title,.cover-wrap .cover-sub,.cover-wrap .cover-tagline{order:0;}
+.cover-wrap .cover-emoji{order:10;margin-top:auto;padding-bottom:4vh;}
+
+.cover-badge{display:inline-block;background:var(--grad-gold);color:#7C2D12;padding:6px 22px;border-radius:30px;font-size:18px;font-weight:800;margin-bottom:18px;letter-spacing:2px;}
+.cover-title{font-size:clamp(40px,5vw,72px);font-weight:900;color:var(--brand);line-height:1.15;margin-bottom:10px;}
+.cover-sub{font-size:22px;color:var(--text-secondary);font-weight:600;margin-bottom:22px;}
+
+/* 知识点地图 */
+.kmap{background:#fff;border-radius:16px;padding:18px;box-shadow:var(--card-shadow);margin:12px 0;}
+.kmap-node{background:var(--table-highlight-bg);border-left:4px solid var(--brand);border-radius:10px;padding:12px 14px;margin:8px 0;}
+.kn-title{font-size:18px;font-weight:800;color:var(--brand);}
+.kn-body{font-size:16px;color:var(--text-primary);margin-top:4px;line-height:1.6;}
+
+/* 词汇卡片 */
+.vocab-card{background:#fff;border:2px solid rgba(180,83,9,.12);border-radius:14px;padding:14px 16px;box-shadow:var(--card-shadow);}
+.vocab-word{font-size:22px;font-weight:800;color:var(--brand);}
+.vocab-meaning{font-size:17px;color:var(--text-primary);font-weight:700;margin-top:4px;}
+.vocab-tip{font-size:15px;color:var(--text-secondary);margin-top:6px;line-height:1.5;}
+.flash-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0;}
+.flash-btn{background:var(--grad-brand);color:#fff;border:none;border-radius:12px;padding:28px 10px;font-size:20px;font-weight:800;cursor:pointer;min-height:88px;transition:transform .2s;}
+.flash-btn:hover{transform:translateY(-3px);}
+
+/* 答题区 */
+.quiz-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0;}
+.quiz-q{background:#fff;border-radius:14px;padding:16px 18px;box-shadow:var(--card-shadow);margin:10px 0;border:1px solid rgba(180,83,9,.1);}
+.qq-text{font-size:18px;font-weight:700;color:var(--text-primary);line-height:1.6;}
+.quiz-opt{display:inline-block;margin:6px 8px 0 0;padding:10px 18px;border-radius:20px;border:2px solid rgba(180,83,9,.2);
+  background:#fff;font-size:17px;font-weight:700;cursor:pointer;transition:all .2s;min-height:44px;}
+.quiz-opt:hover{border-color:var(--brand);background:var(--table-highlight-bg);}
+.quiz-opt:active{transform:scale(.98);}
+.quiz-opt.locked{pointer-events:none;opacity:.85;}
+.quiz-opt.opt-correct{background:var(--correct)!important;color:#fff!important;border-color:var(--correct)!important;}
+.quiz-opt.opt-wrong{background:var(--error)!important;color:#fff!important;border-color:var(--error)!important;}
+.quiz-q:focus-visible{outline:3px solid var(--brand);}
+.quiz-opt:focus-visible{outline:3px solid var(--brand);}
+.fill-input-wrap{display:flex;align-items:center;gap:10px;margin:8px 0;}
+.fill-input{padding:10px 14px;border:2px solid rgba(180,83,9,.25);border-radius:10px;font-size:17px;min-width:220px;min-height:44px;color:var(--text-primary);}
+.fill-input.correct{border-color:var(--correct);background:var(--correct-row-bg);}
+.fill-input.wrong{border-color:var(--error);background:var(--error-row-bg);}
+.fill-check-btn{background:var(--grad-brand);color:#fff;border:none;padding:10px 18px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;min-height:44px;}
+.fill-answer{display:none;margin-top:8px;padding:8px 12px;border-radius:8px;font-size:16px;font-weight:700;background:var(--error-row-bg);color:var(--error);}
+.fill-answer.show{display:block;}
+.et-undo-hint{font-size:14px;color:var(--text-secondary);margin-top:6px;}
+
+/* 连线 */
+.ec-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0;}
+.ec-left,.ec-right{display:flex;flex-direction:column;gap:8px;}
+.ec-pair{font-size:16px;color:var(--text-secondary);}
+.link-container{position:relative;z-index:2;}
+.link-item{padding:9px 14px;border-radius:10px;border:2px solid rgba(180,83,9,.2);background:#fff;
+  font-size:16px;font-weight:700;cursor:pointer;min-height:44px;transition:all .2s;}
+.link-item:hover{border-color:var(--brand);}
+.link-item.selected{border-color:var(--brand);background:var(--table-highlight-bg);}
+.link-item.matched{border-color:var(--text-secondary);opacity:.55;}
+.link-item.correct{border-color:var(--correct);background:var(--correct-row-bg);color:var(--text-primary);}
+.link-item.wrong-match{border-color:var(--error);background:var(--error-row-bg);}
+.link-result{margin-top:8px;font-size:16px;font-weight:700;}
+.link-result.correct{color:var(--correct);}
+.link-result.wrong{color:var(--error);}
+
+/* 拖拽 */
+.drag-container{position:relative;z-index:2;background:#fff;border:2px dashed var(--brand);border-radius:12px;padding:14px;margin:10px 0;}
+.drag-word{display:inline-block;margin:4px 6px 0 0;padding:8px 16px;border-radius:18px;background:var(--grad-brand);color:#fff;
+  font-size:16px;font-weight:700;cursor:grab;min-height:44px;user-select:none;}
+.drag-word.selected{outline:3px solid var(--accent);}
+.drag-word.used{opacity:.35;pointer-events:none;}
+.drag-slot{display:inline-block;min-width:120px;min-height:40px;border:2px dashed var(--brand);border-radius:8px;background:var(--table-highlight-bg);
+  text-align:center;line-height:36px;color:var(--brand);font-weight:700;font-size:16px;cursor:pointer;vertical-align:middle;}
+.drag-slot.filled{background:#fff;color:var(--text-primary);}
+.drag-slot.correct{border-color:var(--correct);background:var(--correct-row-bg);}
+.drag-slot.wrong{border-color:var(--error);background:var(--error-row-bg);}
+.drag-result{margin-top:8px;font-size:16px;font-weight:700;}
+.drag-result.correct{color:var(--correct);}
+.drag-result.wrong{color:var(--error);}
+
+/* 排序 */
+.order-container{position:relative;z-index:2;background:#fff;border:2px solid rgba(180,83,9,.15);border-radius:12px;padding:14px;margin:10px 0;}
+.order-chunk{display:inline-block;margin:4px 6px 0 0;padding:8px 16px;border-radius:10px;background:var(--table-highlight-bg);
+  border:2px solid rgba(180,83,9,.2);font-size:16px;font-weight:700;cursor:pointer;min-height:44px;transition:all .2s;}
+.order-chunk.active{border-color:var(--brand);background:var(--brand);color:#fff;}
+.order-chunk.placed{border-color:var(--correct);background:var(--correct-row-bg);color:var(--text-primary);cursor:default;}
+.order-result{margin-top:8px;font-size:16px;font-weight:700;}
+.order-result.correct{color:var(--correct);}
+.order-result.wrong{color:var(--error);}
+
+/* 阅读 */
+.read-block{background:#fff;border-radius:14px;padding:18px 22px;box-shadow:var(--card-shadow);margin:10px 0;border:1px solid rgba(180,83,9,.1);}
+.read-title{font-size:20px;font-weight:800;color:var(--brand);margin-bottom:8px;}
+.read-body{font-size:17px;line-height:1.8;color:var(--text-primary);user-select:text;}
+.read-src{font-size:14px;color:var(--text-secondary);margin-top:8px;font-style:italic;}
+.evidence-task{background:#FFFBEB;border-radius:10px;padding:12px;margin:8px 0;border-left:4px solid var(--accent);}
+
+/* 翻页覆盖层为空（采用 document 监听，无 click-zone） */
+/* 扩展卡 */
+.ext-card{background:#fff;border-radius:14px;padding:16px;box-shadow:var(--card-shadow);margin:10px 0;border-top:4px solid var(--brand);}
+.ext-cat{font-size:16px;font-weight:800;color:var(--brand);margin-bottom:6px;}
+.ext-body{font-size:16px;color:var(--text-primary);line-height:1.7;}
+
+/* 游戏占位（本课用交互组件代替独立游戏板） */
+.game-board{background:#fff;border-radius:14px;padding:16px;box-shadow:var(--card-shadow);margin:10px 0;}
+.game-title{font-size:20px;font-weight:800;color:var(--brand);}
+.game-rule{font-size:16px;color:var(--text-secondary);margin-top:6px;}
+
+/* 动画 */
+.burst-p{position:fixed;width:10px;height:10px;border-radius:50%;pointer-events:none;z-index:9999;}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@keyframes popIn{0%{transform:scale(.8);opacity:0}100%{transform:scale(1);opacity:1}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;}}
+
+/* <CW-CSS-EXTRA version="1.0" required="true"> */
+/* <CW-SECTION name="tokens"> */
+/* token 层：琥珀金棕主题变量，仅定义颜色/字体变量，不越权布局 */
+/* <CW-SECTION name="components"> */
+/* components 层：通用组件与交互容器样式（position/z-index 用于翻页豁免） */
+/* <CW-SECTION name="states"> */
+/* states 层：交互状态（correct/wrong/selected/locked/active/placed） */
+/* <CW-SECTION name="theme"> */
+/* theme 层：主题化配色，仅改颜色相关变量 */
+/* <CW-SECTION name="patches"> */
+/* patches 层：兼容补丁 */
+/* </CW-CSS-EXTRA> */
+
+/* 触屏按压反馈 */
+.quiz-opt:active,.nav-pill:active,.hud-btn:active,.fill-check-btn:active{transform:scale(.97);}
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <div class="tb-right">
+    <div class="sync-status"><span class="sync-dot" id="syncDot"></span><span id="syncText">本地已保存 (0条)</span></div>
+    <button class="export-btn" onclick="exportData(event)">导出数据</button>
+  </div>
+</div>
+
+<div class="pages-container" id="pagesContainer">
+
+<!-- ==================== P1 封面 ==================== -->
+<div class="page" id="page1">
+  <div class="page-content">
+    <div class="cover-wrap">
+      <div class="cover-badge">Unit 1 Happy Holiday · 综合复现</div>
+      <div class="cover-title">第04课 · 基础语法整合</div>
+      <div class="cover-sub">三大基础时态 · 形容词与副词 · 介词与动词形式</div>
+      <div class="note-panel" style="max-width:720px;"><div class="np-title">本课导航</div>
+        <div class="body-text" style="margin:0;">词汇复现 30 词 → 语法整合 → 假期主题三篇阅读 → 假期计划综合任务</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== P2 学习目标 ==================== -->
+<div class="page" id="page2">
+  <div class="page-content">
+    <h1 class="page-title">学习目标</h1>
+    <p class="page-subtitle">Unit 1 综合复现纲要</p>
+    <div class="section-head"><span class="sh-num">1</span><span class="sh-title">本课四线</span></div>
+    <div class="kmap">
+      <div class="kmap-node"><div class="kn-title">① 词汇复现（30词）</div><div class="kn-body">20 个七年级巩固词 + 10 个八上目标词，进入语境使用</div></div>
+      <div class="kmap-node"><div class="kn-title">② 语法整合</div><div class="kn-body">七年级三大基础时态对比；形容词与副词；介词与常用动词形式</div></div>
+      <div class="kmap-node"><div class="kn-title">③ 假期主题阅读</div><div class="kn-body">三篇 120–160 词语篇：交通、预算、活动综合复现</div></div>
+      <div class="kmap-node"><div class="kn-title">④ 综合任务</div><div class="kn-body">设计一次假期计划：地点、交通、预算、活动</div></div>
+    </div>
+    <div class="tip-box"><strong>本课目标：</strong>能在假期语篇中正确使用三种时态、形容词与副词、介词与动词形式，并完成一份完整的假期计划。</div>
+    <div class="card"><div class="card-title">🎯 能力分层目标</div>
+      <div class="rule-card rc-zhug"><strong>基础层（识记）：</strong>会读会拼 30 词；能说清三种时态结构；能区分形容词与副词的典型位置。</div>
+      <div class="rule-card rc-bin"><strong>进阶层（理解）：</strong>能根据时间标志词判断时态；能识别介词与动词形式的固定搭配。</div>
+      <div class="rule-card rc-xing"><strong>应用层（运用）：</strong>能在假期语篇中综合运用三态 + 形副 + 介词；能完成假期计划综合任务。</div>
+      <div class="rule-card rc-ming"><strong>评析层（迁移）：</strong>能对比 minimum/maximum、expensive/cheap 等反义词；能评价一份假期计划的合理性。</div>
+    </div>
+    <div class="note-panel"><div class="np-title">本课主线</div>第04课以"假期计划"为主线，把七年级 Unit 1 词汇、时态、词性、介词整合串联，为八上 Unit 2 家庭话题做铺垫。</div>
+  </div>
+</div>
+
+<!-- ==================== P3 跨课语境复习 ==================== -->
+<div class="page" id="page3">
+  <div class="page-content">
+    <h1 class="page-title">跨课语境复习</h1>
+    <p class="page-subtitle">用所学词补全句子</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">词汇复现 · 语境补句</span></div>
+    <div class="card"><div class="card-title">🎯 读句补词</div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_V01_Q1" data-knowledge-id="K_vocab_review" data-section="vocab" data-template-id="V-WRITE-CONTEXT" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="Q001">
+        <div class="qq-text" style="margin-bottom:8px">【语境】My brother plays ___ every day. His favorite is soccer.（填运动名）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="sport" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_V01_Q2" data-knowledge-id="K_vocab_review" data-section="vocab" data-template-id="V-WRITE-CONTEXT" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="Q002">
+        <div class="qq-text" style="margin-bottom:8px">【语境】The game ___ boring, so we stopped playing.（填动词 be 的正确形式）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="sounds" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">精讲要点</div>sport 是"运动"总称；sounds + 形容词 = 听起来……。本课词汇进入语境，不孤立记忆。</div>
+    <div class="card"><div class="card-title">🎯 语境复习 · 更多补句</div>
+      <div class="rule-card rc-zhug"><strong>My team won the ___ last week.</strong>（比赛）→ match</div>
+      <div class="rule-card rc-bin"><strong>This film is ____, I want to watch it again.</strong>（有趣的）→ fun / interesting</div>
+      <div class="rule-card rc-xing"><strong>Math is ____ for me, but I try my best.</strong>（困难的）→ difficult</div>
+      <div class="rule-card rc-ming"><strong>We watch ____ in the evening.</strong>（电视）→ TV</div>
+      <div class="rule-card rc-qita"><strong>He is a ____ player on our team.</strong>（好的）→ good</div>
+    </div>
+    <div class="note-panel"><div class="np-title">跨课连结点</div>这些词来自七年级 Unit 1，本课用语境补句方式复现，为八上假期话题提供词汇支撑。</div>
+  </div>
+</div>
+
+<!-- ==================== P4 复习词1-10 ==================== -->
+<div class="page" id="page4">
+  <div class="page-content">
+    <h1 class="page-title">七年级巩固词 1–10</h1>
+    <p class="page-subtitle">点击翻转认词</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">词汇复现 · 快速辨认</span></div>
+    <div class="flash-grid">
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="篮球">basketball</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="足球">soccer</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="排球">volleyball</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="网球">tennis</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="乒乓球">ping-pong</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="球拍">bat</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="球">ball</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="踢；打；玩">play</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="运动">sport</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="听起来">sound</button>
+    </div>
+    <div class="tip-box"><strong>记忆提示：</strong>运动类词常与 play 搭配：play basketball / play soccer。</div>
+    <div class="card"><div class="card-title">🎾 运动类词 · play 搭配</div>
+      <div class="rule-card rc-zhug"><strong>球类运动一律用 play：</strong><br>play basketball（篮球）/ play soccer or football（足球）/ play volleyball（排球）/ play tennis（网球）/ play ping-pong（乒乓球）</div>
+      <div class="rule-card rc-bin"><strong>器材与场地：</strong><br>a bat（球拍）/ a ball（球）/ a team（球队）/ a match（比赛）</div>
+      <div class="rule-card rc-xing"><strong>注意区分：</strong><br>play + 球类（不加 the）；play the guitar（乐器加 the）</div>
+    </div>
+    <div class="note-panel"><div class="np-title">音形义记法</div>用"运动口型"记忆：basket-ball / soc-cer / vol-ley-ball / ten-nis / ping-pong。边读边打节拍，动作语言辅助记忆。</div>
+  </div>
+</div>
+
+<!-- ==================== P5 复习词11-20 ==================== -->
+<div class="page" id="page5">
+  <div class="page-content">
+    <h1 class="page-title">七年级巩固词 11–20</h1>
+    <p class="page-subtitle">点击翻转认词</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">词汇复现 · 快速辨认</span></div>
+    <div class="flash-grid">
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="好的；精彩的">good</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="有趣的">interesting</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="有趣的；好玩的">fun</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="令人放松的">relaxing</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="无聊的">boring</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="困难的">difficult</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="容易的">easy</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="电视">TV</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="队">team</button>
+      <button class="flash-btn" onclick="this.textContent=this.dataset.cn" data-cn="比赛">match</button>
+    </div>
+    <div class="tip-box"><strong>记忆提示：</strong>-ing 形容词描述事物特征（relaxing/boring/interesting）；主语是事物时用 -ing。</div>
+    <div class="card"><div class="card-title">🧩 描述类词 · 感受与特征</div>
+      <div class="rule-card rc-zhug"><strong>正向词：</strong>good（好的）/ interesting（有趣的）/ fun（有趣的）/ relaxing（令人放松的）</div>
+      <div class="rule-card rc-bin"><strong>反向词：</strong>boring（无聊的）/ difficult（困难的）/<br>easy（容易的）</div>
+      <div class="rule-card rc-xing"><strong>其他：</strong>sound（听起来）/ TV（电视）/ team（队）/ match（比赛）</div>
+      <div class="rule-card rc-ming"><strong>区分：</strong><br>主语是物用 -ing（The game is relaxing）；主语是人表感受常用形容词（I am happy）</div>
+    </div>
+    <div class="note-panel"><div class="np-title">反义成对记</div>interesting ↔ boring；easy ↔ difficult；fun = interesting。用反义词对记忆，做题时看到一边能想到另一边。</div>
+  </div>
+</div>
+
+<!-- ==================== P6 新词1-5 ==================== -->
+<div class="page" id="page6">
+  <div class="page-content">
+    <h1 class="page-title">八上目标词 1–5</h1>
+    <p class="page-subtitle">识读 · 搭配</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">词汇学习 · 目标词</span></div>
+    <div class="grid-2">
+      <div class="vocab-card"><div class="vocab-word">hill</div><div class="vocab-meaning">n. 小山；山丘</div><div class="vocab-tip">🔧 We climbed the hill near the town.</div></div>
+      <div class="vocab-card"><div class="vocab-word">duck</div><div class="vocab-meaning">n. 鸭子</div><div class="vocab-tip">🔧 The ducks swim in the river.</div></div>
+      <div class="vocab-card"><div class="vocab-word">dislike</div><div class="vocab-meaning">v. 不喜欢</div><div class="vocab-tip">🔧 反义词 like；I dislike getting up early.</div></div>
+      <div class="vocab-card"><div class="vocab-word">central</div><div class="vocab-meaning">adj. 中心的；中央的</div><div class="vocab-tip">🔧 The hotel is in the central part of town.</div></div>
+      <div class="vocab-card"><div class="vocab-word">expensive</div><div class="vocab-meaning">adj. 昂贵的</div><div class="vocab-tip">🔧 反义词 cheap；The ticket is expensive.</div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">精讲要点</div>hill 与 mountain 区别在高低；dislike 是动词（不喜欢），后接名词或动名词。</div>
+    <div class="card"><div class="card-title">🔑 目标词 1–5 · 用法</div>
+      <div class="rule-card rc-zhug"><strong>hill</strong> 小山（mountain 大山）<br><em>climb the hill / a hill near town</em></div>
+      <div class="rule-card rc-bin"><strong>duck</strong> 鸭子<br><em>feed the ducks / swim in the river</em></div>
+      <div class="rule-card rc-xing"><strong>dislike</strong> v. 不喜欢（反 like）<br><em>dislike + doing / dislike sports</em></div>
+      <div class="rule-card rc-ming"><strong>central</strong> 中心的<br><em>the central square / central part</em></div>
+      <div class="rule-card rc-qita"><strong>expensive</strong> 昂贵的（反 cheap）<br><em>too expensive / an expensive gift</em></div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== P7 新词6-10 ==================== -->
+<div class="page" id="page7">
+  <div class="page-content">
+    <h1 class="page-title">八上目标词 6–10</h1>
+    <p class="page-subtitle">识读 · 搭配</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">词汇学习 · 目标词</span></div>
+    <div class="grid-2">
+      <div class="vocab-card"><div class="vocab-word">cheap</div><div class="vocab-meaning">adj. 便宜的</div><div class="vocab-tip">🔧 反义词 expensive；a cheap ticket</div></div>
+      <div class="vocab-card"><div class="vocab-word">minimum</div><div class="vocab-meaning">adj./n. 最小；最低限度</div><div class="vocab-tip">🔧 反义 maximum；minimum cost</div></div>
+      <div class="vocab-card"><div class="vocab-word">maximum</div><div class="vocab-meaning">adj./n. 最大；最大限度</div><div class="vocab-tip">🔧 反义 minimum；maximum price</div></div>
+      <div class="vocab-card"><div class="vocab-word">habit</div><div class="vocab-meaning">n. 习惯</div><div class="vocab-tip">🔧 a good habit 好习惯；develop a habit</div></div>
+      <div class="vocab-card"><div class="vocab-word">contrast</div><div class="vocab-meaning">n. 对比；对照</div><div class="vocab-tip">🔧 in contrast 相比之下；对比两种时态</div></div>
+    </div>
+    <div class="tip-box"><strong>词族记忆：</strong>minimum ↘ 最低 ↔ maximum ↗ 最高；habit 常搭配 good/bad。</div>
+    <div class="card"><div class="card-title">🔑 目标词 6–10 · 用法</div>
+      <div class="rule-card rc-zhug"><strong>cheap</strong> 便宜的（反 expensive）<br><em>a cheap ticket / cheaper than</em></div>
+      <div class="rule-card rc-bin"><strong>minimum</strong> 最低<br><em>minimum cost / at a minimum</em></div>
+      <div class="rule-card rc-xing"><strong>maximum</strong> 最高<br><em>maximum price / at a maximum</em></div>
+      <div class="rule-card rc-ming"><strong>habit</strong> 习惯<br><em>a good habit / keep a habit</em></div>
+      <div class="rule-card rc-qita"><strong>contrast</strong> 对比<br><em>in contrast / the contrast between A and B</em></div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== P8 词汇拖拽分类 ==================== -->
+<div class="page" id="page8">
+  <div class="page-content">
+    <h1 class="page-title">词汇分类</h1>
+    <p class="page-subtitle">拖入正确分类</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">词汇复现 · 分类</span></div>
+    <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_V02_Q1" data-knowledge-id="K_vocab_review" data-section="vocab" data-template-id="V-DRAG-CATEGORY" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="recognition" data-qid="Q003">
+      <div class="qq-text" style="margin-bottom:8px">将单词拖入正确分类（点词选中，再点空位填入）</div>
+      <div class="drag-container" data-order='["ball", "expensive"]'>
+        <div style="margin-bottom:6px;font-size:15px;color:var(--text-secondary);">名词（物品）：<span class="drag-slot" onclick="dragPlace(this)"></span></div>
+        <div style="margin-bottom:6px;font-size:15px;color:var(--text-secondary);">形容词（描述）：<span class="drag-slot" onclick="dragPlace(this)"></span></div>
+        <div class="drag-words"><span class="drag-word" onclick="dragSelect(this)">ball</span><span class="drag-word" onclick="dragSelect(this)">expensive</span><span class="drag-word" onclick="dragSelect(this)">play</span></div>
+        <button class="fill-check-btn" onclick="dragSubmit(this)">提交</button>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">精讲要点</div>名词（ball）与形容词（expensive）区分；动词 play 是干扰项。分类依靠词性判断。</div>
+  </div>
+</div>
+<!-- ==================== P9 新词释义连线 ==================== -->
+<div class="page" id="page9">
+  <div class="page-content">
+    <h1 class="page-title">新词释义连线</h1>
+    <p class="page-subtitle">配对目标词与释义</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">词汇学习 · 连线</span></div>
+    <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_V03_Q1" data-knowledge-id="K_vocab_new" data-section="vocab" data-template-id="V-LINK-COLLOCATION" data-interaction-type="link" data-action-type="link" data-cognitive-level="recognition" data-qid="Q004">
+      <div class="link-container">
+        <div class="qq-text" style="margin-bottom:8px">连线：目标词与正确释义</div>
+        <div class="ec-grid">
+          <div class="ec-left link-left">
+            <div class="link-item" data-pair="1" onclick="linkClick(this)">hill</div>
+            <div class="link-item" data-pair="2" onclick="linkClick(this)">expensive</div>
+            <div class="link-item" data-pair="3" onclick="linkClick(this)">habit</div>
+            <div class="link-item" data-pair="4" onclick="linkClick(this)">minimum</div>
+          </div>
+          <div class="ec-right link-right">
+            <div class="link-item" data-pair="1" onclick="linkClick(this)">小山</div>
+            <div class="link-item" data-pair="2" onclick="linkClick(this)">昂贵</div>
+            <div class="link-item" data-pair="3" onclick="linkClick(this)">习惯</div>
+            <div class="link-item" data-pair="4" onclick="linkClick(this)">最低限度</div>
+            <div class="link-item" data-pair="5" onclick="linkClick(this)">便宜的</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">精讲要点</div>cheap 是干扰项（便宜的），与 expensive 相反。注意 minimum 与 maximum 为一组反义词。</div>
+    <div class="card"><div class="card-title">🔗 目标词 · 释义速记</div>
+      <div class="rule-card rc-zhug"><strong>hill</strong> 小山（比 mountain 矮）<br><em>climb the hill</em></div>
+      <div class="rule-card rc-bin"><strong>expensive</strong> 昂贵的（反 cheap）<br><em>a ticket too expensive</em></div>
+      <div class="rule-card rc-xing"><strong>habit</strong> 习惯（常 good/bad）<br><em>a good habit</em></div>
+      <div class="rule-card rc-ming"><strong>minimum</strong> 最低限度（反 maximum）<br><em>minimum cost</em></div>
+      <div class="rule-card rc-qita"><strong>cheap</strong> 便宜的（反 expensive）<br><em>a cheap train ticket</em></div>
+    </div>
+    <div class="note-panel"><div class="np-title">连线技巧</div>先记词性再记词义：名词表事物，形容词表特征。遇到反义词对（expensive↔cheap）可成对连线。</div>
+  </div>
+</div>
+
+<!-- ==================== P10 词汇选词填空 ==================== -->
+<div class="page" id="page10">
+  <div class="page-content">
+    <h1 class="page-title">选词填空</h1>
+    <p class="page-subtitle">语境运用</p>
+    <div class="section-head"><span class="sh-num">词</span><span class="sh-title">词汇复现 · 语境运用</span></div>
+    <div class="card"><div class="card-title">🎯 用本课词补全句子</div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_V04_Q1" data-knowledge-id="K_vocab_new" data-section="vocab" data-template-id="V-WRITE-USE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q005">
+        <div class="qq-text" style="margin-bottom:8px">【应用】The train is ___ than the plane, so we choose the train.（填 cheap 的正确形式）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="cheaper" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_V04_Q2" data-knowledge-id="K_vocab_new" data-section="vocab" data-template-id="V-WRITE-USE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q006">
+        <div class="qq-text" style="margin-bottom:8px">【应用】Reading every day is a good ___.（填本课目标词）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="habit" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">精讲要点</div>比较级 cheaper（辅音+y 变 ier）；habit 常与 good 搭配。</div>
+    <div class="note-panel"><div class="np-title">选词策略</div>先读整句判断词性与结构（比较级/名词/搭配），再从本课目标词中筛选，最后检查拼写与变形。</div>
+  </div>
+</div>
+
+<!-- ==================== P11 三大时态对比总览 ==================== -->
+<div class="page" id="page11">
+  <div class="page-content">
+    <h1 class="page-title">三大基础时态对比</h1>
+    <p class="page-subtitle">一般现在 / 一般过去 / 一般将来</p>
+    <div class="section-head"><span class="sh-num">1</span><span class="sh-title">语法整合 · 总览</span></div>
+    <div class="card"><div class="card-title">📊 时态三要素对比</div>
+      <div class="rule-card rc-zhug"><strong>一般现在时：</strong>动作发生频率 / 习惯 / 客观事实<br><em>标志词：usually, often, every day, always</em></div>
+      <div class="rule-card rc-bin"><strong>一般过去时：</strong>过去某时的动作或状态<br><em>标志词：yesterday, last week, ago, in 2020</em></div>
+      <div class="rule-card rc-xing"><strong>一般将来时：</strong>将要发生的动作或计划<br><em>标志词：tomorrow, next week, soon, tonight</em></div>
+    </div>
+    <div class="tip-box"><strong>核心口诀：</strong>看时间标志词定时态——现在看频率，过去看时间点，将来看计划。</div>
+    <div class="card"><div class="card-title">📊 三态结构速记表</div>
+      <div class="rule-card rc-zhug"><strong>一般现在时：</strong>主语 + do / does<br><em>例：I play basketball. / She plays basketball.<br>否定：don't / doesn't + 原形</em></div>
+      <div class="rule-card rc-bin"><strong>一般过去时：</strong>主语 + 动词过去式（did）<br><em>例：We went to the hills yesterday.<br>否定：didn't + 原形</em></div>
+      <div class="rule-card rc-xing"><strong>一般将来时：</strong>主语 + will / be going to + 原形<br><em>例：We will take a train tomorrow.<br>否定：won't / be not going to</em></div>
+      <div class="rule-card rc-ming"><strong>判断三步：</strong>① 找时间标志词 → ② 定时态 → ③ 选动词形式<br><em>every day→现在；yesterday→过去；tomorrow→将来</em></div>
+    </div>
+    <div class="note-panel"><div class="np-title">对比提醒</div>三种时态可表达同一主题（如"假期"），只是发生时间不同。学会用同一话题切换时态，是八上综合能力的关键。</div>
+  </div>
+</div>
+
+<!-- ==================== P12 一般现在时 ==================== -->
+<div class="page" id="page12">
+  <div class="page-content">
+    <h1 class="page-title">一般现在时</h1>
+    <p class="page-subtitle">选择正确形式</p>
+    <div class="section-head"><span class="sh-num">2</span><span class="sh-title">语法整合 · 一般现在时</span></div>
+    <div class="formula-box"><div class="formula-text">主语三单 + 动词-s/es；I/you/we/they + 动词原形</div><div class="formula-sub">口诀：三单加s，句首加do/does问</div></div>
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G01_Q1" data-knowledge-id="K_tense_present" data-section="grammar" data-template-id="G-POINT-FORM" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-qid="Q007">
+        <div class="qq-text">【一般现在时】He ___ basketball every day.</div>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. play</button>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. played</button>
+        <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. plays</button>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G01_Q2" data-knowledge-id="K_tense_present" data-section="grammar" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="Q008">
+        <div class="qq-text" style="margin-bottom:8px">【一般现在时】They ___（play）volleyball after school.（填正确形式）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="play" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">解析</div>He 三单 → plays；They 非三单 → play。一般现在时讲频率与习惯。</div>
+    <div class="card"><div class="card-title">📌 一般现在时 · 三单规则</div>
+      <div class="rule-card rc-zhug"><strong>一般直接 +s：</strong>play→plays / like→likes / run→runs</div>
+      <div class="rule-card rc-bin"><strong>以 s/x/ch/sh 结尾 +es：</strong>watch→watches / go→goes / do→does</div>
+      <div class="rule-card rc-xing"><strong>辅音+y 变 ies：</strong>study→studies / fly→flies<br><em>元音+y 不变：play→plays</em></div>
+      <div class="rule-card rc-ming"><strong>标志词：</strong>every day, usually, often, always, sometimes, on weekends</div>
+    </div>
+    <div class="note-panel"><div class="np-title">易错提醒</div>三单只出现在主语为 he/she/it 或单数名词时；I/you/we/they 用动词原形，不加 s。</div>
+  </div>
+</div>
+
+<!-- ==================== P13 一般过去时 ==================== -->
+<div class="page" id="page13">
+  <div class="page-content">
+    <h1 class="page-title">一般过去时</h1>
+    <p class="page-subtitle">选择与拼写</p>
+    <div class="section-head"><span class="sh-num">3</span><span class="sh-title">语法整合 · 一般过去时</span></div>
+    <div class="formula-box"><div class="formula-text">主语 + 动词过去式；疑问/否定用 did</div><div class="formula-sub">规则过去式 +ed；常见不规则：go→went, see→saw, buy→bought</div></div>
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G02_Q1" data-knowledge-id="K_tense_past" data-section="grammar" data-template-id="G-POINT-FORM" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-qid="Q009">
+        <div class="qq-text">【一般过去时】We ___ to the hills last Sunday.</div>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. go</button>
+        <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. went</button>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. goes</button>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G02_Q2" data-knowledge-id="K_tense_past" data-section="grammar" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="Q010">
+        <div class="qq-text" style="margin-bottom:8px">【拼写】Yesterday my sister ___（buy）a new ball.</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="bought" placeholder="输入过去式" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">解析</div>last Sunday 表过去 → went（不规则过去式）；buy 的过去式是 bought。</div>
+    <div class="card"><div class="card-title">📌 一般过去时 · 变形规则</div>
+      <div class="rule-card rc-zhug"><strong>规则 +ed：</strong>play→played / watch→watched / stay→stayed</div>
+      <div class="rule-card rc-bin"><strong>以 e 结尾 +d：</strong>like→liked / live→lived / use→used</div>
+      <div class="rule-card rc-xing"><strong>辅音+y 变 ied：</strong>study→studied / carry→carried<br><em>元音+y 不变：play→played</em></div>
+      <div class="rule-card rc-ming"><strong>重读闭音节双写：</strong>stop→stopped / plan→planned</div>
+    </div>
+    <div class="note-panel"><div class="np-title">本课高频不规则过去式</div>go→went / see→saw / buy→bought / win→won / have→had / eat→ate / drink→drank / come→came。建议编成顺口溜记忆。</div>
+  </div>
+</div>
+
+<!-- ==================== P14 一般将来时 ==================== -->
+<div class="page" id="page14">
+  <div class="page-content">
+    <h1 class="page-title">一般将来时</h1>
+    <p class="page-subtitle">will / be going to</p>
+    <div class="section-head"><span class="sh-num">4</span><span class="sh-title">语法整合 · 一般将来时</span></div>
+    <div class="formula-box"><div class="formula-text">主语 + will + 动词原形；主语 + be going to + 动词原形</div><div class="formula-sub">标志词：tomorrow, next week, soon, tonight</div></div>
+    <div class="card"><div class="card-title">🎯 将来时填空</div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G03_Q1" data-knowledge-id="K_tense_future" data-section="grammar" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q011">
+        <div class="qq-text" style="margin-bottom:8px">【将来时】We ___（go）to the countryside next week.（填 will go）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="will go" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G03_Q2" data-knowledge-id="K_tense_future" data-section="grammar" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q012">
+        <div class="qq-text" style="margin-bottom:8px">【将来时】She is going to ___（watch）TV tonight.</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="watch" placeholder="动词原形" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">解析</div>be going to 后接动词原形；will 后也接原形。next week / tonight 是将来时标志。</div>
+    <div class="card"><div class="card-title">📌 一般将来时 · 两种表达</div>
+      <div class="rule-card rc-zhug"><strong>will + 原形：</strong>will play / will take<br><em>常用于临时决定、预测、承诺；缩写 'll</em></div>
+      <div class="rule-card rc-bin"><strong>be going to + 原形：</strong>am/is/are going to play<br><em>常用于已计划好的打算；表推断</em></div>
+      <div class="rule-card rc-xing"><strong>否定：</strong>won't = will not；be not going to<br><em>We won't take a plane.</em></div>
+      <div class="rule-card rc-ming"><strong>标志词：</strong>tomorrow, next week, tonight, soon, in the future, this weekend</div>
+    </div>
+    <div class="note-panel"><div class="np-title">易错提醒</div>will/be going to 后都用动词原形，不能加 -s 或过去式；疑问句把 will/be 提前。</div>
+  </div>
+</div>
+
+<!-- ==================== P15 时态句子排序 ==================== -->
+<div class="page" id="page15">
+  <div class="page-content">
+    <h1 class="page-title">时态句子排序</h1>
+    <p class="page-subtitle">按时间顺序排列</p>
+    <div class="section-head"><span class="sh-num">5</span><span class="sh-title">语法整合 · 排序</span></div>
+    <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G04_Q1" data-knowledge-id="K_tense_mix" data-section="grammar" data-template-id="G-ORDER-TENSE" data-interaction-type="order" data-action-type="order" data-cognitive-level="application" data-qid="Q013">
+      <div class="qq-text" style="margin-bottom:8px">把假期安排按时间顺序排列（先选中文句意理解，再点词块调整顺序）</div>
+      <div class="order-container" data-order='["First", "Next", "Then", "Finally"]'>
+        <div class="order-chunk" onclick="orderClick(this)">Then</div>
+        <div class="order-chunk" onclick="orderClick(this)">First</div>
+        <div class="order-chunk" onclick="orderClick(this)">Finally</div>
+        <div class="order-chunk" onclick="orderClick(this)">Next</div>
+        <button class="fill-check-btn" onclick="orderSubmit(this)">提交顺序</button>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">精讲要点</div>叙述步骤用顺序词：First → Next → Then → Finally。句式顺序与时间顺序一致。</div>
+  </div>
+</div>
+
+<!-- ==================== P16 时态-时间标志连线 ==================== -->
+<div class="page" id="page16">
+  <div class="page-content">
+    <h1 class="page-title">时态与时间标志连线</h1>
+    <p class="page-subtitle">配对时态与标志词</p>
+    <div class="section-head"><span class="sh-num">6</span><span class="sh-title">语法整合 · 连线</span></div>
+    <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G05_Q1" data-knowledge-id="K_tense_mix" data-section="grammar" data-template-id="G-LINK-RELATION" data-interaction-type="link" data-action-type="link" data-cognitive-level="recognition" data-qid="Q014">
+      <div class="link-container">
+        <div class="qq-text" style="margin-bottom:8px">连线：时间标志词 → 对应时态</div>
+        <div class="ec-grid">
+          <div class="ec-left link-left">
+            <div class="link-item" data-pair="1" onclick="linkClick(this)">yesterday</div>
+            <div class="link-item" data-pair="2" onclick="linkClick(this)">tomorrow</div>
+            <div class="link-item" data-pair="3" onclick="linkClick(this)">every day</div>
+          </div>
+          <div class="ec-right link-right">
+            <div class="link-item" data-pair="1" onclick="linkClick(this)">一般过去时</div>
+            <div class="link-item" data-pair="2" onclick="linkClick(this)">一般将来时</div>
+            <div class="link-item" data-pair="3" onclick="linkClick(this)">一般现在时</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">解析</div>yesterday→过去；tomorrow→将来；every day→现在。标志词是时态判断的第一线索。</div>
+    <div class="card"><div class="card-title">⏰ 时间标志词 · 大全</div>
+      <div class="rule-card rc-zhug"><strong>一般现在：</strong>every day, usually, often, always, sometimes, on weekends, twice a week</div>
+      <div class="rule-card rc-bin"><strong>一般过去：</strong>yesterday, last week, last month, ago, in 2020, just now</div>
+      <div class="rule-card rc-xing"><strong>一般将来：</strong>tomorrow, next week, soon, tonight, this weekend, in the future</div>
+      <div class="rule-card rc-ming"><strong>做题顺序：</strong>① 圈出标志词 → ② 标注时态 → ③ 选动词形式</div>
+    </div>
+    <div class="note-panel"><div class="np-title">易混点</div>有的词可作多义（如 this weekend 常表将来）；拿不准时先圈时间词，再看动词是否变形正确。</div>
+  </div>
+</div>
+<!-- ==================== P17 形容词与副词总览 ==================== -->
+<div class="page" id="page17">
+  <div class="page-content">
+    <h1 class="page-title">形容词与副词</h1>
+    <p class="page-subtitle">修饰名词 vs 修饰动词</p>
+    <div class="section-head"><span class="sh-num">形</span><span class="sh-title">语法整合 · 形容词与副词</span></div>
+    <div class="card"><div class="card-title">📌 形容词 vs 副词</div>
+      <div class="rule-card rc-zhug"><strong>形容词：</strong>修饰名词 —— a good player / a relaxing game<br><em>放名词前或 be 动词后</em></div>
+      <div class="rule-card rc-bin"><strong>副词：</strong>修饰动词 —— play well / run fast<br><em>常加 -ly：quick→quickly；但 fast/well 形副同形</em></div>
+    </div>
+    <div class="tip-box"><strong>口诀：</strong>形修名，副修动；be 后接形，动词后接副。</div>
+    <div class="card"><div class="card-title">📌 形副辨析表</div>
+      <div class="rule-card rc-zhug"><strong>形容词三种位置：</strong><br>① 名词前：a good player<br>② be 动词后：The game is relaxing.<br>③ 系动词后：It sounds boring.</div>
+      <div class="rule-card rc-bin"><strong>副词三种作用：</strong><br>① 修饰实义动词：plays well / runs fast<br>② 修饰形容词：very interesting<br>③ 修饰整个句子：Luckily, we won.</div>
+      <div class="rule-card rc-xing"><strong>-ly 常见规则：</strong><br>quick→quickly；slow→slowly<br><em>注意：fast / well / hard 形副同形不加 -ly</em></div>
+      <div class="rule-card rc-ming"><strong>-ing / -ed 形容词：</strong><br>-ing 描述事物令人…（relaxing / boring / exciting）<br>-ed 描述人的感受（relaxed / bored / excited）</div>
+    </div>
+    <div class="note-panel"><div class="np-title">判断小技巧</div>看空格前方：修饰名词→形容词；修饰动词→副词；be/feel/sound 后→形容词。本课运动场景中 play well / a good match 最常用。</div>
+  </div>
+</div>
+
+<!-- ==================== P18 形容词与副词选择 ==================== -->
+<div class="page" id="page18">
+  <div class="page-content">
+    <h1 class="page-title">形容词与副词 · 选择</h1>
+    <p class="page-subtitle">判断正确词性</p>
+    <div class="section-head"><span class="sh-num">形</span><span class="sh-title">语法整合 · 辨析</span></div>
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G06_Q1" data-knowledge-id="K_adj_adv" data-section="grammar" data-template-id="G-POINT-WORDCLASS" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-qid="Q015">
+        <div class="qq-text">【形容词】The game is very ___. We all enjoy it.</div>
+        <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. relaxing</button>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. relaxes</button>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. relax</button>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G06_Q2" data-knowledge-id="K_adj_adv" data-section="grammar" data-template-id="G-POINT-WORDCLASS" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-qid="Q016">
+        <div class="qq-text">【副词】He plays soccer very ___.</div>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. good</button>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. better</button>
+        <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. well</button>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">解析</div>is 后接形容词 relaxing；play 是动词，用副词 well（not good）。</div>
+  </div>
+</div>
+
+<!-- ==================== P19 形容词副词填词 ==================== -->
+<div class="page" id="page19">
+  <div class="page-content">
+    <h1 class="page-title">形容词与副词 · 填词</h1>
+    <p class="page-subtitle">语境运用</p>
+    <div class="section-head"><span class="sh-num">形</span><span class="sh-title">语法整合 · 运用</span></div>
+    <div class="card"><div class="card-title">🎯 用形容词或副词填空</div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G07_Q1" data-knowledge-id="K_adj_adv" data-section="grammar" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q017">
+        <div class="qq-text" style="margin-bottom:8px">【应用】Please speak ___（slow）so I can hear you.（填副词）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="slowly" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G07_Q2" data-knowledge-id="K_adj_adv" data-section="grammar" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q018">
+        <div class="qq-text" style="margin-bottom:8px">【应用】This match is very ___（excite）.（填形容词）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="exciting" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">解析</div>修饰动词 speak → slowly；这个比赛（事物）令人兴奋 → exciting。</div>
+    <div class="card"><div class="card-title">✍️ 形副填词 · 规则回顾</div>
+      <div class="rule-card rc-zhug"><strong>副词的构成：</strong>形容词 + ly → slow→slowly / quick→quickly / careful→carefully</div>
+      <div class="rule-card rc-bin"><strong>形副同形：</strong>fast / well / hard / early<br><em>run fast（副词）/ a fast train（形容词）</em></div>
+      <div class="rule-card rc-xing"><strong>-ing 形容词：</strong>exciting / relaxing / boring / interesting<br><em>描述事物特征</em></div>
+      <div class="rule-card rc-ming"><strong>判断顺序：</strong>看空格修饰谁 → 名词?形容词; 动词?副词</div>
+    </div>
+    <div class="note-panel"><div class="np-title">易错提醒</div>well 既是副词（plays well）也是形容词（I am well）；真正确认靠位置判断。</div>
+  </div>
+</div>
+
+<!-- ==================== P20 形容词副词分类 ==================== -->
+<div class="page" id="page20">
+  <div class="page-content">
+    <h1 class="page-title">形容词副词分类</h1>
+    <p class="page-subtitle">拖入正确词性</p>
+    <div class="section-head"><span class="sh-num">形</span><span class="sh-title">语法整合 · 分类</span></div>
+    <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G08_Q1" data-knowledge-id="K_adj_adv" data-section="grammar" data-template-id="G-DRAG-CLASSIFY" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="recognition" data-qid="Q019">
+      <div class="qq-text" style="margin-bottom:8px">将词拖入正确词性（点词选中，再点空位填入）</div>
+      <div class="drag-container" data-order='["happy", "fast"]'>
+        <div style="margin-bottom:6px;font-size:15px;color:var(--text-secondary);">形容词：<span class="drag-slot" onclick="dragPlace(this)"></span></div>
+        <div style="margin-bottom:6px;font-size:15px;color:var(--text-secondary);">副词：<span class="drag-slot" onclick="dragPlace(this)"></span></div>
+        <div class="drag-words"><span class="drag-word" onclick="dragSelect(this)">happy</span><span class="drag-word" onclick="dragSelect(this)">fast</span><span class="drag-word" onclick="dragSelect(this)">happily</span></div>
+        <button class="fill-check-btn" onclick="dragSubmit(this)">提交</button>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">解析</div>happy（形容词）与 fast（形副同形干扰项，正确是副词槽位）；happily 是干扰词。</div>
+  </div>
+</div>
+
+<!-- ==================== P21 介词与动词形式总览 ==================== -->
+<div class="page" id="page21">
+  <div class="page-content">
+    <h1 class="page-title">介词与常用动词形式</h1>
+    <p class="page-subtitle">方位 · 时间 · 搭配</p>
+    <div class="section-head"><span class="sh-num">介</span><span class="sh-title">语法整合 · 介词与动词</span></div>
+    <div class="card"><div class="card-title">📌 常用介词</div>
+      <div class="rule-card rc-zhug"><strong>方位：</strong>in（在...里）on（在...上）under（在...下）near（在...附近）<br><em>in the central part / near the river</em></div>
+      <div class="rule-card rc-bin"><strong>时间：</strong>at（时刻）on（某天）in（月份/年份）<br><em>at 8:00 / on Monday / in August</em></div>
+      <div class="rule-card rc-xing"><strong>交通：</strong>by + 交通工具（by train）；take + 交通工具（take a bus）</div>
+    </div>
+    <div class="tip-box"><strong>动词形式：</strong>like doing / want to do / be good at doing；介词后接动名词 -ing。</div>
+    <div class="card"><div class="card-title">📍 介词功能分类表</div>
+      <div class="rule-card rc-zhug"><strong>方位介词（哪里）：</strong>in（里）on（上）under（下）near（附近）behind（后面）<br><em>The ducks are in the river. / The hotel is near the hill.</em></div>
+      <div class="rule-card rc-bin"><strong>时间介词（何时）：</strong>at + 时刻 on + 具体某天 in + 月/年/季节<br><em>at 8:00 / on Monday / in August / in the morning</em></div>
+      <div class="rule-card rc-xing"><strong>交通介词（怎么去）：</strong>by + 交通工具（by bus/n train）<br>take + 交通工具（take a bus）on foot（步行）</div>
+      <div class="rule-card rc-ming"><strong>动词形式搭配：</strong><br>like/enjoy + doing；want/plan + to do<br>be good at/fond of + doing；prefer + doing</div>
+    </div>
+    <div class="note-panel"><div class="np-title">记忆口诀</div>地点用方位介，时间看精确度，交通 by/take/on。介词后接动名词放一块记，避免"like to 与 like doing"混淆。</div>
+  </div>
+</div>
+
+<!-- ==================== P22 介词填空 ==================== -->
+<div class="page" id="page22">
+  <div class="page-content">
+    <h1 class="page-title">介词填空</h1>
+    <p class="page-subtitle">选择正确介词</p>
+    <div class="section-head"><span class="sh-num">介</span><span class="sh-title">语法整合 · 介词</span></div>
+    <div class="card"><div class="card-title">🎯 介词运用</div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G09_Q1" data-knowledge-id="K_prep" data-section="grammar" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="Q020">
+        <div class="qq-text" style="margin-bottom:8px">【介词】We go to school ___ bus.（填 by）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="by" placeholder="输入介词" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G09_Q2" data-knowledge-id="K_prep" data-section="grammar" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="Q021">
+        <div class="qq-text" style="margin-bottom:8px">【介词】The ducks swim ___ the river.（填 in）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="in" placeholder="输入介词" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">解析</div>by + 交通工具（by bus）；in the river 在河里。</div>
+    <div class="card"><div class="card-title">📍 高频介词对比</div>
+      <div class="rule-card rc-zhug"><strong>in / on / at：</strong><br>in 空间里（in the room）· on 表面（on the wall）· at 地点/时刻（at school / at 8:00）</div>
+      <div class="rule-card rc-bin"><strong>on / in（时间）：</strong><br>on 具体某天（on Monday）· in 月/年/季节（in August / in 2024）</div>
+      <div class="rule-card rc-xing"><strong>by / take（交通）：</strong><br>by bus（后无冠词）· take a bus（后有冠词）</div>
+      <div class="rule-card rc-ming"><strong>near / under / behind：</strong><br>near 附近 · under 下方 · behind 后面</div>
+    </div>
+    <div class="note-panel"><div class="np-title">选择技巧</div>先看后接的对象：接时间→看精确度；接地点→看里外上下；接交通→by 或 take。本题 by bus / in the river 属固定搭配。</div>
+  </div>
+</div>
+
+<!-- ==================== P23 动词形式拖拽 ==================== -->
+<div class="page" id="page23">
+  <div class="page-content">
+    <h1 class="page-title">动词形式 · 拖拽</h1>
+    <p class="page-subtitle">be good at doing</p>
+    <div class="section-head"><span class="sh-num">动</span><span class="sh-title">语法整合 · 动词形式</span></div>
+    <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G10_Q1" data-knowledge-id="K_verb_form" data-section="grammar" data-template-id="G-DRAG-FORM" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="application" data-qid="Q022">
+      <div class="qq-text" style="margin-bottom:8px">把动词填到正确位置（注意介词后接动名词）</div>
+      <div class="drag-container" data-order='["playing"]'>
+        <div style="margin-bottom:6px;font-size:15px;color:var(--text-secondary);">He is good at ___ basketball.（填动词 -ing）<span class="drag-slot" onclick="dragPlace(this)"></span></div>
+        <div class="drag-words"><span class="drag-word" onclick="dragSelect(this)">playing</span><span class="drag-word" onclick="dragSelect(this)">play</span><span class="drag-word" onclick="dragSelect(this)">plays</span></div>
+        <button class="fill-check-btn" onclick="dragSubmit(this)">提交</button>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">解析</div>介词 at 后接动名词 → playing。be good at doing 是固定搭配。</div>
+    <div class="card"><div class="card-title">🔗 常用动词形式搭配表</div>
+      <div class="rule-card rc-zhug"><strong>like / enjoy + doing：</strong>I like playing basketball.</div>
+      <div class="rule-card rc-bin"><strong>want / plan + to do：</strong>I want to go to the hills.</div>
+      <div class="rule-card rc-xing"><strong>be good at / be fond of + doing：</strong>He is good at swimming.</div>
+      <div class="rule-card rc-ming"><strong>介词后 + doing：</strong>by doing / for doing / after doing<br><em>→ He wins by playing well.</em></div>
+    </div>
+    <div class="note-panel"><div class="np-title">口诀</div>喜欢擅长接 doing，想要计划接 to do；介词后面一律 doing。本课运动场景多用 be good at playing。</div>
+  </div>
+</div>
+
+<!-- ==================== P24 常用动词形式排序 ==================== -->
+<div class="page" id="page24">
+  <div class="page-content">
+    <h1 class="page-title">常用动词形式 · 排序</h1>
+    <p class="page-subtitle">完成句子</p>
+    <div class="section-head"><span class="sh-num">动</span><span class="sh-title">语法整合 · 动词形式</span></div>
+    <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_G11_Q1" data-knowledge-id="K_verb_form" data-section="grammar" data-template-id="G-ORDER-WORDS" data-interaction-type="order" data-action-type="order" data-cognitive-level="application" data-qid="Q023">
+      <div class="qq-text" style="margin-bottom:8px">把词块排成正确句子（点词块选中，再调整顺序）</div>
+      <div class="order-container" data-order='["I", "want", "to", "play", "tennis"]'>
+        <div class="order-chunk" onclick="orderClick(this)">play</div>
+        <div class="order-chunk" onclick="orderClick(this)">I</div>
+        <div class="order-chunk" onclick="orderClick(this)">tennis</div>
+        <div class="order-chunk" onclick="orderClick(this)">to</div>
+        <div class="order-chunk" onclick="orderClick(this)">want</div>
+        <button class="fill-check-btn" onclick="orderSubmit(this)">提交顺序</button>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">解析</div>want to do 结构：I + want + to + play + tennis。</div>
+    <div class="card"><div class="card-title">🔤 常用动词形式 · 例句</div>
+      <div class="rule-card rc-zhug"><strong>want to do：</strong>I want to play tennis. / She wants to visit the city.</div>
+      <div class="rule-card rc-bin"><strong>plan to do：</strong>We plan to take a train. / He plans to read books.</div>
+      <div class="rule-card rc-xing"><strong>like doing / like to do：</strong>I like playing basketball. / I like to play tennis.</div>
+      <div class="rule-card rc-ming"><strong>be good at doing：</strong>He is good at swimming. / Be good at playing volleyball.</div>
+    </div>
+    <div class="note-panel"><div class="np-title">语序练习</div>做排序题时，先写出标准句型骨架（主语 + 结构 + 宾语），再把词块填入，最后检查是否缺助词（to / at）。</div>
+  </div>
+</div>
+<!-- ==================== P25 阅读A篇 ==================== -->
+<div class="page" id="page25">
+  <div class="page-content">
+    <h1 class="page-title">阅读 A 篇</h1>
+    <p class="page-subtitle">My Summer Holiday Plan · 记叙文</p>
+    <div class="section-head"><span class="sh-num">读</span><span class="sh-title">假期主题阅读 · 综合复现</span></div>
+    <div class="read-block" data-source-id="LMX-L04-RA-001">
+      <div class="read-title">📄 My Summer Holiday Plan</div>
+      <div class="read-body">The summer holiday is coming. My family is going to make a trip to the countryside. We will leave on the first day of August. We plan to take a train because it is cheap and comfortable. On the way, we can see the green hills beside the train.
+We will stay in a small hotel in the central part of the town. The hotel is not expensive, so we can save money for food. Every morning we want to walk to the river and watch the ducks. In the afternoon, we may ride bikes around the hills.
+My sister dislikes outdoor activities. She says she will stay in the hotel and watch TV. But my mother thinks it is a good habit to be active every day. We make a budget for the trip. The minimum cost is about eight hundred yuan and the maximum is one thousand yuan. We all want this holiday to be fun and relaxing.</div>
+      <div class="read-src">source_id: LMX-L04-RA-001 · 真题母本改编（人教版七年级下册 Unit 假期主题）</div>
+    </div>
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_R_A_Q1" data-knowledge-id="K_reading" data-section="reading" data-template-id="R-POINT-DETAIL" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="retrieval" data-qid="Q024">
+        <div class="qq-text">【阅读A·细节】How will the family travel to the countryside?</div>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. By plane</button>
+        <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. By train</button>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. By bus</button>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_R_A_Q2" data-knowledge-id="K_reading" data-section="reading" data-template-id="R-POINT-INFER" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="application" data-qid="Q025">
+        <div class="qq-text">【阅读A·推断】Why does the family choose the train?</div>
+        <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. It is cheap and comfortable.</button>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. It is expensive.</button>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. It is fast.</button>
+      </div>
+    </div>
+    <div class="evidence-task" data-interaction-item="1" data-question-id="LMX_L04_R_A_Q3" data-knowledge-id="K_reading" data-section="reading" data-template-id="R-WRITE-EVIDENCE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application">
+      <div class="body-text" style="margin-top:8px;padding:8px 12px;background:#FFFBEB;border-radius:8px;border:none;"><span class="highlight">🔍</span> 【非细节题】文中妹妹不喜欢户外活动，词句是什么？（填动词原形）</div>
+      <div class="fill-input-wrap" style="margin:10px 12px 0"><input class="fill-input" type="text" data-correct="dislikes" autocomplete="off" placeholder="填答案" style="width:260px" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+    </div>
+    <div class="tip-box"><strong>阅读策略：</strong>推断题要找原文证据——"cheap and comfortable" 直接支持答案 A。</div>
+  </div>
+</div>
+
+<!-- ==================== P26 阅读B篇（任务型） ==================== -->
+<div class="page" id="page26">
+  <div class="page-content">
+    <h1 class="page-title">阅读 B 篇 · 任务型</h1>
+    <p class="page-subtitle">A Family Trip Budget · 信息匹配</p>
+    <div class="section-head"><span class="sh-num">读</span><span class="sh-title">假期主题阅读 · 任务型填表</span></div>
+    <div class="read-block" data-source-id="LMX-L04-RB-002">
+      <div class="read-title">📄 A Family Trip Budget</div>
+      <div class="read-body">A family trip costs money. This week our teacher asked us to make a holiday budget. We must think about transport, food and activities.
+My family plans to go to the mountains. We will take a bus because it is cheap. The bus ticket is forty yuan for each person. We have four people, so the transport cost is one hundred and sixty yuan.
+For food, we want to eat local food. We plan to spend about fifty yuan a day for three days. That is one hundred and fifty yuan. For activities, we want to climb the hill and play ball games. The hill is free, but the ball court costs thirty yuan.
+In the end, we compare the minimum and the maximum cost. We write the numbers in a table. A good budget helps us save money and enjoy the trip.</div>
+      <div class="read-src">source_id: LMX-L04-RB-002 · 真题母本改编（七年级下册 Unit 假期·预算主题）</div>
+    </div>
+    <div class="card"><div class="card-title">📝 任务型 · 填写预算表</div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_R_B_Q1" data-knowledge-id="K_reading" data-section="reading" data-template-id="R-FILL-TABLE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="Q027">
+        <div class="qq-text" style="margin-bottom:8px">【表格填空】交通费总共是 ___ 元。</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="160" placeholder="填数字" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_R_B_Q2" data-knowledge-id="K_reading" data-section="reading" data-template-id="R-FILL-TABLE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="Q028">
+        <div class="qq-text" style="margin-bottom:8px">【表格填空】三天食物费总共是 ___ 元。</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="150" placeholder="填数字" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_R_B_Q3" data-knowledge-id="K_reading" data-section="reading" data-template-id="R-WRITE-ANSWER" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q029">
+        <div class="qq-text" style="margin-bottom:8px">【非细节题】为什么这家选择坐公共汽车？（填一个词）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="cheap" placeholder="填答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+    </div>
+    <div class="tip-box"><strong>任务型方法：</strong>先读懂数字关系，再把信息填入表格；原因题回原文找 because。</div>
+  </div>
+</div>
+
+<!-- ==================== P27 阅读C篇（问答） ==================== -->
+<div class="page" id="page27">
+  <div class="page-content">
+    <h1 class="page-title">阅读 C 篇 · 问答</h1>
+    <p class="page-subtitle">A Letter About My Holiday · 书信</p>
+    <div class="section-head"><span class="sh-num">读</span><span class="sh-title">假期主题阅读 · 问答</span></div>
+    <div class="read-block" data-source-id="LMX-L04-RC-003">
+      <div class="read-title">📄 A Letter About My Holiday</div>
+      <div class="read-body">Dear Lily,
+I am writing to tell you about my holiday plan. I will go to visit my grandparents in the countryside next week. I will take a train because the plane is too expensive for me.
+My grandparents live near a small hill. I love to feed the ducks in their yard. I dislike getting up early, but my grandma always makes breakfast at seven. She says a good habit is important.
+In the afternoon, I will play basketball with my cousins. We may watch a match on TV in the evening. My grandpa says the central square has a big market. We can buy cheap and fresh fruit there.
+I am very happy about this holiday. I think it will be a great time to relax and stay active. Next time I will tell you more.
+Yours,
+Lin Tao</div>
+      <div class="read-src">source_id: LMX-L04-RC-003 · 真题母本改编（七年级下册 Unit 假期·书信主题）</div>
+    </div>
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_R_C_Q1" data-knowledge-id="K_reading" data-section="reading" data-template-id="R-WRITE-ANSWER" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q030">
+        <div class="qq-text" style="margin-bottom:8px">【非细节题】为什么 Lin Tao 坐火车而不坐飞机？</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="expensive" placeholder="填答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_R_C_Q2" data-knowledge-id="K_reading" data-section="reading" data-template-id="R-POINT-MAIN" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="application" data-qid="Q031">
+        <div class="qq-text">【阅读C·主旨】What is the letter mainly about?</div>
+        <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. Lin Tao's holiday plan</button>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. How to cook breakfast</button>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. Where to buy fruit</button>
+      </div>
+    </div>
+    <div class="evidence-task" data-interaction-item="1" data-question-id="LMX_L04_R_C_Q3" data-knowledge-id="K_reading" data-section="reading" data-template-id="R-WRITE-EVIDENCE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application">
+      <div class="body-text" style="margin-top:8px;padding:8px 12px;background:#FFFBEB;border-radius:8px;border:none;"><span class="highlight">🔍</span> 【短答】下午 Lin Tao 做什么运动？（填一个词）</div>
+      <div class="fill-input-wrap" style="margin:10px 12px 0"><input class="fill-input" type="text" data-correct="basketball" autocomplete="off" placeholder="填答案" style="width:260px" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="event.stopPropagation();checkFill(this)">提交</button></div>
+    </div>
+    <div class="tip-box"><strong>主旨法：</strong>书信开头"holiday plan"与反复出现的计划内容共同指向主旨。</div>
+  </div>
+</div>
+
+<!-- ==================== P28 阅读策略总结 ==================== -->
+<div class="page" id="page28">
+  <div class="page-content">
+    <h1 class="page-title">阅读策略总结</h1>
+    <p class="page-subtitle">细节 · 推断 · 主旨 · 任务型</p>
+    <div class="section-head"><span class="sh-num">读</span><span class="sh-title">假期主题阅读 · 方法</span></div>
+    <div class="grid-2">
+      <div class="ext-card"><div class="ext-cat">1️⃣ 细节定位</div><div class="ext-body">划出题干关键词（数字/地名/人名），回原文定位。</div></div>
+      <div class="ext-card"><div class="ext-cat">2️⃣ 推断题</div><div class="ext-body">答案必须有原文证据，选"最合理"而非"最顺眼"。</div></div>
+      <div class="ext-card"><div class="ext-cat">3️⃣ 主旨题</div><div class="ext-body">看开头结尾，找反复出现的人/物/事。</div></div>
+      <div class="ext-card"><div class="ext-cat">4️⃣ 任务型</div><div class="ext-body">先读任务要求，再把信息填入表格或回答。</div></div>
+    </div>
+    <div class="tip-box"><strong>三篇小结：</strong>A 篇推断、B 篇任务型填表（交通/预算/活动）、C 篇问答与主旨。每篇至少一题需证据。</div>
+    <div class="card"><div class="card-title">📖 假期主题高频词块</div>
+      <div class="rule-card rc-zhug"><strong>交通：</strong>take a train / take a bus / by bike / on foot / ride a bike<br><em>We take a train because it is cheap.</em></div>
+      <div class="rule-card rc-bin"><strong>预算：</strong>cost（花费）spend（花费）price（价格）save money（省钱）<br><em>minimum（最低）↔ maximum（最高）</em></div>
+      <div class="rule-card rc-xing"><strong>活动：</strong>climb the hill / feed the ducks / play ball games / watch TV / ride bikes</div>
+      <div class="rule-card rc-ming"><strong>计划：</strong>plan to do / be going to do / will do / make a budget / stay in a hotel</div>
+    </div>
+    <div class="note-panel"><div class="np-title">把词块用进写作</div>假期计划写作 = 地点 + 交通 + 预算 + 活动，四项各用 1–2 个词块，再配一个时间标志词定时态，即可成段。</div>
+    <div class="card"><div class="card-title">📖 三篇阅读考点定位</div>
+      <div class="rule-card rc-zhug"><strong>A 篇（My Summer Holiday Plan）：</strong>细节（how/why）+ 推断 + 证据找词<br><em>考点：交通方式、选择原因、妹妹态度</em></div>
+      <div class="rule-card rc-bin"><strong>B 篇（A Family Trip Budget）：</strong>任务型填表 + 原因问答<br><em>考点：数字计算、交通选择、预算结果</em></div>
+      <div class="rule-card rc-xing"><strong>C 篇（A Letter）：</strong>问答 + 主旨<br><em>考点：书信文体、出行原因、主旨归纳</em></div>
+    </div>
+    <div class="note-panel"><div class="np-title">阅读速度</div>三篇均约 120–160 词，建议 A 篇 3 分钟、B 篇 4 分钟、C 篇 4 分钟，先读题再读文，边读边划证据。</div>
+  </div>
+</div>
+<!-- ==================== P29 假期计划综合任务 ==================== -->
+<div class="page" id="page29">
+  <div class="page-content">
+    <h1 class="page-title">假期计划综合任务</h1>
+    <p class="page-subtitle">步骤排序 · 设计计划</p>
+    <div class="section-head"><span class="sh-num">综</span><span class="sh-title">综合任务 · 假期计划</span></div>
+    <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_D01_Q1" data-knowledge-id="K_task" data-section="drill" data-template-id="D-DRAG-SEQUENCE" data-interaction-type="drag_and_drop" data-action-type="drag" data-cognitive-level="application" data-qid="Q033">
+      <div class="qq-text" style="margin-bottom:8px">把假期计划步骤拖到正确顺序（第一步到第四步）</div>
+      <div class="drag-container" data-order='["choose a place", "plan the budget", "book the hotel", "enjoy the trip"]'>
+        <div style="margin-bottom:6px;font-size:15px;color:var(--text-secondary);">Step 1：<span class="drag-slot" onclick="dragPlace(this)"></span></div>
+        <div style="margin-bottom:6px;font-size:15px;color:var(--text-secondary);">Step 2：<span class="drag-slot" onclick="dragPlace(this)"></span></div>
+        <div style="margin-bottom:6px;font-size:15px;color:var(--text-secondary);">Step 3：<span class="drag-slot" onclick="dragPlace(this)"></span></div>
+        <div style="margin-bottom:6px;font-size:15px;color:var(--text-secondary);">Step 4：<span class="drag-slot" onclick="dragPlace(this)"></span></div>
+        <div class="drag-words"><span class="drag-word" onclick="dragSelect(this)">book the hotel</span><span class="drag-word" onclick="dragSelect(this)">choose a place</span><span class="drag-word" onclick="dragSelect(this)">enjoy the trip</span><span class="drag-word" onclick="dragSelect(this)">plan the budget</span></div>
+        <button class="fill-check-btn" onclick="dragSubmit(this)">提交</button>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">综合任务引导</div>设计假期计划的顺序：选地点 → 预算 → 订酒店 → 享受旅行。融入地点、交通、预算、活动。</div>
+    <div class="card"><div class="card-title">📋 假期计划模板（四步填充）</div>
+      <div class="rule-card rc-zhug"><strong>① 地点：</strong>Where are we going?<br><em>→ 城市 / 乡村 / 海边 / 山区</em></div>
+      <div class="rule-card rc-bin"><strong>② 交通：</strong>How do we get there?<br><em>→ by train / by bus / by plane / on foot</em></div>
+      <div class="rule-card rc-xing"><strong>③ 预算：</strong>How much does it cost?<br><em>→ minimum cost / maximum price / save money</em></div>
+      <div class="rule-card rc-ming"><strong>④ 活动：</strong>What do we do there?<br><em>→ climb hills / feed ducks / play ball games / watch TV</em></div>
+    </div>
+    <div class="note-panel"><div class="np-title">模板用法</div>每一栏各填 1–2 个词块，再用一个时间标志词定时态，即可组成一段 60–70 词的假期计划。</div>
+  </div>
+</div>
+
+<!-- ==================== P30 假期规划对话 ==================== -->
+<div class="page" id="page30">
+  <div class="page-content">
+    <h1 class="page-title">假期规划对话</h1>
+    <p class="page-subtitle">补全对话</p>
+    <div class="section-head"><span class="sh-num">综</span><span class="sh-title">综合任务 · 对话</span></div>
+    <div class="card"><div class="card-title">💬 补全对话</div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_D02_Q1" data-knowledge-id="K_task" data-section="drill" data-template-id="D-WRITE-DIALOGUE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q034">
+        <div class="qq-text" style="margin-bottom:8px">A: What are you going to do this summer?<br>B: I am going to visit the ___ (乡村).</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="countryside" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_D02_Q2" data-knowledge-id="K_task" data-section="drill" data-template-id="D-WRITE-DIALOGUE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q034B">
+        <div class="qq-text" style="margin-bottom:8px">A: How will you go there?<br>B: I will go there ___. (乘火车)</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="by train" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">精讲要点</div>be going to 表计划；by + 交通工具 表方式。</div>
+    <div class="card"><div class="card-title">💬 对话框架 · 假期规划四问</div>
+      <div class="rule-card rc-zhug"><strong>① 去哪里：</strong>Where are you going? → I'm going to the countryside.</div>
+      <div class="rule-card rc-bin"><strong>② 怎么去：</strong>How will you go? → By train / I'll take a train.</div>
+      <div class="rule-card rc-xing"><strong>③ 做什么：</strong>What will you do? → Climb the hill / play ball games.</div>
+      <div class="rule-card rc-ming"><strong>④ 花销怎么算：</strong>How much will it cost? → About 800 yuan in total.</div>
+    </div>
+    <div class="note-panel"><div class="np-title">对话技巧</div>熟记"四问四答"框架即可完成假期规划对话；先口头跟读，再替换关键词，最后脱稿自述。</div>
+  </div>
+</div>
+
+<!-- ==================== P31 交通与预算 ==================== -->
+<div class="page" id="page31">
+  <div class="page-content">
+    <h1 class="page-title">交通与预算</h1>
+    <p class="page-subtitle">计划要素</p>
+    <div class="section-head"><span class="sh-num">综</span><span class="sh-title">综合任务 · 交通与预算</span></div>
+    <div class="card"><div class="card-title">🚗 交通方式表达</div>
+      <div class="rule-card rc-zhug">by bus / by train / by bike / on foot（步行）</div>
+      <div class="rule-card rc-bin">take a bus / take a train / ride a bike</div>
+      <div class="rule-card rc-xing">费用多少：cost / spend / price；minimum ↔ maximum</div>
+    </div>
+    <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_D03_Q1" data-knowledge-id="K_task" data-section="drill" data-template-id="D-WRITE-BUDGET" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q035">
+      <div class="qq-text" style="margin-bottom:8px">【应用】The train ticket is cheap. The minimum price is 50 yuan and the ___ price is 80 yuan.（填本课词）</div>
+      <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="maximum" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+    </div>
+    <div class="tip-box"><strong>预算意识：</strong>对比最低与最高花费，合理分配交通、住宿、活动预算。</div>
+    <div class="card"><div class="card-title">🚗 交通与预算 · 句型加油站</div>
+      <div class="rule-card rc-zhug"><strong>问交通：</strong>How do you go there? → By bus / I take a bus.</div>
+      <div class="rule-card rc-bin"><strong>问预算：</strong>How much does it cost? / How much is the ticket?</div>
+      <div class="rule-card rc-xing"><strong>定预算：</strong>We make a budget. / The minimum cost is ... / The maximum price is ...</div>
+      <div class="rule-card rc-ming"><strong>省钱：</strong>save money / a cheaper way / choose the cheap one</div>
+    </div>
+    <div class="note-panel"><div class="np-title">预算表达三步</div>① 说出门（transport）② 说出花费（cost/spend）③ 对比最值与作决定（minimum/maximum）。用这三步即可描述一次交通与预算。</div>
+  </div>
+</div>
+
+<!-- ==================== P32 活动与交通连线 ==================== -->
+<div class="page" id="page32">
+  <div class="page-content">
+    <h1 class="page-title">活动与交通连线</h1>
+    <p class="page-subtitle">匹配合理搭配</p>
+    <div class="section-head"><span class="sh-num">综</span><span class="sh-title">综合任务 · 连线</span></div>
+    <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_D04_Q1" data-knowledge-id="K_task" data-section="drill" data-template-id="D-LINK-PLAN" data-interaction-type="link" data-action-type="link" data-cognitive-level="recognition" data-qid="Q036">
+      <div class="link-container">
+        <div class="qq-text" style="margin-bottom:8px">连线：活动 → 合适的交通方式</div>
+        <div class="ec-grid">
+          <div class="ec-left link-left">
+            <div class="link-item" data-pair="1" onclick="linkClick(this)">去市中心</div>
+            <div class="link-item" data-pair="2" onclick="linkClick(this)">去邻镇</div>
+            <div class="link-item" data-pair="3" onclick="linkClick(this)">去隔壁公园</div>
+          </div>
+          <div class="ec-right link-right">
+            <div class="link-item" data-pair="1" onclick="linkClick(this)">take a bus</div>
+            <div class="link-item" data-pair="2" onclick="linkClick(this)">take a train</div>
+            <div class="link-item" data-pair="3" onclick="linkClick(this)">walk</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">解析</div>远距离用 train，中距离用 bus，近距离用 walk。由距离选择交通。</div>
+    <div class="card"><div class="card-title">🚶 距离与交通速记</div>
+      <div class="rule-card rc-zhug"><strong>近距离（同一社区/公园）：</strong>walk / on foot<br><em>→ I walk to the park.</em></div>
+      <div class="rule-card rc-bin"><strong>中距离（城市内/邻区）：</strong>by bus / take a bus<br><em>→ I take a bus to the town.</em></div>
+      <div class="rule-card rc-xing"><strong>远距离（跨城/跨省）：</strong>by train / by plane<br><em>→ We take a train to the city.</em></div>
+      <div class="rule-card rc-ming"><strong>特殊：</strong>by bike / ride a bike（灵活自由）<br><em>→ I ride a bike to school.</em></div>
+    </div>
+    <div class="note-panel"><div class="np-title">连线依据</div>选择交通方式要看"距离、时间、花费"三因素；本课重点掌握 walk / bus / train / plane 四档表达。</div>
+  </div>
+</div>
+
+<!-- ==================== P33 时态综合诊断 ==================== -->
+<div class="page" id="page33">
+  <div class="page-content">
+    <h1 class="page-title">时态综合诊断</h1>
+    <p class="page-subtitle">排序成句</p>
+    <div class="section-head"><span class="sh-num">诊</span><span class="sh-title">阶段检测 · 时态</span></div>
+    <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_E01_Q1" data-knowledge-id="K_tense_mix" data-section="diagnosis" data-template-id="E-ORDER-SENTENCE" data-interaction-type="order" data-action-type="order" data-cognitive-level="application" data-qid="Q037">
+      <div class="qq-text" style="margin-bottom:8px">把词块排成一句正确的过去时句子（点词块选中，再调整顺序）</div>
+      <div class="order-container" data-order='["We", "went", "to the hills", "yesterday"]'>
+        <div class="order-chunk" onclick="orderClick(this)">to the hills</div>
+        <div class="order-chunk" onclick="orderClick(this)">yesterday</div>
+        <div class="order-chunk" onclick="orderClick(this)">went</div>
+        <div class="order-chunk" onclick="orderClick(this)">We</div>
+        <button class="fill-check-btn" onclick="orderSubmit(this)">提交顺序</button>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">解析</div>We + went + to the hills + yesterday。过去时用动词过去式 went。</div>
+    <div class="card"><div class="card-title">📝 时态排序 · 更多例句</div>
+      <div class="rule-card rc-zhug"><strong>现在：</strong>I play basketball every day.</div>
+      <div class="rule-card rc-bin"><strong>过去：</strong>I played basketball yesterday / I went to the hills last week.</div>
+      <div class="rule-card rc-xing"><strong>将来：</strong>I will play basketball tomorrow / I am going to play tennis.</div>
+      <div class="rule-card rc-ming"><strong>排序技巧：</strong>先找主语，再找动词部分，最后把时间状语放句尾或句首。</div>
+    </div>
+    <div class="note-panel"><div class="np-title">诊断方法</div>排序题实质是验证"主谓宾 + 时态 + 时间"的语序。先定时态变形，再排语序，最后读一遍检查通顺。</div>
+  </div>
+</div>
+
+<!-- ==================== P34 词汇复现检测 ==================== -->
+<div class="page" id="page34">
+  <div class="page-content">
+    <h1 class="page-title">词汇复现检测</h1>
+    <p class="page-subtitle">语境填词</p>
+    <div class="section-head"><span class="sh-num">诊</span><span class="sh-title">阶段检测 · 词汇</span></div>
+    <div class="card"><div class="card-title">🎯 用本课词填空</div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_E02_Q1" data-knowledge-id="K_vocab_new" data-section="diagnosis" data-template-id="E-WRITE-CONTEXT" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="Q038">
+        <div class="qq-text" style="margin-bottom:8px">【词汇】The hotel is in the ___ part of the city. (中心)</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="central" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_E02_Q2" data-knowledge-id="K_vocab_new" data-section="diagnosis" data-template-id="E-WRITE-CONTEXT" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="retrieval" data-qid="Q039">
+        <div class="qq-text" style="margin-bottom:8px">【词汇】I ___ (不喜欢) getting up early.</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="dislike" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">检测提示</div>central 中心；dislike 不喜欢（反义 like）。注意拼写。</div>
+    <div class="card"><div class="card-title">🎯 词汇复现 · 更多语境</div>
+      <div class="rule-card rc-zhug"><strong>We climbed the ___ near the town.</strong>（小山）→ hill</div>
+      <div class="rule-card rc-bin"><strong>The excited children fed the ___ in the river.</strong>（鸭子）→ ducks</div>
+      <div class="rule-card rc-xing"><strong>This ticket is too ___ for me.</strong>（贵的）→ expensive</div>
+      <div class="rule-card rc-ming"><strong>Keeping a good ___ helps me learn well.</strong>（习惯）→ habit</div>
+      <div class="rule-card rc-qita"><strong>In ___ with the old one, the new plan is better.</strong>（对比）→ contrast</div>
+    </div>
+    <div class="note-panel"><div class="np-title">目标词四类</div>地点（hill/central）· 情感（dislike/expensive/cheap）· 数量（minimum/maximum）· 抽象（habit/contrast）。按类记忆更牢。</div>
+  </div>
+</div>
+
+<!-- ==================== P35 当堂小测 ==================== -->
+<div class="page" id="page35">
+  <div class="page-content">
+    <h1 class="page-title">当堂小测</h1>
+    <p class="page-subtitle">综合检测</p>
+    <div class="section-head"><span class="sh-num">测</span><span class="sh-title">阶段检测 · 小测</span></div>
+    <div class="quiz-cols">
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_E03_Q1" data-knowledge-id="K_tense_past" data-section="drill" data-template-id="E-POINT-USE" data-interaction-type="single_choice" data-action-type="point" data-cognitive-level="application" data-qid="Q040">
+        <div class="qq-text">【小测】We ___ a good time at the match last night.</div>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. have</button>
+        <button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. had</button>
+        <button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. has</button>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_E03_Q2" data-knowledge-id="K_task" data-section="drill" data-template-id="E-WRITE-USE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q041">
+        <div class="qq-text" style="margin-bottom:8px">【小测】My team ___ (win) the match yesterday.（填过去式）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="won" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+    </div>
+    <div class="note-panel"><div class="np-title">解析</div>last night → 过去时 had；win 的过去式是 won。</div>
+  </div>
+</div>
+
+<!-- ==================== P36 错因分析 ==================== -->
+<div class="page" id="page36">
+  <div class="page-content">
+    <h1 class="page-title">错因分析</h1>
+    <p class="page-subtitle">知识 · 理解 · 方法 · 粗心</p>
+    <div class="section-head"><span class="sh-num">析</span><span class="sh-title">阶段检测 · 错因归因</span></div>
+    <div class="kmap">
+      <div class="kmap-node"><div class="kn-title">① 知识类</div><div class="kn-body">时态标志词记混、形容词副词不分、介词搭配错误</div></div>
+      <div class="kmap-node"><div class="kn-title">② 理解类</div><div class="kn-body">阅读找不到证据、推断过头、主旨抓偏</div></div>
+      <div class="kmap-node"><div class="kn-title">③ 方法类</div><div class="kn-body">不回原文定位、不划关键词、不检查时态</div></div>
+      <div class="kmap-node"><div class="kn-title">④ 粗心类</div><div class="kn-body">拼写漏字母（bought→boght）、单复数、漏看否定</div></div>
+    </div>
+    <div class="tip-box"><strong>订正流程：</strong>先归因，再订正，最后用新句复现该知识点。</div>
+    <div class="card"><div class="card-title">🔍 本课典型错误与对策</div>
+      <div class="rule-card rc-zhug"><strong>错误1：</strong>三单与过去式混用（He go → He goes / He went）<br><em>对策：先看标志词定时态，三单只出现在一般现在时</em></div>
+      <div class="rule-card rc-bin"><strong>错误2：</strong>形容词/副词不分（play good → play well）<br><em>对策：动词后用副词；is/feel 后用形容词</em></div>
+      <div class="rule-card rc-xing"><strong>错误3：</strong>like 后接动词形式错误（like to doing）<br><em>对策：like doing 或 like to do 都对，但介词后只用 doing</em></div>
+      <div class="rule-card rc-ming"><strong>错误4：</strong>阅读推断脱离原文<br><em>对策：每个选项找原文证据，选"最合理"</em></div>
+      <div class="rule-card rc-qita"><strong>错误5：</strong>拼写漏字母（bought→boght）<br><em>对策：订正时慢拼三遍，归类到"粗心"并二次检查</em></div>
+    </div>
+    <div class="note-panel"><div class="np-title">错题本使用</div>错误按"知识/理解/方法/粗心"四类归档，每类积累 3 题后集中重做；同类错误不再归入新错题本。</div>
+  </div>
+</div>
+<!-- ==================== P37 课堂总结 ==================== -->
+<div class="page" id="page37">
+  <div class="page-content">
+    <h1 class="page-title">课堂总结</h1>
+    <p class="page-subtitle">本课四线回顾</p>
+    <div class="section-head"><span class="sh-num">结</span><span class="sh-title">课堂总结 · 思维导图</span></div>
+    <div class="kmap">
+      <div class="kmap-node"><div class="kn-title">词汇 30 词</div><div class="kn-body">20 巩固词（运动/娱乐）+ 10 目标词（hill, duck, dislike, central, expensive...）</div></div>
+      <div class="kmap-node"><div class="kn-title">三大时态</div><div class="kn-body">现在（every day）↔ 过去（yesterday）↔ 将来（tomorrow）</div></div>
+      <div class="kmap-node"><div class="kn-title">形副介词</div><div class="kn-body">形容词修名词、副词修动词；介词表方位/时间/交通</div></div>
+      <div class="kmap-node"><div class="kn-title">假期综合</div><div class="kn-body">地点 → 交通 → 预算 → 活动，完成一份假期计划</div></div>
+    </div>
+    <div class="tip-box"><strong>一句话总结：</strong>用三大时态 + 形副介词，把假期计划说得清楚又地道。</div>
+    <div class="card"><div class="card-title">📌 本课四条达成清单</div>
+      <div class="rule-card rc-zhug"><strong>① 词汇：</strong>能正确拼写并用语境使用 10 个目标词，巩固 20 个运动/娱乐/描述词。<br><em>达标自测：hill / central / expensive / cheap / habit 能造句</em></div>
+      <div class="rule-card rc-bin"><strong>② 时态：</strong>能根据标志词在 now / past / future 三态间切换，并正确变形动词。</div>
+      <div class="rule-card rc-xing"><strong>③ 词性：</strong>能区分形容词与副词的位置与作用，掌握 -ing / -ly 常见规则。</div>
+      <div class="rule-card rc-ming"><strong>④ 综合：</strong>能完成一份含地点、交通、预算、活动的假期计划（口头或书面）。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== P38 课堂总结思维导图 ==================== -->
+<div class="page" id="page38">
+  <div class="page-content">
+    <h1 class="page-title">知识结构图</h1>
+    <p class="page-subtitle">语法整合框架</p>
+    <div class="section-head"><span class="sh-num">图</span><span class="sh-title">课堂总结 · 结构</span></div>
+    <div class="grid-3">
+      <div class="ext-card"><div class="ext-cat">时态</div><div class="ext-body">一般现在 / 过去 / 将来，由时间标志词判断</div></div>
+      <div class="ext-card"><div class="ext-cat">词性</div><div class="ext-body">形容词 vs 副词；-ing 形容词描述事物特征</div></div>
+      <div class="ext-card"><div class="ext-cat">搭配</div><div class="ext-body">介词 + 名词；like doing；be good at doing</div></div>
+    </div>
+    <div class="note-panel"><div class="np-title">自测回顾</div>遇到时间标志词先定三态；遇到空缺先判定词性；遇到介词先想搭配。</div>
+    <div class="card"><div class="card-title">🧭 本课知识结构总览</div>
+      <div class="rule-card rc-zhug"><strong>时态轴：</strong>一般现在（频率）→ 一般过去（yesterday）→ 一般将来（tomorrow）<br><em>三态共用同一话题，靠时间标志词区分</em></div>
+      <div class="rule-card rc-bin"><strong>词性轴：</strong>形容词（修名词/is 后）↔ 副词（修动词）<br><em>-ing 修饰物、-ed 修饰人</em></div>
+      <div class="rule-card rc-xing"><strong>介词轴：</strong>方位（in/on/under/near）· 时间（at/on/in）· 交通（by/take/on foot）</div>
+      <div class="rule-card rc-ming"><strong>动词形式轴：</strong>like doing / want to do / be good at doing<br><em>介词后 + doing</em></div>
+      <div class="rule-card rc-qita"><strong>语篇轴：</strong>假期计划 = 地点 + 交通 + 预算 + 活动，三篇阅读 + 综合诊断反复复现</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== P39 课后任务 ==================== -->
+<div class="page" id="page39">
+  <div class="page-content">
+    <h1 class="page-title">课后任务</h1>
+    <p class="page-subtitle">少而精 · 可检查</p>
+    <div class="section-head"><span class="sh-num">任</span><span class="sh-title">课后巩固</span></div>
+    <div class="card"><div class="card-title">📌 三项任务</div>
+      <div class="rule-card rc-zhug"><strong>任务一 · 词汇A4纸：</strong>整理 30 词，标注词性、搭配、例句</div>
+      <div class="rule-card rc-bin"><strong>任务二 · 假期计划：</strong>用 3 种时态写一段 60–70 词假期计划（地点/交通/预算/活动）</div>
+      <div class="rule-card rc-xing"><strong>任务三 · 订正：</strong>把本课错题归类（知识/理解/方法/粗心）并二次订正</div>
+    </div>
+    <div class="tip-box"><strong>下节课预习：</strong>Unit 2 Home Sweet Home 家庭成员与房间表达。</div>
+    <div class="card"><div class="card-title">📋 本课自查清单</div>
+      <div class="rule-card rc-zhug"><strong>□ 词汇：</strong>10 个目标词能拼会造句；20 个巩固词能认读。</div>
+      <div class="rule-card rc-bin"><strong>□ 时态：</strong>能说出三态结构并各造一句；能看标志词定时态。</div>
+      <div class="rule-card rc-xing"><strong>□ 形副：</strong>能区分形容词/副词位置，掌握 -ing / -ly 规则。</div>
+      <div class="rule-card rc-ming"><strong>□ 介词/动词：</strong>能正确使用方位/时间/交通介词，掌握 like doing 等搭配。</div>
+      <div class="rule-card rc-qita"><strong>□ 综合：</strong>能口述或用一段话描述自己的假期计划（含交通与预算）。</div>
+    </div>
+    <div class="note-panel"><div class="np-title">完成标准</div>五项自查项若能独立完成 4 项及以上，即可进入第05课；未达标项列入下节课前复习清单。</div>
+  </div>
+</div>
+
+<!-- ==================== P40 延伸阅读策略 ==================== -->
+<div class="page" id="page40">
+  <div class="page-content">
+    <h1 class="page-title">延伸阅读策略</h1>
+    <p class="page-subtitle">限时阅读训练</p>
+    <div class="section-head"><span class="sh-num">延</span><span class="sh-title">延伸巩固</span></div>
+    <div class="card"><div class="card-title">📖 假期主题延伸阅读</div>
+      <div class="rule-card rc-zhug"><strong>每日训练：</strong>每天限时读 1 篇 100–160 词短文，划线索、标证据</div>
+      <div class="rule-card rc-bin"><strong>词语猜测：</strong>遇到生词先看上下文，不立即查词典</div>
+      <div class="rule-card rc-xing"><strong>主题迁移：</strong>把课文中的交通、预算、活动词用到自己的计划里</div>
+    </div>
+    <div class="tip-box"><strong>下节课衔接：</strong>Unit 2 家庭主题，继续 30 词模型与语法整合。</div>
+    <div class="tip-box"><strong>每日一练小目标：</strong>每天积累 3 个假期主题词块，一周即完成 21 词的迁移积累。</div>
+    <div class="card"><div class="card-title">📖 假期主题延伸资源</div>
+      <div class="rule-card rc-zhug"><strong>阅读素材：</strong>假期日记 / 旅行明信片 / 旅游广告 / 家庭计划表<br><em>关注交通方式、预算数字、活动安排三类信息</em></div>
+      <div class="rule-card rc-bin"><strong>听力素材：</strong>旅行社咨询对话 / 车站广播 / 家庭商量出行<br><em>捕捉时间、地点、价格关键词</em></div>
+      <div class="rule-card rc-xing"><strong>写作素材：</strong>给朋友写一封"我的假期计划"信件<br><em>用三态切换 + 形副 + 介词，结构清晰</em></div>
+      <div class="rule-card rc-ming"><strong>口语素材：</strong>和同学模拟"商量假期"对话<br><em>用 be going to / will 表达计划，配合语气词</em></div>
+    </div>
+    <div class="note-panel"><div class="np-title">学法建议</div>每天限时读 1 篇 100–160 词短文并划线索，把生词归入"交通/预算/活动"三类，积累到假期主题词库。</div>
+  </div>
+</div>
+
+<!-- ==================== P41 复习与下节预告 ==================== -->
+<div class="page" id="page41">
+  <div class="page-content">
+    <h1 class="page-title">复习与下节预告</h1>
+    <p class="page-subtitle">本课回顾</p>
+    <div class="section-head"><span class="sh-num">复</span><span class="sh-title">复习要点</span></div>
+    <div class="grid-2">
+      <div class="ext-card"><div class="ext-cat">本课关键词</div><div class="ext-body">hill / duck / dislike / central / expensive / cheap / minimum / maximum / habit / contrast</div></div>
+      <div class="ext-card"><div class="ext-cat">本课语法</div><div class="ext-body">三大时态对比；形容词与副词；介词与动词形式</div></div>
+    </div>
+    <div class="tip-box"><strong>预告：</strong>第05课 Unit 2 Home Sweet Home —— 家庭空间与接待，学习 can/could 请求与方位介词。</div>
+    <div class="card"><div class="card-title">🔁 本课重难点回忆</div>
+      <div class="rule-card rc-zhug"><strong>时态易错：</strong>过去式不规则变形（went/bought/won/had）；三单与过去式混用。</div>
+      <div class="rule-card rc-bin"><strong>词性易错：</strong>be 后接形容词（is relaxing）；动词后接副词（plays well）。</div>
+      <div class="rule-card rc-xing"><strong>介词易错：</strong>交通 by bus / take a bus；时间 at/on/in 混用。</div>
+      <div class="rule-card rc-ming"><strong>动词形式：</strong>like doing 与 want to do 结构不同，不能互换。</div>
+    </div>
+    <div class="note-panel"><div class="np-title">下节衔接</div>第05课将以"家庭"为新主线，但会持续复用本课的三态、形副与介词框架，形成纵向迁移。</div>
+    <div class="tip-box"><strong>本课关键词回顾：</strong>hill, duck, dislike, central, expensive, cheap, minimum, maximum, habit, contrast —— 10 目标词已全部进入语境使用。</div>
+  </div>
+</div>
+
+<!-- ==================== P42 结束页 ==================== -->
+<div class="page" id="page42">
+  <div class="page-content">
+    <div class="cover-wrap">
+      <div class="cover-badge">Grade 7 → 8 · Capacity Plus</div>
+      <div class="cover-title">第04课 完成</div>
+      <div class="cover-sub">Unit 1 综合复现与基础语法整合 · 假期计划</div>
+      <div class="note-panel" style="max-width:720px;"><div class="np-title">收获与展望</div>
+        <div class="body-text" style="margin:0;">熟练运用三大时态与形副介词，完成假期计划，为八年级 Unit 2 打基础。本课圆满达成 30 词、四大语法线与三篇阅读训练目标。</div>
+      </div>
+      <div class="card" style="max-width:720px;"><div class="card-title">✅ 本课完成后你将能</div>
+        <div class="rule-card rc-zhug">用三种时态描述同一假期话题，并正确进行动词变形。</div>
+        <div class="rule-card rc-bin">区分并正确使用形容词与副词，掌握 -ing / -ly 规则。</div>
+        <div class="rule-card rc-xing">正确使用方位、时间、交通介词与 like doing 等动词形式。</div>
+        <div class="rule-card rc-ming">综合运用以上知识，完成一份含地点、交通、预算、活动的假期计划。</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ==================== P43 词汇总表 ==================== -->
+<div class="page" id="page43">
+  <div class="page-content">
+    <h1 class="page-title">本课 30 词总表</h1>
+    <p class="page-subtitle">七年级巩固 20 + 八上目标 10</p>
+    <div class="section-head"><span class="sh-num">总</span><span class="sh-title">词汇总表 · 音形义</span></div>
+    <div class="card"><div class="card-title">🎯 八上目标词 10 个</div>
+      <div class="rule-card rc-zhug"><strong>hill</strong> /hɪl/ n. 小山｜climb the hill<br><strong>duck</strong> /dʌk/ n. 鸭子｜feed the ducks<br><strong>dislike</strong> /dɪsˈlaɪk/ v. 不喜欢｜dislike doing</div>
+      <div class="rule-card rc-bin"><strong>central</strong> /ˈsentrəl/ adj. 中心的｜central part<br><strong>expensive</strong> /ɪkˈspensɪv/ adj. 昂贵的｜too expensive<br><strong>cheap</strong> /tʃiːp/ adj. 便宜的（反 expensive）</div>
+      <div class="rule-card rc-xing"><strong>minimum</strong> /ˈmɪnɪməm/ adj./n. 最低｜minimum cost<br><strong>maximum</strong> /ˈmæksɪməm/ adj./n. 最高｜maximum price<br><strong>habit</strong> /ˈhæbɪt/ n. 习惯｜a good habit</div>
+      <div class="rule-card rc-ming"><strong>contrast</strong> /ˈkɒntrɑːst/ n. 对比｜in contrast</div>
+    </div>
+    <div class="card"><div class="card-title">🎾 七年级巩固词 20 个</div>
+      <div class="rule-card rc-zhug"><strong>运动类：</strong>sport 运动｜basketball 篮球｜soccer 足球｜volleyball 排球｜tennis 网球｜ping-pong 乒乓球｜bat 球拍｜ball 球｜play 打/踢/玩｜team 队｜match 比赛</div>
+      <div class="rule-card rc-bin"><strong>描述类：</strong>good 好的｜interesting 有趣的｜fun 有趣的｜relaxing 令人放松的｜boring 无聊的｜difficult 困难的｜easy 容易的</div>
+      <div class="rule-card rc-xing"><strong>其他：</strong>sound 听起来｜TV 电视</div>
+    </div>
+    <div class="tip-box"><strong>记忆法：</strong>运动词与 play 搭配；-ing 形容词描述事物；反义词成对记（expensive↔cheap，minimum↔maximum）。</div>
+    <div class="card"><div class="card-title">🧠 目标词 · 搭配与例句</div>
+      <div class="rule-card rc-zhug"><strong>hill</strong> n. 小山<br><em>go up the hill；climb a hill；a hill near the town</em></div>
+      <div class="rule-card rc-bin"><strong>duck</strong> n. 鸭子<br><em>feed the ducks；a duck in the pond；swim like a duck</em></div>
+      <div class="rule-card rc-xing"><strong>dislike</strong> v. 不喜欢（反 like）<br><em>dislike doing；I dislike getting up early.</em></div>
+      <div class="rule-card rc-ming"><strong>central</strong> adj. 中心的<br><em>the central part；central square；central heating</em></div>
+      <div class="rule-card rc-qita"><strong>expensive / cheap</strong> 反义形容词<br><em>too expensive；a cheap ticket；expensive vs cheap 对比</em></div>
+      <div class="rule-card rc-zhug"><strong>minimum / maximum</strong> 最低 / 最高<br><em>minimum cost；maximum price；minimum vs maximum</em></div>
+      <div class="rule-card rc-bin"><strong>habit</strong> n. 习惯<br><em>a good/bad habit；form a habit；keep a habit</em></div>
+      <div class="rule-card rc-xing"><strong>contrast</strong> n. 对比<br><em>in contrast；the contrast between two tenses</em></div>
+    </div>
+    <div class="note-panel"><div class="np-title">词网记忆</div>把 10 个目标词按"地点（hill/central）→ 事物（duck）→ 感受（dislike/expensive/cheap）→ 数量（minimum/maximum）→ 习惯（habit）→ 方法（contrast）"串成假期主题词网。</div>
+  </div>
+</div>
+
+<!-- ==================== P44 语法手册 ==================== -->
+<div class="page" id="page44">
+  <div class="page-content">
+    <h1 class="page-title">语法手册</h1>
+    <p class="page-subtitle">本课语法整合速查</p>
+    <div class="section-head"><span class="sh-num">语</span><span class="sh-title">语法速查 · 总表</span></div>
+    <div class="grid-2">
+      <div class="card"><div class="card-title">📊 三大时态对比</div>
+        <div class="rule-card rc-zhug"><strong>一般现在时：</strong>do / does / 动词原形或 -s<br><em>标志：usually, often, every day</em><br>例：He plays basketball every day.</div>
+        <div class="rule-card rc-bin"><strong>一般过去时：</strong>动词过去式 / did<br><em>标志：yesterday, last week, ago</em><br>例：We went to the hills yesterday.</div>
+        <div class="rule-card rc-xing"><strong>一般将来时：</strong>will + 原形 / be going to + 原形<br><em>标志：tomorrow, next week</em><br>例：We will take a train tomorrow.</div>
+      </div>
+      <div class="card"><div class="card-title">🧩 形容词与副词</div>
+        <div class="rule-card rc-zhug"><strong>形容词修名词：</strong>a good player；The game is relaxing.<br><em>be 动词后接形容词</em></div>
+        <div class="rule-card rc-bin"><strong>副词修动词：</strong>play well；run fast<br><em>常加 -ly；fast/well 形副同形</em></div>
+        <div class="rule-card rc-xing"><strong>-ing 形容词：</strong>relaxing/boring/interesting/exciting<br><em>描述事物特征（令人...）</em></div>
+      </div>
+      <div class="card"><div class="card-title">📍 介词与动词形式</div>
+        <div class="rule-card rc-zhug"><strong>方位：</strong>in（里）on（上）under（下）near（附近）<br><em>in the river / near the hill</em></div>
+        <div class="rule-card rc-bin"><strong>时间：</strong>at+时刻 on+某天 in+月/年<br><em>at 8:00 / on Monday / in August</em></div>
+        <div class="rule-card rc-xing"><strong>交通：</strong>by bus / take a bus / on foot</div>
+      </div>
+      <div class="card"><div class="card-title">🔗 常用动词形式</div>
+        <div class="rule-card rc-zhug">like doing / want to do / be good at doing<br><em>介词后接动名词 -ing</em></div>
+        <div class="rule-card rc-bin">can + 原形 / must + 原形 / will + 原形</div>
+        <div class="rule-card rc-xing">help sb do / let sb do / make sb do</div>
+      </div>
+    </div>
+    <div class="tip-box"><strong>速查口诀：</strong>先定时态看标志，再定词性看位置，最后想搭配选词形。</div>
+    <div class="card"><div class="card-title">📘 时态 · 动词变形速查</div>
+      <div class="rule-card rc-zhug"><strong>规则过去式 +ed：</strong>play→played / watch→watched<br><em>stay→stayed；like→liked；stop→stopped</em></div>
+      <div class="rule-card rc-bin"><strong>高频不规则（本课）：</strong>go→went / see→saw / buy→bought / win→won / have→had<br><em>eat→ate / drink→drank / come→came</em></div>
+      <div class="rule-card rc-xing"><strong>三单 +s/es：</strong>plays / watches / goes / does<br><em>辅音+y 变 ier：study→studies</em></div>
+      <div class="rule-card rc-ming"><strong>将来时固定：</strong>will + 原形；be going to + 原形<br><em>am/is/are 随主语变化</em></div>
+    </div>
+    <div class="card"><div class="card-title">📘 词性 · 易错对照</div>
+      <div class="rule-card rc-zhug"><strong>good vs well：</strong>good 形容词（a good player）；well 副词（plays well）</div>
+      <div class="rule-card rc-bin"><strong>interesting vs interested：</strong>-ing 修饰物（a relaxing game）；-ed 修饰人（I am interested）</div>
+      <div class="rule-card rc-xing"><strong>expensive vs cheap：</strong>反义词成对记；常与 price/cost 搭配</div>
+      <div class="rule-card rc-ming"><strong>minimum vs maximum：</strong>lower / upper 界限；minimum cost 最低花费 / maximum price 最高价格</div>
+    </div>
+    <div class="card"><div class="card-title">📘 介词 · 动词搭配自查</div>
+      <div class="rule-card rc-zhug"><strong>方位：</strong>in（里）on（上）under（下）near（附近）behind（后面）between（之间）</div>
+      <div class="rule-card rc-bin"><strong>时间：</strong>at + 时刻；on + 星期/日期；in + 月/年/季节；for + 时间段</div>
+      <div class="rule-card rc-xing"><strong>交通：</strong>by + 交通；take + 交通；on foot；ride a bike</div>
+      <div class="rule-card rc-ming"><strong>动名词：</strong>介词后接 doing：good at playing / fond of reading</div>
+    </div>
+    <div class="note-panel"><div class="np-title">自查方法</div>遮住例句，凭口诀复述三项内容；再回归 45 页综合诊断短文验证掌握程度。错项回到对应页重做同类题。</div>
+  </div>
+</div>
+
+<!-- ==================== P45 综合诊断短文 ==================== -->
+<div class="page" id="page45">
+  <div class="page-content">
+    <h1 class="page-title">综合诊断短文</h1>
+    <p class="page-subtitle">语篇运用三步走</p>
+    <div class="section-head"><span class="sh-num">诊</span><span class="sh-title">阶段检测 · 语篇</span></div>
+    <div class="read-block" data-source-id="LMX-L04-MIX-004">
+      <div class="read-title">📄 填词补全短文</div>
+      <div class="read-body">My name is Lucy. I am a student. I ___ (play) basketball after school every day. Last week, my team ___ (win) a match. It was exciting! Tomorrow we ___ (play) a volleyball game. I think it will be fun. I like sports because they are good for my health. Sports are easy for me, but homework is sometimes difficult. I want to keep a good habit of doing sports every day.</div>
+      <div class="read-src">source_id: LMX-L04-MIX-004 · 综合诊断改编</div>
+    </div>
+    <div class="card"><div class="card-title">🎯 语篇填空</div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_MIX_Q1" data-knowledge-id="K_mix" data-section="diagnosis" data-template-id="E-WRITE-CLOZE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q042">
+        <div class="qq-text" style="margin-bottom:8px">【语篇】I ___ (play) basketball after school every day.（填每天的动作）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="play" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_MIX_Q2" data-knowledge-id="K_mix" data-section="diagnosis" data-template-id="E-WRITE-CLOZE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q043">
+        <div class="qq-text" style="margin-bottom:8px">【语篇】Last week, my team ___ (win) a match.（填过去式）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="won" placeholder="输入过去式" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+      <div class="quiz-q" data-interaction-item="1" data-question-id="LMX_L04_MIX_Q3" data-knowledge-id="K_mix" data-section="diagnosis" data-template-id="E-WRITE-CLOZE" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-qid="Q044">
+        <div class="qq-text" style="margin-bottom:8px">【语篇】Tomorrow we ___ (play) a volleyball game.（填将来时）</div>
+        <div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="will play" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+      </div>
+    </div>
+    <div class="tip-box"><strong>综合诊断：</strong>同一语篇中三种时态切换——every day（现在）→ last week（过去）→ tomorrow（将来）。</div>
+    <div class="card"><div class="card-title">📝 综合诊断 · 自评标准</div>
+      <div class="rule-card rc-zhug"><strong>满 3 空全对：</strong>已掌握三态基本切换，可进入第05课。</div>
+      <div class="rule-card rc-bin"><strong>对 2 空：</strong>时态判断基本正确，需强化不规则过去式拼写。</div>
+      <div class="rule-card rc-xing"><strong>对 1 空：</strong>时态标志词识别不稳，回到第 11–14 页重做。</div>
+      <div class="rule-card rc-ming"><strong>对 0 空：</strong>需先复习三大时态结构表，再回做语篇填空。</div>
+    </div>
+    <div class="note-panel"><div class="np-title">诊断后行动</div>根据自评结果回到对应语法页重做同类题，直到能不看提示独立完成语篇填空，才算真正达标。</div>
+  </div>
+</div>
+
+</div>
+<div class="bottom-hud">
+  <button class="hud-btn" id="prevBtn" onclick="prevPage()">◀ 上一页</button>
+  <div class="hud-progress"><div class="hud-progress-bar" id="progressBar" style="width:2.2%;"></div></div>
+  <div class="hud-page" id="pageCounter">1 / 45</div>
+  <div class="hud-progress"><div class="hud-progress-bar" id="progressBar2" style="width:2.2%;"></div></div>
+  <button class="hud-btn" id="nextBtn" onclick="nextPage()">下一页 ▶</button>
+</div>
+
+<!-- 底部导航标签条 -->
+<div class="nav-pills" id="navPills">
+  <div class="nav-pill active" onclick="goToPage(1)">封面</div>
+  <div class="nav-pill" onclick="goToPage(2)">学习目标</div>
+  <div class="nav-pill" onclick="goToPage(3)">语境复习</div>
+  <div class="nav-pill" onclick="goToPage(4)">巩固词1-10</div>
+  <div class="nav-pill" onclick="goToPage(5)">巩固词11-20</div>
+  <div class="nav-pill" onclick="goToPage(6)">目标词1-5</div>
+  <div class="nav-pill" onclick="goToPage(7)">目标词6-10</div>
+  <div class="nav-pill" onclick="goToPage(8)">词汇分类</div>
+  <div class="nav-pill" onclick="goToPage(9)">释义连线</div>
+  <div class="nav-pill" onclick="goToPage(10)">选词填空</div>
+  <div class="nav-pill" onclick="goToPage(11)">三大时态对比</div>
+  <div class="nav-pill" onclick="goToPage(12)">一般现在时</div>
+  <div class="nav-pill" onclick="goToPage(13)">一般过去时</div>
+  <div class="nav-pill" onclick="goToPage(14)">一般将来时</div>
+  <div class="nav-pill" onclick="goToPage(15)">时态句子排序</div>
+  <div class="nav-pill" onclick="goToPage(16)">时态标志连线</div>
+  <div class="nav-pill" onclick="goToPage(17)">形副总览</div>
+  <div class="nav-pill" onclick="goToPage(18)">形副选择</div>
+  <div class="nav-pill" onclick="goToPage(19)">形副填词</div>
+  <div class="nav-pill" onclick="goToPage(20)">形副分类</div>
+  <div class="nav-pill" onclick="goToPage(21)">介词与动词</div>
+  <div class="nav-pill" onclick="goToPage(22)">介词填空</div>
+  <div class="nav-pill" onclick="goToPage(23)">动词形式拖拽</div>
+  <div class="nav-pill" onclick="goToPage(24)">动词形式排序</div>
+  <div class="nav-pill" onclick="goToPage(25)">阅读A篇</div>
+  <div class="nav-pill" onclick="goToPage(26)">阅读B篇·任务型</div>
+  <div class="nav-pill" onclick="goToPage(27)">阅读C篇·问答</div>
+  <div class="nav-pill" onclick="goToPage(28)">阅读策略</div>
+  <div class="nav-pill" onclick="goToPage(29)">假期计划任务</div>
+  <div class="nav-pill" onclick="goToPage(30)">假期规划对话</div>
+  <div class="nav-pill" onclick="goToPage(31)">交通与预算</div>
+  <div class="nav-pill" onclick="goToPage(32)">活动交通连线</div>
+  <div class="nav-pill" onclick="goToPage(33)">时态诊断</div>
+  <div class="nav-pill" onclick="goToPage(34)">词汇复现检测</div>
+  <div class="nav-pill" onclick="goToPage(35)">当堂小测</div>
+  <div class="nav-pill" onclick="goToPage(36)">错因分析</div>
+  <div class="nav-pill" onclick="goToPage(37)">课堂总结</div>
+  <div class="nav-pill" onclick="goToPage(38)">知识结构图</div>
+  <div class="nav-pill" onclick="goToPage(39)">课后任务</div>
+  <div class="nav-pill" onclick="goToPage(40)">延伸阅读</div>
+  <div class="nav-pill" onclick="goToPage(41)">复习预告</div>
+  <div class="nav-pill" onclick="goToPage(42)">结束页</div>
+  <div class="nav-pill" onclick="goToPage(43)">词汇总表</div>
+  <div class="nav-pill" onclick="goToPage(44)">语法手册</div>
+  <div class="nav-pill" onclick="goToPage(45)">综合诊断</div>
+</div>
+
+<script>
+/* ==================== Web Audio API ==================== */
+var audioCtx=null;
+function initAudio(){if(!audioCtx){try{audioCtx=new(window.AudioContext||window.webkitAudioContext)();}catch(e){}}if(audioCtx&&audioCtx.state==='suspended'){audioCtx.resume();}}
+function playCorrect(){initAudio();if(!audioCtx)return;[523.25,659.25,783.99].forEach(function(f,i){var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='triangle';o.frequency.value=f;g.gain.setValueAtTime(0,audioCtx.currentTime+i*.12);g.gain.linearRampToValueAtTime(.2,audioCtx.currentTime+i*.12+.01);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+i*.12+.1);o.connect(g);g.connect(audioCtx.destination);o.start(audioCtx.currentTime+i*.12);o.stop(audioCtx.currentTime+i*.12+.1);});}
+function playError(){initAudio();if(!audioCtx)return;[392,261.63].forEach(function(f,i){var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='square';o.frequency.value=f;g.gain.setValueAtTime(0,audioCtx.currentTime+i*.25);g.gain.linearRampToValueAtTime(.15,audioCtx.currentTime+i*.25+.01);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+i*.25+.2);o.connect(g);g.connect(audioCtx.destination);o.start(audioCtx.currentTime+i*.25);o.stop(audioCtx.currentTime+i*.25+.2);});}
+function playPageTurn(){initAudio();if(!audioCtx)return;var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.setValueAtTime(800,audioCtx.currentTime);o.frequency.exponentialRampToValueAtTime(400,audioCtx.currentTime+.08);g.gain.setValueAtTime(.15,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.08);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.08);}
+
+/* ==================== IndexedDB ==================== */
+var db=null,DB_NAME='EnglishCoursewareDB',DB_VERSION=1,STORE_NAME='answerRecords';
+var studentId='stu_lmx',sessionId='L04_'+new Date().toISOString().slice(0,10).replace(/-/g,'');
+var answerRecords=[];
+function initDB(){if(!window.indexedDB)return;var r=indexedDB.open(DB_NAME,DB_VERSION);r.onerror=function(e){};r.onsuccess=function(e){db=e.target.result;loadExistingRecords();};r.onupgradeneeded=function(e){db=e.target.result;if(!db.objectStoreNames.contains(STORE_NAME)){var s=db.createObjectStore(STORE_NAME,{keyPath:'event_id'});s.createIndex('student_id','student_id',{unique:false});s.createIndex('question_id','question_id',{unique:false});s.createIndex('session_id','session_id',{unique:false});}};}
+function loadExistingRecords(){if(!db)return;var tx=db.transaction([STORE_NAME],'readonly');var s=tx.objectStore(STORE_NAME);var idx=s.index('session_id');var r=idx.getAll(sessionId);r.onsuccess=function(e){answerRecords=e.target.result||[];updateSyncStatus();};}
+function saveAnswer(qid,sa,ca,ok,att,tu,hu){if(!db)return;var eid=studentId+'_'+sessionId+'_'+qid+'_'+(att||1);var rec={event_id:eid,student_id:studentId,session_id:sessionId,question_id:qid,attempt_no:att||1,student_answer:sa,correct_answer:ca,is_correct:ok,time_used:tu||0,hint_used:hu||false,timestamp:new Date().toISOString(),synced:'pending',sync_status:'pending'};var tx=db.transaction([STORE_NAME],'readwrite');tx.objectStore(STORE_NAME).put(rec);answerRecords.push(rec);updateSyncStatus();}
+function updateSyncStatus(){var p=answerRecords.filter(function(r){return r.sync_status==='pending';}).length;var d=document.getElementById('syncDot'),t=document.getElementById('syncText');if(!d)return;if(p===0){d.className='sync-dot';t.textContent='本地已保存 ('+answerRecords.length+'条)';}else{d.className='sync-dot pending';t.textContent='待同步 ('+p+'/'+answerRecords.length+')';}}
+function exportData(e){if(e)e.stopPropagation();if(answerRecords.length===0){alert('暂无答题数据可导出');return;}var json=JSON.stringify(answerRecords,null,2);var csv=convertToCSV(answerRecords);var jb=new Blob([json],{type:'application/json'});var cb=new Blob(['\uFEFF'+csv],{type:'text/csv'});var jl=document.createElement('a');jl.href=URL.createObjectURL(jb);jl.download='L04_answers.json';jl.click();setTimeout(function(){var cl=document.createElement('a');cl.href=URL.createObjectURL(cb);cl.download='L04_answers.csv';cl.click();},300);}
+function convertToCSV(records){var h=['event_id','student_id','session_id','question_id','attempt_no','student_answer','correct_answer','is_correct','time_used','hint_used','sync_status','timestamp'];var csv=h.join(',')+'\n';records.forEach(function(r){csv+=h.map(function(f){var v=(f==='sync_status')?(r.sync_status||r.synced||'pending'):(r[f]!==undefined?String(r[f]):'');if(v.indexOf(',')!==-1||v.indexOf('"')!==-1){v='"'+v.replace(/"/g,'""')+'"';}return v;}).join(',')+'\n';});return csv;}
+
+/* ==================== 页面导航 ==================== */
+var currentPage=1,totalPages=45;
+function goToPage(n){if(n<1||n>totalPages)return;initAudio();var op=document.getElementById('page'+currentPage),np=document.getElementById('page'+n);if(op){op.classList.remove('active');op.scrollTop=0;}if(np){np.classList.add('active');np.scrollTop=0;}currentPage=n;updateNav();updateCounter();playPageTurn();}
+function nextPage(){if(currentPage<totalPages)goToPage(currentPage+1);}
+function prevPage(){if(currentPage>1)goToPage(currentPage-1);}
+function updateNav(){var pills=document.querySelectorAll('.nav-pill');pills.forEach(function(p,i){if(i+1===currentPage)p.classList.add('active');else p.classList.remove('active');});var pb=document.getElementById('progressBar'),pb2=document.getElementById('progressBar2');if(pb)pb.style.width=(currentPage/totalPages*100)+'%';if(pb2)pb2.style.width=(currentPage/totalPages*100)+'%';var pv=document.getElementById('prevBtn'),nv=document.getElementById('nextBtn');if(pv)pv.disabled=currentPage<=1;if(nv)nv.disabled=currentPage>=totalPages;}
+function updateCounter(){document.getElementById('pageCounter').textContent=currentPage+' / '+totalPages;}
+
+/* ==================== 翻页click（含豁免名单）==================== */
+document.addEventListener('click',function(e){
+  if(e.target.closest('.quiz-opt')||e.target.closest('.game-option')||
+     e.target.closest('.fill-check-btn')||e.target.closest('.fill-input')||
+     e.target.closest('.nav-pill')||e.target.closest('.vocab-card')||
+     e.target.closest('.cover-wrap')||e.target.closest('.card')||
+     e.target.closest('.modal-content')||e.target.closest('.export-btn')||
+     e.target.closest('.drag-container')||e.target.closest('.link-container')||
+     e.target.closest('.order-container')||
+     e.target.closest('button')||e.target.closest('input')||
+     e.target.closest('textarea')||e.target.closest('.hud-btn')||
+     e.target.closest('.top-bar')||e.target.closest('.bottom-hud')||
+     e.target.closest('.nav-pills')||e.target.closest('.evidence-task')||
+     e.target.closest('.drag-word')||e.target.closest('.drag-slot')||
+     e.target.closest('.link-item')||e.target.closest('.order-chunk')||
+     e.target.closest('.flash-btn')) return;
+  var c=document.getElementById('pagesContainer');if(!c)return;
+  var r=c.getBoundingClientRect();var x=e.clientX-r.left;
+  if(x<r.width/2){prevPage();}else{nextPage();}
+});
+
+/* ==================== 键盘导航 ==================== */
+document.addEventListener('keydown',function(e){if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp'){prevPage();}
+  else if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){e.preventDefault();nextPage();}
+  else if(e.key==='f'||e.key==='F'){if(!document.fullscreenElement)document.documentElement.requestFullscreen();else document.exitFullscreen();}
+});
+
+/* ==================== 动画 ==================== */
+function burst(el){var r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;for(var i=0;i<14;i++){var p=document.createElement('div');p.className='burst-p';var a=Math.random()*6.283,d=50+Math.random()*70;p.style.left=cx+'px';p.style.top=cy+'px';p.style.setProperty('--dx',(Math.cos(a)*d)+'px');p.style.setProperty('--dy',(Math.sin(a)*d)+'px');p.style.background=(Math.random()<.5?'#F59E0B':'#B45309');document.body.appendChild(p);(function(x){setTimeout(function(){x.remove();},700);})(p);}}
+function shake(el){el.style.animation='none';void el.offsetWidth;el.style.animation='shake .4s';}
+
+/* ==================== 选择题判题 ==================== */
+function checkOpt(btn){
+  if(btn&&btn.currentTarget&&btn.currentTarget.classList&&btn.currentTarget.classList.contains('quiz-opt'))btn=btn.currentTarget;
+  var q=btn.parentNode;if(q.dataset.done)return;q.dataset.done='1';
+  var opts=q.querySelectorAll('.quiz-opt');
+  for(var i=0;i<opts.length;i++)opts[i].classList.add('locked');
+  var ok=btn.dataset.correct==='1';
+  if(typeof saveAnswer==='function'&&q.dataset.qid){
+    var qid=q.dataset.qid,ca='';
+    for(var j=0;j<opts.length;j++){if(opts[j].dataset.correct==='1')ca=opts[j].textContent.replace(/^[A-C]\.\s*/,'').trim();}
+    saveAnswer(qid,btn.textContent.replace(/^[A-C]\.\s*/,'').trim(),ca,ok,parseInt(q.dataset.attempt||'1',10),0,false);
+  }
+  if(ok){btn.classList.add('opt-correct');playCorrect();burst(btn);}
+  else{q.dataset.wrong='1';btn.classList.add('opt-wrong');playError();shake(btn);
+    for(var i=0;i<opts.length;i++){if(opts[i].dataset.correct==='1')opts[i].classList.add('opt-correct');}
+    var h=q.querySelector('.et-undo-hint');
+    if(!h){h=document.createElement('div');h.className='et-undo-hint';h.onclick=function(ev){ev.stopPropagation();};q.appendChild(h);}
+    h.textContent='答错后双击可撤销回答';
+  }
+}
+function undoQuiz(q){var opts=q.querySelectorAll('.quiz-opt');for(var i=0;i<opts.length;i++)opts[i].classList.remove('opt-correct','opt-wrong','locked');delete q.dataset.done;delete q.dataset.wrong;q.dataset.attempt=String(parseInt(q.dataset.attempt||'1',10)+1);var h=q.querySelector('.et-undo-hint');if(h){h.textContent='已撤销，请重答';setTimeout(function(){if(h.parentNode)h.parentNode.removeChild(h);},3000);}}
+document.addEventListener('dblclick',function(e){var q=e.target.closest('.quiz-q');if(q&&q.dataset.done==='1'&&q.dataset.wrong==='1')undoQuiz(q);});
+
+/* ==================== 填空判题 ==================== */
+function checkFill(btn){
+  var wrap=btn.closest('.fill-input-wrap')||btn.parentNode;
+  var input=wrap.querySelector('input.fill-input');
+  if(!input||input.dataset.done)return;
+  var val=input.value.trim().toLowerCase();
+  var correct=(input.getAttribute('data-correct')||'').toLowerCase();
+  if(!val){input.focus();return;}
+  input.dataset.done='1';
+  var ok=val===correct;
+  if(ok){input.classList.add('correct');if(typeof playCorrect==='function')playCorrect();}
+  else{input.classList.add('wrong');if(typeof playError==='function')playError();
+    var q=input.closest('.quiz-q,.evidence-task');if(q){var a=document.createElement('div');a.className='fill-answer show';a.textContent='正确答案：'+correct;q.appendChild(a);}}
+  if(typeof saveAnswer==='function'){var qid='';var p=input.closest('[data-question-id]');if(p)qid=p.getAttribute('data-question-id');else{var pq=input.closest('.quiz-q');if(pq&&pq.dataset.qid)qid=pq.dataset.qid;}saveAnswer(qid,val,correct,ok,1,0,false);}
+}
+
+/* ==================== 排序判题 ==================== */
+function orderClick(el){var c=el.closest('.order-container');var a=c.querySelector('.order-chunk.active');if(a&&a!==el)a.classList.remove('active');el.classList.toggle('active');}
+function orderSubmit(btn){var c=btn.closest('.order-container');var chunks=c.querySelectorAll('.order-chunk');var order=c.getAttribute('data-order');if(!order)return;var correct=JSON.parse(order);var userOrder=Array.from(chunks).map(function(c){return c.textContent.trim();});var ok=userOrder.length===correct.length&&userOrder.every(function(v,i){return v===correct[i];});var r=c.querySelector('.order-result');if(!r){r=document.createElement('div');r.className='order-result';c.appendChild(r);}if(ok){r.textContent='✓ 排序正确！';r.className='order-result correct';chunks.forEach(function(cc){cc.classList.add('placed');});if(typeof playCorrect==='function')playCorrect();}else{r.textContent='✗ 顺序不对，再试试。';r.className='order-result wrong';if(typeof playError==='function')playError();}var p=c.closest('[data-question-id]');var qid=p?p.getAttribute('data-question-id'):'';if(typeof saveAnswer==='function')saveAnswer(qid,userOrder.join('|'),correct.join('|'),ok,1,0,false);}
+
+/* ==================== 拖拽判题 ==================== */
+function dragSelect(el){var c=el.closest('.drag-container');var a=c.querySelector('.drag-word.selected');if(a===el){el.classList.remove('selected');return;}if(a)a.classList.remove('selected');el.classList.add('selected');}
+function dragPlace(el){var c=el.closest('.drag-container');var s=c.querySelector('.drag-word.selected');if(!s)return;el.textContent=s.textContent;el.dataset.value=s.textContent;el.classList.add('filled');s.classList.add('used');s.classList.remove('selected');}
+function dragSubmit(btn){var c=btn.closest('.drag-container');var slots=c.querySelectorAll('.drag-slot');var order=c.getAttribute('data-order');if(!order)return;var correct=JSON.parse(order);var allFilled=true,ok=true;slots.forEach(function(s,i){if(!s.dataset.value){allFilled=false;return;}if(s.dataset.value===correct[i]){s.classList.add('correct');}else{s.classList.add('wrong');ok=false;}});if(!allFilled){var r=c.querySelector('.drag-result');if(!r){r=document.createElement('div');r.className='drag-result';c.appendChild(r);}r.textContent='请先填入所有空位';return;}var r=c.querySelector('.drag-result');if(!r){r=document.createElement('div');r.className='drag-result';c.appendChild(r);}if(ok){r.textContent='✓ 全部正确！';r.className='drag-result correct';if(typeof playCorrect==='function')playCorrect();}else{r.textContent='✗ 有错误，红色标记处需修改。';r.className='drag-result wrong';if(typeof playError==='function')playError();}var p=c.closest('[data-question-id]');var qid=p?p.getAttribute('data-question-id'):'';if(typeof saveAnswer==='function'){var ua=Array.from(slots).map(function(s){return s.dataset.value||'';}).join('|');saveAnswer(qid,ua,correct.join('|'),ok,1,0,false);}}
+
+/* ==================== 连线判题 ==================== */
+function linkClick(el){var c=el.closest('.link-container');var sel=c.querySelector('.link-item.selected');if(sel===el){el.classList.remove('selected');return;}if(sel){var leftEl=sel.closest('.link-left')?sel:el;var rightEl=sel.closest('.link-right')?sel:el;if(leftEl===rightEl){el.classList.remove('selected');return;}sel.classList.remove('selected');el.classList.remove('selected');leftEl.classList.add('matched');rightEl.classList.add('matched');var lp=leftEl.getAttribute('data-pair'),rp=rightEl.getAttribute('data-pair');if(lp===rp){leftEl.classList.add('correct');rightEl.classList.add('correct');if(typeof playCorrect==='function')playCorrect();}else{leftEl.classList.add('wrong-match');rightEl.classList.add('wrong-match');setTimeout(function(){leftEl.classList.remove('matched','wrong-match');rightEl.classList.remove('matched','wrong-match');},800);if(typeof playError==='function')playError();}var unmatched=c.querySelectorAll('.link-item:not(.matched)');if(unmatched.length===0){var li=c.querySelectorAll('.link-left .link-item');var allCorrect=c.querySelectorAll('.link-item.correct').length===li.length*2;var r=c.querySelector('.link-result');if(!r){r=document.createElement('div');r.className='link-result';c.appendChild(r);}if(allCorrect){r.textContent='✓ 全部配对正确！';r.className='link-result correct';}else{r.textContent='✗ 有配对错误。';r.className='link-result wrong';c.querySelectorAll('.link-item.matched').forEach(function(m){m.classList.remove('matched','correct','wrong-match');});}var p=c.closest('[data-question-id]');var qid=p?p.getAttribute('data-question-id'):'';if(typeof saveAnswer==='function')saveAnswer(qid,'completed','all',allCorrect,1,0,false);}}else{el.classList.add('selected');}}
+
+/* ==================== 初始化 ==================== */
+initDB();
+updateCounter();
+updateNav();
+</script>
+</body>
+</html>

@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>语法检测课件 · 刘洋（八升九培优）</title>
+<style>
+  :root{
+    --bg:#0F172A; --bg2:#1E293B; --card:#FFFFFF; --card-soft:#F8FAFC;
+    --ink:#1E293B; --ink-soft:#64748B; --line:#E2E8F0;
+    --main:#2563EB; --main-dark:#1D4ED8; --main-soft:#EFF6FF;
+    --conj:#DC2626; --conj-soft:#FEF2F2;   /* 连接词 红 */
+    --clause:#16A34A; --clause-soft:#F0FDF4; /* 从句 绿 */
+    --ok:#16A34A; --ok-soft:#F0FDF4;
+    --err:#DC2626; --err-soft:#FEF2F2;
+    --gold:#D97706; --gold-soft:#FFFBEB;
+    --grad:linear-gradient(135deg,#2563EB 0%,#7C3AED 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Microsoft YaHei","PingFang SC","Segoe UI",sans-serif;
+    background:var(--bg);color:var(--ink);min-height:100vh;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:18px 16px 80px}
+
+  /* ===== 顶部品牌条 ===== */
+  .top{background:var(--grad);border-radius:18px 18px 0 0;color:#fff;padding:22px 24px 18px;
+    box-shadow:0 8px 24px rgba(37,99,235,.25)}
+  .top-row{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+  .top h1{font-size:22px;letter-spacing:.5px;font-weight:800}
+  .top .sub{font-size:13px;opacity:.9;margin-top:4px}
+  .badge{display:inline-block;background:rgba(255,255,255,.18);backdrop-filter:blur(4px);
+    border:1px solid rgba(255,255,255,.25);font-size:12px;padding:4px 12px;border-radius:999px;margin-top:8px}
+
+  /* 计时胶囊 */
+  .timer{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 16px;font-variant-numeric:tabular-nums}
+  .timer .ico{font-size:16px}
+  .timer .val{font-size:20px;font-weight:800;letter-spacing:1px;min-width:64px;text-align:center}
+  .timer.warn{background:rgba(217,119,6,.85);border-color:rgba(255,255,255,.4);animation:pulse 1s infinite}
+  .timer.over{background:rgba(220,38,38,.85)}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+
+  /* ===== 状态条 ===== */
+  .statusbar{background:var(--card);border-radius:0 0 14px 14px;padding:14px 20px;
+    box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .prog-txt{font-size:13px;color:var(--ink-soft);white-space:nowrap}
+  .prog-txt b{color:var(--main);font-size:18px}
+  .pbar{flex:1;height:8px;background:var(--line);border-radius:999px;overflow:hidden;position:relative}
+  .pbar i{position:absolute;left:0;top:0;height:100%;background:var(--grad);border-radius:999px;
+    transition:width .5s cubic-bezier(.4,0,.2,1)}
+  .score-txt{font-size:13px;color:var(--ink-soft);white-space:nowrap}
+  .score-txt b{color:var(--gold);font-size:18px}
+
+  /* ===== 题目卡 ===== */
+  .qcard{background:var(--card);border-radius:16px;padding:24px 26px;
+    box-shadow:0 10px 30px rgba(15,23,42,.08);border:1px solid var(--line);
+    animation:slideIn .4s cubic-bezier(.4,0,.2,1)}
+  @keyframes slideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .qhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:12px;flex-wrap:wrap}
+  .qno{font-size:14px;font-weight:800;color:var(--main)}
+  .qno .num{display:inline-block;background:var(--grad);color:#fff;width:28px;height:28px;
+    line-height:28px;text-align:center;border-radius:8px;margin-right:8px;font-size:14px}
+  .qpoint{font-size:12px;font-weight:700;background:var(--main-soft);color:var(--main-dark);
+    padding:5px 14px;border-radius:999px;border:1px solid #DBEAFE}
+
+  /* 三色图例（仅复合句显示） */
+  .legend{display:flex;gap:16px;font-size:12px;color:var(--ink-soft);margin-bottom:14px;flex-wrap:wrap;
+    padding:10px 14px;background:var(--card-soft);border-radius:10px;border:1px dashed var(--line)}
+  .legend span{display:flex;align-items:center;gap:6px;font-weight:600}
+  .dot{width:12px;height:12px;border-radius:4px;display:inline-block}
+  .d-m{background:var(--main)} .d-c{background:var(--conj)} .d-cl{background:var(--clause)}
+
+  /* 句子展示 */
+  .sent{font-size:18px;line-height:2;padding:18px 20px;background:var(--card-soft);
+    border-radius:12px;border:1px solid var(--line);margin-bottom:18px;letter-spacing:.3px}
+  .sent .blank{display:inline-block;min-width:96px;padding:0 6px;margin:0 2px;
+    border-bottom:2.5px solid var(--main);color:var(--main);font-weight:800;text-align:center;
+    transition:all .25s}
+  .sent .blank.filled{background:var(--main-soft);border-radius:6px 6px 0 0}
+  .m{color:var(--main);font-weight:600}
+  .c{color:var(--conj);font-weight:800}
+  .cl{color:var(--clause);font-weight:600}
+  .n{color:var(--ink)}  /* 普通文本（非复合句） */
+
+  /* 选项 */
+  .opts{display:grid;gap:12px}
+  .opt{display:flex;align-items:center;background:#fff;border:2px solid var(--line);
+    border-radius:12px;padding:13px 16px;font-size:16px;cursor:pointer;transition:all .2s;
+    text-align:left;position:relative}
+  .opt:hover:not(.dis){border-color:var(--main);background:var(--main-soft);
+    box-shadow:0 4px 12px rgba(37,99,235,.12)}
+  .opt.sel{border-color:var(--main);background:var(--main-soft)}
+  .opt.ok{border-color:var(--ok);background:var(--ok-soft)}
+  .opt.ok .lk{background:var(--ok)}
+  .opt.bad{border-color:var(--err);background:var(--err-soft)}
+  .opt.bad .lk{background:var(--err)}
+  .opt.dis{cursor:default}
+  .opt.dis:not(.ok):not(.bad){opacity:.6}
+  .lk{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+    width:30px;height:30px;border-radius:8px;background:var(--line);color:#fff;
+    font-weight:800;margin-right:14px;font-size:14px;transition:all .2s}
+  .opt:not(.ok):not(.bad) .lk{color:var(--ink-soft)}
+
+  /* 反馈 */
+  .fb{max-height:0;overflow:hidden;transition:max-height .35s ease,margin .35s;
+    margin-top:0;border-radius:12px}
+  .fb.show{max-height:320px;margin-top:16px}
+  .fb-inner{padding:16px 18px;font-size:14px;line-height:1.75}
+  .fb.ok .fb-inner{background:var(--ok-soft);border-left:4px solid var(--ok);border-radius:0 12px 12px 0}
+  .fb.bad .fb-inner{background:var(--err-soft);border-left:4px solid var(--err);border-radius:0 12px 12px 0}
+  .fb .t{font-weight:800;margin-bottom:6px;font-size:15px}
+  .fb.ok .t{color:var(--ok)} .fb.bad .t{color:var(--err)}
+  .fb .exp{color:var(--ink-soft)} .fb .exp b{color:var(--main-dark)}
+
+  /* 导航 */
+  .nav{display:flex;justify-content:space-between;margin-top:20px;gap:14px}
+  .btn{padding:13px 24px;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;
+    transition:all .2s;font-family:inherit}
+  .btn.primary{background:var(--grad);color:#fff;box-shadow:0 4px 14px rgba(37,99,235,.3)}
+  .btn.primary:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,99,235,.4)}
+  .btn.ghost{background:#fff;border:2px solid var(--line);color:var(--ink-soft)}
+  .btn.ghost:hover:not(:disabled){border-color:var(--main);color:var(--main)}
+  .btn:disabled{opacity:.4;cursor:not-allowed}
+
+  /* ===== 开始页 ===== */
+  .page{display:none}
+  .page.active{display:block;animation:slideIn .5s}
+  .start{text-align:center;background:var(--card);border-radius:18px;padding:48px 28px;
+    box-shadow:0 10px 30px rgba(15,23,42,.08);border:1px solid var(--line)}
+  .start .icon{font-size:56px;margin-bottom:12px}
+  .start h2{font-size:26px;color:var(--ink);margin-bottom:10px;font-weight:800}
+  .start .lead{color:var(--ink-soft);font-size:15px;margin-bottom:22px;max-width:560px;margin-left:auto;margin-right:auto}
+  .rules{display:inline-block;text-align:left;background:var(--card-soft);border:1px solid var(--line);
+    border-radius:14px;padding:18px 24px;font-size:14px;color:var(--ink-soft);line-height:2.1;margin:8px auto 26px}
+  .rules b{color:var(--ink)}
+  .rules .row3{display:flex;gap:18px;justify-content:center;margin:8px 0;flex-wrap:wrap}
+  .rules .row3 span{display:flex;align-items:center;gap:6px}
+  .bigbtn{display:inline-flex;align-items:center;gap:10px;background:var(--grad);color:#fff;
+    border:none;padding:16px 52px;border-radius:14px;font-size:18px;font-weight:800;cursor:pointer;
+    transition:all .25s;box-shadow:0 8px 24px rgba(37,99,235,.35);font-family:inherit}
+  .bigbtn:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(37,99,235,.45)}
+
+  /* ===== 结束页 ===== */
+  .final{text-align:center;background:var(--card);border-radius:18px;padding:44px 28px;
+    box-shadow:0 10px 30px rgba(15,23,42,.08);border:1px solid var(--line)}
+  .final .crown{font-size:48px;margin-bottom:8px}
+  .ring-wrap{position:relative;width:160px;height:160px;margin:16px auto}
+  .ring-wrap svg{transform:rotate(-90deg)}
+  .ring-wrap .ring-txt{position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center}
+  .ring-wrap .ring-num{font-size:42px;font-weight:800;color:var(--main)}
+  .ring-wrap .ring-den{font-size:14px;color:var(--ink-soft)}
+  .final h2{font-size:22px;color:var(--ink);margin:14px 0 6px}
+  .final .msg{color:var(--ink-soft);font-size:15px;margin-bottom:18px}
+  .flist{text-align:left;max-width:600px;margin:0 auto 22px}
+  .flist h3{font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-weight:700;
+    text-transform:uppercase;letter-spacing:1px}
+  .frow{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;
+    border-radius:10px;margin-bottom:8px;background:var(--card-soft);border:1px solid var(--line);
+    cursor:pointer;transition:all .2s;font-size:14px}
+  .frow:hover{border-color:var(--main);box-shadow:0 3px 10px rgba(37,99,235,.1)}
+  .frow.wrong{background:var(--err-soft);border-color:#FECACA}
+  .frow .pt{color:var(--ink-soft)}
+  .frow .pt b{color:var(--ink)}
+  .frow .st{font-weight:700;font-size:13px}
+  .st.ok{color:var(--ok)} .st.bad{color:var(--err)}
+  .tip{background:var(--gold-soft);border:1px solid #FDE68A;border-radius:12px;
+    padding:16px 18px;font-size:14px;color:#92400E;line-height:1.8;margin:0 auto 22px;
+    max-width:600px;text-align:left}
+  .tip b{color:#78350F}
+  .final-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* 复查模式标记 */
+  .review-flag{display:none;background:var(--gold-soft);color:#92400E;font-size:12px;font-weight:700;
+    padding:5px 12px;border-radius:999px;border:1px solid #FDE68A;margin-bottom:12px}
+  .review-flag.show{display:inline-block}
+
+  @media(max-width:560px){
+    .sent{font-size:16px;line-height:1.9}
+    .qcard{padding:18px 16px}
+    .top h1{font-size:19px}
+    .ring-wrap{width:130px;height:130px}
+    .ring-wrap .ring-num{font-size:34px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 顶部品牌条（做题时显示） -->
+  <div class="page active" id="startPage">
+    <div class="start">
+      <div class="icon">🎯</div>
+      <h2>语法检测挑战</h2>
+      <p class="lead">复合句三色标注 · 八升九培优专项。先观察句子结构，再选答案。</p>
+      <div class="rules">
+        <div class="row3">
+          <span><i class="dot d-m"></i><b>蓝色</b> = 主句</span>
+          <span><i class="dot d-c"></i><b>红色</b> = 连接词</span>
+          <span><i class="dot d-cl"></i><b>绿色</b> = 从句</span>
+        </div>
+        <div style="border-top:1px dashed var(--line);margin:10px 0;padding-top:10px">
+          共 <b>20 题</b> · 计时作答（不强制交卷）<br>
+          前 10 题初二核心语法（复合句优先），后 10 题初一重难点+选词填空必考。<br>
+          每题即时显示解析与考点，答完可复查，最后出成绩报告。
+        </div>
+      </div>
+      <button class="bigbtn" onclick="startQuiz()">开始挑战 ⏱</button>
+    </div>
+  </div>
+
+  <!-- 做题区 -->
+  <div class="page" id="quizPage">
+    <div class="top">
+      <div class="top-row">
+        <div>
+          <h1>🎯 语法检测</h1>
+          <p class="sub">复合句 · 主句 / 连接词 / 从句 三色标注</p>
+          <span class="badge">刘洋 · 八升九培优 · 2026-08-17</span>
+        </div>
+        <div class="timer" id="timer">
+          <span class="ico">⏱</span>
+          <span class="val" id="timerVal">00:00</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="statusbar">
+      <span class="prog-txt">第 <b id="qCur">1</b> / <span id="qTot">10</span> 题</span>
+      <div class="pbar"><i id="pFill" style="width:10%"></i></div>
+      <span class="score-txt">得分 <b id="scoreNum">0</b></span>
+    </div>
+
+    <div class="qcard">
+      <span class="review-flag" id="reviewFlag">👁 复查模式 · 可随时修改答案</span>
+      <div class="qhead">
+        <span class="qno"><span class="num" id="qNum">1</span>第 <span id="qNoTxt">1</span> 题</span>
+        <span class="qpoint" id="qPoint">考点</span>
+      </div>
+      <div class="legend" id="legendBox" style="display:none">
+        <span><i class="dot d-m"></i>主句</span>
+        <span><i class="dot d-c"></i>连接词</span>
+        <span><i class="dot d-cl"></i>从句</span>
+      </div>
+      <div class="sent" id="sentBox"></div>
+      <div class="opts" id="optsBox"></div>
+      <div class="fb" id="fbBox"><div class="fb-inner" id="fbInner"></div></div>
+      <div class="nav">
+        <button class="btn ghost" id="prevBtn" onclick="prevQ()">← 上一题</button>
+        <button class="btn primary" id="nextBtn" onclick="nextQ()">下一题 →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 结束页 -->
+  <div class="page" id="finalPage">
+    <div class="final">
+      <div class="crown" id="crown">🏆</div>
+      <div class="ring-wrap">
+        <svg width="160" height="160">
+          <circle cx="80" cy="80" r="70" fill="none" stroke="#E2E8F0" stroke-width="12"/>
+          <circle id="ringFill" cx="80" cy="80" r="70" fill="none" stroke="url(#rg)" stroke-width="12"
+            stroke-linecap="round" stroke-dasharray="439.8" stroke-dashoffset="439.8"/>
+          <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#7C3AED"/>
+          </linearGradient></defs>
+        </svg>
+        <div class="ring-txt">
+          <div class="ring-num" id="finalScore">0</div>
+          <div class="ring-den" id="ring-den">/ 20</div>
+        </div>
+      </div>
+      <h2 id="finalMsg">挑战完成！</h2>
+      <p class="msg" id="finalSub"></p>
+      <div class="flist">
+        <h3>逐题结果（点击复查）</h3>
+        <div id="flist"></div>
+      </div>
+      <div class="tip" id="tipBox"></div>
+      <div class="final-actions">
+        <button class="btn ghost" onclick="enterReview()">👁 复查错题</button>
+        <button class="btn primary" onclick="restart()">再来一次</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ============ 题目数据（10 题 · 对齐试课流程单） ============
+// seg.t: m=主句 c=连接词 cl=从句 n=普通文本(非复合句) b=空格
+// 非复合句题不含 m/c/cl，图例自动隐藏
+const QS = [
+{
+  point:"现在完成 vs 一般过去",
+  segs:[
+   {t:"m",s:"I "},{t:"b",s:""},{t:"m",s:" my keys"},{t:"c",s:" so "},
+   {t:"cl",s:"I can't find them anywhere now."}
+  ],
+  opts:["lost","have lost","lose","am losing"], ans:1,
+  exp:"主句用 <b>have lost</b>（现在完成时）——过去丢了钥匙，<b>现在仍找不到</b>，结果影响现在。<br>若选 lost（一般过去），只说明过去丢了，与后文 \"can't find them\"（现在找不到）矛盾。"
+},
+{
+  point:"have been to / have gone to",
+  segs:[
+   {t:"m",s:"She "},{t:"b",s:""},{t:"m",s:" to Beijing twice"},{t:"c",s:"; "},
+   {t:"cl",s:"she went there again last year."}
+  ],
+  opts:["has been","has gone","went","goes"], ans:0,
+  exp:"<b>twice</b> 表示\"经历\"→ 用 <b>has been to</b>（去过，人已回）。<br>has gone to 表示\"去了没回\"，与\"又去了一次（again）\"矛盾。"
+},
+{
+  point:"for / since 辨析",
+  segs:[
+   {t:"m",s:"He has lived here "},{t:"b",s:""},{t:"m",s:" 2020"},{t:"c",s:" and "},
+   {t:"cl",s:"I have known him "},{t:"b2",s:""},{t:"cl",s:" five years."}
+  ],
+  opts:["for / since","since / for","in / at","at / in"], ans:1,
+  twoBlanks:true,
+  exp:"<b>2020</b> 是时间点 → 用 <b>since</b>；<b>five years</b> 是时间段 → 用 <b>for</b>。<br>口诀：for 段 since 点。"
+},
+{
+  point:"被动语态（含时态）",
+  segs:[
+   {t:"m",s:"The new library "},{t:"b",s:""},{t:"m",s:" last year"},{t:"c",s:" and "},
+   {t:"cl",s:"it "},{t:"b2",s:""},{t:"cl",s:" by thousands of readers since then."}
+  ],
+  opts:["was built / has been used","is built / used","built / is using","has built / was used"], ans:0,
+  twoBlanks:true,
+  exp:"去年建成（过去动作）→ <b>was built</b>（一般过去时被动）；<b>since then</b> 搭配现在完成 → <b>has been used</b>（现在完成时被动）。<br>被动语态 = be + 过去分词，时态由 be 体现。"
+},
+{
+  point:"宾语从句语序",
+  segs:[
+   {t:"m",s:"Could you tell me "},{t:"b",s:""},
+   {t:"c",s:"（宾语从句须用陈述语序）"}
+  ],
+  opts:["where is the nearest bank","where the nearest bank is","what the nearest bank is","how is the nearest bank"], ans:1,
+  exp:"宾语从句必须用<b>陈述语序</b>（主语 + 谓语）：where the nearest bank <b>is</b>，不能写成 where is the bank。<br>这是 80+ 学生最常见的隐性丢分点。"
+},
+{
+  point:"定语从句 who / which",
+  segs:[
+   {t:"m",s:"The boy "},{t:"b",s:""},{t:"cl",s:" is standing under the tree"},
+   {t:"m",s:" is my cousin"},{t:"cl2",s:" who studies in Beijing."}
+  ],
+  opts:["who","which","where","whose"], ans:0,
+  exp:"先行词 the boy（<b>人</b>），在从句中作<b>主语</b> → 用 <b>who</b>。<br>which 指物，where 指地点，whose 表所属。"
+},
+{
+  point:"非谓语 stop doing / to do",
+  segs:[
+   {t:"m",s:"The workers were tired"},{t:"c",s:" so "},{t:"cl",s:"they stopped "},
+   {t:"b",s:""},{t:"cl",s:" a rest"},{t:"c",s:" and then "},{t:"cl",s:"they stopped "},
+   {t:"b2",s:""},{t:"cl",s:" the machines."}
+  ],
+  opts:["to have / to work","having / to work","to have / working","having / working"], ans:2,
+  twoBlanks:true,
+  exp:"<b>stop to do</b> = 停下来去做（休息）→ 第一空 <b>to have</b>；<b>stop doing</b> = 停止正在做的事（工作）→ 第二空 <b>working</b>。"
+},
+{
+  point:"最高级 / 比较级",
+  segs:[
+   {t:"m",s:"This is "},{t:"b",s:""},{t:"m",s:" beautiful park in the city"},{t:"c",s:" and "},
+   {t:"cl",s:"people visit it every weekend."}
+  ],
+  opts:["the most","more","most","much more"], ans:0,
+  exp:"<b>in the city</b> 表比较范围（三者以上）→ 用最高级 <b>the most beautiful</b>。<br>最高级前必须加 the。"
+},
+{
+  point:"情态动词表推测 must / can't",
+  segs:[
+   {t:"m",s:"The light is on"},{t:"c",s:" so "},{t:"cl",s:"Tom "},{t:"b",s:""},
+   {t:"cl",s:" be at home"},{t:"c",s:"; but "},{t:"cl",s:"the door is locked, so he "},
+   {t:"b2",s:""},{t:"cl",s:" be inside."}
+  ],
+  opts:["can't / must","must / can't","might / might","must / must"], ans:1,
+  twoBlanks:true,
+  exp:"灯亮 → 肯定推测 <b>must be</b>（一定在家）；门锁着 → 否定推测 <b>can't be</b>（不可能在里面）。<br>must 表肯定推测，can't 表否定推测，均对现在情况。"
+},
+{
+  point:"过去进行时 vs 一般过去时",
+  segs:[
+   {t:"cl",s:"When I "},{t:"b",s:""},{t:"cl",s:" in the library yesterday"},
+   {t:"c",s:","},{t:"m",s:" the lights suddenly went out."}
+  ],
+  opts:["read","was reading","am reading","have read"], ans:1,
+  exp:"\"昨天当时正在读书\"被打断 → 用过去进行时 <b>was reading</b>。<br>when 引导的时间状语从句中，长动作（进行）被短动作（一般过去）打断：was reading ... went out。"
+},
+// ========== 第 11-20 题：初一重难点 + 选词填空必考 ==========
+{
+  point:"名词复数（选词填空高频）",
+  segs:[
+   {t:"m",s:"There are two "},{t:"b",s:""},{t:"m",s:" and three "},{t:"b2",s:""},
+   {t:"m",s:" in the box"},{t:"c",s:" but "},{t:"cl",s:"I don't know whose they are."}
+  ],
+  opts:["boxs / knifes","boxes / knifes","boxes / knives","boxs / knives"], ans:2,
+  twoBlanks:true,
+  exp:"选词填空必考名词复数：<b>box → boxes</b>（以 x 结尾加 -es）；<b>knife → knives</b>（fe 结尾变 v 加 -es）。<br>常见不规则：child→children，foot→feet，man→men。"
+},
+{
+  point:"可数/不可数 + many/much",
+  segs:[
+   {t:"m",s:"There isn't "},{t:"b",s:""},{t:"m",s:" milk in the glass"},{t:"c",s:" because "},
+   {t:"cl",s:"the children have drunk too much."}
+  ],
+  opts:["many","a few","much","few"], ans:2,
+  exp:"<b>milk</b> 是不可数名词 → 用 <b>much</b>（much milk 许多牛奶）。<br>many + 可数复数；a few/few + 可数复数。选词填空常考可数/不可数搭配。"
+},
+{
+  point:"代词主宾格/物主（选词高频）",
+  segs:[
+   {t:"m",s:"This is "},{t:"b",s:""},{t:"m",s:" new bike"},{t:"c",s:", and "},
+   {t:"cl",s:"the old one is yours."}
+  ],
+  opts:["me","I","mine","my"], ans:3,
+  exp:"空格后是名词 new bike → 用<b>形容词性物主代词 my</b>（my + 名词）。<br>me 宾格、I 主格、mine 名词性物主（后不能再跟名词）。"
+},
+{
+  point:"反身代词",
+  segs:[
+   {t:"m",s:"The little girl can dress "},{t:"b",s:""},{t:"m",s:" now"},{t:"c",s:" although "},
+   {t:"cl",s:"she is only four years old."}
+  ],
+  opts:["herself","himself","itself","yourself"], ans:0,
+  exp:"主语 The little girl（女孩）→ 反身代词用 <b>herself</b>。<br>dress oneself 自己穿衣；enjoy oneself 玩得开心；teach oneself 自学。"
+},
+{
+  point:"冠词 a/an/the",
+  segs:[
+   {t:"m",s:"She is "},{t:"b",s:""},{t:"m",s:" honest girl"},{t:"c",s:" so "},
+   {t:"cl",s:"everyone in our class likes her."}
+  ],
+  opts:["a","an","the","/"], ans:1,
+  exp:"<b>honest</b> 的 h 不发音，以元音音素 /ɒ/ 开头 → 用 <b>an</b>。<br>同类：an hour, an honor。选词填空常考 a/an 判断（看音素不看字母）。"
+},
+{
+  point:"序数词（选词填空高频）",
+  segs:[
+   {t:"m",s:"Today is her "},{t:"b",s:""},{t:"m",s:" birthday"},{t:"c",s:" and "},
+   {t:"cl",s:"she is going to have a party with her friends."}
+  ],
+  opts:["nine","ninth","nineth","ninety"], ans:1,
+  exp:"第几个生日 → 用<b>序数词 ninth</b>（第九，her ninth birthday 她的九岁生日）。<br>不规则：first, second, third；规律变化：nine→ninth（去 e）。"
+},
+{
+  point:"形容词→副词（词形转换）",
+  segs:[
+   {t:"m",s:"Please listen "},{t:"b",s:""},{t:"m",s:" in class"},{t:"c",s:" because "},
+   {t:"cl",s:"the teacher will explain the difficult points."}
+  ],
+  opts:["careful","careless","carefully","care"], ans:2,
+  exp:"listen 是动词 → 用<b>副词 carefully</b> 修饰（careful 形容词 + ly）。<br>选词填空必考词形转换：形容词→副词加 -ly（careful→carefully, quick→quickly）。"
+},
+{
+  point:"主谓一致（选词填空高频）",
+  segs:[
+   {t:"m",s:"Neither of the two boys "},{t:"b",s:""},{t:"m",s:" from Beijing"},{t:"c",s:" but "},
+   {t:"cl",s:"both of them can speak Chinese well."}
+  ],
+  opts:["are","am","be","is"], ans:3,
+  exp:"<b>neither of + 复数名词</b> 作主语 → 谓语用<b>单数 is</b>。<br>同类：each of / either of / one of + 复数 → 谓语单数。"
+},
+{
+  point:"连词选择（复合句必考）",
+  segs:[
+   {t:"b",s:""},{t:"cl",s:" it was raining heavily,"},{t:"m",s:" the farmers kept working in the field."}
+  ],
+  opts:["Because","So","Although","If"], ans:2,
+  exp:"\"下大雨\"与\"继续干活\"是<b>转折</b>关系 → 用 <b>Although</b>（虽然）。<br>选词填空必考连词：although 虽然、because 因为、so 所以、if 如果、when 当……时。"
+},
+{
+  point:"there be 就近原则",
+  segs:[
+   {t:"m",s:"There "},{t:"b",s:""},{t:"m",s:" a book and two pens on the desk"},{t:"c",s:" and "},
+   {t:"cl",s:"they are all my little sister's."}
+  ],
+  opts:["is","are","be","am"], ans:0,
+  exp:"there be 句型<b>就近原则</b>：be 动词与最近的名词保持一致。<br>a book 是单数紧跟 there 后面 → 用 <b>is</b>（即使后面还有 two pens）。"
+},
+];
+
+// ============ 状态 ============
+let cur = 0, score = 0;
+let answered = [];        // 每题是否已答（复查时仍 true）
+let chosenArr = [];      // 每题所选选项索引（-1 未选）
+const L = ["A","B","C","D"];
+let timeUsed = 0;       // 正计时（已用秒数）
+let timerId = null;
+let finished = false;
+
+function startQuiz(){
+  document.getElementById("startPage").classList.remove("active");
+  document.getElementById("quizPage").classList.add("active");
+  document.getElementById("finalPage").classList.remove("active");
+  cur = 0; score = 0; finished = false;
+  answered = Array(QS.length).fill(false);
+  chosenArr = Array(QS.length).fill(-1);
+  timeUsed = 0;
+  startTimer();
+  render();
+}
+
+// ============ 计时器（正计时，不强制交卷） ============
+function startTimer(){
+  if(timerId) clearInterval(timerId);
+  updateTimer();
+  timerId = setInterval(()=>{
+    timeUsed++;
+    updateTimer();
+  },1000);
+}
+function updateTimer(){
+  const v = document.getElementById("timerVal");
+  const m = Math.floor(timeUsed/60).toString().padStart(2,"0");
+  const s = (timeUsed%60).toString().padStart(2,"0");
+  v.textContent = m+":"+s;
+}
+
+// ============ 渲染 ============
+function render(){
+  const q = QS[cur];
+  document.getElementById("qCur").textContent = cur+1;
+  document.getElementById("qTot").textContent = QS.length;
+  document.getElementById("qNum").textContent = cur+1;
+  document.getElementById("qNoTxt").textContent = cur+1;
+  document.getElementById("scoreNum").textContent = score;
+  document.getElementById("pFill").style.width = ((cur+1)/QS.length*100)+"%";
+  document.getElementById("qPoint").textContent = q.point;
+
+  // 三色图例：仅当句子含 m/c/cl 时显示
+  const hasColor = q.segs.some(s=>["m","c","cl","cl2"].includes(s.t));
+  document.getElementById("legendBox").style.display = hasColor ? "flex" : "none";
+
+  // 句子
+  const sb = document.getElementById("sentBox");
+  sb.innerHTML = "";
+  let blankIdx = 0;
+  q.segs.forEach(seg=>{
+    const sp = document.createElement("span");
+    if(seg.t==="b"||seg.t==="b2"){
+      sp.className = "blank";
+      const ansText = (answered[cur] && chosenArr[cur]>=0) ? q.opts[chosenArr[cur]].split(" / ")[blankIdx] : "";
+      if(ansText) sp.classList.add("filled");
+      sp.textContent = ansText || "______";
+      blankIdx++;
+    }else{
+      const cls = {m:"m",c:"c",cl:"cl",cl2:"cl",n:"n"}[seg.t]||"n";
+      sp.className = cls;
+      sp.textContent = seg.s;
+    }
+    sb.appendChild(sp);
+  });
+
+  // 选项
+  const ob = document.getElementById("optsBox");
+  ob.innerHTML = "";
+  q.opts.forEach((o,i)=>{
+    const d = document.createElement("div");
+    d.className = "opt";
+    if(answered[cur]){
+      d.classList.add("dis");
+      if(i===q.ans) d.classList.add("ok");
+      if(i===chosenArr[cur] && i!==q.ans) d.classList.add("bad");
+    }
+    d.innerHTML = "<span class='lk'>"+L[i]+"</span>"+o;
+    d.onclick = ()=>choose(i,d);
+    ob.appendChild(d);
+  });
+
+  // 反馈
+  const fb = document.getElementById("fbBox");
+  const fbi = document.getElementById("fbInner");
+  if(answered[cur]){
+    const right = chosenArr[cur]===q.ans;
+    fb.className = "fb show "+(right?"ok":"bad");
+    fbi.innerHTML = "<div class='t'>"+(right?"✅ 回答正确":"❌ 回答错误")+
+      "（正确答案："+L[q.ans]+"）</div><div class='exp'>💡 "+q.exp+"</div>";
+  }else{
+    fb.className = "fb";
+    fbi.innerHTML = "";
+  }
+
+  // 导航
+  document.getElementById("prevBtn").disabled = (cur===0);
+  const nb = document.getElementById("nextBtn");
+  nb.textContent = (cur===QS.length-1) ? "查看成绩 🏁" : "下一题 →";
+  nb.disabled = false;
+
+  // 复查标记
+  document.getElementById("reviewFlag").classList.toggle("show", finished);
+}
+
+// ============ 作答 ============
+function choose(i){
+  const q = QS[cur];
+  if(!answered[cur]){
+    // 首次作答
+    chosenArr[cur] = i;
+    answered[cur] = true;
+    if(i===q.ans) score++;
+    document.getElementById("scoreNum").textContent = score;
+  }else if(finished){
+    // 复查模式：允许改答案
+    const wasRight = chosenArr[cur]===q.ans;
+    const willRight = i===q.ans;
+    chosenArr[cur] = i;
+    if(wasRight && !willRight) score--;
+    if(!wasRight && willRight) score++;
+    document.getElementById("scoreNum").textContent = score;
+  }else{
+    return; // 非复查模式下已答，忽略
+  }
+  render();
+}
+
+function nextQ(){
+  if(cur < QS.length-1){ cur++; render(); }
+  else{ finish(); }
+}
+function prevQ(){
+  if(cur > 0){ cur--; render(); }
+}
+
+// ============ 结束 ============
+function finish(){
+  if(finished) return;
+  finished = true;
+  if(timerId){ clearInterval(timerId); timerId=null; }
+  document.getElementById("quizPage").classList.remove("active");
+  document.getElementById("finalPage").classList.add("active");
+  showFinal();
+}
+
+function showFinal(){
+  const pct = score/QS.length;
+  const circ = 2*Math.PI*70; // 439.8
+  document.getElementById("ringFill").style.strokeDashoffset = circ*(1-pct);
+  document.getElementById("finalScore").textContent = score;
+  document.getElementById("ring-den").textContent = "/ "+QS.length;
+
+  // 用时
+  const mm = Math.floor(timeUsed/60).toString().padStart(2,"0");
+  const ss = (timeUsed%60).toString().padStart(2,"0");
+  const usedStr = "用时 "+mm+":"+ss;
+
+  let msg, sub, tip, crown;
+  if(pct>=0.85){
+    crown="🏆"; msg="太强了！复合句已经难不倒你";
+    sub="语法基础非常扎实 · "+usedStr;
+    tip="你的语法基础非常扎实，可直接进入培优拔高：中考五选四、任务型阅读、长难句分析。正式课将围绕九上三大从句体系（宾语从句/定语从句/被动语态）精讲精练。";
+  }else if(pct>=0.65){
+    crown="👍"; msg="很不错！只差一点就能全对";
+    sub="有 "+(QS.length-score)+" 处细节需要打磨 · "+usedStr;
+    tip="这些正是中考高频丢分点，正式课会用「概念→判诀→陷阱题」三步法逐个击破，重点突破宾语从句语序、被动语态时态、非谓语辨析。";
+  }else if(pct>=0.45){
+    crown="💪"; msg="基础尚可，但缺口明显";
+    sub="错题集中在复合句的理解上 · "+usedStr;
+    tip="连接词与从句结构还没完全吃透。建议先系统补齐八下语法，再进入培优。";
+  }else{
+    crown="📖"; msg="别灰心，缺口大说明提升空间大";
+    sub="主要问题在从句结构识别 · "+usedStr;
+    tip="正式课将从最基本的句子成分讲起，逐步建立主句/从句概念，再练复合句。";
+  }
+  document.getElementById("crown").textContent = crown;
+  document.getElementById("finalMsg").textContent = msg;
+  document.getElementById("finalSub").textContent = sub;
+
+  // 错题清单
+  const fl = document.getElementById("flist");
+  fl.innerHTML = "";
+  QS.forEach((q,i)=>{
+    const row = document.createElement("div");
+    row.className = "frow" + (answered[i] && chosenArr[i]!==q.ans ? " wrong" : "");
+    const right = answered[i] && chosenArr[i]===q.ans;
+    row.innerHTML = "<span class='pt'><b>"+(i+1)+".</b> "+q.point+"</span>"+
+      "<span class='st "+(right?"ok":"bad")+"'>"+(right?"✓ 正确":"✗ 答案 "+L[q.ans])+"</span>";
+    row.onclick = ()=>{ enterReview(i); };
+    fl.appendChild(row);
+  });
+  document.getElementById("tipBox").innerHTML = "📌 建议："+tip;
+}
+
+// ============ 复查 ============
+function enterReview(idx){
+  document.getElementById("finalPage").classList.remove("active");
+  document.getElementById("quizPage").classList.add("active");
+  cur = (typeof idx==="number") ? idx : firstWrongIdx();
+  render();
+}
+function firstWrongIdx(){
+  for(let i=0;i<QS.length;i++){
+    if(!answered[i] || chosenArr[i]!==QS[i].ans) return i;
+  }
+  return 0;
+}
+
+function restart(){
+  document.getElementById("finalPage").classList.remove("active");
+  startQuiz();
+}
+</script>
+</body>
+</html>

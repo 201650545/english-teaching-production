@@ -1,0 +1,108 @@
+{
+  "course": "第20课",
+  "animations": {
+    "css": [
+      {"name": "fadeSlideUp", "definition": "from {opacity:0; transform:translateY(30px)} to {opacity:1; transform:translateY(0)}", "usage": "页面进入、内容块出现"},
+      {"name": "scaleUp", "definition": "from {opacity:0; transform:scale(0.85)} to {opacity:1; transform:scale(1)}", "usage": "卡片缩放出现"},
+      {"name": "bounceIn", "definition": "0%{opacity:0;transform:scale(0.3)} 50%{transform:scale(1.08)} 70%{transform:scale(0.95)} 100%{opacity:1;transform:scale(1)}", "usage": "正确反馈"},
+      {"name": "bpSwing", "definition": "0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)}", "usage": "错误反馈摇摆"},
+      {"name": "pulse", "definition": "0%,100%{transform:scale(1)} 50%{transform:scale(1.05)}", "usage": "高亮脉冲"},
+      {"name": "slideInLeft", "definition": "from {opacity:0; transform:translateX(-40px)} to {opacity:1; transform:translateX(0)}", "usage": "句子行进入"},
+      {"name": "floatY", "definition": "0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)}", "usage": "emoji浮动"},
+      {"name": "shimmer", "definition": "0%{background-position:-200% center} 100%{background-position:200% center}", "usage": "进度条闪光"}
+    ],
+    "additional": [
+      {"name": "timelineFlow", "definition": "0%{transform:translateX(-100%);opacity:0} 50%{opacity:1} 100%{transform:translateX(100%);opacity:0}", "usage": "旅行时间线流动"},
+      {"name": "tenseShift", "definition": "0%{filter:blur(4px);opacity:0.5} 50%{filter:blur(0);opacity:1} 100%{filter:blur(0);opacity:1}", "usage": "时态切换动效"},
+      {"name": "shakeX", "definition": "0%,100%{transform:translateX(0)} 10%,30%,50%,70%,90%{transform:translateX(-4px)} 20%,40%,60%,80%{transform:translateX(4px)}", "usage": "错误抖动"},
+      {"name": "cardFlyIn", "definition": "0%{opacity:0;transform:translateY(-30px) scale(0.5) rotate(-10deg)} 60%{transform:translateY(5px) scale(1.1) rotate(2deg)} 100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}", "usage": "词卡飞入"},
+      {"name": "endpointGlow", "definition": "0%{box-shadow:0 0 5px rgba(217,119,6,0.3)} 50%{box-shadow:0 0 30px rgba(217,119,6,1)} 100%{box-shadow:0 0 15px rgba(217,119,6,0.5)}", "usage": "语法终点标注发光"}
+    ]
+  },
+  "interactions": {
+    "navigation": {
+      "halfScreenClick": true,
+      "pageTurnExemption": ["quiz-q", "quiz-container", "drag-container", "link-container", "tense-container", "freq-container"],
+      "answerRevealPriority": true,
+      "keyboardArrows": true,
+      "navPills": true
+    },
+    "quiz": {
+      "type": "checkOpt",
+      "containerResolve": "btn.closest('.quiz-container')||btn.closest('.quiz-q')",
+      "feedback": {
+        "correct": "翠绿✅ + bounceIn动画 + 正确音效",
+        "wrong": "红色❌ + bpSwing动画 + 错误音效"
+      },
+      "undo": {
+        "doubleClick": true,
+        "description": "答错后双击可撤销重答"
+      },
+      "disableAfterAnswer": false,
+      "showCorrectAnswer": true
+    },
+    "dataCollection": {
+      "type": "IndexedDB",
+      "recordAnswer": true,
+      "recordUndo": true,
+      "syncMode": "realtime",
+      "exportFormats": ["json", "csv"]
+    },
+    "phonics": {
+      "type": "checkPhonics",
+      "feedback": "同quiz"
+    },
+    "answerMask": {
+      "type": "toggleMask",
+      "initial": "绿色遮罩显示'🔍 点击揭晓'",
+      "revealed": "浅绿背景显示答案 + 正确音效"
+    }
+  },
+  "interactiveComponents": {
+    "component1": {
+      "name": "旅行时态转换器",
+      "grammarTag": "G52",
+      "elements": {
+        "scene": ".travel-tense-scene",
+        "tenses": ["present", "past"],
+        "subjects": ["I", "he", "she", "we", "they"],
+        "verbs": ["climb", "go", "eat", "see", "take"]
+      },
+      "logic": {
+        "selectTense": "选择时态",
+        "selectSubject": "选择主语",
+        "selectVerb": "选择动词",
+        "generateSentence": "生成句子",
+        "compareTenses": "双列对照展示现在时与过去时"
+      }
+    },
+    "component2": {
+      "name": "频度副词时空对照器",
+      "grammarTag": "G54",
+      "elements": {
+        "scene": ".freq-time-machine-scene",
+        "adverbs": ["always", "usually", "often", "sometimes", "hardly", "never"],
+        "tenses": ["present", "past"]
+      },
+      "logic": {
+        "selectAdverb": "选择频度副词",
+        "selectTense": "选择时态",
+        "generateSentence": "生成句子",
+        "compareTenses": "双列对照展示跨时态位置不变",
+        "highlightPosition": "高亮频度副词位置(be后实前)"
+      }
+    }
+  },
+  "audio": {
+    "correct": {"freq": [880, 1100], "duration": [0.15, 0.2], "type": "sine"},
+    "error": {"freq": 220, "duration": 0.3, "type": "sawtooth"},
+    "pageTurn": {"freq": 440, "duration": 0.1, "type": "triangle"},
+    "tenseChime": {"type": "tense-chime", "description": "时态切换音效"},
+    "endpointFanfare": {"type": "fanfare", "description": "语法终点完成音效"}
+  },
+  "assets": {
+    "emojis": ["🏛️", "🧑‍💼", "📏", "⛰️", "☂️", "🌫️", "👎", "🍽️", "🗻", "🦆", "✅", "💡", "🌈", "⬇️", "🚲", "🔒", "🧠", "📝", "🔴", "🗺️", "🔍", "❌", "💡", "⭐", "🏆"],
+    "images": "none (all CSS/emoji based)",
+    "externalLibs": "none (vanilla JS)"
+  }
+}

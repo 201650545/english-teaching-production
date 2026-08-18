@@ -1,0 +1,174 @@
+{
+  "lesson": "L26",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A 篇 7 题：4 无选项 + 3 有选项（讲评页题量 7·按 3:2 比例混合）；B 篇 5 题：默认 3 无选项 + 2 有选项；五选四（§3.16）不纳入 3+2",
+  "vocab_pool": [
+    "tense",
+    "basic",
+    "present",
+    "past",
+    "continuous",
+    "progressive",
+    "perfect",
+    "action",
+    "state",
+    "custom",
+    "pattern",
+    "schedule",
+    "recently",
+    "lately",
+    "currently",
+    "temporarily",
+    "permanently",
+    "suddenly",
+    "gradually",
+    "eventually"
+  ],
+  "grammar_cap": "G16 一般现在时（非三单+标志词）/ G43 频度副词 / G46 现在进行时——三态上限；答案均为三态原文摘录或数词/时间短语，不越级",
+  "skip_pages": [
+    "阅读A解析页（Q083-Q085）：纯语法点题（时态标志词/过去式/be 变化），答案非正文内容→保留选择（§3.18.4）",
+    "阅读五选四页（§3.16 空格选答原型，不动）",
+    "阅读策略页（策略题，保留选择）"
+  ],
+  "A篇_My_Busy_School_Day": {
+    "Q076": {
+      "question": "作者每天几点起床？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "six",
+      "minimum_acceptable_answer": "6",
+      "accepted_answers": [
+        "six",
+        "at six",
+        "6",
+        "6 o'clock",
+        "i get up at six"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q077": {
+      "question": "昨天作者怎么去学校？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "the bus",
+      "minimum_acceptable_answer": "bus",
+      "accepted_answers": [
+        "the bus",
+        "by bus",
+        "bus",
+        "i took the bus",
+        "took the bus to school"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q078": {
+      "question": "'Right now, I am sitting' 用什么时态？",
+      "type": "opt",
+      "correct": "C",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q079": {
+      "question": "'We had a match last Friday' 用什么时态？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q080": {
+      "question": "我的日程表很满。My schedule ____ (be) full. 检查",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "is",
+      "minimum_acceptable_answer": "is",
+      "accepted_answers": [
+        "is"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "一般现在时/现在进行时 be 动词（G16/G46 本课考点，原句见正文）"
+    },
+    "Q081": {
+      "question": "'My teacher is writing' 表示？",
+      "type": "opt",
+      "correct": "C",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q082": {
+      "question": "作者喜欢忙碌的学校日吗？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "yes, he likes his busy school day",
+      "minimum_acceptable_answer": "yes",
+      "accepted_answers": [
+        "yes",
+        "he likes his busy school day",
+        "he likes it",
+        "yes he likes it",
+        "yes he likes his busy school day",
+        "he does",
+        "likes his busy school day"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    }
+  },
+  "B篇_A_Day_in_My_Life": {
+    "Q086": {
+      "question": "作者每天几点起床？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "half past six",
+      "minimum_acceptable_answer": "6:30",
+      "accepted_answers": [
+        "half past six",
+        "at half past six",
+        "six thirty",
+        "6:30",
+        "6:30 a.m.",
+        "6:30am",
+        "half past six every morning"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q087": {
+      "question": "昨天班级去了哪里？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "the science museum",
+      "minimum_acceptable_answer": "science museum",
+      "accepted_answers": [
+        "the science museum",
+        "science museum",
+        "they visited the science museum",
+        "my class visited the science museum"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q088": {
+      "question": "'My mother is cooking' 用什么时态？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q089": {
+      "question": "'Last night, I watched' 用什么时态？",
+      "type": "opt",
+      "correct": "B",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q090": {
+      "question": "我正把照片给家人看。I ____ (show) the photos to my family now. 检查",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "am showing",
+      "minimum_acceptable_answer": "am showing",
+      "accepted_answers": [
+        "am showing"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "一般现在时/现在进行时 be 动词（G16/G46 本课考点，原句见正文）"
+    }
+  }
+}

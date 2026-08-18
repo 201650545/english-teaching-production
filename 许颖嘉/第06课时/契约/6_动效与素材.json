@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AnimationAndAssetPlan",
+  "lesson_id": "第06课",
+  "animation_engine": "Web Audio + Canvas 2D",
+  "unique_creative": {
+    "name": "营养餐盘打卡 (Nutrition Plate Check)",
+    "trigger": "quiz correct answer (checkQ isCorrect=true)",
+    "rendering": "Canvas 2D 绘制餐盘 + 绿色对勾 + 🥗 营养满分! 文本",
+    "differentiation": "与 L5 篮球投篮喝彩零重复；L6 专属健康饮食母题"
+  },
+  "page_animations": [
+    {
+      "page_index": 1,
+      "transition_in": "fade_slide_up 0.5s ease-out",
+      "stagger_elements": [
+        {
+          "selector": ".plate-deco",
+          "delay_ms": 80,
+          "effect": "scale_up 0.3s"
+        },
+        {
+          "selector": ".medal",
+          "delay_ms": 120,
+          "effect": "pop 0.3s"
+        }
+      ]
+    },
+    {
+      "page_index": 9,
+      "transition_in": "fade_slide_up 0.5s ease-out",
+      "stagger_elements": [
+        {
+          "selector": "table.gtab tr",
+          "delay_ms": 40,
+          "effect": "fade_in 0.25s"
+        }
+      ]
+    },
+    {
+      "page_index": 16,
+      "transition_in": "fade_slide_up 0.5s ease-out",
+      "stagger_elements": [
+        {
+          "selector": ".quiz-q",
+          "delay_ms": 80,
+          "effect": "slide_left 0.3s"
+        }
+      ]
+    },
+    {
+      "page_index": 18,
+      "transition_in": "fade_slide_up 0.5s ease-out",
+      "stagger_elements": [
+        {
+          "selector": ".reading-passage",
+          "delay_ms": 60,
+          "effect": "fade_in 0.3s"
+        },
+        {
+          "selector": ".quiz-q",
+          "delay_ms": 100,
+          "effect": "slide_up 0.3s"
+        }
+      ]
+    },
+    {
+      "page_index": 20,
+      "transition_in": "fade_slide_up 0.5s ease-out",
+      "stagger_elements": [
+        {
+          "selector": ".reading-passage",
+          "delay_ms": 60,
+          "effect": "fade_in 0.3s"
+        }
+      ]
+    },
+    {
+      "page_index": 24,
+      "transition_in": "fade_slide_up 0.5s ease-out",
+      "stagger_elements": [
+        {
+          "selector": ".phonics-card",
+          "delay_ms": 100,
+          "effect": "scale_up 0.3s"
+        }
+      ]
+    },
+    {
+      "page_index": 26,
+      "transition_in": "fade_slide_up 0.5s ease-out",
+      "stagger_elements": [
+        {
+          "selector": ".ph-word",
+          "delay_ms": 30,
+          "effect": "fade_in 0.2s"
+        }
+      ]
+    },
+    {
+      "page_index": 29,
+      "transition_in": "fade_slide_up 0.5s ease-out",
+      "stagger_elements": [
+        {
+          "selector": ".summary-card",
+          "delay_ms": 100,
+          "effect": "slide_up 0.3s"
+        },
+        {
+          "selector": ".mindmap-deco",
+          "delay_ms": 200,
+          "effect": "scale_up 0.4s"
+        }
+      ]
+    }
+  ],
+  "audio_slots": {
+    "playCorrect": "三音阶上行 sine (523.25→659.25→783.99 Hz)",
+    "playError": "下行 sawtooth (220→180 Hz)",
+    "playPageTurn": "轻短 click sine (880 Hz, 0.05s)",
+    "reward": "playCorrect 音效叠加 + Canvas 专属动效"
+  }
+}

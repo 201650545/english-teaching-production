@@ -1,0 +1,439 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LessonPagePlan",
+  "lesson_id": "第01课",
+  "theme": {
+    "style": "Stage 1 Sky Blue Light",
+    "primary_color": "#4A90E2",
+    "accent_color": "#FF6B6B",
+    "bg_gradient": "linear-gradient(135deg, #F0F8FF 0%, #E0F2FE 100%)",
+    "card_bg": "#FFFFFF",
+    "text_primary": "#2C3E50",
+    "text_secondary": "#5A6C7D",
+    "success": "#06D6A0",
+    "warning": "#FFD166",
+    "font_cn": "微软雅黑, Microsoft YaHei, sans-serif",
+    "font_en": "Arial, sans-serif",
+    "font_ipa": "Segoe UI, Arial, sans-serif",
+    "font_size_base": "28pt"
+  },
+  "total_pages": 36,
+  "stage_badge": "Stage 1 · L01",
+  "pages": [
+    {
+      "page_index": 1,
+      "section": "复习导入",
+      "title": "封面页 · 代词、be动词与问候句型",
+      "layout_type": "Cover",
+      "components": [
+        {"type": "word-card", "data": {"element": "cover-title", "text": "代词、be 动词与问候句型", "font_size": "42pt", "font_weight": "bold"}},
+        {"type": "word-card", "data": {"element": "cover-subtitle", "text": "问候·交友·个人信息 | 90分钟", "font_size": "16pt"}},
+        {"type": "word-card", "data": {"element": "stage-badge", "text": "Stage 1 · L01", "position": "top-right"}},
+        {"type": "word-card", "data": {"element": "creative-canvas", "name": "打招呼气泡粒子动效", "tech": "Canvas 2D", "particle_count": 60}}
+      ]
+    },
+    {
+      "page_index": 2,
+      "section": "复习导入",
+      "title": "问候互动页",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "example-line", "data": {"side": "left", "title": "核心问候句型", "lines": ["Hello! / Hi! — 你好！", "Good morning! — 早上好！", "Nice to meet you. — 很高兴见到你", "Welcome to our class! — 欢迎来到我们班！"]}},
+        {"type": "example-line", "data": {"side": "right", "title": "自我介绍示范", "lines": ["Hello, my name is Tom. I am from China.", "Nice to meet you, too."]}},
+        {"type": "word-card", "data": {"element": "creative-canvas", "name": "气泡粒子飘升"}}
+      ]
+    },
+    {
+      "page_index": 3,
+      "section": "复习导入",
+      "title": "学情诊断页",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "exercise-item", "data": {"no": 1, "question": "___ am a student.", "options": ["I", "Me", "My"], "answer": "I", "mask": true, "explanation": "主格做主语"}},
+        {"type": "exercise-item", "data": {"no": 2, "question": "What's ___ name?", "options": ["you", "your", "yours"], "answer": "your", "mask": true, "explanation": "形容词性+名词"}},
+        {"type": "exercise-item", "data": {"no": 3, "question": "She ___ my friend.", "options": ["am", "is", "are"], "answer": "is", "mask": true, "explanation": "三单用is"}}
+      ]
+    },
+    {
+      "page_index": 4,
+      "section": "新词20",
+      "title": "新词总览页（20词网格）",
+      "layout_type": "Grid-4",
+      "components": [
+        {"type": "word-card", "data": {"element": "grid-overview", "words": ["name","friend","phone","number","school","teacher","student","class","China","English","his","her","their","our","yours","welcome","meet","nice","spell","zero"], "layout": "5x4"}},
+        {"type": "word-card", "data": {"element": "tag", "text": "主题语义场：问候·交友·个人信息"}},
+        {"type": "word-card", "data": {"element": "dedup-badge", "text": "✅ L1 起点课，零重复"}}
+      ]
+    },
+    {
+      "page_index": 5,
+      "section": "新词20",
+      "title": "新词 Group 1（name, friend, phone, number, school）",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "word-card", "data": {"word": "name", "ipa": "/neɪm/", "pos": "n./v.", "cn": "名字；命名", "collocation": "What's your name?", "example": "My name is Tom.", "memory": "谐音'内幕'——名字是人的内幕"}},
+        {"type": "word-card", "data": {"word": "friend", "ipa": "/frend/", "pos": "n.", "cn": "朋友", "collocation": "make friends with", "example": "He is my best friend.", "memory": "f-ri-end三段拆分"}},
+        {"type": "word-card", "data": {"word": "phone", "ipa": "/fəʊn/", "pos": "n./v.", "cn": "电话；打电话", "collocation": "phone number", "example": "What's your phone number?", "memory": "音似'凤'"}},
+        {"type": "word-card", "data": {"word": "number", "ipa": "/ˈnʌmbə(r)/", "pos": "n.", "cn": "数字；号码", "collocation": "phone number", "example": "My phone number is 138-0000-0000.", "memory": "numb+er"}},
+        {"type": "word-card", "data": {"word": "school", "ipa": "/skuːl/", "pos": "n.", "cn": "学校", "collocation": "go to school", "example": "I go to school by bus.", "memory": "school里有cool"}}
+      ]
+    },
+    {
+      "page_index": 6,
+      "section": "新词20",
+      "title": "新词 Group 2（teacher, student, class, China, English）",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "word-card", "data": {"word": "teacher", "ipa": "/ˈtiːtʃə(r)/", "pos": "n.", "cn": "老师", "collocation": "English teacher", "example": "My English teacher is Miss Wang.", "memory": "teach+er"}},
+        {"type": "word-card", "data": {"word": "student", "ipa": "/ˈstjuːdnt/", "pos": "n.", "cn": "学生", "collocation": "middle school student", "example": "I am a middle school student.", "memory": "study+ent"}},
+        {"type": "word-card", "data": {"word": "class", "ipa": "/klɑːs/", "pos": "n.", "cn": "班级；课", "collocation": "in class", "example": "We have an English class on Monday.", "memory": "c-lass"}},
+        {"type": "word-card", "data": {"word": "China", "ipa": "/ˈtʃaɪnə/", "pos": "n.", "cn": "中国", "collocation": "in China", "example": "I am from China.", "memory": "拼音Chi-na"}},
+        {"type": "word-card", "data": {"word": "English", "ipa": "/ˈɪŋɡlɪʃ/", "pos": "n./adj.", "cn": "英语；英国的", "collocation": "speak English", "example": "I can speak English and Chinese.", "memory": "Eng-lish"}}
+      ]
+    },
+    {
+      "page_index": 7,
+      "section": "新词20",
+      "title": "新词 Group 3（his, her, their, our, yours）",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "word-card", "data": {"word": "his", "ipa": "/hɪz/", "pos": "pron.", "cn": "他的", "collocation": "his name", "example": "His name is Jack.", "memory": "he的所有格，s结尾", "note": "与G02物主代词直接相关"}},
+        {"type": "word-card", "data": {"word": "her", "ipa": "/hɜː(r)/", "pos": "pron.", "cn": "她的；她", "collocation": "her phone", "example": "Her phone number is 139-0000-0000.", "memory": "she→her，e变r"}},
+        {"type": "word-card", "data": {"word": "their", "ipa": "/ðeə(r)/", "pos": "pron.", "cn": "他们的", "collocation": "their teacher", "example": "Their school is very big.", "memory": "they→their，y变ir"}},
+        {"type": "word-card", "data": {"word": "our", "ipa": "/ˈaʊə(r)/", "pos": "pron.", "cn": "我们的", "collocation": "our class", "example": "Our class has 40 students.", "memory": "we→our，完全变形"}},
+        {"type": "word-card", "data": {"word": "yours", "ipa": "/jɔːz/", "pos": "pron.", "cn": "你的；你们的", "collocation": "Is this yours?", "example": "Is this pen yours?", "memory": "you→your→yours，加s变名词性"}}
+      ]
+    },
+    {
+      "page_index": 8,
+      "section": "新词20",
+      "title": "新词 Group 4（welcome, meet, nice, spell, zero）",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "word-card", "data": {"word": "welcome", "ipa": "/ˈwelkəm/", "pos": "v./interj.", "cn": "欢迎", "collocation": "Welcome to...", "example": "Welcome to our school!", "memory": "well+come"}},
+        {"type": "word-card", "data": {"word": "meet", "ipa": "/miːt/", "pos": "v.", "cn": "遇见；见面", "collocation": "Nice to meet you", "example": "Nice to meet you, too.", "memory": "meet=会面"}},
+        {"type": "word-card", "data": {"word": "nice", "ipa": "/naɪs/", "pos": "adj.", "cn": "好的；愉快的", "collocation": "Nice to meet you", "example": "It's a nice day today.", "memory": "音似'奈斯'"}},
+        {"type": "word-card", "data": {"word": "spell", "ipa": "/spel/", "pos": "v.", "cn": "拼写", "collocation": "spell it", "example": "How do you spell your name?", "memory": "音似'死背哦'"}},
+        {"type": "word-card", "data": {"word": "zero", "ipa": "/ˈzɪərəʊ/", "pos": "num.", "cn": "零", "collocation": "zero to ten", "example": "My phone number has two zeros.", "memory": "z开头像闪电归零"}}
+      ]
+    },
+    {
+      "page_index": 9,
+      "section": "新词20",
+      "title": "记忆卡片 1（前10词记忆法）",
+      "layout_type": "Grid-4",
+      "components": [
+        {"type": "word-card", "data": {"element": "memory-card", "word": "name", "memory": "谐音'内幕'——名字是人的内幕", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "friend", "memory": "f-ri-end三段拆分，end结尾朋友到永远", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "phone", "memory": "音似'凤'——打电话找凤姐", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "number", "memory": "numb麻木+er——数字太多让人麻木", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "school", "memory": "s-ch-ool——school里有cool", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "teacher", "memory": "teach(教)+er(人)——教书的人", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "student", "memory": "study(学习)+ent(人)——学习的人", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "class", "memory": "c-lass——班级里有头驴", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "China", "memory": "拼音Chi-na——吃呐，中国人爱吃", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "English", "memory": "Eng-lish——英格兰的语言", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 10,
+      "section": "新词20",
+      "title": "记忆卡片 2（后10词记忆法）",
+      "layout_type": "Grid-4",
+      "components": [
+        {"type": "word-card", "data": {"element": "memory-card", "word": "his", "memory": "he的所有格，s结尾", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "her", "memory": "she→her，e变r", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "their", "memory": "they→their，y变ir", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "our", "memory": "we→our，完全变形", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "yours", "memory": "you→your→yours，加s变名词性", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "welcome", "memory": "well+come——好好来=欢迎", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "meet", "memory": "m-eet——见面要会面", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "nice", "memory": "ni-ce——音似'奈斯'=好", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "spell", "memory": "s-pell——音似'死背哦'", "mask": true}},
+        {"type": "word-card", "data": {"element": "memory-card", "word": "zero", "memory": "ze-ro——圈圈是零，z像闪电归零", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 11,
+      "section": "语法3考点",
+      "title": "G01 概述与口诀（人称代词主格与宾格）",
+      "layout_type": "Formula-Card",
+      "components": [
+        {"type": "formula-box", "data": {"point_id": "G01", "name": "人称代词主格与宾格", "formula": "主格做主语（I am, he is, she is），宾格做宾语（help me, call him, ask her）", "font_size": "38pt", "font_weight": "bold"}},
+        {"type": "word-card", "data": {"element": "anti-skip", "text": "防越级：仅限主格/宾格，不涉及反身代词"}}
+      ]
+    },
+    {
+      "page_index": 12,
+      "section": "语法3考点",
+      "title": "G01 主格宾格对照表",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "formula-box", "data": {"element": "comparison-table", "title": "人称代词主格与宾格对照", "columns": ["人称","主格","宾格","记忆规律"], "rows": [["我","I","me","完全变形"],["你","you","you","主宾同形"],["他","he","him","加m"],["她","she","her","e变r"],["它","it","it","主宾同形"],["我们","we","us","完全变形"],["你们","you","you","主宾同形"],["他们","they","them","y变em"]], "highlight": ["you/it主宾同形"]}}
+      ]
+    },
+    {
+      "page_index": 13,
+      "section": "语法3考点",
+      "title": "G01 例句与易错点",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "example-line", "data": {"side": "left", "title": "例句", "lines": ["1. I am a student.（主格I做主语）", "2. Can you help me?（宾格me做宾语）", "3. She calls him every day.（主格she+宾格him）"]}},
+        {"type": "exercise-item", "data": {"side": "right", "title": "易错点（点击显答案）", "items": [{"wrong": "for he", "right": "for him", "mask": true}, {"wrong": "help they", "right": "help them", "mask": true}, {"wrong": "She and me are friends.", "right": "She and I are friends.", "mask": true}]}}
+      ]
+    },
+    {
+      "page_index": 14,
+      "section": "语法3考点",
+      "title": "G02 概述与口诀（形容词性与名词性物主代词）",
+      "layout_type": "Formula-Card",
+      "components": [
+        {"type": "formula-box", "data": {"point_id": "G02", "name": "形容词性与名词性物主代词", "formula": "形容词性要加名词（my book），名词性自己当名词（The book is mine）", "font_size": "38pt", "font_weight": "bold"}},
+        {"type": "word-card", "data": {"element": "anti-skip", "text": "防越级：仅限基础物主代词，不引入whose"}}
+      ]
+    },
+    {
+      "page_index": 15,
+      "section": "语法3考点",
+      "title": "G02 物主代词对照表",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "formula-box", "data": {"element": "comparison-table", "title": "物主代词四列对照", "columns": ["人称","主格","宾格","形容词性","名词性"], "rows": [["我","I","me","my","mine"],["你","you","you","your","yours"],["他","he","him","his","his"],["她","she","her","her","hers"],["它","it","it","its","its"],["我们","we","us","our","ours"],["你们","you","you","your","yours"],["他们","they","them","their","theirs"]], "highlight": ["名词性=形容词性+s（mine例外）","his/its形名同形"]}}
+      ]
+    },
+    {
+      "page_index": 16,
+      "section": "语法3考点",
+      "title": "G02 例句与易错点",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "example-line", "data": {"side": "left", "title": "例句", "lines": ["1. This is my book. That is your book.", "2. This book is mine. That book is yours.", "3. Her phone is red. His is blue."]}},
+        {"type": "exercise-item", "data": {"side": "right", "title": "易错点（点击显答案）", "items": [{"wrong": "This is my.", "right": "This is mine.", "mask": true}, {"wrong": "This is mine book.", "right": "This is my book.", "mask": true}, {"wrong": "her's", "right": "hers", "mask": true}]}}
+      ]
+    },
+    {
+      "page_index": 17,
+      "section": "语法3考点",
+      "title": "G03 概述与口诀（be动词搭配）",
+      "layout_type": "Formula-Card",
+      "components": [
+        {"type": "formula-box", "data": {"point_id": "G03", "name": "be动词与人称代词主格搭配口诀", "formula": "我用 am，你用 are，is 连着他她它，复数人称都用 are", "font_size": "48pt", "font_weight": "bold"}},
+        {"type": "word-card", "data": {"element": "anti-skip", "text": "防越级：仅限现在时be(am/is/are)，不引入was/were"}}
+      ]
+    },
+    {
+      "page_index": 18,
+      "section": "语法3考点",
+      "title": "G03 公式矩阵",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "formula-box", "data": {"element": "matrix-table", "title": "be动词公式矩阵", "columns": ["主语","be动词","缩写"], "rows": [["I","am","I'm"],["You","are","You're"],["He/She/It","is","He's/She's/It's"],["We/You/They","are","We're/You're/They're"]], "highlight": ["缩写形式"]}}
+      ]
+    },
+    {
+      "page_index": 19,
+      "section": "语法3考点",
+      "title": "G03 例句与易错点",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "example-line", "data": {"side": "left", "title": "例句", "lines": ["1. I am a student. = I'm a student.", "2. She is my friend. = She's my friend.", "3. They are from China. = They're from China."]}},
+        {"type": "exercise-item", "data": {"side": "right", "title": "易错点（点击显答案）", "items": [{"wrong": "I is a student.", "right": "I am a student.", "mask": true}, {"wrong": "He are my friend.", "right": "He is my friend.", "mask": true}, {"wrong": "They is from China.", "right": "They are from China.", "mask": true}]}}
+      ]
+    },
+    {
+      "page_index": 20,
+      "section": "随堂演练",
+      "title": "演练1：G01 主格宾格（3题）",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "exercise-item", "data": {"no": 1, "question": "___ am from China.", "options": ["I","Me","My"], "answer": "I", "mask": true, "explanation": "主格做主语"}},
+        {"type": "exercise-item", "data": {"no": 2, "question": "Please call ___ tomorrow.", "options": ["he","him","his"], "answer": "him", "mask": true, "explanation": "宾格做宾语"}},
+        {"type": "exercise-item", "data": {"no": 3, "question": "Can you help ___?", "options": ["we","us","our"], "answer": "us", "mask": true, "explanation": "宾格做宾语"}}
+      ]
+    },
+    {
+      "page_index": 21,
+      "section": "随堂演练",
+      "title": "演练2：G02 物主代词（3题）",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "exercise-item", "data": {"no": 1, "question": "This is ___ book.", "options": ["my","mine"], "answer": "my", "mask": true, "explanation": "形容词性+名词"}},
+        {"type": "exercise-item", "data": {"no": 2, "question": "This pen is ___.", "options": ["your","yours"], "answer": "yours", "mask": true, "explanation": "名词性独立用"}},
+        {"type": "exercise-item", "data": {"no": 3, "question": "___ name is Tom.", "options": ["He","His","Him"], "answer": "His", "mask": true, "explanation": "形容词性+名词"}}
+      ]
+    },
+    {
+      "page_index": 22,
+      "section": "随堂演练",
+      "title": "演练3：G03 be动词（4题）",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "exercise-item", "data": {"no": 1, "question": "I ___ a student.", "options": ["am","is","are"], "answer": "am", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 2, "question": "She ___ my friend.", "options": ["am","is","are"], "answer": "is", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 3, "question": "They ___ from China.", "options": ["am","is","are"], "answer": "are", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 4, "question": "We ___ in Class 1.", "options": ["am","is","are"], "answer": "are", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 23,
+      "section": "阅读理解",
+      "title": "阅读A篇短文 · Making New Friends at School",
+      "layout_type": "Reading-Passage",
+      "components": [
+        {"type": "reading-passage", "data": {"title": "Making New Friends at School", "word_count": 65, "word_range": "63-66", "theme": "开学第一天交新朋友", "new_words_embedded": ["friend","name","school","student","nice","meet","English","welcome"]}},
+        {"type": "word-card", "data": {"element": "reading-guide", "title": "阅读指导五步法", "steps": ["1.速读抓主旨","2.精读划关键词","3.解题回原文","4.排除干扰项","5.复述巩固"]}}
+      ]
+    },
+    {
+      "page_index": 24,
+      "section": "阅读理解",
+      "title": "阅读A篇题目（5道单选）",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "exercise-item", "data": {"no": 1, "type": "细节题", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 2, "type": "细节题", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 3, "type": "细节题", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 4, "type": "推断题", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 5, "type": "主旨题", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 25,
+      "section": "阅读理解",
+      "title": "阅读A篇解析（五步法回顾）",
+      "layout_type": "Split-2",
+      "components": [
+        {"type": "word-card", "data": {"element": "guide-recap", "title": "五步法回顾", "steps": ["速读抓主旨→精读划关键词→解题回原文→排除干扰项→复述巩固"]}},
+        {"type": "word-card", "data": {"element": "key-sentences", "title": "每题关键句定位"}}
+      ]
+    },
+    {
+      "page_index": 26,
+      "section": "句子练习",
+      "title": "句子练习1：造句（G01主格宾格）",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "exercise-item", "data": {"no": 1, "question": "用I造句：___ am ___.", "answer": "I am a student.", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 2, "question": "用me造句：Can you help ___?", "answer": "Can you help me?", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 3, "question": "用he/him造句：___ calls ___ every day.", "answer": "He calls him every day.", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 27,
+      "section": "句子练习",
+      "title": "句子练习2：汉译英（G02物主代词）",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "exercise-item", "data": {"no": 1, "question": "这是我的书。", "answer": "This is my book.", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 2, "question": "这支笔是你的。", "answer": "This pen is yours.", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 3, "question": "她的电话是红色的。", "answer": "Her phone is red.", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 28,
+      "section": "句子练习",
+      "title": "句子练习3：综合（G03 be动词）",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "exercise-item", "data": {"no": 1, "question": "我是一名学生。", "answer": "I am a student.", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 2, "question": "她是我的朋友。", "answer": "She is my friend.", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 3, "question": "他们来自中国。", "answer": "They are from China.", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 29,
+      "section": "自然拼读",
+      "title": "拼读学习1：Aa Bb Cc",
+      "layout_type": "Formula-Card",
+      "components": [
+        {"type": "formula-box", "data": {"element": "phoneme-card", "letter": "Aa", "phoneme": "/æ/", "tip": "嘴巴张大，短促有力，像咬苹果", "examples": ["apple","cat"]}},
+        {"type": "formula-box", "data": {"element": "phoneme-card", "letter": "Bb", "phoneme": "/b/", "tip": "双唇闭合，气流突然冲出", "examples": ["book","boy"]}},
+        {"type": "formula-box", "data": {"element": "phoneme-card", "letter": "Cc", "phoneme": "/k/", "tip": "舌根抵软腭，气流冲出", "examples": ["kite","cake"]}}
+      ]
+    },
+    {
+      "page_index": 30,
+      "section": "自然拼读",
+      "title": "拼读学习2：Dd Ee + 5音素总览",
+      "layout_type": "Formula-Card",
+      "components": [
+        {"type": "formula-box", "data": {"element": "phoneme-card", "letter": "Dd", "phoneme": "/d/", "tip": "舌尖抵上齿龈，气流冲出", "examples": ["dog","desk"]}},
+        {"type": "formula-box", "data": {"element": "phoneme-card", "letter": "Ee", "phoneme": "/e/", "tip": "嘴巴半开，短促清晰", "examples": ["egg","bed"]}},
+        {"type": "formula-box", "data": {"element": "phoneme-overview", "phonemes": ["/æ/","/b/","/k/","/d/","/e/"], "note": "5音素连读复习"}}
+      ]
+    },
+    {
+      "page_index": 31,
+      "section": "自然拼读",
+      "title": "拼读练习1：单词拆拼朗读词汇表（20词）",
+      "layout_type": "Grid-4",
+      "components": [
+        {"type": "word-card", "data": {"element": "phonics-word-list", "phoneme": "/æ/", "words": ["apple","cat","bag","map"]}},
+        {"type": "word-card", "data": {"element": "phonics-word-list", "phoneme": "/b/", "words": ["book","boy","blue","big"]}},
+        {"type": "word-card", "data": {"element": "phonics-word-list", "phoneme": "/k/", "words": ["kite","cake","cup","key"]}},
+        {"type": "word-card", "data": {"element": "phonics-word-list", "phoneme": "/d/", "words": ["dog","desk","door","dad"]}},
+        {"type": "word-card", "data": {"element": "phonics-word-list", "phoneme": "/e/", "words": ["egg","bed","pen","red"]}},
+        {"type": "word-card", "data": {"element": "rule-check", "text": "✅ 5音素×4=20词，符合拼读练习定量铁律"}}
+      ]
+    },
+    {
+      "page_index": 32,
+      "section": "自然拼读",
+      "title": "拼读练习2：听音选词（4题）",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "exercise-item", "data": {"no": 1, "question": "听到/æ/，选出含该音素的单词", "options": ["apple","egg","book"], "answer": "apple", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 2, "question": "听到/b/，选出含该音素的单词", "options": ["cat","boy","kite"], "answer": "boy", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 3, "question": "听到/k/，选出含该音素的单词", "options": ["dog","map","cup"], "answer": "cup", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 4, "question": "听到/e/，选出含该音素的单词", "options": ["pen","bag","blue"], "answer": "pen", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 33,
+      "section": "自然拼读",
+      "title": "拼读练习3：看词归音（4题）",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "exercise-item", "data": {"no": 1, "question": "desk 含哪个音素？", "answer": "/d/", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 2, "question": "cake 含哪个音素？", "answer": "/k/", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 3, "question": "red 含哪个音素？", "answer": "/r/和/e/", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 4, "question": "bag 含哪个音素？", "answer": "/æ/", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 34,
+      "section": "自然拼读",
+      "title": "拼读练习4：最小对立对辨析（4题）",
+      "layout_type": "Exercise-List",
+      "components": [
+        {"type": "exercise-item", "data": {"no": 1, "question": "cat / cut 辨析", "answer": "/æ/ vs /ʌ/", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 2, "question": "bed / bad 辨析", "answer": "/e/ vs /æ/", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 3, "question": "bag / big 辨析", "answer": "/æ/ vs /ɪ/", "mask": true}},
+        {"type": "exercise-item", "data": {"no": 4, "question": "pen / pan 辨析", "answer": "/e/ vs /æ/", "mask": true}}
+      ]
+    },
+    {
+      "page_index": 35,
+      "section": "课堂总结",
+      "title": "核心口诀汇总",
+      "layout_type": "Formula-Card",
+      "components": [
+        {"type": "formula-box", "data": {"element": "summary-formula", "point_id": "G01", "formula": "主格做主语，宾格做宾语", "font_size": "48pt", "font_weight": "bold"}},
+        {"type": "formula-box", "data": {"element": "summary-formula", "point_id": "G02", "formula": "形容词性加名词，名词性自己当名词", "font_size": "48pt", "font_weight": "bold"}},
+        {"type": "formula-box", "data": {"element": "summary-formula", "point_id": "G03", "formula": "我用am，你用are，is连着他她它，复数人称都用are", "font_size": "48pt", "font_weight": "bold"}}
+      ]
+    },
+    {
+      "page_index": 36,
+      "section": "课堂总结",
+      "title": "课堂总结页（无课后作业）",
+      "layout_type": "Cover",
+      "components": [
+        {"type": "word-card", "data": {"element": "summary-title", "text": "本课3大收获", "font_size": "42pt", "font_weight": "bold"}},
+        {"type": "word-card", "data": {"element": "summary-item", "text": "20新词 + 3语法考点 + 5拼读音素"}},
+        {"type": "word-card", "data": {"element": "encouragement", "text": "Nice to meet you! See you next class!", "font_size": "30pt"}},
+        {"type": "word-card", "data": {"element": "no-homework", "text": "无课后作业页（规范要求）"}}
+      ]
+    }
+  ]
+}

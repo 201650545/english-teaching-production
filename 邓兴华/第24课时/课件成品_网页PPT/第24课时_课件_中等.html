@@ -1,0 +1,1903 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第24课时 · 原因·结果·让步状语</title>
+<style>
+
+/* ==================== 全局变量与重置 ==================== */
+:root{
+  --brand:#E63946;--accent:#FFD700;--brand-light:#FF6B6B;--accent-light:#FFE66D;
+  --bg-start:#FFF8F0;--bg-end:#FFE8D6;--text-primary:#1A1A2E;--text-secondary:#555555;
+  --correct:#06A77D;--error:#E63946;--gray-node:#C0C0C0;--gray-border:#999999;
+  --card-bg:#FFFFFF;--table-header-bg:#E63946;--table-header-text:#FFFFFF;
+  --table-highlight-bg:#FFF8E1;--mnemonic-border:#FFD700;--mnemonic-text:#E63946;
+  --error-row-bg:#FFEBEE;--correct-row-bg:#E8F5E9;--page-shadow:0 4px 20px rgba(230,57,70,.15);
+  --card-shadow:0 2px 12px rgba(0,0,0,.08);
+  --sop-blue:#3B82F6;--sop-green:#10B981;--sop-purple:#8B5CF6;--sop-orange:#F59E0B;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;height:100%;overflow:hidden;font-family:'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif;
+  background:linear-gradient(135deg,var(--bg-start),var(--bg-end));color:var(--text-primary);}
+button{cursor:pointer;font-family:inherit;border:none;outline:none;background:none;}
+input{font-family:inherit;outline:none;}
+
+/* ==================== 导航栏 ==================== */
+.nav-bar{position:fixed;top:0;left:0;width:100%;height:54px;background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);box-shadow:0 2px 10px rgba(0,0,0,.1);z-index:1000;
+  display:flex;align-items:center;justify-content:center;gap:0;padding:0 20px;}
+.nav-item{display:flex;align-items:center;gap:6px;padding:8px 12px;font-size:14px;font-weight:500;
+  color:var(--text-secondary);cursor:pointer;transition:all .2s;border-radius:8px;white-space:nowrap;}
+.nav-item:hover{background:rgba(230,57,70,.08);color:var(--brand);}
+.nav-item.active{background:var(--brand);color:#fff;font-weight:600;}
+.nav-item .nav-num{font-size:13px;opacity:.7;}
+.nav-separator{width:16px;height:2px;background:var(--accent);border-radius:1px;opacity:.4;}
+
+/* ==================== 阶段徽章 ==================== */
+.stage-badge{position:fixed;top:10px;right:20px;z-index:1001;background:linear-gradient(135deg,var(--brand),var(--brand-light));
+  color:#fff;padding:6px 16px;border-radius:20px;font-size:14px;font-weight:600;box-shadow:0 2px 8px rgba(230,57,70,.3);
+  letter-spacing:.5px;}
+
+/* ==================== 数据同步状态 ==================== */
+.sync-status{position:fixed;top:10px;left:20px;z-index:1001;background:rgba(255,255,255,.9);
+  padding:4px 12px;border-radius:12px;font-size:12px;font-weight:600;color:var(--text-secondary);
+  box-shadow:0 2px 6px rgba(0,0,0,.08);display:flex;align-items:center;gap:6px;}
+.sync-dot{width:8px;height:8px;border-radius:50%;background:var(--correct);animation:pulse 2s infinite;}
+.sync-dot.pending{background:var(--sop-orange);}
+.sync-dot.failed{background:var(--error);}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+
+/* ==================== 页面容器 ==================== */
+.pages-container{position:absolute;top:54px;left:0;width:100%;height:calc(100% - 54px);overflow:hidden;aspect-ratio:21/9;}
+.page{position:absolute;top:0;left:0;width:100%;height:100%;display:none;overflow-y:auto;
+  padding:25px 45px 50px;background:linear-gradient(135deg,var(--bg-start),var(--bg-end));aspect-ratio:21/9;}
+.page.active{display:block;animation:pageFadeIn .4s ease-out;}
+@keyframes pageFadeIn{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:translateX(0);}}
+.page::-webkit-scrollbar{width:6px;}
+.page::-webkit-scrollbar-track{background:rgba(0,0,0,.05);}
+.page::-webkit-scrollbar-thumb{background:var(--brand-light);border-radius:3px;}
+
+/* ==================== 通用排版 ==================== */
+.page-title{font-size:36px;font-weight:700;color:var(--brand);margin-bottom:6px;text-align:center;
+  text-shadow:0 2px 4px rgba(230,57,70,.1);}
+.page-subtitle{font-size:20px;font-weight:400;color:var(--text-secondary);text-align:center;margin-bottom:18px;}
+.page-content{max-width:1500px;margin:0 auto;}
+.body-text{font-size:22px;line-height:1.6;color:var(--text-primary);}
+.highlight{color:var(--brand);font-weight:600;}
+.highlight-gold{color:#B8860B;font-weight:700;}
+.highlight-bold{font-weight:700;}
+.tag-review{display:inline-block;background:#e0e0e0;color:#666;padding:2px 10px;border-radius:10px;font-size:14px;font-weight:600;margin-left:8px;vertical-align:middle;}
+.tag-new{display:inline-block;background:var(--accent);color:#333;padding:2px 10px;border-radius:10px;font-size:14px;font-weight:700;margin-left:8px;vertical-align:middle;}
+.tag-sop{display:inline-block;background:var(--sop-blue);color:#fff;padding:2px 10px;border-radius:10px;font-size:14px;font-weight:600;margin-left:8px;}
+
+/* ==================== 统计面板 ==================== */
+.stats-panel{display:flex;gap:12px;justify-content:center;margin:12px 0;}
+.stats-card{background:#fff;border-radius:10px;padding:10px 20px;text-align:center;box-shadow:var(--card-shadow);min-width:110px;}
+.stats-card .stats-num{font-size:32px;font-weight:700;color:var(--brand);}
+.stats-card .stats-label{font-size:14px;color:var(--text-secondary);margin-top:2px;}
+.stats-card.gold .stats-num{color:#B8860B;}
+.stats-card.blue .stats-num{color:var(--sop-blue);}
+.stats-card.green .stats-num{color:var(--sop-green);}
+
+/* ==================== 表格样式 ==================== */
+.content-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:18px;
+  box-shadow:var(--card-shadow);border-radius:10px;overflow:hidden;}
+.content-table thead{background:var(--table-header-bg);color:var(--table-header-text);}
+.content-table th{padding:10px 12px;font-size:18px;font-weight:600;text-align:center;}
+.content-table td{padding:8px 10px;text-align:center;border-bottom:1px solid #f0e0d0;font-size:17px;line-height:1.5;}
+.content-table tbody tr:nth-child(even){background:rgba(255,248,225,.5);}
+.content-table tbody tr:hover{background:var(--table-highlight-bg);}
+.content-table .hl-gold{background:rgba(255,215,0,.12);font-weight:600;}
+.content-table .hl-red{background:rgba(230,57,70,.08);font-weight:600;color:var(--brand);}
+.content-table .hl-blue{background:rgba(59,130,246,.08);font-weight:600;color:var(--sop-blue);}
+
+/* ==================== 词汇卡片 ==================== */
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0;}
+.vocab-card{background:#fff;border-radius:10px;padding:12px 16px;box-shadow:var(--card-shadow);
+  border-left:4px solid var(--brand);transition:all .2s;cursor:pointer;}
+.vocab-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.12);}
+.vocab-card:nth-child(even){border-left-color:var(--accent);}
+.vocab-head{display:flex;align-items:center;gap:8px;margin-bottom:4px;}
+.vocab-word{font-size:22px;font-weight:700;color:var(--brand);}
+.vocab-card:nth-child(even) .vocab-word{color:#B8860B;}
+.vocab-phonetic{font-size:15px;color:var(--text-secondary);font-style:italic;}
+.vocab-pos{font-size:13px;background:var(--brand);color:#fff;padding:1px 8px;border-radius:8px;}
+.vocab-card:nth-child(even) .vocab-pos{background:var(--accent);color:#333;}
+.vocab-cn{font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:2px;}
+.vocab-collocation{font-size:14px;color:var(--text-secondary);margin-bottom:2px;}
+.vocab-example{font-size:14px;color:var(--text-primary);font-style:italic;line-height:1.4;}
+.vocab-memory{font-size:13px;color:var(--sop-purple);margin-top:2px;}
+
+/* ==================== 口诀卡片 ==================== */
+.mnemonic-card{background:linear-gradient(135deg,#FFFBF0,#FFF8E1);border:2px solid var(--mnemonic-border);
+  border-radius:14px;padding:16px 24px;margin:12px 0;box-shadow:0 4px 16px rgba(255,215,0,.2);
+  cursor:pointer;perspective:1000px;min-height:70px;}
+.mnemonic-card-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;}
+.mnemonic-card.flipped .mnemonic-card-inner{transform:rotateY(180deg);}
+.mnemonic-front,.mnemonic-back{position:absolute;width:100%;backface-visibility:hidden;}
+.mnemonic-back{transform:rotateY(180deg);}
+.mnemonic-text{font-size:32px;font-weight:600;color:var(--mnemonic-text);line-height:1.6;text-align:center;font-style:italic;}
+.mnemonic-label{font-size:15px;color:var(--text-secondary);text-align:center;margin-bottom:6px;}
+.mnemonic-back .mnemonic-text{font-size:18px;color:var(--text-secondary);font-style:normal;text-align:left;line-height:1.6;}
+
+/* ==================== SOP流程图 ==================== */
+.sop-flowchart{display:flex;align-items:center;justify-content:center;gap:0;margin:16px 0;flex-wrap:wrap;}
+.sop-step{background:#fff;border-radius:12px;padding:16px 20px;text-align:center;box-shadow:var(--card-shadow);
+  min-width:140px;max-width:200px;border-top:4px solid var(--brand);position:relative;}
+.sop-step:nth-child(odd){border-top-color:var(--brand);}
+.sop-step:nth-child(even){border-top-color:var(--accent);}
+.sop-step-num{width:36px;height:36px;line-height:36px;text-align:center;background:var(--brand);color:#fff;
+  border-radius:50%;font-size:18px;font-weight:700;margin:0 auto 8px;}
+.sop-step:nth-child(even) .sop-step-num{background:var(--accent);color:#333;}
+.sop-step-title{font-size:18px;font-weight:700;color:var(--brand);margin-bottom:4px;}
+.sop-step:nth-child(even) .sop-step-title{color:#B8860B;}
+.sop-step-desc{font-size:14px;color:var(--text-secondary);line-height:1.4;}
+.sop-arrow{display:flex;align-items:center;color:var(--accent);font-size:28px;font-weight:700;padding:0 6px;}
+
+/* ==================== 答题区 ==================== */
+.quiz-question{background:#fff;border-radius:10px;padding:14px 18px;margin:10px 0;box-shadow:var(--card-shadow);}
+.quiz-q-text{font-size:19px;font-weight:600;margin-bottom:8px;color:var(--text-primary);}
+.quiz-q-text .q-num{display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;background:var(--brand);color:#fff;border-radius:50%;font-size:14px;margin-right:8px;}
+.quiz-opts{display:flex;flex-direction:column;gap:6px;}
+.quiz-opt{padding:8px 14px;border:2px solid #ddd;border-radius:8px;font-size:17px;cursor:pointer;transition:all .2s;background:#fff;}
+.quiz-opt:hover{border-color:var(--brand-light);background:rgba(230,57,70,.03);}
+.quiz-opt.correct{border-color:var(--correct);background:var(--correct-row-bg);color:var(--correct);font-weight:600;}
+.quiz-opt.wrong{border-color:var(--error);background:var(--error-row-bg);color:var(--error);}
+.quiz-opt.disabled{pointer-events:none;opacity:.7;}
+.quiz-explain{display:none;margin-top:8px;padding:8px 12px;background:var(--table-highlight-bg);border-radius:6px;font-size:15px;color:var(--text-secondary);}
+.quiz-explain.show{display:block;animation:fadeIn .3s ease-out;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+.fill-input{width:160px;padding:6px 12px;border:2px solid #ddd;border-radius:6px;font-size:18px;margin:0 6px;}
+.fill-input:focus{border-color:var(--brand);}
+.fill-input.correct{border-color:var(--correct);background:var(--correct-row-bg);}
+.fill-input.wrong{border-color:var(--error);background:var(--error-row-bg);}
+.fill-check-btn{padding:6px 16px;background:var(--accent);color:#333;border:none;border-radius:6px;font-size:16px;font-weight:600;cursor:pointer;margin-left:6px;}
+.fill-check-btn:hover{background:var(--accent-light);}
+.fill-answer{display:none;font-size:16px;color:var(--correct);font-weight:600;margin-top:4px;}
+.fill-answer.show{display:block;}
+
+/* 连线题 */
+.match-container{display:flex;gap:30px;justify-content:center;margin:14px 0;}
+.match-column{display:flex;flex-direction:column;gap:10px;min-width:260px;}
+.match-item{padding:10px 16px;background:#fff;border:2px solid #ddd;border-radius:8px;font-size:16px;cursor:pointer;transition:all .2s;text-align:center;}
+.match-item:hover{border-color:var(--brand-light);}
+.match-item.selected{border-color:var(--accent);background:rgba(255,215,0,.1);}
+.match-item.matched{border-color:var(--correct);background:var(--correct-row-bg);pointer-events:none;}
+.match-item.wrong-match{border-color:var(--error);background:var(--error-row-bg);animation:shake .4s;}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+
+/* 拖拽排序 */
+.drag-container{background:#fff;border-radius:10px;padding:14px;margin:10px 0;box-shadow:var(--card-shadow);}
+.drag-words{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;min-height:50px;padding:8px;background:var(--table-highlight-bg);border-radius:8px;}
+.drag-word{padding:8px 16px;background:var(--brand);color:#fff;border-radius:8px;font-size:16px;cursor:grab;user-select:none;transition:all .15s;}
+.drag-word:hover{background:var(--brand-light);transform:translateY(-2px);}
+.drag-word.dragging{opacity:.5;}
+.drag-word.placed{background:var(--correct);}
+.drag-slot{display:inline-block;min-width:80px;height:38px;border:2px dashed #ccc;border-radius:6px;margin:0 4px;vertical-align:middle;}
+.drag-slot.filled{border-color:var(--correct);border-style:solid;}
+.drag-submit{padding:8px 20px;background:var(--accent);color:#333;border:none;border-radius:8px;font-size:17px;font-weight:600;cursor:pointer;margin-top:8px;}
+.drag-submit:hover{background:var(--accent-light);}
+.drag-result{margin-top:8px;font-size:17px;font-weight:600;}
+.drag-result.show{display:block;color:var(--brand);}
+.drag-word.selected{background:var(--accent);color:#333;transform:translateY(-3px);box-shadow:0 4px 12px rgba(255,215,0,.4);}
+.drag-word.used{opacity:.35;cursor:default;pointer-events:none;}
+.drag-slot.correct{border-color:var(--correct);border-style:solid;background:rgba(76,175,80,.1);}
+.drag-slot.wrong{border-color:var(--error);border-style:solid;background:rgba(244,67,54,.1);}
+
+/* 进度条 */
+.progress-bar{width:100%;height:8px;background:#e0e0e0;border-radius:4px;margin:10px 0;overflow:hidden;}
+.progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:4px;transition:width .3s;width:0%;}
+.score-display{text-align:center;font-size:24px;font-weight:700;color:var(--brand);margin-top:10px;display:none;}
+.score-display.show{display:block;}
+
+/* ==================== 翻转卡 ==================== */
+.flip-card{perspective:1000px;height:130px;cursor:pointer;}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
+.flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;
+  border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--card-shadow);}
+.flip-card-front{background:#fff;border-left:4px solid var(--error);}
+.flip-card-back{background:var(--correct-row-bg);border-left:4px solid var(--correct);transform:rotateY(180deg);}
+.flip-card-front .flip-wrong{font-size:17px;color:var(--error);text-decoration:line-through;margin-bottom:4px;}
+.flip-card-front .flip-hint{font-size:14px;color:var(--text-secondary);}
+.flip-card-back .flip-right{font-size:17px;color:var(--correct);font-weight:600;margin-bottom:4px;}
+.flip-card-back .flip-explain{font-size:14px;color:var(--text-secondary);}
+
+/* ==================== 题型导图 ==================== */
+.exam-type-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0;}
+.exam-type-card{background:#fff;border-radius:12px;padding:14px;text-align:center;box-shadow:var(--card-shadow);
+  border-top:4px solid var(--brand);transition:all .2s;cursor:pointer;}
+.exam-type-card:hover{transform:translateY(-4px);box-shadow:0 6px 20px rgba(0,0,0,.12);}
+.exam-type-card:nth-child(1){border-top-color:var(--brand);}
+.exam-type-card:nth-child(2){border-top-color:var(--sop-blue);}
+.exam-type-card:nth-child(3){border-top-color:var(--sop-green);}
+.exam-type-card:nth-child(4){border-top-color:var(--sop-purple);}
+.exam-type-card:nth-child(5){border-top-color:var(--sop-orange);}
+.exam-type-icon{font-size:32px;margin-bottom:6px;}
+.exam-type-name{font-size:16px;font-weight:700;margin-bottom:4px;}
+.exam-type-score{font-size:24px;font-weight:700;color:var(--brand);}
+.exam-type-card:nth-child(2) .exam-type-score{color:var(--sop-blue);}
+.exam-type-card:nth-child(3) .exam-type-score{color:var(--sop-green);}
+.exam-type-card:nth-child(4) .exam-type-score{color:var(--sop-purple);}
+.exam-type-card:nth-child(5) .exam-type-score{color:var(--sop-orange);}
+.exam-type-focus{font-size:12px;color:var(--text-secondary);margin-top:4px;}
+
+/* ==================== 路线图 ==================== */
+.roadmap{display:flex;align-items:stretch;gap:0;margin:16px 0;}
+.roadmap-step{flex:1;background:#fff;border-radius:10px;padding:12px;text-align:center;
+  box-shadow:var(--card-shadow);position:relative;border-top:4px solid var(--brand);}
+.roadmap-step:nth-child(even){border-top-color:var(--accent);}
+.roadmap-step .step-num{font-size:26px;font-weight:700;color:var(--brand);}
+.roadmap-step .step-title{font-size:15px;font-weight:600;margin:4px 0;}
+.roadmap-step .step-time{font-size:12px;color:var(--text-secondary);}
+.roadmap-arrow{display:flex;align-items:center;color:var(--accent);font-size:22px;padding:0 4px;}
+
+/* ==================== 词性标注区 ==================== */
+.pos-sort-area{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0;}
+.pos-box{background:#fff;border-radius:10px;padding:10px;min-height:120px;box-shadow:var(--card-shadow);border-top:4px solid;}
+.pos-box.noun{border-top-color:var(--brand);}
+.pos-box.verb{border-top-color:var(--sop-blue);}
+.pos-box.adj{border-top-color:var(--sop-green);}
+.pos-box.adv{border-top-color:var(--sop-purple);}
+.pos-box.pron{border-top-color:var(--sop-orange);}
+.pos-box-title{font-size:15px;font-weight:700;text-align:center;margin-bottom:8px;}
+.pos-box.noun .pos-box-title{color:var(--brand);}
+.pos-box.verb .pos-box-title{color:var(--sop-blue);}
+.pos-box.adj .pos-box-title{color:var(--sop-green);}
+.pos-box.adv .pos-box-title{color:var(--sop-purple);}
+.pos-box.pron .pos-box-title{color:var(--sop-orange);}
+.pos-word{display:inline-block;padding:4px 10px;margin:3px;border-radius:6px;font-size:14px;font-weight:600;cursor:grab;transition:all .15s;}
+.pos-word.noun{background:rgba(230,57,70,.1);color:var(--brand);}
+.pos-word.verb{background:rgba(59,130,246,.1);color:var(--sop-blue);}
+.pos-word.adj{background:rgba(16,185,129,.1);color:var(--sop-green);}
+.pos-word.adv{background:rgba(139,92,246,.1);color:var(--sop-purple);}
+.pos-word.pron{background:rgba(245,158,11,.1);color:var(--sop-orange);}
+.pos-word:hover{transform:scale(1.08);}
+.pos-word.placed{opacity:.3;pointer-events:none;}
+
+/* ==================== 封面 ==================== */
+.cover-container{text-align:center;padding:20px 0;}
+.cover-title{font-size:44px;font-weight:700;color:var(--brand);text-shadow:0 3px 6px rgba(230,57,70,.15);margin-bottom:10px;}
+.cover-subtitle{font-size:22px;color:var(--text-secondary);margin-bottom:20px;}
+.cover-info{display:flex;gap:16px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;}
+.cover-info-item{background:#fff;padding:12px 26px;border-radius:12px;box-shadow:var(--card-shadow);border-top:3px solid var(--accent);text-align:center;}
+.cover-info-num{font-size:30px;font-weight:700;color:var(--brand);}
+.cover-info-label{font-size:13px;color:var(--text-secondary);}
+.cover-nav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+.cover-nav-item{display:flex;flex-direction:column;align-items:center;padding:10px 16px;background:#fff;
+  border-radius:10px;box-shadow:var(--card-shadow);cursor:pointer;transition:all .3s;min-width:90px;border-top:3px solid transparent;}
+.cover-nav-item:hover{transform:translateY(-5px);box-shadow:0 6px 16px rgba(0,0,0,.12);border-top-color:var(--brand);}
+.cover-nav-icon{font-size:26px;margin-bottom:4px;}
+.cover-nav-label{font-size:13px;font-weight:600;color:var(--text);}
+
+/* ==================== 阅读语篇 ==================== */
+.reading-passage{background:#fff;border-radius:10px;padding:18px 24px;margin:12px 0;box-shadow:var(--card-shadow);
+  font-size:19px;line-height:1.8;color:var(--text-primary);}
+.reading-passage .blank{display:inline-block;min-width:60px;border-bottom:2px solid var(--brand);text-align:center;
+  margin:0 4px;font-weight:700;color:var(--brand);}
+.reading-passage .blank.filled{color:var(--correct);border-color:var(--correct);}
+.reading-passage .blank.wrong{color:var(--error);border-color:var(--error);}
+
+/* ==================== 题号导航 ==================== */
+.q-nav{display:flex;gap:6px;justify-content:center;margin:10px 0;flex-wrap:wrap;}
+.q-nav-item{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;background:#fff;border:2px solid #ddd;color:var(--text-secondary);}
+.q-nav-item:hover{border-color:var(--brand);color:var(--brand);}
+.q-nav-item.correct{background:var(--correct);color:#fff;border-color:var(--correct);}
+.q-nav-item.wrong{background:var(--error);color:#fff;border-color:var(--error);}
+.q-nav-item.current{background:var(--brand);color:#fff;border-color:var(--brand);transform:scale(1.15);}
+.q-nav-item.unanswered{background:#fff;color:var(--text-secondary);}
+
+/* ==================== 词汇游戏通用 ==================== */
+.vocab-game{background:linear-gradient(135deg,#FFFBF0,#FFF8E1);border:2px solid var(--accent);border-radius:14px;padding:18px;margin:10px 0;}
+.game-prompt{background:var(--brand);color:#fff;padding:8px 16px;border-radius:8px;font-size:16px;font-weight:600;margin-bottom:12px;text-align:center;}
+.game-option{padding:10px 16px;border:2px solid #ddd;border-radius:8px;font-size:17px;cursor:pointer;transition:all .2s;background:#fff;margin:4px 0;}
+.game-option:hover{border-color:var(--brand-light);background:rgba(230,57,70,.03);}
+.game-option.correct{border-color:var(--correct);background:var(--correct-row-bg);color:var(--correct);font-weight:600;}
+.game-option.wrong{border-color:var(--error);background:var(--error-row-bg);color:var(--error);}
+.game-feedback{margin-top:10px;padding:10px;border-radius:8px;font-size:16px;text-align:center;display:none;}
+.game-feedback.show{display:block;}
+.game-feedback.correct{background:var(--correct-row-bg);color:var(--correct);}
+.game-feedback.wrong{background:var(--error-row-bg);color:var(--error);}
+.game-progress{display:flex;gap:4px;justify-content:center;margin:8px 0;}
+.game-progress-dot{width:12px;height:12px;border-radius:50%;background:#ddd;transition:all .2s;}
+.game-progress-dot.correct{background:var(--correct);}
+.game-progress-dot.wrong{background:var(--error);}
+.game-progress-dot.current{background:var(--brand);transform:scale(1.3);}
+.context-box{background:#fff;border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:10px 14px;margin:8px 0;font-size:18px;line-height:1.6;}
+.dialogue-line{padding:8px 14px;margin:4px 0;border-radius:8px;font-size:17px;line-height:1.5;}
+.dialogue-line.speaker-a{background:rgba(230,57,70,.06);border-left:3px solid var(--brand);}
+.dialogue-line.speaker-b{background:rgba(255,215,0,.1);border-left:3px solid var(--accent);margin-left:30px;}
+
+/* ==================== 自评卡片 ==================== */
+.eval-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0;}
+.eval-card{background:#fff;border-radius:10px;padding:14px;text-align:center;box-shadow:var(--card-shadow);cursor:pointer;transition:all .2s;border-top:4px solid;}
+.eval-card:nth-child(1){border-top-color:var(--correct);}
+.eval-card:nth-child(2){border-top-color:var(--accent);}
+.eval-card:nth-child(3){border-top-color:var(--brand);}
+.eval-card:nth-child(4){border-top-color:var(--error);}
+.eval-card:hover{transform:translateY(-3px);}
+.eval-grade{font-size:28px;font-weight:700;margin-bottom:4px;}
+.eval-card:nth-child(1) .eval-grade{color:var(--correct);}
+.eval-card:nth-child(2) .eval-grade{color:#B8860B;}
+.eval-card:nth-child(3) .eval-grade{color:var(--brand);}
+.eval-card:nth-child(4) .eval-grade{color:var(--error);}
+.eval-desc{font-size:13px;color:var(--text-secondary);line-height:1.5;}
+
+/* ==================== 完成徽章 ==================== */
+.completion-badge{display:flex;flex-direction:column;align-items:center;margin:16px 0;}
+.completion-circle{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-light));
+  display:flex;align-items:center;justify-content:center;font-size:36px;box-shadow:0 0 30px rgba(255,215,0,.5);
+  animation:badgeBounce .6s cubic-bezier(0.68,-0.55,0.265,1.55);}
+@keyframes badgeBounce{0%{transform:scale(0);opacity:0;}60%{transform:scale(1.2);opacity:1;}100%{transform:scale(1);opacity:1;}}
+.completion-text{font-size:20px;font-weight:700;color:var(--brand);margin-top:10px;}
+.completion-sub{font-size:15px;color:var(--text-secondary);margin-top:4px;}
+
+/* ==================== 知识图谱 ==================== */
+.graph-wrapper{position:relative;width:100%;height:480px;overflow:hidden;border-radius:12px;background:#fff;box-shadow:var(--card-shadow);}
+.graph-node{position:absolute;width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;text-align:center;cursor:pointer;transition:all .2s;border:3px solid;z-index:5;}
+.graph-node:hover{transform:scale(1.2);z-index:10;}
+.graph-center{width:110px;height:110px;background:radial-gradient(circle,var(--brand),var(--brand-light));color:#fff;border-color:var(--brand);
+  font-size:15px;box-shadow:0 0 20px rgba(230,57,70,.4);}
+.graph-line{position:absolute;z-index:1;pointer-events:none;}
+
+/* ==================== 防越级提醒 ==================== */
+.warning-box{background:rgba(230,57,70,.05);border:2px solid var(--brand);border-radius:10px;padding:10px 16px;margin:10px 0;}
+.warning-box .warning-title{font-size:17px;font-weight:700;color:var(--brand);margin-bottom:4px;}
+.warning-box .warning-text{font-size:16px;color:var(--text-primary);}
+
+/* ==================== 页码 ==================== */
+.page-counter{position:fixed;bottom:15px;right:20px;background:rgba(255,255,255,.9);padding:4px 14px;border-radius:15px;
+  font-size:15px;font-weight:600;color:var(--brand);z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+
+/* ==================== 弹窗 ==================== */
+.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);z-index:2000;
+  align-items:center;justify-content:center;}
+.modal-overlay.show{display:flex;}
+.modal-content{background:#fff;border-radius:16px;padding:24px 32px;max-width:500px;box-shadow:0 8px 40px rgba(0,0,0,.2);
+  text-align:center;animation:modalPop .3s ease-out;}
+@keyframes modalPop{from{transform:scale(.8);opacity:0;}to{transform:scale(1);opacity:1;}}
+.modal-title{font-size:22px;font-weight:700;color:var(--brand);margin-bottom:10px;}
+.modal-body{font-size:17px;color:var(--text-primary);line-height:1.6;}
+.modal-close{margin-top:14px;padding:8px 24px;background:var(--brand);color:#fff;border:none;border-radius:8px;font-size:15px;cursor:pointer;}
+
+/* ==================== 金色彩带 ==================== */
+.confetti-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:3000;overflow:hidden;}
+.confetti-particle{position:absolute;width:10px;height:10px;background:var(--accent);border-radius:50%;
+  animation:confettiFall 1s ease-out forwards;}
+@keyframes confettiFall{from{transform:translate(0,0) scale(1);opacity:1;}to{transform:translate(var(--tx),var(--ty)) scale(0);opacity:0;}}
+
+/* ==================== 导出按钮 ==================== */
+.export-btn{position:fixed;top:56px;right:20px;background:var(--sop-blue);color:#fff;padding:6px 16px;
+  border-radius:15px;font-size:13px;font-weight:600;cursor:pointer;z-index:1000;box-shadow:0 2px 8px rgba(59,130,246,.3);
+  transition:all .2s;}
+.export-btn:hover{background:#2563EB;transform:translateY(-2px);}
+
+/* ==================== Mini Task ==================== */
+.mini-task-box{background:linear-gradient(135deg,#F0F9FF,#E0F2FE);border:2px solid var(--sop-blue);border-radius:14px;padding:18px;margin:12px 0;}
+.mini-task-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.mini-task-icon{font-size:28px;}
+.mini-task-title{font-size:20px;font-weight:700;color:var(--sop-blue);}
+.mini-task-section{margin:8px 0;}
+.mini-task-label{font-size:15px;font-weight:700;color:var(--sop-blue);margin-bottom:4px;}
+.mini-task-content{font-size:16px;color:var(--text-primary);line-height:1.6;}
+.mini-task-words{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+.mini-task-word-tag{background:rgba(59,130,246,.1);color:var(--sop-blue);padding:3px 10px;border-radius:8px;font-size:14px;font-weight:600;}
+
+/* ==================== 错因分析 ==================== */
+.error-analysis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
+.error-type-card{background:#fff;border-radius:10px;padding:14px;box-shadow:var(--card-shadow);cursor:pointer;transition:all .2s;
+  border-left:4px solid var(--error);perspective:1000px;min-height:100px;}
+.error-type-card:hover{transform:translateY(-3px);}
+.error-type-card.flipped{border-left-color:var(--correct);}
+.error-type-front{font-size:16px;font-weight:700;color:var(--error);}
+.error-type-back{display:none;font-size:14px;color:var(--correct);line-height:1.5;}
+.error-type-card.flipped .error-type-front{display:none;}
+.error-type-card.flipped .error-type-back{display:block;}
+
+
+
+/* <CW-CSS-EXTRA */
+/* <CW-SECTION name="components"> */
+/* THEME: dengxinghua-L21-25 teaching (red-gold · warm cream) */
+/* ==================== 新建线设计层（L21-25） ==================== */
+/* 六色卡约束：rule-card rc-zhug / rc-bin / rc-xing / rc-ming / rc-warn / rc-qita */
+.rule-card{padding:14px 18px;border-radius:12px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.rule-card.rc-zhug{background:#E8F0FE;border-left:5px solid #1A73E8;}
+.rule-card.rc-bin{background:#E6F4EA;border-left:5px solid #188038;}
+.rule-card.rc-xing{background:#FEF7E0;border-left:5px solid #F9AB00;}
+.rule-card.rc-ming{background:#FCE8E6;border-left:5px solid #E5252B;}
+.rule-card.rc-warn{background:#F3E8FD;border-left:5px solid #9334E6;}
+.rule-card.rc-qita{background:#E0F7FA;border-left:5px solid #12B2B8;}
+.rule-card .rc-title{font-size:20px;font-weight:700;margin-bottom:6px;}
+.rule-card .rc-body{font-size:18px;line-height:1.7;}
+
+.section-head{display:flex;align-items:center;gap:10px;margin:6px 0 14px;}
+.section-head .sh-icon{width:40px;height:40px;border-radius:10px;background:#E63946;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.section-head .sh-num{font-size:15px;font-weight:700;color:#E63946;background:rgba(230,57,70,.08);border:1px solid #E63946;border-radius:8px;padding:1px 8px;}
+.section-head .sh-title{font-size:28px;font-weight:700;color:#1A1A2E;}
+.section-head .sh-tag{font-size:14px;background:#FFD700;color:#333;padding:2px 10px;border-radius:10px;}
+
+.sub-label{font-size:15px;color:#666;margin:6px 0 10px;}
+
+/* 正文段落 / 高亮 / 笔记面板 / 双列选择 */
+.body-text{font-size:18px;line-height:1.8;color:#333;background:#FFF8F0;border-left:4px solid #E63946;padding:12px 16px;border-radius:8px;margin:10px 0;}
+.highlight{background:#FFF3CD;color:#856404;padding:2px 8px;border-radius:6px;font-weight:600;}
+.note-panel{background:#FFF8E1;border-left:5px solid #F9AB00;border-radius:10px;padding:14px 18px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.note-panel .np-title{font-size:19px;font-weight:700;color:#B8860B;margin-bottom:6px;}
+.note-panel .np-body{font-size:17px;line-height:1.7;color:#555;}
+.quiz-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.flash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0;}
+
+/* 随堂演练 / 选择 */
+.quiz-q{background:#fff;border-radius:10px;padding:14px 18px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.qq-text{font-size:19px;font-weight:600;margin-bottom:8px;}
+.quiz-opt{display:block;width:100%;text-align:left;padding:9px 14px;border:2px solid #ddd;border-radius:8px;font-size:17px;margin:5px 0;cursor:pointer;background:#fff;transition:all .2s;}
+.quiz-opt:hover{border-color:#E63946;background:rgba(230,57,70,.04);}
+.quiz-opt.locked{pointer-events:none;}
+.quiz-opt.opt-correct{border-color:#06A77D;background:#E8F5E9;color:#06A77D;font-weight:700;}
+.quiz-opt.opt-wrong{border-color:#E63946;background:#FFEBEE;color:#E63946;}
+.quiz-feedback{display:none;margin-top:8px;padding:8px 12px;background:#FFF8E1;border-radius:6px;font-size:15px;color:#B8860B;}
+.quiz-feedback.show{display:block;}
+.et-undo-hint{font-size:11px;color:#8B7D6B;opacity:.75;margin:4px 0;cursor:pointer;text-align:right;}
+
+/* 填空 */
+.fill-q{background:#fff;border-radius:10px;padding:14px 18px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.fill-input{width:160px;padding:6px 12px;border:2px solid #ddd;border-radius:6px;font-size:18px;margin:0 6px;}
+.fill-input:focus{border-color:#E63946;}
+.fill-input.correct{border-color:#06A77D;background:#E8F5E9;}
+.fill-input.wrong{border-color:#E63946;background:#FFEBEE;}
+.fill-check-btn{padding:6px 16px;background:#FFD700;color:#333;border:none;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;margin-left:6px;}
+.fill-answer{display:none;font-size:16px;color:#06A77D;font-weight:600;margin-top:4px;}
+.fill-answer.show{display:block;}
+
+/* 拖拽填空 */
+.drag-container{background:#fff;border-radius:10px;padding:14px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.drag-words{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;min-height:44px;padding:8px;background:#FFF8E1;border-radius:8px;}
+.drag-word{padding:8px 16px;background:#E63946;color:#fff;border-radius:8px;font-size:16px;cursor:pointer;user-select:none;transition:all .15s;}
+.drag-word:hover{background:#FF6B6B;}
+.drag-word.used{opacity:.35;cursor:default;pointer-events:none;}
+.drag-slot{display:inline-block;min-width:80px;height:36px;border:2px dashed #ccc;border-radius:6px;margin:0 4px;vertical-align:middle;text-align:center;line-height:32px;font-size:16px;}
+.drag-slot.correct{border-color:#06A77D;border-style:solid;background:rgba(76,175,80,.1);}
+.drag-slot.wrong{border-color:#E63946;border-style:solid;background:rgba(244,67,54,.1);}
+.drag-submit{padding:8px 20px;background:#FFD700;color:#333;border:none;border-radius:8px;font-size:17px;font-weight:700;cursor:pointer;margin-top:8px;}
+.drag-submit:hover{background:#FFE66D;}
+
+/* 排序 */
+.order-container{background:#fff;border-radius:10px;padding:14px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.order-list{list-style:none;padding:0;}
+.order-item{display:flex;align-items:center;gap:8px;background:#FFF8E1;border:2px solid #f0e0d0;border-radius:8px;padding:8px 12px;margin:6px 0;}
+.order-item .o-text{flex:1;font-size:17px;}
+.order-item.ok{border-color:#06A77D;background:#E8F5E9;}
+.order-item button{padding:4px 10px;background:#E63946;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:14px;}
+.order-check{padding:8px 20px;background:#FFD700;color:#333;border:none;border-radius:8px;font-size:17px;font-weight:700;cursor:pointer;margin-top:8px;}
+.order-ans{display:none;font-size:16px;color:#06A77D;font-weight:600;margin-top:6px;}
+.order-container.show-ans .order-ans{display:block;}
+
+/* 连线 */
+.match-container{background:#fff;border-radius:10px;padding:14px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;gap:30px;justify-content:center;}
+.match-column{display:flex;flex-direction:column;gap:10px;min-width:240px;}
+.match-item{padding:10px 16px;background:#fff;border:2px solid #ddd;border-radius:8px;font-size:16px;cursor:pointer;transition:all .2s;text-align:center;}
+.match-item:hover{border-color:#E63946;}
+.match-item.selected{border-color:#FFD700;background:rgba(255,215,0,.15);}
+.match-item.matched{border-color:#06A77D;background:#E8F5E9;pointer-events:none;}
+
+/* 翻牌卡 */
+.flip-card{perspective:1000px;height:120px;cursor:pointer;}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
+.flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:10px;padding:12px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.08);}
+.flip-card-front{background:#fff;border-left:5px solid #E63946;font-size:20px;font-weight:700;}
+.flip-card-back{background:#E8F5E9;border-left:5px solid #06A77D;transform:rotateY(180deg);font-size:18px;text-align:center;}
+.flip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0;}
+
+/* 词汇卡片 */
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0;}
+.vocab-card{background:#fff;border-radius:10px;padding:12px 16px;box-shadow:0 2px 10px rgba(0,0,0,.06);border-left:4px solid #E63946;}
+.vocab-card:nth-child(even){border-left-color:#FFD700;}
+.vocab-head{display:flex;align-items:center;gap:8px;margin-bottom:4px;}
+.vocab-word{font-size:22px;font-weight:700;color:#E63946;}
+.vocab-phonetic{font-size:15px;color:#666;font-style:italic;}
+.vocab-pos{font-size:13px;background:#E63946;color:#fff;padding:1px 8px;border-radius:8px;}
+.vocab-cn{font-size:18px;font-weight:600;margin-bottom:2px;}
+.vocab-collocation{font-size:14px;color:#666;}
+.vocab-example{font-size:14px;color:#333;font-style:italic;}
+
+/* 思维导图 */
+.mm-wrap{background:#fff;border-radius:14px;padding:18px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.mm-head{font-size:24px;font-weight:700;color:#E63946;text-align:center;margin-bottom:14px;}
+.mm-branches{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.mm-branch{border-radius:10px;padding:12px;cursor:pointer;border-top:4px solid #E63946;background:#FFF8F0;}
+.mm-branch:nth-child(2){border-top-color:#1A73E8;}
+.mm-branch:nth-child(3){border-top-color:#188038;}
+.mm-branch:nth-child(4){border-top-color:#F9AB00;}
+.mm-branch:nth-child(5){border-top-color:#9334E6;}
+.mm-branch:nth-child(6){border-top-color:#12B2B8;}
+.mm-branch-title{font-size:18px;font-weight:700;margin-bottom:6px;}
+.mm-branch .mm-items{font-size:15px;color:#555;line-height:1.6;}
+
+/* 关键词地图 kmap（考点关键词分级） */
+.kmap{background:#fff;border-radius:14px;padding:18px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);border-top:5px solid #1A73E8;}
+.kmap .kmap-title{font-size:20px;font-weight:700;color:#1A73E8;margin-bottom:12px;text-align:center;}
+.kmap-nodes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.kmap-node{border-radius:10px;padding:12px;text-align:center;border-top:4px solid #E63946;background:#FFF8F0;}
+.kmap-node:nth-child(2){border-top-color:#188038;}
+.kmap-node:nth-child(3){border-top-color:#F9AB00;}
+.kmap-node .kn-title{font-size:18px;font-weight:700;margin-bottom:6px;}
+.kmap-node .kn-body{font-size:15px;color:#555;line-height:1.5;}
+
+/* 拓展卡 ext-card */
+.ext-card{background:#fff;border-radius:12px;padding:14px 18px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);border-left:5px solid #12B2B8;}
+.ext-card .ext-cat{display:inline-block;background:#12B2B8;color:#fff;padding:2px 12px;border-radius:12px;font-size:14px;font-weight:700;margin-bottom:6px;}
+.ext-card .ext-body{font-size:17px;color:#333;line-height:1.7;}
+
+/* 游戏面板 */
+.game-board{background:#fff;border-radius:14px;padding:16px;margin:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.game-title{font-size:20px;font-weight:700;color:#E63946;margin-bottom:6px;}
+.game-rule{font-size:15px;color:#666;margin-bottom:10px;}
+
+/* 随堂演练 / 结果 */
+.stats-panel{display:flex;gap:12px;justify-content:center;margin:12px 0;}
+.stats-card{background:#fff;border-radius:10px;padding:10px 20px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.06);min-width:110px;}
+.stats-card .stats-num{font-size:32px;font-weight:700;color:#E63946;}
+.stats-card .stats-label{font-size:14px;color:#666;margin-top:2px;}
+
+/* 表 */
+.content-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:17px;}
+.content-table thead{background:#E63946;color:#fff;}
+.content-table th,.content-table td{padding:8px 10px;border-bottom:1px solid #f0e0d0;text-align:center;}
+
+/* 遮罩/进度 */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:2000;}
+.modal-overlay.show{display:flex;align-items:center;justify-content:center;}
+.modal-content{background:#fff;border-radius:12px;padding:20px;max-width:600px;width:90%;}
+.page-counter{position:fixed;bottom:12px;right:20px;z-index:1001;background:rgba(255,255,255,.9);padding:6px 14px;border-radius:12px;font-size:14px;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+.export-btn{position:fixed;bottom:12px;left:20px;z-index:1001;background:#E63946;color:#fff;padding:6px 14px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2);}
+
+/* 动画 */
+.opt-correct,.opt-wrong{animation:none;}
+.burst-p{position:fixed;width:10px;height:10px;border-radius:50%;pointer-events:none;z-index:3000;animation:burstFly .7s ease-out forwards;}
+@keyframes burstFly{0%{transform:translate(0,0) scale(1);opacity:1;}100%{transform:translate(var(--dx),var(--dy)) scale(.3);opacity:0;}}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+
+/* 防越级/无翻页过渡动画（翻页用淡入，无滑动偏移） */
+.page.active{animation:pageFade .35s ease-out;}
+@keyframes pageFade{from{opacity:0;}to{opacity:1;}}
+
+/* 封面（L21 讲评课） */
+.cover-wrap{text-align:center;padding:20px 0;}
+.cover-badge{display:inline-block;background:#E63946;color:#fff;padding:6px 20px;border-radius:20px;font-size:16px;font-weight:700;letter-spacing:1px;margin-bottom:18px;}
+.cover-title{font-size:44px;font-weight:700;color:#E63946;margin-bottom:10px;}
+.cover-sub{font-size:20px;color:#555;margin-bottom:20px;}
+.cover-tagline{display:inline-block;background:#FFD700;color:#333;padding:4px 18px;border-radius:16px;font-size:15px;font-weight:700;margin-bottom:18px;}
+.cover-info{display:flex;gap:16px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;}
+.cover-info-num{background:#fff;padding:12px 26px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.08);border-top:3px solid #FFD700;text-align:center;}
+.ci-label{font-size:13px;color:#666;}
+.ci-val{font-size:30px;font-weight:700;color:#E63946;}
+.cover-emoji{font-size:48px;margin-top:10px;}
+
+/* <CW-SECTION name="theme"> */
+/* 主题变量（红金暖色系 · 亮色） */
+/* </CW-CSS-EXTRA> */
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important;}
+}
+
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <div class="nav-item" data-segment="1" onclick="jumpToSegment(1)"><span class="nav-num">①</span>复习导入</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="2" onclick="jumpToSegment(2)"><span class="nav-num">②</span>新词20</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="3" onclick="jumpToSegment(3)"><span class="nav-num">③</span>原因状语</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="4" onclick="jumpToSegment(4)"><span class="nav-num">④</span>让步状语</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="5" onclick="jumpToSegment(5)"><span class="nav-num">⑤</span>结果目的</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="6" onclick="jumpToSegment(6)"><span class="nav-num">⑥</span>随堂演练</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="7" onclick="jumpToSegment(7)"><span class="nav-num">⑦</span>阅读</div>
+  <div class="nav-separator"></div>
+  <div class="nav-item" data-segment="8" onclick="jumpToSegment(8)"><span class="nav-num">⑧</span>总结</div>
+</div>
+<div class="stage-badge">Stage 6 · L24</div>
+<div class="sync-status"><div class="sync-dot" id="syncDot"></div><span id="syncText">本地已保存</span></div>
+<div class="export-btn" onclick="exportData(event)">导出答题数据</div>
+<div class="pages-container" id="pagesContainer">
+<div class="page active" id="page1">
+  <div class="page-content">
+    <h1 class="page-title">L24 状语从句</h1>
+    <p class="page-subtitle">八上状语从句主线</p>
+<!-- CW-VISUAL-CONTRACT:1 -->
+<!-- CW-INTERACTION-CONTRACT:1 -->
+<div class="cover-wrap"><div class="cover-badge">Stage 6 · 八上主线</div><div class="cover-title">原因·结果·让步状语从句</div><div class="cover-sub">G60 because/although + G61 so/so that</div><div class="cover-tagline">授课课 · 八段式</div><div class="cover-info"><div class="cover-info-num"><div class="ci-label">新词</div><div class="ci-val">20</div></div><div class="cover-info-num"><div class="ci-label">考点</div><div class="ci-val">2</div></div><div class="cover-info-num"><div class="ci-label">词号</div><div class="ci-val">461–480</div></div><div class="cover-info-num"><div class="ci-label">时长</div><div class="ci-val">90分</div></div></div><div class="cover-emoji">🔗</div></div>
+  </div>
+</div>
+
+<div class="page" id="page2">
+  <div class="page-content">
+    <h1 class="page-title">复习导入</h1>
+    <p class="page-subtitle">L23 衔接</p>
+<div class="section-head"><div class="sh-icon">复</div><div class="sh-title">上一课条件句回顾</div><span class="sh-tag">L23 衔接</span></div><div class="rule-card rc-zhug"><div class="rc-title">L23 考点</div><div class="rc-body">if 条件句（主将从现）+ unless（=if not）+ 祈使句 and/or + 将来。</div></div>
+<div class="rule-card rc-bin"><div class="rc-title">本课衔接</div><div class="rc-body">L23 讲条件句，L24 转到原因/结果/让步状语从句。</div></div><div class="quiz-q" data-qid="Q001"><div class="qq-text">L23 学到的主将从句规则是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 从句现在时，主句将来时</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 都用过去时</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 都用将来时</button>
+</div>
+<div class="quiz-q" data-qid="Q002"><div class="qq-text">unless 等于？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. if</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. if not</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. because</button>
+</div><div class="note-panel"><div class="np-title">L24 起点</div><div class="np-body">今天学的 because/although/so 表示因果关系与让步转折，是连词综合运用的一课。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page3">
+  <div class="page-content">
+    <h1 class="page-title">前瞻</h1>
+    <p class="page-subtitle">状语从句概念</p>
+<div class="section-head"><div class="sh-icon">复</div><div class="sh-title">状语从句 · 前瞻</div><span class="sh-tag">新旧衔接</span></div><div class="rule-card rc-warn"><div class="rc-title">什么是状语从句</div><div class="rc-body">状语从句由连词引导，表原因(because)、让步(although)、结果/目的(so/so that)等。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">避免混用</div><div class="rc-body">because 与 so 不能同时出现在同一句（because...so 是错误）。</div></div><div class="quiz-q" data-qid="Q003"><div class="qq-text">because 表？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 让步</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 结果</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 原因</button>
+</div>
+<div class="quiz-q" data-qid="Q004"><div class="qq-text">although 表？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 让步</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 原因</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 结果</button>
+</div><div class="sub-label">今天把原因/让步/结果三条线一次梳理</div>
+  </div>
+</div>
+
+<div class="page" id="page4">
+  <div class="page-content">
+    <h1 class="page-title">学习目标</h1>
+    <p class="page-subtitle">目标导航</p>
+<div class="section-head"><div class="sh-icon">复</div><div class="sh-title">本课学习目标</div><span class="sh-tag">目标导航</span></div><div class="note-panel"><div class="np-title">本课 2 大考点</div><div class="np-body">① G60 because/since/as 原因状语 + although/though 让步状语 ② G61 so / so that / in order that 结果与目的状语。</div></div><div class="rule-card rc-qita"><div class="rc-title">学习动作</div><div class="rc-body">看规则 → 填空自检 → 拖拽搭配 → 阅读应用 → 口诀收尾。</div></div>
+<div class="rule-card rc-ming"><div class="rc-title">防越级</div><div class="rc-body">不引入定语从句（留至 L33）。</div></div><div class="quiz-q" data-qid="Q005"><div class="qq-text">本课语法主线是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 定语从句</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 原因/结果/让步状语</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 被动</button>
+</div><div class="ext-card"><span class="ext-cat">前后衔接</span><div class="ext-body">L23 条件句收尾，L24 状语从句新开；L25 将转到动名词与不定式。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page5">
+  <div class="page-content">
+    <h1 class="page-title">新词① 因果连词</h1>
+    <p class="page-subtitle">词 461–466</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词① · 因果连词</div><span class="sh-tag">词 461–466</span></div><div class="vocab-grid"><div class="vocab-card"><div class="vocab-head"><span class="vocab-word">because</span><span class="vocab-phonetic">/bɪˈkɒz/</span><span class="vocab-pos">conj.</span></div><div class="vocab-cn">因为</div><div class="vocab-collocation">搭配：because of / because + 句子</div><div class="vocab-example">I stayed because it was raining.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">since</span><span class="vocab-phonetic">/sɪns/</span><span class="vocab-pos">conj.</span></div><div class="vocab-cn">既然；自从</div><div class="vocab-collocation">搭配：since then / since + 句子</div><div class="vocab-example">Since you&#x27;re here, let&#x27;s start.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">as</span><span class="vocab-phonetic">/æz/</span><span class="vocab-pos">conj.</span></div><div class="vocab-cn">因为；当…时</div><div class="vocab-collocation">搭配：as soon as / as a result</div><div class="vocab-example">As it rained, we stayed in.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">although</span><span class="vocab-phonetic">/ɔːlˈðəʊ/</span><span class="vocab-pos">conj.</span></div><div class="vocab-cn">虽然</div><div class="vocab-collocation">搭配：although + 句子</div><div class="vocab-example">Although it was late, he kept working.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">though</span><span class="vocab-phonetic">/ðəʊ/</span><span class="vocab-pos">conj.</span></div><div class="vocab-cn">虽然</div><div class="vocab-collocation">搭配：even though / though + 句子</div><div class="vocab-example">Though tired, she smiled.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">however</span><span class="vocab-phonetic">/haʊˈevə(r)/</span><span class="vocab-pos">adv.</span></div><div class="vocab-cn">然而</div><div class="vocab-collocation">搭配：however + 句子</div><div class="vocab-example">He is kind. However, he is strict.</div></div></div>
+  </div>
+</div>
+
+<div class="page" id="page6">
+  <div class="page-content">
+    <h1 class="page-title">新词② 结果原因</h1>
+    <p class="page-subtitle">词 467–470</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词② · 结果与原因</div><span class="sh-tag">词 467–470</span></div><div class="vocab-grid"><div class="vocab-card"><div class="vocab-head"><span class="vocab-word">therefore</span><span class="vocab-phonetic">/ˈðeəfɔː(r)/</span><span class="vocab-pos">adv.</span></div><div class="vocab-cn">因此</div><div class="vocab-collocation">搭配：therefore + 句子</div><div class="vocab-example">It rained; therefore, we stayed.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">result</span><span class="vocab-phonetic">/rɪˈzʌlt/</span><span class="vocab-pos">n.</span></div><div class="vocab-cn">结果</div><div class="vocab-collocation">搭配：as a result / result in</div><div class="vocab-example">As a result, we won.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">cause</span><span class="vocab-phonetic">/kɔːz/</span><span class="vocab-pos">n./v.</span></div><div class="vocab-cn">原因；导致</div><div class="vocab-collocation">搭配：the cause of / cause trouble</div><div class="vocab-example">What caused the problem?</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">effect</span><span class="vocab-phonetic">/ɪˈfekt/</span><span class="vocab-pos">n.</span></div><div class="vocab-cn">影响；效果</div><div class="vocab-collocation">搭配：have an effect on / take effect</div><div class="vocab-example">TV has an effect on children.</div></div></div><div class="note-panel"><div class="np-title">cause/effect 对比</div><div class="np-body">cause 是因，effect 是果。cause 也可作动词表'导致'。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page7">
+  <div class="page-content">
+    <h1 class="page-title">新词③ 解释问题</h1>
+    <p class="page-subtitle">词 471–476</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词③ · 解释与问题</div><span class="sh-tag">词 471–476</span></div><div class="vocab-grid"><div class="vocab-card"><div class="vocab-head"><span class="vocab-word">reason</span><span class="vocab-phonetic">/ˈriːzn/</span><span class="vocab-pos">n.</span></div><div class="vocab-cn">理由</div><div class="vocab-collocation">搭配：the reason for / for this reason</div><div class="vocab-example">Tell me the reason.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">explain</span><span class="vocab-phonetic">/ɪkˈspleɪn/</span><span class="vocab-pos">v.</span></div><div class="vocab-cn">解释</div><div class="vocab-collocation">搭配：explain sth to sb / explain why</div><div class="vocab-example">Can you explain the rule?</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">situation</span><span class="vocab-phonetic">/ˌsɪtʃuˈeɪʃn/</span><span class="vocab-pos">n.</span></div><div class="vocab-cn">情况</div><div class="vocab-collocation">搭配：in this situation / a difficult situation</div><div class="vocab-example">We are in a hard situation.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">problem</span><span class="vocab-phonetic">/ˈprɒbləm/</span><span class="vocab-pos">n.</span></div><div class="vocab-cn">问题</div><div class="vocab-collocation">搭配：solve a problem / no problem</div><div class="vocab-example">We have a big problem.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">solution</span><span class="vocab-phonetic">/səˈluːʃn/</span><span class="vocab-pos">n.</span></div><div class="vocab-cn">解决办法</div><div class="vocab-collocation">搭配：a solution to / find a solution</div><div class="vocab-example">We found a solution.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">besides</span><span class="vocab-phonetic">/bɪˈsaɪdz/</span><span class="vocab-pos">prep.</span></div><div class="vocab-cn">除…之外</div><div class="vocab-collocation">搭配：besides + 名词 / besides</div><div class="vocab-example">Besides English, I study French.</div></div></div>
+  </div>
+</div>
+
+<div class="page" id="page8">
+  <div class="page-content">
+    <h1 class="page-title">新词④ 让步替代</h1>
+    <p class="page-subtitle">词 477–480</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词④ · 让步与替代</div><span class="sh-tag">词 477–480</span></div><div class="vocab-grid"><div class="vocab-card"><div class="vocab-head"><span class="vocab-word">despite</span><span class="vocab-phonetic">/dɪˈspaɪt/</span><span class="vocab-pos">prep.</span></div><div class="vocab-cn">尽管</div><div class="vocab-collocation">搭配：despite + 名词 / in spite of</div><div class="vocab-example">Despite the rain, we went out.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">unless</span><span class="vocab-phonetic">/ənˈles/</span><span class="vocab-pos">conj.</span></div><div class="vocab-cn">除非</div><div class="vocab-collocation">搭配：unless + 句子</div><div class="vocab-example">We&#x27;ll fail unless we try.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">while</span><span class="vocab-phonetic">/waɪl/</span><span class="vocab-pos">conj.</span></div><div class="vocab-cn">当…时；然而</div><div class="vocab-collocation">搭配：while + 句子 / while</div><div class="vocab-example">While I read, he wrote.</div></div>
+<div class="vocab-card"><div class="vocab-head"><span class="vocab-word">instead</span><span class="vocab-phonetic">/ɪnˈsted/</span><span class="vocab-pos">adv.</span></div><div class="vocab-cn">代替</div><div class="vocab-collocation">搭配：instead of / instead</div><div class="vocab-example">I&#x27;ll go instead of you.</div></div></div><div class="note-panel"><div class="np-title">记忆小贴士</div><div class="np-body">despite/although 都表让步；despite+名词，although+句子；instead 表替代。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page9">
+  <div class="page-content">
+    <h1 class="page-title">词汇游戏①</h1>
+    <p class="page-subtitle">翻牌自检</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词游戏① · 词义翻牌</div><span class="sh-tag">翻牌自检</span></div><div class="sub-label">点击翻牌，看英文想中文，再翻回核对</div><div class="flip-grid"><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">because</div><div class="flip-card-back">因为</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">although</div><div class="flip-card-back">虽然</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">however</div><div class="flip-card-back">然而</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">therefore</div><div class="flip-card-back">因此</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">cause</div><div class="flip-card-back">原因</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">effect</div><div class="flip-card-back">影响</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">reason</div><div class="flip-card-back">理由</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">solution</div><div class="flip-card-back">办法</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">despite</div><div class="flip-card-back">尽管</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">unless</div><div class="flip-card-back">除非</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">while</div><div class="flip-card-back">当…时</div></div></div><div class="flip-card" onclick="flipCard(this)"><div class="flip-card-inner"><div class="flip-card-front">instead</div><div class="flip-card-back">代替</div></div></div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q006"><div class="qq-text">however 的意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 因为</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 因此</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 然而</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page10">
+  <div class="page-content">
+    <h1 class="page-title">词汇游戏②</h1>
+    <p class="page-subtitle">拖拽归位</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词游戏② · 拖拽归位</div><span class="sh-tag">拖拽</span></div><div class="sub-label">把词块拖到正确的解释前面</div><div class="drag-container quiz-q" data-qid="Q007"><div class="drag-words"><span class="drag-word" onclick="pickWord(this)">because</span><span class="drag-word" onclick="pickWord(this)">although</span><span class="drag-word" onclick="pickWord(this)">therefore</span></div><div class="qq-text">因为 →  <span class="drag-slot" data-expect="because"></span> 虽然 →  <span class="drag-slot" data-expect="although"></span> 因此 →  <span class="drag-slot" data-expect="therefore"></span> </div><button class="drag-submit" onclick="dragSubmit(this)">提交</button><div class="sub-label">（先点上方词块填入，再点提交）</div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q008"><div class="qq-text">'solve a problem' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 制造问题</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 解决问题</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 忽略问题</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page11">
+  <div class="page-content">
+    <h1 class="page-title">词汇游戏③</h1>
+    <p class="page-subtitle">连线配对</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词游戏③ · 连线配对</div><span class="sh-tag">连线</span></div><div class="sub-label">把英文词与正确释义连起来</div><div class="match-container" data-qid="Q009"><div class="match-column mcol-l"><div class="match-item" data-match="because" onclick="matchPick(this)">因为</div><div class="match-item" data-match="despite" onclick="matchPick(this)">尽管</div><div class="match-item" data-match="instead" onclick="matchPick(this)">代替</div></div><div class="match-column mcol-r"><div class="match-item" data-match="因为" onclick="matchPick(this)">because</div><div class="match-item" data-match="尽管" onclick="matchPick(this)">despite</div><div class="match-item" data-match="代替" onclick="matchPick(this)">instead</div></div></div><div class="sub-label">左右两列点击配对</div>
+  </div>
+</div>
+
+<div class="page" id="page12">
+  <div class="page-content">
+    <h1 class="page-title">词汇游戏④</h1>
+    <p class="page-subtitle">选择演练</p>
+<div class="section-head"><div class="sh-icon">词</div><div class="sh-title">新词游戏④ · 选择演练</div><span class="sh-tag">选择</span></div><div class="sub-label">20 词综合选择</div><div class="quiz-q" data-qid="Q010"><div class="qq-text">'然而' 是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. however</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. therefore</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. because</button>
+</div>
+<div class="quiz-q" data-qid="Q011"><div class="qq-text">'原因' 是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. effect</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. cause</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. result</button>
+</div>
+<div class="quiz-q" data-qid="Q012"><div class="qq-text">'解释' 是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. describe</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. arrive</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. explain</button>
+</div>
+<div class="quiz-q" data-qid="Q013"><div class="qq-text">'办法' 是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. solution</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. problem</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. reason</button>
+</div>
+<div class="quiz-q" data-qid="Q014"><div class="qq-text">'尽管' 是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. because</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. despite</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. unless</button>
+</div>
+<div class="quiz-q" data-qid="Q015"><div class="qq-text">'代替' 是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. while</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. since</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. instead</button>
+</div><div class="ext-card"><span class="ext-cat">词汇记忆</span><div class="ext-body">因果连词族：because/since/as（因为）、so/therefore（所以）、although/though（虽然）。</div></div><div class="quiz-q" data-qid="Q016"><div class="qq-text">'the reason for' 中 for 后接？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 名词</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 句子</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 动词原形</button>
+</div>
+<div class="quiz-q" data-qid="Q017"><div class="qq-text">'explain sth to sb' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 向某人借东西</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 向某人解释某事</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 向某人道歉</button>
+</div>
+<div class="quiz-q" data-qid="Q018"><div class="qq-text">'in this situation' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 在那种天气</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 在某个餐厅</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 在这种情况下</button>
+</div>
+<div class="quiz-q" data-qid="Q019"><div class="qq-text">'besides English' 意思是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 除了英语之外</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 英语之内</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 只有英语</button>
+</div>
+<div class="quiz-q" data-qid="Q020"><div class="qq-text">'instead of' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 然后</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 而不是</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 因为</button>
+</div>
+<div class="quiz-q" data-qid="Q021"><div class="qq-text">'as a result' 表？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 原因</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 让步</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 结果</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page13">
+  <div class="page-content">
+    <h1 class="page-title">原因状语</h1>
+    <p class="page-subtitle">G60 because</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">because/since/as · 原因状语</div><span class="sh-tag">G60 规则</span></div><div class="rule-card rc-zhug"><div class="rc-title">because</div><div class="rc-body">表直接原因，语气最强：I stayed home because it rained.。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">since / as</div><div class="rc-body">表已知原因，译'既然/因为'：Since you are tired, rest.。</div></div>
+<div class="rule-card rc-warn"><div class="rc-title">because 与 so 不连用</div><div class="rc-body">❌ Because it rained, so we stayed. → ✅ Because it rained, we stayed. 或 It rained, so we stayed.</div></div><div class="quiz-q" data-qid="Q022"><div class="qq-text">because 表？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 原因</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 结果</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 让步</button>
+</div>
+<div class="quiz-q" data-qid="Q023"><div class="qq-text">since 可译作？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 然而</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 既然</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 因此</button>
+</div>
+<div class="quiz-q" data-qid="Q024"><div class="qq-text">because 与 so 能连用吗？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 能</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 看情况</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 不能</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page14">
+  <div class="page-content">
+    <h1 class="page-title">原因填空</h1>
+    <p class="page-subtitle">G60 练习</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">原因状语 · 补全填空</div><span class="sh-tag">G60 练习</span></div><div class="fill-q quiz-q" data-qid="Q025"><div class="qq-text">I was late ____ (because/since) of the traffic. <input class="fill-input" data-answer="because"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：because</div></div><div class="fill-q quiz-q" data-qid="Q026"><div class="qq-text">____ (因为) it was cold, we wore coats. (用 since) <input class="fill-input" data-answer="Since"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：Since</div></div><div class="sub-label">点击检查，because 后接名词用 because of</div><div class="note-panel"><div class="np-title">because vs because of</div><div class="np-body">because + 句子；because of + 名词/短语：because it rained / because of the rain。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page15">
+  <div class="page-content">
+    <h1 class="page-title">原因拖拽</h1>
+    <p class="page-subtitle">G60 应用</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">原因状语 · 拖拽成句</div><span class="sh-tag">G60 应用</span></div><div class="sub-label">把词块按正确顺序拖入生成原因句</div><div class="drag-container quiz-q" data-qid="Q027"><div class="drag-words"><span class="drag-word" onclick="pickWord(this)">because</span><span class="drag-word" onclick="pickWord(this)">come</span></div><div class="qq-text">I stayed in  <span class="drag-slot" data-expect="because"></span>  it was raining.Since you are free,  <span class="drag-slot" data-expect="come"></span>  and help me.</div><button class="drag-submit" onclick="dragSubmit(this)">提交</button><div class="sub-label">（先点上方词块填入，再点提交）</div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q028"><div class="qq-text">because of 后接？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 名词</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 句子</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 动词</button>
+</div>
+<div class="quiz-q" data-qid="Q029"><div class="qq-text">'潜在'原因语气较弱的是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. because</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. since/as</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. so</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page16">
+  <div class="page-content">
+    <h1 class="page-title">原因排序</h1>
+    <p class="page-subtitle">G60 排序</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">原因状语 · 排序成句</div><span class="sh-tag">G60 排序</span></div><div class="order-container" data-qid="Q030" data-key="Because|it|rained|we|stayed home"><div class="qq-text">把词块排成正确的原因句</div><ul class="order-list"><li class="order-item" data-val="Because"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">连词</span></li><li class="order-item" data-val="it"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">主语</span></li><li class="order-item" data-val="rained"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">动词</span></li><li class="order-item" data-val="we"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">主句</span></li><li class="order-item" data-val="stayed home"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">结果</span></li></ul><button class="order-check" onclick="orderCheck(this)">检查顺序</button><div class="order-ans">正确顺序：Because → it → rained → we → stayed home</div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q031"><div class="qq-text">'因为下雨' 用 because of 应接？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. the rain</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. it rained</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. raining</button>
+</div>
+<div class="quiz-q" data-qid="Q032"><div class="qq-text">since 表原因语气比 because？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 强</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 弱</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 一样</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page17">
+  <div class="page-content">
+    <h1 class="page-title">原因地图</h1>
+    <p class="page-subtitle">关键词</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">原因状语 · 关键词地图</div><span class="sh-tag">考点梳理</span></div><div class="kmap"><div class="kmap-title">原因状语三大关键词</div><div class="kmap-nodes"><div class="kmap-node"><div class="kn-title">because</div><div class="kn-body">直接原因 + 句子</div></div><div class="kmap-node"><div class="kn-title">since/as</div><div class="kn-body">已知原因，既然</div></div><div class="kmap-node"><div class="kn-title">because of</div><div class="kn-body">+ 名词/短语</div></div></div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q033"><div class="qq-text">because of 后面接的是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 完整句子</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 动词原形</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 名词/短语</button>
+</div>
+<div class="quiz-q" data-qid="Q034"><div class="qq-text">'既然你在这里' 用哪个词最佳？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. since</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. because</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. so</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page18">
+  <div class="page-content">
+    <h1 class="page-title">让步状语</h1>
+    <p class="page-subtitle">G60 although</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">although/though · 让步状语</div><span class="sh-tag">G60 让步</span></div><div class="rule-card rc-zhug"><div class="rc-title">although/though</div><div class="rc-body">虽然：although 较正式，though 较口语；引导让步从句。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">however</div><div class="rc-body">然而：为副词，连接前后两个独立句，后接逗号。</div></div>
+<div class="rule-card rc-warn"><div class="rc-title">不与 but 连用</div><div class="rc-body">although 与 but 不能同时用（❌ Although it was late, but he came. → 去掉 but）。</div></div><div class="quiz-q" data-qid="Q035"><div class="qq-text">although 表？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 原因</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 让步</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 结果</button>
+</div>
+<div class="quiz-q" data-qid="Q036"><div class="qq-text">although 能与 but 连用吗？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 能</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 看情况</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 不能</button>
+</div>
+<div class="quiz-q" data-qid="Q037"><div class="qq-text">____ it was hard, he finished it.</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. Although</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. Because</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. So</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page19">
+  <div class="page-content">
+    <h1 class="page-title">让步填空</h1>
+    <p class="page-subtitle">G60 练习</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">让步状语 · 补全填空</div><span class="sh-tag">G60 练习</span></div><div class="fill-q quiz-q" data-qid="Q038"><div class="qq-text">____ (虽然) it was late, he kept working. (用 although) <input class="fill-input" data-answer="Although"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：Although</div></div><div class="fill-q quiz-q" data-qid="Q039"><div class="qq-text">Though she was tired, ____ she smiled. (填 although/but 二选一) <input class="fill-input" data-answer="but"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：but</div></div><div class="sub-label">点击检查，注意 although 与 but 取舍</div><div class="note-panel"><div class="np-title">although vs but</div><div class="np-body">although 放从句句首引导让步，but 连接并列分句表达转折。同一句只能用一个。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page20">
+  <div class="page-content">
+    <h1 class="page-title">让步连线</h1>
+    <p class="page-subtitle">G60 连线</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">让步状语 · 连线互换</div><span class="sh-tag">G60 连线</span></div><div class="match-container" data-qid="Q040"><div class="match-column mcol-l"><div class="match-item" data-match="Although it rained" onclick="matchPick(this)">it rained, but</div><div class="match-item" data-match="Though he is young" onclick="matchPick(this)">he is young, but</div><div class="match-item" data-match="Although tired" onclick="matchPick(this)">tired, but</div></div><div class="match-column mcol-r"><div class="match-item" data-match="it rained, but" onclick="matchPick(this)">Although it rained</div><div class="match-item" data-match="he is young, but" onclick="matchPick(this)">Though he is young</div><div class="match-item" data-match="tired, but" onclick="matchPick(this)">Although tired</div></div></div><div class="sub-label">左右两列点击配对，although 换成 but</div>
+  </div>
+</div>
+
+<div class="page" id="page21">
+  <div class="page-content">
+    <h1 class="page-title">让步双列</h1>
+    <p class="page-subtitle">G60 辨析</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">让步状语 · 双列选择</div><span class="sh-tag">G60 辨析</span></div><div class="quiz-q" data-qid="Q041"><div class="qq-text">although 引导的从句在主句前后均可，对吗？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 错</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 对</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 不一定</button>
+</div>
+<div class="quiz-q" data-qid="Q042"><div class="qq-text">However 后常接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 句点后动词</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 介词</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 逗号</button>
+</div>
+<div class="quiz-q" data-qid="Q043"><div class="qq-text">____ he was busy, he still helped me. 填？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. Although</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. Because</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. So</button>
+</div><div class="ext-card"><span class="ext-cat">辨析</span><div class="ext-body">although/though 让步；however 表转折，前后是两个独立句。三者都是 L24 高频考点。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page22">
+  <div class="page-content">
+    <h1 class="page-title">结果目的</h1>
+    <p class="page-subtitle">G61 so</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">so / so that · 结果目的</div><span class="sh-tag">G61 规则</span></div><div class="rule-card rc-zhug"><div class="rc-title">so</div><div class="rc-body">所以：表结果，I was tired, so I slept.。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">so that</div><div class="rc-body">以便：表目的，I study hard so that I can pass.。</div></div>
+<div class="rule-card rc-warn"><div class="rc-title">in order that</div><div class="rc-body">为了：较正式，后接 can/may/will。</div></div><div class="quiz-q" data-qid="Q044"><div class="qq-text">so 表？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 目的</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 结果</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 原因</button>
+</div>
+<div class="quiz-q" data-qid="Q045"><div class="qq-text">so that 表？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 结果</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 让步</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 目的</button>
+</div>
+<div class="quiz-q" data-qid="Q046"><div class="qq-text">I got up early ____ I could catch the bus.</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. so that</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. because</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. although</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page23">
+  <div class="page-content">
+    <h1 class="page-title">结果目的填空</h1>
+    <p class="page-subtitle">G61 练习</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">结果目的 · 补全填空</div><span class="sh-tag">G61 练习</span></div><div class="fill-q quiz-q" data-qid="Q047"><div class="qq-text">He was tired, ____ (so/so that) he went to bed early. <input class="fill-input" data-answer="so"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：so</div></div><div class="fill-q quiz-q" data-qid="Q048"><div class="qq-text">She spoke loudly so that everyone ____ (can/could) hear her. <input class="fill-input" data-answer="could"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：could</div></div><div class="sub-label">点击检查，so 结果、so that 目的</div><div class="note-panel"><div class="np-title">so vs so that</div><div class="np-body">so 引导结果从句（因果），so that 引导目的从句（以便）。看主句是否表'为了'。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page24">
+  <div class="page-content">
+    <h1 class="page-title">结果目的拖拽</h1>
+    <p class="page-subtitle">G61 应用</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">结果目的 · 拖拽搭配</div><span class="sh-tag">G61 应用</span></div><div class="sub-label">把 so / so that 拖到正确的句子</div><div class="drag-container quiz-q" data-qid="Q049"><div class="drag-words"><span class="drag-word" onclick="pickWord(this)">so</span><span class="drag-word" onclick="pickWord(this)">so that</span></div><div class="qq-text">It was hot, ____ we turned on the fan. <span class="drag-slot" data-expect="so"></span> I save money ____ I can buy a bike. <span class="drag-slot" data-expect="so that"></span> </div><button class="drag-submit" onclick="dragSubmit(this)">提交</button><div class="sub-label">（先点上方词块填入，再点提交）</div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q050"><div class="qq-text">'以便' 用哪个词？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. so</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. so that</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. because</button>
+</div>
+<div class="quiz-q" data-qid="Q051"><div class="qq-text">'所以' 用哪个词？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. so that</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. although</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. so</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page25">
+  <div class="page-content">
+    <h1 class="page-title">结果目的排序</h1>
+    <p class="page-subtitle">G61 排序</p>
+<div class="section-head"><div class="sh-icon">语</div><div class="sh-title">结果目的 · 排序成句</div><span class="sh-tag">G61 排序</span></div><div class="order-container" data-qid="Q052" data-key="I|study|hard|so that|I can pass"><div class="qq-text">把词块排成正确的目的句</div><ul class="order-list"><li class="order-item" data-val="I"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">主语</span></li><li class="order-item" data-val="study"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">动词</span></li><li class="order-item" data-val="hard"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">副词</span></li><li class="order-item" data-val="so that"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">目的</span></li><li class="order-item" data-val="I can pass"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">结果</span></li></ul><button class="order-check" onclick="orderCheck(this)">检查顺序</button><div class="order-ans">正确顺序：I → study → hard → so that → I can pass</div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q053"><div class="qq-text">in order that 较？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 口语</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 正式</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 错误</button>
+</div>
+<div class="quiz-q" data-qid="Q054"><div class="qq-text">so that 后常接 can/may/will，对吗？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 错</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 不一定</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 对</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page26">
+  <div class="page-content">
+    <h1 class="page-title">随堂演练</h1>
+    <p class="page-subtitle">选择</p>
+<div class="section-head"><div class="sh-icon">练</div><div class="sh-title">状语从句 · 选择演练</div><span class="sh-tag">单选</span></div><div class="quiz-q" data-qid="Q055"><div class="qq-text">I was happy ____ I got a gift.</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. because</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. although</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. so that</button>
+</div>
+<div class="quiz-q" data-qid="Q056"><div class="qq-text">____ he is old, he is strong.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. Because</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. Although</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. So</button>
+</div>
+<div class="quiz-q" data-qid="Q057"><div class="qq-text">He was sick, ____ he stayed home.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. so that</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. although</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. so</button>
+</div>
+<div class="quiz-q" data-qid="Q058"><div class="qq-text">She works hard ____ she can pass.</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. so that</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. so</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. because</button>
+</div><div class="note-panel"><div class="np-title">解题步骤</div><div class="np-body">①看逻辑关系（原因/让步/结果/目的）②选连词 ③检查 because/although 不与 so/but 连用。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page27">
+  <div class="page-content">
+    <h1 class="page-title">随堂演练</h1>
+    <p class="page-subtitle">填空</p>
+<div class="section-head"><div class="sh-icon">练</div><div class="sh-title">状语从句 · 填空演练</div><span class="sh-tag">填空</span></div><div class="fill-q quiz-q" data-qid="Q059"><div class="qq-text">The game was over, so we ____ (go) home. <input class="fill-input" data-answer="went"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：went</div></div><div class="fill-q quiz-q" data-qid="Q060"><div class="qq-text">Although it was hot, ____ (he/him) kept working. <input class="fill-input" data-answer="he"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：he</div></div><div class="fill-q quiz-q" data-qid="Q061"><div class="qq-text">Since you are free, ____ (come/came) with us. <input class="fill-input" data-answer="come"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：come</div></div><div class="sub-label">点击检查</div>
+  </div>
+</div>
+
+<div class="page" id="page28">
+  <div class="page-content">
+    <h1 class="page-title">随堂演练</h1>
+    <p class="page-subtitle">排序</p>
+<div class="section-head"><div class="sh-icon">练</div><div class="sh-title">状语从句 · 拖拽排序</div><span class="sh-tag">排序</span></div><div class="sub-label">把词块按正确顺序拖入（排序）</div><div class="order-container" data-qid="Q062" data-key="Although|he|was|tired|he kept going"><div class="qq-text">把让步句按正确顺序排列</div><ul class="order-list"><li class="order-item" data-val="Although"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">连词</span></li><li class="order-item" data-val="he"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">主语</span></li><li class="order-item" data-val="was"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">be</span></li><li class="order-item" data-val="tired"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">形容词</span></li><li class="order-item" data-val="he kept going"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">主句</span></li></ul><button class="order-check" onclick="orderCheck(this)">检查顺序</button><div class="order-ans">正确顺序：Although → he → was → tired → he kept going</div></div><div class="sub-label">自检一题</div>
+  </div>
+</div>
+
+<div class="page" id="page29">
+  <div class="page-content">
+    <h1 class="page-title">随堂演练</h1>
+    <p class="page-subtitle">综合</p>
+<div class="section-head"><div class="sh-icon">练</div><div class="sh-title">状语从句 · 综合混练</div><span class="sh-tag">综合</span></div><div class="quiz-q" data-qid="Q063"><div class="qq-text">I stayed home ____ it was raining.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. although</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. so that</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. because</button>
+</div>
+<div class="quiz-q" data-qid="Q064"><div class="qq-text">Although it was cold, we ____ out.</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. went</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. go</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. will go</button>
+</div>
+<div class="quiz-q" data-qid="Q065"><div class="qq-text">He failed, so he ____ again.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. try</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. tried</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. tries</button>
+</div>
+<div class="quiz-q" data-qid="Q066"><div class="qq-text">She studies hard so that she ____ pass.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. does</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. did</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. can</button>
+</div><div class="sub-label">点击作答，四题全对才算掌握</div><div class="note-panel"><div class="np-title">综合审题三步</div><div class="np-body">①看主句与从句逻辑（因/果/让步/目的）②选对连词 ③检查全句时态是否一致。把四题连起来读一遍，验证通顺。</div></div><div class="quiz-q" data-qid="Q067"><div class="qq-text">'I stayed home because it was raining.' 中 because 说明？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 我待家的原因</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 我待家的结果</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 我待家的目的</button>
+</div>
+<div class="quiz-q" data-qid="Q068"><div class="qq-text">'She studies hard so that she can pass.' 中 so that 说明？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 她努力的原因</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 她努力的目的</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 她努力的结果</button>
+</div>
+<div class="quiz-q" data-qid="Q069"><div class="qq-text">四项中哪项表让步？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. Although it was cold</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. I stayed home because</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. He failed so</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">D. She studies hard so that</button>
+</div><div class="body-text">本课综合运用：because 表因、although 表让步、so 表果、so that 表目的。做题时先判断逻辑再选词，特别注意 because...so 与 although...but 不能同时出现。</div>
+  </div>
+</div>
+
+<div class="page" id="page30">
+  <div class="page-content">
+    <h1 class="page-title">阅读 A 篇</h1>
+    <p class="page-subtitle">社交媒体</p>
+<div class="section-head"><div class="sh-icon">读</div><div class="sh-title">阅读 A 篇 · Why Do Teenagers Love Social Media</div><span class="sh-tag">说明文</span></div><div class="sub-label">说明文：青少年为什么爱社交媒体（约 195 词）</div><div class="body-text">Why do teenagers love social media? There are several reasons. Because social media is easy to use, many teens can share photos and ideas quickly. Since they can talk to friends at any time, it makes them feel connected. Although it is fun, too much time online can be a problem. So parents should help teens balance their time. Experts say that because teens love social media, they need rules. Therefore, families should set clear limits. In short, social media is useful, but we must use it wisely.</div><div class="fill-q quiz-q" data-qid="Q070"><div class="qq-text">青少年为什么爱社交媒体？（原因） <input class="fill-input" style="width:min(300px,92%)" data-answer="easy to use" data-answers='["easy to use", "it is easy to use", "social media is easy to use", "because it is easy to use"]' placeholder="输入答案" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">检查</button></div><div class="fill-answer">参考答案：easy to use</div></div>
+<div class="quiz-q" data-qid="Q071"><div class="qq-text">'feel connected' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 感到孤独</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 感到被联系/有归属</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 感到无聊</button>
+</div>
+<div class="quiz-q" data-qid="Q072"><div class="qq-text">although 引导的从句表？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 原因</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 结果</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 让步</button>
+</div>
+<div class="fill-q quiz-q" data-qid="Q073"><div class="qq-text">作者建议家长做什么？ <input class="fill-input" data-answer="set rules" data-answers='["set rules", "set limits", "set clear limits", "set clear rules", "make rules"]' placeholder="输入答案" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">检查</button></div><div class="fill-answer">参考答案：set rules</div></div><div class="note-panel"><div class="np-title">说明文信息定位</div><div class="np-body">说明文常以 why 开头引出原因，逐题回原文找 because/since/although/so 等连词定位。</div></div><div class="quiz-q" data-qid="Q074"><div class="qq-text">'feel connected' 的相反意思大概是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 感到兴奋</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 感到孤独</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 感到充实</button>
+</div>
+<div class="fill-q quiz-q" data-qid="Q075"><div class="qq-text">家长应帮孩子做什么？ <input class="fill-input" style="width:min(300px,92%)" data-answer="balance their time" data-answers='["balance their time", "balance their online time", "balance online time", "balance the time", "balance time"]' placeholder="输入答案" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">检查</button></div><div class="fill-answer">参考答案：balance their time</div></div><div class="body-text">关键句回看：<b>Because social media is easy to use, many teens can share photos quickly.</b> 这里 because 说明原因；<b>Although it is fun, too much time online can be a problem.</b> 这里 although 表让步，说明'虽然有趣但有害'。最后一句话 <b>we must use it wisely</b> 是作者的建议，说明社交媒体要'明智使用'。</div><div class="fill-q quiz-q" data-qid="Q076"><div class="qq-text">因为社交媒体容易使用，许多青少年能快速分享照片。____ social media is easy to use, many teens can share photos quickly. (用because) <input class="fill-input" data-answer="Because" data-answers='["Because", "because", "Since", "As"]'><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：Because</div></div><div class="fill-q quiz-q" data-qid="Q077"><div class="qq-text">虽然有趣，但上网太多可能是个问题。____ it is fun, too much time online can be a problem. (用although) <input class="fill-input" data-answer="Although" data-answers='["Although", "although", "Though", "though"]'><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：Although</div></div><div class="sub-label">点击检查，注意 because 与 although 的用法区分</div><div class="quiz-q" data-qid="Q078"><div class="qq-text">'share photos and ideas quickly' 中 quickly 修饰？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. photos</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. ideas</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. share</button>
+</div>
+<div class="quiz-q" data-qid="Q079"><div class="qq-text">最后一句表达作者什么态度？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 明智使用</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 完全禁止</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 无限制使用</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page31">
+  <div class="page-content">
+    <h1 class="page-title">阅读 B 篇</h1>
+    <p class="page-subtitle">助人</p>
+<div class="section-head"><div class="sh-icon">读</div><div class="sh-title">阅读 B 篇 · A Reason to Help</div><span class="sh-tag">记叙文</span></div><div class="sub-label">记叙文：帮助的理由（约 215 词）</div><div class="body-text">Last week, I saw an old man who could not cross the street. Because the traffic was heavy, I decided to help him. Although I was in a hurry, I stopped and walked with him. He thanked me, so I felt very happy. Since helping others is easy, everyone can do it. However, many people are too busy to notice. I think everyone should help, so our community will be warmer. As a result, more people may start to help each other. One small act can bring great change.</div><div class="rule-card rc-bin"><div class="rc-title">人物</div><div class="rc-body">作者帮助老人过马路，感到快乐，呼吁大家互助。</div></div><div class="fill-q quiz-q" data-qid="Q080"><div class="qq-text">作者为什么帮助老人？ <input class="fill-input" style="width:min(300px,92%)" data-answer="the traffic was heavy" data-answers='["the traffic was heavy", "traffic was heavy", "because the traffic was heavy", "heavy traffic"]' placeholder="输入答案" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">检查</button></div><div class="fill-answer">参考答案：the traffic was heavy</div></div>
+<div class="fill-q quiz-q" data-qid="Q081"><div class="qq-text">although 从句的内容是？ <input class="fill-input" style="width:min(300px,92%)" data-answer="I was in a hurry" data-answers='["I was in a hurry", "in a hurry", "he was in a hurry", "the author was in a hurry"]' placeholder="输入答案" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">检查</button></div><div class="fill-answer">参考答案：I was in a hurry</div></div>
+<div class="quiz-q" data-qid="Q082"><div class="qq-text">'too busy to notice' 意思是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 忙到没注意</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 闲到无事</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 故意忽略</button>
+</div>
+<div class="fill-q quiz-q" data-qid="Q083"><div class="qq-text">作者希望社区变得更？ <input class="fill-input" data-answer="warmer" data-answers='["warmer", "warm"]' placeholder="输入答案" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">检查</button></div><div class="fill-answer">参考答案：warmer</div></div><div class="fill-q quiz-q" data-qid="Q084"><div class="qq-text">因为交通繁忙，我决定帮他。____ the traffic was heavy, I decided to help him. (用because) <input class="fill-input" data-answer="Because" data-answers='["Because", "because", "Since", "As"]'><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：Because</div></div><div class="sub-label">点击检查</div><div class="note-panel"><div class="np-title">记叙文信息定位</div><div class="np-body">记叙文按事件推进。逐题回原文找 because/although/so 等连词与动作，注意作者的情感变化。</div></div><div class="fill-q quiz-q" data-qid="Q085"><div class="qq-text">作者帮助老人后的心情是？ <input class="fill-input" data-answer="happy" data-answers='["happy", "very happy", "glad"]' placeholder="输入答案" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">检查</button></div><div class="fill-answer">参考答案：happy</div></div>
+<div class="quiz-q" data-qid="Q086"><div class="qq-text">'one small act' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 一个大笑话</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 一个小行动</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 一场大雨</button>
+</div><div class="body-text">情感线索回看：作者从 <b>decided to help</b>（决定帮助）到 <b>felt very happy</b>（感到快乐），再到 <b>one small act can bring great change</b>（一个小行动能带来大改变）。记叙文的考点常在这些情感变化与因果连词上，如 because 说明动机、so 说明结果。</div><div class="fill-q quiz-q" data-qid="Q087"><div class="qq-text">虽然我很忙，我还是停下来陪他走。____ I was in a hurry, I stopped and walked with him. (用although) <input class="fill-input" data-answer="Although" data-answers='["Although", "although", "Though", "though"]'><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：Although</div></div><div class="fill-q quiz-q" data-qid="Q088"><div class="qq-text">他感谢了我，所以我很高兴。He thanked me, ____ I felt very happy. (用so) <input class="fill-input" data-answer="so" data-answers='["so", "and so"]'><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：so</div></div><div class="sub-label">点击检查，注意 although 与 so 的使用语境</div><div class="quiz-q" data-qid="Q089"><div class="qq-text">'As a result' 相当于？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 然而</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 因此</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 例如</button>
+</div>
+<div class="fill-q quiz-q" data-qid="Q090"><div class="qq-text">作者希望更多人？ <input class="fill-input" style="width:min(300px,92%)" data-answer="help each other" data-answers='["help each other", "help one another", "help others"]' placeholder="输入答案" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">检查</button></div><div class="fill-answer">参考答案：help each other</div></div>
+<div class="quiz-q" data-qid="Q091"><div class="qq-text">'too busy to notice' 中 to notice 表？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 目的/结果</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 原因</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 让步</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page32">
+  <div class="page-content">
+    <h1 class="page-title">阅读 C 篇</h1>
+    <p class="page-subtitle">解决问题</p>
+<div class="section-head"><div class="sh-icon">读</div><div class="sh-title">阅读 C 篇 · Solving a Problem</div><span class="sh-tag">说明文</span></div><div class="sub-label">说明文：解决问题（约 215 词）</div><div class="body-text">Every problem has a solution. First, you should understand the problem. Because you need to know the cause before you can fix the effect. For example, if a student fails a test, the reason might be no review. So the solution is to make a study plan. Although it takes time, hard work always pays off. Therefore, don't give up when you meet a problem. Explain the situation to your teacher or parents, and they can give you advice. In this way, you can turn a problem into a chance to grow.</div><div class="rule-card rc-xing"><div class="rc-title">主旨</div><div class="rc-body">每个问题都有解决办法，先找原因再定方案。</div></div><div class="fill-q quiz-q" data-qid="Q092"><div class="qq-text">解决问题前先要？ <input class="fill-input" style="width:min(300px,92%)" data-answer="understand the problem" data-answers='["understand the problem", "understand it", "know the problem", "understand"]' placeholder="输入答案" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">检查</button></div><div class="fill-answer">参考答案：understand the problem</div></div>
+<div class="quiz-q" data-qid="Q093"><div class="qq-text">'the reason might be no review' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 原因是不聪明</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 没人在意</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 原因可能是没复习</button>
+</div>
+<div class="fill-q quiz-q" data-qid="Q094"><div class="qq-text">作者建议遇到问题不要？ <input class="fill-input" data-answer="give up" data-answers='["give up", "don&#39;t give up", "don’t give up", "never give up"]' placeholder="输入答案" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">检查</button></div><div class="fill-answer">参考答案：give up</div></div>
+<div class="quiz-q" data-qid="Q095"><div class="qq-text">'turn...into' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 把…扔掉</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 把…变成</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 把…隐藏</button>
+</div><div class="note-panel"><div class="np-title">cause/effect 结构</div><div class="np-body">说明文常用 cause（原因）→ solution（办法）结构，找 because/reason 定位因，找 so/solution 定位果。</div></div><div class="fill-q quiz-q" data-qid="Q096"><div class="qq-text">失败的原因是没复习。The reason is no ____ (review/revise). <input class="fill-input" data-answer="review" data-answers='["review", "revise", "revision"]'><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：review</div></div><div class="fill-q quiz-q" data-qid="Q097"><div class="qq-text">作者建议制定？ <input class="fill-input" style="width:min(300px,92%)" data-answer="a study plan" data-answers='["a study plan", "study plan", "make a study plan", "the study plan"]' placeholder="输入答案" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">检查</button></div><div class="fill-answer">参考答案：a study plan</div></div>
+<div class="quiz-q" data-qid="Q098"><div class="qq-text">'pay off' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 付钱</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 有回报</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 放弃</button>
+</div><div class="body-text">结构回看：这篇说明文按 <b>问题→原因→办法</b> 展开。先提出问题（Every problem has a solution），再分析原因（the cause before the effect），最后给出办法（make a study plan / explain to your teacher）。遇到此类文章，可用 <b>cause → effect → solution</b> 三步快速理清逻辑。</div><div class="quiz-q" data-qid="Q099"><div class="qq-text">文章按什么顺序展开？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 时间→地点→人物</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 票数→排名→奖项</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 问题→原因→办法</button>
+</div>
+<div class="quiz-q" data-qid="Q100"><div class="qq-text">'don't give up' 意思是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 不要放弃</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 不要开始</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 不要休息</button>
+</div>
+<div class="fill-q quiz-q" data-qid="Q101"><div class="qq-text">向老师或家长诉说情况可以？ <input class="fill-input" data-answer="get advice" data-answers='["get advice", "get some advice", "advice", "ask for advice"]' placeholder="输入答案" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">检查</button></div><div class="fill-answer">参考答案：get advice</div></div>
+<div class="quiz-q" data-qid="Q102"><div class="qq-text">'turn a problem into a chance' 意思是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 把机会变成问题</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 把问题藏起来</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 把问题变成机会</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page33">
+  <div class="page-content">
+    <h1 class="page-title">阅读五选四</h1>
+    <p class="page-subtitle">语篇填空</p>
+<div class="section-head"><div class="sh-icon">读</div><div class="sh-title">阅读 · 五选四</div><span class="sh-tag">语篇填空</span></div><div class="sub-label">My Day 语篇填空（5 空 4 选）</div><div class="rule-card rc-bin"><div class="rc-title">提示</div><div class="rc-body">根据上下文逻辑选择正确的衔接句，注意因果与转折。</div></div><div class="order-container" data-qid="Q103" data-key="First|Then|Finally"><div class="qq-text">把语篇衔接句按正确逻辑顺序排列</div><ul class="order-list"><li class="order-item" data-val="First"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">首先</span></li><li class="order-item" data-val="Then"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">然后</span></li><li class="order-item" data-val="Finally"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">最后</span></li></ul><button class="order-check" onclick="orderCheck(this)">检查顺序</button><div class="order-ans">正确顺序：First → Then → Finally</div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q104"><div class="qq-text">五选四中 'therefore' 表示？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 并列</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 因果</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 让步</button>
+</div><div class="ext-card"><span class="ext-cat">衔接词</span><div class="ext-body">因果：because/so/therefore；转折：although/though/however。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page34">
+  <div class="page-content">
+    <h1 class="page-title">阅读策略</h1>
+    <p class="page-subtitle">信息定位</p>
+<div class="section-head"><div class="sh-icon">读</div><div class="sh-title">阅读策略 · 因果信息定位</div><span class="sh-tag">策略</span></div><div class="kmap"><div class="kmap-title">因果类阅读三步法</div><div class="kmap-nodes"><div class="kmap-node"><div class="kn-title">划连词</div><div class="kn-body">找出 because/although/so/however</div></div><div class="kmap-node"><div class="kn-title">判关系</div><div class="kn-body">原因是因，so 是果，although 让步</div></div><div class="kmap-node"><div class="kn-title">定位</div><div class="kn-body">回原文找对应句子</div></div></div></div><div class="body-text">阅读因果类文章时，先划连词，再判断逻辑关系，最后回原文定位。</div><div class="quiz-q" data-qid="Q105"><div class="qq-text">because 引导的是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 结果</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 让步</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 原因</button>
+</div>
+<div class="quiz-q" data-qid="Q106"><div class="qq-text">so 引导的是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 结果</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 原因</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 让步</button>
+</div><div class="note-panel"><div class="np-title">常见设问</div><div class="np-body">Why...?（找 because/since/as）/ What is the result?（找 so/therefore）。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page35">
+  <div class="page-content">
+    <h1 class="page-title">造句because</h1>
+    <p class="page-subtitle">句子练习</p>
+<div class="section-head"><div class="sh-icon">句</div><div class="sh-title">造句 · because 原因</div><span class="sh-tag">句子练习</span></div><div class="rule-card rc-zhug"><div class="rc-title">句型</div><div class="rc-body">Because + 从句，主句。或 主句 because + 从句。</div></div><div class="fill-q quiz-q" data-qid="Q107"><div class="qq-text">因为下雨，我们待在家。____ it rained, we stayed at home. <input class="fill-input" data-answer="Because"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：Because</div></div><div class="sub-label">点击检查，because 不能与 so 连用</div><div class="body-text">参考：<b>I stayed home because it rained.</b>（因为下雨我待在家。）技巧：先说结果，再用 because 补原因。若用 because 起句，主句在后，中间用逗号。注意 because 后接完整句子，若是名词短语则用 because of。</div><div class="quiz-q" data-qid="Q108"><div class="qq-text">'因为堵车我迟到了' 用 because of 应接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. it was crowded</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. crowded</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. the traffic</button>
+</div>
+<div class="quiz-q" data-qid="Q109"><div class="qq-text">because 引导的是？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 原因从句</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 结果从句</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 让步从句</button>
+</div>
+<div class="quiz-q" data-qid="Q110"><div class="qq-text">He was late because ____.</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. of he missed</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. he missed the bus</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. the bus was</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page36">
+  <div class="page-content">
+    <h1 class="page-title">汉译英although</h1>
+    <p class="page-subtitle">句子练习</p>
+<div class="section-head"><div class="sh-icon">句</div><div class="sh-title">汉译英 · although</div><span class="sh-tag">句子练习</span></div><div class="rule-card rc-zhug"><div class="rc-title">句型</div><div class="rc-body">Although + 从句，主句。</div></div><div class="fill-q quiz-q" data-qid="Q111"><div class="qq-text">虽然他很累，但他没有放弃。____ he was tired, he didn't give up. <input class="fill-input" data-answer="Although"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：Although</div></div><div class="sub-label">点击检查，although 不与 but 连用</div><div class="body-text">参考：<b>Although he was tired, he didn't give up.</b>注意中文里常说'虽然…但是…'，英语里 although 与 but 只能选一个。用 although 起句，后面不能再出现 but；若用 but，则前面不再用 although。</div><div class="quiz-q" data-qid="Q112"><div class="qq-text">下面哪句正确？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. Although tired, he kept going</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. Although tired, but he kept going</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. but kept going he</button>
+</div>
+<div class="quiz-q" data-qid="Q113"><div class="qq-text">'虽然还早，他已经到了' 用 although 应接？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. early</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. It was still early</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. of early</button>
+</div>
+<div class="quiz-q" data-qid="Q114"><div class="qq-text">though 与 although 相比更？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 更正式</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 只能用于句首</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 口语化</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page37">
+  <div class="page-content">
+    <h1 class="page-title">汉译英so that</h1>
+    <p class="page-subtitle">句子练习</p>
+<div class="section-head"><div class="sh-icon">句</div><div class="sh-title">汉译英 · so that</div><span class="sh-tag">句子练习</span></div><div class="rule-card rc-zhug"><div class="rc-title">句型</div><div class="rc-body">主句 so that 从句（以便）。</div></div><div class="fill-q quiz-q" data-qid="Q115"><div class="qq-text">她早起以便能赶上公交。She got up early ____ she could catch the bus. <input class="fill-input" data-answer="so that"><button class="fill-check-btn" onclick="fillCheck(this)">检查</button></div><div class="fill-answer">答案：so that</div></div><div class="sub-label">点击检查，so that 表目的</div><div class="body-text">参考：<b>She got up early so that she could catch the bus.</b>so that 引导目的状语，后接 can/may/could 等情态动词。若表结果只用 so：She got up late, so she missed the bus.（结果）区别：so + 结果，so that + 目的。看主句动作是否有'以便'意图。</div><div class="quiz-q" data-qid="Q116"><div class="qq-text">'I study hard ____ I can win.' 填？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. so</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. so that</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. although</button>
+</div>
+<div class="quiz-q" data-qid="Q117"><div class="qq-text">'所以' 用哪个词？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. so that</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. because</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. so</button>
+</div>
+<div class="quiz-q" data-qid="Q118"><div class="qq-text">so that 后常接？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 情态动词</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 名词</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 过去分词</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page38">
+  <div class="page-content">
+    <h1 class="page-title">拼读音素</h1>
+    <p class="page-subtitle">元音</p>
+<div class="section-head"><div class="sh-icon">拼</div><div class="sh-title">音素 · 连词中的元音</div><span class="sh-tag">音素</span></div><div class="rule-card rc-zhug"><div class="rc-title">/ɔː/</div><div class="rc-body">长元音：although, because 中的 au/aw；口型圆。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">/ə(r)/</div><div class="rc-body">轻元音：however, therefore 中的 er；词尾弱读。</div></div><div class="quiz-q" data-qid="Q119"><div class="qq-text">although 中 al 发？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. /ɪ/</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. /ɔː/</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. /eɪ/</button>
+</div>
+<div class="quiz-q" data-qid="Q120"><div class="qq-text">however 中 er 发？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. /ɔː/</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. /iː/</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. /ə(r)/</button>
+</div><div class="note-panel"><div class="np-title">发音要点</div><div class="np-body">/ɔː/ 圆唇长读，/ə(r)/ 松唇弱读。读 although 时 o 圆唇，读 however 时 er 弱化。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page39">
+  <div class="page-content">
+    <h1 class="page-title">拼读归音</h1>
+    <p class="page-subtitle">/ɔː/ vs /ə(r)/</p>
+<div class="section-head"><div class="sh-icon">拼</div><div class="sh-title">看词归音 · /ɔː/ 还是 /ə(r)/</div><span class="sh-tag">归音</span></div><div class="order-container" data-qid="Q121" data-key="although|because|however"><div class="qq-text">把含 /ɔː/ 的词挑出来（排序成一列）</div><ul class="order-list"><li class="order-item" data-val="although"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">长元音</span></li><li class="order-item" data-val="because"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">长元音</span></li><li class="order-item" data-val="however"><button onclick="moveUp(this)">▲</button><button onclick="moveDown(this)">▼</button><span class="o-text">轻元音</span></li></ul><button class="order-check" onclick="orderCheck(this)">检查顺序</button><div class="order-ans">正确顺序：although → because → however</div></div><div class="sub-label">自检一题</div><div class="quiz-q" data-qid="Q122"><div class="qq-text">therefore 中 er 发？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. /ɔː/</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. /ə(r)/</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. /iː/</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page40">
+  <div class="page-content">
+    <h1 class="page-title">拼读听音</h1>
+    <p class="page-subtitle">听音选词</p>
+<div class="section-head"><div class="sh-icon">拼</div><div class="sh-title">听音选词 · 含 /ɔː/</div><span class="sh-tag">听音</span></div><div class="quiz-q" data-qid="Q123"><div class="qq-text">选出含 /ɔː/ 的词</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. however</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. since</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. although</button>
+</div>
+<div class="quiz-q" data-qid="Q124"><div class="qq-text">选出含 /ə(r)/ 的词</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. therefore</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. although</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. because</button>
+</div>
+<div class="quiz-q" data-qid="Q125"><div class="qq-text">because 中 au 发？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. /ɔː/</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. /ə/</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. /eɪ/</button>
+</div><div class="sub-label">点击作答，听音辨形</div><div class="note-panel"><div class="np-title">听辨提示</div><div class="np-body">although 的 al 重读 /ɔː/，however 的 er 弱读 /ə(r)/。连词拼接读要快而清。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page41">
+  <div class="page-content">
+    <h1 class="page-title">拼读对立</h1>
+    <p class="page-subtitle">最小对立对</p>
+<div class="section-head"><div class="sh-icon">拼</div><div class="sh-title">最小对立对 · /ɔː/ vs /əʊ/</div><span class="sh-tag">对立</span></div><div class="rule-card rc-ming"><div class="rc-title">最小对立</div><div class="rc-body">although / also；though / those——注意 /ɔː/ 与 /əʊ/ 区分。</div></div><div class="match-container" data-qid="Q126"><div class="match-column mcol-l"><div class="match-item" data-match="although" onclick="matchPick(this)">/ɔːlðəʊ/</div><div class="match-item" data-match="though" onclick="matchPick(this)">/ðəʊ/</div><div class="match-item" data-match="also" onclick="matchPick(this)">/ˈɔːlsəʊ/</div></div><div class="match-column mcol-r"><div class="match-item" data-match="/ɔːlðəʊ/" onclick="matchPick(this)">although</div><div class="match-item" data-match="/ðəʊ/" onclick="matchPick(this)">though</div><div class="match-item" data-match="/ˈɔːlsəʊ/" onclick="matchPick(this)">also</div></div></div><div class="sub-label">左右两列点击配对</div>
+  </div>
+</div>
+
+<div class="page" id="page42">
+  <div class="page-content">
+    <h1 class="page-title">核心口诀</h1>
+    <p class="page-subtitle">一页速览</p>
+<div class="section-head"><div class="sh-icon">结</div><div class="sh-title">核心口诀总览</div><span class="sh-tag">一页速览</span></div><div class="rule-card rc-zhug"><div class="rc-title">原因</div><div class="rc-body">because 直接因，since/as 既然；because of + 名词。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">让步</div><div class="rc-body">although/though 虽然，不与 but 连用；however 然而。</div></div>
+<div class="rule-card rc-bin"><div class="rc-title">结果目的</div><div class="rc-body">so 所以，so that 以便；in order that 表目的。</div></div><div class="quiz-q" data-qid="Q127"><div class="qq-text">because 与 so 能连用吗？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 不能</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 能</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 看情况</button>
+</div>
+<div class="quiz-q" data-qid="Q128"><div class="qq-text">although 与 but 能连用吗？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 能</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 不能</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 看情况</button>
+</div><div class="body-text">口诀背诵：<b>because 因、although 让步、so 结果、so that 目的。</b>四个连词各管一摊，因为所以不能叠，虽然但是只能一。because of 接名词，so that 后接 can/may 表目的。把口诀读两遍，再用本课 20 词各造一句，本课核心就掌握了大半。</div><div class="quiz-q" data-qid="Q129"><div class="qq-text">'四连词' 指哪些？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. is/am/are/be</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. and/or/but/so</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. because/although/so/so that</button>
+</div>
+<div class="quiz-q" data-qid="Q130"><div class="qq-text">because of 后接？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 名词</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 完整句子</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 动词原形</button>
+</div>
+<div class="quiz-q" data-qid="Q131"><div class="qq-text">本课口诀的核心是？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 越多越难</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">B. 四连词各司其职</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 越精确越好</button>
+</div>
+  </div>
+</div>
+
+<div class="page" id="page43">
+  <div class="page-content">
+    <h1 class="page-title">思维导图</h1>
+    <p class="page-subtitle">全课收尾</p>
+<div class="section-head"><div class="sh-icon">结</div><div class="sh-title">课堂思维导图</div><span class="sh-tag">全课收尾</span></div><div class="mm-wrap"><div class="mm-head">L24 · 原因·结果·让步状语从句 · 思维导图</div><div class="mm-branches"><div class="mm-branch"><div class="mm-branch-title">原因</div><div class="mm-items">because/since/as + because of</div></div><div class="mm-branch"><div class="mm-branch-title">让步</div><div class="mm-items">although/though + however</div></div><div class="mm-branch"><div class="mm-branch-title">结果目的</div><div class="mm-items">so / so that / in order that</div></div><div class="mm-branch"><div class="mm-branch-title">易错</div><div class="mm-items">because-not-so / although-not-but</div></div><div class="mm-branch"><div class="mm-branch-title">应用</div><div class="mm-items">阅读定位连词 / 造句 / 拼读</div></div><div class="mm-branch"><div class="mm-branch-title">防越级</div><div class="mm-items">不引入定语从句</div></div></div></div><div class="sub-label">本课 2 考点：G60 because/although · G61 so/so that</div><div class="note-panel"><div class="np-title">一句话收口</div><div class="np-body">because 表因、although 表让步、so 表果、so that 表目的。四连词一次带走。</div></div>
+  </div>
+</div>
+
+<div class="page" id="page44">
+  <div class="page-content">
+    <h1 class="page-title">课后任务</h1>
+    <p class="page-subtitle">巩固清单</p>
+<div class="section-head"><div class="sh-icon">结</div><div class="sh-title">课后任务 · 巩固清单</div><span class="sh-tag">任务</span></div><div class="rule-card rc-qita"><div class="rc-title">任务一</div><div class="rc-body">抄写 20 个状语从句相关词，各配一句因果句。</div></div>
+<div class="rule-card rc-bin"><div class="rc-title">任务二</div><div class="rc-body">完成配套练习卷（阅读30/语言25/综合25/语法诊断20）。</div></div>
+<div class="rule-card rc-xing"><div class="rc-title">任务三</div><div class="rc-body">用 because / although / so that 各写 2 句。</div></div><div class="quiz-q" data-qid="Q132"><div class="qq-text">本课核心考点有几个？</div>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">A. 3 个</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 5 个</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">C. 2 个</button>
+</div>
+<div class="quiz-q" data-qid="Q133"><div class="qq-text">because 与 so 同时用对吗？</div>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)">A. 错</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">B. 对</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)">C. 看情况</button>
+</div><div class="ext-card"><span class="ext-cat">展望</span><div class="ext-body">L25 将转到动名词与不定式，预习 enjoy / finish / decide / plan 等词。</div></div>
+  </div>
+</div>
+
+</div>
+<div class="page-counter" id="pageCounter">1 / 44</div>
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)"><div class="modal-content" id="modalContent"></div></div>
+<script>
+/* ==================== Web Audio API ==================== */
+var audioCtx = null;
+function initAudio(){
+  if(!audioCtx){
+    try{ audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }catch(e){ console.log('Audio not supported'); }
+  }
+  if(audioCtx && audioCtx.state === 'suspended'){ audioCtx.resume(); }
+}
+function playCorrect(){
+  initAudio();
+  if(!audioCtx) return;
+  var freqs = [523.25, 659.25, 783.99];
+  freqs.forEach(function(f, i){
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.value = f;
+    gain.gain.setValueAtTime(0, audioCtx.currentTime + i * 0.12);
+    gain.gain.linearRampToValueAtTime(0.2, audioCtx.currentTime + i * 0.12 + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.12 + 0.1);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(audioCtx.currentTime + i * 0.12);
+    osc.stop(audioCtx.currentTime + i * 0.12 + 0.1);
+  });
+}
+function playError(){
+  initAudio();
+  if(!audioCtx) return;
+  var freqs = [392.0, 261.63];
+  freqs.forEach(function(f, i){
+    var osc = audioCtx.createOscillator();
+    var gain = audioCtx.createGain();
+    osc.type = 'square';
+    osc.frequency.value = f;
+    gain.gain.setValueAtTime(0, audioCtx.currentTime + i * 0.25);
+    gain.gain.linearRampToValueAtTime(0.15, audioCtx.currentTime + i * 0.25 + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.25 + 0.2);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(audioCtx.currentTime + i * 0.25);
+    osc.stop(audioCtx.currentTime + i * 0.25 + 0.2);
+  });
+}
+function playPageTurn(){
+  initAudio();
+  if(!audioCtx) return;
+  var osc = audioCtx.createOscillator();
+  var gain = audioCtx.createGain();
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+  osc.frequency.exponentialRampToValueAtTime(400, audioCtx.currentTime + 0.08);
+  gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start();
+  osc.stop(audioCtx.currentTime + 0.08);
+}
+
+
+/* ==================== IndexedDB 数据采集 ==================== */
+var db = null;
+var DB_NAME = 'EnglishCoursewareDB';
+var DB_VERSION = 1;
+var STORE_NAME = 'answerRecords';
+var studentId = 'stu_xyj';
+var sessionId = 'D24_' + new Date().toISOString().slice(0,10).replace(/-/g,'');
+var answerRecords = [];
+
+function initDB(){
+  if(!window.indexedDB){ console.log('IndexedDB not supported'); return; }
+  var request = indexedDB.open(DB_NAME, DB_VERSION);
+  request.onerror = function(e){ console.log('DB error:', e); };
+  request.onsuccess = function(e){ db = e.target.result; loadExistingRecords(); };
+  request.onupgradeneeded = function(e){
+    db = e.target.result;
+    if(!db.objectStoreNames.contains(STORE_NAME)){
+      var store = db.createObjectStore(STORE_NAME, {keyPath: 'event_id'});
+      store.createIndex('student_id', 'student_id', {unique: false});
+      store.createIndex('question_id', 'question_id', {unique: false});
+      store.createIndex('session_id', 'session_id', {unique: false});
+    }
+  };
+}
+function loadExistingRecords(){
+  if(!db) return;
+  var tx = db.transaction([STORE_NAME], 'readonly');
+  var store = tx.objectStore(STORE_NAME);
+  var idx = store.index('session_id');
+  var req = idx.getAll(sessionId);
+  req.onsuccess = function(e){
+    answerRecords = e.target.result || [];
+    updateSyncStatus();
+  };
+}
+function saveAnswer(questionId, studentAnswer, correctAnswer, isCorrect, attemptNo, timeUsed, hintUsed){
+  if(!db) return;
+  var event_id = studentId + '_' + sessionId + '_' + questionId + '_' + (attemptNo || 1);
+  var record = {
+    event_id: event_id,
+    student_id: studentId,
+    session_id: sessionId,
+    question_id: questionId,
+    attempt_no: attemptNo || 1,
+    student_answer: studentAnswer,
+    correct_answer: correctAnswer,
+    is_correct: isCorrect,
+    time_used: timeUsed || 0,
+    hint_used: hintUsed || false,
+    timestamp: new Date().toISOString(),
+    synced: 'pending'
+  };
+  var tx = db.transaction([STORE_NAME], 'readwrite');
+  var store = tx.objectStore(STORE_NAME);
+  store.put(record);
+  answerRecords.push(record);
+  updateSyncStatus();
+}
+function updateSyncStatus(){
+  var pending = answerRecords.filter(function(r){ return r.synced === 'pending'; }).length;
+  var dot = document.getElementById('syncDot');
+  var text = document.getElementById('syncText');
+  if(!dot) return;
+  if(pending === 0){
+    dot.className = 'sync-dot';
+    text.textContent = '本地已保存 (' + answerRecords.length + '条)';
+  } else {
+    dot.className = 'sync-dot pending';
+    text.textContent = '待同步 (' + pending + '/' + answerRecords.length + ')';
+  }
+}
+function exportData(e){
+  if(e) e.stopPropagation();
+  if(answerRecords.length === 0){
+    alert('暂无答题数据可导出');
+    return;
+  }
+  var json = JSON.stringify(answerRecords, null, 2);
+  var csv = convertToCSV(answerRecords);
+  var jsonBlob = new Blob([json], {type: 'application/json'});
+  var csvBlob = new Blob(['\uFEFF' + csv], {type: 'text/csv'});
+  var jsonLink = document.createElement('a');
+  jsonLink.href = URL.createObjectURL(jsonBlob);
+  jsonLink.download = 'D24_answers.json';
+  jsonLink.click();
+  setTimeout(function(){
+    var csvLink = document.createElement('a');
+    csvLink.href = URL.createObjectURL(csvBlob);
+    csvLink.download = 'D24_answers.csv';
+    csvLink.click();
+  }, 300);
+}
+function convertToCSV(records){
+  var headers = ['event_id','student_id','session_id','question_id','attempt_no','student_answer','correct_answer','is_correct','time_used','hint_used','timestamp'];
+  var csv = headers.join(',') + '\n';
+  records.forEach(function(r){
+    var row = headers.map(function(h){
+      var val = r[h] !== undefined ? String(r[h]) : '';
+      if(val.indexOf(',') !== -1 || val.indexOf('"') !== -1){ val = '"' + val.replace(/"/g, '""') + '"'; }
+      return val;
+    });
+    csv += row.join(',') + '\n';
+  });
+  return csv;
+}
+
+
+/* ==================== 页面导航系统 ==================== */
+var currentPage = 1;
+var totalPages = 25;
+var segmentPages = {1:[2,3], 2:[4,9], 3:[10,14], 4:[15,16], 5:[17,19], 6:[20,21], 7:[22,24], 8:[25,25]};
+
+function goToPage(pageNum){
+  if(pageNum < 1 || pageNum > totalPages) return;
+  initAudio();
+  var oldPage = document.getElementById('page' + currentPage);
+  var newPage = document.getElementById('page' + pageNum);
+  if(oldPage){ oldPage.classList.remove('active'); oldPage.scrollTop = 0; }
+  if(newPage){ newPage.classList.add('active'); newPage.scrollTop = 0; }
+  currentPage = pageNum;
+  updateNav();
+  updateCounter();
+  playPageTurn();
+}
+function nextPage(){ if(currentPage < totalPages) goToPage(currentPage + 1); }
+function prevPage(){ if(currentPage > 1) goToPage(currentPage - 1); }
+function jumpToSegment(seg){
+  var pages = segmentPages[seg];
+  if(pages) goToPage(pages[0]);
+}
+function updateNav(){
+  var items = document.querySelectorAll('.nav-item');
+  items.forEach(function(item){
+    var seg = parseInt(item.dataset.segment);
+    var pages = segmentPages[seg];
+    if(currentPage >= pages[0] && currentPage <= pages[1]){
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
+function updateCounter(){
+  document.getElementById('pageCounter').textContent = currentPage + ' / ' + totalPages;
+}
+
+
+/* ==================== 翻页区域 ==================== */
+document.addEventListener('click', function(e){
+  if(e.target.closest('.quiz-opt') || e.target.closest('.game-option') ||
+     e.target.closest('.fill-check-btn') || e.target.closest('.fill-input') ||
+     e.target.closest('.nav-item') || e.target.closest('.vocab-card') ||
+     e.target.closest('.flip-card') || e.target.closest('.mnemonic-card') ||
+     e.target.closest('.error-type-card') || e.target.closest('.exam-type-card') ||
+     e.target.closest('.eval-card') || e.target.closest('.cover-nav-item') ||
+     e.target.closest('.modal-content') || e.target.closest('.export-btn') ||
+     e.target.closest('.drag-word') || e.target.closest('.drag-submit') ||
+     e.target.closest('.drag-container') || e.target.closest('.link-container') ||
+     e.target.closest('.order-container') ||
+     e.target.closest('.match-item') || e.target.closest('.pos-word') ||
+     e.target.closest('button') || e.target.closest('input') ||
+     e.target.closest('.game-progress-dot') || e.target.closest('.q-nav-item')){
+    return;
+  }
+  var container = document.getElementById('pagesContainer');
+  var rect = container.getBoundingClientRect();
+  var x = e.clientX - rect.left;
+  if(x < rect.width / 2){ prevPage(); }
+  else { nextPage(); }
+});
+
+
+/* ==================== 键盘导航 ==================== */
+document.addEventListener('keydown', function(e){
+  if(e.target.tagName === 'INPUT') return;
+  if(e.key === 'ArrowLeft' || e.key === 'ArrowUp'){ prevPage(); }
+  else if(e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' '){ e.preventDefault(); nextPage(); }
+  else if(e.key === 'f' || e.key === 'F'){
+    if(!document.fullscreenElement){ document.documentElement.requestFullscreen(); }
+    else { document.exitFullscreen(); }
+  }
+});
+
+
+/* ==================== 弹窗 ==================== */
+function closeModal(e){
+  if(e && e.target !== document.getElementById('modalOverlay')) return;
+  document.getElementById('modalOverlay').classList.remove('show');
+}
+
+
+
+/* ==================== 交互增强（L21-25 新建线） ==================== */
+var totalPages = 44;
+var segmentPages = {"1": [1, 4], "2": [5, 12], "3": [13, 17], "4": [18, 21], "5": [22, 25], "6": [26, 29], "7": [30, 41], "8": [42, 44]};
+var PAGE_META = {"1": {"p": "CORE", "m": 2}, "2": {"p": "CORE", "m": 2}, "3": {"p": "CORE", "m": 2}, "4": {"p": "CORE", "m": 2}, "5": {"p": "CORE", "m": 2}, "6": {"p": "CORE", "m": 2}, "7": {"p": "CORE", "m": 2}, "8": {"p": "CORE", "m": 2}, "9": {"p": "CORE", "m": 2}, "10": {"p": "CORE", "m": 2}, "11": {"p": "CORE", "m": 2}, "12": {"p": "CORE", "m": 2}, "13": {"p": "CORE", "m": 2}, "14": {"p": "CORE", "m": 2}, "15": {"p": "CORE", "m": 2}, "16": {"p": "CORE", "m": 2}, "17": {"p": "CORE", "m": 2}, "18": {"p": "CORE", "m": 2}, "19": {"p": "CORE", "m": 2}, "20": {"p": "CORE", "m": 2}, "21": {"p": "CORE", "m": 2}, "22": {"p": "CORE", "m": 2}, "23": {"p": "CORE", "m": 2}, "24": {"p": "CORE", "m": 2}, "25": {"p": "CORE", "m": 2}, "26": {"p": "CORE", "m": 2}, "27": {"p": "CORE", "m": 2}, "28": {"p": "CORE", "m": 2}, "29": {"p": "CORE", "m": 2}, "30": {"p": "CORE", "m": 2}, "31": {"p": "CORE", "m": 2}, "32": {"p": "CORE", "m": 2}, "33": {"p": "CORE", "m": 2}, "34": {"p": "CORE", "m": 2}, "35": {"p": "CORE", "m": 2}, "36": {"p": "CORE", "m": 2}, "37": {"p": "CORE", "m": 2}, "38": {"p": "CORE", "m": 2}, "39": {"p": "CORE", "m": 2}, "40": {"p": "CORE", "m": 2}, "41": {"p": "CORE", "m": 2}, "42": {"p": "CORE", "m": 2}, "43": {"p": "CORE", "m": 2}, "44": {"p": "CORE", "m": 2}};
+
+/* 初始化 IndexedDB（页面加载即建立连接，答题实时落库） */
+if(typeof initDB === 'function'){ initDB(); }
+
+function flipCard(el){
+  el.classList.toggle('flipped');
+}
+
+/* 彩带动画 */
+function burst(el){
+  var r=el.getBoundingClientRect(), cx=r.left+r.width/2, cy=r.top+r.height/2;
+  for(var i=0;i<12;i++){
+    var p=document.createElement('div'); p.className='burst-p';
+    var a=Math.random()*6.283, d=40+Math.random()*60;
+    p.style.left=cx+'px'; p.style.top=cy+'px';
+    p.style.setProperty('--dx',(Math.cos(a)*d)+'px'); p.style.setProperty('--dy',(Math.sin(a)*d)+'px');
+    p.style.background=(Math.random()<0.5?'#FFD700':'#E63946');
+    document.body.appendChild(p);
+    (function(x){ setTimeout(function(){ x.remove(); },700); })(p);
+  }
+}
+function shake(el){ if(!el) return; el.style.animation='none'; void el.offsetWidth; el.style.animation='shake .4s'; }
+
+/* 值域：单选（checkOpt 已在 CORE_JS 之外由本模块提供？不，CORE_JS 无 checkOpt，故在此定义） */
+var _LAST_KEY = null;
+function checkOpt(btn){
+  if(btn && btn.currentTarget && btn.currentTarget.classList && btn.currentTarget.classList.contains('quiz-opt')){
+    btn = btn.currentTarget;
+  }
+  if(!btn || !btn.classList) return;
+  var q=btn.parentNode; if(!q) return;
+  if(q.dataset.done) return; q.dataset.done='1';
+  var opts=q.querySelectorAll('.quiz-opt');
+  for(var i=0;i<opts.length;i++){ opts[i].classList.add('locked'); }
+  var ok=btn.dataset.correct==='1';
+  if(typeof saveAnswer==='function' && q.dataset.qid){
+    var qid=q.dataset.qid, ca='';
+    for(var j=0;j<opts.length;j++){ if(opts[j].dataset.correct==='1'){ ca=opts[j].textContent.replace(/^[A-E]\.?\s*/,'').trim(); } }
+    saveAnswer(qid, btn.textContent.replace(/^[A-E]\.?\s*/,'').trim(), ca, ok);
+  }
+  if(ok){ btn.classList.add('opt-correct'); playCorrect(); burst(btn); }
+  else{
+    btn.classList.add('opt-wrong'); playError();
+    for(var k=0;k<opts.length;k++){
+      if(opts[k].dataset.correct==='1'){ opts[k].classList.add('opt-correct'); }
+    }
+    var h=q.querySelector('.et-undo-hint');
+    if(!h){ h=document.createElement('div'); h.className='et-undo-hint';
+            h.onclick=function(ev){ ev.stopPropagation(); }; q.appendChild(h); }
+  }
+  var fb=q.querySelector('.quiz-feedback');
+  if(fb) fb.classList.add('show');
+}
+
+/* 双击撤销（答错后可撤回重答） */
+function undoQuiz(q){
+  if(!q) return;
+  q.dataset.done='0';
+  var fi=q.querySelector('.fill-input'); if(fi){ fi.classList.remove('correct','wrong'); }
+  var fa=q.querySelector('.fill-answer'); if(fa){ fa.classList.remove('show'); }
+  var opts=q.querySelectorAll('.quiz-opt');
+  for(var i=0;i<opts.length;i++){ opts[i].classList.remove('opt-correct','opt-wrong','locked'); }
+  var fb=q.querySelector('.quiz-feedback'); if(fb) fb.classList.remove('show');
+  var h=q.querySelector('.et-undo-hint'); if(h) h.remove();
+  playPageTurn();
+}
+document.addEventListener('dblclick', function(e){
+  var q=e.target.closest ? e.target.closest('.quiz-q,.quiz-question,.fill-q,.drag-q') : null;
+  if(q && q.dataset.done==='1'){ undoQuiz(q); }
+});
+document.addEventListener('touchstart', function(e){
+  var q=e.target.closest ? e.target.closest('.quiz-q,.quiz-question') : null;
+  if(q && q.dataset.done==='1'){ undoQuiz(q); }
+});
+
+/* 填空判题 */
+function fillCheck(btn){
+  var q=btn.parentNode; if(!q) return; if(q.dataset.done) return; q.dataset.done='1';
+  var inp=q.querySelector('.fill-input'); if(!inp){ q.dataset.done='0'; return; }
+  var ans=inp.getAttribute('data-answer')||'';
+  var val=inp.value.replace(/^\s+|\s+$/g,'');
+  var ok=(val.toLowerCase()===ans.toLowerCase());
+  if(typeof saveAnswer==='function' && q.dataset.qid){ saveAnswer(q.dataset.qid, val, ans, ok); }
+  if(ok){ inp.classList.add('correct'); playCorrect(); burst(inp); }
+  else{ inp.classList.add('wrong'); playError(); q.querySelector('.fill-answer').classList.add('show'); }
+}
+
+/* 拖拽填空 */
+function pickWord(word){
+  var w=word.target||word.currentTarget||word;
+  if(w.classList.contains('fill-check-btn')) return;
+  if(w.classList.contains('drag-word')){
+    if(w.classList.contains('used')) return;
+    var slots=document.querySelectorAll('.drag-slot');
+    for(var i=0;i<slots.length;i++){
+      if(!slots[i].getAttribute('data-filled')){
+        slots[i].textContent=w.textContent;
+        slots[i].setAttribute('data-filled','1');
+        slots[i].setAttribute('data-word',w.textContent);
+        w.classList.add('used');
+        return;
+      }
+    }
+  }
+}
+function dragSubmit(btn){
+  var cont=btn.getAttribute('data-target')?document.getElementById(btn.getAttribute('data-target')):btn.parentNode;
+  if(!cont) cont=btn.parentNode;
+  var slots=cont.querySelectorAll('.drag-slot');
+  var ok=true;
+  var all=true;
+  slots.forEach(function(s){
+    s.classList.remove('correct','wrong');
+    if(!s.getAttribute('data-filled')){ all=false; return; }
+    var expect=s.getAttribute('data-expect');
+    var got=s.getAttribute('data-word');
+    if(expect && got && got.trim().toLowerCase()===expect.trim().toLowerCase()){ s.classList.add('correct'); }
+    else{ s.classList.add('wrong'); ok=false; }
+  });
+  if(!all){ alert('请先把所有空格填满'); return; }
+  if(typeof saveAnswer==='function' && cont.getAttribute('data-qid')){ saveAnswer(cont.getAttribute('data-qid'), ok?'全部正确':'有误','全部正确',ok); }
+  if(ok){ playCorrect(); burst(btn); cont.classList.add('solved'); }
+  else{ playError(); shake(cont); }
+}
+
+/* 排序判题 */
+function moveUp(btn){
+  var li=btn.parentNode.parentNode; var ul=li.parentNode;
+  if(li.previousElementSibling) ul.insertBefore(li, li.previousElementSibling);
+}
+function moveDown(btn){
+  var li=btn.parentNode.parentNode; var ul=li.parentNode;
+  if(li.nextElementSibling) ul.insertBefore(li, li.nextElementSibling);
+}
+function orderCheck(btn){
+  var cont=btn.parentNode.parentNode;
+  var items=cont.querySelectorAll('.order-item');
+  var key=cont.getAttribute('data-key')||'';
+  var seq=[]; items.forEach(function(it){ seq.push(it.getAttribute('data-val')); });
+  var ok=(seq.join('|')===key);
+  if(typeof saveAnswer==='function' && cont.getAttribute('data-qid')){ saveAnswer(cont.getAttribute('data-qid'), seq.join(','), key.replace(/\|/g,','), ok); }
+  if(ok){ playCorrect(); burst(btn); cont.classList.add('solved');
+    items.forEach(function(it){ it.classList.add('ok'); });
+  } else { playError(); shake(cont); cont.classList.add('show-ans'); }
+}
+
+/* 连线题：点击左右列配对 */
+function matchPick(btn){
+  var m=btn.getAttribute('data-match'); if(!m) return;
+  var col=btn.parentNode;
+  var sel=col.querySelector('.selected');
+  if(sel){ sel.classList.remove('selected'); if(sel===btn){ return; } }
+  btn.classList.add('selected');
+  var cont=btn.parentNode.parentNode;
+  var left=cont.querySelector('.mcol-l'), right=cont.querySelector('.mcol-r');
+  var lsel=left.querySelector('.selected'), rsel=right.querySelector('.selected');
+  if(lsel && rsel){
+    var ok=(lsel.getAttribute('data-match')===rsel.getAttribute('data-match'));
+    if(typeof saveAnswer==='function' && cont.getAttribute('data-qid')){
+      saveAnswer(cont.getAttribute('data-qid'), lsel.textContent+'→'+rsel.textContent, lsel.getAttribute('data-match'), ok);
+    }
+    if(ok){ lsel.classList.add('matched'); rsel.classList.add('matched'); lsel.classList.remove('selected'); rsel.classList.remove('selected');
+            playCorrect(); burst(lsel); }
+    else{ lsel.classList.remove('selected'); rsel.classList.remove('selected'); playError(); shake(lsel); }
+  }
+}
+
+/* 翻牌卡（词汇自检） */
+function flipCard2(el){ el.classList.toggle('flipped'); }
+
+/* 思维导图分支展开 */
+document.addEventListener('click', function(e){
+  var mm=e.target.closest ? e.target.closest('.mm-branch') : null;
+  if(mm){ mm.classList.toggle('open'); }
+});
+
+/* 音效按钮（无音频文件，用 Web Audio 提示音） */
+function playHint(){ playPageTurn(); }
+
+
+/* ===== 3+2 阅读填空判分（§3.18，本批新增） ===== */
+function normFillStr(s){ return String(s||'').trim().toLowerCase().replace(/[’'`]/g,'').replace(/[.,!?;:。，！？；：、()\[\]{}"“”·—-]/g,' ').replace(/\s+/g,' ').trim(); }
+function getFillAnswers(input){ var list=[]; try{ list=JSON.parse(input.getAttribute('data-answers')||'[]'); }catch(e){ list=[]; } if(!Array.isArray(list)) list=[]; return list; }
+function checkFill(btn){
+  var q=btn.parentNode; if(!q) return; if(q.dataset.done) return; q.dataset.done='1';
+  var inp=q.querySelector('.fill-input'); if(!inp){ q.dataset.done='0'; return; }
+  var val=inp.value.replace(/^\s+|\s+$/g,'');
+  var ok;
+  if(inp.getAttribute('data-answers')){
+    var nv=normFillStr(val);
+    ok=getFillAnswers(inp).some(function(a){ return normFillStr(a)===nv; });
+  } else {
+    var ans=inp.getAttribute('data-answer')||'';
+    ok=(val.toLowerCase()===ans.toLowerCase());
+  }
+  if(typeof saveAnswer==='function' && q.dataset.qid){ saveAnswer(q.dataset.qid, val, inp.getAttribute('data-answer')||'', ok); }
+  if(ok){ inp.classList.remove('wrong'); inp.classList.add('correct'); if(typeof playCorrect==='function') playCorrect(); if(typeof burst==='function') burst(inp); }
+  else{ inp.classList.remove('correct'); inp.classList.add('wrong'); if(typeof playError==='function') playError(); var fa=q.querySelector('.fill-answer'); if(fa) fa.classList.add('show'); }
+}
+function undoFill(inp){
+  if(typeof event!=='undefined'&&event){ event.stopPropagation(); event.preventDefault(); }
+  if(!inp || !inp.classList.contains('wrong')) return;
+  var q=inp.closest('.quiz-q,.quiz-container'); if(!q) return;
+  q.dataset.done=''; inp.dataset.done='';
+  inp.classList.remove('correct','wrong');
+  var fa=q.querySelector('.fill-answer'); if(fa) fa.classList.remove('show');
+  inp.focus();
+}
+</script>
+</body>
+</html>

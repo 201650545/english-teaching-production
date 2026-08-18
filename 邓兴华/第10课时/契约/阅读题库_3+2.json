@@ -1,0 +1,21 @@
+{
+  "lesson": "L10",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A/B 各 3 无选项 + 2 有选项（默认 3+2，无需 2+3 弹性标注）",
+  "vocab_pool": ["Chinese","math","physics","geography","biology","subject","lesson","exercise","practice","complete","begin","understand","question","answer","problem","reason","simple","quick","careful","classmate"],
+  "grammar_cap": "G25-G27；禁止 will/比较级/最高级/完成时/被动",
+  "A篇_My_Busy_School_Day": {
+    "RA-01": {"question": "What time does Tom's first class begin?", "type": "fill", "openness": "时间细节·原文直接提取", "canonical_answer": "8:00 a.m.", "minimum_acceptable_answer": "8:00 a.m.", "accepted_answers": ["8:00 a.m.","8:00","8:00 am","8 a.m.","8 am","8:00am","8am","eight","at 8:00 a.m.","at 8:00 am"], "required_vocab": [], "required_grammar": "无（时间名词短语，前期已学）"},
+    "RA-02": {"question": "What is Tom's favorite subject?", "type": "fill", "openness": "细节+简单指代·原文直接提取", "canonical_answer": "biology", "minimum_acceptable_answer": "biology", "accepted_answers": ["biology","biology class","it is biology"], "required_vocab": ["biology"], "required_grammar": "无（名词短语）"},
+    "RA-03": {"question": "Who says physics is difficult?", "type": "fill", "openness": "人物细节·原文直接提取", "canonical_answer": "Jack", "minimum_acceptable_answer": "Jack", "accepted_answers": ["jack","his classmate jack"], "required_vocab": [], "required_grammar": "无（人名）"},
+    "RA-04": {"question": "How does Tom feel about his school day?", "type": "opt", "openness": "态度推断·开放度高→有选项", "correct": "A", "note": "结尾 I love my school day!"},
+    "RA-05": {"question": "What is the passage mainly about?", "type": "opt", "openness": "主旨概括·开放度高→有选项", "correct": "B"}
+  },
+  "B篇_A_Day_in_the_Library": {
+    "RB-01": {"question": "When does Lily go to the library?", "type": "fill", "openness": "时间细节·原文直接提取", "canonical_answer": "after lunch", "minimum_acceptable_answer": "after lunch", "accepted_answers": ["after lunch","she goes to the library after lunch"], "required_vocab": [], "required_grammar": "无（时间介词短语，原文摘录）"},
+    "RB-02": {"question": "What book does Lily read?", "type": "fill", "openness": "细节·原文直接提取", "canonical_answer": "a biology book", "minimum_acceptable_answer": "a biology book", "accepted_answers": ["a biology book","biology book","a book about biology"], "required_vocab": ["biology"], "required_grammar": "无（名词短语）"},
+    "RB-03": {"question": "Why don't Lily and Mike talk?", "type": "fill", "openness": "明确因果·原文摘录", "canonical_answer": "because the library is quiet", "minimum_acceptable_answer": "the library is quiet", "accepted_answers": ["because the library is quiet","the library is quiet","because it is a quiet place","because the library is a quiet place"], "required_vocab": [], "required_grammar": "无（一般现在时 be，前期已学；library/quiet 为原文词，原文摘录 §3.18.4.4）"},
+    "RB-04": {"question": "What does hurries mean in the passage?", "type": "opt", "openness": "开放性词义判断→有选项", "correct": "B"},
+    "RB-05": {"question": "What is the passage mainly about?", "type": "opt", "openness": "主旨概括·开放度高→有选项", "correct": "C"}
+  }
+}

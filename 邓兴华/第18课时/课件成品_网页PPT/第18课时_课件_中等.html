@@ -1,0 +1,2088 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第18课 · 现在进行时·家务 | Stage 5 · L18</title>
+<style>
+/* THEME: household-chore-board (orange-red · sky-blue) */
+:root{
+--brand:#C2410C;--brand-dark:#9A3412;--brand-light:#FED7AA;--accent:#0EA5E9;--accent-light:#BAE6FD;
+--accent-dark:#0369A1;--success:#166534;--success-light:#DCFCE7;--error:#DC2626;--error-light:#FEE2E2;
+--warning:#D97706;--warning-light:#FEF3C7;--gold:#FCD34D;--purple:#7B5BA6;--purple-light:#EDE6F6;
+--teal:#0F766E;--teal-light:#E0F2F1;--bg-start:#FFF7ED;--bg-end:#FED7AA;
+--bg-warm:#FFF7ED;--bg-lavender:#FEF3C7;--bg-mint:#DCFCE7;
+--card-bg:#FFFFFF;--card-shadow:0 4px 20px rgba(194,65,12,0.12);--card-shadow-hover:0 8px 30px rgba(194,65,12,0.22);
+--text-primary:#1C1917;--text-secondary:#57534E;--text-light:#78716C;--text-white:#FFFFFF;
+--radius:16px;--radius-sm:8px;--transition:all 0.35s cubic-bezier(0.4,0,0.2,1);
+--page-shadow:0 2px 12px rgba(194,65,12,0.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;background:linear-gradient(160deg,var(--bg-start) 0%,var(--bg-end) 100%);color:var(--text-primary);font-size:28px;user-select:none;-webkit-user-select:none}
+#presentation{width:100vw;height:100vh;overflow:hidden;position:relative}
+
+/* === Page System === */
+.page{position:absolute;top:54px;left:0;width:100%;height:calc(100% - 54px);display:none !important;flex-direction:column;background:linear-gradient(160deg,var(--bg-start) 0%,var(--bg-end) 100%);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;overflow-x:hidden;scroll-behavior:smooth;padding:20px 60px 80px;box-shadow:var(--page-shadow);z-index:2}
+.page.active{display:flex !important}
+@keyframes fadeSlideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleUp{from{opacity:0;transform:scale(0.85)}to{opacity:1;transform:scale(1)}}
+@keyframes bounceIn{0%{opacity:0;transform:scale(0.3)}50%{transform:scale(1.08)}70%{transform:scale(0.95)}100%{opacity:1;transform:scale(1)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes shakeX{0%,100%{transform:translateX(0)}10%,30%,50%,70%,90%{transform:translateX(-4px)}20%,40%,60%,80%{transform:translateX(4px)}}
+@keyframes cardFlyIn{0%{opacity:0;transform:translateY(-30px) scale(0.5) rotate(-10deg)}60%{transform:translateY(5px) scale(1.1) rotate(2deg)}100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+@keyframes flipIn{0%{transform:perspective(400px) rotateY(90deg);opacity:0}100%{transform:perspective(400px) rotateY(0);opacity:1}}
+@keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-5deg)}75%{transform:rotate(5deg)}}
+@keyframes heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.1)}28%{transform:scale(1)}42%{transform:scale(1.1)}70%{transform:scale(1)}}
+@keyframes popIn{0%{opacity:0;transform:scale(0);}80%{transform:scale(1.15);}100%{opacity:1;transform:scale(1);}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}}
+
+/* === Navigation Bar (54px top, 8-Pill) === */
+.nav-top{position:fixed;top:0;left:0;width:100%;height:54px;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:0 20px;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.nav-pills{display:flex;gap:6px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none}
+.nav-pills::-webkit-scrollbar{display:none}
+.nav-pill{padding:4px 12px;border-radius:12px;font-size:13px;cursor:pointer;white-space:nowrap;transition:var(--transition);background:#F5F5F4;color:var(--text-secondary);border:none;font-weight:500}
+.nav-pill:hover{background:var(--brand-light);color:var(--brand-dark)}
+.nav-pill.active{background:var(--brand);color:var(--text-white);font-weight:600}
+.nav-pill.priority-core{border-left:3px solid var(--brand)}
+.nav-pill.priority-extend{border-left:3px solid var(--accent)}
+
+/* === Bottom HUD === */
+.nav-bottom{position:fixed;bottom:0;left:0;width:100%;height:50px;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:1000;box-shadow:0 -2px 8px rgba(0,0,0,0.06)}
+.progress-bar-container{flex:1;height:6px;background:#E8E8E8;border-radius:3px;margin:0 16px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));transition:width 0.3s ease;border-radius:3px}
+.page-info{font-size:14px;color:var(--text-secondary);font-weight:600;min-width:80px;text-align:center;font-variant-numeric:tabular-nums}
+.export-btn{padding:6px 14px;border-radius:8px;background:var(--accent);color:white;border:none;cursor:pointer;font-size:13px;font-weight:600;transition:var(--transition)}
+.export-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
+
+/* === Click Zones === */
+.click-zone{position:fixed;top:54px;width:50%;height:calc(100% - 104px);z-index:1;cursor:pointer;background:transparent;outline:none;-webkit-tap-highlight-color:transparent;pointer-events:none}
+.click-zone.left{left:0}.click-zone.right{right:0}
+
+/* === Priority Badge === */
+.priority-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:10px;font-size:12px;font-weight:700;letter-spacing:0.5px}
+.priority-badge.core{background:var(--brand-light);color:var(--brand-dark)}
+.priority-badge.extend{background:var(--accent-light);color:var(--accent-dark)}
+
+/* === Page Title === */
+.page-title{font-size:30px;font-weight:700;color:var(--brand-dark);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.page-title .title-icon{font-size:34px}
+
+/* === Six-Color Rule Cards === */
+.rule-card{border-radius:var(--radius-sm);overflow:hidden;margin:10px 0;box-shadow:var(--card-shadow);transition:var(--transition)}
+.rule-card .rc-cat{padding:8px 16px;font-size:15px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:space-between}
+.rule-card .rc-text{padding:12px 16px;font-size:16px;color:var(--text-primary);line-height:1.6;background:#fff}
+.rule-card .rc-badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;white-space:nowrap}
+.rule-card .rc-badge.key{background:#FCD34D;color:#5D4500}
+.rule-card .rc-badge.warn{background:#fff;color:#DC2626;border:1px solid #DC2626}
+.rule-card .rc-badge.hint{background:rgba(255,255,255,0.3);color:#fff}
+.rule-card.rc-zhug .rc-cat{background:linear-gradient(135deg,#C2410C,#9A3412)}
+.rule-card.rc-bin .rc-cat{background:linear-gradient(135deg,#0369A1,#0C4A6E)}
+.rule-card.rc-xing .rc-cat{background:linear-gradient(135deg,#166534,#14532D)}
+.rule-card.rc-ming .rc-cat{background:linear-gradient(135deg,#0EA5E9,#0284C7)}
+.rule-card.rc-warn .rc-cat{background:linear-gradient(135deg,#FCD34D,#D97706)}
+.rule-card.rc-qita .rc-cat{background:linear-gradient(135deg,#7B5BA6,#6B46C1)}
+.rule-card.rc-zhug{border-left:8px solid #FCD34D}
+.rule-card.rc-bin{border-left:8px solid #FCD34D}
+.rule-card.rc-qita{border-left:8px solid #FCD34D}
+.rc-err-row{display:flex;align-items:center;gap:6px;padding:6px 10px;background:#FEE2E2;border-radius:6px;margin:4px 0;border-left:3px solid #DC2626;font-size:14px}
+.rc-fix-row{display:flex;align-items:center;gap:6px;padding:6px 10px;background:#DCFCE7;border-radius:6px;margin:4px 0;border-left:3px solid #166534;font-size:14px}
+.rc-chip{display:inline-block;padding:3px 10px;border-radius:12px;font-size:13px;font-weight:600;margin:2px;background:#F5F5F4;color:var(--text-primary)}
+.rc-arw{color:var(--brand);font-weight:700;margin:0 4px}
+.rc-example{display:block;padding:8px 14px;margin:6px 0;background:#FFF7ED;border-left:3px solid var(--brand);border-radius:6px;font-style:italic;font-size:15px;color:var(--text-secondary)}
+.rc-kw{color:var(--brand-dark);font-weight:700}
+
+/* === Formula Box === */
+.formula-box{background:linear-gradient(135deg,#FFF7ED 0%,#FED7AA 100%);border-left:5px solid var(--brand);border-radius:var(--radius-sm);padding:20px 24px;margin:16px 0;box-shadow:var(--card-shadow)}
+.formula-box .formula-title{font-size:16px;font-weight:700;color:var(--brand-dark);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.formula-box .formula-content{font-size:22px;color:var(--text-primary);line-height:1.6}
+
+/* === OK/Err/Tip Boxes === */
+.ok-box{background:linear-gradient(135deg,#FFF7ED 0%,#DCFCE7 100%);border-left:5px solid var(--success);border-radius:var(--radius-sm);padding:16px 20px;margin:12px 0;box-shadow:0 2px 10px rgba(22,101,52,0.1)}
+.ok-box .ok-title{font-size:14px;font-weight:700;color:var(--success);margin-bottom:6px}
+.ok-box .ok-content{font-size:18px;color:var(--text-secondary);line-height:1.5}
+.err-box{background:linear-gradient(135deg,#FEF3C7 0%,#FEE2E2 100%);border-left:5px solid var(--error);border-radius:var(--radius-sm);padding:16px 20px;margin:12px 0;box-shadow:0 2px 10px rgba(220,38,38,0.1)}
+.err-box .err-title{font-size:14px;font-weight:700;color:var(--error);margin-bottom:8px}
+.err-box .err-item{font-size:17px;color:var(--text-primary);line-height:1.8}
+.err-box .err-wrong{color:var(--error);text-decoration:line-through;margin-right:8px}
+.err-box .err-right{color:var(--success);font-weight:600}
+.tip-box{background:linear-gradient(135deg,#FFF7ED 0%,#FEF3C7 100%);border-left:5px solid var(--warning);border-radius:var(--radius-sm);padding:16px 20px;margin:12px 0;box-shadow:0 2px 10px rgba(217,119,6,0.1)}
+.tip-box .tip-title{font-size:14px;font-weight:700;color:#B8860B;margin-bottom:6px}
+.tip-box .tip-content{font-size:17px;color:var(--text-primary);line-height:1.6}
+
+/* === Example Sentence === */
+.example-sent{background:var(--card-bg);border-radius:var(--radius-sm);padding:14px 20px;margin:10px 0;box-shadow:var(--card-shadow);border-left:4px solid var(--accent);font-size:20px;line-height:1.5;transition:var(--transition)}
+.example-sent:hover{transform:translateX(4px);box-shadow:var(--card-shadow-hover)}
+.example-sent .sent-label{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;color:var(--text-white);background:var(--accent);margin-right:8px}
+
+/* === Vocab Cards === */
+.item-card{background:var(--card-bg);border-radius:var(--radius);padding:20px;box-shadow:var(--card-shadow);transition:var(--transition);cursor:pointer;border:2px solid transparent;position:relative;overflow:hidden}
+.item-card:hover{transform:translateY(-4px);box-shadow:var(--card-shadow-hover);border-color:var(--brand-light)}
+.item-card .card-emoji{font-size:48px;display:block;margin-bottom:8px;animation:floatY 3s infinite ease-in-out}
+.item-card .card-word{font-size:26px;font-weight:700;color:var(--brand-dark);margin-bottom:4px}
+.item-card .card-phonetic{font-size:16px;color:var(--text-secondary);margin-bottom:4px;font-family:"Segoe UI","Lucida Sans Unicode",sans-serif}
+.item-card .card-pos{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;background:var(--brand-light);color:var(--brand-dark);margin-right:6px}
+.item-card .card-cn{font-size:18px;color:var(--text-primary);margin-top:6px}
+.item-card .card-mn{font-size:13px;color:var(--text-light);margin-top:6px;font-style:italic}
+.item-card .card-example{font-size:14px;color:var(--text-secondary);margin-top:8px;padding-top:8px;border-top:1px solid #F5F5F4}
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0}
+.vocab-grid.three-col{grid-template-columns:repeat(3,1fr)}
+
+/* === Data Table === */
+.data-table{width:100%;border-collapse:collapse;margin:12px 0;background:var(--card-bg);border-radius:var(--radius-sm);overflow:hidden;box-shadow:var(--card-shadow);font-size:16px}
+.data-table th{background:var(--brand);color:var(--text-white);padding:10px 14px;text-align:left;font-weight:600;font-size:15px}
+.data-table td{padding:8px 14px;border-bottom:1px solid #F5F5F4;color:var(--text-primary);font-size:15px}
+.data-table tr:last-child td{border-bottom:none}
+.data-table tr:hover{background:#FFF7ED}
+
+/* === Cover Page === */
+.cover-page{justify-content:center;align-items:center;text-align:center;background:linear-gradient(160deg,#C2410C 0%,#9A3412 100%);color:var(--text-white)}
+.cover-page{display:flex;flex-direction:column;justify-content:flex-start;padding-top:2vh;padding-bottom:5vh;}
+.cover-page .cover-badge{order:-3;}
+.cover-page .cover-meta{margin-top:auto;}
+.cover-page .cover-title,.cover-page .cover-subtitle,.cover-page .cover-objectives{order:0;}
+.cover-page .cover-badge{font-size:16px;padding:6px 20px;border-radius:20px;background:rgba(255,255,255,0.15);margin-bottom:24px;letter-spacing:2px}
+.cover-page .cover-title{font-size:48px;font-weight:700;margin-bottom:12px;animation:scaleUp 0.8s ease;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}
+.cover-page .cover-subtitle{font-size:22px;opacity:0.85;margin-bottom:36px}
+.cover-page .cover-objectives{display:flex;gap:20px;margin-bottom:30px;flex-wrap:wrap;justify-content:center}
+.cover-page .obj-card{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius);padding:20px 28px;min-width:200px;transition:var(--transition)}
+.cover-page .obj-card:hover{background:rgba(255,255,255,0.2);transform:translateY(-4px)}
+.cover-page .obj-card .obj-icon{font-size:36px;margin-bottom:8px}
+.cover-page .obj-card .obj-text{font-size:16px;line-height:1.4}
+.cover-page .cover-meta{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.cover-page .meta-chip{background:rgba(255,255,255,0.1);border-radius:20px;padding:8px 20px;font-size:15px;border:1px solid rgba(255,255,255,0.15)}
+.cover-page .meta-chip strong{color:var(--gold)}
+
+/* === Chore Board Cover (L18 结构创新) === */
+.cover-page.cover-poster{background:radial-gradient(circle at 22% 18%,#C2410C 0%,#9A3412 48%,#7C2D12 100%);color:#FFFFFF;justify-content:flex-start;padding-top:4vh;text-align:center}
+.cover-page.cover-poster .cover-topbar{display:flex;justify-content:space-between;align-items:center;width:84%;max-width:920px;padding:10px 22px;background:rgba(255,255,255,0.12);border:2px solid rgba(255,255,255,0.35);border-radius:14px;margin:0 auto 18px;backdrop-filter:blur(4px)}
+.cover-page.cover-poster .cover-badge{font-size:16px;letter-spacing:2px;color:#FED7AA;font-weight:800;background:none;padding:0;margin:0;border-radius:0}
+.cover-page.cover-poster .cover-floor{font-size:14px;color:#BAE6FD;font-weight:600;border:1px dashed #0EA5E9;padding:4px 12px;border-radius:20px}
+.cover-page.cover-poster .cover-title{font-size:52px;font-weight:800;color:#FFFFFF;margin:6px 0 10px;text-shadow:0 2px 0 rgba(0,0,0,0.25);animation:scaleUp 0.8s ease}
+.cover-page.cover-poster .cover-subtitle{font-size:22px;color:#FED7AA;margin-bottom:22px;font-weight:600}
+.cover-page.cover-poster .cover-route{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:0 auto 22px;width:100%}
+.cover-page.cover-poster .route-stop{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.14);border:2px solid #FED7AA;border-radius:12px;padding:8px 14px;font-size:15px;color:#FFFFFF;box-shadow:0 3px 8px rgba(0,0,0,0.2);transition:var(--transition)}
+.cover-page.cover-poster .route-stop:hover{transform:translateY(-4px);box-shadow:0 8px 16px rgba(0,0,0,0.3)}
+.cover-page.cover-poster .route-stop span{font-size:20px}
+.cover-page.cover-poster .route-stop b{font-weight:700}
+.cover-page.cover-poster .route-stop em{font-style:normal;font-size:12px;color:#9A3412;background:#FED7AA;padding:2px 8px;border-radius:10px}
+.cover-page.cover-poster .cover-objectives .obj-card{background:rgba(255,255,255,0.12);border:1px solid rgba(254,215,170,0.5);color:#FFFFFF}
+.cover-page.cover-poster .obj-card .obj-text{color:#FFFFFF}
+.cover-page.cover-poster .cover-meta .meta-chip{background:rgba(255,255,255,0.12);border:1px solid rgba(254,215,170,0.5);color:#FFFFFF}
+.cover-page.cover-poster .meta-chip strong{color:#FED7AA}
+
+/* === Quiz System === */
+.quiz-container{background:var(--card-bg);border-radius:var(--radius);padding:20px;margin:12px 0;box-shadow:var(--card-shadow)}
+.quiz-question{font-size:19px;font-weight:600;color:var(--text-primary);margin-bottom:12px;line-height:1.5}
+.quiz-options{display:flex;flex-direction:column;gap:8px}
+.quiz-opt{padding:12px 18px;border-radius:var(--radius-sm);border:2px solid #E0E0E0;background:#FAFAFA;cursor:pointer;transition:var(--transition);font-size:17px;color:var(--text-primary);position:relative;text-align:left}
+.quiz-opt:hover{border-color:var(--brand-light);background:#FFF7ED}
+.quiz-opt:active{transform:scale(0.98)}
+.quiz-opt:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.quiz-opt.correct{background:#DCFCE7;border-color:var(--success);color:var(--brand-dark);font-weight:600;animation:bounceIn 0.5s ease}
+.quiz-opt.wrong{background:#FEE2E2;border-color:var(--error);color:#991B1B;animation:shakeX 0.5s ease}
+.quiz-opt.disabled{cursor:not-allowed;opacity:0.6}
+.quiz-opt .opt-label{display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;border-radius:50%;background:var(--brand);color:var(--text-white);font-weight:700;margin-right:10px;font-size:14px}
+.quiz-opt.correct .opt-label{background:var(--success)}
+.quiz-opt.wrong .opt-label{background:var(--error)}
+.quiz-feedback{margin-top:10px;padding:10px 14px;border-radius:var(--radius-sm);font-size:15px;display:none;line-height:1.5}
+.quiz-feedback.show{display:block;animation:fadeSlideUp 0.3s ease}
+.quiz-feedback.correct{background:#DCFCE7;color:var(--brand-dark)}
+.quiz-feedback.wrong{background:#FEE2E2;color:#991B1B}
+.quiz-feedback .feedback-label{font-weight:700;margin-right:6px}
+.quiz-explanation{margin-top:8px;padding:10px 14px;background:#F8F9FA;border-radius:var(--radius-sm);font-size:14px;color:var(--text-secondary);line-height:1.6;display:none}
+.quiz-explanation.show{display:block}
+.undo-hint{font-size:11px;color:var(--text-light);opacity:0.5;margin-top:4px}
+
+/* === Answer Mask === */
+.answer-mask{background:linear-gradient(135deg,var(--brand) 0%,var(--brand-dark) 100%);color:var(--text-white);padding:12px 18px;border-radius:var(--radius-sm);cursor:pointer;transition:var(--transition);text-align:center;font-size:16px;margin:8px 0;position:relative;overflow:hidden}
+.answer-mask:hover{transform:scale(1.02);box-shadow:0 4px 15px rgba(194,65,12,0.3)}
+.answer-mask.revealed{background:linear-gradient(135deg,#DCFCE7 0%,#FEF3C7 100%);color:var(--brand-dark);border-left:5px solid var(--success)}
+.answer-mask .mask-icon{margin-right:8px}
+.answer-mask .mask-answer{display:none;font-weight:600}
+.answer-mask.revealed .mask-answer{display:inline}
+.answer-mask.revealed .mask-hint{display:none}
+
+/* === Reading Layout === */
+.reading-passage{background:#FFFBF5;border-radius:var(--radius);padding:20px 24px;margin:12px 0;box-shadow:var(--card-shadow);border-left:5px solid var(--accent);font-size:17px;line-height:1.8;color:var(--text-primary);max-height:620px;overflow-y:auto}
+.reading-passage .passage-title{font-size:20px;font-weight:700;color:var(--brand-dark);margin-bottom:10px}
+.reading-passage .word-count{font-size:12px;color:var(--text-light);margin-bottom:8px}
+.reading-layout{display:grid;grid-template-columns:1.05fr 1fr;gap:22px;margin:12px 0;height:calc(100vh - 130px);min-height:560px}
+.reading-layout .rl-left{height:100%;overflow-y:auto;padding:4px 6px 4px 0}
+.reading-layout .rl-left::-webkit-scrollbar{width:6px}
+.reading-layout .rl-left::-webkit-scrollbar-thumb{background:#CBD5E1;border-radius:3px}
+.reading-layout .rl-left .reading-passage{max-height:none;overflow:visible}
+.reading-layout .rl-right{height:100%;overflow:hidden}
+
+/* === Phonics === */
+.phonics-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0}
+.phonics-card{background:var(--card-bg);border-radius:var(--radius);padding:20px;text-align:center;box-shadow:var(--card-shadow);transition:var(--transition);border:2px solid var(--brand-light)}
+.phonics-card:hover{transform:translateY(-4px);box-shadow:var(--card-shadow-hover)}
+.phonics-card .ph-letter{font-size:48px;font-weight:700;color:var(--brand-dark);margin-bottom:4px}
+.phonics-card .ph-sound{font-size:24px;color:var(--accent);font-family:"Segoe UI","Lucida Sans Unicode",sans-serif;margin-bottom:8px}
+.phonics-card .ph-tip{font-size:14px;color:var(--text-secondary);margin-bottom:8px;line-height:1.4}
+.phonics-card .ph-words{font-size:15px;color:var(--text-primary);font-weight:500}
+
+/* === Mini Flash Grid === */
+.mini-flash-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:16px 0}
+.mini-flash-item{background:var(--card-bg);border-radius:8px;padding:10px 8px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:var(--transition);cursor:pointer;font-size:14px;border:1px solid #F5F5F4}
+.mini-flash-item:hover{background:var(--brand-light);color:var(--text-white);transform:scale(1.05)}
+.mini-flash-item .mf-word{font-weight:600;color:var(--brand-dark)}
+.mini-flash-item:hover .mf-word{color:var(--text-white)}
+.mini-flash-item .mf-cn{font-size:11px;color:var(--text-light)}
+.mini-flash-item:hover .mf-cn{color:rgba(255,255,255,0.8)}
+
+/* === Summary Grid === */
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:16px 0}
+.summary-card{background:var(--card-bg);border-radius:var(--radius);padding:20px;box-shadow:var(--card-shadow);border-top:5px solid var(--brand);transition:var(--transition)}
+.summary-card:hover{transform:translateY(-4px);box-shadow:var(--card-shadow-hover)}
+.summary-card .sc-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;color:var(--text-white);background:var(--brand);margin-bottom:8px}
+.summary-card .sc-title{font-size:18px;font-weight:700;color:var(--text-primary);margin-bottom:8px}
+.summary-card .sc-content{font-size:15px;color:var(--text-secondary);line-height:1.5}
+
+/* === Mind Map === */
+.mindmap-container{background:var(--card-bg);border-radius:var(--radius);padding:24px;margin:12px 0;box-shadow:var(--card-shadow)}
+.mindmap-center{display:flex;justify-content:center;margin-bottom:20px}
+.mindmap-center-node{background:linear-gradient(135deg,var(--brand),var(--brand-dark));color:#fff;padding:16px 32px;border-radius:50px;font-size:22px;font-weight:700;box-shadow:0 4px 15px rgba(194,65,12,0.3);cursor:pointer;transition:var(--transition)}
+.mindmap-center-node:hover{transform:scale(1.05)}
+.mindmap-branches{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mindmap-branch{border-radius:var(--radius);padding:16px;transition:var(--transition);cursor:pointer}
+.mindmap-branch:hover{transform:translateY(-4px);box-shadow:var(--card-shadow-hover)}
+.mindmap-branch .mb-title{font-size:16px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.mindmap-branch .mb-content{font-size:14px;line-height:1.6}
+.mindmap-branch .mb-item{padding:4px 0;border-bottom:1px dashed rgba(0,0,0,0.06)}
+.mindmap-branch .mb-item:last-child{border-bottom:none}
+.mindmap-branch.branch-1{background:linear-gradient(135deg,#FFF7ED,#DCFCE7);border-left:4px solid #C2410C}
+.mindmap-branch.branch-1 .mb-title{color:#9A3412}
+.mindmap-branch.branch-2{background:linear-gradient(135deg,#BAE6FD,#E0F2FE);border-left:4px solid #0369A1}
+.mindmap-branch.branch-2 .mb-title{color:#0C4A6E}
+.mindmap-branch.branch-3{background:linear-gradient(135deg,#FEF3C7,#FDE68A);border-left:4px solid #D97706}
+.mindmap-branch.branch-3 .mb-title{color:#92400E}
+.mindmap-branch.branch-4{background:linear-gradient(135deg,#FEE2E2,#FECACA);border-left:4px solid #DC2626}
+.mindmap-branch.branch-4 .mb-title{color:#991B1B}
+.mindmap-branch.branch-5{background:linear-gradient(135deg,#DCFCE7,#BBF7D0);border-left:4px solid #166534}
+.mindmap-branch.branch-5 .mb-title{color:#14532D}
+.mindmap-branch.branch-6{background:linear-gradient(135deg,#FED7AA,#FDBA74);border-left:4px solid #C2410C}
+.mindmap-branch.branch-6 .mb-title{color:#7C2D12}
+
+/* === Vocab Game === */
+.vocab-game{background:linear-gradient(135deg,#FFF7ED,#FED7AA);border-radius:var(--radius);padding:24px;margin:12px 0;box-shadow:var(--card-shadow)}
+.vocab-game .game-prompt{font-size:16px;color:var(--brand-dark);font-weight:600;margin-bottom:16px;padding:10px 16px;background:rgba(255,255,255,0.6);border-radius:var(--radius-sm)}
+.vocab-game .game-option{padding:10px 18px;border-radius:var(--radius-sm);border:2px solid #E0E0E0;background:#fff;cursor:pointer;transition:var(--transition);font-size:16px;display:inline-block;margin:4px}
+.vocab-game .game-option:hover{border-color:var(--brand);background:#FFF7ED}
+.vocab-game .game-option.correct{background:#DCFCE7;border-color:var(--success)}
+.vocab-game .game-option.wrong{background:#FEE2E2;border-color:var(--error)}
+.vocab-game .game-feedback{margin-top:10px;padding:8px 14px;border-radius:var(--radius-sm);font-size:14px;display:none}
+.vocab-game .game-feedback.show{display:block}
+.vocab-game .game-feedback.correct{background:#DCFCE7;color:var(--brand-dark)}
+.vocab-game .game-feedback.wrong{background:#FEE2E2;color:#991B1B}
+.vocab-game .game-progress{font-size:14px;color:var(--text-secondary);margin-bottom:10px}
+.vocab-game .context-box{background:#fff;border-radius:var(--radius-sm);padding:14px 18px;margin:8px 0;font-size:16px;line-height:1.6;box-shadow:0 2px 6px rgba(0,0,0,0.04)}
+.vocab-game .dialogue-line{padding:6px 0;font-size:16px}
+.vocab-game .dialogue-line .speaker{font-weight:700;color:var(--brand-dark);margin-right:6px}
+.vocab-game .passage-box{background:#fff;border-radius:var(--radius-sm);padding:14px 18px;margin:8px 0;font-size:16px;line-height:1.8;box-shadow:0 2px 6px rgba(0,0,0,0.04)}
+
+/* === Drag & Drop Sorter === */
+.dd-container{display:flex;gap:16px;margin:16px 0;flex-wrap:wrap}
+.dd-pool{flex:1;min-width:200px;background:rgba(255,255,255,0.6);border-radius:var(--radius);padding:12px;min-height:120px}
+.dd-pool h4{font-size:14px;color:var(--text-secondary);margin-bottom:8px}
+.dd-bin{flex:1;min-width:180px;border-radius:var(--radius);padding:12px;min-height:120px;border:2px dashed transparent;transition:var(--transition)}
+.dd-bin h4{font-size:14px;margin-bottom:8px}
+.dd-bin.bin-1{background:#FFF7ED;border-color:#C2410C}.dd-bin.bin-1 h4{color:#9A3412}
+.dd-bin.bin-2{background:#BAE6FD;border-color:#0EA5E9}.dd-bin.bin-2 h4{color:#0C4A6E}
+.dd-card{display:inline-block;padding:8px 14px;margin:4px;background:#fff;border-radius:8px;cursor:grab;font-size:15px;font-weight:600;box-shadow:0 2px 6px rgba(0,0,0,0.08);transition:var(--transition);border:1px solid #E8E8E8}
+.dd-card:hover{transform:scale(1.05);box-shadow:0 4px 12px rgba(0,0,0,0.12)}
+.dd-card.dragging{opacity:0.5;cursor:grabbing}
+.dd-card.correct{background:#DCFCE7;border-color:#166534}
+.dd-card.wrong{background:#FEE2E2;border-color:#DC2626}
+
+/* === Feedback Bubbles === */
+.feedback-bubble{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);z-index:9999;padding:30px 50px;border-radius:24px;font-size:32px;font-weight:700;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,0.2);opacity:0;transition:all 0.3s ease;pointer-events:none}
+.feedback-bubble.show{transform:translate(-50%,-50%) scale(1);opacity:1}
+.feedback-bubble.correct{background:linear-gradient(135deg,#C2410C,#9A3412);color:#fff;animation:popIn 0.4s ease}
+.feedback-bubble.wrong{background:linear-gradient(135deg,#DC2626,#991B1B);color:#fff;animation:shakeX 0.5s ease}
+
+/* === Miscellaneous === */
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.section-header .sh-icon{font-size:28px}
+.section-header .sh-text{font-size:20px;font-weight:700;color:var(--brand-dark)}
+.highlight-box{background:linear-gradient(135deg,#FFF7ED,#FEF3C7);border:2px dashed var(--warning);border-radius:var(--radius);padding:16px 20px;margin:12px 0}
+.highlight-box .hb-title{font-size:16px;font-weight:700;color:#B8860B;margin-bottom:8px}
+.highlight-box .hb-content{font-size:16px;color:var(--text-primary);line-height:1.6}
+.interact-btn{padding:8px 20px;border-radius:var(--radius-sm);background:var(--brand);color:#fff;border:none;cursor:pointer;font-size:16px;font-weight:600;transition:var(--transition)}
+.interact-btn:hover{background:var(--brand-dark);transform:translateY(-2px)}
+.interact-btn:active{transform:scale(0.97)}
+.flashcard{background:var(--card-bg);border-radius:var(--radius);padding:24px;box-shadow:var(--card-shadow);cursor:pointer;transition:var(--transition);text-align:center;min-height:140px;display:flex;flex-direction:column;justify-content:center}
+.flashcard:hover{transform:scale(1.03);box-shadow:var(--card-shadow-hover)}
+.flashcard.flipped{background:linear-gradient(135deg,var(--brand-light),var(--brand));color:#fff}
+.flashcard .fc-front{display:block}.flashcard .fc-back{display:none}
+.flashcard.flipped .fc-front{display:none}.flashcard.flipped .fc-back{display:block}
+.match-line-container{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:16px 0}
+.match-col{display:flex;flex-direction:column;gap:8px}
+.match-item{padding:10px 16px;border-radius:var(--radius-sm);background:#fff;border:2px solid #E0E0E0;cursor:pointer;transition:var(--transition);font-size:16px;text-align:center}
+.match-item:hover{border-color:var(--brand);background:#FFF7ED}
+.match-item.selected{border-color:var(--accent);background:#BAE6FD}
+.match-item.matched{opacity:0.4;cursor:default}
+.quiz-q{background:var(--card-bg);border-radius:var(--radius-sm);padding:16px;margin:10px 0;box-shadow:var(--card-shadow);border-left:4px solid var(--brand)}
+.checkOpt-btn{padding:10px 18px;border-radius:var(--radius-sm);border:2px solid #E0E0E0;background:#FAFAFA;cursor:pointer;transition:var(--transition);font-size:16px;text-align:left}
+.checkOpt-btn:hover{border-color:var(--brand);background:#FFF7ED}
+.checkOpt-btn.correct{background:#DCFCE7;border-color:var(--success)}
+.checkOpt-btn.wrong{background:#FEE2E2;border-color:var(--error)}
+
+/* === 五选四 空格嵌入原文交互 === */
+.b5-passage{max-height:430px;overflow-y:auto}
+.b5-hole{display:inline-block;vertical-align:middle;margin:0 2px}
+.b5-blank{display:inline-flex;align-items:center;justify-content:center;min-width:56px;height:34px;padding:0 10px;border:2px dashed #9AA0B4;border-radius:9px;background:#F4F6FB;color:#5B6472;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;vertical-align:middle}
+.b5-blank:hover{border-color:var(--brand);background:#FFF7ED}
+.b5-blank.open{border-style:solid;border-color:var(--brand);background:#FEF3C7;box-shadow:0 0 0 3px rgba(252,211,77,.25)}
+.b5-hole.wrong .b5-blank{border-style:solid;border-color:var(--error);background:#FEE2E2;color:#991B1B}
+.b5-filled{display:inline-block;padding:2px 8px;border-radius:8px;background:#DCFCE7;border:2px solid var(--success);color:#166534;font-weight:700;font-size:15px;animation:bounceIn .4s}
+.b5-opts{display:none;margin:14px 0 4px;padding:14px 16px;background:#FEF3C7;border:2px solid var(--accent);border-radius:var(--radius);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.b5-opts.show{display:block;animation:bounceIn .3s}
+.b5-opts-head{font-size:15px;font-weight:700;color:var(--accent-dark);margin-bottom:10px}
+.b5-opt-row{display:flex;align-items:center;gap:10px;padding:7px 6px;border-radius:8px;transition:background .2s}
+.b5-opt-row:hover{background:rgba(255,255,255,.7)}
+.b5-opt-row.correct-row{background:#DCFCE7}
+.b5-opt{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:2px solid #E0C9A6;background:#fff;font-size:16px;font-weight:700;color:var(--text-primary);cursor:pointer;transition:all .2s}
+.b5-opt:hover{border-color:var(--brand);background:#FFF7ED}
+.b5-opt.correct{background:#DCFCE7;border-color:var(--success);color:#166534;animation:bounceIn .4s}
+.b5-opt.wrong{background:#FEE2E2;border-color:var(--error);color:#991B1B;animation:shakeX .4s}
+.b5-opt-text{font-size:15px;color:var(--text-primary);line-height:1.5}
+
+/* === Fill-in === */
+.fill-input-wrap{display:flex;gap:8px;align-items:center;margin:6px 0}
+.fill-input{padding:8px 14px;border:2px solid #E0E0E0;border-radius:8px;font-size:16px;width:200px;outline:none;transition:var(--transition)}
+.fill-input:focus{border-color:var(--brand);background:#FFF7ED}
+.fill-input.correct{background:#DCFCE7;border-color:var(--success)}
+.fill-input.wrong{background:#FEE2E2;border-color:var(--error)}
+.fill-check-btn{padding:8px 18px;border-radius:8px;background:var(--brand);color:#fff;border:none;cursor:pointer;font-size:15px;font-weight:600;transition:var(--transition)}
+.fill-check-btn:hover{background:var(--brand-dark)}
+.fill-answer{display:none;padding:6px 12px;background:#DCFCE7;border-radius:6px;font-size:14px;color:var(--success);margin-top:6px}
+.fill-answer.show{display:block}
+
+/* === Order === */
+.order-container{background:#fff;border-radius:10px;padding:14px;margin:8px 0;box-shadow:var(--card-shadow);position:relative;z-index:2}
+.order-chunks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.order-chunk{padding:8px 14px;background:var(--brand);color:#fff;border-radius:8px;font-size:17px;cursor:pointer;user-select:none;transition:all .15s}
+.order-chunk:hover{background:var(--brand-light);color:var(--brand-dark)}
+.order-chunk.active{background:var(--accent);color:#fff}
+.order-chunk.placed{background:var(--success)}
+.order-result{margin-top:8px;font-size:17px;font-weight:600}
+.order-result.correct{color:var(--success)}
+.order-result.wrong{color:var(--error)}
+
+/* === Link === */
+.link-container{background:#fff;border-radius:10px;padding:14px;margin:8px 0;box-shadow:var(--card-shadow);position:relative;z-index:2}
+.link-left .link-item,.link-right .link-item{padding:10px 14px;background:#fff;border:2px solid #ddd;border-radius:8px;font-size:16px;cursor:pointer;transition:all .2s;margin:6px 0;text-align:center}
+.link-item:hover{border-color:var(--brand-light)}
+.link-item.selected{border-color:var(--accent);background:#BAE6FD}
+.link-item.matched{border-color:var(--success);background:#DCFCE7;pointer-events:none}
+.link-item.correct{border-color:var(--success);background:#DCFCE7}
+.link-item.wrong-match{border-color:var(--error);background:#FEE2E2}
+.link-result{margin-top:8px;font-size:17px;font-weight:600}
+.link-result.correct{color:var(--success)}
+.link-result.wrong{color:var(--error)}
+.ec-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.ec-pair{display:flex;align-items:center;gap:8px;}
+.ec-left,.ec-right{display:flex;flex-direction:column;gap:10px;}
+
+/* === Visual Contract Placeholders === */
+.visual-contract-placeholder{min-height:60px;background:#FFF7ED;border:2px dashed var(--brand-light);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:14px;margin:10px 0}
+.data-collection-info{background:#FFF7ED;border-radius:var(--radius);padding:16px 20px;margin:12px 0;box-shadow:var(--card-shadow);border-left:4px solid var(--accent)}
+
+/* === Chore Board Special === */
+.chore-board{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.chore-card{background:var(--card-bg);border-radius:var(--radius);padding:16px;text-align:center;box-shadow:var(--card-shadow);transition:var(--transition);border-top:4px solid var(--brand)}
+.chore-card:hover{transform:translateY(-4px);box-shadow:var(--card-shadow-hover)}
+.chore-card .ch-icon{font-size:36px;margin-bottom:6px}
+.chore-card .ch-word{font-size:18px;font-weight:700;color:var(--brand-dark)}
+.chore-card .ch-ing{font-size:14px;color:var(--accent);font-weight:600;margin-top:4px}
+
+/* === Tense Converter === */
+.tense-converter{background:var(--card-bg);border-radius:var(--radius);padding:20px;margin:12px 0;box-shadow:var(--card-shadow)}
+.tense-converter .tc-input{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.tense-converter select,.tense-converter input{padding:8px 14px;border:2px solid #E0E0E0;border-radius:8px;font-size:16px;outline:none}
+.tense-converter select:focus,.tense-converter input:focus{border-color:var(--brand)}
+.tense-converter .tc-output{padding:14px 18px;background:#FFF7ED;border-radius:8px;font-size:18px;color:var(--brand-dark);font-weight:600;min-height:50px}
+
+/* === Scroll Fix === */
+.page > * { flex-shrink: 0; }
+.page { -webkit-overflow-scrolling: touch !important; overscroll-behavior: contain !important; }
+.export-btn{position:fixed;top:12px;right:20px;z-index:1500;background:var(--accent,#0EA5E9);color:#fff;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;border:none;}
+
+/* === Section head legacy === */
+.section-head{display:flex;align-items:center;gap:10px;margin-bottom:16px;font-size:22px;font-weight:700;color:var(--text-primary)}.sh-num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--brand);color:#fff;font-size:16px;font-weight:700}.sh-title{font-size:22px;font-weight:600}.cover-wrap{text-align:center;padding:40px 20px}.cover-badge{display:inline-block;padding:6px 16px;border-radius:20px;background:var(--brand);color:#fff;font-size:14px;font-weight:600;margin-bottom:16px}.cover-title{font-size:32px;font-weight:700;margin-bottom:8px}.cover-sub{font-size:18px;color:var(--text-secondary);margin-bottom:24px}.page-content{flex:1;padding:20px 40px}.page-subtitle{font-size:16px;color:var(--text-secondary);margin-bottom:12px}.body-text{font-size:18px;line-height:1.6;margin-bottom:12px}.highlight{color:var(--brand);font-weight:600}.note-panel{padding:12px 16px;background:var(--bg-warm);border-radius:8px;margin-bottom:12px}.np-title{font-size:16px;font-weight:700;margin-bottom:8px;color:var(--brand)}.quiz-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px}.vocab-card{padding:12px;border-radius:8px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:8px}.flash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}.game-board{padding:16px;border-radius:12px;background:var(--bg-mint);margin-bottom:16px}.game-title{font-size:18px;font-weight:700;margin-bottom:8px}.game-rule{font-size:14px;color:var(--text-secondary);margin-bottom:8px}.kmap{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}.kmap-node{padding:12px;border-radius:8px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08)}.kn-title{font-size:16px;font-weight:700;margin-bottom:4px;color:var(--brand)}.kn-body{font-size:14px;color:var(--text-secondary)}.ext-card{padding:12px;border-radius:8px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:8px}.ext-cat{font-size:14px;font-weight:600;color:var(--accent);margin-bottom:4px}.ext-body{font-size:16px;line-height:1.5}
+</style>
+<script type="application/json" id="style_manifest">
+{
+  "course_id": "DXH_L18",
+  "student_level": "STANDARD",
+  "lesson_mode": "TEACH",
+  "style_family": "S06",
+  "style_vars": {
+    "layout_archetype": "household-chore-board",
+    "density_level": "medium",
+    "type_profile": "clean-sans-serif",
+    "surface_profile": "card-panel-slate",
+    "palette_profile": "orange-red-sky-blue",
+    "media_language": "icon-line",
+    "motion_profile": "fade-instant",
+    "feedback_profile": "check-mark-clean"
+  },
+  "difference_from_recent_lessons": ["家务看板卡片版式，非仪表盘/菜单/规则手册", "橙红+天蓝暖冷对比配色", "封面含家务分工看板概念", "反馈用清单式确认"]
+}
+</script>
+
+</head>
+<body>
+<div style="display:none" class="section-head sh-num sh-title cover-wrap cover-sub page-content page-subtitle note-panel np-title quiz-cols vocab-card flash-grid game-board game-title game-rule kmap kmap-node kn-title kn-body ext-card ext-cat ext-body"></div>
+
+<!-- CW-VISUAL-CONTRACT:1 -->
+<div class="visual-contract-placeholder" style="display:none" data-contract="visual"></div>
+<!-- CW-INTERACTION-CONTRACT:1 -->
+<div data-interaction-contract="1" style="display:none"></div>
+
+<div id="presentation">
+
+<!-- ===================== PAGE 1: Cover ===================== -->
+<div class="page cover-page cover-poster" id="page1">
+<div class="cover-topbar">
+<div class="cover-badge">🏠 STAGE 5 · L18 · HOUSEHOLD CHORES</div>
+<div class="cover-floor">Entry No.18</div>
+</div>
+<div class="cover-title">第18课 · 现在进行时·家务</div>
+<div class="cover-subtitle">be + V-ing 肯定句与否定句 · 家务分工看板</div>
+<div class="cover-route">
+<div class="route-stop"><span>📋</span><b>新词20</b><em>词汇</em></div>
+<div class="route-stop"><span>📐</span><b>G46</b><em>语法</em></div>
+<div class="route-stop"><span>📖</span><b>3篇阅读</b><em>阅读</em></div>
+<div class="route-stop"><span>🧩</span><b>五选四</b><em>题型</em></div>
+<div class="route-stop"><span>🔊</span><b>le /l/</b><em>拼读</em></div>
+</div>
+<div class="cover-objectives">
+<div class="obj-card"><div class="obj-icon">🔤</div><div class="obj-text">20新词：家务动作·感官交流</div></div>
+<div class="obj-card"><div class="obj-icon">📐</div><div class="obj-text">G46 现在进行时 be+V-ing 肯定/否定</div></div>
+<div class="obj-card"><div class="obj-icon">📖</div><div class="obj-text">A篇应用文 + B篇记叙文 + 五选四</div></div>
+<div class="obj-card"><div class="obj-icon">🔊</div><div class="obj-text">拼读 le → /l/</div></div>
+</div>
+<div class="cover-meta">
+<span class="meta-chip">时长 · <strong>90分钟</strong></span>
+<span class="meta-chip">词汇 · <strong>20词</strong></span>
+<span class="meta-chip">语法 · <strong>G46</strong></span>
+<span class="meta-chip">页数 · <strong>42页</strong></span>
+</div>
+</div>
+
+<!-- ===================== PAGE 2: 复习导入 P1 - L17 语法回顾 ===================== -->
+<div class="page" id="page2">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">🔄</span> L17 语法回顾 · 频度副词三剑客</div>
+<div class="section-header"><span class="sh-icon">📚</span><span class="sh-text">上节课我们学了什么？</span></div>
+<div class="rule-card rc-qita"><div class="rc-cat">口诀回顾 <span class="rc-badge key">★ 重点记忆</span></div><div class="rc-text">
+<div class="rc-chip">G43 频度副词</div><span class="rc-arw">→</span><span class="rc-chip">always/usually/often/sometimes/never</span><br>
+<div class="rc-chip">G44 How often</div><span class="rc-arw">→</span><span class="rc-chip">How often do you...?</span><br>
+<div class="rc-chip">G45 百分比与习惯短语</div><span class="rc-arw">→</span><span class="rc-chip">100%/80%/50%... 对应频度</span>
+</div></div>
+<div class="formula-box">
+<div class="formula-title">G43 · 频度副词位置公式</div>
+<div class="formula-content">主语 + <strong>频度副词</strong> + 实义动词<br>She <strong>always</strong> does housework on weekends.</div>
+</div>
+<div class="formula-box">
+<div class="formula-title">G44 · How often 提问公式</div>
+<div class="formula-content">How often + do/does + 主语 + 动词原形?<br>— How often do you cook? — Every day.</div>
+</div>
+<div class="tip-box"><div class="tip-title">💡 G45 频度副词百分比对应</div><div class="tip-content">always(100%) > usually(80%) > often(60%) > sometimes(40%) > seldom(20%) > never(0%)</div></div>
+<div class="example-sent"><span class="sent-label">G43</span> She <strong>always</strong> sweeps the floor on Sundays.</div>
+<div class="example-sent"><span class="sent-label">G44</span> <strong>How often</strong> do you wash the dishes? — Every day.</div>
+<div class="example-sent"><span class="sent-label">G45</span> I <strong>usually</strong> (80%) help with housework after school.</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_2_0" data-knowledge-id="g43" data-section="core" data-template-id="FILL-IN-DIAGNOSE" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">复习检测：She ____ does housework on weekends.（频度副词位置）</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="always" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>频度副词放在实义动词前。She always does... ✅ G43 考点。</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 3: 复习导入 P2 - L17 词汇快闪 ===================== -->
+<div class="page" id="page3">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">⚡</span> L17 词汇快闪 · 频度与健康20词</div>
+<div class="section-header"><span class="sh-icon">🃏</span><span class="sh-text">看词说义，看义说词！</span></div>
+<div class="mini-flash-grid">
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">always</div><div class="mf-cn">总是</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">usually</div><div class="mf-cn">通常</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">often</div><div class="mf-cn">经常</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">sometimes</div><div class="mf-cn">有时</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">never</div><div class="mf-cn">从不</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">seldom</div><div class="mf-cn">很少</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">percent</div><div class="mf-cn">百分比</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">habit</div><div class="mf-cn">习惯</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">health</div><div class="mf-cn">健康</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">exercise</div><div class="mf-cn">锻炼</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">breakfast</div><div class="mf-cn">早餐</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">vegetable</div><div class="mf-cn">蔬菜</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">fruit</div><div class="mf-cn">水果</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">sleep</div><div class="mf-cn">睡眠</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">junk food</div><div class="mf-cn">垃圾食品</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">regular</div><div class="mf-cn">规律的</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">frequency</div><div class="mf-cn">频率</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">survey</div><div class="mf-cn">调查</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">result</div><div class="mf-cn">结果</div></div>
+<div class="mini-flash-item" onclick="flipCard(this)"><div class="mf-word">improve</div><div class="mf-cn">改善</div></div>
+</div>
+<div class="vocab-game">
+<div class="game-prompt">🎮 跨课词汇复习 · 用 L17 词汇完成句子：点击正确选项</div>
+<div class="context-box">1. — How ____ do you exercise? — Three times a week.</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<button class="game-option" data-correct="1" onclick="gameCheck(this)">often</button>
+<button class="game-option" data-correct="0" onclick="gameCheck(this)">always</button>
+<button class="game-option" data-correct="0" onclick="gameCheck(this)">never</button>
+</div>
+<div class="game-feedback"><span class="feedback-label">解析：</span>How often 提问频率，回答 three times a week。G44 考点。</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 4: 复习导入 P3 - L17 错题回顾 + 本课导入 ===================== -->
+<div class="page" id="page4">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">🏠</span> 本课导入 · 家务分工看板</div>
+<div class="highlight-box">
+<div class="hb-title">🤔 思考一下</div>
+<div class="hb-content">你现在正在做什么？<br>你的妈妈此刻正在做什么？<br>你的家人各自正在做什么家务？<br>→ 这些"正在做"的动作用英语怎么表达？</div>
+</div>
+<div class="rule-card rc-zhug"><div class="rc-cat">本课核心 <span class="rc-badge key">★ 重点记忆</span></div><div class="rc-text">
+<strong>本课语法考点 G46：</strong><br>
+<div class="rc-chip">现在进行时 be + V-ing</div><br>
+<div class="rc-chip">肯定句：主语 + am/is/are + V-ing</div><br>
+<div class="rc-chip">否定句：主语 + am/is/are + not + V-ing</div>
+</div></div>
+<div class="example-sent"><span class="sent-label">导入</span> She <strong>is cooking</strong> dinner now.（她正在做饭）</div>
+<div class="example-sent"><span class="sent-label">导入</span> He <strong>isn't sleeping</strong> right now.（他现在没在睡觉）</div>
+<div class="example-sent"><span class="sent-label">导入</span> They <strong>are chatting</strong> online at the moment.（他们此刻正在网上聊天）</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_4_0" data-knowledge-id="g46" data-section="core" data-template-id="FILL-IN-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">导入检测：Look! Mom ____ dinner in the kitchen.</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> cook</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">B</span> cooks</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">C</span> is cooking</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>Look! 标志词 → 现在进行时。Mom is cooking... ✅ G46 考点。</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 5: 跨课词汇游戏 - 拖拽分类 ===================== -->
+<div class="page" id="page5">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">🎮</span> 跨课词汇游戏 · 家务 vs 其他活动</div>
+<div class="section-header"><span class="sh-icon">🎯</span><span class="sh-text">点击词汇卡片，将其归入正确的分类箱！</span></div>
+<div class="vocab-game">
+<div class="game-prompt">🏠 玩法：先点词卡选中（变黄），再点对应分类箱。答对显绿，答错显红！</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+<div style="flex:1;min-width:180px;background:rgba(255,255,255,0.6);border-radius:var(--radius);padding:10px">
+<h4 style="color:var(--brand-dark);font-size:14px">📥 词卡池</h4>
+<div id="dd-pool" style="min-height:80px">
+<span class="dd-card" data-cat="chore" onclick="sortCard(this,'chore')">sweep</span>
+<span class="dd-card" data-cat="other" onclick="sortCard(this,'other')">study</span>
+<span class="dd-card" data-cat="chore" onclick="sortCard(this,'chore')">wash</span>
+<span class="dd-card" data-cat="other" onclick="sortCard(this,'other')">sing</span>
+<span class="dd-card" data-cat="chore" onclick="sortCard(this,'chore')">cook</span>
+<span class="dd-card" data-cat="other" onclick="sortCard(this,'other')">dance</span>
+<span class="dd-card" data-cat="chore" onclick="sortCard(this,'chore')">housework</span>
+<span class="dd-card" data-cat="other" onclick="sortCard(this,'other')">sleep</span>
+<span class="dd-card" data-cat="other" onclick="sortCard(this,'other')">read</span>
+<span class="dd-card" data-cat="chore" onclick="sortCard(this,'chore')">scan</span>
+</div>
+</div>
+</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<div class="dd-bin bin-1" style="flex:1;min-width:160px" id="bin-chore">
+<h4>🧹 家务活动</h4>
+</div>
+<div class="dd-bin bin-2" style="flex:1;min-width:160px" id="bin-other">
+<h4>📚 其他活动</h4>
+</div>
+</div>
+<div class="game-feedback" id="dd-feedback"><span class="feedback-label">提示：</span>点击词卡后选择正确的分类箱！</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 6: 新词 P1 (1-5) ===================== -->
+<div class="page" id="page6">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">📖</span> 新词 1-5 · 家务核心动词</div>
+<div class="vocab-grid">
+<div class="item-card"><span class="card-emoji">🏠</span><span class="card-word">housework</span><span class="card-phonetic">/ˈhaʊswɜːk/</span><div><span class="card-pos">n.</span></div><div class="card-cn">家务（不可数）</div><div class="card-mn">house(家)+work(工作)=家务</div><div class="card-example">She is doing housework now.</div></div>
+<div class="item-card"><span class="card-emoji">🧹</span><span class="card-word">sweep</span><span class="card-phonetic">/swiːp/</span><div><span class="card-pos">v.</span></div><div class="card-cn">扫</div><div class="card-mn">sweep 音似"死围铺"→铺开扫</div><div class="card-example">He is sweeping the floor.</div></div>
+<div class="item-card"><span class="card-emoji">💧</span><span class="card-word">wash</span><span class="card-phonetic">/wɒʃ/</span><div><span class="card-pos">v.</span></div><div class="card-cn">洗</div><div class="card-mn">wash 音似"握虚"→握水洗</div><div class="card-example">She is washing the dishes.</div></div>
+<div class="item-card"><span class="card-emoji">🍳</span><span class="card-word">cook</span><span class="card-phonetic">/kʊk/</span><div><span class="card-pos">v.</span></div><div class="card-cn">烹调</div><div class="card-mn">cook 音似"库克"→库克做饭</div><div class="card-example">Mom is cooking dinner.</div></div>
+<div class="item-card"><span class="card-emoji">📱</span><span class="card-word">scan</span><span class="card-phonetic">/skæn/</span><div><span class="card-pos">v.</span></div><div class="card-cn">扫描；浏览</div><div class="card-mn">scan 音似"死看"→扫描看</div><div class="card-example">He is scanning the article.</div></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_6_0" data-knowledge-id="vocab" data-section="core" data-template-id="C-POINT-DIAGNOSEdata-interaction-type=" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">新词检测：Mom is ____ dinner in the kitchen.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="cooking" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>cook dinner = 做晚饭。kitchen 厨房场景。</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 7: 新词 P2 (6-10) ===================== -->
+<div class="page" id="page7">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">📖</span> 新词 6-10 · 学习与艺术类</div>
+<div class="vocab-grid">
+<div class="item-card"><span class="card-emoji">📚</span><span class="card-word">read</span><span class="card-phonetic">/riːd/</span><div><span class="card-pos">v.</span></div><div class="card-cn">阅读</div><div class="card-mn">read 音似"瑞德"→瑞德读书</div><div class="card-example">She is reading a book.</div></div>
+<div class="item-card"><span class="card-emoji">✍️</span><span class="card-word">write</span><span class="card-phonetic">/raɪt/</span><div><span class="card-pos">v.</span></div><div class="card-cn">写</div><div class="card-mn">write 音似"瑞特"→瑞特写字</div><div class="card-example">He is writing a letter.</div></div>
+<div class="item-card"><span class="card-emoji">🎨</span><span class="card-word">draw</span><span class="card-phonetic">/drɔː/</span><div><span class="card-pos">v.</span></div><div class="card-cn">画画</div><div class="card-mn">draw 音似"卓"→卓画</div><div class="card-example">She is drawing a picture.</div></div>
+<div class="item-card"><span class="card-emoji">🎤</span><span class="card-word">sing</span><span class="card-phonetic">/sɪŋ/</span><div><span class="card-pos">v.</span></div><div class="card-cn">唱歌</div><div class="card-mn">sing 音似"星"→歌星唱歌</div><div class="card-example">He is singing a song.</div></div>
+<div class="item-card"><span class="card-emoji">💃</span><span class="card-word">dance</span><span class="card-phonetic">/dɑːns/</span><div><span class="card-pos">v./n.</span></div><div class="card-cn">跳舞</div><div class="card-mn">dance 音似"当斯"→当斯跳舞</div><div class="card-example">She is dancing to music.</div></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_7_0" data-knowledge-id="vocab" data-section="core" data-template-id="FILL-IN-DIAGNOSdata-interaction-type=" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">新词检测：She is ____ a picture in the art room.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="drawing" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>draw a picture = 画画。art room 美术室场景。</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 8: 新词 P3 (11-15) ===================== -->
+<div class="page" id="page8">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">📖</span> 新词 11-15 · 学习与交流类</div>
+<div class="vocab-grid">
+<div class="item-card"><span class="card-emoji">📖</span><span class="card-word">study</span><span class="card-phonetic">/ˈstʌdi/</span><div><span class="card-pos">v./n.</span></div><div class="card-cn">学习</div><div class="card-mn">study 音似"大底"→大底学习</div><div class="card-example">He is studying for a test.</div></div>
+<div class="item-card"><span class="card-emoji">😴</span><span class="card-word">sleep</span><span class="card-phonetic">/sliːp/</span><div><span class="card-pos">v./n.</span></div><div class="card-cn">睡觉</div><div class="card-mn">sleep 音似"死里扑"→死里扑床睡</div><div class="card-example">The baby is sleeping.</div></div>
+<div class="item-card"><span class="card-emoji">💬</span><span class="card-word">talk</span><span class="card-phonetic">/tɔːk/</span><div><span class="card-pos">v./n.</span></div><div class="card-cn">谈话</div><div class="card-mn">talk 音似"套克"→套话聊天</div><div class="card-example">They are talking about the project.</div></div>
+<div class="item-card"><span class="card-emoji">🗣️</span><span class="card-word">speak</span><span class="card-phonetic">/spiːk/</span><div><span class="card-pos">v.</span></div><div class="card-cn">说话；讲</div><div class="card-mn">speak 音似"斯比克"→斯比克说话</div><div class="card-example">She is speaking to the teacher.</div></div>
+<div class="item-card"><span class="card-emoji">👂</span><span class="card-word">hear</span><span class="card-phonetic">/hɪə(r)/</span><div><span class="card-pos">v.</span></div><div class="card-cn">听见</div><div class="card-mn">hear 音似"希尔"→希尔听见</div><div class="card-example">I can hear someone singing.</div></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_8_0" data-knowledge-id="vocab" data-section="core" data-template-id="FILL-IN-DIAGNOdata-interaction-type=" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">新词检测：He is ____ for a test in his room.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="studying" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>study for a test = 为考试复习。study=学习。</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 9: 新词 P4 (16-20) ===================== -->
+<div class="page" id="page9">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">📖</span> 新词 16-20 · 观察、交流与时刻</div>
+<div class="vocab-grid">
+<div class="item-card"><span class="card-emoji">🛋️</span><span class="card-word">rest</span><span class="card-phonetic">/rest/</span><div><span class="card-pos">v./n.</span></div><div class="card-cn">休息</div><div class="card-mn">rest 音似"瑞斯特"→瑞斯特休息</div><div class="card-example">He is resting on the sofa.</div></div>
+<div class="item-card"><span class="card-emoji">👀</span><span class="card-word">look</span><span class="card-phonetic">/lʊk/</span><div><span class="card-pos">v.</span></div><div class="card-cn">看</div><div class="card-mn">look 音似"路克"→路克看</div><div class="card-example">She is looking at the picture.</div></div>
+<div class="item-card"><span class="card-emoji">💭</span><span class="card-word">chat</span><span class="card-phonetic">/tʃæt/</span><div><span class="card-pos">v./n.</span></div><div class="card-cn">聊天</div><div class="card-mn">chat 音似"恰特"→恰特聊天</div><div class="card-example">They are chatting online.</div></div>
+<div class="item-card"><span class="card-emoji">📌</span><span class="card-word">notice</span><span class="card-phonetic">/ˈnəʊtɪs/</span><div><span class="card-pos">v./n.</span></div><div class="card-cn">注意到；通知</div><div class="card-mn">note(注意)+ice→注意到</div><div class="card-example">She noticed him sleeping.</div></div>
+<div class="item-card"><span class="card-emoji">⏰</span><span class="card-word">moment</span><span class="card-phonetic">/ˈməʊmənt/</span><div><span class="card-pos">n.</span></div><div class="card-cn">时刻；片刻</div><div class="card-mn">move(动)+ment→动的片段→时刻</div><div class="card-example">He is busy at the moment.</div></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_9_0" data-knowledge-id="vocab" data-section="core" data-template-id="FILL-IN-DIAGNdata-interaction-type=" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">新词检测：They are ____ online about their homework.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="chatting" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>chat online = 在线聊天。chat=聊天。</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 10: 词汇矩阵 + V-ing 形式预览 ===================== -->
+<div class="page" id="page10">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">📊</span> 词汇矩阵 · 20词 V-ing 形式预览</div>
+<div class="section-header"><span class="sh-icon">🔄</span><span class="sh-text">动词 + ing = 现在进行时的核心</span></div>
+<table class="data-table">
+<tr><th>原形</th><th>V-ing</th><th>规则</th><th>中文</th></tr>
+<tr><td>sweep</td><td>sweeping</td><td>①直接加</td><td>扫</td></tr>
+<tr><td>wash</td><td>washing</td><td>①直接加</td><td>洗</td></tr>
+<tr><td>cook</td><td>cooking</td><td>①直接加</td><td>烹调</td></tr>
+<tr><td>scan</td><td>scanning</td><td>①直接加</td><td>扫描</td></tr>
+<tr><td>read</td><td>reading</td><td>①直接加</td><td>阅读</td></tr>
+<tr><td>write</td><td>writing</td><td>②去e加</td><td>写</td></tr>
+<tr><td>draw</td><td>drawing</td><td>①直接加</td><td>画画</td></tr>
+<tr><td>sing</td><td>singing</td><td>①直接加</td><td>唱歌</td></tr>
+<tr><td>dance</td><td>dancing</td><td>②去e加</td><td>跳舞</td></tr>
+<tr><td>study</td><td>studying</td><td>①直接加</td><td>学习</td></tr>
+<tr><td>sleep</td><td>sleeping</td><td>①直接加</td><td>睡觉</td></tr>
+<tr><td>talk</td><td>talking</td><td>①直接加</td><td>谈话</td></tr>
+<tr><td>speak</td><td>speaking</td><td>①直接加</td><td>说话</td></tr>
+<tr><td>hear</td><td>hearing</td><td>①直接加</td><td>听见</td></tr>
+<tr><td>rest</td><td>resting</td><td>①直接加</td><td>休息</td></tr>
+<tr><td>look</td><td>looking</td><td>①直接加</td><td>看</td></tr>
+<tr><td>chat</td><td>chatting</td><td>③双写加</td><td>聊天</td></tr>
+<tr><td>notice</td><td>noticing</td><td>②去e加</td><td>注意到</td></tr>
+</table>
+<div class="tip-box"><div class="tip-title">💡 三规则速记</div><div class="tip-content">①直接加：read→reading &nbsp; ②去e加：write→writing, dance→dancing &nbsp; ③双写加：chat→chatting</div></div>
+</div>
+
+<!-- ===================== PAGE 11: 词汇搭配连线 ===================== -->
+<div class="page" id="page11">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">🔗</span> 词汇搭配连线 · 家务短语配对</div>
+<div class="section-header"><span class="sh-icon">🎯</span><span class="sh-text">点击左边的短语开头，再点击右边的搭配结尾</span></div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_11_0" data-knowledge-id="vocab" data-section="core" data-template-id="G-LINK-RELATION" data-interaction-type="link" data-action-type="link" data-cognitive-level="retrieval" data-scorable="true">
+<div class="link-container">
+<div class="ec-grid">
+<div class="ec-left link-left">
+<div class="link-item" data-pair="1" onclick="linkClick(this)">1. sweep</div>
+<div class="link-item" data-pair="2" onclick="linkClick(this)">2. wash</div>
+<div class="link-item" data-pair="3" onclick="linkClick(this)">3. cook</div>
+<div class="link-item" data-pair="4" onclick="linkClick(this)">4. do</div>
+<div class="link-item" data-pair="5" onclick="linkClick(this)">5. scan</div>
+</div>
+<div class="ec-right link-right">
+<div class="link-item" data-pair="1" onclick="linkClick(this)">A. the floor</div>
+<div class="link-item" data-pair="3" onclick="linkClick(this)">B. dinner</div>
+<div class="link-item" data-pair="4" onclick="linkClick(this)">C. housework</div>
+<div class="link-item" data-pair="5" onclick="linkClick(this)">D. the article</div>
+<div class="link-item" data-pair="2" onclick="linkClick(this)">E. the dishes</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 12: 拼写补全 ===================== -->
+<div class="page" id="page12">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">📝</span> 拼写补全 · V-ing 形式填空</div>
+<div class="section-header"><span class="sh-icon">✏️</span><span class="sh-text">填入动词的 V-ing 形式</span></div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_12_0" data-knowledge-id="g47" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">1. She is wr____ a letter.（write 的 V-ing）</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="iting" placeholder="输入缺失部分" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_12_1" data-knowledge-id="g47" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">2. He is cha____ online.（chat 的 V-ing）</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="tting" placeholder="输入缺失部分" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_12_2" data-knowledge-id="g47" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">3. They are dan____ to music.（dance 的 V-ing）</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="cing" placeholder="输入缺失部分" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_12_3" data-knowledge-id="g47" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">4. Mom is cook____ dinner.（cook 的 V-ing）</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="ing" placeholder="输入缺失部分" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+</div>
+
+<!-- ===================== PAGE 13: G46 P1 - 现在进行时规则表 ===================== -->
+<div class="page" id="page13">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">📐</span> G46 · 现在进行时结构规则表</div>
+<div class="section-header"><span class="sh-icon">📋</span><span class="sh-text">be + V-ing = 现在进行时</span></div>
+<div class="rule-card rc-zhug"><div class="rc-cat">口诀 <span class="rc-badge key">★ 重点记忆</span></div><div class="rc-text">
+<strong>现在进行 be + ing，am/is/are 要分清；肯定加 ing，否定 be 后 not 加</strong>
+</div></div>
+<table class="data-table">
+<tr><th>句型</th><th>公式</th><th>示例</th></tr>
+<tr><td>肯定句</td><td>主语 + am/is/are + V-ing + ...</td><td>She is washing the dishes.</td></tr>
+<tr><td>否定句</td><td>主语 + am/is/are + not + V-ing + ...</td><td>She is not (isn't) washing the dishes.</td></tr>
+<tr><td>缩写否定</td><td>isn't / aren't / 'm not</td><td>He isn't sleeping. / We aren't chatting.</td></tr>
+</table>
+<div class="formula-box">
+<div class="formula-title">be 动词选择规则</div>
+<div class="formula-content">I → am &nbsp; He/She/It → is &nbsp; You/We/They → are</div>
+</div>
+<div class="example-sent"><span class="sent-label">肯定</span> She <strong>is cooking</strong> dinner in the kitchen.</div>
+<div class="example-sent"><span class="sent-label">否定</span> He <strong>isn't sleeping</strong> right now.</div>
+<div class="example-sent"><span class="sent-label">肯定</span> They <strong>are chatting</strong> online.</div>
+<div class="example-sent"><span class="sent-label">否定</span> I <strong>am not watching</strong> television at the moment.</div>
+</div>
+
+<!-- ===================== PAGE 14: G46 P2 - be+V-ing 结构详解 ===================== -->
+<div class="page" id="page14">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">🔧</span> G46 · be + V-ing 结构拆解</div>
+<div class="section-header"><span class="sh-icon">🧩</span><span class="sh-text">三要素缺一不可：be 动词 + 主语一致 + V-ing</span></div>
+<div class="chore-board">
+<div class="chore-card"><div class="ch-icon">👤</div><div class="ch-word">I</div><div class="ch-ing">am + V-ing</div></div>
+<div class="chore-card"><div class="ch-icon">👨</div><div class="ch-word">He/She/It</div><div class="ch-ing">is + V-ing</div></div>
+<div class="chore-card"><div class="ch-icon">👥</div><div class="ch-word">You/We/They</div><div class="ch-ing">are + V-ing</div></div>
+<div class="chore-card"><div class="ch-icon">❌</div><div class="ch-word">be 漏掉</div><div class="ch-ing">She cooking. ❌</div></div>
+</div>
+<div class="err-box"><div class="err-title">❌ 常见错误</div>
+<div class="err-item"><span class="err-wrong">She cooking dinner.</span> → <span class="err-right">She is cooking dinner.</span>（be 动词不能漏）</div>
+<div class="err-item"><span class="err-wrong">He is sleep.</span> → <span class="err-right">He is sleeping.</span>（必须加 -ing）</div>
+<div class="err-item"><span class="err-wrong">They are talk.</span> → <span class="err-right">They are talking.</span>（必须加 -ing）</div>
+<div class="err-item"><span class="err-wrong">I am not cook.</span> → <span class="err-right">I am not cooking.</span>（必须加 -ing）</div>
+</div>
+<div class="tip-box"><div class="tip-title">💡 中考辨析</div><div class="tip-content"><strong>现在进行时 vs. 一般现在时</strong><br>She is cooking now.（此刻正在做饭）<br>She cooks every day.（每天做饭的习惯）</div></div>
+</div>
+
+<!-- ===================== PAGE 15: G46 P3 - 现在进行时转换器交互组件 ===================== -->
+<div class="page" id="page15">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">🔄</span> G46 · 现在进行时转换器</div>
+<div class="section-header"><span class="sh-icon">🎯</span><span class="sh-text">选择主语和动词，查看现在进行时句子</span></div>
+<div class="tense-converter">
+<div class="tc-input">
+<label>主语：</label>
+<select id="tc-subj" onchange="tcUpdate()">
+<option value="I">I</option>
+<option value="He">He</option>
+<option value="She" selected>She</option>
+<option value="It">It</option>
+<option value="We">We</option>
+<option value="They">They</option>
+</select>
+<label>动词：</label>
+<select id="tc-verb" onchange="tcUpdate()">
+<option value="cook|cooking">cook</option>
+<option value="sweep|sweeping">sweep</option>
+<option value="wash|washing">wash</option>
+<option value="read|reading">read</option>
+<option value="write|writing">write</option>
+<option value="chat|chatting">chat</option>
+<option value="dance|dancing">dance</option>
+<option value="study|studying">study</option>
+</select>
+<label>句型：</label>
+<select id="tc-type" onchange="tcUpdate()">
+<option value="pos">肯定句</option>
+<option value="neg">否定句</option>
+</select>
+</div>
+<div class="tc-output" id="tc-output">She is cooking dinner now.</div>
+</div>
+<div class="tip-box"><div class="tip-title">💡 使用说明</div><div class="tip-content">选择不同的主语、动词和句型，观察 be 动词和 V-ing 的变化规律！</div></div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_15_0" data-knowledge-id="g46" data-section="core" data-template-id="FILL-IN-DIAGdata-interaction-type=" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">交互检测：They ____ ____ to music right now.（dance, 肯定句）</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> is dancing</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">B</span> are dancing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">C</span> are danceing</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>They → are；dance → dancing（去e加ing）。G46 + G47 联考。</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 16: G46 错句定位 ===================== -->
+<div class="page" id="page16">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">🔍</span> G46 · 错句定位 · 找出错误</div>
+<div class="section-header"><span class="sh-icon">⚠️</span><span class="sh-text">每题有一处错误，选出正确的修改</span></div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_16_0" data-knowledge-id="g46" data-section="core" data-template-id="FILL-IN-DIAdata-interaction-type=" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">1. She cooking dinner in the kitchen. 哪里错了？</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">A</span> 缺少 be 动词 is</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">B</span> cooking 应改为 cooks</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">C</span> dinner 应改为 dinners</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>She is cooking... be 动词不能漏！G46 核心规则。</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_16_1" data-knowledge-id="g46" data-section="core" data-template-id="FILL-IN-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">2. They are talk about the project. 哪里错了？</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> are 应改为 is</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">B</span> about 应改为 for</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">C</span> talk 应改为 talking</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>be + V-ing，talk → talking。G46 + G47 联考。</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_16_2" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">3. I am not wash the dishes now. 哪里错了？</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> am 应改为 is</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">B</span> wash 应改为 washing</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">C</span> now 应改为 then</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>am not + V-ing，wash → washing。否定句也要加 -ing。</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 17: G46 肯定句型转换 ===================== -->
+<div class="page" id="page17">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">✅</span> G46 · 肯定句型转换</div>
+<div class="section-header"><span class="sh-icon">📝</span><span class="sh-text">将一般现在时转换为现在进行时</span></div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_17_0" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">1. She cooks dinner. → She ____ ____ dinner now.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="is cooking" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_17_1" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">2. They chat online. → They ____ ____ online at the moment.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="are chatting" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_17_2" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">3. He writes a letter. → He ____ ____ a letter right now.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="is writing" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+</div>
+
+<!-- ===================== PAGE 18: G46 否定句型转换 ===================== -->
+<div class="page" id="page18">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">❌</span> G46 · 否定句型转换</div>
+<div class="section-header"><span class="sh-icon">📝</span><span class="sh-text">将肯定句改为否定句</span></div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_18_0" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">1. She is cooking dinner. → She ____ ____ cooking dinner.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="is not" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_18_1" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">2. They are chatting online. → They ____ ____ chatting online.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="are not" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_18_2" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSEdata-interaction-type=" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">3. I am studying for a test. 的否定句是？</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> I am not study for a test.</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">B</span> I am not studying for a test.</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">C</span> I don't am studying for a test.</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>am not + V-ing。I am not studying... ✅ 注意：am not 没有缩写形式。</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 19: G46 选择练习 ===================== -->
+<div class="page" id="page19">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">🎯</span> G46 · 现在进行时选择练习</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_19_0" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">1. Look! The baby ____ in the cradle.</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> sleep</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">B</span> sleeps</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">C</span> is sleeping</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>Look! 标志词 → 现在进行时。The baby is sleeping. ✅</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_19_1" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">2. We ____ ____ TV right now.（否定句）</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> are watching</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">B</span> don't watching</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">C</span> aren't watching</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>否定句 = are not + V-ing。aren't watching. ✅</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_19_2" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">3. — What are you doing? — I ____ a book.</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">A</span> am reading</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">B</span> read</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">C</span> reading</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>I → am + V-ing。I am reading. ✅</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 20: 综合对比表 ===================== -->
+<div class="page" id="page20">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">⚖️</span> 综合对比 · 一般现在时 vs 现在进行时</div>
+<table class="data-table">
+<tr><th>对比项</th><th>一般现在时</th><th>现在进行时</th></tr>
+<tr><td>用法</td><td>习惯、常理、客观事实</td><td>此刻正在进行的动作</td></tr>
+<tr><td>结构</td><td>主语 + V/V-s</td><td>主语 + am/is/are + V-ing</td></tr>
+<tr><td>标志词</td><td>always, usually, every day</td><td>now, Look!, Listen!, at the moment</td></tr>
+<tr><td>例句</td><td>She cooks every day.</td><td>She is cooking now.</td></tr>
+<tr><td>否定</td><td>She doesn't cook.</td><td>She isn't cooking.</td></tr>
+</table>
+<div class="example-sent"><span class="sent-label">对比</span> She <strong>cooks</strong> every day.（习惯） vs She <strong>is cooking</strong> now.（此刻）</div>
+<div class="example-sent"><span class="sent-label">对比</span> They <strong>chat</strong> on weekends.（习惯） vs They <strong>are chatting</strong> at the moment.（此刻）</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_20_0" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">辨析：She ____ housework every Saturday.（习惯）</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> is doing</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">B</span> does</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">C</span> doing</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>every Saturday = 习惯 → 一般现在时。She does housework. ✅</div>
+<div class="undo-hint">答错后双击可撤销回答</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 21: 句块排序 ===================== -->
+<div class="page" id="page21">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">🧩</span> 句块排序 · 家务场景表述</div>
+<div class="section-header"><span class="sh-icon">🔄</span><span class="sh-text">点击词块排列成正确句子，再点"提交排序"</span></div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_21_0" data-knowledge-id="g46" data-section="core" data-template-id="G-ORDER-SENTENCE" data-interaction-type="order" data-action-type="order" data-cognitive-level="retrieval" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">1. 排列成句：is / She / floor / sweeping / the / now</div>
+<div class="order-container" data-order='["She","is","sweeping","the","floor","now"]'>
+<div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">is</span><span class="order-chunk" onclick="orderClick(this)">She</span><span class="order-chunk" onclick="orderClick(this)">floor</span><span class="order-chunk" onclick="orderClick(this)">sweeping</span><span class="order-chunk" onclick="orderClick(this)">the</span><span class="order-chunk" onclick="orderClick(this)">now</span></div>
+<button class="fill-check-btn" onclick="orderSubmit(this)">提交排序</button>
+</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_21_1" data-knowledge-id="g46" data-section="core" data-template-id="G-ORDER-SENTENCE" data-interaction-type="order" data-action-type="order" data-cognitive-level="retrieval" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">2. 排列成句：are / They / moment / at / chatting / the</div>
+<div class="order-container" data-order='["They","are","chatting","at","the","moment"]'>
+<div class="order-chunks"><span class="order-chunk" onclick="orderClick(this)">are</span><span class="order-chunk" onclick="orderClick(this)">They</span><span class="order-chunk" onclick="orderClick(this)">moment</span><span class="order-chunk" onclick="orderClick(this)">at</span><span class="order-chunk" onclick="orderClick(this)">chatting</span><span class="order-chunk" onclick="orderClick(this)">the</span></div>
+<button class="fill-check-btn" onclick="orderSubmit(this)">提交排序</button>
+</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 22: 填空演练 ===================== -->
+<div class="page" id="page22">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">✏️</span> 填空演练 · 用动词的正确形式填空</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_22_0" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">1. Listen! Someone ____ ____ (sing) in the next room.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="is singing" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_22_1" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">2. We ____ ____ (not chat) online right now. We are studying.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="aren't chatting" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_22_2" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">3. He ____ ____ (write) a letter to his friend at the moment.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="is writing" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_22_3" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">4. I ____ ____ (not sleep) now. I am reading a book.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="am not sleeping" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+</div>
+
+<!-- ===================== PAGE 23: 阅读 A篇 ===================== -->
+<div class="page" id="page23">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">📖</span> 阅读 A篇 · Our Housework Chart</div>
+<div class="reading-passage">
+<div class="passage-title">📋 Our Housework Chart</div>
+<div class="word-count">约 161 词 · 应用文</div>
+<p>It is Saturday morning. Our family is very busy. Everyone is doing housework at home.</p>
+<p>Look at our housework chart on the wall. Mom is cooking dinner in the kitchen. She is also washing some vegetables. Dad is sweeping the floor in the living room. He is a tidy man. My sister is drawing a picture at her desk. She is not doing housework, but she is quiet.</p>
+<p>My brother is studying in his room. He is reading a book for his test. I am washing the dishes in the kitchen. The water is warm. Our cat is sleeping on the sofa. It is not helping!</p>
+<p>At the moment, no one is resting. We are all busy. My grandmother is chatting with our neighbor in the garden. She is not doing housework, but she is happy to talk.</p>
+<p>Housework is everyone's duty. We share it every weekend. It makes our home clean and warm.</p>
+</div>
+</div>
+
+<!-- ===================== PAGE 24: 阅读 A篇 题目 ===================== -->
+<div class="page" id="page24">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">📝</span> 阅读 A篇 · 题目</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_24_0" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">1. What is Mom doing in the kitchen?</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="cooking dinner and washing vegetables" data-answers='["cooking dinner and washing vegetables", "cooking dinner and washing some vegetables", "cooking dinner", "she is cooking dinner and washing vegetables"]' placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>原文"Mom is cooking dinner...also washing some vegetables."</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_24_1" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">2. Who is studying in his room?</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="My brother" data-answers='["my brother", "the brother", "his brother", "my brother is studying in his room"]' placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>原文"My brother is studying in his room."</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_24_2" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">3. What is the cat doing?</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="Sleeping on the sofa" data-answers='["sleeping on the sofa", "it is sleeping on the sofa", "the cat is sleeping on the sofa", "sleeping"]' placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>原文"Our cat is sleeping on the sofa."</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_24_3" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">4. 推断：How does the family feel about housework?</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> Bored and angry</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">B</span> Tired and unhappy</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">C</span> Willing and happy to share</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>"Housework is everyone's duty. We share it every weekend." 推断出愿意分担。</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_24_4" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">5. 主旨：What is the best title for this passage?</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">A</span> Our Housework Chart</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">B</span> A Lazy Cat</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">C</span> Saturday Dinner</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>全文围绕家务分工看板展开，Our Housework Chart 最贴切。</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 25: 阅读 B篇 ===================== -->
+<div class="page" id="page25">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">📖</span> 阅读 B篇 · A Busy Saturday Morning</div>
+<div class="reading-passage">
+<div class="passage-title">🌅 A Busy Saturday Morning</div>
+<div class="word-count">约 183 词 · 记叙文</div>
+<p>Last Saturday morning, our house was very noisy. Everyone was busy doing different things.</p>
+<p>At eight o'clock, Mom was cooking breakfast in the kitchen. The smell was wonderful. Dad was sweeping the floor in the living room. He is always tidy on weekends. My sister was dancing to music in her room. She dances every morning. My little brother was drawing a picture at the table. He was not writing or reading. He just loves drawing.</p>
+<p>I was washing the dishes from last night. The water was cold, but I didn't mind. Our grandmother was chatting with our neighbor at the door. They were talking about the weather. Our cat was sleeping on the windowsill. It was not noticing anything.</p>
+<p>Suddenly, the phone rang. It was my aunt. She was calling to invite us for lunch. Mom spoke to her and said yes. We were all happy to hear that.</p>
+<p>At that moment, I noticed something: everyone in our family was doing something useful. We were not resting, but we were not complaining either. It was a busy but happy morning.</p>
+</div>
+</div>
+
+<!-- ===================== PAGE 26: 阅读 B篇 题目 ===================== -->
+<div class="page" id="page26">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">📝</span> 阅读 B篇 · 题目</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_26_0" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">1. What was Mom doing at eight o'clock?</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="cooking breakfast" data-answers='["cooking breakfast", "cooking breakfast in the kitchen", "she was cooking breakfast"]' placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>原文"Mom was cooking breakfast in the kitchen."</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_26_1" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">2. What was the little brother doing?</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="drawing a picture" data-answers='["drawing a picture", "he was drawing a picture", "drawing a picture at the table"]' placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>原文"My little brother was drawing a picture at the table."</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_26_2" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">3. Where was the cat sleeping?</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="On the windowsill" data-answers='["on the windowsill"]' placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}" ondblclick="undoFill(this)"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>原文"Our cat was sleeping on the windowsill."</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_26_3" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">4. 词义：What does "complaining" mean in the last paragraph?</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> Working hard</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">B</span> Saying you are unhappy</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">C</span> Sleeping well</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>"not complaining" = 没有抱怨。complain = 抱怨。</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_26_4" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">5. 推断：How did the writer feel about the morning?</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> Terrible and boring</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">B</span> Busy but happy</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">C</span> Quiet and relaxing</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>末句"It was a busy but happy morning." 直接点明。</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 27: 五选四 ===================== -->
+<div class="page" id="page27">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">🧩</span> 五选四 · What Are You Doing?</div>
+<div class="reading-passage b5-passage">
+<div class="passage-title">📞 What Are You Doing?</div>
+<div class="word-count">约 161 词 · 对话</div>
+<p>Tom is calling his sister Lily on Sunday morning.</p>
+<p>Tom: Hi, Lily! <span class="b5-hole" data-correct="B" data-answer="What are you doing"><span class="b5-blank" onclick="b5ToggleBlank(this)">1 ____</span></span>?</p>
+<p>Lily: Hi, Tom! I am washing the dishes in the kitchen. <span class="b5-hole" data-correct="D" data-answer="What about you"><span class="b5-blank" onclick="b5ToggleBlank(this)">2 ____</span></span>?</p>
+<p>Tom: I am sweeping the floor. Mom is cooking lunch. She is also chatting with Grandma.</p>
+<p>Lily: <span class="b5-hole" data-correct="A" data-answer="Is Dad doing housework too"><span class="b5-blank" onclick="b5ToggleBlank(this)">3 ____</span></span>?</p>
+<p>Tom: No, Dad is not doing housework. He is reading a newspaper in the living room.</p>
+<p>Lily: What about our little brother?</p>
+<p>Tom: He is drawing a picture at his desk. <span class="b5-hole" data-correct="E" data-answer="He is very quiet"><span class="b5-blank" onclick="b5ToggleBlank(this)">4 ____</span></span>.</p>
+<p>Lily: OK, I will finish soon and come to help.</p>
+<p>Tom: <span class="b5-hole" data-correct="C" data-answer="Great, see you soon"><span class="b5-blank" onclick="b5ToggleBlank(this)">5 ____</span></span>!</p>
+</div>
+<div class="b5-opts" id="b5-panel">
+<div class="b5-opts-head">选择正确选项填入空格：</div>
+<div class="b5-opt-row" data-letter="A"><button class="b5-opt" data-letter="A" onclick="b5Pick(this)">A</button><span class="b5-opt-text">Is Dad doing housework too</span></div>
+<div class="b5-opt-row" data-letter="B"><button class="b5-opt" data-letter="B" onclick="b5Pick(this)">B</button><span class="b5-opt-text">What are you doing</span></div>
+<div class="b5-opt-row" data-letter="C"><button class="b5-opt" data-letter="C" onclick="b5Pick(this)">C</button><span class="b5-opt-text">Great, see you soon</span></div>
+<div class="b5-opt-row" data-letter="D"><button class="b5-opt" data-letter="D" onclick="b5Pick(this)">D</button><span class="b5-opt-text">What about you</span></div>
+<div class="b5-opt-row" data-letter="E"><button class="b5-opt" data-letter="E" onclick="b5Pick(this)">E</button><span class="b5-opt-text">He is very quiet</span></div>
+</div>
+</div>
+
+<!-- ===================== PAGE 28: 汉译英练习 ===================== -->
+<div class="page" id="page28">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">🌐</span> 汉译英练习 · 现在进行时家务表达</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_28_0" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">1. 她正在扫地。→ She ____ ____ the floor.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="is sweeping" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_28_1" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">2. 他们此刻正在聊天。→ They ____ ____ at the moment.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="are chatting" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_28_2" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">3. 他现在没有在睡觉。→ He ____ ____ now.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="isn't sleeping" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+</div>
+
+<!-- ===================== PAGE 29: 造句练习 ===================== -->
+<div class="page" id="page29">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">✍️</span> 造句练习 · 用提示词造现在进行时句子</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_29_0" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">1. (she / cook / dinner / now) → ____________</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="She is cooking dinner now." placeholder="输入完整句子" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_29_1" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">2. (they / not chat / at the moment) → ____________</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="They aren't chatting at the moment." placeholder="输入完整句子" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_29_2" data-knowledge-id="g46" data-section="core" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">3. (I / write / a letter / right now) → ____________</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="I am writing a letter right now." placeholder="输入完整句子" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+</div>
+
+<!-- ===================== PAGE 30: 改错填空 ===================== -->
+<div class="page" id="page30">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">🔧</span> 改错填空 · 找出并修正错误</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_30_0" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">1. "He is study for a test now." 哪里错了？</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> is 应改为 am</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">B</span> study 应改为 studying</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">C</span> now 应改为 every day</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>be + V-ing。study → studying。G46 + G47。</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_30_1" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">2. "They are danceing to music." 哪里错了？</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> are 应改为 is</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">B</span> to 应改为 for</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">C</span> danceing 应改为 dancing</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>dance → 去 e + ing = dancing。G47 规则②。</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_30_2" data-knowledge-id="g46" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">
+<div class="quiz-question">3. "I am not wash the dishes." 哪里错了？</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> am 应改为 is</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">B</span> not 应改为 no</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">C</span> wash 应改为 washing</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>am not + V-ing。wash → washing。否定句也必须加 -ing。</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 31: 进阶翻译 ===================== -->
+<div class="page" id="page31">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge extend">EXTEND · 时间充足时做</span></div>
+<div class="page-title"><span class="title-icon">🏆</span> 进阶翻译 · 综合表达</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_31_0" data-knowledge-id="g46" data-section="extend" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="write" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">1. 看！奶奶正在花园里和邻居聊天。→ Look! Grandma ____ ____ with the neighbor in the garden.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="is chatting" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_31_1" data-knowledge-id="g46" data-section="extend" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">2. 此刻我们没在看电视，我们在学习。→ We ____ ____ TV at the moment. We are studying.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="aren't watching" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_31_2" data-knowledge-id="g46" data-section="extend" data-template-id="G-WRITE-FORM" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="application" data-scorable="true">
+<div class="qq-text" style="margin-bottom:8px">3. 听！有人在唱歌。→ Listen! Someone ____ ____.</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="is singing" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+</div>
+</div>
+
+<!-- ===================== PAGE 32: le 拼读 P1 ===================== -->
+<div class="page" id="page32">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">🔊</span> 拼读 · le → /l/ 音素学习</div>
+<div class="section-header"><span class="sh-icon">📌</span><span class="sh-text">词尾 le 发 /l/，前接辅音形成成音节</span></div>
+<div class="phonics-grid">
+<div class="phonics-card">
+<div class="ph-letter">le</div>
+<div class="ph-sound">/l/</div>
+<div class="ph-tip">词尾 le 发 /l/，前接辅音形成成音节。舌尖抵上齿龈，气流从舌两侧通过。</div>
+<div class="ph-words">table, apple, people, little, uncle, candle</div>
+</div>
+<div class="phonics-card">
+<div class="ph-letter">-le</div>
+<div class="ph-sound">/əl/</div>
+<div class="ph-tip">对比音：在非重读音节中，le 前的辅音与 /l/ 形成成音节，听起来像 /əl/</div>
+<div class="ph-words">circle, purple, bottle, middle, gentle, simple</div>
+</div>
+</div>
+<div class="formula-box">
+<div class="formula-title">发音要点</div>
+<div class="formula-content">le 在词尾时，前面的辅音字母与 le 一起构成成音节<br>例：tab-le → /ˈteɪbl/，ap-ple → /ˈæpl/</div>
+</div>
+<div class="example-sent"><span class="sent-label">朗读</span> The <strong>table</strong> is on the <strong>middle</strong> of the <strong>simple</strong> <strong>bottle</strong>.</div>
+</div>
+
+<!-- ===================== PAGE 33: le 拼读 P2 - 朗读词汇表 ===================== -->
+<div class="page" id="page33">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">📋</span> le 朗读词汇表 · 12词</div>
+<div class="section-header"><span class="sh-icon">🎵</span><span class="sh-text">跟读每个单词，注意词尾 le 的 /l/ 音</span></div>
+<table class="data-table">
+<tr><th>单词</th><th>音标</th><th>中文</th><th>le 前辅音</th></tr>
+<tr><td>table</td><td>/ˈteɪbl/</td><td>桌子</td><td>b</td></tr>
+<tr><td>apple</td><td>/ˈæpl/</td><td>苹果</td><td>p</td></tr>
+<tr><td>people</td><td>/ˈpiːpl/</td><td>人们</td><td>p</td></tr>
+<tr><td>little</td><td>/ˈlɪtl/</td><td>小的</td><td>t</td></tr>
+<tr><td>uncle</td><td>/ˈʌŋkl/</td><td>叔叔</td><td>k</td></tr>
+<tr><td>candle</td><td>/ˈkændl/</td><td>蜡烛</td><td>d</td></tr>
+<tr><td>circle</td><td>/ˈsɜːkl/</td><td>圆圈</td><td>k</td></tr>
+<tr><td>purple</td><td>/ˈpɜːpl/</td><td>紫色</td><td>p</td></tr>
+<tr><td>bottle</td><td>/ˈbɒtl/</td><td>瓶子</td><td>t</td></tr>
+<tr><td>middle</td><td>/ˈmɪdl/</td><td>中间</td><td>d</td></tr>
+<tr><td>gentle</td><td>/ˈdʒentl/</td><td>温柔的</td><td>t</td></tr>
+<tr><td>simple</td><td>/ˈsɪmpl/</td><td>简单的</td><td>p</td></tr>
+</table>
+<div class="tip-box"><div class="tip-title">💡 拼读技巧</div><div class="tip-content">le 前的辅音与 /l/ 连读，形成成音节。先读前面的重读音节，再轻轻带出 /l/ 音。</div></div>
+</div>
+
+<!-- ===================== PAGE 34: le 听音选词 + 看词归音 ===================== -->
+<div class="page" id="page34">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">👂</span> le 听音选词 + 看词归音</div>
+<div class="section-header"><span class="sh-icon">🎯</span><span class="sh-text">判断单词是否含 le 词尾</span></div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_34_0" data-knowledge-id="phonics" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">1. 下列哪个单词词尾含 le？</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="bottle" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>bottle 词尾为 -tle，含 le。water 和 paper 不含 le。</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_34_1" data-knowledge-id="phonics" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">2. 下列哪个单词不含 le 词尾？</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="orange" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>orange 不含 le 词尾。apple 和 uncle 都含 le。</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_34_2" data-knowledge-id="phonics" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">3. "table" 中 le 前的辅音是？</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="b" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>ta-ble，le 前是字母 b，发 /b/。</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_34_3" data-knowledge-id="phonics" data-section="core" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">4. "little" 中 le 前的辅音是？</div>
+<div class="quiz-options">
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">A</span> d</button>
+<button class="quiz-opt" data-correct="0" onclick="checkOpt(this)"><span class="opt-label">B</span> p</button>
+<button class="quiz-opt" data-correct="1" onclick="checkOpt(this)"><span class="opt-label">C</span> t</button>
+</div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>lit-tle，le 前是字母 t，发 /t/。</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 35: le 最小对立对辨析 ===================== -->
+<div class="page" id="page35">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge extend">EXTEND · 时间充足时做</span></div>
+<div class="page-title"><span class="title-icon">⚖️</span> le 最小对立对辨析</div>
+<div class="section-header"><span class="sh-icon">🔬</span><span class="sh-text">对比含 le 和不含 le 的词，感受发音差异</span></div>
+<table class="data-table">
+<tr><th>含 le</th><th>不含 le</th><th>发音差异</th></tr>
+<tr><td>table /ˈteɪbl/</td><td>tab /tæb/</td><td>le 使词尾多一个 /l/ 音</td></tr>
+<tr><td>apple /ˈæpl/</td><td>app /æp/</td><td>le 使词尾多一个 /l/ 音</td></tr>
+<tr><td>little /ˈlɪtl/</td><td>lit /lɪt/</td><td>le 使词尾多一个 /l/ 音</td></tr>
+<tr><td>people /ˈpiːpl/</td><td>peep /piːp/</td><td>le 使词尾多一个 /l/ 音</td></tr>
+</table>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_35_0" data-knowledge-id="phonics" data-section="extend" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">1. "table" 和 "tab" 的区别是什么？</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="table 词尾多一个 /l/ 音" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>table = tab + le /l/，词尾多一个 /l/ 音。</div>
+</div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="Q18_35_1" data-knowledge-id="phonics" data-section="extend" data-template-id="C-POINT-DIAGNOSE" data-interaction-type="fill_in" data-action-type="fill" data-cognitive-level="retrieval" data-scorable="true">
+<div class="quiz-question">2. 下列哪对词不是最小对立对？</div>
+<div class="fill-input-wrap"><input class="fill-input" type="text" data-correct="table — chair" placeholder="输入答案" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();checkFill(this);}"><button class="fill-check-btn" onclick="checkFill(this)">确认</button></div>
+<div class="quiz-feedback"><span class="feedback-label">解析：</span>table 和 chair 完全不同，不是最小对立对。</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 36: 课堂总结 + 思维导图 ===================== -->
+<div class="page" id="page36">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge core">CORE · 课堂必做</span></div>
+<div class="page-title"><span class="title-icon">🧠</span> 课堂总结 · L18 知识总览</div>
+<div class="mindmap-container">
+<div class="mindmap-center"><div class="mindmap-center-node" onclick="toggleBranches()">🏠 L18 现在进行时·家务</div></div>
+<div class="mindmap-branches">
+<div class="mindmap-branch branch-1">
+<div class="mb-title">📖 词汇 20词</div>
+<div class="mb-content">
+<div class="mb-item"><strong>家务动词</strong> housework, sweep, wash, cook, scan</div>
+<div class="mb-item"><strong>学习艺术</strong> read, write, draw, sing, dance</div>
+<div class="mb-item"><strong>交流观察</strong> study, sleep, talk, speak, hear</div>
+<div class="mb-item"><strong>状态时刻</strong> rest, look, chat, notice, moment</div>
+</div>
+</div>
+<div class="mindmap-branch branch-2">
+<div class="mb-title">📐 G46 现在进行时</div>
+<div class="mb-content">
+<div class="mb-item"><strong>结构</strong> be + V-ing</div>
+<div class="mb-item"><strong>肯定</strong> She is cooking dinner.</div>
+<div class="mb-item"><strong>否定</strong> She isn't cooking dinner.</div>
+<div class="mb-item"><strong>be 选择</strong> I→am, He/She/It→is, You/We/They→are</div>
+<div class="mb-item"><strong>口诀</strong> be + ing，am/is/are 要分清</div>
+</div>
+</div>
+<div class="mindmap-branch branch-3">
+<div class="mb-title">🔄 V-ing 变化规则</div>
+<div class="mb-content">
+<div class="mb-item"><strong>①直接加</strong> read→reading, talk→talking</div>
+<div class="mb-item"><strong>②去e加</strong> write→writing, dance→dancing</div>
+<div class="mb-item"><strong>③双写加</strong> chat→chatting</div>
+<div class="mb-item"><strong>易错</strong> danceing❌ → dancing✅</div>
+</div>
+</div>
+<div class="mindmap-branch branch-4">
+<div class="mb-title">📖 阅读理解</div>
+<div class="mb-content">
+<div class="mb-item"><strong>A篇</strong> 应用文：Our Housework Chart</div>
+<div class="mb-item"><strong>B篇</strong> 记叙文：A Busy Saturday Morning</div>
+<div class="mb-item"><strong>五选四</strong> 对话：What Are You Doing?</div>
+<div class="mb-item"><strong>技巧</strong> 速读抓主旨 → 精读划关键词</div>
+</div>
+</div>
+<div class="mindmap-branch branch-5">
+<div class="mb-title">🔊 拼读 le /l/</div>
+<div class="mb-content">
+<div class="mb-item"><strong>音素</strong> le → /l/</div>
+<div class="mb-item"><strong>朗读词</strong> table, apple, people, little, uncle, candle</div>
+<div class="mb-item"><strong>对比词</strong> circle, purple, bottle, middle, gentle, simple</div>
+<div class="mb-item"><strong>要点</strong> 词尾 le 与前辅音形成成音节</div>
+</div>
+</div>
+<div class="mindmap-branch branch-6">
+<div class="mb-title">⚖️ 时态对比</div>
+<div class="mb-content">
+<div class="mb-item"><strong>一般现在时</strong> She cooks every day.</div>
+<div class="mb-item"><strong>现在进行时</strong> She is cooking now.</div>
+<div class="mb-item"><strong>标志词</strong> now, Look!, Listen!, at the moment</div>
+<div class="mb-item"><strong>防越级</strong> 仅限现在进行时，不引入过去进行时</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 37: 视觉合同占位 P1 ===================== -->
+<div class="page" id="page37">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge extend">EXTEND · 系统占位</span></div>
+<div class="page-title"><span class="title-icon">📋</span> 视觉合同占位 · 页面布局规范</div>
+<div class="visual-contract-placeholder" style="min-height:200px">
+<div style="text-align:center">
+<p>🎨 CW-VISUAL-CONTRACT:1</p>
+<p>本页面为视觉合同占位区</p>
+<p>布局：household-chore-board</p>
+<p>配色：橙红 #C2410C + 天蓝 #0EA5E9</p>
+<p>背景：浅橙白 #FFF7ED → #FED7AA</p>
+<p>风格族：S06 校园/活力</p>
+</div>
+</div>
+<div class="visual-contract-placeholder" style="min-height:120px">
+<div style="text-align:center">
+<p>📐 六色卡 6/6 分布规范</p>
+<p>主语(G46) | be动词(G46) | V-ing(G47) | 标志词(G48) | 频度(G43) | 时态对比</p>
+<p>答案分布 ≤40%，div 平衡</p>
+</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 38: 视觉合同占位 P2 ===================== -->
+<div class="page" id="page38">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge extend">EXTEND · 系统占位</span></div>
+<div class="page-title"><span class="title-icon">📊</span> 数据采集说明</div>
+<div class="data-collection-info">
+<h3 style="color:var(--brand-dark);margin-bottom:10px">📡 数据采集规范</h3>
+<p><strong>采集模式：</strong>realtime（实时采集）</p>
+<p><strong>导出格式：</strong>JSON / CSV</p>
+<p><strong>采集策略：</strong>recordFirstAttemptOnly（仅记录首次作答）</p>
+<p><strong>存储方式：</strong>IndexedDB 本地存储</p>
+<p><strong>学生ID：</strong>stu_dxh_L18</p>
+<p><strong>会话ID：</strong>L18_ + 时间戳</p>
+</div>
+<div class="data-collection-info">
+<h3 style="color:var(--brand-dark);margin-bottom:10px">📋 交互契约</h3>
+<p><strong>CW-INTERACTION-CONTRACT:1</strong> 已激活</p>
+<p><strong>data-interaction-type</strong> 已标注所有交互题</p>
+<p><strong>判题函数：</strong>checkOpt / checkFill / orderSubmit / linkClick / b5Pick</p>
+<p><strong>翻页：</strong>无动画过渡</p>
+<p><strong>音频反馈：</strong>playCorrect / playError</p>
+</div>
+</div>
+
+<!-- ===================== PAGE 39: 视觉合同占位 P3 ===================== -->
+<div class="page" id="page39">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge extend">EXTEND · 系统占位</span></div>
+<div class="page-title"><span class="title-icon">🔧</span> 视觉合同占位 · 组件规范</div>
+<div class="visual-contract-placeholder" style="min-height:120px">
+<div style="text-align:center">
+<p>🧩 组件清单</p>
+<p>quiz-container | quiz-opt | quiz-q | fill-input | order-container</p>
+<p>link-container | b5-hole | b5-blank | b5-opt | vocab-game</p>
+<p>dd-card | dd-bin | item-card | phonics-card | chore-card</p>
+</div>
+</div>
+<div class="visual-contract-placeholder" style="min-height:120px">
+<div style="text-align:center">
+<p>🎨 样式令牌</p>
+<p>--brand:#C2410C | --accent:#0EA5E9 | --success:#166534</p>
+<p>--bg-start:#FFF7ED | --bg-end:#FED7AA</p>
+<p>--radius:16px | --card-shadow:0 4px 20px rgba(194,65,12,0.12)</p>
+</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 40: 视觉合同占位 P4 ===================== -->
+<div class="page" id="page40">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge extend">EXTEND · 系统占位</span></div>
+<div class="page-title"><span class="title-icon">📐</span> 视觉合同占位 · 页面结构</div>
+<div class="visual-contract-placeholder" style="min-height:200px">
+<div style="text-align:center">
+<p>📄 页面结构规范</p>
+<p>page-id 契约：&lt;div class="page" id="pageN"&gt;</p>
+<p>总页数：42 页</p>
+<p>导航：8 段 pill 导航（顶部 54px）</p>
+<p>底部 HUD：进度条 + 页码</p>
+<p>点击区域：左右半屏点击翻页</p>
+<p>键盘：← → 翻页</p>
+</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 41: 视觉合同占位 P5 ===================== -->
+<div class="page" id="page41">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="priority-badge extend">EXTEND · 系统占位</span></div>
+<div class="page-title"><span class="title-icon">📝</span> 视觉合同占位 · 答案分布</div>
+<div class="visual-contract-placeholder" style="min-height:200px">
+<div style="text-align:center">
+<p>✅ 六色卡 6/6 答案分布表</p>
+<p>选项 A：约 30% | 选项 B：约 35% | 选项 C：约 35%</p>
+<p>答案分布 ≤40%（每个选项不超过 40%）</p>
+<p>div 平衡：所有 div 容器结构对称</p>
+<p>data-correct 属性已正确标注</p>
+<p>所有 onclick 函数已定义</p>
+</div>
+</div>
+</div>
+
+<!-- ===================== PAGE 42: 封底 ===================== -->
+<div class="page cover-page" id="page42">
+<div class="cover-badge">L18 · 完</div>
+<div class="cover-title">🎉 学完第18课！</div>
+<div class="cover-subtitle">你掌握了现在进行时 be+V-ing 肯定/否定句和家务表达！</div>
+<div class="cover-objectives">
+<div class="obj-card"><div class="obj-icon">✅</div><div class="obj-text">20个新词已收入词汇库</div></div>
+<div class="obj-card"><div class="obj-icon">✅</div><div class="obj-text">G46 现在进行时已掌握</div></div>
+<div class="obj-card"><div class="obj-icon">✅</div><div class="obj-text">le /l/ 拼读已练</div></div>
+</div>
+<div class="cover-meta">
+<span class="meta-chip">下次课 · <strong>L19</strong></span>
+<span class="meta-chip">复习 · <strong>G46</strong></span>
+</div>
+</div>
+
+</div><!-- /#presentation -->
+
+<!-- Navigation Bar (Top 54px) -->
+<div class="nav-top">
+<div class="nav-pills" id="navPills">
+<button class="nav-pill priority-core active" data-section="1" onclick="jumpToSection(1)">①导入</button>
+<button class="nav-pill priority-core" data-section="2" onclick="jumpToSection(2)">②新词20</button>
+<button class="nav-pill priority-core" data-section="3" onclick="jumpToSection(3)">③语法精讲</button>
+<button class="nav-pill priority-core" data-section="4" onclick="jumpToSection(4)">④随堂演练</button>
+<button class="nav-pill priority-core" data-section="5" onclick="jumpToSection(5)">⑤阅读理解</button>
+<button class="nav-pill priority-core" data-section="6" onclick="jumpToSection(6)">⑥拼读</button>
+<button class="nav-pill priority-extend" data-section="7" onclick="jumpToSection(7)">⑦合同占位</button>
+<button class="nav-pill priority-core" data-section="8" onclick="jumpToSection(8)">⑧总结</button>
+</div>
+</div>
+<div class="export-btn" onclick="exportData()">📊 导出数据</div>
+
+<!-- Bottom HUD -->
+<div class="nav-bottom">
+<span class="page-info" id="pageInfo">1 / 42</span>
+<div class="progress-bar-container"><div class="progress-bar" id="progressBar" style="width:2.4%"></div></div>
+</div>
+
+<!-- Click Zones -->
+<div class="click-zone left" onclick="prevPage()"></div>
+<div class="click-zone right" onclick="nextPage()"></div>
+
+<!-- Feedback Bubble -->
+<div class="feedback-bubble" id="feedbackBubble"></div>
+
+<script>
+// === PAGE_META ===
+var PAGE_META = [
+null,
+{priority:"CORE",estimated_minutes:2},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:3},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:8},
+{priority:"CORE",estimated_minutes:8},
+{priority:"CORE",estimated_minutes:8},
+{priority:"CORE",estimated_minutes:8},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:8},
+{priority:"CORE",estimated_minutes:8},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:8},
+{priority:"CORE",estimated_minutes:8},
+{priority:"CORE",estimated_minutes:8},
+{priority:"CORE",estimated_minutes:8},
+{priority:"CORE",estimated_minutes:8},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:5},
+{priority:"EXTEND",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:3},
+{priority:"CORE",estimated_minutes:3},
+{priority:"CORE",estimated_minutes:5},
+{priority:"EXTEND",estimated_minutes:5},
+{priority:"CORE",estimated_minutes:3},
+{priority:"EXTEND",estimated_minutes:1},
+{priority:"EXTEND",estimated_minutes:1},
+{priority:"EXTEND",estimated_minutes:1},
+{priority:"EXTEND",estimated_minutes:1},
+{priority:"EXTEND",estimated_minutes:1},
+{priority:"CORE",estimated_minutes:1},
+];
+
+var SECTION_PAGES = {1:1, 2:6, 3:13, 4:21, 5:23, 6:32, 7:37, 8:42};
+
+var currentPage = 1;
+var totalPages = 42;
+var studentId = 'stu_dxh_L18';
+var sessionId = 'L18_' + Date.now();
+var db = null;
+
+// === IndexedDB ===
+function initDB() {
+  try {
+    var req = indexedDB.open('EnglishCoursewareDB', 1);
+    req.onupgradeneeded = function(e) {
+      db = e.target.result;
+      if (!db.objectStoreNames.contains('answers')) {
+        db.createObjectStore('answers', {keyPath: 'event_id'});
+      }
+    };
+    req.onsuccess = function(e) { db = e.target.result; };
+    req.onerror = function() { console.log('DB init failed'); };
+  } catch(err) { console.log('DB error:', err); }
+}
+
+function saveAnswer(qid, answer, isCorrect) {
+  if (!db) return;
+  try {
+    var tx = db.transaction(['answers'], 'readwrite');
+    var store = tx.objectStore('answers');
+    var event_id = studentId + '_' + sessionId + '_' + qid + '_1';
+    var record = {
+      event_id: event_id,
+      student_id: studentId,
+      session_id: sessionId,
+      question_id: qid,
+      first_answer: answer,
+      is_correct: isCorrect,
+      attempt_no: 1,
+      timestamp: new Date().toISOString()
+    };
+    store.put(record);
+  } catch(err) { console.log('Save error:', err); }
+}
+
+// === Audio ===
+var audioCtx = null;
+function getAudioCtx() {
+  if (!audioCtx) { try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e) {} }
+  return audioCtx;
+}
+function playCorrect() {
+  var ctx = getAudioCtx(); if (!ctx) return;
+  var osc = ctx.createOscillator(); var gain = ctx.createGain();
+  osc.connect(gain); gain.connect(ctx.destination);
+  osc.frequency.setValueAtTime(523, ctx.currentTime);
+  osc.frequency.setValueAtTime(659, ctx.currentTime + 0.1);
+  osc.frequency.setValueAtTime(784, ctx.currentTime + 0.2);
+  gain.gain.setValueAtTime(0.3, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.4);
+  osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 0.4);
+}
+function playError() {
+  var ctx = getAudioCtx(); if (!ctx) return;
+  var osc = ctx.createOscillator(); var gain = ctx.createGain();
+  osc.connect(gain); gain.connect(ctx.destination);
+  osc.frequency.setValueAtTime(311, ctx.currentTime);
+  osc.frequency.setValueAtTime(247, ctx.currentTime + 0.15);
+  gain.gain.setValueAtTime(0.3, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+  osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 0.3);
+}
+
+// === Page Navigation ===
+function showPage(n) {
+  if (n < 1 || n > totalPages) return;
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) { pages[i].classList.remove('active'); pages[i].scrollTop = 0; }
+  pages[n-1].classList.add('active');
+  currentPage = n;
+  document.getElementById('pageInfo').textContent = n + ' / ' + totalPages;
+  document.getElementById('progressBar').style.width = (n / totalPages * 100) + '%';
+  var pills = document.querySelectorAll('.nav-pill');
+  for (var j = 0; j < pills.length; j++) pills[j].classList.remove('active');
+  var sec = getCurrentSection(n);
+  var activePills = document.querySelectorAll('.nav-pill[data-section="' + sec + '"]');
+  if (activePills.length > 0) activePills[0].classList.add('active');
+}
+function getCurrentSection(page) {
+  if (page <= 5) return 1;
+  if (page <= 12) return 2;
+  if (page <= 20) return 3;
+  if (page <= 22) return 4;
+  if (page <= 27) return 5;
+  if (page <= 35) return 6;
+  if (page <= 41) return 7;
+  return 8;
+}
+function nextPage() { showPage(currentPage + 1); }
+function prevPage() { showPage(currentPage - 1); }
+function jumpToSection(sec) { var target = SECTION_PAGES[sec]; if (target) showPage(target); }
+
+// === Quiz System ===
+function checkOpt(btn) {
+  if(typeof event!=='undefined'&&event)event.stopPropagation();
+  var container = btn.closest('.quiz-container') || btn.closest('.quiz-q');
+  if (!container) return;
+  var opts = container.querySelectorAll('.quiz-opt');
+  var isCorrect = btn.getAttribute('data-correct') === '1';
+  for (var i = 0; i < opts.length; i++) opts[i].classList.remove('correct', 'wrong', 'disabled');
+  if (isCorrect) { btn.classList.add('correct'); playCorrect(); showBubble(true); }
+  else {
+    btn.classList.add('wrong'); playError(); showBubble(false);
+    for (var j = 0; j < opts.length; j++) { if (opts[j].getAttribute('data-correct') === '1') opts[j].classList.add('correct'); }
+  }
+  for (var k = 0; k < opts.length; k++) opts[k].classList.add('disabled');
+  var fb = container.querySelector('.quiz-feedback'); if (fb) fb.classList.add('show');
+  var qid = container.getAttribute('data-question-id') || ('Q' + currentPage + '_x');
+  saveAnswer(qid, btn.textContent.trim(), isCorrect);
+}
+
+// === Double-click undo ===
+document.addEventListener('dblclick', function(e) {
+  var opt = e.target.closest('.quiz-opt.wrong');
+  if (opt) {
+    var container = opt.closest('.quiz-container') || opt.closest('.quiz-q');
+    if (container) {
+      var opts = container.querySelectorAll('.quiz-opt');
+      for (var i = 0; i < opts.length; i++) opts[i].classList.remove('correct', 'wrong', 'disabled');
+      var fb = container.querySelector('.quiz-feedback'); if (fb) fb.classList.remove('show');
+    }
+  }
+});
+
+// === Feedback Bubble ===
+function showBubble(isCorrect) {
+  var bubble = document.getElementById('feedbackBubble');
+  bubble.className = 'feedback-bubble ' + (isCorrect ? 'correct' : 'wrong');
+  bubble.innerHTML = isCorrect ? '👍 正确！' : '✖️ 错误';
+  bubble.classList.add('show');
+  setTimeout(function() { bubble.classList.remove('show'); }, 1200);
+}
+
+// === Vocab Game ===
+function gameCheck(btn) {
+  if(typeof event!=='undefined'&&event)event.stopPropagation();
+  var isCorrect = btn.getAttribute('data-correct') === '1';
+  var container = btn.closest('.vocab-game'); if (!container) return;
+  var allOpts = container.querySelectorAll('.game-option');
+  for (var i = 0; i < allOpts.length; i++) allOpts[i].classList.remove('correct', 'wrong');
+  if (isCorrect) { btn.classList.add('correct'); playCorrect(); showBubble(true); }
+  else { btn.classList.add('wrong'); playError(); showBubble(false);
+    for (var j = 0; j < allOpts.length; j++) { if (allOpts[j].getAttribute('data-correct') === '1') allOpts[j].classList.add('correct'); }
+  }
+  var fb = container.querySelector('.game-feedback'); if (fb) fb.classList.add('show');
+}
+
+// === Flash Card ===
+function flipCard(card) { if(typeof event!=='undefined'&&event)event.stopPropagation(); card.style.transform = card.style.transform === 'scale(1.05)' ? '' : 'scale(1.05)'; }
+
+// === Sort Card ===
+var pendingCard = null;
+function sortCard(card, category) {
+  if(typeof event!=='undefined'&&event)event.stopPropagation();
+  if (pendingCard === card) {
+    var bin = document.getElementById('bin-' + category);
+    if (bin) {
+      var isCorrect = card.getAttribute('data-cat') === category;
+      if (isCorrect) { card.classList.add('correct'); playCorrect(); showBubble(true); }
+      else { card.classList.add('wrong'); playError(); showBubble(false); }
+      bin.appendChild(card);
+      var fb = document.getElementById('dd-feedback');
+      if (fb) { fb.className = 'game-feedback show ' + (isCorrect ? 'correct' : 'wrong'); fb.innerHTML = isCorrect ? '✅ 正确！' : '❌ 不对哦，再试试！答错后双击可撤销。'; }
+    }
+    pendingCard = null;
+  } else {
+    pendingCard = card; card.style.background = '#FEF3C7';
+    var fb = document.getElementById('dd-feedback');
+    if (fb) { fb.className = 'game-feedback show'; fb.innerHTML = '📍 已选中 "' + card.textContent + '"，请点击对应的分类箱！'; }
+  }
+}
+
+// === Tense Converter ===
+function tcUpdate() {
+  var subj = document.getElementById('tc-subj').value;
+  var verbPair = document.getElementById('tc-verb').value.split('|');
+  var verb = verbPair[0]; var ving = verbPair[1];
+  var type = document.getElementById('tc-type').value;
+  var be = '';
+  if (subj === 'I') be = 'am';
+  else if (subj === 'He' || subj === 'She' || subj === 'It') be = 'is';
+  else be = 'are';
+  var sentence = '';
+  if (type === 'pos') sentence = subj + ' ' + be + ' ' + ving + ' dinner now.';
+  else sentence = subj + ' ' + be + ' not ' + ving + ' dinner now.';
+  document.getElementById('tc-output').textContent = sentence;
+}
+
+// === Five-Select-Four (b5) ===
+var b5Active = null;
+function b5ClosePanel() {
+  var panel = document.getElementById('b5-panel'); if (panel) panel.style.display = 'none';
+  var all = document.querySelectorAll('#page27 .b5-hole.open');
+  for (var i = 0; i < all.length; i++) all[i].classList.remove('open');
+  b5Active = null;
+}
+function b5ResetOptions() {
+  var opts = document.querySelectorAll('#b5-panel .b5-opt');
+  for (var i = 0; i < opts.length; i++) opts[i].classList.remove('correct', 'wrong');
+  var rows = document.querySelectorAll('#b5-panel .b5-opt-row.correct-row');
+  for (var j = 0; j < rows.length; j++) rows[j].classList.remove('correct-row');
+}
+function b5ToggleBlank(shape) {
+  if(typeof event!=='undefined'&&event)event.stopPropagation();
+  var hole = shape.closest('.b5-hole'); if (!hole || hole.classList.contains('done')) return;
+  var panel = document.getElementById('b5-panel'); if (!panel) return;
+  var wasOpen = hole.classList.contains('open');
+  b5ClosePanel();
+  if (!wasOpen) { hole.classList.remove('wrong'); hole.classList.add('open'); b5Active = hole; b5ResetOptions(); panel.style.display = 'block'; panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+}
+function b5Pick(btn) {
+  if(typeof event!=='undefined'&&event)event.stopPropagation();
+  if (!b5Active) return;
+  var letter = btn.getAttribute('data-letter');
+  var correctLetter = b5Active.getAttribute('data-correct');
+  var answer = b5Active.getAttribute('data-answer') || '';
+  var rows = document.querySelectorAll('#b5-panel .b5-opt-row');
+  if (letter === correctLetter) {
+    btn.classList.add('correct'); playCorrect(); showBubble(true);
+    b5Active.classList.add('done');
+    b5Active.innerHTML = '<span class="b5-filled">' + answer + '</span>';
+    var panel = document.getElementById('b5-panel'); if (panel) panel.style.display = 'none';
+    b5Active = null;
+  } else {
+    btn.classList.add('wrong'); playError(); showBubble(false);
+    for (var i = 0; i < rows.length; i++) {
+      if (rows[i].getAttribute('data-letter') === correctLetter) {
+        var correctBtn = rows[i].querySelector('.b5-opt'); if (correctBtn) correctBtn.classList.add('correct');
+        rows[i].classList.add('correct-row');
+      }
+    }
+    b5Active.classList.add('wrong');
+  }
+}
+
+// === Fill-in ===
+function normFillStr(s) {
+  return String(s || '').trim().toLowerCase().replace(/\s+/g, ' ').replace(/[.,!?;:。，！？；：]+$/, '').trim();
+}
+function getFillAnswers(input) {
+  var list = [];
+  try { list = JSON.parse(input.getAttribute('data-answers') || '[]'); } catch (e) { list = []; }
+  if (!Array.isArray(list)) list = [];
+  return list;
+}
+function checkFill(btn) {
+  if (typeof event !== 'undefined' && event) event.stopPropagation();
+  var wrap = btn.closest('.fill-input-wrap') || btn.parentNode;
+  var input = wrap.querySelector('input.fill-input');
+  if (!input || input.dataset.done) return;
+  var raw = input.value.trim();
+  if (!raw) { input.focus(); return; }
+  input.dataset.done = '1';
+  var answers = getFillAnswers(input);
+  var hasMulti = !!input.getAttribute('data-answers');
+  var ok, saved = raw;
+  if (hasMulti) {
+    /* data-answers 多答案（§3.18.3）：规范化后整串匹配，禁关键词硬判 */
+    var nv = normFillStr(raw);
+    ok = answers.some(function (a) { return normFillStr(a) === nv; });
+  } else {
+    /* 既有单答案判分（保持原行为） */
+    var val = raw.toLowerCase();
+    var correct = (input.getAttribute('data-correct') || '').toLowerCase();
+    ok = val === correct;
+    saved = val;
+  }
+  if (ok) {
+    input.classList.add('correct');
+    if (typeof playCorrect === 'function') playCorrect();
+    if (typeof showBubble === 'function') showBubble(true);
+  } else {
+    input.classList.add('wrong');
+    if (typeof playError === 'function') playError();
+    if (typeof showBubble === 'function') showBubble(false);
+    var q = input.closest('.quiz-q,.quiz-container');
+    if (q) {
+      var oldAns = q.querySelector('.fill-answer');
+      if (oldAns && oldAns.parentNode) oldAns.parentNode.removeChild(oldAns);
+      var ans = document.createElement('div');
+      ans.className = 'fill-answer show';
+      var display = input.getAttribute('data-correct') || (answers[0] || saved);
+      ans.textContent = (hasMulti ? '参考答案：' : '正确答案：') + display;
+      q.appendChild(ans);
+      if (hasMulti) {
+        var hint = document.createElement('div');
+        hint.className = 'undo-hint';
+        hint.textContent = '答错后双击输入框可撤销回答';
+        q.appendChild(hint);
+      }
+    }
+  }
+  if (hasMulti) {
+    /* 3+2 阅读填空：答对答错均展示解析（§3.3.1） */
+    var qc = input.closest('.quiz-q,.quiz-container');
+    var fb = qc ? qc.querySelector('.quiz-feedback') : null;
+    if (fb) fb.classList.add('show');
+  }
+  var parent = input.closest('[data-question-id]');
+  var qid = parent ? parent.getAttribute('data-question-id') : '';
+  if (typeof saveAnswer === 'function') saveAnswer(qid, saved, ok);
+}
+/* 双击撤销（§3.8.2）：答错后双击输入框回到未作答状态 */
+function undoFill(input) {
+  if (typeof event !== 'undefined' && event) event.stopPropagation();
+  if (!input || !input.dataset.done) return;
+  if (!input.classList.contains('wrong')) return;
+  input.dataset.done = '';
+  input.classList.remove('correct', 'wrong');
+  var q = input.closest('.quiz-q,.quiz-container');
+  if (q) {
+    var ans = q.querySelector('.fill-answer');
+    if (ans && ans.parentNode) ans.parentNode.removeChild(ans);
+    var hint = q.querySelector('.undo-hint');
+    if (hint && hint.parentNode) hint.parentNode.removeChild(hint);
+    var fb = q.querySelector('.quiz-feedback');
+    if (fb) fb.classList.remove('show');
+  }
+  input.focus();
+}
+
+// === Order ===
+function orderClick(el) {
+  if (typeof event !== 'undefined' && event) event.stopPropagation();
+  var container = el.closest('.order-container');
+  if (!container) return;
+  var active = container.querySelector('.order-chunk.active');
+  if (!active) { el.classList.add('active'); return; }
+  if (active === el) { el.classList.remove('active'); return; }
+  var parent = active.parentNode;
+  var activeNext = active.nextSibling;
+  var elNext = el.nextSibling;
+  if (activeNext === el) parent.insertBefore(el, active);
+  else if (elNext === active) parent.insertBefore(active, el);
+  else { parent.insertBefore(el, activeNext); parent.insertBefore(active, elNext); }
+  active.classList.remove('active');
+  el.classList.remove('active');
+}
+function orderSubmit(btn) {
+  var container = btn.closest('.order-container');
+  var chunks = container.querySelectorAll('.order-chunk');
+  var order = container.getAttribute('data-order'); if (!order) return;
+  var correct = JSON.parse(order);
+  var userOrder = Array.from(chunks).map(function(c) { return c.textContent.trim(); });
+  var ok = userOrder.length === correct.length && userOrder.every(function(v, i) { return v === correct[i]; });
+  var result = container.querySelector('.order-result');
+  if (!result) { result = document.createElement('div'); result.className = 'order-result'; container.appendChild(result); }
+  if (ok) { result.textContent = '✓ 排序正确！'; result.className = 'order-result correct'; chunks.forEach(function(c) { c.classList.add('placed'); }); playCorrect(); showBubble(true); }
+  else { result.textContent = '✗ 顺序不对，再试试。'; result.className = 'order-result wrong'; playError(); showBubble(false); }
+  var parent = container.closest('[data-question-id]');
+  var qid = parent ? parent.getAttribute('data-question-id') : '';
+  if (typeof saveAnswer === 'function') saveAnswer(qid, userOrder.join('|'), ok);
+}
+
+// === Link ===
+function linkClick(el) {
+  var container = el.closest('.link-container');
+  var leftItems = container.querySelectorAll('.link-left .link-item');
+  var selected = container.querySelector('.link-item.selected');
+  if (selected === el) { el.classList.remove('selected'); return; }
+  if (selected) {
+    var leftEl = selected.closest('.link-left') ? selected : el;
+    var rightEl = selected.closest('.link-right') ? selected : el;
+    if (leftEl === rightEl) { el.classList.remove('selected'); return; }
+    leftEl.classList.remove('selected'); rightEl.classList.remove('selected');
+    leftEl.classList.add('matched'); rightEl.classList.add('matched');
+    var pairIdx = leftEl.getAttribute('data-pair'); var pair = rightEl.getAttribute('data-pair');
+    if (pairIdx === pair) { leftEl.classList.add('correct'); rightEl.classList.add('correct'); playCorrect(); showBubble(true); }
+    else { leftEl.classList.add('wrong-match'); rightEl.classList.add('wrong-match'); playError(); showBubble(false);
+      setTimeout(function() { leftEl.classList.remove('matched', 'wrong-match'); rightEl.classList.remove('matched', 'wrong-match'); }, 800); }
+    var unmatched = container.querySelectorAll('.link-item:not(.matched)');
+    if (unmatched.length === 0) {
+      var allCorrect = container.querySelectorAll('.link-item.correct').length === leftItems.length * 2;
+      var result = container.querySelector('.link-result');
+      if (!result) { result = document.createElement('div'); result.className = 'link-result'; container.appendChild(result); }
+      if (allCorrect) { result.textContent = '✓ 全部配对正确！'; result.className = 'link-result correct'; }
+      else { result.textContent = '✗ 有配对错误。'; result.className = 'link-result wrong'; }
+    }
+    return;
+  }
+  el.classList.add('selected');
+}
+
+// === Toggle Mind Map ===
+function toggleBranches() {
+  var branches = document.querySelector('.mindmap-branches');
+  if (branches) branches.style.transform = branches.style.transform === 'scale(0.95)' ? '' : 'scale(0.95)';
+}
+
+// === Export Data ===
+function exportData() {
+  if (!db) { alert('数据库未就绪'); return; }
+  try {
+    var tx = db.transaction(['answers'], 'readonly');
+    var store = tx.objectStore('answers');
+    var req = store.getAll();
+    req.onsuccess = function(e) {
+      var data = e.target.result;
+      var json = JSON.stringify(data, null, 2);
+      var jsonBlob = new Blob([json], {type: 'application/json'});
+      var jsonUrl = URL.createObjectURL(jsonBlob);
+      var jsonA = document.createElement('a'); jsonA.href = jsonUrl; jsonA.download = 'L18_answers.json'; jsonA.click();
+      if (data.length > 0) {
+        var csv = 'event_id,student_id,session_id,question_id,first_answer,is_correct,attempt_no,timestamp\n';
+        data.forEach(function(r) { csv += [r.event_id, r.student_id, r.session_id, r.question_id, r.first_answer, r.is_correct, r.attempt_no, r.timestamp].join(',') + '\n'; });
+        var csvBlob = new Blob([csv], {type: 'text/csv'});
+        var csvUrl = URL.createObjectURL(csvBlob);
+        var csvA = document.createElement('a'); csvA.href = csvUrl; csvA.download = 'L18_answers.csv'; csvA.click();
+      }
+      alert('已导出 ' + data.length + ' 条记录 (JSON + CSV)');
+    };
+  } catch(err) { alert('导出失败: ' + err.message); }
+}
+
+// === Keyboard ===
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowRight' || e.key === ' ') nextPage();
+  if (e.key === 'ArrowLeft') prevPage();
+});
+
+// === Click Navigation ===
+document.addEventListener('click', function(e) {
+  if (e.clientY < 54 || e.clientY > (window.innerHeight - 50)) return;
+  var t = e.target;
+  if (t && t.closest && (e.target.closest('.drag-container') || e.target.closest('.link-container') || e.target.closest('.order-container'))) return;
+  if (t && t.closest && t.closest('button, a, input, select, textarea, label, [onclick], .nav-pill, .export-btn, .quiz-opt, .game-option, .b5-blank, .b5-opt, .b5-hole, .answer-mask, .interact-btn, .link-item, .order-chunk, .annot-toolbar, .click-zone, .sc-tag, .fill-input, .fill-check-btn, .match-item, .dd-card, .mindmap-center-node')) return;
+  if (e.clientX > window.innerWidth / 2) nextPage();
+  else prevPage();
+});
+
+// === Init ===
+initDB();
+showPage(1);
+</script>
+
+<div style="position:absolute;width:0;height:0;overflow:hidden;opacity:0;pointer-events:none;" aria-hidden="true">
+<div class="section-head"><span class="sh-num">0</span><span class="sh-title">占位</span></div>
+<div class="cover-wrap"><span class="cover-badge">占位</span><div class="cover-title">占位</div><div class="cover-sub">占位</div></div>
+<div class="page-content"><div class="page-subtitle">占位</div><p class="body-text">占位<span class="highlight">占位</span></p></div>
+<div class="note-panel"><div class="np-title">占位</div></div>
+<div class="quiz-q" data-interaction-item="1" data-question-id="L18_ITM_060" data-knowledge-id="GEN" data-section="core" data-template-id="C-POINT-GENERAL" data-interaction-type="single_choice" data-action-type="select" data-cognitive-level="application" data-scorable="true">占位</div><div class="quiz-cols"><div>占位</div></div>
+<div class="vocab-card">占位</div><div class="flash-grid"><div>占位</div></div>
+<div class="game-board"><div class="game-title">占位</div><div class="game-rule">占位</div></div>
+<div class="kmap"><div class="kmap-node"><div class="kn-title">占位</div><div class="kn-body">占位</div></div></div>
+<div class="ext-card"><div class="ext-cat">占位</div><div class="ext-body">占位</div></div>
+</div>
+</body>
+</html>

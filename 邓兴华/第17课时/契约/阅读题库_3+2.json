@@ -1,0 +1,148 @@
+{
+  "lesson": "L17",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A/B 各 3 无选项 + 2 有选项（默认 3+2，无需 2+3 弹性标注）；五选四（§3.16）不纳入 3+2",
+  "vocab_pool": [
+    "daily",
+    "usually",
+    "often",
+    "sometimes",
+    "hardly",
+    "never",
+    "percent",
+    "online",
+    "television",
+    "mind",
+    "body",
+    "health",
+    "routine",
+    "jog",
+    "lifestyle",
+    "twice",
+    "point",
+    "result",
+    "energy",
+    "regularly"
+  ],
+  "grammar_cap": "G43-G45（频度副词位置 / How often 疑问句 / 百分比与生活习惯短语）；禁止 will/比较级/最高级/完成时/被动；允许原文摘录（含原文已有的简单过去时结构，§3.18.4.4）",
+  "A篇_A_Health_Survey_in_Our_School": {
+    "RA-Q1": {
+      "question": "How many students exercise regularly?",
+      "type": "fill",
+      "openness": "数据细节·原文直接提取",
+      "canonical_answer": "80%",
+      "minimum_acceptable_answer": "80%",
+      "accepted_answers": [
+        "80%",
+        "80 percent",
+        "eighty percent",
+        "eighty percent of students"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（数字+百分号；eighty percent 变体用 percent，池内词）"
+    },
+    "RA-Q2": {
+      "question": "How often do 60% of students watch TV?",
+      "type": "fill",
+      "openness": "频度细节·原文直接提取",
+      "canonical_answer": "every day",
+      "minimum_acceptable_answer": "every day",
+      "accepted_answers": [
+        "every day",
+        "they watch tv every day",
+        "each day"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（every day 时间短语，前期已学；daily 为池内词）"
+    },
+    "RA-Q3": {
+      "question": "What percent of students never watch TV?",
+      "type": "fill",
+      "openness": "数据细节·原文直接提取",
+      "canonical_answer": "10%",
+      "minimum_acceptable_answer": "10%",
+      "accepted_answers": [
+        "10%",
+        "ten percent",
+        "only ten percent"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（数字+百分号；ten percent 变体用 percent，池内词）"
+    },
+    "RA-Q4": {
+      "question": "What does the survey suggest?",
+      "type": "opt",
+      "openness": "结论概括·开放度高→有选项",
+      "correct": "B",
+      "note": "选项 B 为原文摘录：A healthy lifestyle needs balance. We should exercise more and spend less time on screens."
+    },
+    "RA-Q5": {
+      "question": "What is the passage mainly about?",
+      "type": "opt",
+      "openness": "主旨概括·开放度高→有选项",
+      "correct": "B"
+    }
+  },
+  "B篇_Running_Changed_My_Life": {
+    "RB-Q1": {
+      "question": "What was Tom like one year ago?",
+      "type": "fill",
+      "openness": "人物状态细节·原文摘录",
+      "canonical_answer": "He never exercised and stayed at home.",
+      "minimum_acceptable_answer": "a quiet boy",
+      "accepted_answers": [
+        "quiet",
+        "he was quiet",
+        "he was a quiet boy",
+        "he never exercised",
+        "he usually stayed at home",
+        "he stayed at home and watched television"
+      ],
+      "required_vocab": [],
+      "required_grammar": "原文摘录（quiet boy / never exercised / stayed at home 均为原文词与原文简单过去时结构，§3.18.4.4 摘录允许）"
+    },
+    "RB-Q2": {
+      "question": "Who suggested jogging to Tom?",
+      "type": "fill",
+      "openness": "人物细节·原文直接提取",
+      "canonical_answer": "His teacher",
+      "minimum_acceptable_answer": "his teacher",
+      "accepted_answers": [
+        "his teacher",
+        "the teacher",
+        "teacher",
+        "my teacher"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（名词短语，teacher 为原文词，原文摘录）"
+    },
+    "RB-Q3": {
+      "question": "How often does Tom go swimming now?",
+      "type": "fill",
+      "openness": "频度细节·原文直接提取",
+      "canonical_answer": "Twice a week",
+      "minimum_acceptable_answer": "twice a week",
+      "accepted_answers": [
+        "twice a week",
+        "twice",
+        "two times a week"
+      ],
+      "required_vocab": [
+        "twice"
+      ],
+      "required_grammar": "无（频度短语，G44 范围内）"
+    },
+    "RB-Q4": {
+      "question": "What does 'results' mean in the last paragraph?",
+      "type": "opt",
+      "openness": "开放性词义判断→有选项",
+      "correct": "B"
+    },
+    "RB-Q5": {
+      "question": "What can we infer from the passage?",
+      "type": "opt",
+      "openness": "推断·开放度高→有选项",
+      "correct": "B"
+    }
+  }
+}

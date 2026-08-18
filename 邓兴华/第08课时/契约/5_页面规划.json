@@ -1,0 +1,130 @@
+{
+  "course": "第08课 · 一般过去时（was/were & did）与时间状语",
+  "stage": "Stage 3",
+  "lesson": "L08",
+  "duration": "90min",
+  "totalPages": 28,
+  "brand": "#3498DB",
+  "accent": "#F39C12",
+  "bgGradient": "#EBF5FB → #D6EAF8",
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "realtime",
+    "exportFormats": ["json", "csv"],
+    "sessionIdRule": "L08_{studentId}_{YYYYMMDD}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  },
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": [
+        {
+          "page": 0,
+          "type": "cover",
+          "title": "第08课 · 一般过去时（was/were & did）与时间状语",
+          "subtitle": "Stage 3 · 过去时·旅行经历 | 90分钟课程",
+          "objectives": ["掌握20个旅行经历核心词汇", "理解was/were+did/规则-ed+时间状语", "完成ai/ay /eɪ/拼读学习"],
+          "meta": [{"label": "核心场景", "value": "旅行经历"}, {"label": "新词", "value": "20 Words"}, {"label": "时长", "value": "90 min"}, {"label": "语法", "value": "G19/G20/G21"}]
+        }
+      ]
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 2,
+      "pages": [
+        {
+          "page": 1,
+          "type": "review-grammar",
+          "title": "L6-L7 语法回顾",
+          "content": ["G16 一般现在时非三单", "G17 可数不可数", "G18 want to do"],
+          "interactions": ["formula-box × 3"]
+        },
+        {
+          "page": 2,
+          "type": "review-vocab",
+          "title": "L6-L7 词汇快闪 + 导入",
+          "content": ["L6 20词分类速览", "3句口头翻译", "导入：What did you do yesterday?"],
+          "interactions": ["answer-mask × 3"]
+        }
+      ]
+    },
+    {
+      "name": "新词20",
+      "start": 3,
+      "end": 9,
+      "pages": [
+        {"page": 3, "type": "vocab-group", "title": "旅行动作类 A组 (1-5)", "words": ["stay", "visit", "spent", "delicious", "terrible"], "layout": "item-board 2col"},
+        {"page": 4, "type": "vocab-group", "title": "感受评价+地点 (6-10)", "words": ["cheap", "expensive", "place", "museum", "camp"], "layout": "item-board 2col"},
+        {"page": 5, "type": "vocab-group", "title": "地点场景+动作 (11-15)", "words": ["beach", "guide", "activity", "decide", "try"], "layout": "item-board 2col"},
+        {"page": 6, "type": "vocab-group", "title": "动作+时间副词 (16-20)", "words": ["feel", "start", "finish", "enjoy", "ago"], "layout": "item-board 2col"},
+        {"page": 7, "type": "vocab-matrix", "title": "20词分类矩阵 + 快闪复习", "content": ["语义场分类表格", "mini-flash 20词"], "interactions": ["gtab", "mini-flash-grid"]},
+        {"page": 8, "type": "vocab-preview", "title": "动词过去式预览", "content": ["visit→visited, stay→stayed, decide→decided, try→tried", "-ed变化规则预览"], "interactions": ["sort-preview"]},
+        {"page": 9, "type": "vocab-preview", "title": "过去时间状语预览", "content": ["yesterday / ago / last... 三大状语"]}
+      ]
+    },
+    {
+      "name": "语法3考点",
+      "start": 10,
+      "end": 18,
+      "pages": [
+        {"page": 10, "type": "grammar", "title": "G19 was/were 肯定/否定与主语匹配", "content": ["口诀", "公式矩阵", "与G03横向对照", "防越级约束"], "grammarTag": "G19"},
+        {"page": 11, "type": "grammar-examples", "title": "G19 例句精讲 + 易错点", "content": ["5条例句", "4条易错点", "中考辨析"], "grammarTag": "G19"},
+        {"page": 12, "type": "interactive-1", "title": "时光机转换器", "component": "time-machine", "buttons": ["现在→过去"], "animations": ["timeWarp", "fadeSlideUp"]},
+        {"page": 13, "type": "grammar", "title": "G20 did/didn't & 规则-ed变化", "content": ["口诀", "-ed变化四类表格", "肯定/否定/疑问对照", "防越级约束"], "grammarTag": "G20"},
+        {"page": 14, "type": "grammar-examples", "title": "G20 例句精讲 + 易错点", "content": ["5条例句", "4条易错点", "中考辨析"], "grammarTag": "G20"},
+        {"page": 15, "type": "grammar", "title": "G21 过去时间状语识别", "content": ["口诀", "三大状语对照表", "三步识别法", "防越级约束"], "grammarTag": "G21"},
+        {"page": 16, "type": "grammar-examples", "title": "G21 例句精讲 + 易错点", "content": ["5条例句", "4条易错点", "中考辨析"], "grammarTag": "G21"},
+        {"page": 17, "type": "interactive-2", "title": "旅行日记生成器", "component": "trip-diary", "timeOptions": ["yesterday", "last week", "two days ago"], "actionOptions": ["visited", "stayed", "tried", "enjoyed"], "placeOptions": ["beach", "museum", "camp"]},
+        {"page": 18, "type": "grammar-compare", "title": "语法综合对比表", "content": ["G19/G20/G21横向对比", "was/were vs did/didn't", "时间状语→时态选择流程"]}
+      ]
+    },
+    {
+      "name": "随堂演练",
+      "start": 19,
+      "end": 20,
+      "pages": [
+        {"page": 19, "type": "quiz", "title": "随堂演练 上 (G19+G20)", "questions": 4, "interactions": ["checkQuiz × 4"]},
+        {"page": 20, "type": "quiz", "title": "随堂演练 下 (G21+综合)", "questions": 4, "interactions": ["checkQuiz × 4"]}
+      ]
+    },
+    {
+      "name": "阅读理解",
+      "start": 21,
+      "end": 23,
+      "pages": [
+        {"page": 21, "type": "reading", "title": "阅读A篇 — Getting Dressed for Yesterday's Trip", "wordCount": 107, "questions": 5},
+        {"page": 22, "type": "reading", "title": "阅读B篇 — Yesterday's Trip to the Beach (上)", "wordCount": 129, "questions": 3},
+        {"page": 23, "type": "reading", "title": "阅读B篇 (下) + 五选四", "wordCount": 129, "questions": 5}
+      ]
+    },
+    {
+      "name": "句子练习",
+      "start": 24,
+      "end": 26,
+      "pages": [
+        {"page": 24, "type": "translation", "title": "汉译英 5句", "interactions": ["answer-mask × 5"]},
+        {"page": 25, "type": "sentence-building", "title": "造句练习 5句", "interactions": ["answer-mask × 5"]},
+        {"page": 26, "type": "error-correction", "title": "改错练习 5句", "interactions": ["answer-mask × 5"]}
+      ]
+    }
+  ],
+  "phonicsSection": {
+    "note": "自然拼读6页在句子练习之后、课堂总结之前",
+    "pages": [
+      {"type": "phonics-learning", "title": "ai/ay /eɪ/ 音素学习", "letters": ["ai", "ay"]},
+      {"type": "phonics-exercise-1", "title": "朗读词汇表", "wordCount": 12},
+      {"type": "phonics-exercise-2", "title": "听音选词", "questions": 4},
+      {"type": "phonics-exercise-3-4", "title": "看词归音 + 最小对立对", "questions": 8}
+    ]
+  },
+  "summary": {
+    "page": "last",
+    "type": "summary",
+    "title": "第08课 · 核心总结",
+    "content": ["summary-grid 三卡片", "20词 mini-flash", "super-mn 口诀汇总"]
+  }
+}

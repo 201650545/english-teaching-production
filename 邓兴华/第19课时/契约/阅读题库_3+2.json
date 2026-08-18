@@ -1,0 +1,157 @@
+{
+  "lesson": "L19",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A/B 各 3 无选项 + 2 有选项（默认 3+2）；第三篇（HTML page27 五选四 · Planning Our Weekend）为 b5 选词填空（复合不定代词/event，5 空），无 quiz-opt 阅读交互题，不纳入 3+2（五选四 §3.16 单独统计）",
+  "vocab_pool": [
+    "someone",
+    "anyone",
+    "no one",
+    "everyone",
+    "something",
+    "anything",
+    "nothing",
+    "everything",
+    "somewhere",
+    "anywhere",
+    "nowhere",
+    "abroad",
+    "event",
+    "plan",
+    "explore",
+    "wonder",
+    "seem",
+    "bored",
+    "diary",
+    "enjoyable"
+  ],
+  "grammar_cap": "G49-G51（复合不定代词分类 / 形容词与不定式后置 / 作主语谓语用单数）；契约禁过去时——本课 B 篇原文含简单过去时（I was bored / Lisa called / We walked），题干与答案按 §3.18.4.4 原文摘录，不作新授语法点",
+  "A篇_Weekend_Event_Notice": {
+    "RA-Q1": {
+      "question": "When is the weekend event?",
+      "type": "fill",
+      "openness": "时间细节·原文直接提取（第一段）",
+      "canonical_answer": "this Saturday",
+      "minimum_acceptable_answer": "saturday",
+      "accepted_answers": [
+        "saturday",
+        "this saturday",
+        "on saturday",
+        "on this saturday",
+        "this saturday at the city park"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（时间名词短语，Saturday 为原文词，前期已学时间表达）"
+    },
+    "RA-Q2": {
+      "question": "Where can you relax?",
+      "type": "fill",
+      "openness": "地点细节·原文直接提取（第二段）",
+      "canonical_answer": "somewhere quiet",
+      "minimum_acceptable_answer": "somewhere quiet",
+      "accepted_answers": [
+        "somewhere quiet",
+        "relax somewhere quiet",
+        "in a quiet place",
+        "at a quiet place"
+      ],
+      "required_vocab": [
+        "somewhere"
+      ],
+      "required_grammar": "G50 形容词修饰复合不定代词强制后置（somewhere quiet）；in/at a quiet place 变体为同义介词短语，无额外语法点"
+    },
+    "RA-Q3": {
+      "question": "What should you bring?",
+      "type": "fill",
+      "openness": "细节·原文直接提取（第三段）",
+      "canonical_answer": "something to share",
+      "minimum_acceptable_answer": "something to share",
+      "accepted_answers": [
+        "something to share",
+        "something to share with others",
+        "bring something to share"
+      ],
+      "required_vocab": [
+        "something"
+      ],
+      "required_grammar": "G50 不定式后置修饰复合不定代词（something to share，契约明确允许形容词后置与不定式后置）"
+    },
+    "RA-Q4": {
+      "question": "What is the purpose of this notice?",
+      "type": "opt",
+      "openness": "写作意图概括·开放度高→有选项",
+      "correct": "B",
+      "note": "选项 B：To invite people to a weekend event. 解析：全文为周末活动邀请——\"Everyone is welcome to join us this Saturday\"。"
+    },
+    "RA-Q5": {
+      "question": "What is the notice mainly about?",
+      "type": "opt",
+      "openness": "主旨概括·开放度高→有选项",
+      "correct": "A",
+      "note": "选项 A：A weekend event for the whole family. 解析：通知围绕周末活动展开（时间、活动、食物、咨询方式）。"
+    }
+  },
+  "B篇_A_Weekend_to_Remember": {
+    "RB-Q1": {
+      "question": "How did the writer feel at the start?",
+      "type": "fill",
+      "openness": "人物状态细节·原文直接提取（首段）",
+      "canonical_answer": "bored",
+      "minimum_acceptable_answer": "bored",
+      "accepted_answers": [
+        "bored",
+        "i was bored",
+        "he was bored",
+        "she was bored",
+        "bored and had nothing to do"
+      ],
+      "required_vocab": [
+        "bored"
+      ],
+      "required_grammar": "原文摘录（§3.18.4.4）：I was bored 为原文简单过去时结构，本课契约禁过去时但答案按原文摘录，不作新授语法点"
+    },
+    "RB-Q2": {
+      "question": "What does \"wonder\" mean in the story?",
+      "type": "opt",
+      "openness": "词义判断·开放度高→有选项",
+      "correct": "A",
+      "note": "选项 A：To want to know。解析：\"I wonder who lived here\" = 我想知道谁住过这里。wonder 为本课池内词（#16）。"
+    },
+    "RB-Q3": {
+      "question": "What is the main idea of the story?",
+      "type": "opt",
+      "openness": "主旨概括·开放度高→有选项",
+      "correct": "B",
+      "note": "选项 B：Unplanned weekends can be the best. 解析：结尾 \"the best weekends are the ones you don't plan\"。"
+    },
+    "RB-Q4": {
+      "question": "Who called the writer?",
+      "type": "fill",
+      "openness": "人物细节·原文直接提取",
+      "canonical_answer": "Lisa",
+      "minimum_acceptable_answer": "lisa",
+      "accepted_answers": [
+        "lisa",
+        "her friend lisa",
+        "my friend lisa",
+        "his friend lisa",
+        "her friend"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（人名/名词短语，Lisa 为原文专名）"
+    },
+    "RB-Q5": {
+      "question": "Where did they stop to have something to eat?",
+      "type": "fill",
+      "openness": "地点细节·原文直接提取",
+      "canonical_answer": "a small cafe",
+      "minimum_acceptable_answer": "a small cafe",
+      "accepted_answers": [
+        "a small cafe",
+        "at a small cafe",
+        "they stopped at a small cafe"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（地点名词短语，原文摘录 §3.18.4.4；题干 something to eat 含 G50 不定式后置）"
+    }
+  }
+}

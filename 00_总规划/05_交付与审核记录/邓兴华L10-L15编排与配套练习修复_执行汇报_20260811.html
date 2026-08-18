@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>邓兴华 L10-L15 编排与配套练习修复 · 执行汇报 2026-08-11</title>
+<style>
+  :root{--brand:#1a5276;--brand-l:#5db0e2;--ok:#27ae60;--err:#e74c3c;--warn:#e67e22;--bg:#f5f7fa;--card:#fff;--line:#e3e8ef;--txt:#2c3e50;--muted:#7f8c8d}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--txt);line-height:1.65;padding:32px 16px}
+  .wrap{max-width:1060px;margin:0 auto}
+  header{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;border-radius:16px;padding:28px 32px;margin-bottom:24px}
+  header h1{font-size:25px;margin-bottom:8px}
+  header p{opacity:.9;font-size:14px}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+  .metric{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-align:center}
+  .metric .v{font-size:26px;font-weight:800;color:var(--brand)}
+  .metric .l{font-size:12px;color:var(--muted);margin-top:2px}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:20px}
+  h2{font-size:19px;color:var(--brand);margin-bottom:14px;border-left:4px solid var(--brand-l);padding-left:10px}
+  h3{font-size:15px;color:var(--warn);margin:14px 0 8px}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0}
+  th{background:#eef4fa;color:var(--brand);padding:8px 10px;text-align:left;border:1px solid var(--line);font-weight:700}
+  td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:#fafcfe}
+  .ok{color:var(--ok);font-weight:700}
+  .fix{color:var(--warn);font-weight:700}
+  ul{margin:8px 0 8px 22px;font-size:13.5px}
+  li{margin:4px 0}
+  .note{background:#fdf6ec;border-left:4px solid var(--warn);border-radius:8px;padding:10px 14px;font-size:13px;margin:10px 0}
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>邓兴华 L10–L15 编排与配套练习修复 · 执行汇报</h1>
+  <p>2026-08-11 ｜ 依据《邓兴华L10-L15编排与配套练习修复命令_20260811.md》｜ 集群模式：4 修复 Worker + 主线验证收尾</p>
+</header>
+
+<div class="metrics">
+  <div class="metric"><div class="v">6/6</div><div class="l">verify_v2 全 PASS</div></div>
+  <div class="metric"><div class="v">6 项</div><div class="l">修复全部闭环</div></div>
+  <div class="metric"><div class="v">2 篇</div><div class="l">L11/L12 C 篇补建</div></div>
+  <div class="metric"><div class="v">16 题</div><div class="l">T3-B 跨课竞技场</div></div>
+  <div class="metric"><div class="v">1 份</div><div class="l">L11 班规版配套练习</div></div>
+</div>
+
+<section>
+<h2>① 六项修复明细</h2>
+<table>
+<tr><th>#</th><th>修复项</th><th>处置与结果</th></tr>
+<tr><td>①</td><td>L11 旧词快闪换 L10 真 20 词</td><td class="ok">PASS</td><td>现状已是 L10 契约 20 词（早前轮已合规），本轮实测确认</td></tr>
+<tr><td>②</td><td>分类游戏补全 20 词</td><td class="fix">已补全</td><td>10→20 卡（rules 11/actions 9），两段式判定+双击撤销保留</td></tr>
+<tr><td>③</td><td>T3-B 跨课竞技场</td><td class="fix">已新建</td><td>整页 page5 闯关赛，L8-L10 旧词 16 题，积分+采集</td></tr>
+<tr><td>④</td><td>L11/L12 补 C 篇</td><td class="fix">已新建</td><td>L11 page31 Why Schools Need Rules / L12 page30 How to Eat a Balanced Meal（均 129 词、5 选择）</td></tr>
+<tr><td>⑤</td><td>五选四泄漏清理</td><td class="fix">已清理</td><td>L11 tip-box 答案行+选项详解卡、L15 JS 注释；判定逻辑未动</td></tr>
+<tr><td>⑥</td><td>L11 配套练习整份重做</td><td class="fix">已完成</td><td>班规版 docx（A/B/C+五选四+语法填空+书面表达全对齐 G28-G30），原件保留</td></tr>
+</table>
+<div class="note">主线收尾补充（L11 T3-B/C Worker 超时后接手）：修 #page30 硬编码页码引用（.page.active 方案）；修五选四既有断链（blank 容器补 b5-hole 类，恢复开面板→选对填入/选错标错链路）。</div>
+</section>
+
+<section>
+<h2>② A-F 实测表</h2>
+<table>
+<tr><th>项</th><th>修复前（命令判定）</th><th>修复后（实测）</th></tr>
+<tr><td>A. 旧词覆盖</td><td>✗ 交集仅 4</td><td class="ok">✅ 快闪 = L10 契约 20 词全量</td></tr>
+<tr><td>B. 新词巩固题量</td><td>✗ 仅 5 题</td><td class="ok">✅ +T3-B 竞技场 16 题</td></tr>
+<tr><td>C. 分类活动</td><td>✗ 10/20</td><td class="ok">✅ 20/20 全可判</td></tr>
+<tr><td>D. 阅读编排</td><td>✗ 缺 C 篇×2</td><td class="ok">✅ L11/L12 C 篇补齐</td></tr>
+<tr><td>E. 五选四泄漏</td><td>✗ 2 处</td><td class="ok">✅ 全清 + 断链修复</td></tr>
+<tr><td>F. 配套练习主题</td><td>✗ 全套食物</td><td class="ok">✅ 班规版整份重做</td></tr>
+</table>
+</section>
+
+<section>
+<h2>③ L11 配套练习主题核对</h2>
+<table>
+<tr><th>板块</th><th>标题/主题</th><th>词数</th><th>考点</th></tr>
+<tr><td>Passage A</td><td>Our Class Rules（班级规则清单）</td><td>108</td><td>must×3 + L11 词</td></tr>
+<tr><td>Passage B</td><td>A New Student's First Week（Li Wei 守规故事）</td><td>129</td><td>G28 + L11 词</td></tr>
+<tr><td>Passage C</td><td>Why Schools Need Rules</td><td>131</td><td>G29/G30 + L11 词</td></tr>
+<tr><td>五选四</td><td>Rules Are Everywhere</td><td>131</td><td>5 选 4 + 干扰项</td></tr>
+<tr><td>语法填空/书面表达</td><td>校园规则主题</td><td>80</td><td>G28-G30 + L11 20 词</td></tr>
+</table>
+<p style="font-size:13px;color:var(--muted)">食物残留核查：仅五选四干扰项「We can eat and drink in the classroom.」（班规语境错误选项，合法）；越级语法全 0 命中。</p>
+</section>
+
+<section>
+<h2>④ verify_v2 输出（六课 6/6 PASS）</h2>
+<table>
+<tr><th>课时</th><th>页数</th><th>div平衡</th><th>JS</th><th>可判题</th></tr>
+<tr><td>L10</td><td>42 ✓</td><td>993/993 ✓</td><td>✓</td><td>25</td></tr>
+<tr><td>L11</td><td>45 ✓</td><td>1140/1140 ✓</td><td>✓</td><td>55</td></tr>
+<tr><td>L12</td><td>44 ✓</td><td>1101/1101 ✓</td><td>✓</td><td>51</td></tr>
+<tr><td>L13</td><td>45 ✓</td><td>856/856 ✓</td><td>✓</td><td>24</td></tr>
+<tr><td>L14</td><td>45 ✓</td><td>642/642 ✓</td><td>✓</td><td>24</td></tr>
+<tr><td>L15</td><td>43 ✓</td><td>900/900 ✓</td><td>✓</td><td>20</td></tr>
+</table>
+<h3>浏览器实测</h3>
+<ul>
+<li>L11 全量：45 页导航正常、快闪 20 真词、T3-B 16 题、分类 20 卡、C 篇可答、五选四完整链路、Exit 可答、0 错误</li>
+<li>L12：C 篇 129 词可读可答（19/19 页面）｜ L15：无泄漏注释、五选四判定正常</li>
+<li>配套练习：python-docx 重读成功，逐板块主题核对通过</li>
+</ul>
+</section>
+
+<section>
+<h2>⑤ 已知偏差</h2>
+<ul>
+<li>L11 T3-B/C 篇 Worker 超时（主体已写入，主线接手完成验证与两处修复），其未写回传文档，验收以主线实测为准</li>
+<li>L11/L15 五选四不可作答为既有缺陷，本轮顺带修复</li>
+<li>L10-12 答案分布 {} 为验证器口径限制；L11 will×6 防越级为既有软警告</li>
+<li>T2-J 情态动词配对赛未实现（命令标注可选，T3-B 已实现则标注后续）</li>
+<li>L11 页数 45（上限内），后续补内容需先腾页数</li>
+</ul>
+</section>
+
+<footer>邓兴华线 Agent（集群模式）· 2026-08-11 ｜ 配套 Markdown：邓兴华L10-L15编排与配套练习修复_执行汇报_20260811.md（同目录）</footer>
+</div>
+</body>
+</html>

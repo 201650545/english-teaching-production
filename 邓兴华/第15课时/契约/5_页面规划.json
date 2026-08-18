@@ -1,0 +1,130 @@
+{
+  "course": "第15课 · 天气句型、Could/Would 礼貌请求与非人称 It",
+  "stage": "Stage 4",
+  "lesson": "L15",
+  "duration": "90min",
+  "totalPages": 45,
+  "brand": "#E63946",
+  "accent": "#FFD700",
+  "bgGradient": "#FFF8F0 → #FFF0E0",
+  "pageIdContract": true,
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "realtime",
+    "exportFormats": ["json", "csv"],
+    "sessionIdRule": "L15_{studentId}_{YYYYMMDD}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  },
+  "sections": [
+    {
+      "name": "封面",
+      "start": 0,
+      "end": 0,
+      "pages": [
+        {
+          "page": 0,
+          "type": "cover",
+          "title": "第15课 · 天气句型、Could/Would 礼貌请求与非人称 It",
+          "subtitle": "Stage 4 · 天气·季节与度假计划 | 90分钟课程",
+          "objectives": ["掌握20个天气季节度假核心词汇", "掌握G40天气句型/G41礼貌请求/G42非人称It", "完成oo/ew /uː//juː/拼读学习"],
+          "meta": [{"label": "核心场景", "value": "天气度假"}, {"label": "新词", "value": "20 Words"}, {"label": "时长", "value": "90 min"}, {"label": "语法", "value": "G40/G41/G42"}]
+        }
+      ]
+    },
+    {
+      "name": "复习导入",
+      "start": 1,
+      "end": 2,
+      "pages": [
+        {
+          "page": 1,
+          "type": "review-grammar",
+          "title": "L14 语法回顾",
+          "content": ["G37 be vs. have/has", "G38 why/because", "G39 描述性形容词"],
+          "interactions": ["formula-box × 3"]
+        },
+        {
+          "page": 2,
+          "type": "review-vocab",
+          "title": "L14 词汇快闪 + 导入",
+          "content": ["L14 20词分类速览", "3句口头翻译", "导入：How's the weather today?"],
+          "interactions": ["answer-mask × 3"]
+        }
+      ]
+    },
+    {
+      "name": "新词20",
+      "start": 3,
+      "end": 8,
+      "pages": [
+        {"page": 3, "type": "vocab-group", "title": "天气形容词类 A组 (1-5)", "words": ["weather", "sunny", "rainy", "cloudy", "windy"], "layout": "item-board 2col"},
+        {"page": 4, "type": "vocab-group", "title": "天气形容词类 B组 (6-10)", "words": ["snowy", "warm", "cold", "cool", "hot"], "layout": "item-board 2col"},
+        {"page": 5, "type": "vocab-group", "title": "天气与季节类 (11-15)", "words": ["dry", "wet", "season", "spring", "summer"], "layout": "item-board 2col"},
+        {"page": 6, "type": "vocab-group", "title": "季节与度假类 (16-20)", "words": ["autumn", "winter", "vacation", "trip", "degree"], "layout": "item-board 2col"},
+        {"page": 7, "type": "vocab-matrix", "title": "20词分类矩阵 + 快闪复习", "content": ["语义场分类表格", "mini-flash 20词"], "interactions": ["gtab", "mini-flash-grid"]},
+        {"page": 8, "type": "vocab-preview", "title": "天气表达概念预览", "content": ["天气句型 How's the weather 预览", "礼貌请求 Could/Would 预览"]}
+      ]
+    },
+    {
+      "name": "语法3考点",
+      "start": 9,
+      "end": 19,
+      "pages": [
+        {"page": 9, "type": "grammar", "title": "G40 天气表达句型", "content": ["口诀", "句型结构表", "天气形容词与名词对照表", "防越级约束"], "grammarTag": "G40"},
+        {"page": 10, "type": "grammar-examples", "title": "G40 例句精讲 + 易错点", "content": ["5条例句", "4条易错点", "中考辨析"], "grammarTag": "G40"},
+        {"page": 11, "type": "interactive-1", "title": "天气播报选择器", "component": "weather-report-selector", "weathers": ["sunny", "rainy", "cloudy", "windy"], "seasons": ["spring", "summer", "autumn", "winter"]},
+        {"page": 12, "type": "grammar", "title": "G41 Could/Would you please 礼貌请求", "content": ["口诀", "句型结构表", "肯定/否定回答对照表", "防越级约束"], "grammarTag": "G41"},
+        {"page": 13, "type": "grammar-examples", "title": "G41 例句精讲 + 易错点", "content": ["5条例句", "易错点", "中考辨析"], "grammarTag": "G41"},
+        {"page": 14, "type": "grammar", "title": "G42 非人称代词 It 指天气、时间、距离", "content": ["口诀", "用法结构表", "非人称It核心特征", "防越级约束"], "grammarTag": "G42"},
+        {"page": 15, "type": "grammar-examples", "title": "G42 例句精讲 + 易错点", "content": ["5条例句", "易错点", "中考辨析"], "grammarTag": "G42"},
+        {"page": 16, "type": "interactive-2", "title": "天气礼貌请求练习器", "component": "polite-request-builder", "actions": ["close the window", "bring a jacket", "open the door"]},
+        {"page": 17, "type": "grammar-compare", "title": "G40/G41/G42 综合对比", "content": ["三考点横向对比", "天气与度假表达完整流程"]},
+        {"page": 18, "type": "quiz", "title": "随堂演练 上（G40+G41）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]},
+        {"page": 19, "type": "quiz", "title": "随堂演练 下（G42+综合）", "content": ["4道选择题"], "interactions": ["quiz-opt × 4"]}
+      ]
+    },
+    {
+      "name": "阅读理解",
+      "start": 20,
+      "end": 24,
+      "pages": [
+        {"page": 20, "type": "reading", "title": "阅读A篇 Weather Report and Vacation Plans", "content": ["129词", "5选择题"]},
+        {"page": 21, "type": "reading", "title": "阅读B篇 Planning a Summer Trip", "content": ["150词", "3选择题"]},
+        {"page": 22, "type": "reading", "title": "阅读B篇（下）+ 阅读回答问题", "content": ["2选择题", "阅读回答问题"]},
+        {"page": 23, "type": "reading", "title": "阅读C篇 The Four Seasons Around the World", "content": ["150词", "5选择题"]},
+        {"page": 24, "type": "reading", "title": "阅读五选四 Best Time to Visit", "content": ["140词", "5空4选"]}
+      ]
+    },
+    {
+      "name": "句子练习",
+      "start": 25,
+      "end": 27,
+      "pages": [
+        {"page": 25, "type": "translation", "title": "汉译英 5句", "content": ["天气句型 2句", "礼貌请求 2句", "非人称It 1句"], "interactions": ["answer-mask × 5"]},
+        {"page": 26, "type": "sentence-build", "title": "造句练习 5句", "content": ["G40/G41/G42造句"], "interactions": ["answer-mask × 5"]},
+        {"page": 27, "type": "error-correction", "title": "改错练习 5句", "content": ["G40/G41/G42易错点"], "interactions": ["answer-mask × 5"]}
+      ]
+    },
+    {
+      "name": "自然拼读",
+      "start": 28,
+      "end": 31,
+      "pages": [
+        {"page": 28, "type": "phonics", "title": "oo/ew /uː//juː/ 音素学习", "content": ["oo /uː/", "oo /ʊ/", "ew /juː/", "ew /uː/"], "grammarTag": "PH"},
+        {"page": 29, "type": "phonics-read", "title": "练习1 朗读词汇表", "content": ["oo /uː/ × 4词", "oo /ʊ/ × 4词", "ew /juː/ × 4词", "ew /uː/ × 4词"]},
+        {"page": 30, "type": "phonics-exercise", "title": "练习2+3 听音选词 + 看词归音", "content": ["4题听音选词", "4题看词归音"]},
+        {"page": 31, "type": "phonics-exercise", "title": "练习4 + 拼读总结", "content": ["4题最小对立对", "拼读总结"]}
+      ]
+    },
+    {
+      "name": "课堂总结",
+      "start": 32,
+      "end": 33,
+      "pages": [
+        {"page": 32, "type": "summary", "title": "核心总结", "content": ["G40/G41/G42三卡片", "20词快闪", "口诀汇总"]},
+        {"page": 33, "type": "mindmap", "title": "思维导图 + 完成提示", "content": ["天气与度假表达系统", "完成提示"]}
+      ]
+    }
+  ]
+}

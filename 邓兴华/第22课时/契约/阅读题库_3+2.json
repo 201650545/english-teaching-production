@@ -1,0 +1,239 @@
+{
+  "lesson": "L22",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A篇 6 题 = 4 fill + 2 opt；B/C 篇各 4 题 = 3 fill + 1 opt（题量≠5 按 3:2 比例混合、fill 取多数、不删题不增题）；五选四 Q097 与课件既有 fill（Q090/Q095）不纳入 3+2",
+  "vocab_pool": [
+    "tall",
+    "short",
+    "long",
+    "big",
+    "small",
+    "fast",
+    "slow",
+    "cheap",
+    "expensive",
+    "popular",
+    "serious",
+    "outgoing",
+    "quiet",
+    "hard-working",
+    "talented",
+    "creative",
+    "humorous",
+    "friendly",
+    "lazy",
+    "smart"
+  ],
+  "grammar_cap": "G55-G57（比较级/最高级/as...as 同级比较；本课主题：比较级系统归纳）；禁止 will/完成时/被动；fill 答案均为比较级形式或原文摘录（§3.18.4.4）",
+  "notes": "Q090/Q095 为课件既有 fill（fillCheck 单答案 data-answer），未改动；Q097 五选四未动；阅读原文未改；页数 44 不变",
+  "A篇_Comparing_Two_Cities": {
+    "Q080": {
+      "question": "City A is ____ than City B.",
+      "type": "fill",
+      "openness": "比较级细节·原文推断（City A is a big city / twice as big as City B）",
+      "canonical_answer": "bigger",
+      "minimum_acceptable_answer": "bigger",
+      "accepted_answers": [
+        "bigger"
+      ],
+      "required_vocab": [
+        "big"
+      ],
+      "required_grammar": "G55 比较级 big→bigger（双写 g + er）"
+    },
+    "Q081": {
+      "question": "City B is ____ than City A.",
+      "type": "fill",
+      "openness": "比较级细节·原文直接提取（It is cheaper and quieter）",
+      "canonical_answer": "cheaper",
+      "minimum_acceptable_answer": "cheaper",
+      "accepted_answers": [
+        "cheaper"
+      ],
+      "required_vocab": [
+        "cheap"
+      ],
+      "required_grammar": "G55 比较级 cheap→cheaper"
+    },
+    "Q082": {
+      "question": "City A 相比 City B 生活在哪方面更贵？",
+      "type": "fill",
+      "openness": "细节·原文直接提取（more expensive to live there）",
+      "canonical_answer": "to live there",
+      "minimum_acceptable_answer": "to live there",
+      "accepted_answers": [
+        "to live there",
+        "to live",
+        "live there",
+        "living there",
+        "living",
+        "live"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（不定式 to live 为原文摘录）"
+    },
+    "Q083": {
+      "question": "作者认为如何选择城市？",
+      "type": "opt",
+      "openness": "态度/主旨题·保留选择",
+      "canonical_answer": "B. 取决于生活需求",
+      "minimum_acceptable_answer": "B. 取决于生活需求",
+      "accepted_answers": [
+        "B. 取决于生活需求"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（保留选择题）"
+    },
+    "Q084": {
+      "question": "哪个城市更受家庭欢迎？",
+      "type": "opt",
+      "openness": "细节（even more popular with families）·保留选择以均衡 A 篇题型比",
+      "canonical_answer": "C. City B",
+      "minimum_acceptable_answer": "C. City B",
+      "accepted_answers": [
+        "C. City B"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（保留选择题）"
+    },
+    "Q085": {
+      "question": "哪个城市更安静？",
+      "type": "fill",
+      "openness": "细节·原文直接提取（quieter 指 City B）",
+      "canonical_answer": "City B",
+      "minimum_acceptable_answer": "City B",
+      "accepted_answers": [
+        "City B",
+        "city b",
+        "B",
+        "quieter",
+        "city b is quieter"
+      ],
+      "required_vocab": [
+        "quiet"
+      ],
+      "required_grammar": "G55 比较级 quiet→quieter（答 City B 亦接受）"
+    }
+  },
+  "B篇_Two_Friends": {
+    "Q086": {
+      "question": "Jack 是 ____ 的。（外向）",
+      "type": "fill",
+      "openness": "细节·原文直接提取（Jack is more outgoing and more humorous）",
+      "canonical_answer": "more outgoing",
+      "minimum_acceptable_answer": "more outgoing",
+      "accepted_answers": [
+        "more outgoing",
+        "outgoing"
+      ],
+      "required_vocab": [
+        "outgoing"
+      ],
+      "required_grammar": "G55 比较级 more + outgoing"
+    },
+    "Q087": {
+      "question": "Tom 是 ____ 的。（努力）",
+      "type": "fill",
+      "openness": "细节·原文直接提取（Tom is quieter and more hard-working）",
+      "canonical_answer": "more hard-working",
+      "minimum_acceptable_answer": "more hard-working",
+      "accepted_answers": [
+        "more hard-working",
+        "hard-working",
+        "more hardworking",
+        "hardworking"
+      ],
+      "required_vocab": [
+        "hard-working"
+      ],
+      "required_grammar": "G55 比较级 more + hard-working"
+    },
+    "Q088": {
+      "question": "谁更受欢迎？",
+      "type": "fill",
+      "openness": "细节·原文直接提取（Jack is more popular in our class）",
+      "canonical_answer": "Jack",
+      "minimum_acceptable_answer": "Jack",
+      "accepted_answers": [
+        "Jack",
+        "jack"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（专有名词 Jack，原文 more popular 定位）"
+    },
+    "Q089": {
+      "question": "谁在音乐上更有天赋？",
+      "type": "opt",
+      "openness": "细节（Tom is more talented in music）·保留选择（含「作者」指代干扰项）",
+      "canonical_answer": "B. Tom",
+      "minimum_acceptable_answer": "B. Tom",
+      "accepted_answers": [
+        "B. Tom"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（保留选择题）"
+    }
+  },
+  "C篇_Why_Comparisons_Help": {
+    "Q091": {
+      "question": "比较的主要好处是？",
+      "type": "fill",
+      "openness": "细节·原文摘录（find what to improve / help us set goals）",
+      "canonical_answer": "improve",
+      "minimum_acceptable_answer": "improve",
+      "accepted_answers": [
+        "improve",
+        "to improve",
+        "help us improve",
+        "help us to improve",
+        "find what to improve"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（improve 原文摘录）"
+    },
+    "Q092": {
+      "question": "文中 'set a goal' 的意思是？",
+      "type": "opt",
+      "openness": "词义题·保留选择（§3.18 词义题规则）",
+      "canonical_answer": "B. 设定目标",
+      "minimum_acceptable_answer": "B. 设定目标",
+      "accepted_answers": [
+        "B. 设定目标"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（保留选择题）"
+    },
+    "Q093": {
+      "question": "比较时应该避免什么心态？",
+      "type": "fill",
+      "openness": "细节·原文摘录（not to feel jealous）",
+      "canonical_answer": "jealous",
+      "minimum_acceptable_answer": "jealous",
+      "accepted_answers": [
+        "jealous",
+        "feel jealous",
+        "feeling jealous",
+        "to feel jealous",
+        "be jealous"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（jealous 原文摘录，不在词汇池内）"
+    },
+    "Q094": {
+      "question": "作者建议如何利用比较？",
+      "type": "fill",
+      "openness": "细节·原文摘录（see our differences and find what to improve）",
+      "canonical_answer": "find what to improve",
+      "minimum_acceptable_answer": "find what to improve",
+      "accepted_answers": [
+        "find what to improve",
+        "see our differences and find what to improve",
+        "find the differences and improve",
+        "improve",
+        "find the gap and improve"
+      ],
+      "required_vocab": [],
+      "required_grammar": "无（原文摘录）"
+    }
+  }
+}

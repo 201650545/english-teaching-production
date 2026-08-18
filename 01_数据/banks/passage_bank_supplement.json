@@ -1,0 +1,1635 @@
+[
+ {
+  "id": "XYJ2026_L04_reading_a",
+  "lesson": 4,
+  "student": "许颖嘉",
+  "tier": "基础",
+  "source_type": "original",
+  "provenance": "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测",
+  "genre": "记叙文",
+  "difficulty": "易",
+  "word_count": 118,
+  "vocab_rate": "89%",
+  "vocab_rate_note": "生词率按目标词库 vocab_bank + 基础已知词表 base_vocab（M2b，2026-08-02 扩充）实测；语篇难度为七下基础常用词，目标 70% 熟词 / 30% 生词。",
+  "theme": "房间与方位",
+  "grammar_focus": [
+   "名词复数",
+   "方位介词",
+   "tidy"
+  ],
+  "text": "Hello! My name is Lucy. I have a small but tidy room. There is a bed, a desk and a chair in it. On the wall, there are two maps and three photos. Under the desk, there is a big box. My books are in the box. Some are on the shelf, and some are on the desk. My clothes are in the wardrobe. My schoolbag is on the chair. Look at the table! There are some cups, two glasses and a plant on it. Between the bed and the desk, there is a lamp. Behind the door, there is a ball. My room is small, but it is clean and tidy. I like my room very much.",
+  "questions": [
+   {
+    "num": 1,
+    "q": "How many photos are on the wall?",
+    "opts": [
+     [
+      "A",
+      "two"
+     ],
+     [
+      "B",
+      "three"
+     ],
+     [
+      "C",
+      "five"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 2,
+    "q": "Where is the big box?",
+    "opts": [
+     [
+      "A",
+      "on the desk"
+     ],
+     [
+      "B",
+      "under the desk"
+     ],
+     [
+      "C",
+      "on the shelf"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What is between the bed and the desk?",
+    "opts": [
+     [
+      "A",
+      "a plant"
+     ],
+     [
+      "B",
+      "a ball"
+     ],
+     [
+      "C",
+      "a lamp"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "Where is the ball?",
+    "opts": [
+     [
+      "A",
+      "behind the door"
+     ],
+     [
+      "B",
+      "in the wardrobe"
+     ],
+     [
+      "C",
+      "under the chair"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "Which word is the plural of 'box'?",
+    "opts": [
+     [
+      "A",
+      "boxs"
+     ],
+     [
+      "B",
+      "boxes"
+     ],
+     [
+      "C",
+      "boxies"
+     ]
+    ],
+    "answer": "B"
+   }
+  ]
+ },
+ {
+  "id": "XYJ2026_L04_reading_b",
+  "lesson": 4,
+  "student": "许颖嘉",
+  "tier": "基础",
+  "source_type": "original",
+  "provenance": "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测",
+  "genre": "记叙文",
+  "difficulty": "易",
+  "word_count": 117,
+  "vocab_rate": "85%",
+  "vocab_rate_note": "生词率按目标词库 vocab_bank + 基础已知词表 base_vocab（M2b，2026-08-02 扩充）实测；语篇难度为七下基础常用词，目标 70% 熟词 / 30% 生词。",
+  "theme": "房间与方位",
+  "grammar_focus": [
+   "方位介词",
+   "Where 问句"
+  ],
+  "text": "It is Sunday morning. Mike wants to play football, but he cannot find his ball. \"Where is my ball?\" he asks. \"Is it under your bed?\" his mother asks. Mike looks under the bed. No ball there. \"Is it behind the door?\" his father asks. Mike looks behind the door. No ball there. \"Is it in the box?\" his sister asks. Mike looks in the box. No ball there. He is sad. Then his little brother comes in. \"Look, Mike! Your ball is on the table, between two cups,\" he says. Mike runs to the table and finds his ball. \"Thank you, little brother!\" Mike is happy again. They go to the park and play football together.",
+  "questions": [
+   {
+    "num": 1,
+    "q": "When does the story happen?",
+    "opts": [
+     [
+      "A",
+      "Sunday morning"
+     ],
+     [
+      "B",
+      "Friday night"
+     ],
+     [
+      "C",
+      "Monday morning"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "What does Mike want to do?",
+    "opts": [
+     [
+      "A",
+      "play football"
+     ],
+     [
+      "B",
+      "read a book"
+     ],
+     [
+      "C",
+      "play basketball"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 3,
+    "q": "Where is the ball at last?",
+    "opts": [
+     [
+      "A",
+      "under the bed"
+     ],
+     [
+      "B",
+      "on the table"
+     ],
+     [
+      "C",
+      "behind the door"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 4,
+    "q": "Who helps Mike find the ball?",
+    "opts": [
+     [
+      "A",
+      "his father"
+     ],
+     [
+      "B",
+      "his mother"
+     ],
+     [
+      "C",
+      "his brother"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 5,
+    "q": "How does Mike feel at the end?",
+    "opts": [
+     [
+      "A",
+      "sad"
+     ],
+     [
+      "B",
+      "happy"
+     ],
+     [
+      "C",
+      "angry"
+     ]
+    ],
+    "answer": "B"
+   }
+  ]
+ },
+ {
+  "id": "XYJ2026_L05_reading_a",
+  "lesson": 5,
+  "student": "许颖嘉",
+  "tier": "基础",
+  "source_type": "original",
+  "provenance": "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测",
+  "genre": "记叙文",
+  "difficulty": "易",
+  "word_count": 102,
+  "vocab_rate": "90%",
+  "vocab_rate_note": "生词率按目标词库 vocab_bank + 基础已知词表 base_vocab（M2b，2026-08-02 扩充）实测；语篇难度为七下基础常用词，目标 70% 熟词 / 30% 生词。",
+  "theme": "食物与日常",
+  "grammar_focus": [
+   "祈使句",
+   "What 问句",
+   "like"
+  ],
+  "text": "Lily is a student. She has good eating habits. Every morning, she has milk and bread for breakfast. \"What do you like for breakfast?\" her mother asks. \"I like milk and bread,\" Lily answers. For lunch, she has rice, vegetables and chicken at school. In the evening, her family eat apples, bananas and oranges after dinner. Lily drinks water every day. She says, \"Drink water, not cola! It is good for you.\" She does not like fast food. \"Don't eat too much fast food,\" she often says. Fruit and milk help her grow tall and strong. Lily is healthy and happy.",
+  "questions": [
+   {
+    "num": 1,
+    "q": "What does Lily have for breakfast?",
+    "opts": [
+     [
+      "A",
+      "rice and chicken"
+     ],
+     [
+      "B",
+      "milk and bread"
+     ],
+     [
+      "C",
+      "fruit and cola"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 2,
+    "q": "What does Lily like?",
+    "opts": [
+     [
+      "A",
+      "milk and bread"
+     ],
+     [
+      "B",
+      "fast food"
+     ],
+     [
+      "C",
+      "cola"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 3,
+    "q": "What does Lily drink every day?",
+    "opts": [
+     [
+      "A",
+      "cola"
+     ],
+     [
+      "B",
+      "juice"
+     ],
+     [
+      "C",
+      "water"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "What does Lily say about fast food?",
+    "opts": [
+     [
+      "A",
+      "Eat it every day"
+     ],
+     [
+      "B",
+      "Don't eat too much"
+     ],
+     [
+      "C",
+      "It is good for you"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 5,
+    "q": "What helps Lily grow tall and strong?",
+    "opts": [
+     [
+      "A",
+      "fast food and cola"
+     ],
+     [
+      "B",
+      "fruit and milk"
+     ],
+     [
+      "C",
+      "candy and cakes"
+     ]
+    ],
+    "answer": "B"
+   }
+  ]
+ },
+ {
+  "id": "XYJ2026_L05_reading_b",
+  "lesson": 5,
+  "student": "许颖嘉",
+  "tier": "基础",
+  "source_type": "original",
+  "provenance": "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测",
+  "genre": "记叙文",
+  "difficulty": "易",
+  "word_count": 105,
+  "vocab_rate": "86%",
+  "vocab_rate_note": "生词率按目标词库 vocab_bank + 基础已知词表 base_vocab（M2b，2026-08-02 扩充）实测；语篇难度为七下基础常用词，目标 70% 熟词 / 30% 生词。",
+  "theme": "食物与日常",
+  "grammar_focus": [
+   "like",
+   "祈使句"
+  ],
+  "text": "Sam gets up at seven on Sunday. He is hungry. He wants a big breakfast. \"What do you have for breakfast?\" his mother asks. \"I like eggs and bread,\" Sam says. Mother says, \"Please wash your hands first.\" Sam washes his hands. Then he eats two eggs and some bread. He also drinks a glass of milk. After breakfast, his mother says, \"Don't forget to brush your teeth.\" Sam brushes his teeth. Now Sam is full. \"What do you like for lunch?\" his mother asks. Sam smiles. \"I like rice and chicken. And I like oranges after lunch!\" he answers. What a happy Sunday!",
+  "questions": [
+   {
+    "num": 1,
+    "q": "When does Sam get up?",
+    "opts": [
+     [
+      "A",
+      "at six"
+     ],
+     [
+      "B",
+      "at seven"
+     ],
+     [
+      "C",
+      "at eight"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 2,
+    "q": "What does Sam like for breakfast?",
+    "opts": [
+     [
+      "A",
+      "eggs and bread"
+     ],
+     [
+      "B",
+      "rice and chicken"
+     ],
+     [
+      "C",
+      "fruit"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 3,
+    "q": "What does mother ask Sam to do first?",
+    "opts": [
+     [
+      "A",
+      "brush teeth"
+     ],
+     [
+      "B",
+      "wash hands"
+     ],
+     [
+      "C",
+      "drink milk"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 4,
+    "q": "What does Sam drink?",
+    "opts": [
+     [
+      "A",
+      "a glass of milk"
+     ],
+     [
+      "B",
+      "a cup of cola"
+     ],
+     [
+      "C",
+      "a cup of tea"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "What does Sam like for lunch?",
+    "opts": [
+     [
+      "A",
+      "eggs and bread"
+     ],
+     [
+      "B",
+      "rice and chicken"
+     ],
+     [
+      "C",
+      "milk and bread"
+     ]
+    ],
+    "answer": "B"
+   }
+  ]
+ },
+ {
+  "id": "XYJ2026_L07_reading_a",
+  "lesson": 7,
+  "student": "许颖嘉",
+  "tier": "基础",
+  "source_type": "original",
+  "provenance": "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测",
+  "genre": "记叙文",
+  "difficulty": "易",
+  "word_count": 111,
+  "vocab_rate": "88%",
+  "vocab_rate_note": "生词率按目标词库 vocab_bank + 基础已知词表 base_vocab（M2b，2026-08-02 扩充）实测；语篇难度为七下基础常用词，目标 70% 熟词 / 30% 生词。",
+  "theme": "复习综合（L1–L6）",
+  "grammar_focus": [
+   "be 动词",
+   "人称代词",
+   "食物",
+   "一般现在时"
+  ],
+  "text": "My name is Tom. I am thirteen years old. I am a student at Sunshine Middle School. I have a good friend. Her name is Alice. She is my classmate. We like English very much. My mother is a nurse. My father is a doctor. They work very hard. I get up at six thirty every day. Then I have breakfast. I like milk and eggs. My sister Lily is eight. She likes fruit and vegetables. On weekends, we go to the park. We play games and have a good time. This is my family and my school. I love them all. Do you have a good family? I think yes.",
+  "questions": [
+   {
+    "num": 1,
+    "q": "How old is Tom?",
+    "opts": [
+     [
+      "A",
+      "twelve"
+     ],
+     [
+      "B",
+      "thirteen"
+     ],
+     [
+      "C",
+      "fourteen"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 2,
+    "q": "Who is Alice?",
+    "opts": [
+     [
+      "A",
+      "Tom's sister"
+     ],
+     [
+      "B",
+      "Tom's classmate"
+     ],
+     [
+      "C",
+      "Tom's mother"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What does Tom's father do?",
+    "opts": [
+     [
+      "A",
+      "a nurse"
+     ],
+     [
+      "B",
+      "a teacher"
+     ],
+     [
+      "C",
+      "a doctor"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "What does Tom like?",
+    "opts": [
+     [
+      "A",
+      "milk and eggs"
+     ],
+     [
+      "B",
+      "fruit and vegetables"
+     ],
+     [
+      "C",
+      "cola and candy"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "Where do they go on weekends?",
+    "opts": [
+     [
+      "A",
+      "to the park"
+     ],
+     [
+      "B",
+      "to school"
+     ],
+     [
+      "C",
+      "to the library"
+     ]
+    ],
+    "answer": "A"
+   }
+  ]
+ },
+ {
+  "id": "XYJ2026_L07_reading_b",
+  "lesson": 7,
+  "student": "许颖嘉",
+  "tier": "基础",
+  "source_type": "original",
+  "provenance": "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测",
+  "genre": "记叙文",
+  "difficulty": "易",
+  "word_count": 113,
+  "vocab_rate": "84%",
+  "vocab_rate_note": "生词率按目标词库 vocab_bank + 基础已知词表 base_vocab（M2b，2026-08-02 扩充）实测；语篇难度为七下基础常用词，目标 70% 熟词 / 30% 生词。",
+  "theme": "复习综合（L1–L6）",
+  "grammar_focus": [
+   "be 动词",
+   "食物",
+   "介词"
+  ],
+  "text": "It is a sunny day. The Greens are at home. Mr Green is in the living room. He is reading a book. Mrs Green is in the kitchen. She is cooking dinner. There is some rice, fish and vegetables. Their son David is in his room. He is doing his homework. Their daughter Amy is on the sofa. She is playing with a cat. The cat is under the table. At six o'clock, Mrs Green says, \"Dinner is ready! Please come and eat.\" The family sit at the table. The food is very nice. They talk and laugh. After dinner, David washes the dishes. Amy cleans the table. What a happy family!",
+  "questions": [
+   {
+    "num": 1,
+    "q": "What is Mr Green doing?",
+    "opts": [
+     [
+      "A",
+      "reading a book"
+     ],
+     [
+      "B",
+      "cooking dinner"
+     ],
+     [
+      "C",
+      "doing homework"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "Where is Mrs Green?",
+    "opts": [
+     [
+      "A",
+      "in the living room"
+     ],
+     [
+      "B",
+      "in the kitchen"
+     ],
+     [
+      "C",
+      "in the garden"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What is Amy doing?",
+    "opts": [
+     [
+      "A",
+      "playing with a cat"
+     ],
+     [
+      "B",
+      "doing homework"
+     ],
+     [
+      "C",
+      "washing dishes"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 4,
+    "q": "Where is the cat?",
+    "opts": [
+     [
+      "A",
+      "on the sofa"
+     ],
+     [
+      "B",
+      "under the table"
+     ],
+     [
+      "C",
+      "in the kitchen"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 5,
+    "q": "Who washes the dishes?",
+    "opts": [
+     [
+      "A",
+      "Amy"
+     ],
+     [
+      "B",
+      "Mrs Green"
+     ],
+     [
+      "C",
+      "David"
+     ]
+    ],
+    "answer": "C"
+   }
+  ]
+ },
+ {
+  "id": "XYJ2026_L09_reading_a",
+  "lesson": 9,
+  "student": "许颖嘉",
+  "tier": "基础",
+  "source_type": "original",
+  "provenance": "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测",
+  "genre": "记叙文",
+  "difficulty": "易",
+  "word_count": 113,
+  "vocab_rate": "86%",
+  "vocab_rate_note": "生词率按目标词库 vocab_bank + 基础已知词表 base_vocab（M2b，2026-08-02 扩充）实测；语篇难度为七下基础常用词，目标 70% 熟词 / 30% 生词。",
+  "theme": "学校与方位",
+  "grammar_focus": [
+   "特殊疑问句",
+   "方位介词",
+   "Where/What/Who"
+  ],
+  "text": "This is my new school. It is big and beautiful. There are many buildings in it. The classroom building is in the middle. The library is next to it. Where is the playground? It is behind the classroom building. What is on the left of the library? It is the science lab. Who is our English teacher? She is Miss Green. She is very kind. Who is that man near the gate? He is our head teacher, Mr White. Where is the dining hall? It is on the right of the science lab. Which floor is your classroom on? It is on the third floor. I like my new school. What about you?",
+  "questions": [
+   {
+    "num": 1,
+    "q": "Where is the library?",
+    "opts": [
+     [
+      "A",
+      "next to the classroom building"
+     ],
+     [
+      "B",
+      "behind the playground"
+     ],
+     [
+      "C",
+      "in the middle"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "Where is the playground?",
+    "opts": [
+     [
+      "A",
+      "behind the classroom building"
+     ],
+     [
+      "B",
+      "on the left of the library"
+     ],
+     [
+      "C",
+      "next to the gate"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 3,
+    "q": "Who is Miss Green?",
+    "opts": [
+     [
+      "A",
+      "the head teacher"
+     ],
+     [
+      "B",
+      "the English teacher"
+     ],
+     [
+      "C",
+      "the science teacher"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 4,
+    "q": "Where is the dining hall?",
+    "opts": [
+     [
+      "A",
+      "on the right of the science lab"
+     ],
+     [
+      "B",
+      "in the middle"
+     ],
+     [
+      "C",
+      "behind the gate"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "Which floor is the classroom on?",
+    "opts": [
+     [
+      "A",
+      "the first floor"
+     ],
+     [
+      "B",
+      "the second floor"
+     ],
+     [
+      "C",
+      "the third floor"
+     ]
+    ],
+    "answer": "C"
+   }
+  ]
+ },
+ {
+  "id": "XYJ2026_L09_reading_b",
+  "lesson": 9,
+  "student": "许颖嘉",
+  "tier": "基础",
+  "source_type": "original",
+  "provenance": "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测",
+  "genre": "记叙文",
+  "difficulty": "易",
+  "word_count": 118,
+  "vocab_rate": "75%",
+  "vocab_rate_note": "生词率按目标词库 vocab_bank + 基础已知词表 base_vocab（M2b，2026-08-02 扩充）实测；语篇难度为七下基础常用词，目标 70% 熟词 / 30% 生词。",
+  "theme": "周末活动",
+  "grammar_focus": [
+   "特殊疑问句",
+   "选择疑问句"
+  ],
+  "text": "It is Saturday morning. Kate asks her brother Jack, \"What do you want to do today?\" \"I want to play basketball,\" Jack says. \"Do you want to play basketball or watch TV?\" Kate asks. \"Play basketball, of course!\" Jack answers. \"Who will go with us?\" Kate asks. \"Our friend Ben,\" Jack says. \"Where shall we meet?\" Kate asks. \"Let's meet at the gate of the park at nine.\" \"How will we get there?\" Kate asks. \"We can ride our bikes,\" Jack answers. At nine o'clock, they meet at the gate. They play basketball for two hours. They are tired but very happy. \"When shall we play again?\" Ben asks. \"Next Saturday!\" Kate and Jack say together.",
+  "questions": [
+   {
+    "num": 1,
+    "q": "What does Jack want to do?",
+    "opts": [
+     [
+      "A",
+      "play basketball"
+     ],
+     [
+      "B",
+      "watch TV"
+     ],
+     [
+      "C",
+      "ride bikes"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "Who will go with them?",
+    "opts": [
+     [
+      "A",
+      "Kate's mother"
+     ],
+     [
+      "B",
+      "Ben"
+     ],
+     [
+      "C",
+      "their teacher"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "Where do they meet?",
+    "opts": [
+     [
+      "A",
+      "at the gate of the park"
+     ],
+     [
+      "B",
+      "at school"
+     ],
+     [
+      "C",
+      "at the library"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 4,
+    "q": "How do they get to the park?",
+    "opts": [
+     [
+      "A",
+      "by bus"
+     ],
+     [
+      "B",
+      "on foot"
+     ],
+     [
+      "C",
+      "by bike"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 5,
+    "q": "When will they play again?",
+    "opts": [
+     [
+      "A",
+      "next Saturday"
+     ],
+     [
+      "B",
+      "next Sunday"
+     ],
+     [
+      "C",
+      "today"
+     ]
+    ],
+    "answer": "A"
+   }
+  ]
+ },
+ {
+  "id": "XYJ2026_L10_reading_a",
+  "lesson": 10,
+  "student": "许颖嘉",
+  "tier": "基础",
+  "source_type": "original",
+  "provenance": "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测",
+  "genre": "记叙文",
+  "difficulty": "易",
+  "word_count": 114,
+  "vocab_rate": "84%",
+  "vocab_rate_note": "生词率按目标词库 vocab_bank + 基础已知词表 base_vocab（M2b，2026-08-02 扩充）实测；语篇难度为七下基础常用词，目标 70% 熟词 / 30% 生词。",
+  "theme": "日常作息",
+  "grammar_focus": [
+   "一般现在时三单",
+   "does"
+  ],
+  "text": "Tom is a middle school student. He gets up at six thirty every day. He has breakfast at seven. Then he goes to school. He studies hard at school. He likes English and maths. His best friend Bob likes science and music. After school, Tom plays basketball with his friends. In the evening, he does his homework. He watches TV for half an hour. He goes to bed at ten. Does Tom get up late on weekends? No, he doesn't. He gets up at seven on weekends too. Does his mother cook breakfast for him? Yes, she does. She makes eggs, milk and bread. Tom loves his family. He is a good student.",
+  "questions": [
+   {
+    "num": 1,
+    "q": "When does Tom get up?",
+    "opts": [
+     [
+      "A",
+      "at six"
+     ],
+     [
+      "B",
+      "at six thirty"
+     ],
+     [
+      "C",
+      "at seven"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 2,
+    "q": "What does Bob like?",
+    "opts": [
+     [
+      "A",
+      "English and maths"
+     ],
+     [
+      "B",
+      "science and music"
+     ],
+     [
+      "C",
+      "basketball"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What does Tom do in the evening?",
+    "opts": [
+     [
+      "A",
+      "plays basketball"
+     ],
+     [
+      "B",
+      "does his homework"
+     ],
+     [
+      "C",
+      "goes to the park"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 4,
+    "q": "Does Tom get up late on weekends?",
+    "opts": [
+     [
+      "A",
+      "Yes, he does"
+     ],
+     [
+      "B",
+      "No, he doesn't"
+     ],
+     [
+      "C",
+      "We don't know"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 5,
+    "q": "Who cooks breakfast for Tom?",
+    "opts": [
+     [
+      "A",
+      "his father"
+     ],
+     [
+      "B",
+      "his grandmother"
+     ],
+     [
+      "C",
+      "his mother"
+     ]
+    ],
+    "answer": "C"
+   }
+  ]
+ },
+ {
+  "id": "XYJ2026_L10_reading_b",
+  "lesson": 10,
+  "student": "许颖嘉",
+  "tier": "基础",
+  "source_type": "original",
+  "provenance": "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测",
+  "genre": "记叙文",
+  "difficulty": "易",
+  "word_count": 111,
+  "vocab_rate": "89%",
+  "vocab_rate_note": "生词率按目标词库 vocab_bank + 基础已知词表 base_vocab（M2b，2026-08-02 扩充）实测；语篇难度为七下基础常用词，目标 70% 熟词 / 30% 生词。",
+  "theme": "家人习惯",
+  "grammar_focus": [
+   "一般现在时三单",
+   "频度"
+  ],
+  "text": "I am Anna. There are four people in my family. My father is a teacher. He teaches maths at a middle school. He goes to work by bus. My mother is a doctor. She works at a hospital. She is very busy. My brother Sam is ten. He likes drawing. He draws pictures every day. I am twelve. I like reading. I read books in the library after school. On Sundays, we have a big dinner together. Mother cooks fish and vegetables. Father washes the fruit. Sam and I set the table. We talk and laugh at the table. My family is warm and happy. I love my family very much.",
+  "questions": [
+   {
+    "num": 1,
+    "q": "What does Anna's father do?",
+    "opts": [
+     [
+      "A",
+      "a doctor"
+     ],
+     [
+      "B",
+      "a teacher"
+     ],
+     [
+      "C",
+      "a worker"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 2,
+    "q": "How does father go to work?",
+    "opts": [
+     [
+      "A",
+      "by bus"
+     ],
+     [
+      "B",
+      "by bike"
+     ],
+     [
+      "C",
+      "on foot"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 3,
+    "q": "What does Sam like doing?",
+    "opts": [
+     [
+      "A",
+      "reading"
+     ],
+     [
+      "B",
+      "drawing"
+     ],
+     [
+      "C",
+      "cooking"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 4,
+    "q": "What does mother cook on Sundays?",
+    "opts": [
+     [
+      "A",
+      "fish and vegetables"
+     ],
+     [
+      "B",
+      "rice and eggs"
+     ],
+     [
+      "C",
+      "noodles"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "Where does Anna read books?",
+    "opts": [
+     [
+      "A",
+      "at home"
+     ],
+     [
+      "B",
+      "in the library"
+     ],
+     [
+      "C",
+      "in the park"
+     ]
+    ],
+    "answer": "B"
+   }
+  ]
+ },
+ {
+  "id": "XYJ2026_L11_reading_a",
+  "lesson": 11,
+  "student": "许颖嘉",
+  "tier": "基础",
+  "source_type": "original",
+  "provenance": "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测",
+  "genre": "应用文",
+  "difficulty": "易",
+  "word_count": 119,
+  "vocab_rate": "84%",
+  "vocab_rate_note": "生词率按目标词库 vocab_bank + 基础已知词表 base_vocab（M2b，2026-08-02 扩充）实测；语篇难度为七下基础常用词，目标 70% 熟词 / 30% 生词。",
+  "theme": "图书馆规则",
+  "grammar_focus": [
+   "祈使句",
+   "must/have to"
+  ],
+  "text": "Welcome to our school library. Please read the library rules. First, you must keep quiet in the library. Don't talk loudly. Second, you must show your student card when you come in. Third, you can borrow two books at a time. You must return them in two weeks. Don't write or draw in the books. Be kind to the books. Don't eat or drink in the library, please. If you have questions, ask the librarian for help. You must put the books back on the shelves after you read them. The library opens at eight in the morning and closes at six in the afternoon. Please follow these rules. Have a nice time in our library!",
+  "questions": [
+   {
+    "num": 1,
+    "q": "How many books can you borrow at a time?",
+    "opts": [
+     [
+      "A",
+      "one"
+     ],
+     [
+      "B",
+      "two"
+     ],
+     [
+      "C",
+      "three"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 2,
+    "q": "When must you return the books?",
+    "opts": [
+     [
+      "A",
+      "in one week"
+     ],
+     [
+      "B",
+      "in two weeks"
+     ],
+     [
+      "C",
+      "in a month"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What must you NOT do in the library?",
+    "opts": [
+     [
+      "A",
+      "talk loudly"
+     ],
+     [
+      "B",
+      "keep quiet"
+     ],
+     [
+      "C",
+      "ask for help"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 4,
+    "q": "What must you show when you come in?",
+    "opts": [
+     [
+      "A",
+      "your homework"
+     ],
+     [
+      "B",
+      "your student card"
+     ],
+     [
+      "C",
+      "your ID card"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 5,
+    "q": "When does the library open?",
+    "opts": [
+     [
+      "A",
+      "at eight in the morning"
+     ],
+     [
+      "B",
+      "at six in the morning"
+     ],
+     [
+      "C",
+      "at nine in the morning"
+     ]
+    ],
+    "answer": "A"
+   }
+  ]
+ },
+ {
+  "id": "XYJ2026_L11_reading_b",
+  "lesson": 11,
+  "student": "许颖嘉",
+  "tier": "基础",
+  "source_type": "original",
+  "provenance": "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测",
+  "genre": "应用文",
+  "difficulty": "易",
+  "word_count": 104,
+  "vocab_rate": "70%",
+  "vocab_rate_note": "生词率按目标词库 vocab_bank + 基础已知词表 base_vocab（M2b，2026-08-02 扩充）实测；语篇难度为七下基础常用词，目标 70% 熟词 / 30% 生词。",
+  "theme": "交通安全",
+  "grammar_focus": [
+   "祈使句",
+   "must",
+   "Don't"
+  ],
+  "text": "There are many cars and buses on the road. We must be careful. Here are some road rules for students. First, you must walk on the sidewalk, not in the middle of the road. Second, you must look left and right before you cross the street. Third, you must wait for the green light. Don't cross on the red light. Don't run after a bus. It is very dangerous. When you ride a bike, you must wear a helmet. Don't play football on the road, please. Follow these rules and you will be safe. Safety comes first. Have a safe day!",
+  "questions": [
+   {
+    "num": 1,
+    "q": "Where must you walk?",
+    "opts": [
+     [
+      "A",
+      "on the sidewalk"
+     ],
+     [
+      "B",
+      "in the middle of the road"
+     ],
+     [
+      "C",
+      "after a bus"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "What must you do before crossing the street?",
+    "opts": [
+     [
+      "A",
+      "run quickly"
+     ],
+     [
+      "B",
+      "look left and right"
+     ],
+     [
+      "C",
+      "wait for a bus"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 3,
+    "q": "What must you NOT do on the road?",
+    "opts": [
+     [
+      "A",
+      "wear a helmet"
+     ],
+     [
+      "B",
+      "look at the light"
+     ],
+     [
+      "C",
+      "play football"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 4,
+    "q": "When you ride a bike, what must you wear?",
+    "opts": [
+     [
+      "A",
+      "a hat"
+     ],
+     [
+      "B",
+      "a helmet"
+     ],
+     [
+      "C",
+      "a coat"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 5,
+    "q": "What is the best title?",
+    "opts": [
+     [
+      "A",
+      "Road Rules"
+     ],
+     [
+      "B",
+      "My School"
+     ],
+     [
+      "C",
+      "My Family"
+     ]
+    ],
+    "answer": "A"
+   }
+  ]
+ },
+ {
+  "id": "XYJ2026_L12_reading_a",
+  "lesson": 12,
+  "student": "许颖嘉",
+  "tier": "基础",
+  "source_type": "original",
+  "provenance": "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测",
+  "genre": "说明文",
+  "difficulty": "易",
+  "word_count": 121,
+  "vocab_rate": "79%",
+  "vocab_rate_note": "生词率按目标词库 vocab_bank + 基础已知词表 base_vocab（M2b，2026-08-02 扩充）实测；语篇难度为七下基础常用词，目标 70% 熟词 / 30% 生词。",
+  "theme": "食物与购物",
+  "grammar_focus": [
+   "可数/不可数",
+   "some/any",
+   "冠词"
+  ],
+  "text": "It is Friday afternoon. Lily goes to the supermarket with her mother. They want to buy some food for the weekend. First, they buy some apples and bananas. They are fresh and sweet. Then they buy a bag of rice and a bottle of oil. Mother asks, \"Do we need any eggs?\" Lily says, \"Yes, we need some eggs.\" They also buy some milk, but they don't buy any cola. Cola is not good for health. Lily wants some bread. \"Can I have a piece of bread?\" she asks. Mother says, \"Of course. Bread is a good breakfast.\" They buy some vegetables, too. There is no candy in their basket. Lily is happy. She likes going shopping with her mother.",
+  "questions": [
+   {
+    "num": 1,
+    "q": "When do they go shopping?",
+    "opts": [
+     [
+      "A",
+      "Friday afternoon"
+     ],
+     [
+      "B",
+      "Saturday morning"
+     ],
+     [
+      "C",
+      "Sunday evening"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "What do they NOT buy?",
+    "opts": [
+     [
+      "A",
+      "colas"
+     ],
+     [
+      "B",
+      "apples"
+     ],
+     [
+      "C",
+      "milk"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 3,
+    "q": "What does Lily want?",
+    "opts": [
+     [
+      "A",
+      "a piece of bread"
+     ],
+     [
+      "B",
+      "a cup of cola"
+     ],
+     [
+      "C",
+      "a bag of candy"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 4,
+    "q": "Which word is UNCOUNTABLE?",
+    "opts": [
+     [
+      "A",
+      "apple"
+     ],
+     [
+      "B",
+      "egg"
+     ],
+     [
+      "C",
+      "rice"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 5,
+    "q": "How does Lily feel?",
+    "opts": [
+     [
+      "A",
+      "sad"
+     ],
+     [
+      "B",
+      "happy"
+     ],
+     [
+      "C",
+      "tired"
+     ]
+    ],
+    "answer": "B"
+   }
+  ]
+ },
+ {
+  "id": "XYJ2026_L12_reading_b",
+  "lesson": 12,
+  "student": "许颖嘉",
+  "tier": "基础",
+  "source_type": "original",
+  "provenance": "原创语篇 · AI 编写（教师 2026-08-02 授权自行开发高质量语库）；主题/语法对齐人教版七下对应单元；非真题改编，生词率按 M2 词汇库实测",
+  "genre": "记叙文",
+  "difficulty": "易",
+  "word_count": 117,
+  "vocab_rate": "76%",
+  "vocab_rate_note": "生词率按目标词库 vocab_bank + 基础已知词表 base_vocab（M2b，2026-08-02 扩充）实测；语篇难度为七下基础常用词，目标 70% 熟词 / 30% 生词。",
+  "theme": "野餐",
+  "grammar_focus": [
+   "some/any",
+   "可数/不可数",
+   "there be"
+  ],
+  "text": "Today is a fine day. My classmates and I have a picnic in the park. We bring a lot of food. There is some bread, some fruit and some juice. There are some sandwiches and hamburgers, too. Mike asks, \"Is there any water? I am thirsty.\" Lucy says, \"Yes, there is some water in this bottle. But there isn't any tea.\" We sit on the grass and eat. The food is very nice. After lunch, we play games. Some students play football. Some students fly kites. There is a small river near the park. We see some fish in it. We have a lot of fun. I hope we can have a picnic again next week.",
+  "questions": [
+   {
+    "num": 1,
+    "q": "Where do they have a picnic?",
+    "opts": [
+     [
+      "A",
+      "in the park"
+     ],
+     [
+      "B",
+      "at school"
+     ],
+     [
+      "C",
+      "at home"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 2,
+    "q": "What does Mike want to drink?",
+    "opts": [
+     [
+      "A",
+      "tea"
+     ],
+     [
+      "B",
+      "juice"
+     ],
+     [
+      "C",
+      "water"
+     ]
+    ],
+    "answer": "C"
+   },
+   {
+    "num": 3,
+    "q": "Is there any tea?",
+    "opts": [
+     [
+      "A",
+      "Yes, there is"
+     ],
+     [
+      "B",
+      "No, there isn't"
+     ],
+     [
+      "C",
+      "We don't know"
+     ]
+    ],
+    "answer": "B"
+   },
+   {
+    "num": 4,
+    "q": "What do some students do after lunch?",
+    "opts": [
+     [
+      "A",
+      "fly kites"
+     ],
+     [
+      "B",
+      "sleep"
+     ],
+     [
+      "C",
+      "swim"
+     ]
+    ],
+    "answer": "A"
+   },
+   {
+    "num": 5,
+    "q": "What do they see in the river?",
+    "opts": [
+     [
+      "A",
+      "some fish"
+     ],
+     [
+      "B",
+      "some ducks"
+     ],
+     [
+      "C",
+      "some boats"
+     ]
+    ],
+    "answer": "A"
+   }
+  ]
+ }
+]

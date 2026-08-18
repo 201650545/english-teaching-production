@@ -1,0 +1,795 @@
+{
+  "version": "1.0",
+  "actions": [
+    "point",
+    "drag",
+    "write",
+    "link",
+    "order",
+    "listen"
+  ],
+  "levels": [
+    "foundation",
+    "medium",
+    "advanced"
+  ],
+  "rules": {
+    "drag_requires_single_pointer_alternative": true,
+    "main_touch_target_project_px": 44,
+    "do_not_collect": [
+      "pointer_coordinates",
+      "drag_path",
+      "mouse_path"
+    ],
+    "recognition_cannot_alone_promote_to": [
+      "M2",
+      "M3",
+      "M4"
+    ]
+  },
+  "templates": [
+    {
+      "template_id": "G-POINT-ERROR",
+      "section": "grammar",
+      "name": "错句定位",
+      "content_types": [
+        "error_correction",
+        "tense",
+        "pronoun",
+        "agreement"
+      ],
+      "primary_action": "point",
+      "cognitive_levels": [
+        "retrieval",
+        "application"
+      ],
+      "reuse": "GM-G03",
+      "requires_new": false,
+      "cost": "low",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "G-DRAG-CLASSIFY",
+      "section": "grammar",
+      "name": "结构归类",
+      "content_types": [
+        "word_class",
+        "sentence_pattern",
+        "question_word_function"
+      ],
+      "primary_action": "drag",
+      "cognitive_levels": [
+        "recognition",
+        "retrieval"
+      ],
+      "reuse": "drag_classify",
+      "requires_new": false,
+      "cost": "low",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "G-WRITE-FORM",
+      "section": "grammar",
+      "name": "形式生成",
+      "content_types": [
+        "verb_form",
+        "pronoun_form",
+        "grammar_fill"
+      ],
+      "primary_action": "write",
+      "cognitive_levels": [
+        "retrieval",
+        "application"
+      ],
+      "reuse": "fill-input-box",
+      "requires_new": false,
+      "cost": "low",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "G-LINK-RELATION",
+      "section": "grammar",
+      "name": "关系连线",
+      "content_types": [
+        "question_answer",
+        "rule_example"
+      ],
+      "primary_action": "link",
+      "cognitive_levels": [
+        "recognition",
+        "retrieval"
+      ],
+      "reuse": "GM-R06 generic adapter",
+      "requires_new": true,
+      "cost": "medium",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "G-ORDER-SENTENCE",
+      "section": "grammar",
+      "name": "句块排序",
+      "content_types": [
+        "question_order",
+        "negative_order",
+        "sentence_order"
+      ],
+      "primary_action": "order",
+      "cognitive_levels": [
+        "retrieval",
+        "application"
+      ],
+      "reuse": "sentence_order",
+      "requires_new": false,
+      "cost": "low",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "G-LISTEN-BUILD",
+      "section": "grammar",
+      "name": "听句补全",
+      "content_types": [
+        "auxiliary",
+        "question_word",
+        "listening_grammar"
+      ],
+      "primary_action": "listen",
+      "cognitive_levels": [
+        "retrieval",
+        "application"
+      ],
+      "reuse": "dictation + fill/order",
+      "requires_new": true,
+      "cost": "medium",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "V-POINT-MEANING",
+      "section": "vocab",
+      "name": "点词选义",
+      "content_types": [
+        "meaning_recognition",
+        "picture_word"
+      ],
+      "primary_action": "point",
+      "cognitive_levels": [
+        "recognition"
+      ],
+      "reuse": "point_meaning",
+      "requires_new": false,
+      "cost": "low",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "V-DRAG-CATEGORY",
+      "section": "vocab",
+      "name": "语义归类",
+      "content_types": [
+        "semantic_category",
+        "word_class",
+        "countability"
+      ],
+      "primary_action": "drag",
+      "cognitive_levels": [
+        "recognition",
+        "retrieval"
+      ],
+      "reuse": "drag_classify",
+      "requires_new": false,
+      "cost": "low",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "V-WRITE-RECALL",
+      "section": "vocab",
+      "name": "主动提取",
+      "content_types": [
+        "meaning_recall",
+        "picture_recall",
+        "context_recall",
+        "spelling"
+      ],
+      "primary_action": "write",
+      "cognitive_levels": [
+        "retrieval",
+        "application"
+      ],
+      "reuse": "GM-V02",
+      "requires_new": false,
+      "cost": "low",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "V-LINK-COLLOCATION",
+      "section": "vocab",
+      "name": "搭配连线",
+      "content_types": [
+        "collocation",
+        "word_definition"
+      ],
+      "primary_action": "link",
+      "cognitive_levels": [
+        "recognition",
+        "retrieval"
+      ],
+      "reuse": "GM-R06 generic adapter",
+      "requires_new": true,
+      "cost": "medium",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "V-ORDER-SPELLING",
+      "section": "vocab",
+      "name": "词形重组",
+      "content_types": [
+        "spelling",
+        "morpheme",
+        "compound_word"
+      ],
+      "primary_action": "order",
+      "cognitive_levels": [
+        "retrieval"
+      ],
+      "reuse": "word_chunk_builder",
+      "requires_new": false,
+      "cost": "low",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "V-LISTEN-DICTATION",
+      "section": "vocab",
+      "name": "听写翻牌",
+      "content_types": [
+        "sound_form",
+        "dictation"
+      ],
+      "primary_action": "listen",
+      "cognitive_levels": [
+        "retrieval"
+      ],
+      "reuse": "dictation_flip",
+      "requires_new": false,
+      "cost": "low",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "C-POINT-DIAGNOSE",
+      "section": "drill",
+      "name": "一题诊断",
+      "content_types": [
+        "exam_choice",
+        "distractor_analysis"
+      ],
+      "primary_action": "point",
+      "cognitive_levels": [
+        "recognition",
+        "application"
+      ],
+      "reuse": "choice+rationale",
+      "requires_new": true,
+      "cost": "medium",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "C-DRAG-DECISION",
+      "section": "drill",
+      "name": "情境决策归类",
+      "content_types": [
+        "mixed_grammar",
+        "mixed_vocab"
+      ],
+      "primary_action": "drag",
+      "cognitive_levels": [
+        "retrieval",
+        "application"
+      ],
+      "reuse": "drag_classify",
+      "requires_new": false,
+      "cost": "low",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "C-WRITE-SCENARIO",
+      "section": "drill",
+      "name": "情境补全",
+      "content_types": [
+        "dialogue_fill",
+        "sentence_fill",
+        "transfer"
+      ],
+      "primary_action": "write",
+      "cognitive_levels": [
+        "retrieval",
+        "application"
+      ],
+      "reuse": "fill/GM-V02",
+      "requires_new": false,
+      "cost": "low",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "C-LINK-EVIDENCE",
+      "section": "drill",
+      "name": "证据连线",
+      "content_types": [
+        "reading_evidence",
+        "grammar_reason"
+      ],
+      "primary_action": "link",
+      "cognitive_levels": [
+        "application"
+      ],
+      "reuse": "GM-R06",
+      "requires_new": false,
+      "cost": "low",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "C-ORDER-DIALOGUE",
+      "section": "drill",
+      "name": "对话/步骤排序",
+      "content_types": [
+        "dialogue_order",
+        "event_order"
+      ],
+      "primary_action": "order",
+      "cognitive_levels": [
+        "retrieval",
+        "application"
+      ],
+      "reuse": "sentence_order",
+      "requires_new": false,
+      "cost": "low",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    },
+    {
+      "template_id": "C-LISTEN-RESPOND",
+      "section": "drill",
+      "name": "听后回应",
+      "content_types": [
+        "functional_response",
+        "listening_grammar"
+      ],
+      "primary_action": "listen",
+      "cognitive_levels": [
+        "retrieval",
+        "application"
+      ],
+      "reuse": "listening wrapper",
+      "requires_new": true,
+      "cost": "medium",
+      "data_fields": [
+        "event_id",
+        "student_id",
+        "lesson_id",
+        "page_id",
+        "question_id",
+        "knowledge_id",
+        "section",
+        "template_id",
+        "interaction_type",
+        "action_type",
+        "cognitive_level",
+        "first_answer",
+        "final_answer",
+        "is_first_correct",
+        "is_final_correct",
+        "independent_correct",
+        "hint_used",
+        "max_hint_level",
+        "attempt_no",
+        "response_time_ms",
+        "transfer_correct",
+        "sync_status"
+      ],
+      "accessibility": "拖拽/连线/排序均提供点击或键盘替代"
+    }
+  ]
+}

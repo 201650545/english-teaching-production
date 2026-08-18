@@ -1,0 +1,167 @@
+{
+  "course": "第11课",
+  "animations": {
+    "css": [
+      {"name": "fadeSlideUp", "definition": "from {opacity:0; transform:translateY(30px)} to {opacity:1; transform:translateY(0)}", "usage": "页面进入、内容块出现"},
+      {"name": "scaleUp", "definition": "from {opacity:0; transform:scale(0.85)} to {opacity:1; transform:scale(1)}", "usage": "卡片缩放出现"},
+      {"name": "bounceIn", "definition": "0%{opacity:0;transform:scale(0.3)} 50%{transform:scale(1.08)} 70%{transform:scale(0.95)} 100%{opacity:1;transform:scale(1)}", "usage": "正确反馈、规则标牌出现"},
+      {"name": "bpSwing", "definition": "0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)}", "usage": "swing-tag 摇摆"},
+      {"name": "pulse", "definition": "0%,100%{transform:scale(1)} 50%{transform:scale(1.05)}", "usage": "stage-badge 脉动"},
+      {"name": "slideInLeft", "definition": "from {opacity:0; transform:translateX(-40px)} to {opacity:1; transform:translateX(0)}", "usage": "句子行进入、日历滑动"},
+      {"name": "floatY", "definition": "0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)}", "usage": "emoji 浮动"},
+      {"name": "shimmer", "definition": "0%{background-position:-200% center} 100%{background-position:200% center}", "usage": "进度条闪光"}
+    ],
+    "additional": [
+      {"name": "shakeX", "definition": "0%,100%{transform:translateX(0)} 10%,30%,50%,70%,90%{transform:translateX(-4px)} 20%,40%,60%,80%{transform:translateX(4px)}", "usage": "错误反馈抖动"},
+      {"name": "cardFlyIn", "definition": "0%{opacity:0;transform:translateY(-30px) scale(0.5) rotate(-10deg)} 60%{transform:translateY(5px) scale(1.1) rotate(2deg)} 100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}", "usage": "词卡飞入槽位"},
+      {"name": "cardFlyOut", "definition": "0%{opacity:1;transform:scale(1)} 100%{opacity:0;transform:translateY(20px) scale(0.5)}", "usage": "词卡飞出"},
+      {"name": "flipCard", "definition": "0%{transform:rotateY(0)} 50%{transform:rotateY(90deg)} 100%{transform:rotateY(0)}", "usage": "词汇卡片翻转显示记忆法"},
+      {"name": "highlightPulse", "definition": "0%,100%{box-shadow:0 0 0 0 rgba(243,156,18,0.4)} 50%{box-shadow:0 0 0 8px rgba(243,156,18,0)}", "usage": "语法对比表高亮关联项"}
+    ]
+  },
+  "interactions": {
+    "navigation": {
+      "halfScreenClick": true,
+      "keyboardArrows": true,
+      "navPills": true,
+      "progressBarClick": true
+    },
+    "quiz": {
+      "type": "checkQuiz",
+      "feedback": {
+        "correct": "绿色✅ + bounceIn动画 + 正确音效",
+        "wrong": "红色❌ + shakeX动画 + 错误音效 + 高亮正确答案"
+      },
+      "disableAfterAnswer": true,
+      "showCorrectAnswer": true,
+      "doubleClickUndo": true,
+      "undoHint": "双击可撤销选择"
+    },
+    "phonics": {
+      "type": "checkPhonics",
+      "feedback": "同quiz"
+    },
+    "answerMask": {
+      "type": "toggleMask",
+      "initial": "绿色遮罩显示'🔍 点击揭晓'",
+      "revealed": "浅绿色背景显示答案 + 正确音效"
+    },
+    "vocabGame": {
+      "T1-I": {
+        "name": "班规词汇消消乐",
+        "type": "vocab-match-eliminate",
+        "description": "左侧20个英文词，右侧20个中文释义，点击配对消除",
+        "feedback": {"match": "绿色✅ + bounceIn + 消除动画", "mismatch": "红色❌ + shakeX"}
+      },
+      "T3-B": {
+        "name": "跨课词汇竞技场",
+        "type": "cross-lesson-arena",
+        "description": "L8-L10 60词 + L11 20词共80词，限时选词竞技",
+        "feedback": {"correct": "积分+1 + 绿色闪烁", "wrong": "生命-1 + 红色闪烁"}
+      }
+    }
+  },
+  "interactiveComponents": {
+    "component1": {
+      "name": "班规指挥台",
+      "page": 13,
+      "grammarTag": "G28",
+      "elements": {
+        "scene": ".rule-command-scene",
+        "classroom": "🏫 emoji (font-size: 80px)",
+        "ruleBoard": "📋 emoji",
+        "student": "🧑‍🎓 emoji",
+        "teacher": "👨‍🏫 emoji"
+      },
+      "buttons": [
+        {
+          "label": "Can we...?",
+          "action": "学生🧑‍🎓举手bounceIn + 例句fadeSlideUp",
+          "sentence": "Can we listen to music in class?",
+          "animation": "bounceIn",
+          "mood": "permission"
+        },
+        {
+          "label": "Must...",
+          "action": "教师👨‍🏫出现 + 规则标牌📋pulse",
+          "sentence": "You must follow the school rules.",
+          "animation": "pulse",
+          "mood": "obligation"
+        },
+        {
+          "label": "Don't have to",
+          "action": "学生🧑‍🎓放松 + 例句fadeSlideUp",
+          "sentence": "You don't have to arrive early.",
+          "animation": "fadeSlideUp",
+          "mood": "not-necessary"
+        },
+        {
+          "label": "Mustn't",
+          "action": "🚨警告标志出现 + shakeX抖动",
+          "sentence": "You mustn't fight in the hallway.",
+          "animation": "shakeX",
+          "mood": "prohibition"
+        }
+      ],
+      "sentenceUpdate": "底部例句区 fadeSlideUp 动画"
+    },
+    "component2": {
+      "name": "时间介词日历",
+      "page": 18,
+      "grammarTag": "G30",
+      "elements": {
+        "scene": ".time-calendar-scene",
+        "calendar": "📅 emoji (font-size: 72px)",
+        "clock": "🕐 emoji (font-size: 72px)",
+        "seasons": ["🌸 spring", "☀️ summer", "🍂 autumn", "❄️ winter"]
+      },
+      "buttons": [
+        {
+          "label": "in",
+          "action": "日历📅高亮年/月/季 + 例句显示",
+          "examples": ["in 2026", "in July", "in summer", "in the morning"],
+          "animation": "slideInLeft",
+          "color": "#3498DB"
+        },
+        {
+          "label": "on",
+          "action": "日历📅高亮具体日期/星期 + 例句显示",
+          "examples": ["on Monday", "on July 15th", "on Friday afternoon"],
+          "animation": "bounceIn",
+          "color": "#E67E22"
+        },
+        {
+          "label": "at",
+          "action": "时钟🕐高亮时刻 + 例句显示",
+          "examples": ["at 7 o'clock", "at 8:30", "at noon"],
+          "animation": "pulse",
+          "color": "#E74C3C"
+        }
+      ],
+      "logic": {
+        "clickPreposition": "点击介词按钮→展示对应时间词列表→点击时间词→生成例句",
+        "threeStepMethod": "底部显示三步判断法提示",
+        "comparisonMode": "长按两个介词可进入对比模式"
+      }
+    }
+  },
+  "audio": {
+    "correct": {"freq": [880, 1100], "duration": [0.15, 0.2], "type": "sine"},
+    "error": {"freq": 220, "duration": 0.3, "type": "sawtooth"},
+    "pageTurn": {"freq": 440, "duration": 0.1, "type": "triangle"}
+  },
+  "assets": {
+    "emojis": ["🏫", "📋", "🧑‍🎓", "👨‍🏫", "🚨", "📅", "🕐", "🌸", "☀️", "🍂", "❄️", "🔊", "❌", "✅", "👍", "💡", "🤔", "👀", "⏰", "🔔"],
+    "images": "none (all CSS/emoji based)",
+    "externalLibs": "none (vanilla JS)"
+  },
+  "dataCollection": {
+    "enabled": true,
+    "syncMode": "IndexedDB-local",
+    "exportFormats": ["JSON", "CSV"],
+    "sessionIdRule": "dxh-l11-{timestamp}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true,
+    "fields": ["questionId", "section", "userAnswer", "correctAnswer", "isCorrect", "timestamp", "timeSpent"]
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "lesson": "L30",
+  "schema": "3+2 六字段（§3.18.4）",
+  "quota": "A/B/C 篇各 7 题：4 无选项 + 3 有选项（讲评页题量 7·按 3:2 比例混合）；五选四（§3.16）不纳入 3+2",
+  "vocab_pool": [
+    "ought",
+    "should",
+    "can",
+    "could",
+    "allowed",
+    "required",
+    "forbidden",
+    "prohibited",
+    "permitted",
+    "proposed",
+    "advised",
+    "regarded",
+    "believed",
+    "reported",
+    "said",
+    "known",
+    "used",
+    "supplied",
+    "expected",
+    "supposed"
+  ],
+  "grammar_cap": "G65 情态被动（can/must/should be done）/ 主动表被动（sell well 等）——答案均为原文摘录，不越级",
+  "skip_pages": [
+    "阅读识别页（Q036-Q038）：纯语法识别题（be+过去分词/are made of/be+V-ing 区分），无正文可提取→保留选择（§3.18.4）",
+    "阅读五选四页（§3.16 空格选答原型，不动）",
+    "阅读策略页（策略题，保留选择）"
+  ],
+  "A篇_Rules_in_Our_School": {
+    "Q063": {
+      "question": "学生必须什么时候到校？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "on time",
+      "minimum_acceptable_answer": "on time",
+      "accepted_answers": [
+        "on time",
+        "be on time",
+        "must be on time",
+        "students must be on time"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q064": {
+      "question": "手机在课堂上？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q065": {
+      "question": "'must be on time' 属于？",
+      "type": "opt",
+      "correct": "B",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q066": {
+      "question": "吸烟在校园？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "forbidden",
+      "minimum_acceptable_answer": "forbidden",
+      "accepted_answers": [
+        "forbidden",
+        "is forbidden",
+        "it is forbidden",
+        "smoking is forbidden",
+        "forbidden on the campus"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "forbidden 为池内词；情态被动原文摘录"
+    },
+    "Q067": {
+      "question": "作业必须按时完成。Homework must ____ (finish) on time. 检查",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "be finished",
+      "minimum_acceptable_answer": "be finished",
+      "accepted_answers": [
+        "be finished"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "G65 情态被动 be finished（本课考点）"
+    },
+    "Q068": {
+      "question": "校服被要求？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "every day",
+      "minimum_acceptable_answer": "every day",
+      "accepted_answers": [
+        "every day",
+        "required every day",
+        "they are required every day",
+        "school uniforms are required every day"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q069": {
+      "question": "'is forbidden' 用的是？",
+      "type": "opt",
+      "correct": "C",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    }
+  },
+  "B篇_How_Things_Are_Used": {
+    "Q070": {
+      "question": "这个工具可以被用来做什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "cut wood",
+      "minimum_acceptable_answer": "cut wood",
+      "accepted_answers": [
+        "cut wood",
+        "to cut wood",
+        "cutting wood",
+        "it can be used to cut wood"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q071": {
+      "question": "那台新机器卖得怎么样？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "well",
+      "minimum_acceptable_answer": "well",
+      "accepted_answers": [
+        "well",
+        "sells well",
+        "very well",
+        "it sells well",
+        "the new machine sells well"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q072": {
+      "question": "'can be used' 属于？",
+      "type": "opt",
+      "correct": "C",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q073": {
+      "question": "'sells well' 属于？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q074": {
+      "question": "这块布容易洗。This cloth ____ (wash) easily. 检查",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "washes",
+      "minimum_acceptable_answer": "washes",
+      "accepted_answers": [
+        "washes"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "G65 主动表被动 washes（本课考点）"
+    },
+    "Q075": {
+      "question": "水被用于什么？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "drinking and cooking",
+      "minimum_acceptable_answer": "drinking and cooking",
+      "accepted_answers": [
+        "drinking and cooking",
+        "for drinking and cooking",
+        "it is used for drinking and cooking",
+        "water is used for drinking and cooking"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q076": {
+      "question": "'should be followed' 属于？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    }
+  },
+  "C篇_A_School_Notice": {
+    "Q077": {
+      "question": "图书馆何时关闭？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "on Friday",
+      "minimum_acceptable_answer": "friday",
+      "accepted_answers": [
+        "on friday",
+        "friday",
+        "it will be closed on friday"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q078": {
+      "question": "书必须什么时候归还？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "before the end of the week",
+      "minimum_acceptable_answer": "by the end of the week",
+      "accepted_answers": [
+        "before the end of the week",
+        "by the end of the week",
+        "books must be returned before the end of the week"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q079": {
+      "question": "'will be closed' 属于？",
+      "type": "opt",
+      "correct": "A",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q080": {
+      "question": "'is known for' 属于？",
+      "type": "opt",
+      "correct": "B",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    },
+    "Q081": {
+      "question": "据说明年将建一座新博物馆。It is ____ (say) that a new museum will be built. 检查",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "said",
+      "minimum_acceptable_answer": "said",
+      "accepted_answers": [
+        "said"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "G65 被动 said（本课考点）"
+    },
+    "Q082": {
+      "question": "学校以什么闻名？",
+      "type": "fill",
+      "openness": "细节·原文直接提取",
+      "canonical_answer": "its good tradition",
+      "minimum_acceptable_answer": "good tradition",
+      "accepted_answers": [
+        "its good tradition",
+        "good tradition",
+        "the school is known for its good tradition",
+        "it is known for its good tradition"
+      ],
+      "required_vocab": "[]",
+      "required_grammar": "无（原文摘录/前期已学基础词，本课语法上限内）"
+    },
+    "Q083": {
+      "question": "'is advised to' 属于？",
+      "type": "opt",
+      "correct": "B",
+      "note": "语法点/词义辨析/态度题，答案开放度高→保留选项（§3.18.2）"
+    }
+  }
+}

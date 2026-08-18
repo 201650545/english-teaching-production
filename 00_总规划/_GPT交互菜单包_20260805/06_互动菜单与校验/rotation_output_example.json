@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+  "lesson_id": "L10",
+  "level": "medium",
+  "action_counts": {
+    "drag": 1,
+    "order": 1,
+    "write": 1,
+    "link": 2
+  },
+  "unique_actions": [
+    "drag",
+    "link",
+    "order",
+    "write"
+  ],
+  "meets_level_action_target": true,
+  "assignments": [
+    {
+      "slot_id": "G22_01",
+      "knowledge_id": "G22",
+      "template_id": "G-DRAG-CLASSIFY",
+      "action_type": "drag",
+      "rotation_relaxed": false
+    },
+    {
+      "slot_id": "G22_02",
+      "knowledge_id": "G22",
+      "template_id": "G-ORDER-SENTENCE",
+      "action_type": "order",
+      "rotation_relaxed": false
+    },
+    {
+      "slot_id": "V31_01",
+      "knowledge_id": "V31",
+      "template_id": "V-WRITE-RECALL",
+      "action_type": "write",
+      "rotation_relaxed": false
+    },
+    {
+      "slot_id": "V31_02",
+      "knowledge_id": "V31",
+      "template_id": "V-LINK-COLLOCATION",
+      "action_type": "link",
+      "rotation_relaxed": false
+    },
+    {
+      "slot_id": "D01",
+      "knowledge_id": "R10",
+      "template_id": "C-LINK-EVIDENCE",
+      "action_type": "link",
+      "rotation_relaxed": false
+    }
+  ]
+}

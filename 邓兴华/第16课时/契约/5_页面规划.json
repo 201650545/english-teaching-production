@@ -1,0 +1,102 @@
+{
+  "course": "第16课 · 阶段测试Ⅱ·七上+七下跨阶诊断",
+  "stage": "Stage 4",
+  "lesson": "L16",
+  "duration": "90min",
+  "totalPages": 40,
+  "brand": "#E63946",
+  "accent": "#FFD700",
+  "bgGradient": "#FFF8F0 → #FFE8D6",
+  "pageIdContract": true,
+  "pageIdRange": "1-40",
+  "style": "五段式讲评（测试概况/高频错题精讲/词汇错题/阅读写作/总结提升）",
+  "grammarEndpoint": true,
+  "dataCollectionPlan": {
+    "enabled": true,
+    "syncMode": "realtime",
+    "exportFormats": [
+      "json",
+      "csv"
+    ],
+    "sessionIdRule": "L16_{studentId}_{YYYYMMDD}",
+    "recordFirstAttemptOnly": true,
+    "allowReview": true
+  },
+  "sections": [
+    {
+      "name": "测试概况",
+      "start": 1,
+      "end": 5,
+      "pages": [
+        {"page": 1, "type": "content", "title": "封面", "segment": "S1"},
+        {"page": 2, "type": "content", "title": "全卷概况", "segment": "S1"},
+        {"page": 3, "type": "content", "title": "题型得分分布", "segment": "S1"},
+        {"page": 4, "type": "content", "title": "高频错题Top预览", "segment": "S1"},
+        {"page": 5, "type": "content", "title": "测试语境词20词速览", "segment": "S1"}
+      ]
+    },
+    {
+      "name": "语法错题精讲",
+      "start": 6,
+      "end": 24,
+      "pages": [
+        {"page": 6, "type": "content", "title": "代词系统G01-G06", "segment": "S2"},
+        {"page": 7, "type": "content", "title": "be动词G03/G05", "segment": "S2"},
+        {"page": 8, "type": "content", "title": "名词介词数词G07-G12", "segment": "S2"},
+        {"page": 9, "type": "content", "title": "祈使句G13", "segment": "S2"},
+        {"page": 10, "type": "content", "title": "疑问句G06/G14/G22", "segment": "S2"},
+        {"page": 11, "type": "content", "title": "动词搭配G15/G18", "segment": "S2"},
+        {"page": 12, "type": "content", "title": "一般现在时G16/G25", "segment": "S2"},
+        {"page": 13, "type": "content", "title": "过去时was/were G19", "segment": "S2"},
+        {"page": 14, "type": "content", "title": "过去时did G20/G21", "segment": "S2"},
+        {"page": 15, "type": "content", "title": "三单变化G25/G26", "segment": "S2"},
+        {"page": 16, "type": "content", "title": "情态动词G28", "segment": "S2"},
+        {"page": 17, "type": "content", "title": "冠词G31", "segment": "S2"},
+        {"page": 18, "type": "content", "title": "some/any与量词G33/G32", "segment": "S2"},
+        {"page": 19, "type": "content", "title": "would like/how much G34-G36", "segment": "S2"},
+        {"page": 20, "type": "content", "title": "外貌描述G37/G11", "segment": "S2"},
+        {"page": 21, "type": "content", "title": "原因与结果G38", "segment": "S2"},
+        {"page": 22, "type": "content", "title": "天气与礼貌请求G40-G41", "segment": "S2"},
+        {"page": 23, "type": "content", "title": "It指代G42", "segment": "S2"},
+        {"page": 24, "type": "content", "title": "综合错题跨考点", "segment": "S2"}
+      ]
+    },
+    {
+      "name": "词汇错题精讲",
+      "start": 25,
+      "end": 29,
+      "pages": [
+        {"page": 25, "type": "content", "title": "L1-L6基础词汇", "segment": "S3"},
+        {"page": 26, "type": "content", "title": "L8-L10基础词汇", "segment": "S3"},
+        {"page": 27, "type": "content", "title": "L11-L12词汇", "segment": "S3"},
+        {"page": 28, "type": "content", "title": "L13-L15词汇", "segment": "S3"},
+        {"page": 29, "type": "content", "title": "L16测试词辨析", "segment": "S3"}
+      ]
+    },
+    {
+      "name": "阅读写作讲评",
+      "start": 30,
+      "end": 35,
+      "pages": [
+        {"page": 30, "type": "content", "title": "阅读A篇信息定位", "segment": "S4"},
+        {"page": 31, "type": "content", "title": "阅读B篇细节词义", "segment": "S4"},
+        {"page": 32, "type": "content", "title": "阅读C篇说明文", "segment": "S4"},
+        {"page": 33, "type": "content", "title": "五选四句际逻辑", "segment": "S4"},
+        {"page": 34, "type": "content", "title": "简答翻译作答规范", "segment": "S4"},
+        {"page": 35, "type": "content", "title": "写作范文评分拆解", "segment": "S4"}
+      ]
+    },
+    {
+      "name": "总结提升",
+      "start": 36,
+      "end": 40,
+      "pages": [
+        {"page": 36, "type": "content", "title": "薄弱考点清单", "segment": "S5"},
+        {"page": 37, "type": "content", "title": "下阶段建议Stage5", "segment": "S5"},
+        {"page": 38, "type": "content", "title": "核心口诀总览", "segment": "S5"},
+        {"page": 39, "type": "content", "title": "课堂思维导图", "segment": "S5"},
+        {"page": 40, "type": "content", "title": "本课达标自检", "segment": "S5"}
+      ]
+    }
+  ]
+}

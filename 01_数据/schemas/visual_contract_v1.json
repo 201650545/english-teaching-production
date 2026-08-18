@@ -1,0 +1,80 @@
+{
+  "version": "1.0",
+  "new_page_contract_marker": "CW-VISUAL-CONTRACT:1",
+  "required_markers": [
+    "<CW-CSS-EXTRA",
+    "<CW-SECTION name=\"components\"",
+    "<CW-SECTION name=\"theme\""
+  ],
+  "always_required_selectors_page": [
+    ".section-head", ".sh-num", ".sh-title",
+    ".cover-wrap", ".cover-badge", ".cover-title", ".cover-sub",
+    ".page", ".page-content", ".page-title", ".page-subtitle",
+    ".body-text", ".highlight",
+    ".note-panel", ".np-title",
+    ".quiz-opt", ".quiz-q", ".quiz-cols",
+    ".vocab-card", ".flash-grid",
+    ".game-board", ".game-title", ".game-rule",
+    ".kmap", ".kmap-node", ".kn-title", ".kn-body",
+    ".ext-card", ".ext-cat", ".ext-body",
+    ".rule-card"
+  ],
+  "always_required_selectors_slide": [],
+  "component_contracts": {
+    "rc-zhug": [".rc-zhug", ".rc-bin", ".rc-xing", ".rc-ming", ".rc-warn", ".rc-qita"],
+    "rc-bin": [".rc-zhug", ".rc-bin", ".rc-xing", ".rc-ming", ".rc-warn", ".rc-qita"],
+    "hl-grid": [".hl-grid", ".hl-card", ".hl-tip"],
+    "sd-unit": [".sd-unit", ".sd-sent", ".sd-opt"],
+    "ec-grid": [".ec-grid", ".ec-pair", ".ec-left", ".ec-right"],
+    "mini-task-box": [".mini-task-box", ".mt-header", ".mt-body"],
+    "prio-badge": [".prio-badge", ".pri-row"],
+    "pri-core": [".pri-core", ".pri-extend", ".pri-home"]
+  },
+  "allow_classes": [
+    "active", "flipped", "locked", "opt-correct", "opt-wrong",
+    "slide", "page", "cover-slide", "nav-item", "nav-pill",
+    "nav-pill-active", "nav-pill-done",
+    "quiz-opt", "quiz-q", "quiz-cols",
+    "mm-gram-card", "mm-room-tile", "mm-panel", "mm-panel-title",
+    "mm-panel-chips", "mm-branch", "mm-branch-label",
+    "mm-red", "mm-blue", "mm-green", "mm-gold", "mm-purple", "mm-teal",
+    "mmg-red", "mmg-blue", "mmg-green", "mmg-gold", "mmg-purple", "mmg-teal",
+    "burst-p", "et-undo-hint", "et-ref",
+    "sync-status", "sync-dot", "export-btn",
+    "stage-badge", "page-counter", "modal-overlay", "modal-content",
+    "pages-container", "pri-row", "read-split", "read-left", "read-right",
+    "read-right-head", "read-qs-scroll", "w5-qq", "w5-opts",
+    "cover-variant-a", "cover-variant-b", "cover-variant-c",
+    "vocab-zone", "vocab-variant-a", "vocab-variant-b", "vocab-variant-c",
+    "recall-variant-a", "recall-variant-b", "recall-variant-c",
+    "gram-card", "gram-card-grid", "gram-card-grid",
+    "gc-red", "gc-blue", "gc-gold", "gc-purple", "gc-green",
+    "chip", "chip-icon", "chip-row", "sub-label", "note-panel",
+    "glance-table", "gram-card", "gram-card-grid",
+    "cover-info", "cover-info-num", "ci-label", "ci-val",
+    "cover-tagline", "cover-emoji"
+  ],
+  "theme_forbidden_properties": [
+    "display", "position", "grid-template-columns", "grid-template-rows",
+    "grid-template-areas", "width", "height", "overflow", "z-index",
+    "font-size", "padding", "margin", "flex", "flex-direction"
+  ],
+  "thresholds": {
+    "font_warn_px": 18,
+    "font_high_risk_px": 16,
+    "important_warn": 5,
+    "important_high_risk": 10,
+    "direct_color_warn": 18,
+    "radius_value_warn": 6,
+    "shadow_value_warn": 8,
+    "orphan_selector_ratio_warn": 0.25,
+    "selector_drop_error_ratio": 0.30,
+    "cards_warn": 8,
+    "rule_cards_warn": 6,
+    "choice_questions_warn": 4,
+    "input_tasks_warn": 2,
+    "dense_text_chars": 1400,
+    "dense_card_count": 4,
+    "touch_target_project_px": 44
+  }
+}

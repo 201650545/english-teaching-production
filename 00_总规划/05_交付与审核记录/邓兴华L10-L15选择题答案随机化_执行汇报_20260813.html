@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>邓兴华 L10-L15 选择题答案随机化 · 执行汇报 2026-08-13</title>
+<style>
+  :root{--brand:#1a5276;--brand-l:#5db0e2;--ok:#27ae60;--err:#e74c3c;--warn:#e67e22;--bg:#f5f7fa;--card:#fff;--line:#e3e8ef;--txt:#2c3e50;--muted:#7f8c8d}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--txt);line-height:1.65;padding:32px 16px}
+  .wrap{max-width:1060px;margin:0 auto}
+  header{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;border-radius:16px;padding:28px 32px;margin-bottom:24px}
+  header h1{font-size:25px;margin-bottom:8px}
+  header p{opacity:.9;font-size:14px}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+  .metric{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-align:center}
+  .metric .v{font-size:26px;font-weight:800;color:var(--brand)}
+  .metric .l{font-size:12px;color:var(--muted);margin-top:2px}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:20px}
+  h2{font-size:19px;color:var(--brand);margin-bottom:14px;border-left:4px solid var(--brand-l);padding-left:10px}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0}
+  th{background:#eef4fa;color:var(--brand);padding:8px 10px;text-align:left;border:1px solid var(--line);font-weight:700}
+  td{padding:7px 10px;border:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:#fafcfe}
+  .ok{color:var(--ok);font-weight:700}
+  ul{margin:8px 0 8px 22px;font-size:13.5px}
+  li{margin:4px 0}
+  .note{background:#fdf6ec;border-left:4px solid var(--warn);border-radius:8px;padding:10px 14px;font-size:13px;margin:10px 0}
+  footer{text-align:center;color:var(--muted);font-size:12px;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>邓兴华 L10–L15 选择题答案随机化 · 执行汇报</h1>
+  <p>2026-08-13 ｜ 用户指令：答案随机排布 A/B/C、无连续相同 ｜ 集群模式：6 Worker + 主线接手收尾</p>
+</header>
+
+<div class="metrics">
+  <div class="metric"><div class="v">6/6</div><div class="l">课件 verify_v2 PASS</div></div>
+  <div class="metric"><div class="v">6 份</div><div class="l">配套练习随机答案版</div></div>
+  <div class="metric"><div class="v">0</div><div class="l">连续相同答案（全部消除）</div></div>
+  <div class="metric"><div class="v">84%→33%</div><div class="l">L10 B 占比下降</div></div>
+</div>
+
+<section>
+<h2>① 现状确认（用户反馈属实）</h2>
+<table>
+<tr><th>课</th><th>修复前序列（节选）</th><th>B 占比</th><th>连续</th></tr>
+<tr><td>L10</td><td>BBBBBBBBBBABBCCBBBB</td><td class="err">84%</td><td>13 处</td></tr>
+<tr><td>L11</td><td>BBABBBCBBCCACABBA…</td><td class="err">71%</td><td>28 处</td></tr>
+<tr><td>L12</td><td>ABBABBBBCBBBABA…</td><td class="err">67%</td><td>22 处</td></tr>
+<tr><td>L13</td><td>ABCABCABBABBC…</td><td>40%</td><td>5 处</td></tr>
+<tr><td>L14</td><td>ABCABC…ABACC…</td><td>36%</td><td>2 处</td></tr>
+<tr><td>L15</td><td>ABCABCABCBACAB…</td><td>36%</td><td>无</td></tr>
+</table>
+<div class="note">根因：课件生成时选项默认位置导致的系统性偏 B（L10-12 最严重）；配套练习 _3+2 版存在零散连续相同。</div>
+</section>
+
+<section>
+<h2>② 课件修复结果</h2>
+<table>
+<tr><th>课</th><th>修复后分布</th><th>连续</th><th>verify_v2</th></tr>
+<tr><td>L10</td><td>A7/B6/C6（19 题）</td><td class="ok">无 ✅</td><td class="ok">PASS</td></tr>
+<tr><td>L11</td><td>A17/C16/B16（49 题）</td><td class="ok">无 ✅</td><td class="ok">PASS</td></tr>
+<tr><td>L12</td><td>A14/C14/B14（42 题）</td><td class="ok">无 ✅</td><td class="ok">PASS</td></tr>
+<tr><td>L13</td><td>C7/A7/B6（20 题）</td><td class="ok">无 ✅</td><td class="ok">PASS（35%）</td></tr>
+<tr><td>L14</td><td>B9/C7/A9（25 题）</td><td class="ok">无 ✅</td><td class="ok">PASS（36%）</td></tr>
+<tr><td>L15</td><td>A10/B10/C8（原达标）</td><td class="ok">无 ✅</td><td class="ok">PASS</td></tr>
+</table>
+<p style="font-size:13px;color:var(--muted)">重排方式：选项按钮换位 + opt-label 随按钮更新；题面/选项内容/判定逻辑零改动；L10 词汇游戏原 DDD 一并重排。</p>
+</section>
+
+<section>
+<h2>③ 配套练习修复结果（六份随机答案版）</h2>
+<table>
+<tr><th>课</th><th>文件</th><th>分布</th><th>连续</th></tr>
+<tr><td>L10</td><td>第10课时_配套练习_中等_随机答案版.docx</td><td>B6/C6/A5</td><td class="ok">无 ✅</td></tr>
+<tr><td>L11</td><td>第11课时_配套练习_中等_班规版_随机答案版.docx</td><td>A5/C5/B5</td><td class="ok">无 ✅</td></tr>
+<tr><td>L12</td><td>第12课时_配套练习_中等_随机答案版.docx</td><td>B6/C6/A5</td><td class="ok">无 ✅</td></tr>
+<tr><td>L13</td><td>第13课时_配套练习_中等_随机答案版.docx</td><td>B5/A5/C5</td><td class="ok">无 ✅</td></tr>
+<tr><td>L14</td><td>第14课时_配套练习_中等_随机答案版.docx</td><td>A5/B5/C5</td><td class="ok">无 ✅</td></tr>
+<tr><td>L15</td><td>第15课时_配套练习_中等_随机答案版.docx</td><td>A5/C5/B5</td><td class="ok">无 ✅</td></tr>
+</table>
+<p style="font-size:13px;color:var(--muted)">覆盖阅读选择/完形/语法诊断/教学诊断（42-48）；参考答案区与答题卡同步；合一与独立两种选项段格式均处理；填空/简答/书面表达/五选四方框不动。</p>
+</section>
+
+<section>
+<h2>④ 验证</h2>
+<ul>
+<li>docx 严格校验：六份答案序列无连续相同、三字母均衡（5-6/字母）</li>
+<li>课件 verify_v2 --force：6/6 PASS（答案分布 35-36% ≤40% 合规）</li>
+<li>浏览器抽测：六课正确选项判对 ✅、0 console/pageerror</li>
+<li>对照原件：L11「42. A warning」、L13/L14 题 15 为填空/简答（非选择题），校验脚本误报已澄清，未误改</li>
+</ul>
+</section>
+
+<section>
+<h2>⑤ 执行说明与偏差</h2>
+<ul>
+<li>六个 Worker 均在写 docx 阶段因 LLM 超时失败；课件重排超时前已完成，docx 由主线接手（L11 独立选项段补丁 + 答案区行内格式同步）</li>
+<li>L11 完形 20~29 答案区为多段同行格式，已按行内格式同步</li>
+<li>五选四（BDAE 等）无连续，按要求保持原序</li>
+</ul>
+</section>
+
+<footer>邓兴华线 Agent（集群模式）· 2026-08-13 ｜ 配套 Markdown：邓兴华L10-L15选择题答案随机化_执行汇报_20260813.md（同目录）</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "lesson_id": "第04课",
+  "version": "V17.0",
+  "creative_id": "3D 房间物品拖拽与方位透视定位器",
+  "interaction": {
+    "navigation": "split-screen click (left=prev, right=next)",
+    "answer_priority": "highest, event.stopPropagation()",
+    "sub_page": "vertical scroll with fixed page index"
+  }
+}

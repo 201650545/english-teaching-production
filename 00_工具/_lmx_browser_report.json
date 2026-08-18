@@ -1,0 +1,162 @@
+{
+ "6": {
+  "pages": 43,
+  "onclick_fns": [
+   "jumpToSegment",
+   "exportData",
+   "checkOpt",
+   "stopPropagation",
+   "asmAdd",
+   "asmReset",
+   "setPen",
+   "checkFill",
+   "closeModal"
+  ],
+  "typeof": {
+   "jumpToSegment": "function",
+   "exportData": "function",
+   "checkOpt": "function",
+   "stopPropagation": "undefined",
+   "asmAdd": "function",
+   "asmReset": "function",
+   "setPen": "function",
+   "checkFill": "function",
+   "closeModal": "function"
+  },
+  "not_functions": {
+   "stopPropagation": "undefined"
+  },
+  "js_errors": [],
+  "nav_ok": true,
+  "fill_ok": true,
+  "body_text_len": 2497
+ },
+ "7": {
+  "pages": 43,
+  "onclick_fns": [
+   "jumpToSegment",
+   "exportData",
+   "checkOpt",
+   "stopPropagation",
+   "asmAdd",
+   "asmReset",
+   "setPen",
+   "checkFill",
+   "closeModal"
+  ],
+  "typeof": {
+   "jumpToSegment": "function",
+   "exportData": "function",
+   "checkOpt": "function",
+   "stopPropagation": "undefined",
+   "asmAdd": "function",
+   "asmReset": "function",
+   "setPen": "function",
+   "checkFill": "function",
+   "closeModal": "function"
+  },
+  "not_functions": {
+   "stopPropagation": "undefined"
+  },
+  "js_errors": [],
+  "nav_ok": true,
+  "fill_ok": "ERR:Page.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\".fill-check-btn\")\n    - locator resolved to 4 elements. Proceeding with the first one: <button class=\"fill-check-btn\" onclick=\"checkFill(this)\">提交</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is not stable\n  - retrying click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"ci-val\">42</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 20ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"cover-info-num\">…</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  2 × retrying click action\n      - waiting 100ms\n      - waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"ci-val\">10</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  12 × retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"ci-val\">42</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"cover-info-num\">…</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"ci-val\">10</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"ci-val\">10</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"ci-val\">42</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n",
+  "body_text_len": 2480
+ },
+ "8": {
+  "pages": 43,
+  "onclick_fns": [
+   "jumpToSegment",
+   "exportData",
+   "checkOpt",
+   "stopPropagation",
+   "asmAdd",
+   "asmReset",
+   "setPen",
+   "checkFill",
+   "closeModal"
+  ],
+  "typeof": {
+   "jumpToSegment": "function",
+   "exportData": "function",
+   "checkOpt": "function",
+   "stopPropagation": "undefined",
+   "asmAdd": "function",
+   "asmReset": "function",
+   "setPen": "function",
+   "checkFill": "function",
+   "closeModal": "function"
+  },
+  "not_functions": {
+   "stopPropagation": "undefined"
+  },
+  "js_errors": [],
+  "nav_ok": true,
+  "fill_ok": "ERR:Page.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\".fill-check-btn\")\n    - locator resolved to 4 elements. Proceeding with the first one: <button class=\"fill-check-btn\" onclick=\"checkFill(this)\">提交</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not stable\n    - retrying click action\n    - waiting 20ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"cover-info-num\">…</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  2 × retrying click action\n      - waiting 100ms\n      - waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"ci-val\">10</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  12 × retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"ci-val\">42</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"cover-info-num\">…</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"ci-val\">10</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"ci-val\">10</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"ci-val\">42</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"cover-info-num\">…</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"ci-val\">10</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n",
+  "body_text_len": 2521
+ },
+ "9": {
+  "pages": 43,
+  "onclick_fns": [
+   "jumpToSegment",
+   "exportData",
+   "checkOpt",
+   "stopPropagation",
+   "asmAdd",
+   "asmReset",
+   "setPen",
+   "checkFill",
+   "closeModal"
+  ],
+  "typeof": {
+   "jumpToSegment": "function",
+   "exportData": "function",
+   "checkOpt": "function",
+   "stopPropagation": "undefined",
+   "asmAdd": "function",
+   "asmReset": "function",
+   "setPen": "function",
+   "checkFill": "function",
+   "closeModal": "function"
+  },
+  "not_functions": {
+   "stopPropagation": "undefined"
+  },
+  "js_errors": [],
+  "nav_ok": true,
+  "fill_ok": "ERR:Page.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\".fill-check-btn\")\n    - locator resolved to 4 elements. Proceeding with the first one: <button class=\"fill-check-btn\" onclick=\"checkFill(this)\">提交</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is not stable\n  - retrying click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"ci-val\">42</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 20ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"cover-info-num\">…</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  2 × retrying click action\n      - waiting 100ms\n      - waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"ci-val\">10</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  13 × retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"ci-val\">42</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"cover-info-num\">…</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"ci-val\">10</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"ci-val\">10</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n",
+  "body_text_len": 2520
+ },
+ "10": {
+  "pages": 43,
+  "onclick_fns": [
+   "jumpToSegment",
+   "exportData",
+   "checkOpt",
+   "stopPropagation",
+   "asmAdd",
+   "asmReset",
+   "setPen",
+   "checkFill",
+   "closeModal"
+  ],
+  "typeof": {
+   "jumpToSegment": "function",
+   "exportData": "function",
+   "checkOpt": "function",
+   "stopPropagation": "undefined",
+   "asmAdd": "function",
+   "asmReset": "function",
+   "setPen": "function",
+   "checkFill": "function",
+   "closeModal": "function"
+  },
+  "not_functions": {
+   "stopPropagation": "undefined"
+  },
+  "js_errors": [],
+  "nav_ok": true,
+  "fill_ok": "ERR:Page.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\".fill-check-btn\")\n    - locator resolved to 4 elements. Proceeding with the first one: <button class=\"fill-check-btn\" onclick=\"checkFill(this)\">提交</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is not stable\n  - retrying click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"ci-val\">42</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 20ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"cover-info-num\">…</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  2 × retrying click action\n      - waiting 100ms\n      - waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"ci-val\">10</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  12 × retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"ci-val\">42</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"cover-info-num\">…</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"ci-val\">10</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n       - waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"ci-val\">10</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"ci-val\">42</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"cover-info-num\">…</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <div class=\"ci-val\">10</div> from <div id=\"page1\" class=\"page\">…</div> subtree intercepts pointer events\n  - retrying click action\n    - waiting 500ms\n",
+  "body_text_len": 2499
+ }
+}
