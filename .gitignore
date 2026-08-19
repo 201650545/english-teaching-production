@@ -1,0 +1,10 @@
+# Office 临时锁文件（Word/Excel 打开文档时自动生成，非真实成果）
+~$*
+
+# 系统文件
+Thumbs.db
+Desktop.ini
+
+# Python 缓存
+__pycache__/
+*.pyc
